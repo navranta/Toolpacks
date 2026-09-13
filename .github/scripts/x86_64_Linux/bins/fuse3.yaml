@@ -3,7 +3,7 @@ description: "The reference implementation of the Linux FUSE (Filesystem in User
 note: ""
 web_url: "https://github.com/libfuse/libfuse"
 repo_url: "https://github.com/libfuse/libfuse"
-path: "/Baseutils/fuse3/"
+path: "/"
 bins:
   - "fusermount3"
   - "mount.fuse3"

@@ -32,9 +32,11 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
        #gh run download -R "${SOURCE_URL}" "${RUN_ID}" -p '*release*linux*amd64*'
        #curl -qfsSL $(curl -qfsSL "https://api.github.com/repos/husarnet/husarnet/actions/artifacts?per_page=100" -H "Authorization: Bearer $GITHUB_TOKEN" | jq -r '[.artifacts[] | select(.name == "release-linux-amd64")] | sort_by(.created_at) | .[].archive_download_url' | sort -V | tail -n 1 ) -H "Authorization: Bearer $GITHUB_TOKEN" -o "husarnet.zip" 
        #unzip "./husarnet.zip" && find . -type f -name '*husarnet*' ! -name '*.zip*' -exec cp {} "$BINDIR/husarnet" \;
-       #eval "$EGET_TIMEOUT" eget "$SOURCE_URL" --asset "linux" --asset "amd64" --asset "tar" --download-only
-       eval "$EGET_TIMEOUT" eget "https://install.husarnet.com/tar/husarnet-latest-amd64.tar" --download-only
-       ouch decompress "./"* --yes
+        #eval "$EGET_TIMEOUT" eget "$SOURCE_URL" --asset "linux" --asset "amd64" --asset "tar" --download-only
+        eval "$EGET_TIMEOUT" eget "https://github.com/ouch-org/ouch" --asset "x86_64" --asset "linux" --asset "musl" --to "./ouch"
+        chmod +x "./ouch"
+        eval "$EGET_TIMEOUT" eget "https://install.husarnet.com/tar/husarnet-latest-amd64.tar" --download-only
+        "./ouch" decompress "./"* --yes
        find . -type d -name '*bin*' ! -name 'build-bins' -print0 | xargs -0 -I {} sh -c 'mkdir -p ./build-bins && cp -r {}/* ./build-bins/'
        strip "./build-bins/"* ; file "./build-bins/"* && du -sh "./build-bins/"*
        rsync -av --copy-links --checksum --progress "./build-bins/" "$BINDIR"

@@ -25,8 +25,8 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
      export BIN="ncdu" #Name of final binary/pkg/cli, sometimes differs from $REPO
      export SOURCE_URL="https://dev.yorhel.nl" #github/gitlab/homepage/etc for $BIN
      echo -e "\n\n [+] (Building | Fetching) ${BIN} :: ${SOURCE_URL} [$(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC]\n"
-      #Fetch  
-       eval "$EGET_TIMEOUT" eget "$SOURCE_URL$(curl -qfsSL $SOURCE_URL/ncdu | awk -F '"' '/x86_64\.tar\.gz/ && /href=/{print $2}' | grep -v 'asc' | sort -u)" --to "$BINDIR/ncdu"
+       #Fetch  
+        $EGET_TIMEOUT eget "$SOURCE_URL$(curl -qfsSL "$SOURCE_URL/ncdu" | awk -F '"' '/x86_64\.tar\.gz/ && /href=/ && $2 ~ /\.tar\.gz$/ {print $2}' | head -n 1)" --to "$BINDIR/ncdu"
 fi
 #-------------------------------------------------------#
 

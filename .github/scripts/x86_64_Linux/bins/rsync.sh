@@ -27,11 +27,13 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
      echo -e "\n\n [+] (Building | Fetching) ${BIN} :: ${SOURCE_URL} [$(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC]\n"
       #Build 
        pushd "$($TMPDIRS)" >/dev/null 2>&1
-       NIXPKGS_ALLOW_BROKEN="1" NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM="1" nix-build '<nixpkgs>' --attr "pkgsStatic.rsync" --cores "$(($(nproc)+1))" --max-jobs "$(($(nproc)+1))" --log-format bar-with-logs --keep-going
-       sudo strip "result/bin/rsync" ; file "result/bin/rsync" && du -sh "result/bin/rsync"
-       cp "result/bin/rsync" "$BINDIR/rsync"
-       cp "result/bin/rsync-ssl" "$BINDIR/rsync-ssl"
-       nix-collect-garbage >/dev/null 2>&1 ; popd >/dev/null 2>&1
+        export NIX_CONFIG="sandbox = false"
+        NIXPKGS_ALLOW_BROKEN="1" NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM="1" nix-build '<nixpkgs>' --attr "pkgsStatic.rsync" --cores "$(($(nproc)+1))" --max-jobs "$(($(nproc)+1))" --log-format bar-with-logs --keep-going --option sandbox false
+        sudo strip "result/bin/rsync" ; file "result/bin/rsync" && du -sh "result/bin/rsync"
+        cp "result/bin/rsync" "$BINDIR/rsync"
+        cp "result/bin/rsync-ssl" "$BINDIR/rsync-ssl"
+        unset NIX_CONFIG
+        nix-collect-garbage >/dev/null 2>&1 ; popd >/dev/null 2>&1
 fi
 #-------------------------------------------------------#
 
