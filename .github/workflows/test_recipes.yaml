@@ -90,7 +90,7 @@ jobs:
             echo ""
             echo "| recipe | status | seconds |"
             echo "|---|---|---|"
-            jq -r '"| `\(.recipe)` | \(.status) | \(.seconds)s |"' "$R"
+            jq -r '.[] | "| `\(.recipe)` | \(.status) | \(.seconds)s |"' "$R"
           } >> "$GITHUB_STEP_SUMMARY"
           BAD="$(jq -r '[.[] | select(.status=="fail" or .status=="timeout" or .status=="missing")] | length' "$R")"
           if [ "$BAD" -gt 0 ]; then
