@@ -20,7 +20,9 @@
 ##ENV:$PATH
  export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.cargo/env:$HOME/.go/bin:$HOME/go/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$HOME/.local/bin:$HOME/miniconda3/bin:$HOME/miniconda3/condabin:/usr/local/zig:/usr/local/zig/lib:/usr/local/zig/lib/include:/usr/local/musl/bin:/usr/local/musl/lib:/usr/local/musl/include:$PATH"
 #TMPDIRS
- SYSTMP="$(dirname $(mktemp -u))" && export SYSTMP="$SYSTMP"
+ # Honor a pre-set SYSTMP (CI exports RUNNER_TEMP so RESULT.jsonl lands
+ # where the artifact upload reads it from); default keeps local behavior.
+ SYSTMP="${SYSTMP:-$(dirname $(mktemp -u))}" && export SYSTMP="$SYSTMP"
  #For build-cache
  TMPDIRS="mktemp -d --tmpdir=$SYSTMP/toolpacks XXXXXXX_linux_x86_64" && export TMPDIRS="$TMPDIRS"
  rm -rf "$SYSTMP/toolpacks" 2>/dev/null ; mkdir -p "$SYSTMP/toolpacks"

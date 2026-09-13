@@ -130,9 +130,23 @@ jobs:
           GHCR_PUSH: "YES"
         run: |
           set -uo pipefail
+          # SYSTMP must be RUNNER_TEMP: build_debian.sh writes RESULT.jsonl
+          # to $SYSTMP, and only RUNNER_TEMP survives the job via artifacts
+          # (a run once went green with zero results because it went to /tmp).
+          export SYSTMP="${RUNNER_TEMP}"
           bash "${GITHUB_WORKSPACE}/.github/scripts/x86_64_Linux/build_debian.sh" \
             2>&1 | tee "${RUNNER_TEMP}/BUILD.log.txt"
-          echo "BUILD_RC=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
+          BUILD_RC="${PIPESTATUS[0]}"
+          echo "BUILD_RC=${BUILD_RC}" >> "$GITHUB_ENV"
+          # Stage one tarball so the artifact layout is deterministic:
+          # {BUILD.log.txt,RESULT.jsonl,logs/*.log.txt}. The 10 MB monolith
+          # stays artifact-only; per-recipe logs are committed by finalize.
+          mkdir -p "${RUNNER_TEMP}/out/logs"
+          cp -f "${RUNNER_TEMP}/BUILD.log.txt" "${RUNNER_TEMP}/out/" 2>/dev/null || true
+          cp -f "${RUNNER_TEMP}/RESULT.jsonl" "${RUNNER_TEMP}/out/" 2>/dev/null || true
+          cp -f "${GITHUB_WORKSPACE}/x86_64-Linux/logs/"*.log.txt "${RUNNER_TEMP}/out/logs/" 2>/dev/null || true
+          tar -czf "${RUNNER_TEMP}/x86_64-output.tar.gz" -C "${RUNNER_TEMP}/out" .
+          exit "$BUILD_RC"
 
       - name: Redact secrets from logs
         if: always()
@@ -147,8 +161,7 @@ jobs:
         with:
           name: "x86_64-Linux-build"
           path: |
-            ${{ runner.temp }}/BUILD.log.txt
-            ${{ runner.temp }}/RESULT.jsonl
+            ${{ runner.temp }}/x86_64-output.tar.gz
           retention-days: 30
           if-no-files-found: warn
 
@@ -174,6 +187,19 @@ jobs:
           path: "${{ runner.temp }}/artifacts"
         continue-on-error: true
 
+      - name: Extract build output
+        run: |
+          set -uo pipefail
+          mkdir -p "${RUNNER_TEMP}/build-out"
+          T="${RUNNER_TEMP}/artifacts/x86_64-output.tar.gz"
+          if [ -s "$T" ]; then
+            tar -xzf "$T" -C "${RUNNER_TEMP}/build-out"
+            ls "${RUNNER_TEMP}/build-out"
+          else
+            echo "::error::build output tarball missing -- nothing to enforce or publish"
+            exit 1
+          fi
+
       - name: Install tooling from vendored prebuilts
         run: |
           set -euo pipefail
@@ -184,7 +210,7 @@ jobs:
       - name: Enforce build results
         run: |
           set -uo pipefail
-          R="${RUNNER_TEMP}/artifacts/RESULT.jsonl"
+          R="${RUNNER_TEMP}/build-out/RESULT.jsonl"
           if [ ! -s "$R" ]; then
             echo "::error::no RESULT.jsonl -- the build died before writing any results"
             exit 1
@@ -253,7 +279,8 @@ jobs:
           set -uo pipefail
           cd "${GITHUB_WORKSPACE}"
           mkdir -p x86_64-Linux/logs
-          cp -f "${RUNNER_TEMP}/artifacts/RESULT.jsonl" x86_64-Linux/ 2>/dev/null || true
+          cp -f "${RUNNER_TEMP}/build-out/RESULT.jsonl" x86_64-Linux/ 2>/dev/null || true
+          cp -f "${RUNNER_TEMP}/build-out/logs/"*.log.txt x86_64-Linux/logs/ 2>/dev/null || true
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A x86_64-Linux
