@@ -14,7 +14,7 @@
 #
 # Hardware : At least 2vCPU + 8GB RAM + 50GB SSD
 # Once requirement is satisfied, simply:
-# bash <(curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Toolpacks/.github/scripts/x86_64_Linux/init_debian.sh")
+# git clone --depth 1 <repo> && bash .github/scripts/x86_64_Linux/build_debian.sh
 #-------------------------------------------------------#
 
 #-------------------------------------------------------#
@@ -91,8 +91,12 @@
     if [ "$CONTINUE" == "YES" ]; then
        if [ "$USER" = "runner" ] || [ "$(whoami)" = "runner" ] && [ -s "/opt/runner/provisioner" ]; then
           ##Debloat
-           bash <(curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Arsenal/misc/Github/Runners/Ubuntu/debloat.sh")
-           bash <(curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Arsenal/misc/Github/Runners/Ubuntu/debloat.sh") 2>/dev/null
+           echo -e "\n[+] Debloating GH Runner...\n"
+           sudo rm -rf "/usr/local/lib/android" "/usr/share/dotnet" "/opt/ghc" \
+                       "/usr/local/share/boost" "/usr/local/share/powershell" \
+                       "/usr/share/swift" "/opt/hostedtoolcache" 2>/dev/null
+           sudo docker image prune --all --force 2>/dev/null
+           df -h /
            #echo -e "\n[+] Debloating GH Runner...\n"
            #  #This is not needed even though this is the ndk, we (re)install via ndk-pkg
            #  #12.0 GB
@@ -175,28 +179,23 @@
           sudo apt-get install libxcb1-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev scons xcb -y 2>/dev/null
           pip install build cffi scons scuba pytest --upgrade --force 2>/dev/null ; pip install ansi2txt pipx scons py2static typer --upgrade --force 2>/dev/null
           pip install build cffi scons scuba pytest --break-system-packages --upgrade --force 2>/dev/null ; pip install ansi2txt pipx scons py2static typer --break-system-packages --upgrade --force 2>/dev/null
-          #Nutika
-          #pip install nuitka --break-system-packages --upgrade ; nuitka3 --version
-          pip install "git+https://github.com/Nuitka/Nuitka" --break-system-packages --force-reinstall --upgrade ; nuitka3 --version
-          #Pex
-          pip install "git+https://github.com/pex-tool/pex" --break-system-packages --force-reinstall --upgrade ; pex --version
-          #pyinstaller
-          pip install "git+https://github.com/pyinstaller/pyinstaller" --break-system-packages --force-reinstall --upgrade ; pyinstaller --version
-         ##Addons
-          bash <(curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Arsenal/misc/Linux/install_dev_tools.sh")
-         ##Appimage tools
-          #sudo curl -qfsSL "https://bin.ajam.dev/$(uname -m)/appimagetool" -o "/usr/local/bin/appimagetool" && sudo chmod +x "/usr/local/bin/appimagetool"
-          sudo curl -qfsSL "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-$(uname -m).AppImage" -o "/usr/local/bin/appimagetool" && sudo chmod +x "/usr/local/bin/appimagetool"
-          sudo curl -qfsSL "https://bin.ajam.dev/$(uname -m)/mkappimage" -o "/usr/local/bin/mkappimage" && sudo chmod +x "/usr/local/bin/mkappimage"
-          sudo curl -qfsSL "https://bin.ajam.dev/$(uname -m)/Baseutils/squashfstools/mksquashfs" -o "/usr/local/bin/mksquashfs" && sudo chmod +x "/usr/local/bin/mksquashfs"
-          sudo curl -qfsSL "https://bin.ajam.dev/$(uname -m)/Baseutils/squashfstools/sqfscat" -o "/usr/local/bin/sqfscat" && sudo chmod +x "/usr/local/bin/sqfscat"
-          sudo curl -qfsSL "https://bin.ajam.dev/$(uname -m)/Baseutils/squashfstools/sqfstar" -o "/usr/local/bin/sqfstar" && sudo chmod +x "/usr/local/bin/sqfstar"
-          sudo curl -qfsSL "https://bin.ajam.dev/$(uname -m)/Baseutils/squashfstools/unsquashfs" -o "/usr/local/bin/unsquashfs" && sudo chmod +x "/usr/local/bin/unsquashfs"
-          #zsyncmake2 requires libfuse: https://github.com/AppImageCommunity/zsync2/issues/76
-          sudo apt install fuse -y -qq
-          sudo eget "https://github.com/AppImageCommunity/zsync2" --pre-release --tag "continuous" --asset "zsync2" --asset "$(uname -m)" --asset "^zsyncmake" --asset "^.zsync" --to "/usr/local/bin/zsync"
-          sudo eget "https://github.com/AppImageCommunity/zsync2" --pre-release --tag "continuous" --asset "zsyncmake2" --asset "$(uname -m)" --asset "^.zsync" --to "/usr/local/bin/zsyncmake"
-          sudo chattr +i "/usr/local/bin/appimagetool" "/usr/local/bin/zsync" "/usr/local/bin/zsyncmake"
+         ##Addons (vendored prebuilts + upstream releases; no third-party cache)
+          PREBUILTS="$(dirname "${BASH_SOURCE[0]}")/prebuilts"
+          if [ ! -d "${PREBUILTS}" ]; then
+             echo -e "\n[-] FATAL: prebuilts/ not found at ${PREBUILTS}\n"
+             export CONTINUE="NO" && exit 1
+          fi
+          for _b in eget jq b3sum yq oras; do
+              if [ ! -x "${PREBUILTS}/${_b}" ]; then
+                 echo -e "\n[-] FATAL: missing prebuilt: ${_b}\n"
+                 export CONTINUE="NO" && exit 1
+              fi
+              sudo install -m 755 "${PREBUILTS}/${_b}" "/usr/local/bin/${_b}"
+          done
+          unset _b
+          #Everything else comes from its own upstream release, via eget
+          sudo eget "https://github.com/bootandy/dust" --asset "x86_64-unknown-linux-musl" --asset "^sha256" --to "/usr/local/bin/dust" 2>/dev/null
+          sudo eget "https://github.com/trufflesecurity/trufflehog" --asset "linux_amd64" --asset "^sig" --asset "^pem" --to "/usr/local/bin/trufflehog" 2>/dev/null
     fi
     #-------------------------------------------------------#
     
@@ -234,19 +233,7 @@
              install_docker
          fi
          #----------------------# 
-         #Crystal
-          curl -qfsSL "https://crystal-lang.org/install.sh" | sudo bash
-          #Test
-          if ! command -v crystal &> /dev/null; then
-             echo -e "\n[-] crystal NOT Found\n"
-             export CONTINUE="NO" && exit 1
-          else
-             crystal --version ; shards --version
-             sudo ldconfig && sudo ldconfig -p
-          fi
          #----------------------# 
-         #Dockerc
-          sudo curl -qfsSL "https://bin.ajam.dev/$(uname -m)/dockerc" -o "/usr/local/bin/dockerc" && sudo chmod +x "/usr/local/bin/dockerc"
          #----------------------#          
          ##Install golang 
           pushd "$($TMPDIRS)" >/dev/null 2>&1
@@ -298,17 +285,6 @@
          #----------------------# 
          ##Purge:
          #sudo rm -rf "/etc/bash.bashrc.backup-before-nix" "/etc/nix" "/nix" "/root/.nix-profile" "/root/.nix-defexpr" "/root/.nix-channels" "/root/.local/state/nix" "/root/.cache/nix" "$HOME/.nix-profile" "$HOME/.nix-defexpr" "$HOME/.nix-channels" "$HOME/.local/state/nix" "$HOME/.cache/nix" 2>/dev/null
-         ##Node:
-          bash <(curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Arsenal/misc/Linux/Debian/install_node_x86_64.sh")
-          #Test
-          if ! command -v npm &> /dev/null; then
-             echo -e "\n[-] node (npm) NOT Found\n"
-             export CONTINUE="NO" && exit 1
-          else
-             node --version && npm --version
-             #Nexe:https://github.com/nexe/nexe
-             npm install nexe --global
-          fi
          #----------------------# 
          #rust & cargo
           bash <(curl -qfsSL "https://sh.rustup.rs") -y
@@ -358,57 +334,10 @@
              v version
           fi
          #----------------------#
-         ##Install zig
-          #Clean
-          sudo rm "/usr/local/zig" -rf 2>/dev/null ; sudo rm "/usr/local/zig" -rf 2>/dev/null
-          #Get latest source
-          pushd "$($TMPDIRS)" >/dev/null 2>&1 && curl -qfSLJO $(curl -qfsSL "https://ziglang.org/download/index.json" | jq -r '.master | ."x86_64-linux".tarball')
-          #Extract
-          find . -type f -name '*.tar*' -exec tar -xf {} \;
-          #Move to /usr/local/zig
-          sudo mkdir -p "/usr/local/zig" && sudo mv "$(find . -maxdepth 1 -type d | grep -v '^.$')"/* "/usr/local/zig" ; popd >/dev/null 2>&1
-          #Test: ZIG_PATH="/usr/local/zig:/usr/local/zig/lib:/usr/local/zig/lib/include:$PATH"
-          if ! command -v zig &> /dev/null; then
-             echo -e "\n[-] zig NOT Found\n"
-             export CONTINUE="NO" && exit 1
-          else
-             zig version
-             sudo ldconfig && sudo ldconfig -p
-          fi
-          #cleanup
-          find "$SYSTMP" -type d -name "*zig*" 2>/dev/null -exec rm -rf {} \; >/dev/null 2>&1
-          find "$SYSTMP" -type f -name "*zig*" 2>/dev/null -exec rm -rf {} \; >/dev/null 2>&1
-         #----------------------# 
     fi
    #-------------------------------------------------------#
 
    ##-------------------------------------------------------#
-   # ##ToolChains
-   # if [ "$CONTINUE" == "YES" ]; then
-   # ##Clean
-   # sudo rm "/opt/toolchains" -rf 2>/dev/null
-   # ##https://pub.ajam.dev/toolchains/x86_64-glibc-stable/ --> /opt/toolchains/x86_64-buildroot-linux-gnu
-   # pushd "$($TMPDIRS)" >/dev/null 2>&1 && eget "https://pub.ajam.dev/toolchains/x86_64-glibc-stable.tar.bz2" --download-only
-   # find . -type f -name "*.tar*" -exec tar -xf {} \;
-   # sudo mkdir -p "/opt/toolchains" 2>/dev/null
-   # sudo mv "$(find . -maxdepth 1 -type d -exec basename {} \; | grep -Ev '^\.$' | xargs -I {} realpath {})" "/opt/toolchains/x86_64-buildroot-linux-gnu"
-   # cd "/opt/toolchains/x86_64-buildroot-linux-gnu" && sudo bash "./relocate-sdk.sh" ; popd >/dev/null 2>&1
-   # ##https://pub.ajam.dev/toolchains/x86_64-musl-stable/ --> /opt/toolchains/x86_64-buildroot-linux-musl
-   # pushd "$($TMPDIRS)" >/dev/null 2>&1 && eget "https://pub.ajam.dev/toolchains/x86_64-musl-stable.tar.bz2" --download-only
-   # find . -type f -name "*.tar*" -exec tar -xf {} \;
-   # sudo mkdir -p "/opt/toolchains" 2>/dev/null
-   # sudo mv "$(find . -maxdepth 1 -type d -exec basename {} \; | grep -Ev '^\.$' | xargs -I {} realpath {})" "/opt/toolchains/x86_64-buildroot-linux-musl"
-   # cd "/opt/toolchains/x86_64-buildroot-linux-musl" && sudo bash "./relocate-sdk.sh" ; popd >/dev/null 2>&1
-   # ##https://pub.ajam.dev/toolchains/x86_64-uclibc-stable/ --> /opt/toolchains/x86_64-buildroot-linux-uclibc
-   # pushd "$($TMPDIRS)" >/dev/null 2>&1 && eget "https://pub.ajam.dev/toolchains/x86_64-uclibc-stable.tar.bz2" --download-only
-   # find . -type f -name "*.tar*" -exec tar -xf {} \;
-   # sudo mkdir -p "/opt/toolchains" 2>/dev/null
-   # sudo mv "$(find . -maxdepth 1 -type d -exec basename {} \; | grep -Ev '^\.$' | xargs -I {} realpath {})" "/opt/toolchains/x86_64-buildroot-linux-uclibc"
-   # cd "/opt/toolchains/x86_64-buildroot-linux-uclibc" && sudo bash "./relocate-sdk.sh" ; popd >/dev/null 2>&1
-   # ##Test
-   # echo -e "\n\n[+] Toolchains\n"
-   # du -h --max-depth="1" "/opt/toolchains" 2>/dev/null | sort -hr ; echo -e "\n\n"
-   # fi
    ##-------------------------------------------------------#
 
    #-------------------------------------------------------#

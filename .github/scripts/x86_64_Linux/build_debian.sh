@@ -8,9 +8,14 @@
 # Hardware : At least 2vCPU + 8GB RAM + 50GB SSD
 # Once requirement is satisfied, simply:
 # export GITHUB_TOKEN="NON_PRIVS_READ_ONLY_TOKEN"
-# bash <(curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Toolpacks/.github/scripts/x86_64_Linux/build_debian.sh")
+# git clone --depth 1 <repo> && bash .github/scripts/x86_64_Linux/build_debian.sh
 #-------------------------------------------------------#
 
+##Repo root (from this script's own location, NOT $GITHUB_WORKSPACE,
+## so the script stays usable outside CI)
+ TOOLPACKS_REPO="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../../.." && pwd)"
+ export TOOLPACKS_REPO="$TOOLPACKS_REPO"
+#-------------------------------------------------------#
 #-------------------------------------------------------#
 ##ENV:$PATH
  export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.cargo/env:$HOME/.go/bin:$HOME/go/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$HOME/.local/bin:$HOME/miniconda3/bin:$HOME/miniconda3/condabin:/usr/local/zig:/usr/local/zig/lib:/usr/local/zig/lib/include:/usr/local/musl/bin:/usr/local/musl/lib:/usr/local/musl/include:$PATH"
@@ -35,22 +40,19 @@
  EGET_TIMEOUT="timeout -k 1m 2m" && export EGET_TIMEOUT="$EGET_TIMEOUT"
  EGET_EXCLUDE="--asset \"^386\" --asset \"^aarch64\" --asset \"^apple\" --asset \"^arm\" --asset \"^AppImage\" --asset \"^asc\" --asset \"^crt\" --asset \"^darwin\" --asset \"^deb\" --asset \"^exe\" --asset \"^freebsd\" --asset \"^i686\" --asset \"^mac\" --asset \"^mips\" --asset \"^rpm\" --asset \"^pem\" --asset \"^sbom\" --asset \"^sha\" --asset \"^solaris\" --asset \"^sig\" --asset \"^symbol\" --asset \"^windows\"" && export EGET_EXCLUDE="$EGET_EXCLUDE"
 #User-Agent
- USER_AGENT="$(curl -qfsSL 'https://pub.ajam.dev/repos/Azathothas/Wordlists/Misc/User-Agents/ua_chrome_macos_latest.txt')" && export USER_AGENT="$USER_AGENT"
-#rClone [High Bandwidth Throughput]
-# --user-agent="$USER_AGENT" --buffer-size="100M" --s3-upload-concurrency="500" --s3-chunk-size="100M" --multi-thread-streams="500" --checkers="2000" --transfers="1000" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-#rClone [Low Bandwidth Throughput]
-# --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-##rClone
-#https://rclone.org/faq/#rclone-is-using-too-much-memory-or-appears-to-have-a-memory-leak
+ USER_AGENT="Toolpacks-Builder" && export USER_AGENT="$USER_AGENT"
+#Go GC pressure (many recipes build Go binaries)
  export GOGC="20"
 #-------------------------------------------------------#
 
 #-------------------------------------------------------#
 ##Init
  #Get
- INITSCRIPT="$(mktemp --tmpdir=$SYSTMP XXXXX_init.sh)" && export INITSCRIPT="$INITSCRIPT"
- curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Toolpacks/.github/scripts/x86_64_Linux/init_debian.sh" -o "$INITSCRIPT"
- chmod +xwr "$INITSCRIPT" && source "$INITSCRIPT"
+ INITSCRIPT="${TOOLPACKS_REPO}/.github/scripts/x86_64_Linux/init_debian.sh"
+ if [ ! -f "$INITSCRIPT" ]; then
+    echo -e "\n[-] FATAL: init script not found: ${INITSCRIPT}\n" ; exit 1
+ fi
+ export INITSCRIPT ; source "$INITSCRIPT"
  #Check
  if [ "$CONTINUE" != "YES" ]; then
       echo -e "\n[+] Failed To Initialize\n"
@@ -81,32 +83,6 @@ else
    eget --rate
    exit 1
 fi
-#rclone
-if command -v rclone &> /dev/null; then
-     if [ -s "$HOME/.rclone.conf" ] && [ ! -s "$HOME/.config/rclone/rclone.conf" ]; then
-        echo -e "\n[+] Setting Default rClone Config --> "$HOME/.config/rclone/rclone.conf"\n"
-         mkdir -p "$HOME/.config/rclone" && touch "$HOME/.config/rclone/rclone.conf"
-         cat "$HOME/.rclone.conf" > "$HOME/.config/rclone/rclone.conf"
-         dos2unix --quiet "$HOME/.config/rclone/rclone.conf"
-     elif [ -s "$HOME/.config/rclone/rclone.conf" ]; then
-        echo -e "\n[+] Using Default rClone Config --> "$HOME/.config/rclone/rclone.conf"\n"
-        dos2unix --quiet "$HOME/.config/rclone/rclone.conf"
-     else
-       echo -e "\n[-] rClone Config Not Found\n"      
-     fi
-   ##ENV VARS
-     export RCLONE_STATS="120s"
-else
-    echo -e "\n[-] rclone is NOT Installed"
-     if [ -s "$HOME/.rclone.conf" ]; then
-       echo -e "rClone Config --> "$HOME/.rclone.conf"\n"
-     elif [ -s "$HOME/.config/rclone/rclone.conf" ]; then
-       echo -e "rClone Config --> "$HOME/.config/rclone/rclone.conf"\n"
-     else
-       echo -e "[-] rClone Config Not Found\n"
-     fi
-  exit 1
-fi
 #-------------------------------------------------------#
 
 
@@ -119,58 +95,107 @@ fi
  #For Bins
  BINDIR="$SYSTMP/toolpack_x86_64" && export BINDIR="$BINDIR"
  rm -rf "$BINDIR" 2>/dev/null ; rm -rf "$BINDIR.7z" 2>/dev/null ; mkdir -p "$BINDIR"
+#-------------------------------------------------------#
+#Publish backend (GHCR via ORAS)
+ source "${TOOLPACKS_REPO}/.github/scripts/x86_64_Linux/ghcr_push.sh"
+ ghcr_login || echo -e "\n[!] GHCR login failed; builds will run but not publish\n"
+#-------------------------------------------------------#
 ##Build
 set +x
  BUILD="YES" && export BUILD="$BUILD"
- #ENV
- BUILDSCRIPT="$(mktemp --tmpdir=$SYSTMP XXXXX_build.sh)" && export BUILDSCRIPT="$BUILDSCRIPT"
- #Get URlS
- curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Toolpacks/.github/scripts/x86_64_Linux/bins/metadata.json" | jq -r '.[].source_url' | grep -i "\.sh$" | sort -u -o "$SYSTMP/BUILDURLS"
+ #Recipes and their scripts come from the checkout. Nothing is fetched.
+ RECIPES_FILE="${TOOLPACKS_REPO}/.github/scripts/x86_64_Linux/RECIPES.txt"
+ BINS_DIR="${TOOLPACKS_REPO}/.github/scripts/x86_64_Linux/bins"
+ LOGDIR="${TOOLPACKS_REPO}/x86_64-Linux/logs" && export LOGDIR="$LOGDIR"
+ RESULT_FILE="${SYSTMP}/RESULT.jsonl" && export RESULT_FILE="$RESULT_FILE"
+ export RECIPES_FILE BINS_DIR
+ mkdir -p "$LOGDIR" ; : > "$RESULT_FILE"
+ if [ ! -s "$RECIPES_FILE" ]; then
+    echo -e "\n[-] FATAL: allowlist not found: ${RECIPES_FILE}\n"
+    exit 1
+ fi
  #Run
-  echo -e "\n\n [+] Started Building at :: $(TZ='Asia/Kathmandu' date +'%A, %Y-%m-%d (%I:%M:%S %p)')\n\n"
-  #for BUILD_URL in $(cat "$SYSTMP/BUILDURLS"); do
-  #   #Init
-  #    START_TIME="$(date +%s)" && export START_TIME="$START_TIME"
-  #    echo -e "\n[+] Fetching : $BUILD_URL"
-  #   #Fetch 
-  #    curl -qfsSL "$BUILD_URL" -o "$BUILDSCRIPT"
-  #    chmod +xwr "$BUILDSCRIPT"
-  #   #Run 
-  #    source "$BUILDSCRIPT" || true
-  #    # "$BUILDSCRIPT"
-  #   #Clean & Purge
-  #    sudo rm -rf "$SYSTMP/toolpacks" 2>/dev/null
-  #    mkdir -p "$SYSTMP/toolpacks"
-  #   #Finish
-  #    END_TIME="$(date +%s)" && export END_TIME="$END_TIME"
-  #    #ELAPSED_TIME="$(date -u -d@"$((END_TIME - START_TIME))" +%T)" && export ELAPSED_TIME="$ELAPSED_TIME"
-  #    ELAPSED_TIME="$(date -u -d@"$((END_TIME - START_TIME))" "+%H(Hr):%M(Min):%S(Sec)")"
-  #    echo -e "\n[+] Completed (Building|Fetching) $BIN [$SOURCE_URL] :: $ELAPSED_TIME\n"
-  #done  
-  readarray -t RECIPES < "$SYSTMP/BUILDURLS"
+  echo -e "\n\n [+] Started Building at :: $(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC\n\n"
+  readarray -t RECIPES < "$RECIPES_FILE"
   unset TOTAL_RECIPES
-  TOTAL_RECIPES="${#RECIPES[@]}" && export TOTAL_RECIPES="${TOTAL_RECIPES}" ; echo -e "\n[+] Total RECIPES :: ${TOTAL_RECIPES}\n"
+  TOTAL_RECIPES="${#RECIPES[@]}" && export TOTAL_RECIPES="${TOTAL_RECIPES}"
+  echo -e "\n[+] Total RECIPES :: ${TOTAL_RECIPES}\n"
     for ((i=0; i<${#RECIPES[@]}; i++)); do
       #Init
         START_TIME="$(date +%s)" && export START_TIME="$START_TIME"
         RECIPE="${RECIPES[i]}"
         CURRENT_RECIPE=$((i+1))
-        echo -e "\n[+] Fetching : ${RECIPE} (${CURRENT_RECIPE}/${TOTAL_RECIPES})\n"
-      #Fetch
-        curl -qfsSL "${RECIPE}" -o "$BUILDSCRIPT"
-        chmod +xwr "$BUILDSCRIPT"
-      #Run 
-        source "$BUILDSCRIPT" || true
+        BUILDSCRIPT="${BINS_DIR}/${RECIPE}.sh" && export BUILDSCRIPT="$BUILDSCRIPT"
+        LOG="${LOGDIR}/${RECIPE}.log.txt"
+        echo -e "\n[+] Building : ${RECIPE} (${CURRENT_RECIPE}/${TOTAL_RECIPES})\n"
+        if [ ! -f "$BUILDSCRIPT" ]; then
+           echo -e "\n[-] MISSING RECIPE :: ${BUILDSCRIPT}\n"
+           printf '{"recipe":"%s","status":"missing","rc":127,"seconds":0,"produced":[]}\n' \
+             "$RECIPE" >> "$RESULT_FILE"
+           continue
+        fi
+      #Snapshot $BINDIR so we can tell what this recipe actually produced
+        BEFORE="$(find "$BINDIR" -maxdepth 1 -type f -printf '%f\n' 2>/dev/null | sort)"
+      #Run in a SUBSHELL.
+      # A recipe's sanity block ends in `exit 1`, and `exit` inside a sourced
+      # script exits the CALLING shell -- `|| true` cannot catch it, because
+      # `||` tests a return value and `exit` never returns. Sourced directly,
+      # one bad recipe would end the whole run while the job still exited 0.
+      # The subshell also stops env leaking between recipes.
+        ( timeout -k 60 20m bash -c 'source "$BUILDSCRIPT"' ) 2>&1 | tee "$LOG"
+        RC="${PIPESTATUS[0]}"
+      #Diff to get produced binaries
+        AFTER="$(find "$BINDIR" -maxdepth 1 -type f -printf '%f\n' 2>/dev/null | sort)"
+        PRODUCED="$(comm -13 <(echo "$BEFORE") <(echo "$AFTER") | grep -v '^$' || true)"
+      #Declared bins from the recipe's yaml
+        DECLARED="$(yq -r '.bins[]?' "${BINS_DIR}/${RECIPE}.yaml" 2>/dev/null | sort -u | grep -v '^$' || true)"
+      #Classify. "partial" (rc=0 but declared bins missing) is invisible to a
+      #plain exit-code check, and is the common real-world failure here.
+        if [ "$RC" -eq 124 ] || [ "$RC" -eq 137 ]; then
+           STATUS="timeout"
+        elif [ "$RC" -ne 0 ]; then
+           STATUS="fail"
+        elif [ -n "$DECLARED" ] && [ -n "$(comm -23 <(echo "$DECLARED") <(echo "$PRODUCED" | sort -u))" ]; then
+           STATUS="partial"
+        else
+           STATUS="ok"
+        fi
       #Clean & Purge
         sudo rm -rf "$SYSTMP/toolpacks" 2>/dev/null
         mkdir -p "$SYSTMP/toolpacks"
       #Finish
         END_TIME="$(date +%s)" && export END_TIME="$END_TIME"
-        #ELAPSED_TIME="$(date -u -d@"$((END_TIME - START_TIME))" +%T)" && export ELAPSED_TIME="$ELAPSED_TIME"
-        ELAPSED_TIME="$(date -u -d@"$((END_TIME - START_TIME))" "+%H(Hr):%M(Min):%S(Sec)")"
-      echo -e "\n[+] Completed (Building|Fetching) $BIN [$SOURCE_URL] :: $ELAPSED_TIME\n"  
+        SECONDS_TAKEN="$((END_TIME - START_TIME))"
+        ELAPSED_TIME="$(date -u -d@"${SECONDS_TAKEN}" "+%H(Hr):%M(Min):%S(Sec)")"
+        printf '{"recipe":"%s","status":"%s","rc":%s,"seconds":%s,"produced":[%s]}\n' \
+          "$RECIPE" "$STATUS" "$RC" "$SECONDS_TAKEN" \
+          "$(echo "$PRODUCED" | sed 's/.*/"&"/' | paste -sd, -)" >> "$RESULT_FILE"
+      #Strip + publish THIS recipe's output now, not at the end
+        if [ "$STATUS" = "ok" ] || [ "$STATUS" = "partial" ]; then
+           if [ -n "$PRODUCED" ]; then
+              while IFS= read -r _pf; do
+                  [ -n "$_pf" ] || continue
+                  chmod +xwr "${BINDIR}/${_pf}" 2>/dev/null
+                  case "$_pf" in
+                      *.no_strip) ;;
+                      *) strip --strip-debug --strip-dwo --strip-unneeded \
+                           --preserve-dates "${BINDIR}/${_pf}" 2>/dev/null ;;
+                  esac
+              done <<< "$PRODUCED"
+              unset _pf
+              mapfile -t _PFILES <<< "$PRODUCED"
+              ghcr_push_recipe "$RECIPE" "${_PFILES[@]}" || \
+                echo -e "\n[-] ${RECIPE}: publish failed\n"
+              unset _PFILES
+           fi
+        fi
+        echo -e "\n[+] Completed ${RECIPE} :: ${STATUS} (rc=${RC}) :: ${ELAPSED_TIME}\n"
+      #Reset per-recipe env so the next recipe cannot inherit it
+        unset BIN SOURCE_URL SKIP_BUILD DESCRIPTION BUILD_URL
     done
-  echo -e "\n\n [+] Finished Building at :: $(TZ='Asia/Kathmandu' date +'%A, %Y-%m-%d (%I:%M:%S %p)')\n\n"
+  echo -e "\n\n [+] Finished Building at :: $(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC\n\n"
+  echo -e "\n[+] Status Summary\n"
+  awk -F'"status":"' '{split($2,a,"\""); print a[1]}' "$RESULT_FILE" | sort | uniq -c | sort -rn
  #Check
  BINDIR_SIZE="$(du -sh "$BINDIR" 2>/dev/null | awk '{print $1}' 2>/dev/null)" && export "BINDIR_SIZE=$BINDIR_SIZE"
  if [ ! -d "$BINDIR" ] || [ -z "$(ls -A "$BINDIR")" ] || [ -z "$BINDIR_SIZE" ] || [[ "${BINDIR_SIZE}" == *K* ]]; then
@@ -198,141 +223,20 @@ set +x
  #Rename anything with *_amd*
  find "$BASEUTILSDIR" -type f -name '*_Linux' -exec sh -c 'newname=$(echo "$1" | sed "s/_amd_x86_64_Linux//"); mv "$1" "$newname"' sh {} \;
 #-------------------------------------------------------#
-#rClone Upload to R2 (bin.ajam.dev/x86_64_Linux) (x86_64_Linux) [Binaries]
- if command -v rclone &> /dev/null && [ -s "$HOME/.config/rclone/rclone.conf" ] && [ -d "$BINDIR" ] && [ "$(find "$BINDIR" -mindepth 1 -print -quit 2>/dev/null)" ]; then
-    #Upload [$BINDIR]
-      rclone_main_up()
-      {
-        echo -e "\n[+] Uploading Results to R2 (Main)\n" 
-         rclone copy "." "r2:/bin/x86_64_Linux/" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-      }
-      export -f rclone_main_up
-      cd "$BINDIR"
-      sleep 60 && rclone_main_up ; sleep 60 && rclone_main_up ; sleep 60 && rclone_main_up
-    #Upload [$BASEUTILSDIR]
-      rclone_base_up()
-      {
-        echo -e "\n[+] Uploading Results to R2 (Baseutils)\n"
-         cd "$BASEUTILSDIR" && rclone copy "." "r2:/bin/x86_64_Linux/Baseutils/" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-      }
-      export -f rclone_base_up
-      sleep 60 && rclone_base_up ; sleep 60 && rclone_base_up ; sleep 60 && rclone_base_up
-    ##Archive Binaries (.7z) (x86_64_Linux) Bins [Downstreamed RCLONE]
-       if command -v 7z &> /dev/null && [ -d "$BINDIR" ] && [ "$(find "$BINDIR" -mindepth 1 -print -quit 2>/dev/null)" ]; then
-            echo -e "\n\n[+] Purging Build Cache $SYSTMP/toolpacks --> Size :: $(du -sh $SYSTMP/toolpacks | awk '{print $1}')\n\n"
-             du -h --max-depth="1" "$SYSTMP" 2>/dev/null | sort -hr
-             rm -rf "$SYSTMP/toolpacks" 2>/dev/null
-          ##Fetch&Sync [$BINDIR]
-             cd "$BINDIR"
-             rclone delete "r2:/bin/x86_64_Linux/" --include "*.jq" --disable ListR --checkers="2000" --transfers="100" --progress
-             rclone lsf "r2:/bin/x86_64_Linux/" --dirs-only --fast-list --exclude "Baseutils/**" | xargs -I "{}" rclone delete "r2:/bin/x86_64_Linux/{}" --disable ListR --checkers="2000" --transfers="100" --progress
-             rclone delete "r2:/bin/" --include ".*" --disable ListR --checkers="2000" --transfers="100" --progress
-             rclone_main_dw()
-             {
-               rclone copy "r2:/bin/x86_64_Linux/" "." --exclude="Baseutils/**" --exclude="*.7z" --exclude="*.no_strip" --exclude="*.gz" --exclude="*.jq" --exclude="*.json" --exclude="*.log" --exclude="*.md" --exclude="*.tar" --exclude="*.tgz" --exclude="*.tmp" --exclude="*.txt" --exclude="*.upx" --exclude="*.zip" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-             }
-             export -f rclone_main_dw
-             sleep 60 && rclone_main_dw ; sleep 60 && rclone_main_dw ; sleep 60 && rclone_main_dw
-             #Strip || Cleanup
-              #Chmod +xwr
-              find "$BINDIR" -maxdepth 1 -type f -exec chmod +xwr {} \; 2>/dev/null
-              #Strip
-              find "$BINDIR" -maxdepth 1 -type f ! -name "*.no_strip" -exec strip --strip-debug --strip-dwo --strip-unneeded --preserve-dates "{}" \; 2>/dev/null
-              #Rename anything with *_amd*
-              find "$BINDIR" -type f -name '*_Linux' -exec sh -c 'newname=$(echo "$1" | sed "s/_amd_x86_64_Linux//"); mv "$1" "$newname"' sh {} \;
-             #File 
-               cd "$BINDIR" && find "./" -maxdepth 1 -type f | grep -v -E '\.jq$|\.log$|\.md$|\.png$|\.txt$|\.upx$' | sort | xargs file > "$SYSTMP/x86_64_Linux_FILE"
-               rclone copyto "$SYSTMP/x86_64_Linux_FILE" "r2:/bin/x86_64_Linux/FILE.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-             #Size (Dust)
-               dust --depth 1 --only-file --no-percent-bars --no-colors --ignore_hidden --reverse --number-of-lines 99999999 "$BINDIR" | tee "$SYSTMP/x86_64_Linux_SIZE.txt"
-               rclone copyto "$SYSTMP/x86_64_Linux_SIZE.txt" "r2:/bin/x86_64_Linux/SIZE.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-             #BLAKE3SUM
-               cd "$BINDIR" && find "./" -maxdepth 1 -type f | grep -v -E '\.jq$|\.log$|\.md$|\.png$|\.txt$|\.upx$' | sort | xargs b3sum > "$SYSTMP/x86_64_Linux_BLAKE3SUM"
-               rclone copyto "$SYSTMP/x86_64_Linux_BLAKE3SUM" "r2:/bin/x86_64_Linux/BLAKE3SUM.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-             #SHA256SUM
-               cd "$BINDIR" && find "./" -maxdepth 1 -type f | grep -v -E '\.jq$|\.log$|\.md$|\.png$|\.txt$|\.upx$' | sort | xargs sha256sum > "$SYSTMP/x86_64_Linux_SHA256SUM"
-               rclone copyto "$SYSTMP/x86_64_Linux_SHA256SUM" "r2:/bin/x86_64_Linux/SHA256SUM.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-           #Archive
-             7z a -t7z -mx="9" -mmt="$(($(nproc)+1))" -bt "$BINDIR.7z" "$BINDIR" 2>/dev/null
-           #Meta
-             du -sh "$BINDIR.7z" && file "$BINDIR.7z"
-          ##Fetch&Sync [$BASEUTILSDIR]
-             cd "$BASEUTILSDIR"
-             rclone_base_dw()
-             {
-               rclone copy "r2:/bin/x86_64_Linux/Baseutils/" "." --exclude="*.7z" --exclude="*.gz" --exclude="*.jq" --exclude="*.json" --exclude="*.log" --exclude="*.md" --exclude="*.png" --exclude="*.svg" --exclude="*.tar" --exclude="*.tgz" --exclude="*.txt" --exclude="*.tmp" --exclude="*.upx" --exclude="*.yaml" --exclude="*.zip" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-             }
-             export -f rclone_base_dw
-             sleep 60 && rclone_base_dw ; sleep 60 && rclone_base_dw ; sleep 60 && rclone_base_dw
-             #Strip || Cleanup
-              #Chmod +xwr
-              find "$BASEUTILSDIR" -type f -executable -exec chmod +xwr {} \; 2>/dev/null
-              #Strip
-              find "$BASEUTILSDIR" -type f -executable ! -name "*.no_strip" -exec strip --strip-debug --strip-dwo --strip-unneeded --preserve-dates "{}" \; 2>/dev/null
-              #Rename anything with *_amd*
-              find "$BASEUTILSDIR" -type f -name '*_Linux' -exec sh -c 'newname=$(echo "$1" | sed "s/_amd_x86_64_Linux//"); mv "$1" "$newname"' sh {} \;
-             #File 
-               cd "$BASEUTILSDIR" && find "./" -type f | grep -v '.txt' | sort | xargs file > "$SYSTMP/x86_64_Linux_Baseutils_FILE"
-               rclone copyto "$SYSTMP/x86_64_Linux_Baseutils_FILE" "r2:/bin/x86_64_Linux/Baseutils/FILE.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-             #Size (Dust)
-               dust --only-file --no-percent-bars --no-colors --ignore_hidden --reverse --number-of-lines 99999999 "$BASEUTILSDIR" | tee "$SYSTMP/x86_64_Linux_Baseutils_SIZE.txt"
-               rclone copyto "$SYSTMP/x86_64_Linux_Baseutils_SIZE.txt" "r2:/bin/x86_64_Linux/Baseutils/SIZE.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-             #BLAKE3SUM
-               cd "$BASEUTILSDIR" && find "./" -type f | grep -v '.txt' | sort | xargs b3sum > "$SYSTMP/x86_64_Linux_Baseutils_BLAKE3SUM"
-               rclone copyto "$SYSTMP/x86_64_Linux_Baseutils_BLAKE3SUM" "r2:/bin/x86_64_Linux/Baseutils/BLAKE3SUM.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-             #SHA256SUM
-               cd "$BASEUTILSDIR" && find "./" -type f | grep -v '.txt' | sort | xargs sha256sum > "$SYSTMP/x86_64_Linux_Baseutils_SHA256SUM"
-               rclone copyto "$SYSTMP/x86_64_Linux_Baseutils_SHA256SUM" "r2:/bin/x86_64_Linux/Baseutils/SHA256SUM.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-           #Archive
-             7z a -t7z -mx="9" -mmt="$(($(nproc)+1))" -bt "$BASEUTILSDIR.7z" "$BASEUTILSDIR" 2>/dev/null
-           #Meta
-             du -sh "$BASEUTILSDIR.7z" && file "$BASEUTILSDIR.7z"
-       fi
-  else
-   ##Archive Binaries (.7z) (x86_64_Linux) Bins [Only Local]
-     if command -v 7z &> /dev/null && [ -d "$BINDIR" ] && [ "$(find "$BINDIR" -mindepth 1 -print -quit 2>/dev/null)" ]; then
-          echo -e "\n\n[+] Purging Build Cache $SYSTMP/toolpacks --> Size :: $(du -sh $SYSTMP/toolpacks | awk '{print $1}')\n\n"
-           du -h --max-depth="1" "$SYSTMP" 2>/dev/null | sort -hr
-           rm -rf "$SYSTMP/toolpacks" 2>/dev/null ; mkdir -p "$SYSTMP/toolpacks"
-         #Archive [$BINDIR]
-           7z a -t7z -mx="9" -mmt="$(($(nproc)+1))" -bt "$BINDIR.7z" "$BINDIR" 2>/dev/null
-         #Meta
-           du -sh "$BINDIR.7z" && file "$BINDIR.7z"
-         #Archive [$BASEUTILSDIR]
-           7z a -t7z -mx="9" -mmt="$(($(nproc)+1))" -bt "$BASEUTILSDIR.7z" "$BASEUTILSDIR" 2>/dev/null
-         #Meta
-           du -sh "$BASEUTILSDIR.7z" && file "$BASEUTILSDIR.7z"
-     fi
- fi
-#-------------------------------------------------------# 
- if command -v rclone &> /dev/null && [ -s "$HOME/.config/rclone/rclone.conf" ] && [ -s "$BINDIR.7z" ]; then
- #rClone Upload Toolpacks to R2 (bin.ajam.dev/x86_64_Linux/_toolpack_x86_64.7z) [Archive]
-     #Upload
-      echo -e "\n[+] Uploading Results to R2 (rclone)\n"
-      rclone copyto "$BINDIR.7z" "r2:/bin/x86_64_Linux/_toolpack_x86_64.7z" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-     #BLAKE3SUM
-      cd "$SYSTMP/" && /bin/bash -l -c 'PS4="$ ";b3sum ./toolpack_x86_64.7z | grep -v '.txt' ' &> "$SYSTMP/_toolpack_x86_64_BLAKE3SUM"
-      rclone copyto "$SYSTMP/_toolpack_x86_64_BLAKE3SUM" "r2:/bin/x86_64_Linux/_toolpack_x86_64_BLAKE3SUM.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-     #SHA256SUM
-      cd "$SYSTMP/" && /bin/bash -l -c 'PS4="$ ";sha256sum ./toolpack_x86_64.7z | grep -v '.txt' ' &> "$SYSTMP/_toolpack_x86_64_SHA256SUM"
-      rclone copyto "$SYSTMP/_toolpack_x86_64_SHA256SUM" "r2:/bin/x86_64_Linux/_toolpack_x86_64_SHA256SUM.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
- #rClone Upload Toolpacks to R2 (bin.ajam.dev/x86_64_Linux/_baseutils_x86_64.7z) [Archive]
-     #Upload
-      echo -e "\n[+] Uploading Results to R2 (rclone)\n"
-      rclone copyto "$BASEUTILSDIR.7z" "r2:/bin/x86_64_Linux/Baseutils/_baseutils_x86_64.7z" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-     #BLAKE3SUM
-      cd "$SYSTMP/" && /bin/bash -l -c 'PS4="$ ";b3sum ./baseutils_x86_64.7z | grep -v '.txt' ' &> "$SYSTMP/_baseutils_x86_64_BLAKE3SUM"
-      rclone copyto "$SYSTMP/_baseutils_x86_64_BLAKE3SUM" "r2:/bin/x86_64_Linux/Baseutils/_baseutils_x86_64_BLAKE3SUM.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-     #SHA256SUM
-      cd "$SYSTMP/" && /bin/bash -l -c 'PS4="$ ";sha256sum ./baseutils_x86_64.7z | grep -v '.txt' ' &> "$SYSTMP/_baseutils_x86_64_SHA256SUM"
-      rclone copyto "$SYSTMP/_baseutils_x86_64_SHA256SUM" "r2:/bin/x86_64_Linux/Baseutils/_baseutils_x86_64_SHA256SUM.txt" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
- fi
+#Publish
+# Binaries are pushed to GHCR per-recipe, inside the build loop above, so a
+# run that dies part-way has already published everything built before it.
+# There is deliberately no upload step here: rebuilding the published set
+# from $BINDIR at the end is exactly the union bug that R2 required and GHCR
+# makes unnecessary.
 #-------------------------------------------------------#
 #META
- echo -e "\n\n[+] Size $BINDIR --> $(du -sh $BINDIR | awk '{print $1}')"
- echo -e "[+] Size $BINDIR.7z --> $(du -sh $BINDIR.7z | awk '{print $1}')\n\n"
- echo -e "\n\n[+] Size $BASEUTILSDIR --> $(du -sh $BASEUTILSDIR | awk '{print $1}')"
- echo -e "[+] Size $BASEUTILSDIR.7z --> $(du -sh $BASEUTILSDIR.7z | awk '{print $1}')\n\n"  
+ echo -e "\n\n[+] Size $BINDIR --> $(du -sh "$BINDIR" 2>/dev/null | awk '{print $1}')"
+ echo -e "[+] Binaries --> $(find "$BINDIR" -maxdepth 1 -type f 2>/dev/null | wc -l)\n\n"
+ if [ -s "$RESULT_FILE" ]; then
+    echo -e "[+] Per-recipe results --> ${RESULT_FILE}\n"
+ fi
+#-------------------------------------------------------#
 #-------------------------------------------------------# 
 #GH Runner
  if [ "$USER" = "runner" ] || [ "$(whoami)" = "runner" ]; then
