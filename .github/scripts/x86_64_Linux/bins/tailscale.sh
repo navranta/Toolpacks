@@ -33,7 +33,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
         #Setup ENV
          tempdir="$(mktemp -d)" ; mkdir -p "$tempdir" && cd "$tempdir"
          mkdir -p "/build-bins"
-         # apk's go drags a gcc-15 chain that conflicts with the image's
+         # NOTE: apk go package drags a gcc-15 chain that conflicts with the image g++-14 world
          # g++-14 world (solver ERROR); official tarball instead (pinned).
          curl -qfsSL "https://go.dev/dl/go1.27.1.linux-amd64.tar.gz" -o "/tmp/go.tgz" && tar -xzf "/tmp/go.tgz" -C "/usr/local" && export PATH="/usr/local/go/bin:$PATH"
         #Build
