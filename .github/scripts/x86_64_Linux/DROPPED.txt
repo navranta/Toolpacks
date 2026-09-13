@@ -1,0 +1,24 @@
+# Recipes deliberately excluded from the build.
+#
+# Every name here must be either an existing bins/<name>.sh or a tool the
+# installers request that no recipe produces. gen_recipes.sh enforces that,
+# so a typo cannot silently fail to drop anything.
+#
+# The matching lines must also be removed from the installers in the Arsenal
+# fork, or users will curl a 404.
+
+# Builds nothing. Re-downloads prebuilt AppImages from a third-party CDN
+# (pkg.ajam.dev), which this project no longer depends on. It was the only
+# genuine third-party-host dependency among the in-scope recipes.
+# Removing it also drops: magick.no_strip, imagemagick.no_strip,
+# magick_appbundle.no_strip
+magick
+
+# Not needed. Was the sole user of the azathothas/debian-builder-unstable
+# Docker image; dropping it leaves exactly one external builder image.
+# Removing it also drops: hf-cli
+huggingface-cli
+
+# Not needed. Was the sole host-side user of PyInstaller; dropping it removes
+# PyInstaller, Nuitka and Pex from the toolchain entirely.
+archey

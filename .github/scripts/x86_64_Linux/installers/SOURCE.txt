@@ -1,0 +1,13 @@
+Vendored copies of the two Arsenal installers that define this build's scope.
+
+Source (upstream, archived):
+  https://github.com/Azathothas/Arsenal/blob/main/misc/Linux/install_dev_tools.sh
+  https://github.com/Azathothas/Arsenal/blob/main/misc/Linux/install_bb_tools.sh
+
+Retrieved: 2026-09-13
+
+These are vendored, not fetched, so gen_recipes.sh is hermetic and the
+blackhole CI job (no external network) can still validate RECIPES.txt.
+
+When the installers change in the Arsenal fork, update these copies in the
+same commit that updates RECIPES.txt.
