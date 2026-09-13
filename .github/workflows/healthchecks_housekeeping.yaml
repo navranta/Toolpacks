@@ -115,6 +115,25 @@ jobs:
           fi
           echo "::notice::no third-party cache references"
 
+      - name: Container builder image stays pinned
+        run: |
+          set -uo pipefail
+          # 14 recipes build inside azathothas/alpine-builder, an image on a
+          # third-party account. An unpinned :latest with --pull=always means
+          # the build silently changes under us; pinning makes a bump a
+          # deliberate, reviewable commit.
+          rc=0
+          if grep -rn 'alpine-builder:latest' .github/scripts/x86_64_Linux/bins/ 2>/dev/null; then
+            echo "::error::alpine-builder must be pinned to a dated tag, not :latest"
+            rc=1
+          fi
+          if grep -rn -- '--pull="always"' .github/scripts/x86_64_Linux/bins/ 2>/dev/null; then
+            echo "::error::--pull=always defeats the pin"
+            rc=1
+          fi
+          [ "$rc" -eq 0 ] && echo "::notice::builder image is pinned"
+          exit "$rc"
+
       - name: Toolchain trim still holds
         run: |
           set -uo pipefail

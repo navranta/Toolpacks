@@ -28,7 +28,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
       #Build (alpine-musl)
        pushd "$($TMPDIRS)" >/dev/null 2>&1
        docker stop "alpine-builder" 2>/dev/null ; docker rm "alpine-builder" 2>/dev/null
-       docker run --privileged --net="host" --name "alpine-builder" --pull="always" "azathothas/alpine-builder:latest" \
+       docker run --privileged --net="host" --name "alpine-builder" "azathothas/alpine-builder:v2025.01.02" \
         bash -l -c '
         #Setup ENV
          mkdir -p "/build-bins" && pushd "$(mktemp -d)" >/dev/null 2>&1
