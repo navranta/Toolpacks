@@ -33,7 +33,7 @@
      if command -v sudo &> /dev/null && sudo -n true 2>/dev/null; then export SUDO="sudo"; else export SUDO=""; fi
  fi
 #Registry
- export GHCR_OWNER="${GHCR_OWNER:-UNSET}"
+ export GHCR_OWNER="${GHCR_OWNER:-navranta}"
  export GHCR_NAMESPACE="${GHCR_NAMESPACE:-toolpacks}"
  export REGISTRY="${REGISTRY:-ghcr.io}"
  if [ -z "${GHCR_OWNER}" ] || [ "${GHCR_OWNER}" = "UNSET" ]; then

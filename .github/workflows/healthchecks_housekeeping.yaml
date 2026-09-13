@@ -97,7 +97,9 @@ jobs:
           set -euo pipefail
           cd .github/scripts/x86_64_Linux
           ./gen_recipes.sh --check
-          ./gen_installers.sh --check
+          # Installers bake the hosting owner as default; the check must
+          # generate with the same owner this repo publishes under.
+          GHCR_OWNER="$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')" ./gen_installers.sh --check
           ./prebuilts/fetch.sh --verify
 
       - name: No external binary cache has crept back in

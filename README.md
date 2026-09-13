@@ -142,7 +142,7 @@ Add or remove a tool in `installers/upstream/`, or add a reason to
 
 ```bash
 cd .github/scripts/x86_64_Linux
-./gen_recipes.sh && ./gen_installers.sh
+./gen_recipes.sh && GHCR_OWNER=<github-user-or-org> ./gen_installers.sh
 ```
 
 Never edit `RECIPES.txt` or `installers/install_*.sh` by hand.

@@ -43,7 +43,9 @@ jobs:
           # Regenerating from the upstream installers proves the allowlist
           # still matches what they actually ask for.
           ./gen_recipes.sh --check
-          ./gen_installers.sh --check
+          # Installers bake the hosting owner as default; generate the
+          # check with this repo's owner so forks check against themselves.
+          GHCR_OWNER="$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')" ./gen_installers.sh --check
           ./prebuilts/fetch.sh --verify
           N="$(wc -l < RECIPES.txt)"
           echo "recipe_count=${N}" >> "$GITHUB_OUTPUT"
