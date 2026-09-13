@@ -40,12 +40,13 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
          git clone --quiet --filter "blob:none" "https://github.com/zyedidia/eget" && cd "./eget"
          GOOS="linux" GOARCH="amd64" CGO_ENABLED="1" CGO_CFLAGS="-O2 -flto=auto -fPIE -fpie -static -w -pipe" go build -v -trimpath -buildmode="pie" -ldflags="-s -w -buildid= -linkmode=external -extldflags '\''-s -w -static-pie -Wl,--build-id=none'\''"
         #strip & info
-         strip "./eget" ; cp "./eget" "/build-bins/eget"
+         strip "./eget" ; cp -v "./eget" "/build-bins/eget" ; ls -la "/build-bins/"
         '
       #Copy
+       echo "DOCKER_RUN_RC=$?"
        docker cp "alpine-builder:/build-bins/." "$(pwd)/"
        #Meta 
-       file "./eget" && du -sh "./eget" ; cp "./eget" "$BINDIR/eget"
+       file "./eget" && du -sh "./eget" ; cp -v "./eget" "$BINDIR/eget"
       #Delete Containers
        docker stop "alpine-builder" 2>/dev/null ; docker rm "alpine-builder"
        popd >/dev/null 2>&1

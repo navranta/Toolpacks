@@ -41,12 +41,13 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
          GOOS="linux" GOARCH="amd64" CGO_ENABLED="1" CGO_CFLAGS="-O2 -flto=auto -fPIE -fpie -static -w -pipe" go build -v -trimpath -buildmode="pie" -ldflags="-s -w -buildid= -linkmode=external -extldflags '\''-s -w -static-pie -Wl,--build-id=none'\''"
         #strip & info
          strip "./yq"
-         cp "./yq" "/build-bins/yq"
+         cp -v "./yq" "/build-bins/yq" ; ls -la "/build-bins/"
         '
       #Copy
+       echo "DOCKER_RUN_RC=$?"
        docker cp "alpine-builder:/build-bins/yq" "./yq"
        #Meta 
-       file "./yq" && du -sh "./yq" ; cp "./yq" "$BINDIR/yq"
+       file "./yq" && du -sh "./yq" ; cp -v "./yq" "$BINDIR/yq"
       #Delete Containers
        docker stop "alpine-builder" 2>/dev/null ; docker rm "alpine-builder"
        popd >/dev/null 2>&1
