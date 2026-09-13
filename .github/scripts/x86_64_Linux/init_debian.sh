@@ -19,7 +19,9 @@
 
 #-------------------------------------------------------#
 ##ENV
- SYSTMP="$(dirname $(mktemp -u))" && export SYSTMP="$SYSTMP"
+ # Honor a pre-set SYSTMP (CI exports RUNNER_TEMP so RESULT.jsonl lands
+ # where artifacts upload it from); default keeps local behavior.
+ SYSTMP="${SYSTMP:-$(dirname $(mktemp -u))}" && export SYSTMP="$SYSTMP"
 # Absolute dir of THIS script, captured before any pushd/cd below.
 # (dirname "${BASH_SOURCE[0]}") is relative when invoked as
 # `bash ./init_debian.sh`, so it must be resolved now, not late.

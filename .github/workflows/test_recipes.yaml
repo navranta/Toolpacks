@@ -1,0 +1,111 @@
+name: "🧪 Test recipes (fast loop)"
+
+# Fast validation for recipe fixes: runs ONLY_RECIPES through the real
+# build_debian.sh (same accounting, same per-recipe timeouts) without
+# waiting for a full 133-recipe run. Init (~7.5 min) is the floor.
+#
+# push_test=false (default): GHCR_PUSH=NO, pure build validation.
+# push_test=true: publishes to the `toolpacks-test` namespace so the ORAS
+#   path is exercised with zero pollution of the real cache.
+
+#MARK: TRIGGER
+on:
+  workflow_dispatch:
+    inputs:
+      recipes:
+        description: "Space-separated recipe names (must be in RECIPES.txt, max ~10 per run)"
+        required: false
+        default: "7z csvtk ncdu sttr"
+      push_test:
+        description: "Publish to GHCR test namespace?"
+        required: false
+        default: false
+        type: boolean
+
+#MARK: ENV
+env:
+  GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+  GHCR_NAMESPACE: "toolpacks"
+  GHCR_OWNER_TYPE: "user"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          filter: "blob:none"
+
+      - name: Blackhole every external binary cache
+        run: |
+          echo "127.0.0.1 pub.ajam.dev bin.ajam.dev pkg.ajam.dev bin.pkgforge.dev" \
+            | sudo tee -a /etc/hosts
+
+      - name: Debloat runner
+        run: |
+          sudo rm -rf "/usr/local/lib/android" "/usr/share/dotnet" "/opt/ghc" \
+                      "/usr/local/share/boost" "/usr/share/swift" \
+                      "/opt/hostedtoolcache" 2>/dev/null || true
+          df -h /
+
+      - name: TEST
+        env:
+          GHCR_PUSH: "YES"
+          ONLY_RECIPES: "${{ inputs.recipes }}"
+        run: |
+          set -uo pipefail
+          # Test namespace unless explicitly pushing for real (which only
+          # the main build workflow does).
+          if [ "${{ inputs.push_test }}" != "true" ]; then
+            export GHCR_NAMESPACE="toolpacks-test"
+          fi
+          # SYSTMP must be RUNNER_TEMP so RESULT.jsonl survives via artifacts.
+          export SYSTMP="${RUNNER_TEMP}"
+          bash "${GITHUB_WORKSPACE}/.github/scripts/x86_64_Linux/build_debian.sh" \
+            2>&1 | tee "${RUNNER_TEMP}/BUILD.log.txt"
+          BUILD_RC="${PIPESTATUS[0]}"
+          mkdir -p "${RUNNER_TEMP}/out/logs"
+          cp -f "${RUNNER_TEMP}/BUILD.log.txt" "${RUNNER_TEMP}/out/" 2>/dev/null || true
+          cp -f "${RUNNER_TEMP}/RESULT.jsonl" "${RUNNER_TEMP}/out/" 2>/dev/null || true
+          cp -f "${GITHUB_WORKSPACE}/x86_64-Linux/logs/"*.log.txt "${RUNNER_TEMP}/out/logs/" 2>/dev/null || true
+          tar -czf "${RUNNER_TEMP}/x86_64-output.tar.gz" -C "${RUNNER_TEMP}/out" .
+          exit "$BUILD_RC"
+
+      - name: Report results
+        if: always()
+        run: |
+          set -uo pipefail
+          R="${RUNNER_TEMP}/RESULT.jsonl"
+          if [ ! -s "$R" ]; then
+            echo "::error::no RESULT.jsonl -- see BUILD step logs"
+            exit 1
+          fi
+          {
+            echo "### Test results (\`${{ inputs.recipes }}\`)"
+            echo ""
+            echo "| recipe | status | seconds |"
+            echo "|---|---|---|"
+            jq -r '"| `\(.recipe)` | \(.status) | \(.seconds)s |"' "$R"
+          } >> "$GITHUB_STEP_SUMMARY"
+          BAD="$(jq -r '[.[] | select(.status=="fail" or .status=="timeout" or .status=="missing")] | length' "$R")"
+          if [ "$BAD" -gt 0 ]; then
+            echo "::error::${BAD} recipe(s) failed"
+            exit 1
+          fi
+          PARTIAL="$(jq -r '[.[] | select(.status=="partial")] | length' "$R")"
+          echo "::notice::done, ${PARTIAL} partial (rc=0 but declared bins missing)"
+
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: "test-recipes-output"
+          path: |
+            ${{ runner.temp }}/x86_64-output.tar.gz
+          retention-days: 14
+          if-no-files-found: warn

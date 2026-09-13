@@ -119,6 +119,18 @@ set +x
  #Run
   echo -e "\n\n [+] Started Building at :: $(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC\n\n"
   readarray -t RECIPES < "$RECIPES_FILE"
+  # Fast loop: ONLY_RECIPES="foo bar" restricts the run to a subset
+  # (used by the test-recipes workflow). Unknown names fail fast.
+  if [ -n "${ONLY_RECIPES:-}" ]; then
+     readarray -t _WANT <<< "$(printf '%s\n' ${ONLY_RECIPES})"
+     for _w in "${_WANT[@]}"; do
+        [ -n "$_w" ] || continue
+        printf '%s\n' "${RECIPES[@]}" | grep -qxF "$_w" || \
+          { echo -e "\n[-] FATAL: unknown recipe in ONLY_RECIPES: ${_w}\n"; exit 1; }
+     done
+     readarray -t RECIPES <<< "$(printf '%s\n' "${_WANT[@]}")"
+     unset _WANT _w
+  fi
   unset TOTAL_RECIPES
   TOTAL_RECIPES="${#RECIPES[@]}" && export TOTAL_RECIPES="${TOTAL_RECIPES}"
   echo -e "\n[+] Total RECIPES :: ${TOTAL_RECIPES}\n"
