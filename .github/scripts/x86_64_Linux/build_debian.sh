@@ -149,7 +149,8 @@ set +x
            continue
         fi
       #Snapshot $BINDIR so we can tell what this recipe actually produced
-        BEFORE="$(find "$BINDIR" -maxdepth 1 -type f -printf '%f\n' 2>/dev/null | sort)"
+       echo "[i] ${RECIPE}: BINDIR pre $(stat -c '%U:%G %a' "$BINDIR" 2>/dev/null || echo MISSING) avail $(df -h "$BINDIR" 2>/dev/null | tail -1 | awk '{print $4}')"
+       BEFORE="$(find "$BINDIR" -maxdepth 1 -type f -printf '%f\n' 2>/dev/null | sort)"
       #Run in a SUBSHELL.
       # A recipe's sanity block ends in `exit 1`, and `exit` inside a sourced
       # script exits the CALLING shell -- `|| true` cannot catch it, because
