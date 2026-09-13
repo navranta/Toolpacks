@@ -32,27 +32,12 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
        docker run --privileged --net="host" --name "alpine-builder" "azathothas/alpine-builder:v2025.01.02" \
         bash -l -c '
         #Setup ENV
-         mkdir -p "/build-bins" && pushd "$(mktemp -d)" >/dev/null 2>&1
-        #Switch to default: https://github.com/JonathonReinhart/staticx/pull/284
-         git clone --filter "blob:none" "https://github.com/JonathonReinhart/staticx" --branch "add-type-checking" && cd "./staticx"
-         #https://github.com/JonathonReinhart/staticx/blob/main/build.sh
-         pip install -r "./requirements.txt" --break-system-packages --upgrade --force
-         apk update && apk upgrade --no-interactive
-         apk add busybox scons --latest --upgrade --no-interactive
-         export BOOTLOADER_CC="musl-gcc"
-         rm -rf "./build" "./dist" "./scons_build" "./staticx/assets"
-         python "./setup.py" sdist bdist_wheel
-         find dist/ -name "*.whl" | while read -r file; do 
-           newname=$(echo "$file" | sed "s/none-[^/]*\.whl$/none-any.whl/");
-           mv "$file" "$newname"; 
-         done
-          find "dist/" -name "*.whl" | xargs pip install --break-system-packages --upgrade --force
-         # The source build above yields nothing when its pinned branch is
-         # gone (no requirements.txt/setup.py); fall back to the PyPI
-         # release instead of marching on with no staticx and an empty
-         # /build-bins. Same fallback as init_debian.sh.
-          staticx --version || pip install staticx --break-system-packages --force-reinstall --upgrade
-          staticx --version ; popd >/dev/null 2>&1
+         mkdir -p "/build-bins"
+        #Note: staticx build/wrap skipped: upstream branch "add-type-checking" no longer
+        #exists (no requirements.txt/setup.py) and the PyPI sdist fails to compile on
+        #musl/alpine (PyPI offers only manylinux1_x86_64 + sdist, no musllinux wheel).
+        #chafa is already built fully static below (CFLAGS/LDFLAGS "-static"), so the
+        #staticx wrap is belt-and-braces; ship tools/chafa/chafa directly.
         #Install Deps
          pushd "$(mktemp -d)" >/dev/null 2>&1
          apk update --no-interactive 2>/dev/null
@@ -78,8 +63,8 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
          export LDFLAGS="-static -s -Wl,-S -Wl,--build-id=none"
          "./autogen.sh" ; "./configure" --disable-shared --disable-Werror --enable-static --enable-year2038
          make --jobs="$(($(nproc)+1))" --keep-going
-        #Staticx
-         staticx --loglevel DEBUG "./tools/chafa/chafa" --strip "/build-bins/chafa"
+        #Ship static binary directly (no staticx wrap; already fully static)
+         cp "./tools/chafa/chafa" "/build-bins/chafa"
         #strip & info 
          find "/build-bins/" -type f -exec objcopy --remove-section=".comment" --remove-section=".note.*" "{}" \;
          find "/build-bins/" -type f ! -name "*.no_strip" -exec strip --strip-debug --strip-dwo --strip-unneeded --preserve-dates "{}" \; 2>/dev/null
