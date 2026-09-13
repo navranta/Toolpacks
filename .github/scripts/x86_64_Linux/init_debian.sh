@@ -20,6 +20,10 @@
 #-------------------------------------------------------#
 ##ENV
  SYSTMP="$(dirname $(mktemp -u))" && export SYSTMP="$SYSTMP"
+# Absolute dir of THIS script, captured before any pushd/cd below.
+# (dirname "${BASH_SOURCE[0]}") is relative when invoked as
+# `bash ./init_debian.sh`, so it must be resolved now, not late.
+ INIT_SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)" && export INIT_SCRIPT_DIR="$INIT_SCRIPT_DIR"
  USER="$(whoami)" && export USER="$USER"
  HOME="$(getent passwd $USER | cut -d: -f6)" && export HOME="$HOME"
 #-------------------------------------------------------# 
@@ -180,7 +184,7 @@
           pip install build cffi scons scuba pytest --upgrade --force 2>/dev/null ; pip install ansi2txt pipx scons py2static typer --upgrade --force 2>/dev/null
           pip install build cffi scons scuba pytest --break-system-packages --upgrade --force 2>/dev/null ; pip install ansi2txt pipx scons py2static typer --break-system-packages --upgrade --force 2>/dev/null
          ##Addons (vendored prebuilts + upstream releases; no third-party cache)
-          PREBUILTS="$(dirname "${BASH_SOURCE[0]}")/prebuilts"
+          PREBUILTS="${INIT_SCRIPT_DIR}/prebuilts"
           if [ ! -d "${PREBUILTS}" ]; then
              echo -e "\n[-] FATAL: prebuilts/ not found at ${PREBUILTS}\n"
              export CONTINUE="NO" && exit 1
