@@ -88,14 +88,26 @@ jobs:
           START="$(date +%s)"
           bash ./init_debian.sh
           echo "::notice::init_debian.sh took $(( $(date +%s) - START ))s"
-          # 7z is a ~1s eget fetch; chafa exercises the alpine-builder path.
-          export BINDIR="${RUNNER_TEMP}/bins" && mkdir -p "$BINDIR"
+          # Recipes sanity-check the same env build_debian.sh sets (its ENV
+          # block). Without it every recipe exits 1 with "[+]Skipping
+          # Builds..." and the smoke test proves nothing. Keep in sync.
           export SYSTMP="${RUNNER_TEMP}"
+          export BINDIR="${RUNNER_TEMP}/bins" && mkdir -p "$BINDIR"
+          export BUILD="YES"
+          export EGET_TIMEOUT="timeout -k 1m 2m"
+          export EGET_EXCLUDE="--asset \"^386\" --asset \"^aarch64\" --asset \"^apple\" --asset \"^arm\" --asset \"^AppImage\" --asset \"^asc\" --asset \"^crt\" --asset \"^darwin\" --asset \"^deb\" --asset \"^exe\" --asset \"^freebsd\" --asset \"^i686\" --asset \"^mac\" --asset \"^mips\" --asset \"^rpm\" --asset \"^pem\" --asset \"^sbom\" --asset \"^sha\" --asset \"^solaris\" --asset \"^sig\" --asset \"^symbol\" --asset \"^windows\""
+          export GIT_TERMINAL_PROMPT="0"
+          export GIT_ASKPASS="/bin/echo"
+          export TMPDIRS="mktemp -d --tmpdir=$SYSTMP/toolpacks XXXXXXX_linux_x86_64"
+          mkdir -p "$SYSTMP/toolpacks"
+          # 7z is a ~1s eget fetch; chafa exercises the alpine-builder path.
+          FAIL=0
           for r in 7z chafa; do
             ( timeout -k 60 20m bash -c "source ./bins/${r}.sh" ) || \
-              echo "::error::smoke recipe ${r} failed with no external cache"
+              { echo "::error::smoke recipe ${r} failed with no external cache"; FAIL=1; }
           done
           ls -la "$BINDIR"
+          exit "$FAIL"
 
 #MARK: BUILD
   build:
