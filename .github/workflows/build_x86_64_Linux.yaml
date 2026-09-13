@@ -3,6 +3,12 @@ name: "🐧 Build x86_64-Linux 🐧"
 #MARK: TRIGGER
 on:
   workflow_dispatch:
+    inputs:
+      smoke_only:
+        description: "Run prepare + smoke only (skip build + finalize)"
+        required: false
+        default: false
+        type: boolean
   schedule:
     # Monthly. The old weekly cadence existed because R2 was cheap to
     # overwrite; at ~1.2h of build for 133 recipes, monthly is plenty.
@@ -93,6 +99,7 @@ jobs:
 
 #MARK: BUILD
   build:
+    if: ${{ !inputs.smoke_only }}
     runs-on: ubuntu-latest
     needs: [prepare]
     # ~1.2h serial for 133 recipes; 300 keeps margin under the 360 cap.
@@ -144,7 +151,7 @@ jobs:
   finalize:
     runs-on: ubuntu-latest
     needs: [prepare, build]
-    if: always()
+    if: ${{ always() && !inputs.smoke_only }}
     timeout-minutes: 60
     permissions:
       contents: write
