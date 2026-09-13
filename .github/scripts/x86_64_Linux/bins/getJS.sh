@@ -23,14 +23,11 @@ export SKIP_BUILD="NO" #YES, in case of deleted repos, broken builds etc
 if [ "${SKIP_BUILD}" == "NO" ]; then
       #getJS : A tool to fastly get all javascript sources/files  
      export BIN="getJS" #Name of final binary/pkg/cli, sometimes differs from $REPO
-     export SOURCE_URL="https://github.com/Azathothas/Arsenal" #github/gitlab/homepage/etc for $BIN
+      export SOURCE_URL="https://github.com/003random/getJS" #github/gitlab/homepage/etc for $BIN
      echo -e "\n\n [+] (Building | Fetching) ${BIN} :: ${SOURCE_URL} [$(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC]\n"
       #Build 
-       pushd "$($TMPDIRS)" >/dev/null 2>&1 && mkdir getJS && cd "./getJS"
-       curl -qfsSLJO "https://raw.githubusercontent.com/Azathothas/Arsenal/main/getJS/main.go"
-       curl -qfsSLJO "https://raw.githubusercontent.com/Azathothas/Arsenal/main/getJS/go.mod"
-       go get "github.com/Azathothas/Arsenal/getJS"
-       GOOS="linux" GOARCH="amd64" CGO_ENABLED="0" go build -v -ldflags="-buildid= -s -w -extldflags '-static'" -o "./getJS" ; cp "./getJS" "$BINDIR/getJS" ; popd >/dev/null 2>&1 ; go clean -cache -fuzzcache -modcache
+        pushd "$($TMPDIRS)" >/dev/null 2>&1 && git clone --quiet --filter "blob:none" "https://github.com/003random/getJS" && cd "./getJS"
+        GOOS="linux" GOARCH="amd64" CGO_ENABLED="0" go build -v -ldflags="-buildid= -s -w -extldflags '-static'" -o "./getJS" ; cp "./getJS" "$BINDIR/getJS" ; popd >/dev/null 2>&1 ; go clean -cache -fuzzcache -modcache
 fi
 #-------------------------------------------------------#
 

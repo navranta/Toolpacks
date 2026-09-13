@@ -23,13 +23,13 @@ export SKIP_BUILD="NO" #YES, in case of deleted repos, broken builds etc
 if [ "${SKIP_BUILD}" == "NO" ]; then
     #fget : Multithread download for a list of files.
      export BIN="fget" #Name of final binary/pkg/cli, sometimes differs from $REPO
-     export SOURCE_URL="https://github.com/Azathothas/Arsenal" #github/gitlab/homepage/etc for $BIN
+      export SOURCE_URL="https://github.com/pkgforge-security/fget" #github/gitlab/homepage/etc for $BIN
      echo -e "\n\n [+] (Building | Fetching) ${BIN} :: ${SOURCE_URL} [$(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC]\n"
       #Build
        pushd "$($TMPDIRS)" >/dev/null 2>&1 && mkdir fget && cd "./fget"
-       curl -qfsSLJO "https://raw.githubusercontent.com/Azathothas/Arsenal/main/fget/main.go"
-       curl -qfsSLJO "https://raw.githubusercontent.com/Azathothas/Arsenal/main/fget/go.mod"
-       go get "github.com/Azathothas/Arsenal/fget"
+        curl -qfsSLJO "https://raw.githubusercontent.com/pkgforge-security/fget/main/main.go"
+        curl -qfsSLJO "https://raw.githubusercontent.com/pkgforge-security/fget/main/go.mod"
+        go get "github.com/pkgforge-security/fget"
        GOOS="linux" GOARCH="amd64" CGO_ENABLED="0" go build -v -ldflags="-buildid= -s -w -extldflags '-static'" -o "./fget" ; cp "./fget" "$BINDIR/fget" ; popd >/dev/null 2>&1 ; go clean -cache -fuzzcache -modcache
 fi
 #-------------------------------------------------------#

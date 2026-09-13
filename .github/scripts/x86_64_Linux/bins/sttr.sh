@@ -26,7 +26,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
      export SOURCE_URL="https://github.com/abhimanyu003/sttr" #github/gitlab/homepage/etc for $BIN
      echo -e "\n\n [+] (Building | Fetching) ${BIN} :: ${SOURCE_URL} [$(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC]\n"
       #Fetch
-       eval "$EGET_TIMEOUT" eget "$SOURCE_URL" --asset "amd" --asset "64" --asset "tar.gz" --to "$BINDIR/sttr"
+       eval "$EGET_TIMEOUT" eget "$SOURCE_URL" --asset "Linux_x86_64.tar.gz" "$EGET_EXCLUDE" --to "$BINDIR/sttr"
 fi
 #-------------------------------------------------------#
 

@@ -23,13 +23,13 @@ export SKIP_BUILD="NO" #YES, in case of deleted repos, broken builds etc
 if [ "${SKIP_BUILD}" == "NO" ]; then
       #certstream :  Cli for calidog's certstream 
      export BIN="certstream" #Name of final binary/pkg/cli, sometimes differs from $REPO
-     export SOURCE_URL="https://github.com/Azathothas/Arsenal" #github/gitlab/homepage/etc for $BIN
+      export SOURCE_URL="https://github.com/pkgforge-security/certstream-old" #github/gitlab/homepage/etc for $BIN
      echo -e "\n\n [+] (Building | Fetching) ${BIN} :: ${SOURCE_URL} [$(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC]\n"
       #Build
        pushd "$($TMPDIRS)" >/dev/null 2>&1 && mkdir "./certstream" && cd "./certstream"
-       curl -qfsSLJO "https://raw.githubusercontent.com/Azathothas/Arsenal/main/certstream/main.go"
-       go mod init "github.com/Azathothas/Arsenal/certstream" ; go mod tidy
-       go get "github.com/Azathothas/Arsenal/certstream"
+        curl -qfsSLJO "https://raw.githubusercontent.com/pkgforge-security/certstream-old/main/main.go"
+        go mod init "github.com/pkgforge-security/certstream-old" ; go mod tidy
+        go get "github.com/pkgforge-security/certstream-old"
        GOOS="linux" GOARCH="amd64" CGO_ENABLED="0" go build -v -ldflags="-buildid= -s -w -extldflags '-static'" -o "./certstream" ; cp "./certstream" "$BINDIR/certstream" ; popd >/dev/null 2>&1 ; go clean -cache -fuzzcache -modcache -testcache
 fi
 #-------------------------------------------------------#

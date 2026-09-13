@@ -23,14 +23,14 @@ export SKIP_BUILD="NO" #YES, in case of deleted repos, broken builds etc
 if [ "${SKIP_BUILD}" == "NO" ]; then
     #subxtract : Public-Suffix based TLDs (Top-Level-Domains) & Root Domain Extractor
      export BIN="subxtract" #Name of final binary/pkg/cli, sometimes differs from $REPO
-     export SOURCE_URL="https://github.com/Azathothas/Arsenal" #github/gitlab/homepage/etc for $BIN
+      export SOURCE_URL="https://github.com/pkgforge-security/subxtract" #github/gitlab/homepage/etc for $BIN
      echo -e "\n\n [+] (Building | Fetching) ${BIN} :: ${SOURCE_URL} [$(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC]\n"
       #Fetch
-       eval "$EGET_TIMEOUT" eget "https://raw.githubusercontent.com/Azathothas/Arsenal/main/subxtract/subxtract.sh" --to "$BINDIR/subxtract.sh"
+       eval "$EGET_TIMEOUT" eget "https://raw.githubusercontent.com/pkgforge-security/subxtract/main/subxtract.sh" --to "$BINDIR/subxtract.sh"
       #Build
        pushd "$($TMPDIRS)" >/dev/null 2>&1 && mkdir "./subxtract" && cd "./subxtract"
-       curl -qfsSLJO "https://raw.githubusercontent.com/Azathothas/Arsenal/main/subxtract/subxtract.go"
-       go mod init "github.com/Azathothas/Arsenal/subxtract" ; go mod tidy
+       curl -qfsSLJO "https://raw.githubusercontent.com/pkgforge-security/subxtract/main/main.go"
+       go mod init "github.com/pkgforge-security/subxtract" ; go mod tidy
        GOOS="linux" GOARCH="amd64" CGO_ENABLED="0" go build -v -ldflags="-buildid= -s -w -extldflags '-static'" -o "./subxtract" ; cp "./subxtract" "$BINDIR/subxtract" ; popd >/dev/null 2>&1
 fi
 #-------------------------------------------------------#

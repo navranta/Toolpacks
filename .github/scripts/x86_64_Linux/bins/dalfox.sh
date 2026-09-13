@@ -26,7 +26,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
      export SOURCE_URL="https://github.com/hahwul/dalfox" #github/gitlab/homepage/etc for $BIN
      echo -e "\n\n [+] (Building | Fetching) ${BIN} :: ${SOURCE_URL} [$(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC]\n"
       #Fetch
-       eval "$EGET_TIMEOUT" eget "$SOURCE_URL" --asset "amd64" "$EGET_EXCLUDE" --to "$BINDIR/$BIN"
+       eval "$EGET_TIMEOUT" eget "$SOURCE_URL" --asset "linux-x86_64.tar.gz" "$EGET_EXCLUDE" --to "$BINDIR/$BIN"
 fi
 #-------------------------------------------------------#
 

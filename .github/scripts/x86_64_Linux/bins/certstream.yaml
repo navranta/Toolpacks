@@ -1,8 +1,8 @@
 name: "certstream"
 description: "Cli for calidogs certstream"
 note: ""
-web_url: "https://github.com/Azathothas/Arsenal"
-repo_url: "https://github.com/Azathothas/Arsenal"
+web_url: "https://github.com/pkgforge-security/certstream-old"
+repo_url: "https://github.com/pkgforge-security/certstream-old"
 path: "/"
 bins:
   - "certstream"
