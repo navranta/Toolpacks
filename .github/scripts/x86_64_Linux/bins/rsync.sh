@@ -28,7 +28,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
       #Build 
        pushd "$($TMPDIRS)" >/dev/null 2>&1
         export NIX_CONFIG="sandbox = false"
-        NIXPKGS_ALLOW_BROKEN="1" NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM="1" nix-build '<nixpkgs>' --attr "pkgsStatic.rsync" --cores "$(($(nproc)+1))" --max-jobs "$(($(nproc)+1))" --log-format bar-with-logs --keep-going --option sandbox false
+        NIXPKGS_ALLOW_BROKEN="1" NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM="1" nix-build -E 'with import <nixpkgs> {}; (pkgsStatic.rsync.overrideAttrs (_: { doCheck = false; }))' --cores "$(($(nproc)+1))" --max-jobs "$(($(nproc)+1))" --log-format bar-with-logs --keep-going --option sandbox false
         sudo strip "result/bin/rsync" ; file "result/bin/rsync" && du -sh "result/bin/rsync"
         cp "result/bin/rsync" "$BINDIR/rsync"
         cp "result/bin/rsync-ssl" "$BINDIR/rsync-ssl"

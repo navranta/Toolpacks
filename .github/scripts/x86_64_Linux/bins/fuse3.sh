@@ -30,10 +30,11 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
         pushd "$($TMPDIRS)" >/dev/null 2>&1
         export NIX_CONFIG="sandbox = false"
         NIXPKGS_ALLOW_BROKEN="1" NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM="1" nix-build '<nixpkgs>' --attr "pkgsStatic.fuse3" --cores "$(($(nproc)+1))" --max-jobs "$(($(nproc)+1))" --log-format bar-with-logs --option sandbox false
-        #Strip (result before copy, to avoid touching other BINDIR files)
-        find "./result/bin" -type f -exec objcopy --remove-section=".comment" --remove-section=".note.*" "{}" \; 2>/dev/null
-        find "./result/bin" -type f ! -name "*.no_strip" -exec strip --strip-debug --strip-dwo --strip-unneeded --preserve-dates "{}" \; 2>/dev/null
-        rsync -av --copy-links "./result/bin/." "$BINDIR/"
+       #Strip (result before copy, to avoid touching other BINDIR files)
+       # NOTE: split-output derivation -> ./result-bin, not ./result
+       find "./result-bin/bin" -type f -exec objcopy --remove-section=".comment" --remove-section=".note.*" "{}" \; 2>/dev/null
+       find "./result-bin/bin" -type f ! -name "*.no_strip" -exec strip --strip-debug --strip-dwo --strip-unneeded --preserve-dates "{}" \; 2>/dev/null
+       rsync -av --copy-links "./result-bin/bin/." "$BINDIR/"
         unset NIX_CONFIG
         nix-collect-garbage >/dev/null 2>&1 ; popd >/dev/null 2>&1
       #-------------------------------------------------------#
