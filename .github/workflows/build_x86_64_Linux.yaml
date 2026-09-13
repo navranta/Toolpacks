@@ -11,9 +11,7 @@ on:
 env:
   GITHUB_TOKEN: "${{ secrets.TOOLPACKS }}"
   PKGFORGE_LOONIX_TOKEN: "${{ secrets.PKGFORGE_LOONIX_TOKEN }}"
-  RCLONE_CF_R2_PUB: "${{ secrets.RCLONE_CF_R2_PUB }}"
   TSKEY: "${{ secrets.TSKEY }}"
-  UPX_PACK: "YES"
 #Begin
 jobs:
 #------------------------------------------------------------------------------------#
@@ -22,6 +20,7 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: write
+      packages: write
       
     steps:
       - name: Checkout repository
@@ -52,9 +51,6 @@ jobs:
           #GH ENV
           echo "SYSTMP=$SYSTMP" >> "$GITHUB_ENV"
           #GH Dirs
-          mkdir -p "$GITHUB_WORKSPACE/main/aarch64_arm64_Linux"
-          mkdir -p "$GITHUB_WORKSPACE/main/arm64_v8a_Android"
-          mkdir -p "$GITHUB_WORKSPACE/main/x64_Windows"
           mkdir -p "$GITHUB_WORKSPACE/main/x86_64_Linux"
           #-------------#
           mkdir -p "$HOME/bin"
@@ -116,6 +112,7 @@ jobs:
     timeout-minutes: 3600
     permissions:
       contents: write
+      packages: write
       
     steps:
       - name: Checkout repository
@@ -146,9 +143,6 @@ jobs:
           #GH ENV
           echo "SYSTMP=$SYSTMP" >> "$GITHUB_ENV"
           #GH Dirs
-          mkdir -p "$GITHUB_WORKSPACE/main/aarch64_arm64_Linux"
-          mkdir -p "$GITHUB_WORKSPACE/main/arm64_v8a_Android"
-          mkdir -p "$GITHUB_WORKSPACE/main/x64_Windows"
           mkdir -p "$GITHUB_WORKSPACE/main/x86_64_Linux"
           #-------------#
           mkdir -p "$HOME/bin"

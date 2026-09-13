@@ -143,9 +143,6 @@
           sudo apt-get install -y --no-install-recommends autoconf automake autopoint binutils bison build-essential byacc ca-certificates clang flex file jq libtool libtool-bin patch patchelf pkg-config qemu-user-static scons tree wget 2>/dev/null
           sudo apt-get install devscripts -y --no-install-recommends 2>/dev/null
           sudo apt-get install cmake -y
-          #Install Build Dependencies (arm64)
-          sudo apt install binutils-aarch64-linux-gnu -y 2>/dev/null
-          sudo apt-get install "g++-arm-linux-gnueabi" "g++-arm-linux-gnueabihf" "g++-aarch64-linux-gnu" qemu-user-static -y 2>/dev/null
          #libpcap
           sudo apt install 'libpcap*' -y 2>/dev/null         
          #libsqlite3

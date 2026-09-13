@@ -348,46 +348,6 @@ set +x
      rm -rf "$BASEUTILSDIR.7z" 2>/dev/null     
  fi
 #-------------------------------------------------------# 
-#UPX
-if [ "${UPX_PACK}" = "YES" ]; then
-   #Fetch
-     mkdir -p "$SYSTMP/toolpacks"
-     pushd "$($TMPDIRS)" >/dev/null 2>&1
-     UPX_PACK_DIR="$(realpath .)" && export UPX_PACK_DIR="${UPX_PACK_DIR}"
-     echo -e "\n[+] UPX Packing Enabled (DIR: ${UPX_PACK_DIR})\n"
-     rclone sync "r2:/bin/x86_64_Linux/" "." --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-   #Pack:: https://github.com/upx/upx/blob/devel/doc/upx-doc.txt
-     if command -v upx &> /dev/null && [ -d "${UPX_PACK_DIR}" ] && [ "$(find "${UPX_PACK_DIR}" -mindepth 1 -print -quit 2>/dev/null)" ]; then
-       find . -type f -exec chmod +xwr {} \; 2>/dev/null
-       find . -type f ! -name '*.upx' ! -name '*.no_strip' -exec file -i '{}' \; | grep "application/.*executable" | cut -d':' -f1 | xargs realpath | sort -u -o "$SYSTMP/upx_input.txt"
-       readarray -t files < "$SYSTMP/upx_input.txt"
-       unset CURRENT_BIN TOTAL_BINS UPX
-       START_TIME="$(date +%s)" && export START_TIME="$START_TIME"
-       TOTAL_BINS="${#files[@]}" && export TOTAL_BINS="${TOTAL_BINS}" ; echo -e "\n[+] Total BINS :: ${TOTAL_BINS}\n"
-         for ((i=0; i<${#files[@]}; i++)); do
-             file="${files[i]}"
-             CURRENT_BIN=$((i+1))
-             echo -e "\n[+] UPX Packing $file --> $file.upx (${CURRENT_BIN}/${TOTAL_BINS})\n"
-             upx --best "$file" -f --force-overwrite -o"$file.upx" -qq
-         done
-       END_TIME="$(date +%s)" && export END_TIME="$END_TIME"
-       ELAPSED_TIME="$(date -u -d@"$((END_TIME - START_TIME))" "+%H(Hr):%M(Min):%S(Sec)")"
-       echo -e "\n[+] UPX Packing (Elapsed Time) $ELAPSED_TIME\n"  
-       #Sync
-        rclone_upx_sync()
-        {
-           rclone copy "r2:/bin/x86_64_Linux/" "." --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-           sleep 30
-           rclone sync "." "r2:/bin/x86_64_Linux/" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-        }
-        export -f rclone_upx_sync
-        sleep 60 && rclone_upx_sync ; sleep 60 && rclone_upx_sync ; sleep 60 && rclone_upx_sync
-     fi
-   #Cleanup
-     popd >/dev/null 2>&1
-     sudo rm -rf "${UPX_PACK_DIR}"
-     unset CURRENT_BIN TOTAL_BINS UPX_PACK_DIR
-fi
 #-------------------------------------------------------#
 ##END
 unset GIT_ASKPASS GIT_TERMINAL_PROMPT

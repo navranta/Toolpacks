@@ -52,7 +52,6 @@
 > > - [**`What? & Why?`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/faq#history-and-lore)
 > > - [**`Request a new PKG/Tool`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/package-request)
 > > - [**`How To Contribute/Donate`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/contribution)
-> > - [**`UPX Binaries ⏬`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/faq#upx)
 > > - [**`Current Problems & Setbacks`**](https://github.com/Azathothas/Toolpacks/issues?q=is%3Aissue+is%3Aopen+label%3AInfra)
 > > - [**`DMCA & Copyright`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/dmca-or-copyright-cease-and-desist)
 > > - [**`FAQ`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/faq)
