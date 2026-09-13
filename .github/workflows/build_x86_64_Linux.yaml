@@ -1,276 +1,268 @@
-name: 🛍️ Build 📦 (toolpack_x86_64_Linux) Binaries 📦🗄️
-# Build x86_64 Linux Binaries on GH action runners
-# Main Build Script: https://github.com/Azathothas/Toolpacks/blob/main/.github/scripts/x86_64_Linux/build_debian.sh
-# Process :: init_debian.sh --> add_toolpacks.sh --> upload to https://bin.ajam.dev/x86_64_Linux/
+name: "🐧 Build x86_64-Linux 🐧"
+
+#MARK: TRIGGER
 on:
   workflow_dispatch:
   schedule:
-  #  - cron: "30 22 * * 5" # 10:30 PM UTC Friday --> 04:15 AM NPT Mrng Every Saturday
-    - cron: "30 18 * * 1" # 06:30 PM UTC (12:15 AM NPT Mrng Every Tuesday)
-#Sane env
+    # Monthly. The old weekly cadence existed because R2 was cheap to
+    # overwrite; at ~1.2h of build for 133 recipes, monthly is plenty.
+    - cron: "30 18 1 * *"
+
+#MARK: ENV
 env:
-  GITHUB_TOKEN: "${{ secrets.TOOLPACKS }}"
-  PKGFORGE_LOONIX_TOKEN: "${{ secrets.PKGFORGE_LOONIX_TOKEN }}"
-  TSKEY: "${{ secrets.TSKEY }}"
-#Begin
+  GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+  GHCR_NAMESPACE: "toolpacks"
+  # "org" or "user" -- decides which GitHub API path sets package visibility.
+  GHCR_OWNER_TYPE: "user"
+
+concurrency:
+  group: "build-x86_64-${{ github.ref }}"
+  cancel-in-progress: false
+
 jobs:
-#------------------------------------------------------------------------------------#
-  presetup:
+
+#MARK: PREPARE
+  prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
     permissions:
-      contents: write
-      packages: write
-      
+      contents: read
+    outputs:
+      recipe_count: "${{ steps.check.outputs.recipe_count }}"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          path: main
-          filter: "blob:none" #https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/
-#------------------------------------------------------------------------------------#        
-      - name: Install Addons
-        run: |
-          #presets
-          set -x ; set +e
-          #-------------#
-          bash <(curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Arsenal/misc/Linux/install_dev_tools.sh")
-        continue-on-error: true
-#------------------------------------------------------------------------------------#        
-      - name: Setup Env
-        run: |
-          ##presets
-          set +x ; set +e
-          #-------------#
-          ##CoreUtils
-          sudo apt update -y
-          sudo apt install bc coreutils curl dos2unix fdupes jq moreutils wget -y
-          sudo apt-get install apt-transport-https apt-utils ca-certificates coreutils dos2unix gnupg2 jq moreutils p7zip-full rename rsync software-properties-common texinfo tmux util-linux wget -y 2>/dev/null ; sudo apt-get update -y 2>/dev/null
-          ##tmp
-          SYSTMP="$(dirname $(mktemp -u))" && export SYSTMP="$SYSTMP"
-          #GH ENV
-          echo "SYSTMP=$SYSTMP" >> "$GITHUB_ENV"
-          #GH Dirs
-          mkdir -p "$GITHUB_WORKSPACE/main/x86_64_Linux"
-          #-------------#
-          mkdir -p "$HOME/bin"
-          sudo apt update -y
-          sudo apt install dos2unix -y
-          ##Setup rClone
-          mkdir -p "$HOME/.config/rclone"
-          echo "${{ secrets.RCLONE_CF_R2_PUB }}" > "$HOME/.config/rclone/rclone.conf"
-          ##User-Agent
-          USER_AGENT="$(curl -qfsSL 'https://pub.ajam.dev/repos/Azathothas/Wordlists/Misc/User-Agents/ua_chrome_macos_latest.txt')" && export USER_AGENT="$USER_AGENT"
-          echo "USER_AGENT=$USER_AGENT" >> "$GITHUB_ENV"
-        continue-on-error: true
+          filter: "blob:none"
 
-      - name: Set TZ to (Asia/Kathmandu)
+      - name: Validate allowlist and prebuilts
+        id: check
         run: |
-          # Presets
-          set +x ; set +e
-          #--------------#        
-          sudo apt-get update -y && sudo DEBIAN_FRONTEND="noninteractive" apt-get install -y tzdata
-          sudo ln -fs "/usr/share/zoneinfo/Asia/Kathmandu" "/etc/localtime"
-          sudo dpkg-reconfigure --frontend noninteractive tzdata
-          sudo apt-get install apt-utils software-properties-common -y           
-          sudo apt-get update -y
-        continue-on-error: true        
-#------------------------------------------------------------------------------------#
-      - name: rClone BackUp Repo ("https://pub.ajam.dev/repos/$GITHUB_REPOSITORY")
-        run: |
-          # Presets
-          set +x ; set +e
-          #--------------#
-          #copy & chdir to Repo
-          cp -r "$GITHUB_WORKSPACE/main" "$SYSTMP/REPO" && cd "$SYSTMP/REPO"
-          #Git pull
-          git pull origin main --no-edit 2>/dev/null
-          #Del Bloat
-          rm -rf "$(pwd)/.git"
-          # rm -rf "$(pwd)/aarch64_arm64_Linux"
-          # rm -rf "$(pwd)/arm64_v8a_Android"
-          # rm -rf "$(pwd)/x86_64_Linux"
-          # rm -rf "$(pwd)/x64_Windows"
-          #Upload to Pub
-          echo -e "[+] Syncing $GITHUB_REPOSITORY to pub.ajam.dev/repos/$GITHUB_REPOSITORY \n"
-          rclone sync "." "r2:/pub/repos/$GITHUB_REPOSITORY/" --user-agent="$USER_AGENT" --buffer-size="10M" --s3-upload-concurrency="50" --s3-chunk-size="10M" --multi-thread-streams="50" --checkers="2000" --transfers="100" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-          ##Scripts_x86_64_Linux
-          #Get JQ Module to convert size : https://users.aalto.fi/~tontti/posts/jq-and-human-readable-bytes/
-          curl -qfsSL "https://pub.ajam.dev/utils/devscripts/jq/to_human_bytes.jq" -o "./to_human_bytes.jq"
-          rclone lsjson --fast-list "r2:/pub/repos/Azathothas/Toolpacks/.github/scripts/x86_64_Linux/bins/" --exclude="*.yaml" | jq -r 'include "./to_human_bytes" ; .[] | select(.IsDir == false) | {name: (.Name), update_date: (.ModTime | split(".")[0]), source_url: "https://pub.ajam.dev/repos/Azathothas/Toolpacks/.github/scripts/x86_64_Linux/bins/\(.Path)"}' | jq . > "./metadata.json.tmp"
-          #Clean Pretty Formatted
-          echo "[" $(cat metadata.json.tmp | tr '\n' ' ' | sed 's/}/},/g' | sed '$ s/,$//') "]" | sed '$s/,[[:space:]]*\]/\]/' | jq . | tee "./metadata.json"
-          #Update Metadata
-          rclone copyto --checksum "./metadata.json" "r2:/pub/repos/Azathothas/Toolpacks/.github/scripts/x86_64_Linux/bins/metadata.json"
-        continue-on-error: true
-#------------------------------------------------------------------------------------#
-#------------------------------------------------------------------------------------#
-  build-fetch-binaries:
-    #runs-on: ubuntu-latest
-    runs-on: amd64-linux-toolpacker
-    needs: [presetup]
-    timeout-minutes: 3600
+          set -euo pipefail
+          cd "${GITHUB_WORKSPACE}/.github/scripts/x86_64_Linux"
+          # Regenerating from the upstream installers proves the allowlist
+          # still matches what they actually ask for.
+          ./gen_recipes.sh --check
+          ./gen_installers.sh --check
+          ./prebuilts/fetch.sh --verify
+          N="$(wc -l < RECIPES.txt)"
+          echo "recipe_count=${N}" >> "$GITHUB_OUTPUT"
+          echo "### Prepare" >> "$GITHUB_STEP_SUMMARY"
+          echo "- recipes: \`${N}\`" >> "$GITHUB_STEP_SUMMARY"
+
+#MARK: SMOKE (permanent guard against reintroducing an external cache)
+  smoke:
+    runs-on: ubuntu-latest
+    needs: [prepare]
+    timeout-minutes: 45
     permissions:
-      contents: write
+      contents: read
       packages: write
-      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          path: main
-          filter: "blob:none" #https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/
+          filter: "blob:none"
 
-      - name: Install Addons
+      - name: Blackhole every external binary cache
         run: |
-          #presets
-          set -x ; set +e
-          #-------------#
-          bash <(curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Arsenal/misc/Linux/install_dev_tools.sh")
-        continue-on-error: true
-#------------------------------------------------------------------------------------#        
-      - name: Setup Env
-        run: |
-          ##presets
-          set +x ; set +e
-          #-------------#
-          ##CoreUtils
-          sudo apt update -y
-          sudo apt install bc coreutils curl dos2unix fdupes jq moreutils wget -y
-          sudo apt-get install apt-transport-https apt-utils ca-certificates coreutils dos2unix gnupg2 jq moreutils p7zip-full rename rsync software-properties-common texinfo tmux util-linux wget -y 2>/dev/null ; sudo apt-get update -y 2>/dev/null
-          ##tmp
-          SYSTMP="$(dirname $(mktemp -u))" && export SYSTMP="$SYSTMP"
-          #GH ENV
-          echo "SYSTMP=$SYSTMP" >> "$GITHUB_ENV"
-          #GH Dirs
-          mkdir -p "$GITHUB_WORKSPACE/main/x86_64_Linux"
-          #-------------#
-          mkdir -p "$HOME/bin"
-          sudo apt update -y
-          sudo apt install dos2unix -y
-          ##Setup rClone
-          mkdir -p "$HOME/.config/rclone"
-          echo "${{ secrets.RCLONE_CF_R2_PUB }}" > "$HOME/.config/rclone/rclone.conf"
-          ##User-Agent
-          USER_AGENT="$(curl -qfsSL 'https://pub.ajam.dev/repos/Azathothas/Wordlists/Misc/User-Agents/ua_chrome_macos_latest.txt')" && export USER_AGENT="$USER_AGENT"
-          echo "USER_AGENT=$USER_AGENT" >> "$GITHUB_ENV"
-        continue-on-error: true
+          # A grep cannot see URLs built at runtime, and several recipes
+          # construct them. Resolving these hosts to localhost is the only
+          # check that actually proves the dependency is gone.
+          echo "127.0.0.1 pub.ajam.dev bin.ajam.dev pkg.ajam.dev bin.pkgforge.dev" \
+            | sudo tee -a /etc/hosts
+          echo "::notice::external caches blackholed"
 
-      - name: Set TZ to (Asia/Kathmandu)
+      - name: Init + one fast recipe + one container recipe
+        env:
+          GHCR_PUSH: "NO"
         run: |
-          # Presets
-          set +x ; set +e
-          #--------------#        
-          sudo apt-get update -y && sudo DEBIAN_FRONTEND="noninteractive" apt-get install -y tzdata
-          sudo ln -fs "/usr/share/zoneinfo/Asia/Kathmandu" "/etc/localtime"
-          sudo dpkg-reconfigure --frontend noninteractive tzdata
-          sudo apt-get install apt-utils software-properties-common -y           
-          sudo apt-get update -y
-        continue-on-error: true
-#------------------------------------------------------------------------------------#
-      #Main Build Script
+          set -uo pipefail
+          cd "${GITHUB_WORKSPACE}/.github/scripts/x86_64_Linux"
+          START="$(date +%s)"
+          bash ./init_debian.sh
+          echo "::notice::init_debian.sh took $(( $(date +%s) - START ))s"
+          # 7z is a ~1s eget fetch; chafa exercises the alpine-builder path.
+          export BINDIR="${RUNNER_TEMP}/bins" && mkdir -p "$BINDIR"
+          export SYSTMP="${RUNNER_TEMP}"
+          for r in 7z chafa; do
+            ( timeout -k 60 20m bash -c "source ./bins/${r}.sh" ) || \
+              echo "::error::smoke recipe ${r} failed with no external cache"
+          done
+          ls -la "$BINDIR"
+
+#MARK: BUILD
+  build:
+    runs-on: ubuntu-latest
+    needs: [prepare]
+    # ~1.2h serial for 133 recipes; 300 keeps margin under the 360 cap.
+    timeout-minutes: 300
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Debloat runner
+        run: |
+          sudo rm -rf "/usr/local/lib/android" "/usr/share/dotnet" "/opt/ghc" \
+                      "/usr/local/share/boost" "/usr/share/swift" \
+                      "/opt/hostedtoolcache" 2>/dev/null || true
+          df -h /
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          filter: "blob:none"
+
       - name: BUILD
+        env:
+          GHCR_PUSH: "YES"
         run: |
-          #Presets
-          set +x ; set +e
-          #--------------#
-          ##Main
-          curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Toolpacks/.github/scripts/x86_64_Linux/build_debian.sh" -o "$SYSTMP/BUILD.sh"
-          dos2unix --quiet "$SYSTMP/BUILD.sh" ; chmod +xwr "$SYSTMP/BUILD.sh"
-          ##Run with STDOUT [Slow, Not Recommended]
-          #bash "$SYSTMP/BUILD.sh"
-          ##Run with LOGS only
-          #bash "$SYSTMP/BUILD.sh" > "$SYSTMP/BUILD.log" 2>&1
-          ##Run with STDOUT + LOGS
-          #bash "$SYSTMP/BUILD.sh" | tee "$SYSTMP/BUILD.log" 2>&1
-          ##Run without STDOUT/Logs
-          #bash "$SYSTMP/BUILD.sh" >/dev/null 2>&1
-          ##Talscale + Tmux + gotty
-          curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Arsenal/misc/Github/Runners/Ubuntu/setup_tailscale.sh" -o "$SYSTMP/setup_tailscale.sh" && dos2unix --quiet "$SYSTMP/setup_tailscale.sh"
-          source "$SYSTMP/setup_tailscale.sh"
-          tmux new-session -s "toolpacks" -d 'bash "/tmp/BUILD.sh" 2>&1 | tee -a "/tmp/BUILD.log" ; tmux kill-session -t "toolpacks" 2>/dev/null ; exit'
-          #nohup gotty --address "$TS_IP" --port "7070" --reconnect --reconnect-time 30 tmux attach-session -t "toolpacks" -r >/dev/null 2>&1 &
-          nohup gotty --address "127.0.0.1" --port "7070" --reconnect --reconnect-time 30 tmux attach-session -t "toolpacks" -r >/dev/null 2>&1 &
-          sudo tailscale serve --bg="true" --yes="true" --set-path "/tmux" "http://127.0.0.1:7070"
-          nohup gotty --address "127.0.0.1" --port "7777" --reconnect --reconnect-time 30 btop --tty_on --utf-force >/dev/null 2>&1 &
-          sudo tailscale serve --bg="true" --yes="true" --set-path "/btop" "http://127.0.0.1:7777"
-          echo -e "\n\n[+] Tmux TTY: http://$TS_DNS:7070 ||  https://$TS_DNS/tmux/"
-          echo -e "[+] BTOP: http://$TS_DNS:7777 ||  https://$TS_DNS/btop/\n"
-          ##Loonix (Start)
-          GH_EVENT="${{ github.event_name }}"
-          GH_WORKFLOW_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          START_TIME="$(date +%s)" && export START_TIME
-          echo "GH_EVENT=${GH_EVENT}" >> "${GITHUB_ENV}"
-          echo "GH_WORKFLOW_URL=${GH_WORKFLOW_URL}" >> "${GITHUB_ENV}"
-          echo "START_TIME=${START_TIME}" >> "${GITHUB_ENV}"
-          rm -rvf "/tmp/PKGFORGE_LOONIX.html" 2>/dev/null
-          echo -e "ℹ️ <b>Triggered</b> <a href='https://github.com/Azathothas/Toolpacks/blob/main/.github/workflows/build_x86_64_Linux.yaml'><b>🛍️ Build 📦 Bincache (ToolPacks) 📦🗄️</b></a> <a href='https://github.com/Azathothas/Toolpacks'><b>Azathothas/Toolpacks (x86_64-Linux)</b></a> [<b><u>$(date --utc +'%Y-%m-%dT%H:%M:%S.%3N') UTC</u></b>]" > "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>Event</u></b>: <code>${GH_EVENT}</code>" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>Btop</u></b>: https://${TS_DNS}/btop/" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>Tmux</u></b>: https://${TS_DNS}/tmux/" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>URL</u></b>: ${GH_WORKFLOW_URL}" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>GH Repo</u></b>: https://github.com/${GITHUB_REPOSITORY}" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>Maintainer</u></b>: @Azathothas" >> "/tmp/PKGFORGE_LOONIX.html"
-          curl "https://api.telegram.org/bot${PKGFORGE_LOONIX_TOKEN}/sendMessage" -d "chat_id=-1002007583969&message_thread_id=63949" -d "text=$(cat /tmp/PKGFORGE_LOONIX.html)" -d "parse_mode=html"
-          set +x ; while tmux has-session -t "toolpacks" ; do sleep 1 ; done
-          ##Purge Tokens (in case set -x & gh didn't redact)
-          cat "$SYSTMP/BUILD.log" | ansi2txt > "$SYSTMP/BUILD.log.tmp.txt"
-          if command -v trufflehog &> /dev/null; then
-             trufflehog filesystem "$SYSTMP/BUILD.log.tmp.txt" --no-fail --no-verification --no-update --json 2>/dev/null | jq -r '.Raw' | sed '/{/d' | xargs -I "{}" sh -c 'echo "{}" | tr -d " \t\r\f\v"' | xargs -I "{}" sed "s/{}/ /g" -i "$SYSTMP/BUILD.log.tmp.txt"
-          fi
-          sed 's/\r/\n/g' -i "$SYSTMP/BUILD.log.tmp.txt"
-          sed -i '/.*github_pat.*/Id' "$SYSTMP/BUILD.log.tmp.txt" 2>/dev/null
-          sed -i '/.*ghp_.*/Id' "$SYSTMP/BUILD.log.tmp.txt" 2>/dev/null 
-          sed -i '/.*access_key_id.*/Id' "$SYSTMP/BUILD.log.tmp.txt" 2>/dev/null
-          sed -i '/.*secret_access_key.*/Id' "$SYSTMP/BUILD.log.tmp.txt" 2>/dev/null
-          sed -i '/.*token.*/Id' "$SYSTMP/BUILD.log.tmp.txt" 2>/dev/null
-          sed -i '/.*cloudflarestorage.*/Id' "$SYSTMP/BUILD.log.tmp.txt" 2>/dev/null
-          grep -viE 'github_pat|ghp_|glpat|hf_|token|access_key_id|secret_access_key|cloudflarestorage' "$SYSTMP/BUILD.log.tmp.txt" > "$SYSTMP/BUILD.log.txt"
-          ##Fetch Only Relevant Logs
-          if grep -iq "completed" "$SYSTMP/BUILD.log.txt"; then
-             mv "$SYSTMP/BUILD.log.txt" "$SYSTMP/BUILD.log"
-          elif grep -iq "initializing" "$SYSTMP/BUILD.log.txt"; then
-             mv "$SYSTMP/BUILD.log.txt" "$SYSTMP/BUILD_FAILED.log"
-          fi
-          sed -n "$(grep -nE '^\[\+\] (Building|Fetching)' "$SYSTMP/BUILD.log" | head -n 1 | cut -d: -f1),$(grep -nE '^\[\+\] Completed \(Building|Fetching\)' "$SYSTMP/BUILD.log" | tail -n 1 | cut -d: -f1)p" "$SYSTMP/BUILD.log" > "$SYSTMP/BUILD.BIN.log"
-          ##rClone Upload logs
-          rclone copyto "$SYSTMP/BUILD.log" "r2:/bin/x86_64_Linux/BUILD.log.txt" --user-agent="$USER_AGENT" --buffer-size="100M" --s3-upload-concurrency="500" --s3-chunk-size="100M" --multi-thread-streams="500" --checkers="2000" --transfers="1000" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-          rclone copyto "$SYSTMP/BUILD_FAILED.log" "r2:/bin/x86_64_Linux/BUILD_FAILED.log.txt" --user-agent="$USER_AGENT" --buffer-size="100M" --s3-upload-concurrency="500" --s3-chunk-size="100M" --multi-thread-streams="500" --checkers="2000" --transfers="1000" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-          rclone copyto "$SYSTMP/BUILD.BIN.log" "r2:/bin/x86_64_Linux/BUILD.BIN.log.txt" --user-agent="$USER_AGENT" --buffer-size="100M" --s3-upload-concurrency="500" --s3-chunk-size="100M" --multi-thread-streams="500" --checkers="2000" --transfers="1000" --retries="10" --check-first --checksum --copy-links --fast-list --progress
-        continue-on-error: true
+          set -uo pipefail
+          bash "${GITHUB_WORKSPACE}/.github/scripts/x86_64_Linux/build_debian.sh" \
+            2>&1 | tee "${RUNNER_TEMP}/BUILD.log.txt"
+          echo "BUILD_RC=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
 
-      - name: Notify Loonix (END)
+      - name: Redact secrets from logs
+        if: always()
         run: |
-          ##presets
-          set +x ; set +e
-          #-------------#
-          END_TIME="$(date +%s)" && export END_TIME="${END_TIME}"
-          SECS="$((END_TIME - START_TIME))"
-          #ELAPSED_TIME="$(date -u -d@"$((END_TIME - START_TIME))" "+%H(Hr):%M(Min):%S(Sec)")"
-          ELAPSED_TIME="$((SECS/86400))(Day):$(date -u -d@$((SECS%86400)) '+%H(Hr):%M(Min):%S(Sec)')"
-          echo "ELAPSED_TIME=${ELAPSED_TIME}" >> "${GITHUB_ENV}"
-          rm -rvf "/tmp/PKGFORGE_LOONIX.html" 2>/dev/null
-          echo -e "ℹ️ <b>Completed</b> <a href='https://github.com/Azathothas/Toolpacks/blob/main/.github/workflows/build_x86_64_Linux.yaml'><b>🛍️ Build 📦 Bincache (ToolPacks) 📦🗄️</b></a> <a href='https://github.com/Azathothas/Toolpacks'><b>Azathothas/Toolpacks (x86_64-Linux)</b></a> [<b><u>$(date --utc +'%Y-%m-%dT%H:%M:%S.%3N') UTC</u></b>]" > "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>ELAPSED_TIME</u></b>: <code>${ELAPSED_TIME}</code>" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>Event</u></b>: <code>${GH_EVENT}</code>" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>URL</u></b>: ${GH_WORKFLOW_URL}" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>Log (Success)</u></b>: https://bin.pkgforge.dev/x86_64-Linux/BUILD.log.txt" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>Log (Failure)</u></b>: https://bin.pkgforge.dev/x86_64-Linux/BUILD_FAILED.log.txt" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>GH Repo</u></b>: https://github.com/${GITHUB_REPOSITORY}" >> "/tmp/PKGFORGE_LOONIX.html"
-          echo -e "<b><u>Maintainer</u></b>: @Azathothas" >> "/tmp/PKGFORGE_LOONIX.html"
-          curl "https://api.telegram.org/bot${PKGFORGE_LOONIX_TOKEN}/sendMessage" -d "chat_id=-1002007583969&message_thread_id=63949" -d "text=$(cat /tmp/PKGFORGE_LOONIX.html)" -d "parse_mode=html"
-        continue-on-error: true
-#------------------------------------------------------------------------------------#
-      #Logs & Artifacts  
-      - name: Upload (x86_64_Linux) Artifacts
+          for p in 'github_pat' 'ghp_' 'access_key_id' 'secret_access_key' 'Bearer '; do
+            sed -i "/.*${p}.*/Id" "${RUNNER_TEMP}/BUILD.log.txt" 2>/dev/null || true
+          done
+
+      - name: Upload build artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-            name: Toolpack_x86_64_Linux
-            path: |
-              /tmp/toolpack_x86_64.7z
-              /tmp/BUILD.log
-            compression-level: 0 # no compression, [Default: 6 (GNU Gzip)]
-            retention-days: 7
-            overwrite: true
+          name: "x86_64-Linux-build"
+          path: |
+            ${{ runner.temp }}/BUILD.log.txt
+            ${{ runner.temp }}/RESULT.jsonl
+          retention-days: 30
+          if-no-files-found: warn
+
+#MARK: FINALIZE
+  finalize:
+    runs-on: ubuntu-latest
+    needs: [prepare, build]
+    if: always()
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      packages: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          filter: "blob:none"
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: "x86_64-Linux-build"
+          path: "${{ runner.temp }}/artifacts"
         continue-on-error: true
-#------------------------------------------------------------------------------------#
+
+      - name: Install tooling from vendored prebuilts
+        run: |
+          set -euo pipefail
+          cd "${GITHUB_WORKSPACE}/.github/scripts/x86_64_Linux/prebuilts"
+          ./fetch.sh --verify
+          for b in jq yq oras b3sum; do sudo install -m 755 "./${b}" "/usr/local/bin/${b}"; done
+
+      - name: Enforce build results
+        run: |
+          set -uo pipefail
+          R="${RUNNER_TEMP}/artifacts/RESULT.jsonl"
+          if [ ! -s "$R" ]; then
+            echo "::error::no RESULT.jsonl -- the build died before writing any results"
+            exit 1
+          fi
+          TOTAL="$(wc -l < "$R")"
+          count() { grep -c "\"status\":\"$1\"" "$R" || true; }
+          OK="$(count ok)"; PARTIAL="$(count partial)"
+          FAIL="$(count fail)"; TIMEOUT="$(count timeout)"; MISSING="$(count missing)"
+          BAD=$(( FAIL + TIMEOUT + MISSING ))
+          {
+            echo "### Build results"
+            echo ""
+            echo "| status | count |"
+            echo "|---|---|"
+            echo "| ok | ${OK} |"
+            echo "| partial | ${PARTIAL} |"
+            echo "| fail | ${FAIL} |"
+            echo "| timeout | ${TIMEOUT} |"
+            echo "| missing | ${MISSING} |"
+            echo "| **total** | **${TOTAL}** |"
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$TOTAL" -gt 0 ]; then
+            echo ""; echo "#### Not ok" >> "$GITHUB_STEP_SUMMARY"
+            grep -v '"status":"ok"' "$R" \
+              | sed -E 's/.*"recipe":"([^"]*)".*"status":"([^"]*)".*/- `\1` -> \2/' \
+              | head -50 >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+          # A shard-free build has no excuse for losing >10% of the catalogue.
+          LIMIT=$(( TOTAL / 10 ))
+          if [ "$BAD" -gt "$LIMIT" ]; then
+            echo "::error::${BAD} of ${TOTAL} recipes failed (limit ${LIMIT})"
+            exit 1
+          fi
+          echo "::notice::${OK} ok, ${PARTIAL} partial, ${BAD} failed of ${TOTAL}"
+
+      - name: Regenerate metadata from GHCR
+        run: |
+          set -uo pipefail
+          bash "${GITHUB_WORKSPACE}/.github/scripts/x86_64_Linux/gen_meta.sh"
+
+      - name: Verify packages are pullable ANONYMOUSLY
+        run: |
+          set -uo pipefail
+          # The check that catches private-by-default: a workflow-token push
+          # creates packages private regardless of repo visibility, which
+          # yields a green build and a cache nobody can read.
+          OWNER="$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')"
+          SAMPLE="$(shuf -n 3 "${GITHUB_WORKSPACE}/.github/scripts/x86_64_Linux/RECIPES.txt")"
+          rc=0
+          for fam in $SAMPLE; do
+            T="$(curl -qfsSL "https://ghcr.io/token?scope=repository:${OWNER}/${GHCR_NAMESPACE}/${fam}:pull&service=ghcr.io" \
+                 | sed -n 's/.*"token":"\([^"]*\)".*/\1/p')"
+            if [ -z "$T" ]; then echo "::error::${fam}: no anonymous token"; rc=1; continue; fi
+            if curl -qfsSL -o /dev/null -H "Authorization: Bearer ${T}" \
+                 -H "Accept: application/vnd.oci.image.manifest.v1+json" \
+                 "https://ghcr.io/v2/${OWNER}/${GHCR_NAMESPACE}/${fam}/manifests/latest"; then
+              echo "::notice::${fam}: anonymous pull OK"
+            else
+              echo "::error::${fam}: NOT publicly pullable"; rc=1
+            fi
+          done
+          exit "$rc"
+
+      - name: Commit metadata and logs
+        run: |
+          set -uo pipefail
+          cd "${GITHUB_WORKSPACE}"
+          mkdir -p x86_64-Linux/logs
+          cp -f "${RUNNER_TEMP}/artifacts/RESULT.jsonl" x86_64-Linux/ 2>/dev/null || true
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A x86_64-Linux METADATA.json METADATA.yaml 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "::notice::no metadata changes"
+          else
+            git commit -m "chore: refresh x86_64-Linux metadata ($(date -u +%Y-%m-%d))"
+            git push
+          fi
+
+      - name: Staleness gate
+        run: |
+          set -uo pipefail
+          F="${GITHUB_WORKSPACE}/x86_64-Linux/BUILD_DATES.txt"
+          [ -s "$F" ] || { echo "::notice::no BUILD_DATES.txt yet"; exit 0; }
+          CUT="$(date -d '45 days ago' +%Y-%m-%d)"
+          STALE="$(awk -v c="$CUT" '$1 < c' "$F" | wc -l)"
+          echo "::notice::${STALE} tools older than ${CUT}"
+          # The old pipeline reported success while ~250 tools silently went
+          # stale for months. This is the check that would have caught it.
+          if [ "$STALE" -gt 15 ]; then
+            echo "::error::${STALE} stale tools (limit 15)"
+            exit 1
+          fi

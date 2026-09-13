@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ##
-# source <(curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/.github/scripts/$(uname -m)_Linux/env.sh")
+# source .github/scripts/x86_64_Linux/env.sh   (from a checkout, for debugging one recipe by hand)
 ##
 
 #-------------------------------------------------------#
@@ -19,7 +19,7 @@ export GIT_TERMINAL_PROMPT="0"
 export GIT_ASKPASS="/bin/echo"
 EGET_TIMEOUT="timeout -k 1m 2m" && export EGET_TIMEOUT="$EGET_TIMEOUT"
 EGET_EXCLUDE="--asset \"^386\" --asset \"^aarch64\" --asset \"^apple\" --asset \"^arm\" --asset \"^AppImage\" --asset \"^asc\" --asset \"^crt\" --asset \"^darwin\" --asset \"^deb\" --asset \"^exe\" --asset \"^freebsd\" --asset \"^i686\" --asset \"^mac\" --asset \"^mips\" --asset \"^rpm\" --asset \"^pem\" --asset \"^sbom\" --asset \"^sha\" --asset \"^solaris\" --asset \"^sig\" --asset \"^symbol\" --asset \"^windows\"" && export EGET_EXCLUDE="$EGET_EXCLUDE"
-USER_AGENT="$(curl -qfsSL 'https://pub.ajam.dev/repos/Azathothas/Wordlists/Misc/User-Agents/ua_chrome_macos_latest.txt')" && export USER_AGENT="$USER_AGENT"
+USER_AGENT="Toolpacks-Builder" && export USER_AGENT="$USER_AGENT"
 BUILD="YES" && export BUILD="$BUILD"
 sudo groupadd docker 2>/dev/null ; sudo usermod -aG docker "$USER" 2>/dev/null
 if ! sudo systemctl is-active --quiet docker; then
@@ -34,29 +34,6 @@ cd "$HOME" ; clear
 if [[ ! -n "$GITHUB_TOKEN" ]]; then
    echo -e "\n[-] GITHUB_TOKEN is NOT Exported"
    echo -e "Export it to avoid ratelimits\n"
-fi
-#rclone
-if command -v rclone &> /dev/null; then
-     if [ -s "$HOME/.rclone.conf" ] && [ ! -s "$HOME/.config/rclone/rclone.conf" ]; then
-         mkdir -p "$HOME/.config/rclone" && touch "$HOME/.config/rclone/rclone.conf"
-         cat "$HOME/.rclone.conf" > "$HOME/.config/rclone/rclone.conf"
-         dos2unix --quiet "$HOME/.config/rclone/rclone.conf"
-     elif [ -s "$HOME/.config/rclone/rclone.conf" ]; then
-        dos2unix --quiet "$HOME/.config/rclone/rclone.conf"
-     else
-       echo -e "\n[-] rClone Config Not Found\n"
-     fi
-   ##ENV VARS
-     export RCLONE_STATS="120s"
-else
-    echo -e "\n[-] rclone is NOT Installed"
-     if [ -s "$HOME/.rclone.conf" ]; then
-       echo -e "rClone Config --> "$HOME/.rclone.conf"\n"
-     elif [ -s "$HOME/.config/rclone/rclone.conf" ]; then
-       echo -e "rClone Config --> "$HOME/.config/rclone/rclone.conf"\n"
-     else
-       echo -e "[-] rClone Config Not Found\n"
-     fi
 fi
 #-------------------------------------------------------#
 history -c 2>/dev/null ; rm -rf "$HOME/.bash_history" ; pushd "$(mktemp -d)" >/dev/null 2>&1
