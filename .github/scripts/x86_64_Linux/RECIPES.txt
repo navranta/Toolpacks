@@ -10,7 +10,6 @@ asnmap
 b3sum
 brutespray
 btop
-busybox
 cdncheck
 cent
 certstream

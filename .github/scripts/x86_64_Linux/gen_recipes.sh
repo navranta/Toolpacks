@@ -2,7 +2,7 @@
 #
 # Generate RECIPES.txt: the explicit allowlist of recipes this build produces.
 #
-# Scope is defined by the two Arsenal installers (vendored under installers/),
+# Scope is defined by the two upstream installers (installers/upstream/),
 # NOT by what happens to exist in bins/. The installers fetch binaries; this
 # script resolves those binary names back to the recipes that produce them.
 #
@@ -17,7 +17,7 @@ export LC_ALL=C
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 BINS_DIR="${SCRIPT_DIR}/bins"
-INSTALLERS_DIR="${SCRIPT_DIR}/installers"
+INSTALLERS_DIR="${SCRIPT_DIR}/installers/upstream"
 RECIPES_FILE="${SCRIPT_DIR}/RECIPES.txt"
 DROP_FILE="${SCRIPT_DIR}/DROPPED.txt"
 
@@ -75,7 +75,16 @@ sort -u "$TMP/bin2recipe.tsv" -o "$TMP/bin2recipe.tsv"
 #-----------------------------------------------------------------------------#
 : > "$TMP/recipes.raw"
 : > "$TMP/unresolved"
+# A tool name can be declared by several recipes. busybox alone declares 396
+# applets, including names that dedicated recipes own (wget, dos2unix, tar).
+# When a recipe's own name matches the tool, that recipe is authoritative and
+# is the only one pulled in -- otherwise requesting `wget` would also drag in
+# busybox and publish its 396 applets that nobody asked for.
 while IFS= read -r tool; do
+  if awk -F'\t' -v t="$tool" '$1==t && $2==t {f=1} END{exit !f}' "$TMP/bin2recipe.tsv"; then
+    printf '%s\n' "$tool" >> "$TMP/recipes.raw"
+    continue
+  fi
   hits="$(awk -F'\t' -v t="$tool" '$1==t {print $2}' "$TMP/bin2recipe.tsv")"
   if [ -n "$hits" ]; then
     printf '%s\n' "$hits" >> "$TMP/recipes.raw"

@@ -1,247 +1,265 @@
 #!/usr/bin/env bash
+#
+# Regenerate METADATA.json (and the checksum/size/file listings) from GHCR.
+#
+# GHCR is the source of truth. The files committed under x86_64-Linux/ are a
+# cross-check, not an input -- so a build that silently published nothing
+# cannot be masked by last run's committed data.
+#
+# Everything the old R2 round-trip needed a separate file for is carried by
+# the manifest itself:
+#
+#   SHA256SUM.txt  -> layers[i].digest      (ORAS pushes raw blobs, so the
+#                                            layer digest IS the file sha256)
+#   BLAKE3SUM.txt  -> annotations[...b3sum]
+#   FILE.txt       -> annotations[...file]
+#   SIZE.txt       -> layers[i].size
+#   ModTime        -> manifest ...image.created (real build time)
+#
+# Usage:
+#   ./gen_meta.sh                 # regenerate into x86_64-Linux/
+#   ./gen_meta.sh --dry-run       # build metadata, run gates, write nothing
 
-# export GITHUB_TOKEN="NON_PRIVS_READ_ONLY_TOKEN"
-# bash <(curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Toolpacks/.github/scripts/x86_64_Linux/gen_meta.sh")
-# bash <(curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Toolpacks/refs/heads/main/.github/scripts/x86_64_Linux/gen_meta.sh")
+set -uo pipefail
+export LC_ALL=C
 
-#-------------------------------------------------------#
-##ENV
-SYSTMP="$(dirname $(mktemp -u))" && export SYSTMP="$SYSTMP"
-TMPDIR="$(mktemp -d)" && export TMPDIR="$TMPDIR" ; echo -e "\n[+] Using TEMP: $TMPDIR\n"
-BUILDYAML="$(mktemp --tmpdir=$TMPDIR XXXXX.yaml)" && export BUILDYAML="$BUILDYAML"
-#Get URlS
-curl -qfsSL "https://pub.ajam.dev/repos/Azathothas/Toolpacks/.github/scripts/x86_64_Linux/bins/metadata.json" | jq -r '.[].source_url' | sed 's/\.sh$/\.yaml/' | grep -i '\.yaml$' | sort -u -o "$TMPDIR/BUILDURLS"
-#Get METADATA.json (bin.ajam.dev/x86_64_Linux)
-curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/METADATA.json.tmp" -o "$TMPDIR/METADATA.json" || curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/METADATA.json" -o "$TMPDIR/METADATA.json"
-#Get BLAKE3SUM.txt
-curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/BLAKE3SUM.txt" -o "$TMPDIR/BLAKE3SUM.txt"
-#Get SHA256SUM.txt
-curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/SHA256SUM.txt" -o "$TMPDIR/SHA256SUM.txt"
-#Get BUILD.BIN.log.txt
-curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/BUILD.BIN.log.txt" -o "$SYSTMP/BUILD.log"
-if command -v trufflehog &> /dev/null; then
- trufflehog filesystem "$SYSTMP/BUILD.log" --no-fail --no-verification --no-update --json 2>/dev/null | jq -r '.Raw' | sed '/{/d' | xargs -I "{}" sh -c 'echo "{}" | tr -d " \t\r\f\v"' | xargs -I "{}" sed "s/{}/ /g" -i "$SYSTMP/BUILD.log"
-fi
-sed -e '/.*github_pat.*/Id' \
-        -e '/.*ghp_.*/Id' \
-        -e '/.*glpat.*/Id' \
-        -e '/.*hf_.*/Id' \
-        -e '/.*token.*/Id' \
-        -e '/.*access_key_id.*/Id' \
-        -e '/.*secret_access_key.*/Id' \
-        -e '/.*cloudflarestorage.*/Id' -i "$SYSTMP/BUILD.log"
-sed 's/\r/\n/g' -i "$SYSTMP/BUILD.log" 2>/dev/null
-rm -rf "${SYSTMP}/BIN_LOGS" 2>/dev/null ; mkdir -p "${SYSTMP}/BIN_LOGS"
-##gh previews
-rm -rf "${SYSTMP}/GH_TMP" 2>/dev/null ; mkdir -p "${SYSTMP}/GH_TMP"
-##tldr
-#rm -rf "${SYSTMP}/TLDR" 2>/dev/null ; mkdir -p "${SYSTMP}/TLDR"
-#tealdeer --seed-config 2>/dev/null ; tealdeer --update
-##Sanity
-if [[ -n "$GITHUB_TOKEN" ]]; then
-   echo -e "\n[+] GITHUB_TOKEN is Exported"
-else
-   # 60 req/hr
-   echo -e "\n[-] GITHUB_TOKEN is NOT Exported"
-   echo -e "Export it to avoid ratelimits\n"
-   exit 1
-fi
-if command -v rclone &> /dev/null; then
-  if [ -s "$HOME/.rclone.conf" ] || [ -s "$HOME/.config/rclone/rclone.conf" ]; then
-     rclone lsd "r2:/bin" --fast-list
-  else
-     echo -e "\n[-] rClone Not Configured\n"
-   exit 1  
-  fi
-else
-  echo -e "\n[-] rClone Not Installed\n"
- exit 1 
-fi
-if [ ! -s "$TMPDIR/BUILDURLS" ] || [ ! -s "$TMPDIR/METADATA.json" ] || [ ! -s "$TMPDIR/BLAKE3SUM.txt" ] || [ ! -s "$TMPDIR/SHA256SUM.txt" ]; then
-     echo -e "\n[-] Required Files Aren't Available\n"
-   exit 1  
-fi
-#-------------------------------------------------------#
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "${SCRIPT_DIR}/../../.." && pwd)"
+BINS_DIR="${SCRIPT_DIR}/bins"
+OUTDIR="${REPO_ROOT}/x86_64-Linux"
+RECIPES_FILE="${SCRIPT_DIR}/RECIPES.txt"
 
-#-------------------------------------------------------#
-##Run
-echo -e "\n\n [+] Started Metadata Update at :: $(TZ='Asia/Kathmandu' date +'%A, %Y-%m-%d (%I:%M:%S %p)')\n\n"
- for BUILD_URL in $(cat "$TMPDIR/BUILDURLS" | sed 's/"//g'); do
-   echo -e "\n[+] Fetching : $BUILD_URL"
-    if curl -qfsSL "$BUILD_URL" -o "$BUILDYAML" &> /dev/null; then
-       dos2unix --quiet "$BUILDYAML"
-      #Sanity Check 
-      if [ "$(yq e '.path' "$BUILDYAML")" = "/" ]; then
-         #C_NAME
-          C_NAME="$(echo ${BUILD_URL} | sed -n 's|.*\/bins/\(.*\)\.yaml$|\1|p')" && export C_NAME="${C_NAME}"      
-         #export BIN= 
-          yq -r '.bins[]' "$BUILDYAML" | sort -u -o "$TMPDIR/BINS.txt"
-         #export Description (Descr)
-          DESCRIPTION="$(yq -r '.description' $BUILDYAML)" && export DESCRIPTION="$DESCRIPTION"
-         #export Build Script
-          BUILD_SCRIPT="$(echo "$BUILD_URL" | sed 's|https://pub.ajam.dev/repos|https://github.com|; s|/Toolpacks|/Toolpacks/tree/main|; s|\.yaml$|.sh|')" && export BUILD_SCRIPT="$BUILD_SCRIPT"
-         #export Notes (Note)
-          NOTE="$(yq -r '.note' $BUILDYAML)" && export NOTE="$NOTE"
-         #export WEB_URL (WebURL)
-          WEB_URL="$(yq -r '.web_url' $BUILDYAML)" && export WEB_URL="$WEB_URL"
-         #export REPO_URL 
-          REPO_URL="$(yq -r '.repo_url' $BUILDYAML)" && export REPO_URL="$REPO_URL"
-         #Git Ops
-          if [[ "$REPO_URL" == https://github.com* ]]; then
-           #Fetch 
-            REPO_NAME="$(echo ${REPO_URL} | sed 's|^https://github.com/||' | sed 's/\s//g' | sed 's/|//g' | tr -d '[:space:]')" && export REPO_NAME="${REPO_NAME}"
-            REPO_METADATA="$(curl -qfsSL "https://api.github.com/repos/$REPO_NAME" -H "Authorization: Bearer $GITHUB_TOKEN" 2>/dev/null)" && export REPO_METADATA="$REPO_METADATA"
-            RELEASE_METADATA="$(curl -qfsSL "https://api.github.com/repos/$REPO_NAME/releases/latest" -H "Authorization: Bearer $GITHUB_TOKEN" 2>/dev/null | jq '.assets=""')" && export RELEASE_METADATA="$RELEASE_METADATA"
-           #Parse
-            #REPO_NAME="$(echo $REPO_METADATA | jq -r '.name' | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/`//g')" && export REPO_NAME="$REPO_NAME"
-            REPO_AUTHOR="$(echo $REPO_METADATA | jq -r '.owner.login' | sed 's/"//g' | sed 's/|//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/`//g')" && export REPO_AUTHOR="$REPO_AUTHOR"
-            REPO_DESCRIPTION="$(echo $REPO_METADATA | jq -r '.description' | sed 's/`//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed ':a;N;$!ba;s/\r\n//g; s/\n//g' | sed 's/["'\'']//g' | sed 's/|//g' | sed 's/`//g')" && export REPO_DESCRIPTION="$REPO_DESCRIPTION"
-            REPO_LANGUAGE="$(echo $REPO_METADATA | jq -r '.language' | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/|//g' | sed 's/`//g')" && export REPO_LANGUAGE="$REPO_LANGUAGE"
-            REPO_LICENSE="$(echo $REPO_METADATA | jq -r '.license.name' | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/|//g' | sed 's/`//g')" && export REPO_LICENSE="$REPO_LICENSE"
-            ##Get Preview Images
-            #REPO_IMG="$(curl -qfsSL "${REPO_URL}" -H "Authorization: Bearer $GITHUB_TOKEN" 2>/dev/null | grep -oP '(?<=property="og:image" content=")[^"]+' | tr -d '[:space:]' | grep -im1 "repository-images")" && export REPO_IMG="${REPO_IMG}"
-            #[ -n "${REPO_IMG+x}" ] && [ -n "${REPO_IMG}" ] && curl -qfsSL "${REPO_IMG}" -o "${SYSTMP}/GH_TMP/${C_NAME}.preview.png" 2>/dev/null
-            export REPO_IMG=""
-            #Last Updated            
-            LAST_UPDATED="$(echo $REPO_METADATA | jq -r '.pushed_at' | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/|//g' | sed 's/`//g' | tr -d '[:space:]')" && export LAST_UPDATED="$LAST_UPDATED"
-           #If Releases don't exist, use tags
-            if [ -z "$RELEASE_METADATA" ]; then
-               PKG_VERSION="$(curl -qfsSL "https://api.github.com/repos/$REPO_NAME/tags" -H "Authorization: Bearer $GITHUB_TOKEN" 2>/dev/null | jq -r '.[0].name' | sed 's/["'\'']//g' | sed 's/|//g' | sed 's/`//g' | tr -d '[:space:]')" && export PKG_VERSION="$PKG_VERSION"
-               PKG_RELEASED="$(curl -qfsSL "https://api.github.com/repos/$REPO_NAME/git/refs/tags/$PKG_VERSION" -H "Authorization: Bearer $GITHUB_TOKEN" 2>/dev/null | jq '.object.url' | xargs curl -qfsSL -H "Authorization: Bearer $GITHUB_TOKEN" 2>/dev/null | jq -r '.committer.date' | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/|//g' | sed 's/`//g' | tr -d '[:space:]')" && export PKG_RELEASED="$PKG_RELEASED"
-            else
-               PKG_VERSION="$(echo $RELEASE_METADATA | jq -r '.tag_name' | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/|//g' | sed 's/`//g' | tr -d '[:space:]')" && export PKG_VERSION="$PKG_VERSION"
-               PKG_RELEASED="$(echo $RELEASE_METADATA | jq -r '.published_at' | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/|//g' | sed 's/`//g' | tr -d '[:space:]')" && export PKG_RELEASED="$PKG_RELEASED"
-            fi
-            #REPO_URL="$(echo $REPO_METADATA | jq -r '.html_url' | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/`//g' | tr -d '[:space:]')" && export REPO_URL="$REPO_URL"
-            REPO_STARS="$(echo $REPO_METADATA | jq -r '.stargazers_count' | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/|//g' | sed 's/`//g' | tr -d '[:space:]')" && export REPO_STARS="$REPO_STARS"
-            REPO_TOPICS="$(echo "$REPO_METADATA" | jq -c -r '.topics' | tr -d '[]' | sed 's/, /, /g' | sed 's/,/, /g' | sed 's/|//g' | sed 's/"//g')" && export REPO_TOPICS="$REPO_TOPICS"
-          else
-            unset REPO_URL REPO_NAME REPO_METADATA RELEASE_METADATA REPO_AUTHOR REPO_DESCRIPTION REPO_LANGUAGE REPO_LICENSE LAST_UPDATED PKG_VERSION PKG_RELEASED REPO_STAR REPO_TOPICS
-          fi
-         #Merge with json
-          for BIN in $(cat "$TMPDIR/BINS.txt" | sed 's/"//g'); do
-            [ -n "${BIN}" ] || exit 1
-            #Description
-             jq --arg BIN "$BIN" --arg DESCRIPTION "$DESCRIPTION" '.[] |= if .name == $BIN then . + {description: $DESCRIPTION} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-            #pkg_family
-             jq --arg BIN "$BIN" --arg PKG_FAMILY "${C_NAME}" '.[] |= if .name == $BIN then . + {pkg_family: $PKG_FAMILY} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-            #Note
-             jq --arg BIN "$BIN" --arg NOTE "$NOTE" '.[] |= if .name == $BIN then . + {note: $NOTE} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-            #Extras (All Bins)
-             EXTRA_BINS="$(cat $TMPDIR/BINS.txt | sed "/^$BIN$/d" | paste -sd ',' -)" && export EXTRA_BINS="${EXTRA_BINS}"  
-             jq --arg BIN "$BIN" --arg EXTRA_BINS "$EXTRA_BINS" '.[] |= if .name == $BIN then . + {extra_bins: $EXTRA_BINS} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-            #BSUM
-             B3SUM="$(cat "$TMPDIR/BLAKE3SUM.txt" | grep -E "^[a-f0-9]+[[:space:]]+(\./)?${BIN}$" | awk '{print $1}' | sort  -u | head -n 1 | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/`//g' | sed 's/|//g' | tr -d '[:space:]')" && export B3SUM="$B3SUM"
-             jq --arg BIN "$BIN" --arg B3SUM "$B3SUM" '.[] |= if .name == $BIN then . + {b3sum: $B3SUM} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-            #SHA256SUM
-             SHA256="$(cat "$TMPDIR/SHA256SUM.txt" | grep -E "^[a-f0-9]+[[:space:]]+(\./)?${BIN}$" | awk '{print $1}' | sort  -u | head -n 1 | sed 's/"//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | sed 's/["'\'']//g' | sed 's/`//g' | sed 's/|//g' | tr -d '[:space:]')" && export SHA256="$SHA256"
-             jq --arg BIN "$BIN" --arg SHA256 "$SHA256" '.[] |= if .name == $BIN then . + {sha256: $SHA256} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-            #Web URLs
-             jq --arg BIN "$BIN" --arg WEB_URL "$WEB_URL" '.[] |= if .name == $BIN then . + {web_url: $WEB_URL} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-            #Build Log
-             if [ -f "$SYSTMP/BUILD.log" ] && [ $(stat -c%s "$SYSTMP/BUILD.log") -gt 10240 ]; then
-               LOG_MATCH="$(echo "${BUILD_SCRIPT}" | sed 's|https://github.com/Azathothas/Toolpacks/tree/main|https://pub.ajam.dev/repos/Azathothas/Toolpacks|')" && export LOG_MATCH="${LOG_MATCH}"
-               #LOG_BIN="$(echo "${BIN}" | sed 's/\.no_strip$//')" && export LOG_BIN="${LOG_BIN}"
-               LOG_BIN="$(echo "${BIN}")" && export LOG_BIN="${LOG_BIN}"
-               LOG_BEGIN="$(grep -nE "^\[\+\] (Building|Fetching) \: ${LOG_MATCH}" "$SYSTMP/BUILD.log" | head -n 1 | cut -d: -f1)" && export LOG_BEGIN="${LOG_BEGIN}"
-               LOG_END="$(awk -v start="$LOG_BEGIN" 'NR > start && /.*Completed \(Building\|Fetching\).*/ {print NR; exit}' "$SYSTMP/BUILD.log")" && export LOG_END="${LOG_END}"
-               if [ -n "${LOG_BEGIN}" ] && [ -n "${LOG_END}" ]; then
-                 sed -n "${LOG_BEGIN},${LOG_END}p" "$SYSTMP/BUILD.log" > "${SYSTMP}/BIN_LOGS/${BIN}.log.txt"
-                 cat "${SYSTMP}/BIN_LOGS/${BIN}.log.txt" >> "${SYSTMP}/BIN_LOGS/${C_NAME}.log.txt"
-                 if [ -f "${SYSTMP}/BIN_LOGS/${C_NAME}.log.txt" ] && [ $(stat -c%s "${SYSTMP}/BIN_LOGS/${C_NAME}.log.txt") -gt 10 ]; then
-                   BUILD_LOG="$(jq --arg BIN "$BIN" -r '.[] | select(.name == $BIN) | .download_url' "$TMPDIR/METADATA.json" | sed 's/\.no_strip$//').log.txt"
-                   jq --arg BIN "$BIN" --arg BUILD_LOG "$BUILD_LOG" '.[] |= if .name == $BIN then . + {build_log: $BUILD_LOG} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-                 else
-                   jq --arg BIN "$BIN" --arg BUILD_LOG "https://bin.ajam.dev/x86_64_Linux/BUILD.log.txt" '.[] |= if .name == $BIN then . + {build_log: $BUILD_LOG} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-                 fi
-               fi
-             else
-                 jq --arg BIN "$BIN" --arg BUILD_LOG "https://bin.ajam.dev/x86_64_Linux/BUILD.log.txt" '.[] |= if .name == $BIN then . + {build_log: $BUILD_LOG} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             fi
-            #Build_Script
-             jq --arg BIN "$BIN" --arg BUILD_SCRIPT "$BUILD_SCRIPT" '.[] |= if .name == $BIN then . + {build_script: $BUILD_SCRIPT} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-            ##TLDR
-            # tealdeer --no-auto-update --quiet --raw "${BIN}" > "${SYSTMP}/TLDR/${C_NAME}.tldr.md"
-            # if [ -f "${SYSTMP}/TLDR/${C_NAME}.tldr.md" ] && [ $(stat -c%s "${SYSTMP}/TLDR/${C_NAME}.tldr.md") -lt 10 ]; then
-            #   tealdeer --no-auto-update --quiet --raw "${C_NAME}" > "${SYSTMP}/TLDR/${C_NAME}.tldr.md"
-            #     if [ -f "${SYSTMP}/TLDR/${C_NAME}.tldr.md" ] && [ $(stat -c%s "${SYSTMP}/TLDR/${C_NAME}.tldr.md") -lt 10 ]; then
-            #       tealdeer --no-auto-update --quiet --raw "${C_NAME%%-*}" > "${SYSTMP}/TLDR/${C_NAME}.tldr.md"
-            #     fi
-            # fi
-            #Git Meta
-             if [ -n "${REPO_URL}" ] && [[ "${REPO_URL}" == https://github.com* ]]; then
-             #$REPO_AUTHOR repo_author
-               jq --arg BIN "$BIN" --arg REPO_AUTHOR "$REPO_AUTHOR" '.[] |= if .name == $BIN then . + {repo_author: $REPO_AUTHOR} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             #$REPO_DESCRIPTION repo_info
-               jq --arg BIN "$BIN" --arg REPO_DESCRIPTION "$REPO_DESCRIPTION" '.[] |= if .name == $BIN then . + {repo_info: $REPO_DESCRIPTION} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             #$REPO_LANGUAGE repo_language
-               jq --arg BIN "$BIN" --arg REPO_LANGUAGE "$REPO_LANGUAGE" '.[] |= if .name == $BIN then . + {repo_language: $REPO_LANGUAGE} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             #$REPO_LICENSE repo_license
-               jq --arg BIN "$BIN" --arg REPO_LICENSE "$REPO_LICENSE" '.[] |= if .name == $BIN then . + {repo_license: $REPO_LICENSE} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             #$LAST_UPDATED repo_updated
-               jq --arg BIN "$BIN" --arg LAST_UPDATED "$LAST_UPDATED" '.[] |= if .name == $BIN then . + {repo_updated: $LAST_UPDATED} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             #$PKG_RELEASED repo_released
-               jq --arg BIN "$BIN" --arg PKG_RELEASED "$PKG_RELEASED" '.[] |= if .name == $BIN then . + {repo_released: $PKG_RELEASED} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             #$PKG_VERSION repo_version
-               jq --arg BIN "$BIN" --arg PKG_VERSION "$PKG_VERSION" '.[] |= if .name == $BIN then . + {repo_version: $PKG_VERSION} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             #$REPO_URL repo_url
-               jq --arg BIN "$BIN" --arg REPO_URL "$REPO_URL" '.[] |= if .name == $BIN then . + {repo_url: $REPO_URL} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             #$REPO_STARS repo_url
-               jq --arg BIN "$BIN" --arg REPO_STARS "$REPO_STARS" '.[] |= if .name == $BIN then . + {repo_stars: $REPO_STARS} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             #$REPO_TOPICS repo_topics
-               jq --arg BIN "$BIN" --arg REPO_TOPICS "$REPO_TOPICS" '.[] |= if .name == $BIN then . + {repo_topics: $REPO_TOPICS} else . end' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             #Sort & Map
-               jq 'map({name: (.name // "" | if . == null or . == "" then "" else . end), pkg_family: (.pkg_family // "" | if . == null or . == "" then "" else . end), description: (.description // "" | if . == null or . == "" then "" else . end),note: (.note // "" | if . == null or . == "" then "" else . end), download_url: (.download_url // "" | if . == null or . == "" then "" else . end), size: (.size // "" | if . == null or . == "" then "" else . end), b3sum: (.b3sum // "" | if . == null or . == "" then "" else . end), sha256: (.sha256 // "" | if . == null or . == "" then "" else . end), build_date: (.build_date // "" | if . == null or . == "" then "" else . end), repo_url: (.repo_url // "" | if . == null or . == "" then "" else . end), repo_author: (.repo_author // "" | if . == null or . == "" then "" else . end), repo_info: (.repo_info // "" | if . == null or . == "" then "" else . end), repo_updated: (.repo_updated // "" | if . == null or . == "" then "" else . end), repo_released: (.repo_released // "" | if . == null or . == "" then "" else . end), repo_version: (.repo_version // "" | if . == null or . == "" then "" else . end), repo_stars: (.repo_stars // "" | if . == null or . == "" then "" else . end), repo_language: (.repo_language // "" | if . == null or . == "" then "" else . end), repo_license: (.repo_license // "" | if . == null or . == "" then "" else . end), repo_topics: (.repo_topics // "" | if . == null or . == "" then "" else . end), web_url: (.web_url // "" | if . == null or . == "" then "" else . end),build_script: (.build_script // "" | if . == null or . == "" then "" else . end),build_log: (.build_log // "" | if . == null or . == "" then "" else . end), extra_bins: (.extra_bins // "" | if . == null or . == "" then "" else . end)})' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             else
-             #Sort & Map
-               jq 'map({name: (.name // "" | if . == null or . == "" then "" else . end), pkg_family: (.pkg_family // "" | if . == null or . == "" then "" else . end), description: (.description // "" | if . == null or . == "" then "" else . end), note: (.note // "" | if . == null or . == "" then "" else . end), download_url: (.download_url // "" | if . == null or . == "" then "" else . end), size: (.size // "" | if . == null or . == "" then "" else . end), b3sum: (.b3sum // "" | if . == null or . == "" then "" else . end), sha256: (.sha256 // "" | if . == null or . == "" then "" else . end), build_date: (.build_date // "" | if . == null or . == "" then "" else . end), repo_url: (.repo_url // "" | if . == null or . == "" then "" else . end), web_url: (.web_url // "" | if . == null or . == "" then "" else . end), build_script: (.build_script // "" | if . == null or . == "" then "" else . end), build_log: (.build_log // "" | if . == null or . == "" then "" else . end), extra_bins: (.extra_bins // "" | if . == null or . == "" then "" else . end)})' "$TMPDIR/METADATA.json" > "$TMPDIR/METADATA.tmp" && mv "$TMPDIR/METADATA.tmp" "$TMPDIR/METADATA.json"
-             fi
-            #Print json
-            echo -e "\n[+] BIN: $BIN"
-            jq --arg BIN "$BIN" '.[] | select(.name == $BIN)' "$TMPDIR/METADATA.json" 2>/dev/null | tee "$TMPDIR/METADATA.json.bak.tmp"
-            #Append
-            if jq --exit-status . "$TMPDIR/METADATA.json.bak.tmp" >/dev/null 2>&1; then
-               cat "$TMPDIR/METADATA.json.bak.tmp" >> "$TMPDIR/METADATA.json.bak"
-            fi
-          done
-      fi
+DRY_RUN=0
+[ "${1:-}" = "--dry-run" ] && DRY_RUN=1
+
+GHCR_OWNER="${GHCR_OWNER:-${GITHUB_REPOSITORY_OWNER:-}}"
+[ -z "$GHCR_OWNER" ] && [ -n "${GITHUB_REPOSITORY:-}" ] && GHCR_OWNER="${GITHUB_REPOSITORY%%/*}"
+GHCR_OWNER="$(echo "$GHCR_OWNER" | tr '[:upper:]' '[:lower:]')"
+GHCR_NAMESPACE="${GHCR_NAMESPACE:-toolpacks}"
+OWNER_TYPE="${GHCR_OWNER_TYPE:-org}"
+
+for c in jq oras curl; do
+    command -v "$c" >/dev/null 2>&1 || { echo "[-] FATAL: ${c} not found" >&2; exit 1; }
+done
+[ -n "$GHCR_OWNER" ] || { echo "[-] FATAL: GHCR_OWNER unset" >&2; exit 1; }
+
+TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
+GH_API="https://api.github.com"
+AUTH=(); [ -n "${GITHUB_TOKEN:-}" ] && AUTH=(-H "Authorization: Bearer ${GITHUB_TOKEN}")
+
+#-----------------------------------------------------------------------------#
+# 1. List every published package, following Link: rel="next" to exhaustion.
+#    Truncating at page 1 would silently drop most of the catalogue.
+#-----------------------------------------------------------------------------#
+echo "[*] listing packages for ${OWNER_TYPE}/${GHCR_OWNER}"
+scope="orgs/${GHCR_OWNER}"; [ "$OWNER_TYPE" = "user" ] && scope="users/${GHCR_OWNER}"
+url="${GH_API}/${scope}/packages?package_type=container&per_page=100"
+: > "${TMP}/packages.txt"
+pages=0
+while [ -n "$url" ]; do
+    pages=$((pages+1))
+    curl -fsSL -D "${TMP}/h" "${AUTH[@]}" "$url" -o "${TMP}/p.json" 2>/dev/null || break
+    jq -r '.[].name' "${TMP}/p.json" 2>/dev/null >> "${TMP}/packages.txt"
+    url="$(grep -i '^link:' "${TMP}/h" | tr ',' '\n' | grep 'rel="next"' \
+           | sed -E 's/.*<([^>]+)>.*/\1/' | head -1)"
+done
+# Only our namespace, and strip the namespace prefix to get the family name.
+grep "^${GHCR_NAMESPACE}/" "${TMP}/packages.txt" 2>/dev/null \
+  | sed "s|^${GHCR_NAMESPACE}/||" | sort -u > "${TMP}/families.txt" || true
+N_PKG=$(wc -l < "${TMP}/families.txt")
+echo "    ${N_PKG} package(s) across ${pages} page(s)"
+
+if [ "$N_PKG" -eq 0 ]; then
+    echo "[-] FATAL: no packages found. Either nothing has been published, or"
+    echo "           the packages are private and this token cannot see them." >&2
+    exit 1
+fi
+
+#-----------------------------------------------------------------------------#
+# 2. Fetch each manifest (parallel) and flatten layers -> one row per binary.
+#-----------------------------------------------------------------------------#
+echo "[*] fetching manifests"
+mkdir -p "${TMP}/manifests"
+fetch_one() {
+    local fam="$1"
+    oras manifest fetch "ghcr.io/${GHCR_OWNER}/${GHCR_NAMESPACE}/${fam}:latest" \
+      > "${TMP}/manifests/${fam}.json" 2>/dev/null || rm -f "${TMP}/manifests/${fam}.json"
+}
+export -f fetch_one; export TMP GHCR_OWNER GHCR_NAMESPACE
+xargs -a "${TMP}/families.txt" -P 16 -I{} bash -c 'fetch_one "$@"' _ {} 2>/dev/null
+
+N_MAN=$(find "${TMP}/manifests" -name '*.json' | wc -l)
+echo "    ${N_MAN} manifest(s) fetched"
+
+# Assert every listed package produced a manifest. A gap here usually means
+# the package name was not URL-encoded somewhere, or it went private.
+if [ "$N_MAN" -ne "$N_PKG" ]; then
+    echo "[-] FATAL: listed ${N_PKG} packages but fetched ${N_MAN} manifests" >&2
+    comm -23 "${TMP}/families.txt" \
+      <(find "${TMP}/manifests" -name '*.json' -printf '%f\n' | sed 's/\.json$//' | sort) \
+      | sed 's/^/      missing: /' >&2
+    exit 1
+fi
+
+#-----------------------------------------------------------------------------#
+# 3. Repo metadata, cached by repo_url. Many recipes share one upstream repo,
+#    and the old script burned ~2800 API calls against a 5000/hr budget.
+#-----------------------------------------------------------------------------#
+mkdir -p "${TMP}/repo"
+repo_meta() {
+    local repo_url="$1" slug key out
+    slug="$(echo "$repo_url" | sed -E 's|https?://github.com/||; s|/$||; s|\.git$||')"
+    case "$slug" in */*) ;; *) echo '{}'; return;; esac
+    key="$(echo "$slug" | tr '/' '_')"
+    out="${TMP}/repo/${key}.json"
+    if [ ! -f "$out" ]; then
+        curl -fsSL "${AUTH[@]}" "${GH_API}/repos/${slug}" -o "$out" 2>/dev/null \
+          || echo '{}' > "$out"
+        # Back off on secondary rate limits rather than silently emitting {}.
+        if jq -e '.message? // empty | test("rate limit|abuse")' "$out" >/dev/null 2>&1; then
+            sleep 60
+            curl -fsSL "${AUTH[@]}" "${GH_API}/repos/${slug}" -o "$out" 2>/dev/null || echo '{}' > "$out"
+        fi
     fi
- done
-#-------------------------------------------------------#
+    cat "$out"
+}
 
-#-------------------------------------------------------#
-#Update R2
-echo -e "\n[+] Updating Metadata.json ($(realpath $TMPDIR/METADATA.json))\n"
-if jq --exit-status . "$TMPDIR/METADATA.json.bak" >/dev/null 2>&1; then
-   cat "$TMPDIR/METADATA.json.bak" | jq -s '.' | jq 'walk(if type == "string" and . == "null" then "" else . end)' > "$TMPDIR/METADATA.json"
-   if [ "$(jq '. | length' "$TMPDIR/METADATA.json")" -gt 1000 ]; then
-    #Sync Logs
-     find "${SYSTMP}/BIN_LOGS" -type f -size -3c -delete 2>/dev/null
-     rclone copy --checksum "${SYSTMP}/BIN_LOGS/." "r2:/bin/x86_64_Linux/" --check-first --checkers 2000 --transfers 1000 --retries="10" --user-agent="$USER_AGENT"
-    #Sync GH Meta 
-     curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Toolpacks/refs/heads/main/.github/assets/base.png" -o "${SYSTMP}/GH_TMP/base.default.png"
-     curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Toolpacks/refs/heads/main/.github/assets/bin.png" -o "${SYSTMP}/GH_TMP/bin.default.png"
-     curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Toolpacks/refs/heads/main/.github/assets/pkg.png" -o "${SYSTMP}/GH_TMP/pkg.default.png"
-     find "${SYSTMP}/GH_TMP" -type f -size -3c -delete 2>/dev/null
-     find "${SYSTMP}/GH_TMP/" -type f -name "*.png" -exec magick "{}" -background "none" -density "1000" -resize "512x512" -gravity "center" -extent "512x512" -verbose "{}" \;
-     rclone copy --checksum "${SYSTMP}/GH_TMP/." "r2:/bin/x86_64_Linux/" --check-first --checkers 2000 --transfers 1000 --retries="10" --user-agent="$USER_AGENT"
-     rclone copyto --checksum "${SYSTMP}/GH_TMP/bin.default.png" "r2:/bin/x86_64_Linux/bin.default.png" --check-first --checkers 2000 --transfers 1000 --retries="10" --user-agent="$USER_AGENT"
-     rclone copyto --checksum "${SYSTMP}/GH_TMP/base.default.png" "r2:/bin/x86_64_Linux/Baseutils/base.default.png" --check-first --checkers 2000 --transfers 1000 --retries="10" --user-agent="$USER_AGENT"
-    #Sync TLDR
-     #find "${SYSTMP}/TLDR" -type f -size -3c -delete 2>/dev/null
-     #rclone copy --checksum "${SYSTMP}/TLDR/." "r2:/bin/x86_64_Linux/" --check-first --checkers 2000 --transfers 1000 --retries="10" --user-agent="$USER_AGENT"
-    #Sync rest
-     rclone copyto --checksum "$TMPDIR/METADATA.json" "r2:/bin/x86_64_Linux/METADATA.json" --check-first --checkers 2000 --transfers 1000 --retries="10" --user-agent="$USER_AGENT"
-     rclone delete "r2:/bin/x86_64_Linux/METADATA.json.tmp" --check-first --checkers 2000 --transfers 1000 --user-agent="$USER_AGENT"
-    #Cleanup
-      rclone delete "r2:/bin/x86_64_Linux" --min-size 0 --max-size 0
-   else
-     echo -e "\n[-] FATAL: ($(realpath "$TMPDIR/METADATA.json")) is small (<1000)\n"
-   fi
+#-----------------------------------------------------------------------------#
+# 4. Build METADATA.json: one entry per binary, keyed by family.
+#-----------------------------------------------------------------------------#
+echo "[*] building metadata"
+: > "${TMP}/entries.jsonl"
+while IFS= read -r fam; do
+    man="${TMP}/manifests/${fam}.json"
+    [ -s "$man" ] || continue
+
+    # Handle both an image manifest and an index; an index has .layers == null
+    # and would otherwise make the whole family vanish without an error.
+    if [ "$(jq -r '.layers // "null"' "$man")" = "null" ]; then
+        echo "[!] ${fam}: manifest is an index, not an image manifest; skipping" >&2
+        continue
+    fi
+
+    created="$(jq -r '.annotations["org.opencontainers.image.created"] // ""' "$man")"
+    yaml="${BINS_DIR}/${fam}.yaml"
+    if [ -f "$yaml" ]; then
+        description="$(yq -r '.description // ""' "$yaml" 2>/dev/null)"
+        note="$(yq -r '.note // ""' "$yaml" 2>/dev/null)"
+        repo_url="$(yq -r '.repo_url // ""' "$yaml" 2>/dev/null)"
+        web_url="$(yq -r '.web_url // ""' "$yaml" 2>/dev/null)"
+        all_bins="$(yq -r '.bins[]?' "$yaml" 2>/dev/null | paste -sd, -)"
+    else
+        description=""; note=""; repo_url=""; web_url=""; all_bins=""
+    fi
+
+    rj="$(repo_meta "$repo_url")"
+    rel="$(echo "$rj" | jq -r '.pushed_at // ""')"
+
+    jq -c \
+      --arg fam "$fam" --arg created "$created" \
+      --arg description "$description" --arg note "$note" \
+      --arg repo_url "$repo_url" --arg web_url "$web_url" \
+      --arg all_bins "$all_bins" \
+      --arg owner "$GHCR_OWNER" --arg ns "$GHCR_NAMESPACE" \
+      --arg repo "${GITHUB_REPOSITORY:-}" \
+      --argjson rj "${rj:-{\}}" \
+      '
+      .layers[] | select(.annotations["org.opencontainers.image.title"] != null) |
+      {
+        name:          .annotations["org.opencontainers.image.title"],
+        pkg_family:    $fam,
+        description:   $description,
+        note:          $note,
+        download_url:  ("https://ghcr.io/v2/" + $owner + "/" + $ns + "/" + $fam + "/blobs/" + .digest),
+        ghcr_pkg:      ("ghcr.io/" + $owner + "/" + $ns + "/" + $fam + ":latest"),
+        ghcr_digest:   .digest,
+        size_bytes:    .size,
+        size:          (if .size >= 1073741824 then ((.size/1073741824*100|floor)/100|tostring) + " GB"
+                        elif .size >= 1048576  then ((.size/1048576*100|floor)/100|tostring) + " MB"
+                        elif .size >= 1024     then ((.size/1024*100|floor)/100|tostring) + " KB"
+                        else (.size|tostring) + " B" end),
+        b3sum:         (.annotations["dev.toolpacks.b3sum"] // ""),
+        sha256:        (.digest | sub("^sha256:";"")),
+        file:          (.annotations["dev.toolpacks.file"] // ""),
+        build_date:    $created,
+        repo_url:      $repo_url,
+        repo_author:   ($rj.owner.login // ""),
+        repo_info:     ($rj.description // ""),
+        repo_updated:  ($rj.updated_at // ""),
+        repo_released: ($rj.pushed_at // ""),
+        repo_stars:    (($rj.stargazers_count // "") | tostring),
+        repo_language: ($rj.language // ""),
+        repo_license:  ($rj.license.name // ""),
+        repo_topics:   (($rj.topics // []) | join(", ")),
+        web_url:       $web_url,
+        build_script:  ("https://github.com/" + $repo + "/tree/main/.github/scripts/x86_64_Linux/bins/" + $fam + ".sh"),
+        build_log:     ("https://github.com/" + $repo + "/tree/main/x86_64-Linux/logs/" + $fam + ".log.txt"),
+        extra_bins:    $all_bins
+      }' "$man" >> "${TMP}/entries.jsonl" 2>/dev/null
+done < "${TMP}/families.txt"
+
+jq -s 'sort_by(.name)' "${TMP}/entries.jsonl" > "${TMP}/METADATA.json"
+N_ENTRIES=$(jq 'length' "${TMP}/METADATA.json")
+echo "    ${N_ENTRIES} binary entries"
+
+#-----------------------------------------------------------------------------#
+# 5. GATES. The count gate alone is what let empty checksums ship last time.
+#-----------------------------------------------------------------------------#
+echo "[*] gates"
+rc=0
+
+EMPTY=$(jq '[.[] | select(.b3sum=="" or .sha256=="" or .download_url=="" or .pkg_family=="" or .name=="")] | length' "${TMP}/METADATA.json")
+if [ "$EMPTY" -ne 0 ]; then
+    echo "[-] GATE FAILED: ${EMPTY} entries have an empty required field" >&2
+    jq -r '.[] | select(.b3sum=="" or .sha256=="" or .download_url=="" or .pkg_family=="" or .name=="") | "      \(.pkg_family)/\(.name)"' "${TMP}/METADATA.json" | head -20 >&2
+    rc=1
 else
-   echo -e "\n[-] FATAL: ($(realpath $TMPDIR/METADATA.json.bak)) is Inavlid\n"
- exit 1
+    echo "    [+] no empty required fields"
 fi
-#END
- rm -rf "${TMPDIR}" "${SYSTMP}/BIN_LOGS" "${SYSTMP}/GH_TMP" 2>/dev/null
-#-------------------------------------------------------#
+
+if [ -s "$RECIPES_FILE" ]; then
+    EXPECTED=$(wc -l < "$RECIPES_FILE")
+    LOW=$(( EXPECTED * 80 / 100 ))
+    if [ "$N_PKG" -lt "$LOW" ]; then
+        echo "[-] GATE FAILED: only ${N_PKG} packages for ${EXPECTED} recipes (<80%)" >&2
+        rc=1
+    else
+        echo "    [+] package count ${N_PKG} vs ${EXPECTED} recipes"
+    fi
+fi
+
+DUPE=$(jq -r '[.[].name] | group_by(.) | map(select(length>1)) | length' "${TMP}/METADATA.json")
+[ "$DUPE" -ne 0 ] && echo "    [!] ${DUPE} duplicate binary name(s) across families"
+
+if [ "$rc" -ne 0 ]; then
+    echo "[-] gates failed; not writing output" >&2
+    exit 1
+fi
+
+#-----------------------------------------------------------------------------#
+# 6. Emit. Cross-check against what is currently committed before overwriting.
+#-----------------------------------------------------------------------------#
+if [ -f "${OUTDIR}/METADATA.json" ]; then
+    OLD=$(jq -r '.[] | if type=="array" then .[] else . end | .name' "${OUTDIR}/METADATA.json" 2>/dev/null | sort -u)
+    NEW=$(jq -r '.[].name' "${TMP}/METADATA.json" | sort -u)
+    GONE=$(comm -23 <(echo "$OLD") <(echo "$NEW") | wc -l)
+    ADDED=$(comm -13 <(echo "$OLD") <(echo "$NEW") | wc -l)
+    echo "    [i] vs committed: ${ADDED} new, ${GONE} no longer present"
+fi
+
+if [ "$DRY_RUN" -eq 1 ]; then
+    echo "[+] dry run; wrote nothing. Metadata at ${TMP}/METADATA.json"
+    cp "${TMP}/METADATA.json" "${SYSTMP:-/tmp}/METADATA.preview.json" 2>/dev/null || true
+    exit 0
+fi
+
+mkdir -p "$OUTDIR"
+cp "${TMP}/METADATA.json" "${OUTDIR}/METADATA.json"
+jq -r '.[] | "\(.b3sum)  \(.name)"'                "${TMP}/METADATA.json" > "${OUTDIR}/BLAKE3SUM.txt"
+jq -r '.[] | "\(.sha256)  \(.name)"'               "${TMP}/METADATA.json" > "${OUTDIR}/SHA256SUM.txt"
+jq -r '.[] | "\(.name): \(.file)"'                 "${TMP}/METADATA.json" > "${OUTDIR}/FILE.txt"
+jq -r '.[] | "\(.size)\t\(.name)"'                 "${TMP}/METADATA.json" > "${OUTDIR}/SIZE.txt"
+jq -r '.[] | "\(.build_date) --> [\(.name)]"'      "${TMP}/METADATA.json" | sort > "${OUTDIR}/BUILD_DATES.txt"
+command -v yq >/dev/null 2>&1 && jq . "${OUTDIR}/METADATA.json" | yq -p json -o yaml > "${OUTDIR}/METADATA.yaml" 2>/dev/null
+
+echo "[+] wrote ${OUTDIR}/{METADATA.json,BLAKE3SUM.txt,SHA256SUM.txt,FILE.txt,SIZE.txt,BUILD_DATES.txt}"

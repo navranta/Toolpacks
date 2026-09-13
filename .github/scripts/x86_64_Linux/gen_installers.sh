@@ -1,4 +1,46 @@
 #!/usr/bin/env bash
+#
+# Generate the end-user installers from the recipe allowlist.
+#
+# The old installers did one plain `curl` per tool against a flat CDN path.
+# GHCR has no flat path: a blob needs an anonymous bearer token and the
+# manifest must be read to find which layer holds the requested binary.
+# That logic is written once here, not 141 times.
+#
+# The generated scripts parse JSON with sed, never jq -- they must work on a
+# bare box where jq is one of the tools being installed. curl is the only
+# assumed dependency, which is what the originals already required.
+#
+# Usage:
+#   ./gen_installers.sh             # regenerate installers/
+#   ./gen_installers.sh --check     # verify they are current (CI)
+
+set -euo pipefail
+export LC_ALL=C
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+BINS_DIR="${SCRIPT_DIR}/bins"
+OUT_DIR="${SCRIPT_DIR}/installers"
+RECIPES_FILE="${SCRIPT_DIR}/RECIPES.txt"
+DROP_FILE="${SCRIPT_DIR}/DROPPED.txt"
+
+CHECK=0; [ "${1:-}" = "--check" ] && CHECK=1
+TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
+
+# binary -> family, from each recipe's declared bins:
+awk '
+  FNR==1 { r=FILENAME; sub(/.*\//,"",r); sub(/\.yaml$/,"",r); inb=0 }
+  /^bins:/ { inb=1; next }
+  inb && /^[[:space:]]+- / { b=$0; sub(/^[[:space:]]+-[[:space:]]*"?/,"",b); sub(/"[[:space:]]*$/,"",b);
+                             if (b!="") print b "\t" r; next }
+  inb && /^[^[:space:]]/ { inb=0 }
+' "$BINS_DIR"/*.yaml | sort -u > "${TMP}/bin2fam.tsv"
+
+sed -e 's/#.*//' -e 's/[[:space:]]//g' -e '/^$/d' "$DROP_FILE" | sort -u > "${TMP}/drop"
+
+emit_header() {
+cat <<'HDR'
+#!/usr/bin/env bash
 
 ##Requires: coreutils + curl
 ##
@@ -33,8 +75,8 @@
      if command -v sudo &> /dev/null && sudo -n true 2>/dev/null; then export SUDO="sudo"; else export SUDO=""; fi
  fi
 #Registry
- export GHCR_OWNER="${GHCR_OWNER:-UNSET}"
- export GHCR_NAMESPACE="${GHCR_NAMESPACE:-toolpacks}"
+ export GHCR_OWNER="${GHCR_OWNER:-@@OWNER@@}"
+ export GHCR_NAMESPACE="${GHCR_NAMESPACE:-@@NAMESPACE@@}"
  export REGISTRY="${REGISTRY:-ghcr.io}"
  if [ -z "${GHCR_OWNER}" ] || [ "${GHCR_OWNER}" = "UNSET" ]; then
      echo -e "\n[-] FATAL: GHCR_OWNER is not set."
@@ -110,86 +152,11 @@
 
 #-------------------------------------------------------------------------------#
 ##Fetch
- fetch_tool "7z" "7z" "7z"
- fetch_tool "actionlint" "actionlint" "actionlint"
- fetch_tool "anew" "anew" "anew"
- fetch_tool "anew-rs" "anew-rs" "anew-rs"
- fetch_tool "ansi2html" "colorized-logs" "ansi2html"
- fetch_tool "ansi2txt" "colorized-logs" "ansi2txt"
- fetch_tool "aria2c" "aria2" "aria2c"
- fetch_tool "b3sum" "b3sum" "b3sum"
- fetch_tool "bsdtar" "libarchive" "bsdtar"
- fetch_tool "btop" "btop" "btop"
- fetch_tool "chafa" "chafa" "chafa"
- fetch_tool "cloudflared" "cloudflared" "cloudflared"
- fetch_tool "croc" "croc" "croc"
- fetch_tool "csvtk" "csvtk" "csvtk"
- fetch_tool "cutlines" "cutlines" "cutlines"
- fetch_tool "dasel" "dasel" "dasel"
- fetch_tool "dbin" "dbin" "dbin"
- fetch_tool "delta" "delta" "delta"
- fetch_tool "dos2unix" "dos2unix" "dos2unix"
- fetch_tool "ds" "dirstat-rs" "ds"
- fetch_tool "duf" "duf" "duf"
- fetch_tool "dust" "dust" "dust"
- fetch_tool "dwarfs-tools" "dwarfs" "dwarfs-tools"
- fetch_tool "dysk" "dysk" "dysk"
- fetch_tool "eget" "eget" "eget"
- fetch_tool "epoch" "epoch" "epoch"
- fetch_tool "fastfetch" "fastfetch" "fastfetch"
- fetch_tool "freeze" "freeze" "freeze"
- fetch_tool "fusermount3" "fuse3" "fusermount3"
- fetch_tool "gdu" "gdu" "gdu"
- fetch_tool "gh" "gh" "gh"
- fetch_tool "git-sizer" "git-sizer" "git-sizer"
- fetch_tool "gitleaks" "gitleaks" "gitleaks"
- fetch_tool "glab" "gitlab-cli" "glab"
- fetch_tool "glow" "glow" "glow"
- fetch_tool "httpx" "httpx" "httpx"
- fetch_tool "husarnet" "husarnet" "husarnet"
- fetch_tool "husarnet-daemon" "husarnet" "husarnet-daemon"
- fetch_tool "imgcat" "imgcat" "imgcat"
- fetch_tool "jc" "jc" "jc"
- fetch_tool "jq" "jq" "jq"
- fetch_tool "logdy" "logdy" "logdy"
- fetch_tool "mdcat" "mdcat" "mdcat"
- fetch_tool "micro" "micro" "micro"
- fetch_tool "miniserve" "miniserve" "miniserve"
- fetch_tool "ncdu" "ncdu" "ncdu"
- fetch_tool "notify" "notify" "notify"
- fetch_tool "oras" "oras" "oras"
- fetch_tool "ouch" "ouch" "ouch"
- fetch_tool "pipetty" "colorized-logs" "pipetty"
- fetch_tool "pixterm" "pixterm" "pixterm"
- fetch_tool "qsv" "qsv" "qsv"
- fetch_tool "rclone" "rclone" "rclone"
- fetch_tool "rga" "rga" "rga"
- fetch_tool "ripgrep" "ripgrep" "ripgrep"
- fetch_tool "rsync" "rsync" "rsync"
- fetch_tool "speedtest-go" "speedtest-go" "speedtest-go"
- fetch_tool "sttr" "sttr" "sttr"
- fetch_tool "tailscale" "tailscale" "tailscale"
- fetch_tool "tailscaled" "tailscale" "tailscaled"
- fetch_tool "taplo" "taplo" "taplo"
- fetch_tool "tealdeer" "tealdeer" "tealdeer"
- fetch_tool "tmux" "tmux" "tmux"
- fetch_tool "tok" "tok" "tok"
- fetch_tool "trufflehog" "trufflehog" "trufflehog"
- fetch_tool "trurl" "curl" "trurl"
- fetch_tool "unfurl" "unfurl" "unfurl"
- fetch_tool "upx" "upx" "upx"
- fetch_tool "validtoml" "validtoml" "validtoml"
- fetch_tool "wget" "wget" "wget"
- fetch_tool "wormhole-rs" "wormhole-rs" "wormhole-rs"
- fetch_tool "xq" "xq" "xq"
- fetch_tool "yj" "yj" "yj"
- fetch_tool "yq" "yq" "yq"
- fetch_tool "zapper" "zapper" "zapper"
- fetch_tool "zapper-stealth" "zapper" "zapper-stealth"
- fetch_tool "zerotier-cli" "zerotier" "zerotier-cli"
- fetch_tool "zerotier-idtool" "zerotier" "zerotier-idtool"
- fetch_tool "zerotier-one" "zerotier" "zerotier-one"
- fetch_tool "zstd" "zstd" "zstd"
+HDR
+}
+
+emit_footer() {
+cat <<'FTR'
 #-------------------------------------------------------------------------------#
 
 #-------------------------------------------------------------------------------#
@@ -206,3 +173,64 @@
  esac
  [ "${FAIL_N}" -eq 0 ]
 #-------------------------------------------------------------------------------#
+FTR
+}
+
+generate() {
+    local src="$1" out="$2"
+    # Tools this installer asks for, in its original order.
+    grep -ohE '\$\{INSTALL_SRC\}/[A-Za-z0-9._/+-]+' "$src" | sed 's|.*/||' > "${TMP}/tools.raw"
+
+    emit_header \
+      | sed -e "s|@@OWNER@@|${GHCR_OWNER:-UNSET}|g" \
+            -e "s|@@NAMESPACE@@|${GHCR_NAMESPACE:-toolpacks}|g" > "$out"
+    local n=0 skipped=0
+    while IFS= read -r tool; do
+        [ -n "$tool" ] || continue
+        local fam
+        # A tool name can be declared by several families -- busybox alone
+        # declares 396 applets, including real tools like wget and dos2unix,
+        # and sorts first alphabetically. Always prefer the family whose own
+        # name matches the tool, or users get the busybox applet instead of
+        # the real binary.
+        if grep -qxF "$tool" "$RECIPES_FILE" 2>/dev/null \
+           && awk -F'\t' -v t="$tool" '$1==t && $2==t{f=1} END{exit !f}' "${TMP}/bin2fam.tsv"; then
+            fam="$tool"
+        else
+            fam="$(awk -F'\t' -v t="$tool" '$1==t{print $2; exit}' "${TMP}/bin2fam.tsv")"
+        fi
+        # Unresolvable, or deliberately dropped -> omit, so a user never
+        # curls a 404.
+        if [ -z "$fam" ] || grep -qxF "$fam" "${TMP}/drop"; then
+            skipped=$((skipped+1)); continue
+        fi
+        grep -qxF "$fam" "$RECIPES_FILE" || { skipped=$((skipped+1)); continue; }
+        printf ' fetch_tool "%s" "%s" "%s"\n' "$tool" "$fam" "$tool" >> "$out"
+        n=$((n+1))
+    done < <(sort -u "${TMP}/tools.raw")
+    emit_footer >> "$out"
+    chmod +x "$out"
+    echo "    $(basename "$out"): ${n} tools (${skipped} omitted)"
+}
+
+mkdir -p "${TMP}/out"
+for pair in "install_dev_tools" "install_bb_tools"; do
+    src="${OUT_DIR}/upstream/${pair}.sh"
+    generate "$src" "${TMP}/out/${pair}.sh"
+done
+
+if [ "$CHECK" -eq 1 ]; then
+    rc=0
+    for p in install_dev_tools install_bb_tools; do
+        if ! diff -q "${TMP}/out/${p}.sh" "${OUT_DIR}/${p}.sh" >/dev/null 2>&1; then
+            echo "[-] ${p}.sh is out of date. Regenerate with: $0" >&2
+            rc=1
+        fi
+    done
+    [ "$rc" -eq 0 ] && echo "[+] installers are current"
+    exit "$rc"
+fi
+
+cp "${TMP}/out/install_dev_tools.sh" "${OUT_DIR}/install_dev_tools.sh"
+cp "${TMP}/out/install_bb_tools.sh"  "${OUT_DIR}/install_bb_tools.sh"
+echo "[+] wrote ${OUT_DIR}/install_{dev,bb}_tools.sh"
