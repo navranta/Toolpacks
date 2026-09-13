@@ -46,8 +46,13 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
            newname=$(echo "$file" | sed "s/none-[^/]*\.whl$/none-any.whl/");
            mv "$file" "$newname"; 
          done
-         find "dist/" -name "*.whl" | xargs pip install --break-system-packages --upgrade --force
-         staticx --version ; popd >/dev/null 2>&1
+          find "dist/" -name "*.whl" | xargs pip install --break-system-packages --upgrade --force
+         # The source build above yields nothing when its pinned branch is
+         # gone (no requirements.txt/setup.py); fall back to the PyPI
+         # release instead of marching on with no staticx and an empty
+         # /build-bins. Same fallback as init_debian.sh.
+          staticx --version || pip install staticx --break-system-packages --force-reinstall --upgrade
+          staticx --version ; popd >/dev/null 2>&1
         #Install Deps
          pushd "$(mktemp -d)" >/dev/null 2>&1
          apk update --no-interactive 2>/dev/null

@@ -26,7 +26,12 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
      export SOURCE_URL="https://www.7-zip.org" #github/gitlab/homepage/etc for $BIN
      echo -e "\n\n [+] (Building | Fetching) ${BIN} :: ${SOURCE_URL} [$(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC]\n"
       #Build
-       pushd "$($TMPDIRS)" >/dev/null 2>&1 && curl -qfsSLJO "$SOURCE_URL/$(curl -qfsSL "$SOURCE_URL/download.html" | grep -o 'href="[^"]*"' | sed 's/href="//' | grep 'linux-x64.tar.xz' | sed 's/"$//' | sort | tail -n 1)"
+      # download.html now links current releases off-site (absolute
+      # https://github.com/ip7z/7zip/... hrefs) next to stale relative
+      # ones, so only prefix $SOURCE_URL for relative hrefs.
+       REL_URL="$(curl -qfsSL "$SOURCE_URL/download.html" | grep -o 'href="[^"]*"' | sed 's/^href="//;s/"$//' | grep 'linux-x64.tar.xz' | sort | tail -n 1)"
+       case "$REL_URL" in http*) DL_URL="$REL_URL" ;; *) DL_URL="$SOURCE_URL/$REL_URL" ;; esac
+       pushd "$($TMPDIRS)" >/dev/null 2>&1 && curl -qfsSLJO "$DL_URL"
        find . -type f -name '*.xz' -exec tar -xf {} \;
        find . -type f -name '7zzs' ! -name '*.xz' -exec cp {} "$BINDIR/7z" \;
        popd >/dev/null 2>&1
