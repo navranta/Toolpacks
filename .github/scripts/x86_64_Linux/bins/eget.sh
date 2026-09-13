@@ -33,7 +33,9 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
         #Setup ENV
          tempdir="$(mktemp -d)" ; mkdir -p "$tempdir" && cd "$tempdir"
          mkdir -p "/build-bins"
-         apk add go --latest --upgrade --no-interactive
+         # apk's go drags a gcc-15 chain that conflicts with the image's
+         # g++-14 world (solver ERROR); official tarball instead (pinned).
+         curl -qfsSL "https://go.dev/dl/go1.27.1.linux-amd64.tar.gz" -o "/tmp/go.tgz" && tar -xzf "/tmp/go.tgz" -C "/usr/local" && export PATH="/usr/local/go/bin:$PATH"
         #Build
          git clone --quiet --filter "blob:none" "https://github.com/zyedidia/eget" && cd "./eget"
          GOOS="linux" GOARCH="amd64" CGO_ENABLED="1" CGO_CFLAGS="-O2 -flto=auto -fPIE -fpie -static -w -pipe" go build -v -trimpath -buildmode="pie" -ldflags="-s -w -buildid= -linkmode=external -extldflags '\''-s -w -static-pie -Wl,--build-id=none'\''"

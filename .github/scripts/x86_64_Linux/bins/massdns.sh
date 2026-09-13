@@ -35,13 +35,13 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
        export HOST_CXX="zig c++ -target $ZIG_LIBC_TARGET"
        export OBJCOPY="zig objcopy"
        export RANLIB="zig ranlib"
-       export CFLAGS="-O2 -flto=auto -static -w -pipe ${CFLAGS}"
+       export CFLAGS="-O2 -flto -static -w -pipe ${CFLAGS}"
        unset CPPFLAGS && export CPPFLAGS="${CFLAGS}"
        export CXXFLAGS="${CFLAGS}"
        export LDFLAGS="-static -s -Wl,-S -Wl,--build-id=none ${LDFLAGS}"
        #Make: https://github.com/blechschmidt/massdns/blob/master/Makefile
        mkdir -p "./bin"
-       zig cc -target "x86_64-linux-musl" -O2 -flto="auto" -static -w -pipe -static -s -Wl,-S -Wl,--build-id="none" -fstack-protector-strong "./src/main.c" -o "./bin/massdns"
+       zig cc -target "x86_64-linux-musl" -O2 -flto -static -w -pipe -static -s -Wl,-S -Wl,--build-id="none" -fstack-protector-strong "./src/main.c" -o "./bin/massdns"
        strip "./bin/massdns" ; file "./bin/massdns" && du -sh "./bin/massdns"
        cp "./bin/massdns" "$BINDIR/massdns" ; popd >/dev/null 2>&1
 fi

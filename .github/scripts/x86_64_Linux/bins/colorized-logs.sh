@@ -35,7 +35,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
        export HOST_CXX="zig c++ -target $ZIG_LIBC_TARGET"
        export OBJCOPY="zig objcopy"
        export RANLIB="zig ranlib"
-       export CFLAGS="-O2 -flto=auto -static -w -pipe ${CFLAGS}"
+       export CFLAGS="-O2 -flto -static -w -pipe ${CFLAGS}"
        export CXXFLAGS="${CFLAGS}"
        export LDFLAGS="-static -s -Wl,-S -Wl,--build-id=none ${LDFLAGS}"
        #Build

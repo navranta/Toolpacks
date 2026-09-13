@@ -136,9 +136,13 @@ jobs:
           # to $SYSTMP, and only RUNNER_TEMP survives the job via artifacts
           # (a run once went green with zero results because it went to /tmp).
           export SYSTMP="${RUNNER_TEMP}"
+          # set +e: with pipefail, a failing build would kill the step
+          # before staging artifacts; the RC is captured explicitly.
+          set +e
           bash "${GITHUB_WORKSPACE}/.github/scripts/x86_64_Linux/build_debian.sh" \
             2>&1 | tee "${RUNNER_TEMP}/BUILD.log.txt"
           BUILD_RC="${PIPESTATUS[0]}"
+          set -e
           echo "BUILD_RC=${BUILD_RC}" >> "$GITHUB_ENV"
           # Stage one tarball so the artifact layout is deterministic:
           # {BUILD.log.txt,RESULT.jsonl,logs/*.log.txt}. The 10 MB monolith
