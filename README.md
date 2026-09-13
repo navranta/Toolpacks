@@ -1,61 +1,164 @@
 <div align="center">
 
-[discord-shield]: https://img.shields.io/discord/1313385177703256064?logo=%235865F2&label=Discord
-[discord-url]: https://discord.gg/djJUs48Zbu
-[stars-shield]: https://img.shields.io/github/stars/Azathothas/Toolpacks.svg
-[stars-url]: https://github.com/Azathothas/Toolpacks/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Azathothas/Toolpacks.svg
-[issues-url]: https://github.com/Azathothas/Toolpacks/issues
-[license-shield]: https://img.shields.io/github/license/Azathothas/Toolpacks.svg
-[license-url]: https://github.com/Azathothas/Toolpacks/blob/main/LICENSE
-[doc-shield]: https://img.shields.io/badge/docs.pkgforge.dev-blue
-[doc-url]: https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache
+# Toolpacks
 
-<a href="https://github.com/Azathothas/Toolpacks/tree/main/.github/scripts"><img src="https://img.shields.io/badge/Binaries-(2450)+(2521)-blue?labelColor=orange&style=flat&link=https://github.com/Azathothas/Toolpacks/tree/main/.github/scripts" alt="Binaries" /></a>
-[![Discord][discord-shield]][discord-url]
-[![Documentation][doc-shield]][doc-url]
-[![Issues][issues-shield]][issues-url]
-[![License: MIT][license-shield]][license-url]
-[![Stars][stars-shield]][stars-url]
+**Statically linked x86_64 Linux binaries, built monthly and published to GHCR.**
+
 </div>
 
-<p align="center">
-    <!-- <a href="https://github.com/pkgforge/soar">
-        <img src="https://github.com/user-attachments/assets/220ce7b3-55b3-496e-b3b8-2556123193a2" width="100">
-    </a><br> -->
-    <a href="https://github.com/pkgforge/soar">
-        <img src="https://bin.pkgforge.dev/list.gif?tmp.OBdIWxkrcw=tmp.W6DMG5Siw5" alt="soar-list" width="650">
-    </a><br> 
-    <b><strong> <a href="https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache">Package Forge Binary Cache</a></code></strong></b>
-    <br>
-</p>
-
-<!-- Crude Attempt at Humor -->
-<details>
-  <summary><b><i>raison d'être</i></b></summary>
-  <a href="https://www.reddit.com/r/github/comments/1at9br4/i_am_new_to_github_and_i_have_lots_to_say/" target="_blank">
-    <img src="https://github.com/user-attachments/assets/c8b22bea-a88d-48f8-b4d2-61284320d87f" alt="Inspiration Image">
-  </a>
-  <a href="https://github.com/sherlock-project/sherlock/issues/2011" target="_blank">
-    <img src="https://github.com/user-attachments/assets/5a08ecaa-a412-4eaf-a9e8-1214455a6368" alt="Inspiration Image">
-  </a>    
-</details>
-
-> - ℹ️ As of `2024-11-05`, this repo is a part of [PkgForge](https://github.com/pkgforge).
-> - [PkgForge](https://github.com/pkgforge) was created to fix the [disparate status of Linux Package Formats](https://www.linux-magazine.com/Online/Features/The-Status-of-Universal-Package-Systems).
-> - Other than [Static Binaries](https://github.com/Azathothas/Toolpacks), we now also provide [prebuilts](https://github.com/pkgforge/pkgcache) & [build recipes](https://github.com/pkgforge/soarpkgs) for formats like [AppBundle](https://docs.pkgforge.dev/formats/packages/appbundle), [AppImage](https://docs.pkgforge.dev/formats/packages/appimage), [FlatImage](https://docs.pkgforge.dev/formats/packages/flatimage), & [More](https://docs.pkgforge.dev/formats/packages)<br>
-> - We also have our own [`Package-Manager`](https://github.com/pkgforge/soar) built in blazingly fast 🦀 rust called [Soar](https://github.com/pkgforge/soar)
-> - [Repo Migration was Attempted but proved unsuccessful.](https://github.com/pkgforge/bincache/issues/1)
 ---
-#### Contents
-> - [**📖 Docs📖**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache)
-> > - [**`What? & Why?`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/faq#history-and-lore)
-> > - [**`Request a new PKG/Tool`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/package-request)
-> > - [**`How To Contribute/Donate`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/contribution)
-> > - [**`Current Problems & Setbacks`**](https://github.com/Azathothas/Toolpacks/issues?q=is%3Aissue+is%3Aopen+label%3AInfra)
-> > - [**`DMCA & Copyright`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/dmca-or-copyright-cease-and-desist)
-> > - [**`FAQ`**](https://docs.pkgforge.dev/orgs/pkgforge-core/projects/toolpacks-bincache/faq)
-> > - [**`Contact Us`**](https://docs.pkgforge.dev/contact/chat)
-> - [**🚧 Security ⚙️**](https://docs.pkgforge.dev/repositories/pkgforge-edge/security)
-> - [**Community 💬**](https://docs.pkgforge.dev/contact/chat)
-> > - <a href="https://discord.gg/djJUs48Zbu"><img src="https://github.com/user-attachments/assets/5a336d72-6342-4ca5-87a4-aa8a35277e2f" width="18" height="18"><code>PkgForge (<img src="https://github.com/user-attachments/assets/a08a20e6-1795-4ee6-87e6-12a8ab2a7da6" width="18" height="18">) Discord </code></a> `➼` [`https://discord.gg/djJUs48Zbu`](https://discord.gg/djJUs48Zbu)
+
+## What this is
+
+A build pipeline that fetches or compiles **133 tools** as static x86_64 Linux
+binaries and publishes each one to the GitHub Container Registry, one package
+per tool family.
+
+Static means they run on any x86_64 Linux box — no glibc version to match, no
+package manager, no dependencies. Drop the binary somewhere on `$PATH` and run it.
+
+Scope is defined by the two installers under
+[`.github/scripts/x86_64_Linux/installers/`](.github/scripts/x86_64_Linux/installers/):
+a general development set and a security/recon set.
+
+## Install
+
+Set `GHCR_OWNER` to the account hosting the packages, then run either installer:
+
+```bash
+GHCR_OWNER=<owner> bash <(curl -qfsSL "https://raw.githubusercontent.com/<owner>/Toolpacks/main/.github/scripts/x86_64_Linux/installers/install_dev_tools.sh")
+```
+
+```bash
+GHCR_OWNER=<owner> bash <(curl -qfsSL "https://raw.githubusercontent.com/<owner>/Toolpacks/main/.github/scripts/x86_64_Linux/installers/install_bb_tools.sh")
+```
+
+`curl` is the only requirement. The installers parse JSON with `sed`, never
+`jq` — `jq` is one of the tools they install, so it cannot also be a
+prerequisite.
+
+Override the destination with `INSTALL_DIR` (defaults to `/usr/local/bin` when
+passwordless sudo is available, otherwise `~/bin`).
+
+### Fetching a single tool
+
+Packages are OCI artifacts, so `oras` works directly:
+
+```bash
+oras pull ghcr.io/<owner>/toolpacks/ripgrep:latest
+```
+
+Or by hand, which is what the installers do. A registry blob needs an anonymous
+bearer token and a manifest lookup, so it is three requests rather than one:
+
+```bash
+OWNER=<owner>; TOOL=rg; FAMILY=ripgrep
+
+TOKEN=$(curl -qfsSL "https://ghcr.io/token?scope=repository:${OWNER}/toolpacks/${FAMILY}:pull&service=ghcr.io" \
+        | sed -n 's/.*"token":"\([^"]*\)".*/\1/p')
+
+DIGEST=$(curl -qfsSL -H "Authorization: Bearer ${TOKEN}" \
+              -H "Accept: application/vnd.oci.image.manifest.v1+json" \
+              "https://ghcr.io/v2/${OWNER}/toolpacks/${FAMILY}/manifests/latest" \
+         | sed 's/},{/}\n{/g' | grep "\"image.title\":\"${TOOL}\"" \
+         | sed -n 's/.*"digest":"\(sha256:[a-f0-9]*\)".*/\1/p' | head -1)
+
+curl -qfsSL -H "Authorization: Bearer ${TOKEN}" \
+     "https://ghcr.io/v2/${OWNER}/toolpacks/${FAMILY}/blobs/${DIGEST}" -o "${TOOL}"
+chmod +x "${TOOL}"
+```
+
+A tool's **family** is the recipe that produces it, which is often a different
+name — `rg` comes from `ripgrep`, `glab` from `gitlab-cli`, `ansi2txt` from
+`colorized-logs`. [`METADATA.json`](x86_64-Linux/METADATA.json) maps every
+binary to its family, digest and checksums.
+
+## Tags and pinning
+
+Each package carries `:latest` and a `:YYYY.MM.DD` build tag. **Neither is a
+version number.** Only two recipes record what upstream version they built, so
+a version tag would be a guess.
+
+**The digest is the pin.** `ghcr_digest` in `METADATA.json` is the file's real
+sha256 — ORAS pushes raw blobs, so the layer digest *is* the content hash,
+bound by the registry rather than by a checksum file anyone could get wrong.
+
+```bash
+oras pull ghcr.io/<owner>/toolpacks/ripgrep@sha256:<digest>
+```
+
+## Building
+
+```bash
+git clone --depth 1 https://github.com/<owner>/Toolpacks
+bash Toolpacks/.github/scripts/x86_64_Linux/build_debian.sh
+```
+
+Debian/Ubuntu with `apt`, `curl`, `coreutils` and passwordless sudo. At least
+2 vCPU, 8 GB RAM, 50 GB disk. A full run is roughly 1.2 hours plus setup.
+
+The build is self-contained: recipes, the init script and the bootstrap
+binaries all come from the checkout. Nothing is fetched from a binary cache,
+which is enforced by a CI job that blackholes every such host and runs the
+build anyway.
+
+Set `GHCR_PUSH=NO` to build without publishing.
+
+## Layout
+
+```
+.github/scripts/x86_64_Linux/
+├── bins/                    recipes: <tool>.sh builds it, <tool>.yaml declares
+│                            which binaries it produces
+├── installers/
+│   ├── upstream/            verbatim upstream installers -- the authoritative
+│   │                        list of which tools are offered
+│   └── install_*.sh         GENERATED; fetch those tools from GHCR
+├── prebuilts/               vendored bootstrap binaries + provenance manifest
+├── RECIPES.txt              GENERATED allowlist of what gets built
+├── DROPPED.txt              deliberate exclusions, with reasons
+├── build_debian.sh          the build
+├── ghcr_push.sh             publish
+├── gen_recipes.sh           upstream installers -> RECIPES.txt
+├── gen_installers.sh        RECIPES.txt -> installers
+└── gen_meta.sh              GHCR -> METADATA.json
+```
+
+Data flows one way:
+
+```
+installers/upstream/  ->  RECIPES.txt  ->  installers/install_*.sh
+                               |
+                               v
+                        build -> GHCR -> METADATA.json
+```
+
+Everything marked GENERATED is checked in CI, so it cannot drift from its source.
+
+### Changing what gets built
+
+Add or remove a tool in `installers/upstream/`, or add a reason to
+`DROPPED.txt`, then regenerate:
+
+```bash
+cd .github/scripts/x86_64_Linux
+./gen_recipes.sh && ./gen_installers.sh
+```
+
+Never edit `RECIPES.txt` or `installers/install_*.sh` by hand.
+
+## Notes
+
+- **x86_64 Linux only.** aarch64, Android and Windows support was removed.
+- **No UPX.** Packed binaries are unnecessary at these sizes and break some tools.
+- **Bootstrap binaries are committed** under `prebuilts/` (~35 MB): `eget`,
+  `jq`, `b3sum`, `yq`, `oras`. Each comes from its own upstream release, with
+  source URL and sha256 recorded in `prebuilts/MANIFEST.txt` and verified in
+  CI. They are never produced by this build — that circularity is what broke
+  the previous pipeline.
+- **`~1.7 GB/month`** of published artifacts, ~20 GB/year before retention.
+
+## License
+
+See [LICENSE](LICENSE). Each published binary remains under the license of its
+own upstream project; this repository only builds and redistributes them.

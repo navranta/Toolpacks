@@ -244,7 +244,7 @@ jobs:
           cp -f "${RUNNER_TEMP}/artifacts/RESULT.jsonl" x86_64-Linux/ 2>/dev/null || true
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A x86_64-Linux METADATA.json METADATA.yaml 2>/dev/null || true
+          git add -A x86_64-Linux
           if git diff --cached --quiet; then
             echo "::notice::no metadata changes"
           else
