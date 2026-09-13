@@ -42,7 +42,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
          echo -e "\n[+] Flags: $RUSTFLAGS\n"
          sed "/^\[profile\.release\]/,/^$/d" -i "./Cargo.toml" ; echo -e "\n[profile.release]\nstrip = true\nopt-level = 3\nlto = true" >> "./Cargo.toml"
          rm rust-toolchain* 2>/dev/null
-         cargo build --target "$RUST_TARGET" --release --jobs="$(($(nproc)+1))" --keep-going
+          cargo build --target "$RUST_TARGET" --release --jobs="$(($(nproc)+1))" --keep-going -p taplo-cli
          find "./target/$RUST_TARGET/release" -maxdepth 1 -type f -exec file -i "{}" \; | grep "application/.*executable" | cut -d":" -f1 | xargs realpath | xargs -I {} cp --force {} /build-bins/
          popd >/dev/null 2>&1
         '

@@ -37,12 +37,15 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
          rustup target add "$RUST_TARGET"
          export RUSTFLAGS="-C target-feature=+crt-static -C default-linker-libraries=yes -C link-self-contained=yes -C prefer-dynamic=no -C embed-bitcode=yes -C lto=yes -C opt-level=3 -C debuginfo=none -C strip=symbols -C linker=clang -C link-arg=-fuse-ld=$(which mold) -C link-arg=-Wl,--Bstatic -C link-arg=-Wl,--static -C link-arg=-Wl,-S -C link-arg=-Wl,--build-id=none"
         #Build
-         git clone --filter "blob:none" --quiet "https://github.com/magic-wormhole/magic-wormhole.rs" && cd "./magic-wormhole.rs"
-         echo -e "\n[+] Target: $RUST_TARGET\n"
-         echo -e "\n[+] Flags: $RUSTFLAGS\n"
-         sed "/^\[profile\.release\]/,/^$/d" -i "./Cargo.toml" ; echo -e "\n[profile.release]\nstrip = true\nopt-level = 3\nlto = true" >> "./Cargo.toml"
-         rm rust-toolchain* 2>/dev/null
-         cargo build --target "$RUST_TARGET" --release --jobs="$(($(nproc)+1))" --keep-going
+          git clone --filter "blob:none" --quiet "https://github.com/magic-wormhole/magic-wormhole.rs" && cd "./magic-wormhole.rs"
+          echo -e "\n[+] Target: $RUST_TARGET\n"
+          echo -e "\n[+] Flags: $RUSTFLAGS\n"
+          rustup update stable 2>/dev/null || rustup toolchain install stable --profile minimal
+          rustup default stable
+          rustup target add "$RUST_TARGET"
+          sed "/^\[profile\.release\]/,/^$/d" -i "./Cargo.toml" ; echo -e "\n[profile.release]\nstrip = true\nopt-level = 3\nlto = true" >> "./Cargo.toml"
+          rm rust-toolchain* 2>/dev/null
+          cargo build --target "$RUST_TARGET" --release --jobs="$(($(nproc)+1))" --keep-going -p magic-wormhole-cli --bin wormhole-rs
          find "./target/$RUST_TARGET/release" -maxdepth 1 -type f -exec file -i "{}" \; | grep "application/.*executable" | cut -d":" -f1 | xargs realpath | xargs -I {} cp --force {} /build-bins/
          popd >/dev/null 2>&1
         '

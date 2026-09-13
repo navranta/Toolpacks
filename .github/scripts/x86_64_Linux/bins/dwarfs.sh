@@ -27,9 +27,8 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
      echo -e "\n\n [+] (Building | Fetching) ${BIN} :: ${SOURCE_URL} [$(TZ='UTC' date +'%A, %Y-%m-%d (%I:%M:%S %p)') UTC]\n"
       #Fetch
        pushd "$($TMPDIRS)" >/dev/null 2>&1
-       eval "$EGET_TIMEOUT" eget "$SOURCE_URL" --asset "Linux" --asset "x86_64" --asset "universal" --asset "^stack" "$EGET_EXCLUDE" --to "./dwarfs.upx"
-       upx -d "./dwarfs.upx" --force-overwrite -o"$BINDIR/dwarfs-tools"
-       objcopy --remove-section=".comment" --remove-section=".note.*" "$BINDIR/dwarfs-tools"
+        eval "$EGET_TIMEOUT" eget "$SOURCE_URL" --asset "Linux" --asset "x86_64" --asset "universal" --asset "^stack" --asset "^small" --asset "^upx" "$EGET_EXCLUDE" --to "$BINDIR/dwarfs-tools"
+        objcopy --remove-section=".comment" --remove-section=".note.*" "$BINDIR/dwarfs-tools"
        file "$BINDIR/dwarfs-tools" && du -sh "$BINDIR/dwarfs-tools"
        popd >/dev/null 2>&1
 fi
