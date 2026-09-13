@@ -33,6 +33,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
         #Setup ENV
          tempdir="$(mktemp -d)" ; mkdir -p "$tempdir" && cd "$tempdir"
          mkdir -p "/build-bins"
+         apk add go --latest --upgrade --no-interactive
         #Build
          git clone --quiet --filter "blob:none" "https://github.com/mikefarah/yq" && cd "./yq"
          GOOS="linux" GOARCH="amd64" CGO_ENABLED="1" CGO_CFLAGS="-O2 -flto=auto -fPIE -fpie -static -w -pipe" go build -v -trimpath -buildmode="pie" -ldflags="-s -w -buildid= -linkmode=external -extldflags '\''-s -w -static-pie -Wl,--build-id=none'\''"

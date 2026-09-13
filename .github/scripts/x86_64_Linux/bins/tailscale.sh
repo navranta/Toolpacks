@@ -33,6 +33,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
         #Setup ENV
          tempdir="$(mktemp -d)" ; mkdir -p "$tempdir" && cd "$tempdir"
          mkdir -p "/build-bins"
+         apk add go --latest --upgrade --no-interactive
         #Build
          git clone --quiet --filter "blob:none" "https://github.com/tailscale/tailscale" && cd "./tailscale"
          #tailscale
