@@ -1,0 +1,8 @@
+name: "runiq"
+description: "An efficient way to filter duplicate lines from input, à la uniq."
+note: ""
+web_url: "https://github.com/whitfin/runiq"
+repo_url: "https://github.com/whitfin/runiq"
+path: "/"
+bins:
+  - "runiq"

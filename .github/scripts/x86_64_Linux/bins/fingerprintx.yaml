@@ -1,0 +1,8 @@
+name: "fingerprintx"
+description: "Standalone utility for service discovery on open ports!"
+note: ""
+web_url: "https://github.com/praetorian-inc/fingerprintx"
+repo_url: "https://github.com/praetorian-inc/fingerprintx"
+path: "/"
+bins:
+  - "fingerprintx"

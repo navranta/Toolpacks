@@ -1,0 +1,9 @@
+name: "hxn"
+description: "⚡ Blazing-fast tool to grab screenshots of your domain list right from terminal"
+note: ""
+web_url: "https://github.com/pwnwriter/haylxon"
+repo_url: "https://github.com/pwnwriter/haylxon"
+path: "/"
+bins:
+  - "haylxon"
+  - "hxn"

@@ -1,0 +1,8 @@
+name: "putty"
+description: "A Free Telnet/SSH Client (AppImage)"
+note: ""
+web_url: "https://www.chiark.greenend.org.uk/~sgtatham/putty/"
+repo_url: "https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"
+path: "/"
+bins:
+  - "putty.AppImage"

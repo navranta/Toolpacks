@@ -1,0 +1,8 @@
+name: "actionlint"
+description: "octocat  Static checker for GitHub Actions workflow files"
+note: ""
+web_url: "https://github.com/rhysd/actionlint"
+repo_url: "https://github.com/rhysd/actionlint"
+path: "/"
+bins:
+  - "actionlint"

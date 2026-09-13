@@ -1,0 +1,8 @@
+name: "supercronic"
+description: "Cron for containers"
+note: ""
+web_url: "https://github.com/aptible/supercronic"
+repo_url: "https://github.com/aptible/supercronic"
+path: "/"
+bins:
+  - "supercronic"

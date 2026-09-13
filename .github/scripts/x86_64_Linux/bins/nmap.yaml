@@ -1,0 +1,10 @@
+name: "nmap"
+description: "port scanner"
+note: ""
+web_url: "https://github.com/nmap/nmap"
+repo_url: "https://github.com/nmap/nmap"
+path: "/"
+bins:
+  - "ncat"
+  - "nmap"
+  - "nping"

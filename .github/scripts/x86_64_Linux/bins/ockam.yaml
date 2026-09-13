@@ -1,0 +1,8 @@
+name: "ockam"
+description: "Orchestrate end-to-end encryption, cryptographic identities, mutual authentication, and authorization policies between distributed applications – at massive scale."
+note: ""
+web_url: "https://github.com/build-trust/ockam"
+repo_url: "https://github.com/build-trust/ockam"
+path: "/"
+bins:
+  - "ockam"

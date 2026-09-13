@@ -1,0 +1,8 @@
+name: "entr"
+description: "Run arbitrary commands when files change"
+note: ""
+web_url: "https://eradman.com/entrproject/"
+repo_url: "https://github.com/eradman/entr"
+path: "/"
+bins:
+  - "entr"
