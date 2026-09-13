@@ -36,7 +36,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
         eval "$EGET_TIMEOUT" eget "https://github.com/ouch-org/ouch" --asset "x86_64" --asset "linux" --asset "musl" --to "./ouch"
         chmod +x "./ouch"
         eval "$EGET_TIMEOUT" eget "https://install.husarnet.com/tar/husarnet-latest-amd64.tar" --download-only
-        "./ouch" decompress "./"* --yes
+        "./ouch" decompress "./husarnet-"* --yes
        find . -type d -name '*bin*' ! -name 'build-bins' -print0 | xargs -0 -I {} sh -c 'mkdir -p ./build-bins && cp -r {}/* ./build-bins/'
        strip "./build-bins/"* ; file "./build-bins/"* && du -sh "./build-bins/"*
        rsync -av --copy-links --checksum --progress "./build-bins/" "$BINDIR"
