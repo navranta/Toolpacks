@@ -137,14 +137,16 @@ jobs:
       - name: Toolchain trim still holds
         run: |
           set -uo pipefail
-          # Crystal, Node, Zig, Nuitka, Pex and PyInstaller were removed from
-          # init_debian.sh because zero in-scope recipes used them. If a new
-          # recipe needs one, this fails loudly instead of at build time.
+          # Crystal, Node, Nuitka, Pex, PyInstaller, mksquashfs, appimagetool
+          # and dockerc were removed from init_debian.sh because zero
+          # in-scope recipes used them. If a new recipe needs one, this fails
+          # loudly instead of at build time. (zig is installed: massdns,
+          # zapper, gowitness, colorized-logs etc. legitimately use `zig cc`.)
           rc=0
           while IFS= read -r r; do
             f=".github/scripts/x86_64_Linux/bins/${r}.sh"
             [ -f "$f" ] || continue
-            if grep -qE '(^|[^a-z])(crystal|shards|nuitka|pyinstaller)([^a-z]|$)|npm |yarn |zig build' "$f"; then
+            if grep -qE '(^|[^a-z])(crystal|shards|nuitka|pex|pyinstaller|mksquashfs|appimagetool|dockerc)([^a-z]|$)|npm |yarn ' "$f"; then
               echo "::error::${r}.sh needs a toolchain that init_debian.sh no longer installs"
               rc=1
             fi

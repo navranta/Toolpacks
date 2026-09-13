@@ -302,6 +302,23 @@
              #Cross-rs
              #cargo install cross --git "https://github.com/cross-rs/cross"
              sudo ldconfig && sudo ldconfig -p
+           fi
+         #----------------------#
+         #zig: https://ziglang.org/download/ (static x86_64-linux tarball)
+          pushd "$($TMPDIRS)" >/dev/null 2>&1
+          ZIG_VERSION="0.16.0"
+          curl -qfsSL "https://ziglang.org/download/${ZIG_VERSION}/zig-x86_64-linux-${ZIG_VERSION}.tar.xz" -o "./zig.tar.xz"
+          tar -xf "./zig.tar.xz"
+          sudo mkdir -p "/opt/zig"
+          sudo rsync -av --copy-links "./zig-x86_64-linux-${ZIG_VERSION}/." "/opt/zig/"
+          sudo ln -sf "/opt/zig/zig" "/usr/local/bin/zig"
+          popd >/dev/null 2>&1
+          #Test
+          if ! command -v zig &> /dev/null; then
+             echo -e "\n[-] zig NOT Found\n"
+             export CONTINUE="NO" && exit 1
+          else
+             zig version
           fi
          #----------------------#
          #staticx: https://github.com/JonathonReinhart/staticx/blob/main/.github/workflows/build-test.yml
