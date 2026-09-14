@@ -1,0 +1,817 @@
+
+
+ [+] (Building | Fetching) chafa :: https://github.com/hpjansson/chafa [Monday, 2026-09-14 (06:25:28 PM) UTC]
+
+Unable to find image 'azathothas/alpine-builder:v2025.01.02' locally
+v2025.01.02: Pulling from azathothas/alpine-builder
+0ee5700e4ed5: Pulling fs layer
+ef26e5565fb9: Pulling fs layer
+7c6b371d37d0: Pulling fs layer
+0b40be1e044d: Pulling fs layer
+0b40be1e044d: Waiting
+0ee5700e4ed5: Verifying Checksum
+0ee5700e4ed5: Download complete
+0ee5700e4ed5: Pull complete
+0b40be1e044d: Verifying Checksum
+0b40be1e044d: Download complete
+7c6b371d37d0: Verifying Checksum
+7c6b371d37d0: Download complete
+ef26e5565fb9: Verifying Checksum
+ef26e5565fb9: Download complete
+ef26e5565fb9: Pull complete
+7c6b371d37d0: Pull complete
+0b40be1e044d: Pull complete
+Digest: sha256:5df5ce9c506f4380fc09acbc368203b46e757f670b48994db0fde1cfbed41851
+Status: Downloaded newer image for azathothas/alpine-builder:v2025.01.02
+fetch https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz
+v20260805-2395-g6b4d520a838 [https://dl-cdn.alpinelinux.org/alpine/edge/main]
+v20260805-2396-gb117e7b3257 [https://dl-cdn.alpinelinux.org/alpine/edge/community]
+OK: 30460 distinct packages available
+(1/1) Upgrading libjpeg-turbo-static (3.0.4-r0 -> 3.1.3-r0)
+1 error; 8628 MiB in 1616 packages
+(1/1) Upgrading libwebp-static (1.5.0-r0 -> 1.6.0-r0)
+1 error; 8628 MiB in 1616 packages
+
+I am going to run ./configure with no arguments - if you wish 
+to pass any to it, please specify them on the ./autogen.sh command line.
+
+Running libtoolize...
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+libtoolize: Consider adding '-I m4' to ACLOCAL_AMFLAGS in Makefile.am.
+Missing optional tool:[33m gtk-doc
+(B[m
+Without this, no developer documentation will be generated.
+
+Running aclocal...
+Running automake...
+configure.ac:72: installing './ar-lib'
+configure.ac:64: installing './compile'
+configure.ac:78: installing './config.guess'
+configure.ac:78: installing './config.sub'
+configure.ac:15: installing './install-sh'
+configure.ac:15: installing './missing'
+chafa/Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
+Running autoconf...
+configure.ac:76: warning: The macro 'AC_PROG_CC_STDC' is obsolete.
+configure.ac:76: You should run autoupdate.
+./lib/autoconf/c.m4:1669: AC_PROG_CC_STDC is expanded from...
+configure.ac:76: the top level
+Running ./configure --enable-maintainer-mode ...
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking whether build environment is sane... yes
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking for an ANSI C-conforming const... yes
+checking for gcc... (cached) gcc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to enable C11 features... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C preprocessor... gcc -E
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-musl
+checking host system type... x86_64-pc-linux-musl
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/x86_64-alpine-linux-musl/bin/ld
+checking if the linker (/usr/x86_64-alpine-linux-musl/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 98304
+checking how to convert x86_64-pc-linux-musl file names to x86_64-pc-linux-musl format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-musl file names to toolchain format... func_convert_file_noop
+checking for /usr/x86_64-alpine-linux-musl/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... yes
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/x86_64-alpine-linux-musl/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking whether C compiler accepts -Wc11-c2x-compat... yes
+checking whether C compiler accepts -Wc99-c11-compat... yes
+checking whether C compiler accepts -Wfor-loop-analysis... no
+checking whether C compiler accepts -Wlogical-op... yes
+checking whether C compiler accepts -Wlogical-op-parentheses... no
+checking whether C compiler accepts -Wstack-usage=131072... yes
+checking whether C compiler accepts -Wtrampolines... yes
+checking whether C compiler accepts -Wdouble-promotion... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for glib-2.0 >= 2.58... yes
+checking for freetype2 >= 2.0.0... yes
+checking for libavif... no
+checking for libheif >= 1.12.0... no
+checking for libjpeg... yes
+checking for librsvg-2.0... yes
+checking for libtiff-4... yes
+checking for libwebp libwebpdemux... yes
+checking for libjxl libjxl_threads... yes
+checking for libdeflate... no
+checking for libdeflate.h... no
+checking for xsltproc... /usr/bin/xsltproc
+checking for XML catalog (/etc/xml/catalog)... found
+checking for xmlcatalog... /usr/bin/xmlcatalog
+checking for DocBook XML DTD V4.1.2 in XML catalog... found
+checking for DocBook XSL Stylesheets in XML catalog... found
+checking whether to generate man pages... yes
+checking for ctermid... yes
+checking for getrandom... yes
+checking for mmap... yes
+checking for sigaction... yes
+checking for setitimer... yes
+checking for sys/time.h... yes
+checking for sys/ioctl.h... yes
+checking for termios.h... yes
+checking for windows.h... no
+checking for windres... no
+checking for -Bsymbolic linker flag... yes
+checking for gcc __builtin_cpu_init function... yes
+checking for gcc __builtin_cpu_supports function... yes
+checking for gcc __builtin_assume_aligned function... yes
+checking for working MMX intrinsics... yes
+checking for working SSE 4.1 intrinsics... yes
+checking for working AVX2 intrinsics... yes
+checking for working 64bit popcnt intrinsics... yes
+checking for working 32bit popcnt intrinsics... yes
+checking for -fvisibility=hidden compiler flag... yes
+checking whether C compiler accepts -ffast-math... yes
+checking that generated files are newer than configure... done
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating chafa/Makefile
+config.status: creating chafa/chafaconfig.h
+config.status: creating chafa/internal/Makefile
+config.status: creating chafa/internal/smolscale/Makefile
+config.status: creating libnsgif/Makefile
+config.status: creating lodepng/Makefile
+config.status: creating chafa.pc
+config.status: creating docs/Makefile
+config.status: creating docs/version.xml
+config.status: creating examples/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/data/Makefile
+config.status: creating tests/data/bad/Makefile
+config.status: creating tests/data/good/Makefile
+config.status: creating tools/Makefile
+config.status: creating tools/chafa/Makefile
+config.status: creating tools/completions/Makefile
+config.status: creating tools/fontgen/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+(B[m
+Build man page .............. [92myes(B[m
+Rebuild API documentation ... [93mno(B[m (--enable-gtk-doc)
+Support MMX ................. [92myes(B[m
+Support SSE 4.1 ............. [92myes(B[m
+Support AVX2 ................ [92myes(B[m
+Support popcount32 .......... [92myes(B[m
+Support popcount64 .......... [92myes(B[m
+
+Build command-line tool ..... [92myes(B[m
+With libdeflate ............. [91mno(B[m
+With AVIF loader ............ [91mno(B[m
+With GIF loader ............. [92myes(B[m (internal)
+With HEIF loader ............ [91mno(B[m
+With JPEG loader ............ [92myes(B[m
+With PNG loader ............. [92myes(B[m (internal)
+With QOI loader ............. [92myes(B[m (internal)
+With SVG loader ............. [92myes(B[m
+With TIFF loader ............ [92myes(B[m
+With WebP loader ............ [92myes(B[m
+With JXL loader ............. [92myes(B[m
+With XWD loader ............. [92myes(B[m (internal)
+With CoreGraphics loader .... [91mno(B[m
+
+Install prefix .............. [94m/usr/local(B[m
+
+You can now type [94mgmake(B[m or [94mmake(B[m to build the project.
+
+Some optional libraries were not found. You may want to install these and
+run configure again (package names may be different on your system).
+
+On Fedora, openSUSE or similar:
+[94mlibavif-devel libheif-devel libdeflate-devel(B[m
+
+On Debian, Ubuntu or similar:
+[94mlibavif-dev libheif-dev libdeflate-dev(B[m
+
+configure: WARNING: unrecognized options: --disable-Werror, --enable-year2038
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking whether build environment is sane... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for an ANSI C-conforming const... yes
+checking for gcc... (cached) gcc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to enable C11 features... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C preprocessor... gcc -E
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-musl
+checking host system type... x86_64-pc-linux-musl
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/x86_64-alpine-linux-musl/bin/ld
+checking if the linker (/usr/x86_64-alpine-linux-musl/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 98304
+checking how to convert x86_64-pc-linux-musl file names to x86_64-pc-linux-musl format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-musl file names to toolchain format... func_convert_file_noop
+checking for /usr/x86_64-alpine-linux-musl/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... yes
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/x86_64-alpine-linux-musl/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking whether C compiler accepts -Wc11-c2x-compat... yes
+checking whether C compiler accepts -Wc99-c11-compat... yes
+checking whether C compiler accepts -Wfor-loop-analysis... no
+checking whether C compiler accepts -Wlogical-op... yes
+checking whether C compiler accepts -Wlogical-op-parentheses... no
+checking whether C compiler accepts -Wstack-usage=131072... yes
+checking whether C compiler accepts -Wtrampolines... yes
+checking whether C compiler accepts -Wdouble-promotion... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for glib-2.0 >= 2.58... yes
+checking for freetype2 >= 2.0.0... yes
+checking for libavif... no
+checking for libheif >= 1.12.0... no
+checking for libjpeg... yes
+checking for librsvg-2.0... yes
+checking for libtiff-4... yes
+checking for libwebp libwebpdemux... yes
+checking for libjxl libjxl_threads... yes
+checking for libdeflate... no
+checking for libdeflate.h... no
+checking for xsltproc... /usr/bin/xsltproc
+checking for XML catalog (/etc/xml/catalog)... found
+checking for xmlcatalog... /usr/bin/xmlcatalog
+checking for DocBook XML DTD V4.1.2 in XML catalog... found
+checking for DocBook XSL Stylesheets in XML catalog... found
+checking whether to generate man pages... yes
+checking for ctermid... yes
+checking for getrandom... yes
+checking for mmap... yes
+checking for sigaction... yes
+checking for setitimer... yes
+checking for sys/time.h... yes
+checking for sys/ioctl.h... yes
+checking for termios.h... yes
+checking for windows.h... no
+checking for windres... no
+checking for -Bsymbolic linker flag... yes
+checking for gcc __builtin_cpu_init function... yes
+checking for gcc __builtin_cpu_supports function... yes
+checking for gcc __builtin_assume_aligned function... yes
+checking for working MMX intrinsics... yes
+checking for working SSE 4.1 intrinsics... yes
+checking for working AVX2 intrinsics... yes
+checking for working 64bit popcnt intrinsics... yes
+checking for working 32bit popcnt intrinsics... yes
+checking for -fvisibility=hidden compiler flag... yes
+checking whether C compiler accepts -ffast-math... yes
+checking that generated files are newer than configure... done
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating chafa/Makefile
+config.status: creating chafa/chafaconfig.h
+config.status: creating chafa/internal/Makefile
+config.status: creating chafa/internal/smolscale/Makefile
+config.status: creating libnsgif/Makefile
+config.status: creating lodepng/Makefile
+config.status: creating chafa.pc
+config.status: creating docs/Makefile
+config.status: creating docs/version.xml
+config.status: creating examples/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/data/Makefile
+config.status: creating tests/data/bad/Makefile
+config.status: creating tests/data/good/Makefile
+config.status: creating tools/Makefile
+config.status: creating tools/chafa/Makefile
+config.status: creating tools/completions/Makefile
+config.status: creating tools/fontgen/Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configure: WARNING: unrecognized options: --disable-Werror, --enable-year2038
+(B[m
+Build man page .............. [92myes(B[m
+Rebuild API documentation ... [93mno(B[m (--enable-gtk-doc)
+Support MMX ................. [92myes(B[m
+Support SSE 4.1 ............. [92myes(B[m
+Support AVX2 ................ [92myes(B[m
+Support popcount32 .......... [92myes(B[m
+Support popcount64 .......... [92myes(B[m
+
+Build command-line tool ..... [92myes(B[m
+With libdeflate ............. [91mno(B[m
+With AVIF loader ............ [91mno(B[m
+With GIF loader ............. [92myes(B[m (internal)
+With HEIF loader ............ [91mno(B[m
+With JPEG loader ............ [92myes(B[m
+With PNG loader ............. [92myes(B[m (internal)
+With QOI loader ............. [92myes(B[m (internal)
+With SVG loader ............. [92myes(B[m
+With TIFF loader ............ [92myes(B[m
+With WebP loader ............ [92myes(B[m
+With JXL loader ............. [92myes(B[m
+With XWD loader ............. [92myes(B[m (internal)
+With CoreGraphics loader .... [91mno(B[m
+
+Install prefix .............. [94m/usr/local(B[m
+
+You can now type [94mgmake(B[m or [94mmake(B[m to build the project.
+
+Some optional libraries were not found. You may want to install these and
+run configure again (package names may be different on your system).
+
+On Fedora, openSUSE or similar:
+[94mlibavif-devel libheif-devel libdeflate-devel(B[m
+
+On Debian, Ubuntu or similar:
+[94mlibavif-dev libheif-dev libdeflate-dev(B[m
+
+make  all-recursive
+make[1]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa'
+Making all in chafa
+make[2]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa'
+gcc -E  -CC chafa-term-seq-doc-in.h -o chafa-term-seq-doc.h
+cd .. && \
+  /bin/sh ./config.status chafa/chafaconfig.h
+config.status: creating chafa/chafaconfig.h
+make  all-recursive
+make[3]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa'
+Making all in internal
+make[4]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal'
+Making all in smolscale
+make[5]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal/smolscale'
+/bin/sh ../../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../..    -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -DSMOL_WITH_AVX2  -O2 -flto=auto -static -w -pipe -MT libsmolscale_la-smolscale.lo -MD -MP -MF .deps/libsmolscale_la-smolscale.Tpo -c -o libsmolscale_la-smolscale.lo `test -f 'smolscale.c' || echo './'`smolscale.c
+/bin/sh ../../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../..    -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -DSMOL_WITH_AVX2  -O2 -flto=auto -static -w -pipe -MT libsmolscale_la-smolscale-generic.lo -MD -MP -MF .deps/libsmolscale_la-smolscale-generic.Tpo -c -o libsmolscale_la-smolscale-generic.lo `test -f 'smolscale-generic.c' || echo './'`smolscale-generic.c
+/bin/sh ../../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../..    -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -DSMOL_WITH_AVX2  -mavx2 -O2 -flto=auto -static -w -pipe -MT libsmolscale_avx2_la-smolscale-avx2.lo -MD -MP -MF .deps/libsmolscale_avx2_la-smolscale-avx2.Tpo -c -o libsmolscale_avx2_la-smolscale-avx2.lo `test -f 'smolscale-avx2.c' || echo './'`smolscale-avx2.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -DSMOL_WITH_AVX2 -O2 -flto=auto -w -pipe -MT libsmolscale_la-smolscale.lo -MD -MP -MF .deps/libsmolscale_la-smolscale.Tpo -c smolscale.c -o libsmolscale_la-smolscale.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -DSMOL_WITH_AVX2 -O2 -flto=auto -w -pipe -MT libsmolscale_la-smolscale-generic.lo -MD -MP -MF .deps/libsmolscale_la-smolscale-generic.Tpo -c smolscale-generic.c -o libsmolscale_la-smolscale-generic.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -DSMOL_WITH_AVX2 -mavx2 -O2 -flto=auto -w -pipe -MT libsmolscale_avx2_la-smolscale-avx2.lo -MD -MP -MF .deps/libsmolscale_avx2_la-smolscale-avx2.Tpo -c smolscale-avx2.c -o libsmolscale_avx2_la-smolscale-avx2.o
+mv -f .deps/libsmolscale_la-smolscale.Tpo .deps/libsmolscale_la-smolscale.Plo
+mv -f .deps/libsmolscale_avx2_la-smolscale-avx2.Tpo .deps/libsmolscale_avx2_la-smolscale-avx2.Plo
+/bin/sh ../../../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -DSMOL_WITH_AVX2  -mavx2 -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -static -s -Wl,-S -Wl,--build-id=none -o libsmolscale-avx2.la  libsmolscale_avx2_la-smolscale-avx2.lo  
+libtool: link: ar cr .libs/libsmolscale-avx2.a  libsmolscale_avx2_la-smolscale-avx2.o
+libtool: link: ranlib .libs/libsmolscale-avx2.a
+libtool: link: ( cd ".libs" && rm -f "libsmolscale-avx2.la" && ln -s "../libsmolscale-avx2.la" "libsmolscale-avx2.la" )
+mv -f .deps/libsmolscale_la-smolscale-generic.Tpo .deps/libsmolscale_la-smolscale-generic.Plo
+/bin/sh ../../../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -DSMOL_WITH_AVX2  -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -static -s -Wl,-S -Wl,--build-id=none -o libsmolscale.la  libsmolscale_la-smolscale.lo libsmolscale_la-smolscale-generic.lo libsmolscale-avx2.la 
+libtool: link: (cd .libs/libsmolscale.lax/libsmolscale-avx2.a && ar x "/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal/smolscale/./.libs/libsmolscale-avx2.a")
+libtool: link: ar cr .libs/libsmolscale.a  libsmolscale_la-smolscale.o libsmolscale_la-smolscale-generic.o  .libs/libsmolscale.lax/libsmolscale-avx2.a/libsmolscale_avx2_la-smolscale-avx2.o 
+libtool: link: ranlib .libs/libsmolscale.a
+libtool: link: rm -fr .libs/libsmolscale.lax
+libtool: link: ( cd ".libs" && rm -f "libsmolscale.la" && ln -s "../libsmolscale.la" "libsmolscale.la" )
+make[5]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal/smolscale'
+make[5]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal'
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-base64.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-base64.Tpo -c -o libchafa_internal_la-chafa-base64.lo `test -f 'chafa-base64.c' || echo './'`chafa-base64.c
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-batch.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-batch.Tpo -c -o libchafa_internal_la-chafa-batch.lo `test -f 'chafa-batch.c' || echo './'`chafa-batch.c
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-byte-fifo.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-byte-fifo.Tpo -c -o libchafa_internal_la-chafa-byte-fifo.lo `test -f 'chafa-byte-fifo.c' || echo './'`chafa-byte-fifo.c
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-canvas-printer.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-canvas-printer.Tpo -c -o libchafa_internal_la-chafa-canvas-printer.lo `test -f 'chafa-canvas-printer.c' || echo './'`chafa-canvas-printer.c
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-color.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-color.Tpo -c -o libchafa_internal_la-chafa-color.lo `test -f 'chafa-color.c' || echo './'`chafa-color.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-base64.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-base64.Tpo -c chafa-base64.c -o libchafa_internal_la-chafa-base64.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-canvas-printer.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-canvas-printer.Tpo -c chafa-canvas-printer.c -o libchafa_internal_la-chafa-canvas-printer.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-byte-fifo.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-byte-fifo.Tpo -c chafa-byte-fifo.c -o libchafa_internal_la-chafa-byte-fifo.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-batch.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-batch.Tpo -c chafa-batch.c -o libchafa_internal_la-chafa-batch.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-color.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-color.Tpo -c chafa-color.c -o libchafa_internal_la-chafa-color.o
+mv -f .deps/libchafa_internal_la-chafa-byte-fifo.Tpo .deps/libchafa_internal_la-chafa-byte-fifo.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-color-hash.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-color-hash.Tpo -c -o libchafa_internal_la-chafa-color-hash.lo `test -f 'chafa-color-hash.c' || echo './'`chafa-color-hash.c
+mv -f .deps/libchafa_internal_la-chafa-base64.Tpo .deps/libchafa_internal_la-chafa-base64.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-color-table.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-color-table.Tpo -c -o libchafa_internal_la-chafa-color-table.lo `test -f 'chafa-color-table.c' || echo './'`chafa-color-table.c
+mv -f .deps/libchafa_internal_la-chafa-color.Tpo .deps/libchafa_internal_la-chafa-color.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-dither.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-dither.Tpo -c -o libchafa_internal_la-chafa-dither.lo `test -f 'chafa-dither.c' || echo './'`chafa-dither.c
+mv -f .deps/libchafa_internal_la-chafa-batch.Tpo .deps/libchafa_internal_la-chafa-batch.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-indexed-image.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-indexed-image.Tpo -c -o libchafa_internal_la-chafa-indexed-image.lo `test -f 'chafa-indexed-image.c' || echo './'`chafa-indexed-image.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-color-table.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-color-table.Tpo -c chafa-color-table.c -o libchafa_internal_la-chafa-color-table.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-color-hash.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-color-hash.Tpo -c chafa-color-hash.c -o libchafa_internal_la-chafa-color-hash.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-dither.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-dither.Tpo -c chafa-dither.c -o libchafa_internal_la-chafa-dither.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-indexed-image.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-indexed-image.Tpo -c chafa-indexed-image.c -o libchafa_internal_la-chafa-indexed-image.o
+mv -f .deps/libchafa_internal_la-chafa-canvas-printer.Tpo .deps/libchafa_internal_la-chafa-canvas-printer.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-iterm2-renderer.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-iterm2-renderer.Tpo -c -o libchafa_internal_la-chafa-iterm2-renderer.lo `test -f 'chafa-iterm2-renderer.c' || echo './'`chafa-iterm2-renderer.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-iterm2-renderer.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-iterm2-renderer.Tpo -c chafa-iterm2-renderer.c -o libchafa_internal_la-chafa-iterm2-renderer.o
+mv -f .deps/libchafa_internal_la-chafa-color-table.Tpo .deps/libchafa_internal_la-chafa-color-table.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-kitty-renderer.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-kitty-renderer.Tpo -c -o libchafa_internal_la-chafa-kitty-renderer.lo `test -f 'chafa-kitty-renderer.c' || echo './'`chafa-kitty-renderer.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-kitty-renderer.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-kitty-renderer.Tpo -c chafa-kitty-renderer.c -o libchafa_internal_la-chafa-kitty-renderer.o
+mv -f .deps/libchafa_internal_la-chafa-dither.Tpo .deps/libchafa_internal_la-chafa-dither.Plo
+mv -f .deps/libchafa_internal_la-chafa-color-hash.Tpo .deps/libchafa_internal_la-chafa-color-hash.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-math-util.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-math-util.Tpo -c -o libchafa_internal_la-chafa-math-util.lo `test -f 'chafa-math-util.c' || echo './'`chafa-math-util.c
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-noise.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-noise.Tpo -c -o libchafa_internal_la-chafa-noise.lo `test -f 'chafa-noise.c' || echo './'`chafa-noise.c
+mv -f .deps/libchafa_internal_la-chafa-indexed-image.Tpo .deps/libchafa_internal_la-chafa-indexed-image.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-palette.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-palette.Tpo -c -o libchafa_internal_la-chafa-palette.lo `test -f 'chafa-palette.c' || echo './'`chafa-palette.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-noise.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-noise.Tpo -c chafa-noise.c -o libchafa_internal_la-chafa-noise.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-math-util.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-math-util.Tpo -c chafa-math-util.c -o libchafa_internal_la-chafa-math-util.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-palette.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-palette.Tpo -c chafa-palette.c -o libchafa_internal_la-chafa-palette.o
+mv -f .deps/libchafa_internal_la-chafa-iterm2-renderer.Tpo .deps/libchafa_internal_la-chafa-iterm2-renderer.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-passthrough-encoder.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-passthrough-encoder.Tpo -c -o libchafa_internal_la-chafa-passthrough-encoder.lo `test -f 'chafa-passthrough-encoder.c' || echo './'`chafa-passthrough-encoder.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-passthrough-encoder.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-passthrough-encoder.Tpo -c chafa-passthrough-encoder.c -o libchafa_internal_la-chafa-passthrough-encoder.o
+mv -f .deps/libchafa_internal_la-chafa-kitty-renderer.Tpo .deps/libchafa_internal_la-chafa-kitty-renderer.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-pca.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-pca.Tpo -c -o libchafa_internal_la-chafa-pca.lo `test -f 'chafa-pca.c' || echo './'`chafa-pca.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-pca.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-pca.Tpo -c chafa-pca.c -o libchafa_internal_la-chafa-pca.o
+mv -f .deps/libchafa_internal_la-chafa-math-util.Tpo .deps/libchafa_internal_la-chafa-math-util.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-pixops.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-pixops.Tpo -c -o libchafa_internal_la-chafa-pixops.lo `test -f 'chafa-pixops.c' || echo './'`chafa-pixops.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-pixops.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-pixops.Tpo -c chafa-pixops.c -o libchafa_internal_la-chafa-pixops.o
+mv -f .deps/libchafa_internal_la-chafa-noise.Tpo .deps/libchafa_internal_la-chafa-noise.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-sixel-renderer.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-sixel-renderer.Tpo -c -o libchafa_internal_la-chafa-sixel-renderer.lo `test -f 'chafa-sixel-renderer.c' || echo './'`chafa-sixel-renderer.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-sixel-renderer.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-sixel-renderer.Tpo -c chafa-sixel-renderer.c -o libchafa_internal_la-chafa-sixel-renderer.o
+mv -f .deps/libchafa_internal_la-chafa-pca.Tpo .deps/libchafa_internal_la-chafa-pca.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-string-util.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-string-util.Tpo -c -o libchafa_internal_la-chafa-string-util.lo `test -f 'chafa-string-util.c' || echo './'`chafa-string-util.c
+mv -f .deps/libchafa_internal_la-chafa-passthrough-encoder.Tpo .deps/libchafa_internal_la-chafa-passthrough-encoder.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-symbol-renderer.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-symbol-renderer.Tpo -c -o libchafa_internal_la-chafa-symbol-renderer.lo `test -f 'chafa-symbol-renderer.c' || echo './'`chafa-symbol-renderer.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-string-util.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-string-util.Tpo -c chafa-string-util.c -o libchafa_internal_la-chafa-string-util.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-symbol-renderer.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-symbol-renderer.Tpo -c chafa-symbol-renderer.c -o libchafa_internal_la-chafa-symbol-renderer.o
+mv -f .deps/libchafa_internal_la-chafa-palette.Tpo .deps/libchafa_internal_la-chafa-palette.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-symbols.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-symbols.Tpo -c -o libchafa_internal_la-chafa-symbols.lo `test -f 'chafa-symbols.c' || echo './'`chafa-symbols.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-symbols.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-symbols.Tpo -c chafa-symbols.c -o libchafa_internal_la-chafa-symbols.o
+mv -f .deps/libchafa_internal_la-chafa-pixops.Tpo .deps/libchafa_internal_la-chafa-pixops.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-wakeup.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-wakeup.Tpo -c -o libchafa_internal_la-chafa-wakeup.lo `test -f 'chafa-wakeup.c' || echo './'`chafa-wakeup.c
+mv -f .deps/libchafa_internal_la-chafa-string-util.Tpo .deps/libchafa_internal_la-chafa-string-util.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-wakeup.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-wakeup.Tpo -c chafa-wakeup.c -o libchafa_internal_la-chafa-wakeup.o
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_internal_la-chafa-work-cell.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-work-cell.Tpo -c -o libchafa_internal_la-chafa-work-cell.lo `test -f 'chafa-work-cell.c' || echo './'`chafa-work-cell.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_internal_la-chafa-work-cell.lo -MD -MP -MF .deps/libchafa_internal_la-chafa-work-cell.Tpo -c chafa-work-cell.c -o libchafa_internal_la-chafa-work-cell.o
+mv -f .deps/libchafa_internal_la-chafa-sixel-renderer.Tpo .deps/libchafa_internal_la-chafa-sixel-renderer.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -mmmx -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_mmx_la-chafa-mmx.lo -MD -MP -MF .deps/libchafa_mmx_la-chafa-mmx.Tpo -c -o libchafa_mmx_la-chafa-mmx.lo `test -f 'chafa-mmx.c' || echo './'`chafa-mmx.c
+mv -f .deps/libchafa_internal_la-chafa-symbol-renderer.Tpo .deps/libchafa_internal_la-chafa-symbol-renderer.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -mmmx -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_mmx_la-chafa-mmx.lo -MD -MP -MF .deps/libchafa_mmx_la-chafa-mmx.Tpo -c chafa-mmx.c -o libchafa_mmx_la-chafa-mmx.o
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -msse4.1 -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_sse41_la-chafa-sse41.lo -MD -MP -MF .deps/libchafa_sse41_la-chafa-sse41.Tpo -c -o libchafa_sse41_la-chafa-sse41.lo `test -f 'chafa-sse41.c' || echo './'`chafa-sse41.c
+mv -f .deps/libchafa_internal_la-chafa-symbols.Tpo .deps/libchafa_internal_la-chafa-symbols.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -mpopcnt -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_popcnt_la-chafa-popcnt.lo -MD -MP -MF .deps/libchafa_popcnt_la-chafa-popcnt.Tpo -c -o libchafa_popcnt_la-chafa-popcnt.lo `test -f 'chafa-popcnt.c' || echo './'`chafa-popcnt.c
+mv -f .deps/libchafa_internal_la-chafa-wakeup.Tpo .deps/libchafa_internal_la-chafa-wakeup.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -mavx2 -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_avx2_la-chafa-avx2.lo -MD -MP -MF .deps/libchafa_avx2_la-chafa-avx2.Tpo -c -o libchafa_avx2_la-chafa-avx2.lo `test -f 'chafa-avx2.c' || echo './'`chafa-avx2.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -msse4.1 -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_sse41_la-chafa-sse41.lo -MD -MP -MF .deps/libchafa_sse41_la-chafa-sse41.Tpo -c chafa-sse41.c -o libchafa_sse41_la-chafa-sse41.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -mpopcnt -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_popcnt_la-chafa-popcnt.lo -MD -MP -MF .deps/libchafa_popcnt_la-chafa-popcnt.Tpo -c chafa-popcnt.c -o libchafa_popcnt_la-chafa-popcnt.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -I../../chafa -I../../chafa -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -mavx2 -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_avx2_la-chafa-avx2.lo -MD -MP -MF .deps/libchafa_avx2_la-chafa-avx2.Tpo -c chafa-avx2.c -o libchafa_avx2_la-chafa-avx2.o
+mv -f .deps/libchafa_internal_la-chafa-work-cell.Tpo .deps/libchafa_internal_la-chafa-work-cell.Plo
+mv -f .deps/libchafa_mmx_la-chafa-mmx.Tpo .deps/libchafa_mmx_la-chafa-mmx.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -mmmx -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -static -s -Wl,-S -Wl,--build-id=none -o libchafa-mmx.la  libchafa_mmx_la-chafa-mmx.lo  
+libtool: link: ar cr .libs/libchafa-mmx.a  libchafa_mmx_la-chafa-mmx.o
+libtool: link: ranlib .libs/libchafa-mmx.a
+mv -f .deps/libchafa_sse41_la-chafa-sse41.Tpo .deps/libchafa_sse41_la-chafa-sse41.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -msse4.1 -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -static -s -Wl,-S -Wl,--build-id=none -o libchafa-sse41.la  libchafa_sse41_la-chafa-sse41.lo  
+libtool: link: ( cd ".libs" && rm -f "libchafa-mmx.la" && ln -s "../libchafa-mmx.la" "libchafa-mmx.la" )
+mv -f .deps/libchafa_popcnt_la-chafa-popcnt.Tpo .deps/libchafa_popcnt_la-chafa-popcnt.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -mpopcnt -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -static -s -Wl,-S -Wl,--build-id=none -o libchafa-popcnt.la  libchafa_popcnt_la-chafa-popcnt.lo  
+libtool: link: ar cr .libs/libchafa-sse41.a  libchafa_sse41_la-chafa-sse41.o
+libtool: link: ranlib .libs/libchafa-sse41.a
+libtool: link: ar cr .libs/libchafa-popcnt.a  libchafa_popcnt_la-chafa-popcnt.o
+libtool: link: ( cd ".libs" && rm -f "libchafa-sse41.la" && ln -s "../libchafa-sse41.la" "libchafa-sse41.la" )
+libtool: link: ranlib .libs/libchafa-popcnt.a
+libtool: link: ( cd ".libs" && rm -f "libchafa-popcnt.la" && ln -s "../libchafa-popcnt.la" "libchafa-popcnt.la" )
+mv -f .deps/libchafa_avx2_la-chafa-avx2.Tpo .deps/libchafa_avx2_la-chafa-avx2.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -mavx2 -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -static -s -Wl,-S -Wl,--build-id=none -o libchafa-avx2.la  libchafa_avx2_la-chafa-avx2.lo  
+libtool: link: ar cr .libs/libchafa-avx2.a  libchafa_avx2_la-chafa-avx2.o
+libtool: link: ranlib .libs/libchafa-avx2.a
+libtool: link: ( cd ".libs" && rm -f "libchafa-avx2.la" && ln -s "../libchafa-avx2.la" "libchafa-avx2.la" )
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -static -s -Wl,-S -Wl,--build-id=none -o libchafa-internal.la  libchafa_internal_la-chafa-base64.lo libchafa_internal_la-chafa-batch.lo libchafa_internal_la-chafa-byte-fifo.lo libchafa_internal_la-chafa-canvas-printer.lo libchafa_internal_la-chafa-color.lo libchafa_internal_la-chafa-color-hash.lo libchafa_internal_la-chafa-color-table.lo libchafa_internal_la-chafa-dither.lo libchafa_internal_la-chafa-indexed-image.lo libchafa_internal_la-chafa-iterm2-renderer.lo libchafa_internal_la-chafa-kitty-renderer.lo libchafa_internal_la-chafa-math-util.lo libchafa_internal_la-chafa-noise.lo libchafa_internal_la-chafa-palette.lo libchafa_internal_la-chafa-passthrough-encoder.lo libchafa_internal_la-chafa-pca.lo libchafa_internal_la-chafa-pixops.lo libchafa_internal_la-chafa-sixel-renderer.lo libchafa_internal_la-chafa-string-util.lo libchafa_internal_la-chafa-symbol-renderer.lo libchafa_internal_la-chafa-symbols.lo libchafa_internal_la-chafa-wakeup.lo libchafa_internal_la-chafa-work-cell.lo -lglib-2.0 -lintl smolscale/libsmolscale.la -lm libchafa-mmx.la libchafa-sse41.la libchafa-popcnt.la libchafa-avx2.la 
+libtool: link: (cd .libs/libchafa-internal.lax/libsmolscale.a && ar x "/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal/smolscale/.libs/libsmolscale.a")
+libtool: link: (cd .libs/libchafa-internal.lax/libchafa-mmx.a && ar x "/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal/./.libs/libchafa-mmx.a")
+libtool: link: (cd .libs/libchafa-internal.lax/libchafa-sse41.a && ar x "/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal/./.libs/libchafa-sse41.a")
+libtool: link: (cd .libs/libchafa-internal.lax/libchafa-popcnt.a && ar x "/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal/./.libs/libchafa-popcnt.a")
+libtool: link: (cd .libs/libchafa-internal.lax/libchafa-avx2.a && ar x "/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal/./.libs/libchafa-avx2.a")
+libtool: link: ar cr .libs/libchafa-internal.a  libchafa_internal_la-chafa-base64.o libchafa_internal_la-chafa-batch.o libchafa_internal_la-chafa-byte-fifo.o libchafa_internal_la-chafa-canvas-printer.o libchafa_internal_la-chafa-color.o libchafa_internal_la-chafa-color-hash.o libchafa_internal_la-chafa-color-table.o libchafa_internal_la-chafa-dither.o libchafa_internal_la-chafa-indexed-image.o libchafa_internal_la-chafa-iterm2-renderer.o libchafa_internal_la-chafa-kitty-renderer.o libchafa_internal_la-chafa-math-util.o libchafa_internal_la-chafa-noise.o libchafa_internal_la-chafa-palette.o libchafa_internal_la-chafa-passthrough-encoder.o libchafa_internal_la-chafa-pca.o libchafa_internal_la-chafa-pixops.o libchafa_internal_la-chafa-sixel-renderer.o libchafa_internal_la-chafa-string-util.o libchafa_internal_la-chafa-symbol-renderer.o libchafa_internal_la-chafa-symbols.o libchafa_internal_la-chafa-wakeup.o libchafa_internal_la-chafa-work-cell.o  .libs/libchafa-internal.lax/libsmolscale.a/libsmolscale_avx2_la-smolscale-avx2.o .libs/libchafa-internal.lax/libsmolscale.a/libsmolscale_la-smolscale-generic.o .libs/libchafa-internal.lax/libsmolscale.a/libsmolscale_la-smolscale.o  .libs/libchafa-internal.lax/libchafa-mmx.a/libchafa_mmx_la-chafa-mmx.o  .libs/libchafa-internal.lax/libchafa-sse41.a/libchafa_sse41_la-chafa-sse41.o  .libs/libchafa-internal.lax/libchafa-popcnt.a/libchafa_popcnt_la-chafa-popcnt.o  .libs/libchafa-internal.lax/libchafa-avx2.a/libchafa_avx2_la-chafa-avx2.o 
+libtool: link: ranlib .libs/libchafa-internal.a
+libtool: link: rm -fr .libs/libchafa-internal.lax
+libtool: link: ( cd ".libs" && rm -f "libchafa-internal.la" && ln -s "../libchafa-internal.la" "libchafa-internal.la" )
+make[5]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal'
+make[4]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal'
+make[4]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa'
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-canvas-config.lo -MD -MP -MF .deps/libchafa_la-chafa-canvas-config.Tpo -c -o libchafa_la-chafa-canvas-config.lo `test -f 'chafa-canvas-config.c' || echo './'`chafa-canvas-config.c
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-canvas.lo -MD -MP -MF .deps/libchafa_la-chafa-canvas.Tpo -c -o libchafa_la-chafa-canvas.lo `test -f 'chafa-canvas.c' || echo './'`chafa-canvas.c
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-features.lo -MD -MP -MF .deps/libchafa_la-chafa-features.Tpo -c -o libchafa_la-chafa-features.lo `test -f 'chafa-features.c' || echo './'`chafa-features.c
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-frame.lo -MD -MP -MF .deps/libchafa_la-chafa-frame.Tpo -c -o libchafa_la-chafa-frame.lo `test -f 'chafa-frame.c' || echo './'`chafa-frame.c
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-image.lo -MD -MP -MF .deps/libchafa_la-chafa-image.Tpo -c -o libchafa_la-chafa-image.lo `test -f 'chafa-image.c' || echo './'`chafa-image.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-canvas-config.lo -MD -MP -MF .deps/libchafa_la-chafa-canvas-config.Tpo -c chafa-canvas-config.c -o libchafa_la-chafa-canvas-config.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-features.lo -MD -MP -MF .deps/libchafa_la-chafa-features.Tpo -c chafa-features.c -o libchafa_la-chafa-features.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-frame.lo -MD -MP -MF .deps/libchafa_la-chafa-frame.Tpo -c chafa-frame.c -o libchafa_la-chafa-frame.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-image.lo -MD -MP -MF .deps/libchafa_la-chafa-image.Tpo -c chafa-image.c -o libchafa_la-chafa-image.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-canvas.lo -MD -MP -MF .deps/libchafa_la-chafa-canvas.Tpo -c chafa-canvas.c -o libchafa_la-chafa-canvas.o
+mv -f .deps/libchafa_la-chafa-image.Tpo .deps/libchafa_la-chafa-image.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-parser.lo -MD -MP -MF .deps/libchafa_la-chafa-parser.Tpo -c -o libchafa_la-chafa-parser.lo `test -f 'chafa-parser.c' || echo './'`chafa-parser.c
+mv -f .deps/libchafa_la-chafa-features.Tpo .deps/libchafa_la-chafa-features.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-placement.lo -MD -MP -MF .deps/libchafa_la-chafa-placement.Tpo -c -o libchafa_la-chafa-placement.lo `test -f 'chafa-placement.c' || echo './'`chafa-placement.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-parser.lo -MD -MP -MF .deps/libchafa_la-chafa-parser.Tpo -c chafa-parser.c -o libchafa_la-chafa-parser.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-placement.lo -MD -MP -MF .deps/libchafa_la-chafa-placement.Tpo -c chafa-placement.c -o libchafa_la-chafa-placement.o
+mv -f .deps/libchafa_la-chafa-frame.Tpo .deps/libchafa_la-chafa-frame.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-stream-reader.lo -MD -MP -MF .deps/libchafa_la-chafa-stream-reader.Tpo -c -o libchafa_la-chafa-stream-reader.lo `test -f 'chafa-stream-reader.c' || echo './'`chafa-stream-reader.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-stream-reader.lo -MD -MP -MF .deps/libchafa_la-chafa-stream-reader.Tpo -c chafa-stream-reader.c -o libchafa_la-chafa-stream-reader.o
+mv -f .deps/libchafa_la-chafa-canvas.Tpo .deps/libchafa_la-chafa-canvas.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-stream-writer.lo -MD -MP -MF .deps/libchafa_la-chafa-stream-writer.Tpo -c -o libchafa_la-chafa-stream-writer.lo `test -f 'chafa-stream-writer.c' || echo './'`chafa-stream-writer.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-stream-writer.lo -MD -MP -MF .deps/libchafa_la-chafa-stream-writer.Tpo -c chafa-stream-writer.c -o libchafa_la-chafa-stream-writer.o
+mv -f .deps/libchafa_la-chafa-canvas-config.Tpo .deps/libchafa_la-chafa-canvas-config.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-symbol-map.lo -MD -MP -MF .deps/libchafa_la-chafa-symbol-map.Tpo -c -o libchafa_la-chafa-symbol-map.lo `test -f 'chafa-symbol-map.c' || echo './'`chafa-symbol-map.c
+mv -f .deps/libchafa_la-chafa-placement.Tpo .deps/libchafa_la-chafa-placement.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-term-db.lo -MD -MP -MF .deps/libchafa_la-chafa-term-db.Tpo -c -o libchafa_la-chafa-term-db.lo `test -f 'chafa-term-db.c' || echo './'`chafa-term-db.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-symbol-map.lo -MD -MP -MF .deps/libchafa_la-chafa-symbol-map.Tpo -c chafa-symbol-map.c -o libchafa_la-chafa-symbol-map.o
+mv -f .deps/libchafa_la-chafa-parser.Tpo .deps/libchafa_la-chafa-parser.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-term-info.lo -MD -MP -MF .deps/libchafa_la-chafa-term-info.Tpo -c -o libchafa_la-chafa-term-info.lo `test -f 'chafa-term-info.c' || echo './'`chafa-term-info.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-term-db.lo -MD -MP -MF .deps/libchafa_la-chafa-term-db.Tpo -c chafa-term-db.c -o libchafa_la-chafa-term-db.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-term-info.lo -MD -MP -MF .deps/libchafa_la-chafa-term-info.Tpo -c chafa-term-info.c -o libchafa_la-chafa-term-info.o
+mv -f .deps/libchafa_la-chafa-stream-writer.Tpo .deps/libchafa_la-chafa-stream-writer.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-term.lo -MD -MP -MF .deps/libchafa_la-chafa-term.Tpo -c -o libchafa_la-chafa-term.lo `test -f 'chafa-term.c' || echo './'`chafa-term.c
+mv -f .deps/libchafa_la-chafa-stream-reader.Tpo .deps/libchafa_la-chafa-stream-reader.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -MT libchafa_la-chafa-util.lo -MD -MP -MF .deps/libchafa_la-chafa-util.Tpo -c -o libchafa_la-chafa-util.lo `test -f 'chafa-util.c' || echo './'`chafa-util.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-term.lo -MD -MP -MF .deps/libchafa_la-chafa-term.Tpo -c chafa-term.c -o libchafa_la-chafa-term.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -w -pipe -MT libchafa_la-chafa-util.lo -MD -MP -MF .deps/libchafa_la-chafa-util.Tpo -c chafa-util.c -o libchafa_la-chafa-util.o
+mv -f .deps/libchafa_la-chafa-term-db.Tpo .deps/libchafa_la-chafa-term-db.Plo
+mv -f .deps/libchafa_la-chafa-symbol-map.Tpo .deps/libchafa_la-chafa-symbol-map.Plo
+mv -f .deps/libchafa_la-chafa-term.Tpo .deps/libchafa_la-chafa-term.Plo
+mv -f .deps/libchafa_la-chafa-util.Tpo .deps/libchafa_la-chafa-util.Plo
+mv -f .deps/libchafa_la-chafa-term-info.Tpo .deps/libchafa_la-chafa-term-info.Plo
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -fvisibility=hidden -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DCHAFA_COMPILATION -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -no-undefined -version-info 11:2:11 -static -s -Wl,-S -Wl,--build-id=none -o libchafa.la -rpath /usr/local/lib libchafa_la-chafa-canvas-config.lo libchafa_la-chafa-canvas.lo libchafa_la-chafa-features.lo libchafa_la-chafa-frame.lo libchafa_la-chafa-image.lo libchafa_la-chafa-parser.lo libchafa_la-chafa-placement.lo libchafa_la-chafa-stream-reader.lo libchafa_la-chafa-stream-writer.lo libchafa_la-chafa-symbol-map.lo libchafa_la-chafa-term-db.lo libchafa_la-chafa-term-info.lo libchafa_la-chafa-term.lo libchafa_la-chafa-util.lo -lglib-2.0 -lintl internal/libchafa-internal.la -lm 
+libtool: link: (cd .libs/libchafa.lax/libchafa-internal.a && ar x "/tmp/tmp.vSLbFvdH9t/chafa/chafa/internal/.libs/libchafa-internal.a")
+libtool: link: ar cr .libs/libchafa.a  libchafa_la-chafa-canvas-config.o libchafa_la-chafa-canvas.o libchafa_la-chafa-features.o libchafa_la-chafa-frame.o libchafa_la-chafa-image.o libchafa_la-chafa-parser.o libchafa_la-chafa-placement.o libchafa_la-chafa-stream-reader.o libchafa_la-chafa-stream-writer.o libchafa_la-chafa-symbol-map.o libchafa_la-chafa-term-db.o libchafa_la-chafa-term-info.o libchafa_la-chafa-term.o libchafa_la-chafa-util.o  .libs/libchafa.lax/libchafa-internal.a/libchafa_avx2_la-chafa-avx2.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-base64.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-batch.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-byte-fifo.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-canvas-printer.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-color-hash.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-color-table.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-color.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-dither.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-indexed-image.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-iterm2-renderer.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-kitty-renderer.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-math-util.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-noise.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-palette.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-passthrough-encoder.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-pca.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-pixops.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-sixel-renderer.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-string-util.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-symbol-renderer.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-symbols.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-wakeup.o .libs/libchafa.lax/libchafa-internal.a/libchafa_internal_la-chafa-work-cell.o .libs/libchafa.lax/libchafa-internal.a/libchafa_mmx_la-chafa-mmx.o .libs/libchafa.lax/libchafa-internal.a/libchafa_popcnt_la-chafa-popcnt.o .libs/libchafa.lax/libchafa-internal.a/libchafa_sse41_la-chafa-sse41.o .libs/libchafa.lax/libchafa-internal.a/libsmolscale_avx2_la-smolscale-avx2.o .libs/libchafa.lax/libchafa-internal.a/libsmolscale_la-smolscale-generic.o .libs/libchafa.lax/libchafa-internal.a/libsmolscale_la-smolscale.o 
+libtool: link: ranlib .libs/libchafa.a
+libtool: link: rm -fr .libs/libchafa.lax
+libtool: link: ( cd ".libs" && rm -f "libchafa.la" && ln -s "../libchafa.la" "libchafa.la" )
+make[4]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa'
+make[3]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa'
+make[2]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/chafa'
+Making all in docs
+make[2]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/docs'
+/usr/bin/xsltproc --nonet --stringparam man.output.quietly 1 --stringparam funcsynopsis.style ansi --stringparam man.th.extra1.suppress 1 --stringparam man.authors.section.enabled 0 --stringparam man.copyright.section.enabled 0 --stringparam root.filename chafa --stringparam html.stylesheet manpage.css http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl chafa.xml
+/usr/bin/xsltproc --nonet --stringparam man.output.quietly 1 --stringparam funcsynopsis.style ansi --stringparam man.th.extra1.suppress 1 --stringparam man.authors.section.enabled 0 --stringparam man.copyright.section.enabled 0 --stringparam root.filename chafa --stringparam html.stylesheet manpage.css http://docbook.sourceforge.net/release/xsl/current/html/onechunk.xsl chafa.xml
+Writing chafa.html for refentry(chafa)
+make[2]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/docs'
+Making all in examples
+make[2]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/examples'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/examples'
+Making all in libnsgif
+make[2]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/libnsgif'
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -I.. -O2 -flto=auto -static -w -pipe -MT libnsgif_la-libnsgif.lo -MD -MP -MF .deps/libnsgif_la-libnsgif.Tpo -c -o libnsgif_la-libnsgif.lo `test -f 'libnsgif.c' || echo './'`libnsgif.c
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -I.. -O2 -flto=auto -static -w -pipe -MT libnsgif_la-lzw.lo -MD -MP -MF .deps/libnsgif_la-lzw.Tpo -c -o libnsgif_la-lzw.lo `test -f 'lzw.c' || echo './'`lzw.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -I.. -O2 -flto=auto -w -pipe -MT libnsgif_la-lzw.lo -MD -MP -MF .deps/libnsgif_la-lzw.Tpo -c lzw.c -o libnsgif_la-lzw.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -I.. -O2 -flto=auto -w -pipe -MT libnsgif_la-libnsgif.lo -MD -MP -MF .deps/libnsgif_la-libnsgif.Tpo -c libnsgif.c -o libnsgif_la-libnsgif.o
+mv -f .deps/libnsgif_la-lzw.Tpo .deps/libnsgif_la-lzw.Plo
+mv -f .deps/libnsgif_la-libnsgif.Tpo .deps/libnsgif_la-libnsgif.Plo
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -I.. -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -static -s -Wl,-S -Wl,--build-id=none -o libnsgif.la  libnsgif_la-libnsgif.lo libnsgif_la-lzw.lo  
+libtool: link: ar cr .libs/libnsgif.a  libnsgif_la-libnsgif.o libnsgif_la-lzw.o
+libtool: link: ranlib .libs/libnsgif.a
+libtool: link: ( cd ".libs" && rm -f "libnsgif.la" && ln -s "../libnsgif.la" "libnsgif.la" )
+make[2]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/libnsgif'
+Making all in lodepng
+make[2]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/lodepng'
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC  -I.. -O2 -flto=auto -static -w -pipe -MT liblodepng_la-lodepng.lo -MD -MP -MF .deps/liblodepng_la-lodepng.Tpo -c -o liblodepng_la-lodepng.lo `test -f 'lodepng.c' || echo './'`lodepng.c
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I.. -mavx2 -O2 -flto=auto -static -w -pipe -MT liblodepng_avx2_la-lodepng-avx2.lo -MD -MP -MF .deps/liblodepng_avx2_la-lodepng-avx2.Tpo -c -o liblodepng_avx2_la-lodepng-avx2.lo `test -f 'lodepng-avx2.c' || echo './'`lodepng-avx2.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I.. -mavx2 -O2 -flto=auto -w -pipe -MT liblodepng_avx2_la-lodepng-avx2.lo -MD -MP -MF .deps/liblodepng_avx2_la-lodepng-avx2.Tpo -c lodepng-avx2.c -o liblodepng_avx2_la-lodepng-avx2.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I.. -O2 -flto=auto -w -pipe -MT liblodepng_la-lodepng.lo -MD -MP -MF .deps/liblodepng_la-lodepng.Tpo -c lodepng.c -o liblodepng_la-lodepng.o
+mv -f .deps/liblodepng_la-lodepng.Tpo .deps/liblodepng_la-lodepng.Plo
+mv -f .deps/liblodepng_avx2_la-lodepng-avx2.Tpo .deps/liblodepng_avx2_la-lodepng-avx2.Plo
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I.. -mavx2 -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -static -s -Wl,-S -Wl,--build-id=none -o liblodepng-avx2.la  liblodepng_avx2_la-lodepng-avx2.lo  
+libtool: link: ar cr .libs/liblodepng-avx2.a  liblodepng_avx2_la-lodepng-avx2.o
+libtool: link: ranlib .libs/liblodepng-avx2.a
+libtool: link: ( cd ".libs" && rm -f "liblodepng-avx2.la" && ln -s "../liblodepng-avx2.la" "liblodepng-avx2.la" )
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC  -I.. -O2 -flto=auto -static -w -pipe -Wl,-Bsymbolic -static -s -Wl,-S -Wl,--build-id=none -o liblodepng.la  liblodepng_la-lodepng.lo  liblodepng-avx2.la 
+libtool: link: (cd .libs/liblodepng.lax/liblodepng-avx2.a && ar x "/tmp/tmp.vSLbFvdH9t/chafa/lodepng/./.libs/liblodepng-avx2.a")
+libtool: link: ar cr .libs/liblodepng.a  liblodepng_la-lodepng.o  .libs/liblodepng.lax/liblodepng-avx2.a/liblodepng_avx2_la-lodepng-avx2.o 
+libtool: link: ranlib .libs/liblodepng.a
+libtool: link: rm -fr .libs/liblodepng.lax
+libtool: link: ( cd ".libs" && rm -f "liblodepng.la" && ln -s "../liblodepng.la" "liblodepng.la" )
+make[2]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/lodepng'
+Making all in tools
+make[2]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tools'
+Making all in chafa
+make[3]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tools/chafa'
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chafa.o -MD -MP -MF .deps/chafa-chafa.Tpo -c -o chafa-chafa.o `test -f 'chafa.c' || echo './'`chafa.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-file-mapping.o -MD -MP -MF .deps/chafa-chicle-file-mapping.Tpo -c -o chafa-chicle-file-mapping.o `test -f 'chicle-file-mapping.c' || echo './'`chicle-file-mapping.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-font-loader.o -MD -MP -MF .deps/chafa-chicle-font-loader.Tpo -c -o chafa-chicle-font-loader.o `test -f 'chicle-font-loader.c' || echo './'`chicle-font-loader.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-gif-loader.o -MD -MP -MF .deps/chafa-chicle-gif-loader.Tpo -c -o chafa-chicle-gif-loader.o `test -f 'chicle-gif-loader.c' || echo './'`chicle-gif-loader.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-grid-layout.o -MD -MP -MF .deps/chafa-chicle-grid-layout.Tpo -c -o chafa-chicle-grid-layout.o `test -f 'chicle-grid-layout.c' || echo './'`chicle-grid-layout.c
+mv -f .deps/chafa-chicle-grid-layout.Tpo .deps/chafa-chicle-grid-layout.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-media-loader.o -MD -MP -MF .deps/chafa-chicle-media-loader.Tpo -c -o chafa-chicle-media-loader.o `test -f 'chicle-media-loader.c' || echo './'`chicle-media-loader.c
+mv -f .deps/chafa-chicle-gif-loader.Tpo .deps/chafa-chicle-gif-loader.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-media-pipeline.o -MD -MP -MF .deps/chafa-chicle-media-pipeline.Tpo -c -o chafa-chicle-media-pipeline.o `test -f 'chicle-media-pipeline.c' || echo './'`chicle-media-pipeline.c
+mv -f .deps/chafa-chicle-file-mapping.Tpo .deps/chafa-chicle-file-mapping.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-options.o -MD -MP -MF .deps/chafa-chicle-options.Tpo -c -o chafa-chicle-options.o `test -f 'chicle-options.c' || echo './'`chicle-options.c
+mv -f .deps/chafa-chicle-font-loader.Tpo .deps/chafa-chicle-font-loader.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-path-queue.o -MD -MP -MF .deps/chafa-chicle-path-queue.Tpo -c -o chafa-chicle-path-queue.o `test -f 'chicle-path-queue.c' || echo './'`chicle-path-queue.c
+mv -f .deps/chafa-chafa.Tpo .deps/chafa-chafa.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-placement-counter.o -MD -MP -MF .deps/chafa-chicle-placement-counter.Tpo -c -o chafa-chicle-placement-counter.o `test -f 'chicle-placement-counter.c' || echo './'`chicle-placement-counter.c
+mv -f .deps/chafa-chicle-media-loader.Tpo .deps/chafa-chicle-media-loader.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-png-loader.o -MD -MP -MF .deps/chafa-chicle-png-loader.Tpo -c -o chafa-chicle-png-loader.o `test -f 'chicle-png-loader.c' || echo './'`chicle-png-loader.c
+mv -f .deps/chafa-chicle-media-pipeline.Tpo .deps/chafa-chicle-media-pipeline.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-named-colors.o -MD -MP -MF .deps/chafa-chicle-named-colors.Tpo -c -o chafa-chicle-named-colors.o `test -f 'chicle-named-colors.c' || echo './'`chicle-named-colors.c
+mv -f .deps/chafa-chicle-named-colors.Tpo .deps/chafa-chicle-named-colors.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-qoi-loader.o -MD -MP -MF .deps/chafa-chicle-qoi-loader.Tpo -c -o chafa-chicle-qoi-loader.o `test -f 'chicle-qoi-loader.c' || echo './'`chicle-qoi-loader.c
+mv -f .deps/chafa-chicle-placement-counter.Tpo .deps/chafa-chicle-placement-counter.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-util.o -MD -MP -MF .deps/chafa-chicle-util.Tpo -c -o chafa-chicle-util.o `test -f 'chicle-util.c' || echo './'`chicle-util.c
+mv -f .deps/chafa-chicle-png-loader.Tpo .deps/chafa-chicle-png-loader.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-xwd-loader.o -MD -MP -MF .deps/chafa-chicle-xwd-loader.Tpo -c -o chafa-chicle-xwd-loader.o `test -f 'chicle-xwd-loader.c' || echo './'`chicle-xwd-loader.c
+mv -f .deps/chafa-chicle-path-queue.Tpo .deps/chafa-chicle-path-queue.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-jpeg-loader.o -MD -MP -MF .deps/chafa-chicle-jpeg-loader.Tpo -c -o chafa-chicle-jpeg-loader.o `test -f 'chicle-jpeg-loader.c' || echo './'`chicle-jpeg-loader.c
+mv -f .deps/chafa-chicle-options.Tpo .deps/chafa-chicle-options.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-tiff-loader.o -MD -MP -MF .deps/chafa-chicle-tiff-loader.Tpo -c -o chafa-chicle-tiff-loader.o `test -f 'chicle-tiff-loader.c' || echo './'`chicle-tiff-loader.c
+mv -f .deps/chafa-chicle-xwd-loader.Tpo .deps/chafa-chicle-xwd-loader.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-svg-loader.o -MD -MP -MF .deps/chafa-chicle-svg-loader.Tpo -c -o chafa-chicle-svg-loader.o `test -f 'chicle-svg-loader.c' || echo './'`chicle-svg-loader.c
+mv -f .deps/chafa-chicle-qoi-loader.Tpo .deps/chafa-chicle-qoi-loader.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-webp-loader.o -MD -MP -MF .deps/chafa-chicle-webp-loader.Tpo -c -o chafa-chicle-webp-loader.o `test -f 'chicle-webp-loader.c' || echo './'`chicle-webp-loader.c
+mv -f .deps/chafa-chicle-util.Tpo .deps/chafa-chicle-util.Po
+gcc -DHAVE_CONFIG_H -I. -I../..  -I../../chafa -I../../chafa -I../../libnsgif -I../../lodepng  -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe -MT chafa-chicle-jxl-loader.o -MD -MP -MF .deps/chafa-chicle-jxl-loader.Tpo -c -o chafa-chicle-jxl-loader.o `test -f 'chicle-jxl-loader.c' || echo './'`chicle-jxl-loader.c
+mv -f .deps/chafa-chicle-jpeg-loader.Tpo .deps/chafa-chicle-jpeg-loader.Po
+mv -f .deps/chafa-chicle-webp-loader.Tpo .deps/chafa-chicle-webp-loader.Po
+mv -f .deps/chafa-chicle-tiff-loader.Tpo .deps/chafa-chicle-tiff-loader.Po
+mv -f .deps/chafa-chicle-jxl-loader.Tpo .deps/chafa-chicle-jxl-loader.Po
+mv -f .deps/chafa-chicle-svg-loader.Tpo .deps/chafa-chicle-svg-loader.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE   -I/usr/include/freetype2 -I/usr/include/libpng16  -O2 -flto=auto -static -w -pipe  -static -s -Wl,-S -Wl,--build-id=none -o chafa chafa-chafa.o chafa-chicle-file-mapping.o chafa-chicle-font-loader.o chafa-chicle-gif-loader.o chafa-chicle-grid-layout.o chafa-chicle-media-loader.o chafa-chicle-media-pipeline.o chafa-chicle-options.o chafa-chicle-path-queue.o chafa-chicle-placement-counter.o chafa-chicle-png-loader.o chafa-chicle-named-colors.o chafa-chicle-qoi-loader.o chafa-chicle-util.o chafa-chicle-xwd-loader.o   chafa-chicle-jpeg-loader.o chafa-chicle-tiff-loader.o chafa-chicle-svg-loader.o chafa-chicle-webp-loader.o chafa-chicle-jxl-loader.o  -lglib-2.0 -lintl -ljpeg -L/usr/lib/pkgconfig/../../lib -lrsvg-2 -lcairo-gobject -lpng16 -ldav1d -lgdk_pixbuf-2.0 -lgio-2.0 -lxml2 -lpangocairo-1.0 -lcairo -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lharfbuzz -lfontconfig -lfreetype -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0 -lintl -ltiff -lwebp -lwebpdemux -ljxl -ljxl_threads    -lfreetype ../../chafa/libchafa.la ../../libnsgif/libnsgif.la ../../lodepng/liblodepng.la -lm  
+libtool: link: gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_58 -Wall -Wextra -Wcast-qual -Wdisabled-optimization -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-overflow=2 -Wundef -Wunused-macros -Wwrite-strings -Werror=format-security -Wc11-c2x-compat -Wc99-c11-compat -Wlogical-op -Wstack-usage=131072 -Wtrampolines -Wdouble-promotion -ffast-math -DLODEPNG_NO_COMPILE_ENCODER -DLODEPNG_NO_COMPILE_DISK -DLODEPNG_NO_COMPILE_CPP -DLODEPNG_NO_COMPILE_CRC -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/lib/pkgconfig/../../include/librsvg-2.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/webp -I/usr/include/libxml2 -I/usr/include/pango-1.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/webp -I/usr/include/webp -DHWY_SHARED_DEFINE -I/usr/include/freetype2 -I/usr/include/libpng16 -O2 -flto=auto -w -pipe -s -Wl,-S -Wl,--build-id=none -o chafa chafa-chafa.o chafa-chicle-file-mapping.o chafa-chicle-font-loader.o chafa-chicle-gif-loader.o chafa-chicle-grid-layout.o chafa-chicle-media-loader.o chafa-chicle-media-pipeline.o chafa-chicle-options.o chafa-chicle-path-queue.o chafa-chicle-placement-counter.o chafa-chicle-png-loader.o chafa-chicle-named-colors.o chafa-chicle-qoi-loader.o chafa-chicle-util.o chafa-chicle-xwd-loader.o chafa-chicle-jpeg-loader.o chafa-chicle-tiff-loader.o chafa-chicle-svg-loader.o chafa-chicle-webp-loader.o chafa-chicle-jxl-loader.o -Wl,--export-dynamic  -ljpeg -L/usr/lib/pkgconfig/../../lib -lrsvg-2 -lcairo-gobject -lpng16 -ldav1d -lgdk_pixbuf-2.0 -lgio-2.0 -lxml2 -lpangocairo-1.0 -lcairo -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lharfbuzz -lfontconfig -lgmodule-2.0 -ltiff -lwebp -lwebpdemux -ljxl -ljxl_threads -lfreetype ../../chafa/.libs/libchafa.a -lglib-2.0 -lintl ../../libnsgif/.libs/libnsgif.a ../../lodepng/.libs/liblodepng.a -lm -pthread
+make[3]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tools/chafa'
+Making all in fontgen
+make[3]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tools/fontgen'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tools/fontgen'
+Making all in completions
+make[3]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tools/completions'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tools/completions'
+make[3]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tools'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tools'
+make[2]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tools'
+Making all in tests
+make[2]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tests'
+Making all in data
+make[3]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tests/data'
+Making all in bad
+make[4]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tests/data/bad'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tests/data/bad'
+Making all in good
+make[4]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tests/data/good'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tests/data/good'
+make[4]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tests/data'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tests/data'
+make[3]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tests/data'
+make[3]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa/tests'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tests'
+make[2]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa/tests'
+make[2]: Entering directory '/tmp/tmp.vSLbFvdH9t/chafa'
+
+---
+--- Success! You can now run tools/chafa/chafa, or install everything
+--- using make install or sudo make install.
+---
+--- [91mNOTE:(B[m You may have to run [93msudo ldconfig(B[m after installing.
+---
+
+make[2]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa'
+make[1]: Leaving directory '/tmp/tmp.vSLbFvdH9t/chafa'
+/build-bins/chafa: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-musl-x86_64.so.1, stripped
+884K	/build-bins/chafa
+/home/runner/work/_temp/toolpacks/d6EeiXS_linux_x86_64/chafa
+./chafa: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-musl-x86_64.so.1, stripped
+06e91319a107518fcaef20f9063620f60c14b8cd9fb003f0277036a364db99b4  ./chafa
+f20bf6ed5994934f3f27a9430f51a5d53086ee5a7e451cd152db25c12ec399a9  ./chafa
+884K	./chafa
+sending incremental file list
+./
+chafa
+
+sent 903,990 bytes  received 38 bytes  1,808,056.00 bytes/sec
+total size is 903,656  speedup is 1.00
+alpine-builder
+alpine-builder

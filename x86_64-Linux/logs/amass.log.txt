@@ -1,0 +1,829 @@
+
+
+ [+] (Building | Fetching) amass :: https://github.com/owasp-amass/amass [Monday, 2026-09-14 (06:18:56 PM) UTC]
+
+go: downloading github.com/fatih/color v1.19.0
+go: downloading github.com/google/uuid v1.6.1-0.20241114170450-2d3c2a9cc518
+go: downloading github.com/gorilla/websocket v1.5.3
+go: downloading github.com/owasp-amass/open-asset-model v0.15.1-0.20260306015734-5261c591eef2
+go: downloading github.com/owasp-amass/asset-db v0.24.4
+go: downloading github.com/caffix/stringset v0.2.1-0.20260303044338-0122c4694af1
+go: downloading github.com/cheggaaa/pb/v3 v3.1.7
+go: downloading gopkg.in/yaml.v3 v3.0.1
+go: downloading github.com/samber/slog-common v0.22.0
+go: downloading github.com/samber/slog-syslog/v2 v2.5.4
+go: downloading github.com/caffix/pipeline v0.3.1-0.20260303045422-389f03cd4573
+go: downloading github.com/caffix/queue v0.4.1-0.20260303044231-38e3190f084d
+go: downloading github.com/yl2chen/cidranger v1.0.2
+go: downloading github.com/PuerkitoBio/goquery v1.12.0
+go: downloading github.com/geziyor/geziyor v0.0.0-20240812061556-229b8ca83ac1
+go: downloading github.com/tylertreat/BoomFilters v0.0.0-20251117164519-53813c36cc1b
+go: downloading github.com/mattn/go-colorable v0.1.14
+go: downloading github.com/mattn/go-isatty v0.0.20
+go: downloading github.com/VividCortex/ewma v1.2.0
+go: downloading github.com/mattn/go-runewidth v0.0.22
+go: downloading github.com/neo4j/neo4j-go-driver/v5 v5.28.4
+go: downloading github.com/jackc/pgx/v5 v5.9.1
+go: downloading github.com/rubenv/sql-migrate v1.8.1
+go: downloading modernc.org/sqlite v1.48.1
+go: downloading github.com/samber/lo v1.53.0
+go: downloading github.com/hashicorp/go-multierror v1.1.1
+go: downloading github.com/andybalholm/cascadia v1.3.3
+go: downloading golang.org/x/net v0.52.0
+go: downloading github.com/chromedp/chromedp v0.15.1
+go: downloading golang.org/x/time v0.15.0
+go: downloading github.com/chromedp/cdproto v0.0.0-20260405000525-47a8ff65b46a
+go: downloading golang.org/x/text v0.35.0
+go: downloading github.com/gorilla/mux v1.8.1
+go: downloading github.com/InfluxCommunity/influxdb3-go/v2 v2.13.0
+go: downloading golang.org/x/sys v0.42.0
+go: downloading github.com/clipperhouse/uax29/v2 v2.7.0
+go: downloading github.com/jackc/puddle/v2 v2.2.2
+go: downloading github.com/jackc/pgpassfile v1.0.0
+go: downloading github.com/jackc/pgservicefile v0.0.0-20240606120523-5a60cdf6a761
+go: downloading github.com/go-gorp/gorp/v3 v3.1.0
+go: downloading github.com/hashicorp/errwrap v1.1.0
+go: downloading github.com/go-kit/kit v0.13.0
+go: downloading github.com/prometheus/client_golang v1.23.2
+go: downloading github.com/temoto/robotstxt v1.1.2
+go: downloading github.com/go-json-experiment/json v0.0.0-20260214004413-d219187c3433
+go: downloading github.com/gobwas/ws v1.4.0
+go: downloading github.com/adrg/strutil v0.3.1
+go: downloading github.com/openrdap/rdap v0.9.1
+go: downloading github.com/miekg/dns v1.1.72
+go: downloading github.com/owasp-amass/resolve v0.10.0
+go: downloading github.com/PuerkitoBio/purell v1.2.1
+go: downloading github.com/biter777/countries v1.7.5
+go: downloading github.com/caffix/fullname_parser v0.0.0-20260303050922-5979016ffef9
+go: downloading github.com/caffix/jarm-go v0.0.0-20260306052330-3d837f3b03fc
+go: downloading github.com/nyaruka/phonenumbers v1.7.1
+go: downloading github.com/pioz/countries v0.2.2
+go: downloading mvdan.cc/xurls/v2 v2.6.0
+go: downloading github.com/likexian/whois v1.15.7
+go: downloading github.com/likexian/whois-parser v1.24.21
+go: downloading github.com/apache/arrow-go/v18 v18.5.2
+go: downloading github.com/influxdata/line-protocol/v2 v2.2.1
+go: downloading google.golang.org/grpc v1.80.0
+go: downloading golang.org/x/sync v0.20.0
+go: downloading github.com/chromedp/sysutil v1.1.0
+go: downloading github.com/beorn7/perks v1.0.1
+go: downloading github.com/cespare/xxhash/v2 v2.3.0
+go: downloading github.com/prometheus/client_model v0.6.2
+go: downloading github.com/prometheus/common v0.67.5
+go: downloading github.com/prometheus/procfs v0.20.1
+go: downloading google.golang.org/protobuf v1.36.11
+go: downloading github.com/gobwas/httphead v0.1.0
+go: downloading github.com/gobwas/pool v0.2.1
+go: downloading github.com/alecthomas/kingpin/v2 v2.4.0
+go: downloading golang.org/x/crypto v0.49.0
+go: downloading github.com/mitchellh/go-homedir v1.1.0
+go: downloading github.com/likexian/gokit v0.25.16
+go: downloading golang.org/x/exp v0.0.0-20260312153236-7ab1446f8b90
+go: downloading golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da
+go: downloading github.com/google/flatbuffers v25.12.19+incompatible
+go: downloading github.com/klauspost/compress v1.18.5
+go: downloading github.com/pierrec/lz4/v4 v4.1.26
+go: downloading github.com/VividCortex/gohistogram v1.0.0
+go: downloading github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
+go: downloading go.yaml.in/yaml/v2 v2.4.4
+go: downloading github.com/alecthomas/units v0.0.0-20240927000941-0f3dac36c52b
+go: downloading github.com/xhit/go-str2duration/v2 v2.1.0
+go: downloading github.com/goccy/go-json v0.10.6
+go: downloading github.com/zeebo/xxh3 v1.1.0
+go: downloading google.golang.org/genproto/googleapis/rpc v0.0.0-20260406210006-6f92a3bedf2d
+go: downloading github.com/klauspost/cpuid/v2 v2.3.0
+go: downloading modernc.org/libc v1.70.0
+go: downloading modernc.org/memory v1.11.0
+go: downloading modernc.org/mathutil v1.7.1
+go: downloading github.com/dustin/go-humanize v1.0.1
+go: downloading github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec
+internal/goarch
+internal/unsafeheader
+internal/byteorder
+internal/cpu
+internal/coverage/rtcov
+internal/abi
+internal/godebugs
+internal/goexperiment
+internal/goos
+internal/profilerecord
+internal/runtime/atomic
+internal/runtime/syscall/linux
+internal/bytealg
+internal/chacha8rand
+math/bits
+internal/strconv
+internal/runtime/exithook
+internal/runtime/gc
+internal/runtime/sys
+internal/asan
+internal/msan
+internal/runtime/gc/scan
+internal/runtime/math
+internal/runtime/pprof/label
+internal/stringslite
+internal/trace/tracev2
+internal/race
+sync/atomic
+internal/runtime/maps
+internal/synctest
+unicode
+internal/runtime/cgroup
+internal/sync
+unicode/utf8
+cmp
+encoding
+math
+unicode/utf16
+crypto/internal/fips140deps/byteorder
+crypto/internal/fips140deps/cpu
+crypto/internal/constanttime
+crypto/internal/fips140/alias
+crypto/internal/fips140deps/time
+crypto/internal/fips140/subtle
+crypto/internal/boring/sig
+runtime
+database/sql/internal
+crypto/subtle
+internal/nettrace
+container/list
+vendor/golang.org/x/crypto/cryptobyte/asn1
+vendor/golang.org/x/crypto/internal/alias
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/collections
+github.com/neo4j/neo4j-go-driver/v5/neo4j/notifications
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/metadata
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/telemetry
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/gql
+github.com/jackc/pgx/v5/internal/pgio
+log/internal
+github.com/jackc/puddle/v2/internal/genstack
+golang.org/x/net/html/atom
+github.com/chromedp/chromedp/device
+github.com/gobwas/pool/internal/pmath
+golang.org/x/text/encoding/internal/identifier
+golang.org/x/text/internal/utf8internal
+google.golang.org/protobuf/internal/flags
+google.golang.org/protobuf/internal/set
+log/slog/internal
+golang.org/x/net/internal/iana
+github.com/adrg/strutil/internal/mathutil
+github.com/adrg/strutil/internal/stringutil
+github.com/apache/arrow-go/v18/arrow/internal/debug
+github.com/adrg/strutil/internal/ngram
+golang.org/x/exp/constraints
+golang.org/x/xerrors/internal
+google.golang.org/grpc/serviceconfig
+google.golang.org/grpc/encoding/internal
+github.com/adrg/strutil
+github.com/klauspost/compress
+github.com/klauspost/compress/internal/cpuinfo
+github.com/klauspost/compress/internal/le
+github.com/pierrec/lz4/v4/internal/lz4errors
+github.com/samber/lo/internal/constraints
+github.com/VividCortex/ewma
+internal/reflectlite
+iter
+weak
+sync
+slices
+maps
+runtime/metrics
+errors
+sort
+internal/testlog
+internal/bisect
+internal/singleflight
+io
+internal/oserror
+syscall
+strconv
+bytes
+path
+reflect
+strings
+hash
+hash/crc32
+bufio
+encoding/json/internal
+encoding/json/internal/jsonflags
+encoding/json/internal/jsonopts
+encoding/json/internal/jsonwire
+time
+internal/syscall/unix
+internal/syscall/execenv
+encoding/base32
+encoding/json/jsontext
+encoding/base64
+crypto
+internal/godebug
+context
+io/fs
+internal/poll
+internal/fmtsort
+internal/filepathlite
+encoding/binary
+crypto/internal/fips140deps/godebug
+crypto/internal/impl
+crypto/internal/fips140
+crypto/internal/entropy/v1.0.0
+crypto/internal/fips140/sha256
+crypto/internal/fips140/sha3
+os
+crypto/internal/fips140/sha512
+math/rand/v2
+crypto/internal/fips140/hmac
+golang.org/x/sys/unix
+crypto/internal/fips140/check
+crypto/internal/randutil
+crypto/fips140
+crypto/internal/fips140/aes
+math/rand
+vendor/golang.org/x/net/dns/dnsmessage
+unique
+net/netip
+fmt
+crypto/internal/sysrand
+crypto/internal/fips140/drbg
+crypto/internal/fips140only
+crypto/md5
+crypto/internal/fips140/aes/gcm
+net
+flag
+compress/flate
+github.com/mattn/go-isatty
+github.com/mattn/go-colorable
+github.com/fatih/color
+encoding/csv
+encoding/hex
+github.com/caffix/stringset
+encoding/json/v2
+crypto/cipher
+crypto/internal/boring
+compress/gzip
+crypto/internal/rand
+math/big
+crypto/sha1
+crypto/aes
+crypto/des
+crypto/internal/fips140/nistec/fiat
+crypto/internal/fips140/edwards25519/field
+crypto/internal/fips140/bigmod
+crypto/rand
+uuid
+crypto/internal/fips140/nistec
+database/sql/driver
+crypto/internal/boring/bbig
+crypto/internal/fips140cache
+crypto/sha3
+crypto/sha512
+crypto/internal/fips140hash
+internal/saferio
+crypto/internal/fips140/edwards25519
+encoding/asn1
+encoding/json
+crypto/internal/fips140/ed25519
+github.com/google/uuid
+crypto/ed25519
+vendor/golang.org/x/crypto/cryptobyte
+crypto/internal/fips140/hkdf
+crypto/hkdf
+crypto/internal/fips140/ecdh
+crypto/elliptic
+crypto/ecdh
+crypto/internal/fips140/ecdsa
+crypto/hmac
+crypto/internal/fips140/mlkem
+crypto/sha256
+vendor/golang.org/x/crypto/chacha20
+vendor/golang.org/x/crypto/internal/poly1305
+crypto/ecdsa
+vendor/golang.org/x/sys/cpu
+crypto/internal/fips140/tls12
+crypto/mlkem
+crypto/internal/fips140/tls13
+crypto/internal/fips140/mldsa
+vendor/golang.org/x/crypto/chacha20poly1305
+crypto/rc4
+crypto/internal/fips140/rsa
+crypto/hpke
+crypto/mldsa
+crypto/tls/internal/fips140tls
+crypto/dsa
+crypto/x509/pkix
+encoding/pem
+crypto/rsa
+net/url
+path/filepath
+github.com/neo4j/neo4j-go-driver/v5/neo4j/db
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/auth
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/racing
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/time
+github.com/neo4j/neo4j-go-driver/v5/neo4j/log
+github.com/neo4j/neo4j-go-driver/v5/neo4j/dbtype
+crypto/x509
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/boltagent
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/errorutil
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/packstream
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/notifications
+github.com/owasp-amass/open-asset-model
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/homedb
+database/sql
+github.com/caffix/queue
+github.com/owasp-amass/asset-db/types
+github.com/owasp-amass/open-asset-model/account
+github.com/owasp-amass/open-asset-model/certificate
+github.com/owasp-amass/open-asset-model/contact
+github.com/owasp-amass/open-asset-model/dns
+github.com/owasp-amass/open-asset-model/file
+github.com/owasp-amass/open-asset-model/financial
+github.com/owasp-amass/open-asset-model/general
+github.com/owasp-amass/open-asset-model/network
+github.com/owasp-amass/open-asset-model/org
+github.com/owasp-amass/open-asset-model/people
+github.com/owasp-amass/open-asset-model/platform
+github.com/owasp-amass/open-asset-model/registration
+github.com/owasp-amass/open-asset-model/url
+github.com/jackc/pgx/v5/internal/sanitize
+crypto/internal/fips140/pbkdf2
+crypto/pbkdf2
+regexp/syntax
+github.com/jackc/pgservicefile
+github.com/jackc/pgx/v5/internal/iobufpool
+github.com/jackc/pgx/v5/pgconn/ctxwatch
+github.com/jackc/pgx/v5/pgconn/internal/bgreader
+github.com/jackc/pgx/v5/pgproto3
+encoding/xml
+crypto/tls
+regexp
+github.com/jackc/pgx/v5/pgtype
+golang.org/x/text/internal/tag
+golang.org/x/text/internal/language
+github.com/jackc/pgpassfile
+golang.org/x/text/transform
+golang.org/x/text/unicode/norm
+golang.org/x/text/internal/language/compact
+golang.org/x/text/language
+golang.org/x/text/runes
+golang.org/x/text/internal
+log
+golang.org/x/text/cases
+golang.org/x/text/unicode/bidi
+golang.org/x/text/width
+github.com/neo4j/neo4j-go-driver/v5/neo4j/auth
+golang.org/x/text/secure/bidirule
+os/user
+github.com/neo4j/neo4j-go-driver/v5/neo4j/config
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/db
+golang.org/x/text/secure/precis
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/bolt
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/retry
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/router
+golang.org/x/sync/semaphore
+github.com/jackc/puddle/v2
+embed
+github.com/go-gorp/gorp/v3
+github.com/owasp-amass/asset-db/migrations/postgres
+github.com/rubenv/sql-migrate/sqlparse
+vendor/golang.org/x/text/transform
+vendor/golang.org/x/text/unicode/bidi
+vendor/golang.org/x/text/secure/bidirule
+vendor/golang.org/x/text/unicode/norm
+net/textproto
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/connector
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/pool
+mime
+github.com/neo4j/neo4j-go-driver/v5/neo4j
+vendor/golang.org/x/net/idna
+mime/quotedprintable
+mime/multipart
+vendor/golang.org/x/net/http/httpguts
+github.com/owasp-amass/asset-db/repository/neo4j
+vendor/golang.org/x/net/http/httpproxy
+net/http/httptrace
+net/http/internal
+net/http/internal/ascii
+vendor/golang.org/x/net/http2/hpack
+net/http/internal/httpsfv
+github.com/owasp-amass/asset-db/migrations/sqlite3
+hash/fnv
+net/http/internal/httpcommon
+github.com/dustin/go-humanize
+net/http/internal/http2
+modernc.org/libc/uuid/uuid
+github.com/remyoudompheng/bigfft
+modernc.org/memory
+modernc.org/mathutil
+os/exec
+os/signal
+runtime/debug
+modernc.org/libc/sys/types
+modernc.org/sqlite/vtab
+github.com/yl2chen/cidranger/net
+modernc.org/libc
+github.com/yl2chen/cidranger
+github.com/owasp-amass/amass/v5/internal/net/dns
+golang.org/x/net/html
+github.com/jackc/pgx/v5/pgconn
+github.com/jackc/pgx/v5/pgtype/zeronull
+net/http
+github.com/andybalholm/cascadia
+github.com/jackc/pgx/v5/internal/stmtcache
+github.com/jackc/pgx/v5
+github.com/chromedp/sysutil
+github.com/chromedp/cdproto/cdp
+github.com/go-json-experiment/json/jsontext
+github.com/jackc/pgx/v5/pgxpool
+github.com/chromedp/cdproto/runtime
+github.com/chromedp/cdproto/accessibility
+github.com/jackc/pgx/v5/stdlib
+github.com/chromedp/cdproto/dom
+github.com/chromedp/cdproto/animation
+github.com/rubenv/sql-migrate
+github.com/PuerkitoBio/goquery
+github.com/chromedp/cdproto/debugger
+github.com/owasp-amass/asset-db/repository/postgres
+github.com/chromedp/cdproto/io
+github.com/chromedp/cdproto/security
+github.com/chromedp/cdproto/network
+github.com/chromedp/cdproto/autofill
+github.com/chromedp/cdproto/target
+github.com/chromedp/cdproto/serviceworker
+github.com/chromedp/cdproto/backgroundservice
+github.com/chromedp/cdproto/bluetoothemulation
+github.com/chromedp/cdproto/audits
+github.com/chromedp/cdproto/browser
+github.com/chromedp/cdproto/storage
+github.com/chromedp/cdproto/cast
+github.com/chromedp/cdproto/crashreportcontext
+github.com/chromedp/cdproto/css
+github.com/chromedp/cdproto/deviceaccess
+github.com/chromedp/cdproto/cachestorage
+github.com/chromedp/cdproto/deviceorientation
+github.com/chromedp/cdproto/domdebugger
+github.com/chromedp/cdproto/domstorage
+github.com/chromedp/cdproto/page
+github.com/chromedp/cdproto/eventbreakpoints
+github.com/chromedp/cdproto/domsnapshot
+github.com/chromedp/cdproto/extensions
+github.com/chromedp/cdproto/fedcm
+github.com/chromedp/cdproto/fetch
+github.com/chromedp/cdproto/filesystem
+github.com/chromedp/cdproto/headlessexperimental
+github.com/chromedp/cdproto/heapprofiler
+github.com/chromedp/cdproto/indexeddb
+github.com/chromedp/cdproto/input
+github.com/chromedp/cdproto/inspector
+github.com/chromedp/cdproto/layertree
+github.com/chromedp/cdproto/log
+github.com/chromedp/cdproto/media
+github.com/chromedp/cdproto/memory
+github.com/chromedp/cdproto/performance
+github.com/chromedp/cdproto/emulation
+github.com/chromedp/cdproto/overlay
+github.com/chromedp/cdproto/performancetimeline
+github.com/chromedp/cdproto/preload
+github.com/chromedp/cdproto/profiler
+github.com/chromedp/cdproto/pwa
+github.com/chromedp/cdproto/smartcardemulation
+github.com/chromedp/cdproto/systeminfo
+github.com/chromedp/cdproto/tethering
+github.com/chromedp/cdproto/tracing
+github.com/chromedp/cdproto/webaudio
+github.com/chromedp/cdproto/webauthn
+github.com/chromedp/cdproto/webmcp
+github.com/go-json-experiment/json
+github.com/chromedp/chromedp/kb
+github.com/gobwas/httphead
+github.com/gobwas/pool
+io/ioutil
+github.com/gobwas/pool/pbufio
+github.com/chromedp/cdproto
+github.com/gobwas/ws
+github.com/gobwas/pool/pbytes
+github.com/geziyor/geziyor/cache/memorycache
+net/http/httputil
+github.com/gobwas/ws/wsutil
+internal/sysinfo
+runtime/trace
+testing
+github.com/geziyor/geziyor/internal
+golang.org/x/text/encoding
+golang.org/x/text/encoding/internal
+github.com/chromedp/chromedp
+golang.org/x/text/encoding/charmap
+golang.org/x/text/encoding/japanese
+github.com/geziyor/geziyor/cache
+modernc.org/sqlite/lib
+golang.org/x/text/encoding/korean
+golang.org/x/text/encoding/simplifiedchinese
+golang.org/x/text/encoding/traditionalchinese
+golang.org/x/text/encoding/unicode
+github.com/geziyor/geziyor/export
+github.com/go-kit/kit/metrics
+golang.org/x/text/encoding/htmlindex
+github.com/go-kit/kit/metrics/discard
+expvar
+github.com/VividCortex/gohistogram
+golang.org/x/net/html/charset
+github.com/geziyor/geziyor/client
+github.com/go-kit/kit/metrics/internal/lv
+github.com/go-kit/kit/metrics/generic
+github.com/beorn7/perks/quantile
+github.com/go-kit/kit/metrics/expvar
+github.com/cespare/xxhash/v2
+google.golang.org/protobuf/internal/detrand
+google.golang.org/protobuf/internal/pragma
+google.golang.org/protobuf/internal/editiondefaults
+google.golang.org/protobuf/internal/errors
+go/token
+google.golang.org/protobuf/internal/version
+google.golang.org/protobuf/encoding/protowire
+go.yaml.in/yaml/v2
+google.golang.org/protobuf/reflect/protoreflect
+github.com/munnerz/goautoneg
+github.com/prometheus/procfs/internal/fs
+github.com/prometheus/procfs/internal/util
+github.com/prometheus/procfs
+google.golang.org/protobuf/internal/descfmt
+google.golang.org/protobuf/internal/descopts
+google.golang.org/protobuf/internal/strs
+google.golang.org/protobuf/internal/encoding/text
+google.golang.org/protobuf/internal/encoding/messageset
+google.golang.org/protobuf/internal/genid
+google.golang.org/protobuf/internal/encoding/defval
+google.golang.org/protobuf/internal/order
+google.golang.org/protobuf/reflect/protoregistry
+google.golang.org/protobuf/runtime/protoiface
+google.golang.org/protobuf/internal/protolazy
+google.golang.org/protobuf/proto
+github.com/prometheus/client_golang/internal/github.com/golang/gddo/httputil/header
+github.com/prometheus/client_golang/internal/github.com/golang/gddo/httputil
+github.com/prometheus/client_golang/prometheus/promhttp/internal
+github.com/temoto/robotstxt
+golang.org/x/time/rate
+net/http/cookiejar
+google.golang.org/protobuf/internal/filedesc
+google.golang.org/protobuf/encoding/prototext
+google.golang.org/protobuf/encoding/protodelim
+container/heap
+encoding/gob
+gopkg.in/yaml.v3
+google.golang.org/protobuf/internal/encoding/tag
+google.golang.org/protobuf/internal/impl
+github.com/tylertreat/BoomFilters
+github.com/gorilla/websocket
+github.com/owasp-amass/amass/v5/engine/api/client
+github.com/hashicorp/errwrap
+github.com/owasp-amass/amass/v5/engine/pubsub
+github.com/hashicorp/go-multierror
+log/slog/internal/buffer
+log/slog
+github.com/caffix/pipeline
+github.com/gorilla/mux
+golang.org/x/net/idna
+github.com/biter777/countries
+github.com/PuerkitoBio/purell
+github.com/caffix/fullname_parser
+github.com/caffix/jarm-go
+golang.org/x/net/bpf
+golang.org/x/net/internal/socket
+google.golang.org/protobuf/internal/filetype
+google.golang.org/protobuf/runtime/protoimpl
+golang.org/x/net/ipv4
+google.golang.org/protobuf/types/known/timestamppb
+github.com/prometheus/client_model/go
+github.com/prometheus/common/model
+golang.org/x/net/ipv6
+github.com/miekg/dns
+github.com/prometheus/client_golang/prometheus/internal
+github.com/prometheus/common/expfmt
+github.com/prometheus/client_golang/prometheus
+github.com/go-kit/kit/metrics/prometheus
+github.com/prometheus/client_golang/prometheus/promhttp
+golang.org/x/text/internal/format
+golang.org/x/text/language/display
+github.com/geziyor/geziyor/metrics
+github.com/geziyor/geziyor/middleware
+github.com/geziyor/geziyor
+github.com/adrg/strutil/metrics
+golang.org/x/net/publicsuffix
+github.com/owasp-amass/asset-db/migrations/neo4j
+github.com/owasp-amass/resolve/types
+github.com/owasp-amass/resolve/conn
+github.com/owasp-amass/resolve/pool
+github.com/owasp-amass/resolve/utils
+github.com/nyaruka/phonenumbers
+github.com/owasp-amass/resolve/selectors
+modernc.org/sqlite
+github.com/owasp-amass/resolve/servers
+github.com/owasp-amass/resolve/wildcards
+github.com/pioz/countries
+mvdan.cc/xurls/v2
+github.com/alecthomas/units
+github.com/xhit/go-str2duration/v2
+github.com/owasp-amass/asset-db/repository/sqlite3
+github.com/owasp-amass/amass/v5/engine/sessions/backlogdb
+go/scanner
+go/ast
+github.com/owasp-amass/asset-db/repository
+go/doc/comment
+github.com/owasp-amass/amass/v5/internal/net
+github.com/owasp-amass/asset-db
+github.com/owasp-amass/amass/v5/internal/net/http
+github.com/owasp-amass/amass/v5/internal/afmt
+github.com/owasp-amass/amass/v5/config
+internal/lazyregexp
+go/doc
+github.com/owasp-amass/amass/v5/engine/types
+text/template/parse
+github.com/owasp-amass/amass/v5/engine/api/client/v1
+github.com/owasp-amass/amass/v5/engine/api/server/v1
+github.com/owasp-amass/amass/v5/engine/api/server
+github.com/owasp-amass/amass/v5/engine/dispatcher
+github.com/owasp-amass/amass/v5/engine/sessions/scope
+text/template
+github.com/owasp-amass/amass/v5/engine/sessions
+github.com/alecthomas/kingpin/v2
+github.com/mitchellh/go-homedir
+github.com/openrdap/rdap/bootstrap/cache
+github.com/openrdap/rdap/bootstrap
+github.com/openrdap/rdap/sandbox
+golang.org/x/crypto/pkcs12/internal/rc2
+golang.org/x/crypto/pkcs12
+golang.org/x/net/internal/socks
+golang.org/x/net/proxy
+github.com/likexian/whois
+github.com/likexian/gokit/assert
+github.com/openrdap/rdap
+github.com/likexian/gokit/xrand
+github.com/likexian/gokit/xslice
+github.com/likexian/whois-parser
+github.com/owasp-amass/amass/v5/engine/plugins/support/org
+github.com/owasp-amass/amass/v5/internal/db
+github.com/InfluxCommunity/influxdb3-go/v2/influxdb3/gzip
+github.com/google/flatbuffers/go
+golang.org/x/sys/cpu
+github.com/apache/arrow-go/v18/arrow/decimal128
+github.com/apache/arrow-go/v18/arrow/memory
+github.com/apache/arrow-go/v18/arrow/decimal256
+github.com/apache/arrow-go/v18/arrow/internal/flatbuf
+github.com/apache/arrow-go/v18/arrow/decimal
+github.com/apache/arrow-go/v18/arrow/float16
+github.com/goccy/go-json/internal/errors
+github.com/goccy/go-json/internal/runtime
+golang.org/x/xerrors
+github.com/goccy/go-json/internal/decoder
+github.com/goccy/go-json/internal/encoder
+github.com/apache/arrow-go/v18/arrow/endian
+github.com/apache/arrow-go/v18/arrow/bitutil
+hash/maphash
+github.com/klauspost/cpuid/v2
+github.com/goccy/go-json/internal/encoder/vm_color_indent
+github.com/zeebo/xxh3
+golang.org/x/net/internal/timeseries
+html
+html/template
+text/tabwriter
+google.golang.org/grpc/backoff
+google.golang.org/grpc/grpclog/internal
+google.golang.org/grpc/grpclog
+google.golang.org/grpc/connectivity
+google.golang.org/grpc/attributes
+golang.org/x/net/trace
+google.golang.org/grpc/internal/credentials
+google.golang.org/grpc/internal/envconfig
+google.golang.org/grpc/credentials
+google.golang.org/grpc/internal
+google.golang.org/grpc/balancer/pickfirst/internal
+google.golang.org/grpc/internal/grpclog
+google.golang.org/grpc/internal/channelz
+google.golang.org/grpc/metadata
+google.golang.org/grpc/stats
+google.golang.org/grpc/experimental/stats
+google.golang.org/grpc/resolver
+google.golang.org/grpc/channelz
+google.golang.org/protobuf/internal/encoding/json
+google.golang.org/grpc/balancer
+google.golang.org/grpc/balancer/base
+google.golang.org/grpc/internal/balancer/weight
+google.golang.org/protobuf/encoding/protojson
+google.golang.org/protobuf/protoadapt
+google.golang.org/grpc/balancer/endpointsharding
+google.golang.org/grpc/codes
+google.golang.org/grpc/credentials/insecure
+google.golang.org/grpc/internal/grpcutil
+google.golang.org/grpc/internal/pretty
+google.golang.org/grpc/internal/mem
+google.golang.org/grpc/balancer/pickfirst
+google.golang.org/grpc/mem
+google.golang.org/grpc/encoding
+google.golang.org/grpc/encoding/proto
+google.golang.org/grpc/balancer/roundrobin
+google.golang.org/grpc/internal/backoff
+google.golang.org/grpc/internal/balancer/gracefulswitch
+google.golang.org/grpc/internal/balancerload
+google.golang.org/protobuf/types/known/durationpb
+github.com/goccy/go-json/internal/encoder/vm_color
+google.golang.org/protobuf/types/known/anypb
+google.golang.org/grpc/binarylog/grpc_binarylog_v1
+google.golang.org/genproto/googleapis/rpc/status
+google.golang.org/grpc/internal/status
+google.golang.org/grpc/internal/buffer
+google.golang.org/grpc/internal/grpcsync
+google.golang.org/grpc/internal/idle
+google.golang.org/grpc/status
+google.golang.org/grpc/internal/metadata
+google.golang.org/grpc/internal/serviceconfig
+google.golang.org/grpc/internal/binarylog
+google.golang.org/grpc/internal/resolver
+google.golang.org/grpc/internal/proxyattributes
+golang.org/x/net/http/httpguts
+golang.org/x/net/http2/hpack
+golang.org/x/net/internal/httpsfv
+google.golang.org/grpc/internal/stats
+golang.org/x/net/internal/httpcommon
+google.golang.org/grpc/internal/syscall
+golang.org/x/net/http2
+google.golang.org/grpc/internal/transport/networktype
+google.golang.org/grpc/keepalive
+google.golang.org/grpc/peer
+google.golang.org/grpc/tap
+google.golang.org/grpc/internal/resolver/passthrough
+google.golang.org/grpc/internal/resolver/unix
+google.golang.org/grpc/balancer/grpclb/state
+google.golang.org/grpc/internal/resolver/dns/internal
+google.golang.org/grpc/internal/resolver/dns
+google.golang.org/grpc/resolver/dns
+google.golang.org/protobuf/types/descriptorpb
+github.com/klauspost/compress/fse
+github.com/klauspost/compress/huff0
+google.golang.org/grpc/internal/transport
+github.com/klauspost/compress/internal/snapref
+github.com/klauspost/compress/zstd/internal/xxhash
+github.com/klauspost/compress/zstd
+google.golang.org/grpc/internal/resolver/delegatingresolver
+github.com/goccy/go-json/internal/encoder/vm_indent
+google.golang.org/grpc
+github.com/pierrec/lz4/v4/internal/lz4block
+github.com/pierrec/lz4/v4/internal/xxh32
+github.com/pierrec/lz4/v4/internal/lz4stream
+github.com/pierrec/lz4/v4
+github.com/influxdata/line-protocol/v2/lineprotocol
+github.com/apache/arrow-go/v18/arrow/flight/gen/flight
+google.golang.org/grpc/encoding/gzip
+internal/profile
+runtime/pprof
+github.com/owasp-amass/amass/v5/resources
+github.com/samber/lo/internal/xrand
+github.com/samber/lo/internal/xtime
+github.com/samber/lo/mutable
+github.com/samber/lo
+net/http/pprof
+github.com/owasp-amass/asset-db/triples
+github.com/samber/slog-common
+github.com/cheggaaa/pb/v3/termutil
+github.com/samber/slog-syslog/v2
+github.com/clipperhouse/uax29/v2/graphemes
+github.com/owasp-amass/amass/v5/internal/tools
+github.com/owasp-amass/amass/v5/internal/assoc
+github.com/mattn/go-runewidth
+github.com/owasp-amass/amass/v5/engine/plugins/support
+github.com/owasp-amass/amass/v5/internal/subs
+github.com/cheggaaa/pb/v3
+github.com/owasp-amass/amass/v5/internal/track
+github.com/owasp-amass/amass/v5/internal/viz
+github.com/owasp-amass/amass/v5/engine/plugins/api
+github.com/owasp-amass/amass/v5/engine/plugins/api/aviato
+github.com/owasp-amass/amass/v5/engine/plugins/api/gleif
+github.com/owasp-amass/amass/v5/engine/plugins/api/rdap
+github.com/owasp-amass/amass/v5/engine/plugins/archive
+github.com/owasp-amass/amass/v5/engine/plugins/brute
+github.com/owasp-amass/amass/v5/engine/plugins/dns
+github.com/owasp-amass/amass/v5/engine/plugins/enrich
+github.com/owasp-amass/amass/v5/engine/plugins/horizontals
+github.com/owasp-amass/amass/v5/engine/plugins/scrape
+github.com/owasp-amass/amass/v5/engine/plugins/service_discovery/dns
+github.com/owasp-amass/amass/v5/engine/plugins/service_discovery/http_probes
+github.com/owasp-amass/amass/v5/engine/plugins/whois
+github.com/owasp-amass/amass/v5/engine/plugins/whois/bgptools
+github.com/owasp-amass/amass/v5/internal/enum
+github.com/owasp-amass/amass/v5/engine/plugins
+github.com/goccy/go-json/internal/encoder/vm
+github.com/goccy/go-json
+github.com/apache/arrow-go/v18/internal/json
+github.com/apache/arrow-go/v18/arrow
+github.com/apache/arrow-go/v18/arrow/encoded
+github.com/apache/arrow-go/v18/arrow/arrio
+github.com/apache/arrow-go/v18/arrow/internal
+github.com/apache/arrow-go/v18/internal/utils
+github.com/apache/arrow-go/v18/internal/bitutils
+github.com/apache/arrow-go/v18/internal/hashing
+github.com/apache/arrow-go/v18/arrow/array
+github.com/apache/arrow-go/v18/arrow/internal/dictutils
+github.com/apache/arrow-go/v18/arrow/ipc
+github.com/apache/arrow-go/v18/arrow/flight
+github.com/InfluxCommunity/influxdb3-go/v2/influxdb3
+github.com/owasp-amass/amass/v5/engine/registry
+github.com/owasp-amass/amass/v5/engine
+github.com/owasp-amass/amass/v5/internal/amass_engine
+github.com/owasp-amass/amass/v5/cmd/amass

@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) ncdu :: https://dev.yorhel.nl [Monday, 2026-09-14 (06:52:30 PM) UTC]
+
+https://dev.yorhel.nl/download/ncdu-2.9.1-linux-x86_64.tar.gz
+Downloading  12% [==>                       ] (48/368 kB, 262.882 kB/s) [0s:1s]                                                                               Downloading  25% [=====>                    ] (96/368 kB, 263.647 kB/s) [0s:1s]                                                                               Downloading  52% [============>            ] (192/368 kB, 352.681 kB/s) [0s:0s]                                                                               Downloading  82% [===================>     ] (304/368 kB, 352.681 kB/s) [0s:0s]                                                                               Downloading 100% [=========================] (368/368 kB, 507.183 kB/s)
+Extracted `ncdu` to `/home/runner/work/_temp/toolpack_x86_64/ncdu`

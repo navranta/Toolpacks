@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) upx :: https://github.com/upx/upx [Monday, 2026-09-14 (07:34:58 PM) UTC]
+
+https://github.com/borestad/static-binaries/raw/main/x86_64/upx
+Downloading 100% [==========================] (624/624 kB, 25.232 MB/s)
+Extracted `upx` to `/home/runner/work/_temp/toolpack_x86_64/upx`

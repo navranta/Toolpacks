@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) mdcat :: https://github.com/swsnr/mdcat [Monday, 2026-09-14 (06:52:20 PM) UTC]
+
+https://github.com/swsnr/mdcat/releases/download/mdcat-2.7.1/mdcat-2.7.1-x86_64-unknown-linux-gnu.tar.gz
+Downloading 100% [==========================] (4.5/4.5 MB, 81.580 MB/s)
+Extracted `mdcat-2.7.1-x86_64-unknown-linux-gnu/mdcat` to `/home/runner/work/_temp/toolpack_x86_64/mdcat`

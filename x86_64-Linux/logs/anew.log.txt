@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) anew :: https://github.com/tomnomnom/anew [Monday, 2026-09-14 (06:21:19 PM) UTC]
+
+https://github.com/tomnomnom/anew/releases/download/v0.1.1/anew-linux-amd64-0.1.1.tgz
+Downloading 100% [==========================] (1.1/1.1 MB, 30.071 MB/s)
+Extracted `anew` to `/home/runner/work/_temp/toolpack_x86_64/anew`

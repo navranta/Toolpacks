@@ -1,0 +1,10 @@
+
+
+ [+] (Building | Fetching) curl :: https://github.com/stunnel/static-curl [Monday, 2026-09-14 (06:31:18 PM) UTC]
+
+https://github.com/stunnel/static-curl/releases/download/8.22.0/curl-linux-x86_64-musl-8.22.0.tar.xz
+Downloading 100% [==========================] (4.0/4.0 MB, 78.351 MB/s)
+Extracted `curl` to `/home/runner/work/_temp/toolpack_x86_64/curl`
+https://github.com/stunnel/static-curl/releases/download/8.22.0/curl-linux-x86_64-musl-8.22.0.tar.xz
+Downloading 100% [==========================] (4.0/4.0 MB, 75.293 MB/s)
+Extracted `trurl` to `/home/runner/work/_temp/toolpack_x86_64/trurl`

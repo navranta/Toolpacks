@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) xq :: https://github.com/sibprogrammer/xq [Monday, 2026-09-14 (07:48:52 PM) UTC]
+
+https://github.com/sibprogrammer/xq/releases/download/v1.5.1/xq_1.5.1_linux_amd64.tar.gz
+Downloading 100% [==========================] (2.7/2.7 MB, 54.939 MB/s)
+Extracted `xq` to `/home/runner/work/_temp/toolpack_x86_64/xq`

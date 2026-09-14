@@ -1,0 +1,347 @@
+
+
+ [+] (Building | Fetching) yq :: https://github.com/mikefarah/yq [Monday, 2026-09-14 (07:49:32 PM) UTC]
+
+go: downloading github.com/spf13/cobra v1.10.2
+go: downloading github.com/spf13/pflag v1.0.10
+go: downloading github.com/a8m/envsubst v1.4.3
+go: downloading github.com/alecthomas/participle/v2 v2.1.4
+go: downloading github.com/dimchansky/utfbom v1.1.1
+go: downloading github.com/elliotchance/orderedmap v1.8.0
+go: downloading github.com/fatih/color v1.19.0
+go: downloading github.com/go-ini/ini v1.67.0
+go: downloading github.com/goccy/go-json v0.10.6
+go: downloading github.com/goccy/go-yaml v1.19.2
+go: downloading github.com/hashicorp/hcl/v2 v2.24.0
+go: downloading github.com/jinzhu/copier v0.4.0
+go: downloading github.com/magiconair/properties v1.18.11
+go: downloading github.com/pelletier/go-toml/v2 v2.4.3
+go: downloading github.com/yuin/gopher-lua v1.1.2
+go: downloading github.com/zclconf/go-cty v1.19.0
+go: downloading go.yaml.in/yaml/v4 v4.0.0-rc.6
+go: downloading golang.org/x/net v0.58.0
+go: downloading golang.org/x/text v0.41.0
+go: downloading github.com/mattn/go-colorable v0.1.14
+go: downloading github.com/mattn/go-isatty v0.0.20
+go: downloading github.com/agext/levenshtein v1.2.1
+go: downloading github.com/apparentlymart/go-textseg/v15 v15.0.0
+go: downloading github.com/mitchellh/go-wordwrap v1.0.1
+go: downloading github.com/google/go-cmp v0.6.0
+go: downloading golang.org/x/sys v0.47.0
+go: downloading github.com/apparentlymart/go-textseg/v17 v17.0.1
+internal/goarch
+internal/unsafeheader
+internal/byteorder
+internal/cpu
+internal/coverage/rtcov
+internal/abi
+internal/godebugs
+internal/goexperiment
+internal/goos
+internal/profilerecord
+internal/runtime/atomic
+internal/runtime/syscall/linux
+internal/bytealg
+internal/chacha8rand
+math/bits
+internal/runtime/exithook
+internal/runtime/gc
+internal/strconv
+internal/runtime/sys
+internal/asan
+internal/msan
+internal/runtime/math
+internal/runtime/gc/scan
+internal/runtime/pprof/label
+internal/stringslite
+internal/trace/tracev2
+internal/race
+cmp
+internal/runtime/maps
+math
+unicode/utf8
+sync/atomic
+internal/runtime/cgroup
+internal/sync
+internal/synctest
+unicode
+container/list
+encoding
+unicode/utf16
+github.com/elliotchance/orderedmap
+github.com/agext/levenshtein
+github.com/zclconf/go-cty/cty/ctymarks
+github.com/google/go-cmp/cmp/internal/flags
+runtime
+database/sql/internal
+crypto/internal/fips140/alias
+crypto/internal/fips140deps/byteorder
+crypto/internal/fips140deps/cpu
+crypto/internal/constanttime
+crypto/internal/fips140deps/time
+crypto/internal/boring/sig
+crypto/internal/fips140/subtle
+log/internal
+crypto/subtle
+vendor/golang.org/x/crypto/cryptobyte/asn1
+vendor/golang.org/x/crypto/internal/alias
+internal/nettrace
+github.com/pelletier/go-toml/v2/internal/parserbridge
+golang.org/x/net/html/atom
+golang.org/x/text/encoding/internal/identifier
+golang.org/x/text/internal/utf8internal
+log/slog/internal
+iter
+weak
+sync
+internal/reflectlite
+maps
+slices
+errors
+sort
+internal/testlog
+internal/bisect
+crypto/internal/fips140cache
+strconv
+io
+internal/oserror
+path
+reflect
+syscall
+encoding/json/internal
+bytes
+strings
+encoding/base64
+bufio
+encoding/json/internal/jsonflags
+encoding/json/internal/jsonopts
+encoding/json/internal/jsonwire
+encoding/base32
+regexp/syntax
+encoding/json/jsontext
+time
+internal/syscall/unix
+internal/syscall/execenv
+regexp
+github.com/dimchansky/utfbom
+github.com/apparentlymart/go-textseg/v15/textseg
+io/fs
+internal/fmtsort
+internal/poll
+encoding/binary
+internal/filepathlite
+context
+github.com/goccy/go-json/internal/runtime
+github.com/mitchellh/go-wordwrap
+golang.org/x/text/transform
+os
+hash
+internal/godebug
+golang.org/x/sys/unix
+hash/crc32
+hash/crc64
+github.com/google/go-cmp/cmp/internal/function
+math/rand
+crypto
+github.com/google/go-cmp/cmp/internal/diff
+crypto/internal/fips140deps/godebug
+crypto/internal/fips140
+crypto/internal/impl
+crypto/internal/fips140/sha3
+crypto/internal/fips140/sha256
+crypto/internal/fips140/sha512
+crypto/internal/entropy/v1.0.0
+math/rand/v2
+crypto/internal/fips140/hmac
+fmt
+io/ioutil
+path/filepath
+crypto/internal/fips140/check
+crypto/internal/sysrand
+crypto/internal/fips140/aes
+crypto/fips140
+crypto/internal/randutil
+encoding/csv
+encoding/xml
+github.com/a8m/envsubst/parse
+encoding/hex
+encoding/json/v2
+text/scanner
+github.com/go-ini/ini
+github.com/mattn/go-isatty
+github.com/mattn/go-colorable
+github.com/fatih/color
+github.com/goccy/go-json/internal/errors
+github.com/goccy/go-yaml/token
+github.com/apparentlymart/go-textseg/v17/textseg/internal/charprops
+github.com/goccy/go-yaml/ast
+github.com/goccy/go-yaml/scanner
+github.com/apparentlymart/go-textseg/v17/textseg/internal/machine
+github.com/apparentlymart/go-textseg/v17/textseg
+github.com/zclconf/go-cty/cty/internal/graphemes
+golang.org/x/text/unicode/norm
+github.com/goccy/go-yaml/lexer
+github.com/goccy/go-yaml/printer
+github.com/goccy/go-yaml/internal/format
+github.com/goccy/go-yaml/internal/errors
+github.com/goccy/go-yaml/parser
+github.com/zclconf/go-cty/cty/set
+math/big
+github.com/zclconf/go-cty/cty/ctystrings
+runtime/debug
+encoding/json
+github.com/alecthomas/participle/v2/lexer
+github.com/goccy/go-json/internal/decoder
+github.com/goccy/go-json/internal/encoder
+github.com/goccy/go-yaml
+github.com/zclconf/go-cty/cty
+github.com/goccy/go-json/internal/encoder/vm_color_indent
+github.com/google/go-cmp/cmp/internal/value
+crypto/internal/fips140/drbg
+github.com/google/go-cmp/cmp
+crypto/internal/fips140/aes/gcm
+crypto/internal/fips140only
+crypto/cipher
+github.com/zclconf/go-cty/cty/convert
+github.com/zclconf/go-cty/cty/function
+crypto/internal/boring
+crypto/internal/rand
+crypto/rand
+flag
+uuid
+database/sql/driver
+github.com/hashicorp/hcl/v2
+github.com/zclconf/go-cty/cty/gocty
+github.com/zclconf/go-cty/cty/json
+github.com/hashicorp/hcl/v2/ext/customdecode
+database/sql
+log
+github.com/zclconf/go-cty/cty/function/stdlib
+compress/flate
+github.com/jinzhu/copier
+compress/gzip
+crypto/aes
+crypto/des
+github.com/hashicorp/hcl/v2/hclsyntax
+crypto/internal/fips140/nistec/fiat
+crypto/internal/fips140/edwards25519/field
+crypto/internal/boring/bbig
+crypto/internal/fips140/bigmod
+crypto/sha3
+crypto/internal/fips140hash
+crypto/sha512
+internal/saferio
+encoding/asn1
+crypto/internal/fips140/nistec
+vendor/golang.org/x/crypto/cryptobyte
+crypto/internal/fips140/edwards25519
+github.com/hashicorp/hcl/v2/hclwrite
+github.com/goccy/go-json/internal/encoder/vm_color
+crypto/internal/fips140/ed25519
+crypto/internal/fips140/ecdh
+crypto/elliptic
+crypto/ecdh
+crypto/internal/fips140/ecdsa
+crypto/ed25519
+crypto/ecdsa
+crypto/internal/fips140/hkdf
+crypto/hmac
+crypto/hkdf
+crypto/internal/fips140/mlkem
+crypto/sha256
+vendor/golang.org/x/crypto/chacha20
+vendor/golang.org/x/crypto/internal/poly1305
+crypto/mlkem
+vendor/golang.org/x/sys/cpu
+crypto/internal/fips140/tls12
+crypto/internal/fips140/tls13
+vendor/golang.org/x/crypto/chacha20poly1305
+crypto/md5
+crypto/internal/fips140/mldsa
+crypto/hpke
+crypto/rc4
+crypto/internal/fips140/rsa
+crypto/sha1
+crypto/mldsa
+crypto/tls/internal/fips140tls
+crypto/dsa
+crypto/x509/pkix
+encoding/pem
+vendor/golang.org/x/net/dns/dnsmessage
+internal/singleflight
+crypto/rsa
+unique
+net/netip
+vendor/golang.org/x/text/transform
+runtime/cgo
+vendor/golang.org/x/text/unicode/bidi
+net/url
+vendor/golang.org/x/text/unicode/norm
+vendor/golang.org/x/text/secure/bidirule
+mime
+mime/quotedprintable
+net/http/internal
+net/http/internal/ascii
+vendor/golang.org/x/net/idna
+vendor/golang.org/x/net/http2/hpack
+net/http/internal/httpsfv
+github.com/pelletier/go-toml/v2/unstable
+github.com/yuin/gopher-lua/ast
+net
+github.com/yuin/gopher-lua/parse
+github.com/yuin/gopher-lua/pm
+os/exec
+go.yaml.in/yaml/v4/internal/libyaml
+github.com/yuin/gopher-lua
+github.com/goccy/go-json/internal/encoder/vm_indent
+go.yaml.in/yaml/v4/plugin/limit
+go.yaml.in/yaml/v4
+golang.org/x/net/html
+crypto/x509
+net/textproto
+vendor/golang.org/x/net/http/httpguts
+vendor/golang.org/x/net/http/httpproxy
+mime/multipart
+golang.org/x/text/encoding
+golang.org/x/text/runes
+golang.org/x/text/encoding/internal
+golang.org/x/text/internal/tag
+golang.org/x/text/internal/language
+golang.org/x/text/encoding/charmap
+crypto/tls
+golang.org/x/text/encoding/japanese
+golang.org/x/text/encoding/korean
+golang.org/x/text/encoding/simplifiedchinese
+golang.org/x/text/encoding/traditionalchinese
+golang.org/x/text/encoding/unicode
+golang.org/x/text/internal/language/compact
+log/slog/internal/buffer
+log/slog
+golang.org/x/text/language
+golang.org/x/text/encoding/htmlindex
+golang.org/x/net/html/charset
+github.com/spf13/pflag
+text/template/parse
+net/http/httptrace
+net/http/internal/httpcommon
+text/template
+net/http/internal/http2
+github.com/spf13/cobra
+net/http
+github.com/goccy/go-json/internal/encoder/vm
+github.com/magiconair/properties
+github.com/goccy/go-json
+github.com/mikefarah/yq/v4/pkg/yqlib
+github.com/mikefarah/yq/v4/cmd
+github.com/mikefarah/yq/v4
+'./yq' -> '/build-bins/yq'
+total 15108
+drwxr-xr-x 2 root root     4096 Sep 14 19:50 .
+drwxr-xr-x 1 root root     4096 Sep 14 19:49 ..
+-rwxr-xr-x 1 root root 15460184 Sep 14 19:50 yq
+DOCKER_RUN_RC=0
+./yq: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
+15M	./yq
+'./yq' -> '/home/runner/work/_temp/toolpack_x86_64/yq'
+alpine-builder
+alpine-builder

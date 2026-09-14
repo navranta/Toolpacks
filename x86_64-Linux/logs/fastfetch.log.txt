@@ -1,0 +1,2035 @@
+
+
+ [+] (Building | Fetching) fastfetch :: https://github.com/fastfetch-cli/fastfetch [Monday, 2026-09-14 (06:35:11 PM) UTC]
+
+fetch https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz
+v20260805-2395-g6b4d520a838 [https://dl-cdn.alpinelinux.org/alpine/edge/main]
+v20260805-2396-gb117e7b3257 [https://dl-cdn.alpinelinux.org/alpine/edge/community]
+OK: 30460 distinct packages available
+Upgrading critical system libraries and apk-tools:
+(1/6) Upgrading libcrypto3 (3.3.2-r4 -> 3.5.8-r0)
+(2/6) Upgrading libssl3 (3.3.2-r4 -> 3.5.8-r0)
+(3/6) Installing libapk (3.0.8-r0)
+(4/6) Upgrading apk-tools (2.14.7-r0 -> 3.0.8-r0)
+(5/6) Upgrading openssl (3.3.2-r4 -> 3.5.8-r0)
+(6/6) Upgrading openssl-dev (3.3.2-r4 -> 3.5.8-r0)
+Executing busybox-1.37.0-r10.trigger
+Executing ca-certificates-20241010-r0.trigger
+Continuing the upgrade transaction with new apk-tools:
+(   1/1552) Purging clang19-ccache (19.1.6-r0)
+(   2/1552) Purging clang19-dev (19.1.6-r0)
+(   3/1552) Purging clang19-extra-tools (19.1.6-r0)
+(   4/1552) Purging clang19 (19.1.6-r0)
+(   5/1552) Purging llvm19-linker-tools (19.1.6-r0)
+(   6/1552) Purging clang19-libclang (19.1.6-r0)
+(   7/1552) Purging clang19-static (19.1.6-r0)
+(   8/1552) Purging libjxl-pixbuf-loader (0.10.3-r0)
+(   9/1552) Upgrading musl (1.2.5-r8 -> 1.2.6-r3)
+(  10/1552) Upgrading libgcc (14.2.0-r5 -> 15.2.0-r9)
+(  11/1552) Upgrading libstdc++ (14.2.0-r5 -> 15.2.0-r9)
+(  12/1552) Upgrading 7zip (24.09-r0 -> 26.02-r0)
+(  13/1552) Upgrading pkgconf (2.3.0-r0 -> 3.0.7-r0)
+(  14/1552) Upgrading alpine-baselayout-data (3.6.8-r0 -> 3.7.2-r1)
+  Installing file to etc/group.apk-new
+  Installing file to etc/hostname.apk-new
+  Installing file to etc/hosts.apk-new
+  Installing file to etc/mtab.apk-new
+  Installing file to etc/passwd.apk-new
+  Installing file to etc/shadow.apk-new
+  Installing file to etc/shells.apk-new
+(  15/1552) Upgrading busybox (1.37.0-r10 -> 1.38.0-r6)
+  Executing busybox-1.38.0-r6.post-upgrade
+(  16/1552) Upgrading busybox-binsh (1.37.0-r10 -> 1.38.0-r6)
+(  17/1552) Upgrading alpine-baselayout (3.6.8-r0 -> 3.7.2-r1)
+  Executing alpine-baselayout-3.7.2-r1.pre-upgrade
+  Executing alpine-baselayout-3.7.2-r1.post-upgrade
+(  18/1552) Upgrading alpine-keys (2.5-r0 -> 2.6-r0)
+(  19/1552) Upgrading ssl_client (1.37.0-r10 -> 1.38.0-r6)
+(  20/1552) Upgrading zlib (1.3.1-r2 -> 1.3.2-r0)
+(  21/1552) Upgrading ca-certificates-bundle (20241010-r0 -> 20260611-r0)
+(  22/1552) Upgrading libcap2 (2.73-r0 -> 2.78-r0)
+(  23/1552) Upgrading libcap-getcap (2.73-r0 -> 2.78-r0)
+(  24/1552) Upgrading fakeroot (1.36.2-r1 -> 1.37.2-r0)
+(  25/1552) Upgrading scanelf (1.3.8-r1 -> 1.3.9-r1)
+(  26/1552) Upgrading musl-utils (1.2.5-r8 -> 1.2.6-r3)
+(  27/1552) Upgrading lzip (1.24.1-r1 -> 1.26-r0)
+(  28/1552) Upgrading patch (2.7.6-r10 -> 2.8-r0)
+(  29/1552) Upgrading tar (1.35-r2 -> 1.35-r5)
+(  30/1552) Upgrading abuild (3.14.1-r5 -> 3.18.0_rc5-r1)
+  Executing abuild-3.18.0_rc5-r1.pre-upgrade
+(  31/1552) Upgrading abuild-sudo (3.14.1-r5 -> 3.18.0_rc5-r1)
+(  32/1552) Upgrading jansson (2.14-r4 -> 2.15.0-r0)
+(  33/1552) Upgrading zstd-libs (1.5.6-r2 -> 1.5.7-r2)
+(  34/1552) Upgrading binutils (2.43.1-r1 -> 2.45.1-r1)
+(  35/1552) Upgrading libmagic (5.46-r1 -> 5.47-r2)
+(  36/1552) Upgrading file (5.46-r1 -> 5.47-r2)
+(  37/1552) Installing libgcc-static (15.2.0-r9)
+(  38/1552) Upgrading libgomp (14.2.0-r5 -> 15.2.0-r9)
+(  39/1552) Upgrading libatomic (14.2.0-r5 -> 15.2.0-r9)
+(  40/1552) Upgrading gmp (6.3.0-r2 -> 6.3.0-r4)
+(  41/1552) Upgrading isl26 (0.26-r1 -> 0.26-r2)
+(  42/1552) Upgrading mpfr4 (4.2.1-r0 -> 4.2.2-r0)
+(  43/1552) Upgrading gcc (14.2.0-r5 -> 15.2.0-r9)
+(  44/1552) Upgrading libstdc++-dev (14.2.0-r5 -> 15.2.0-r9)
+(  45/1552) Upgrading musl-dev (1.2.5-r8 -> 1.2.6-r3)
+(  46/1552) Upgrading g++ (14.2.0-r5 -> 15.2.0-r9)
+(  47/1552) Upgrading make (4.4.1-r2 -> 4.4.1-r4)
+(  48/1552) Upgrading fortify-headers (1.1-r5 -> 3.0.2-r0)
+(  49/1552) Upgrading build-base (0.5-r3 -> 0.5-r4)
+(  50/1552) Upgrading brotli-libs (1.1.0-r2 -> 1.2.0-r1)
+(  51/1552) Upgrading c-ares (1.34.4-r0 -> 1.34.8-r0)
+(  52/1552) Upgrading libunistring (1.3-r0 -> 1.4.2-r0)
+(  53/1552) Upgrading libidn2 (2.3.7-r0 -> 2.3.8-r0)
+(  54/1552) Upgrading nghttp2-libs (1.64.0-r0 -> 1.70.0-r0)
+(  55/1552) Upgrading libcurl (8.11.1-r0 -> 8.22.0-r0)
+(  56/1552) Upgrading libexpat (2.6.4-r0 -> 2.8.4-r0)
+(  57/1552) Upgrading pcre2 (10.43-r0 -> 10.48-r0)
+(  58/1552) Upgrading git (2.47.1-r0 -> 2.55.0-r1)
+(  59/1552) Upgrading git-init-template (2.47.1-r0 -> 2.55.0-r1)
+(  60/1552) Upgrading alpine-sdk (1.1-r0 -> 1.1-r1)
+(  61/1552) Upgrading alsa-lib (1.2.13-r0 -> 1.2.16.1-r0)
+(  62/1552) Upgrading alsa-lib-dev (1.2.13-r0 -> 1.2.16.1-r0)
+(  63/1552) Upgrading libmd (1.1.0-r0 -> 1.2.0-r0)
+(  64/1552) Upgrading libxcb (1.17.0-r0 -> 1.17.0-r2)
+(  65/1552) Upgrading libx11 (1.8.10-r0 -> 1.8.13-r0)
+(  66/1552) Upgrading libxext (1.3.6-r2 -> 1.3.7-r0)
+(  67/1552) Upgrading libxfixes (6.0.1-r4 -> 6.0.2-r0)
+(  68/1552) Upgrading libpng (1.6.44-r0 -> 1.6.58-r1)
+(  69/1552) Upgrading freetype (2.13.3-r0 -> 2.14.3-r0)
+(  70/1552) Upgrading fontconfig (2.15.0-r1 -> 2.18.1-r0)
+(  71/1552) Upgrading libxft (2.3.8-r3 -> 2.3.9-r0)
+(  72/1552) Upgrading libxinerama (1.1.5-r4 -> 1.1.6-r0)
+(  73/1552) Upgrading pixman (0.43.4-r1 -> 0.46.4-r0)
+(  74/1552) Upgrading cairo (1.18.2-r1 -> 1.18.4-r1)
+(  75/1552) Installing libfltk (1.3.11-r1)
+(  76/1552) Upgrading libffi (3.4.6-r0 -> 3.8.0-r0)
+(  77/1552) Upgrading libintl (0.22.5-r0 -> 1.0-r0)
+(  78/1552) Upgrading libeconf (0.6.3-r0 -> 0.8.4-r0)
+(  79/1552) Upgrading libblkid (2.40.2-r4 -> 2.42.3-r1)
+(  80/1552) Upgrading libmount (2.40.2-r4 -> 2.42.3-r1)
+(  81/1552) Upgrading glib (2.82.4-r0 -> 2.88.3-r0)
+(  82/1552) Installing gobject-introspection (1.86.0-r1)
+(  83/1552) Upgrading xz-libs (5.6.3-r0 -> 5.8.4-r0)
+(  84/1552) Upgrading libxml2 (2.13.4-r3 -> 2.13.9-r2)
+(  85/1552) Upgrading shared-mime-info (2.4-r2 -> 2.4-r7)
+(  86/1552) Upgrading libxcomposite (0.4.6-r5 -> 0.4.7-r0)
+(  87/1552) Upgrading libxdamage (1.1.6-r5 -> 1.1.7-r0)
+(  88/1552) Upgrading libxi (1.8.2-r0 -> 1.8.3-r0)
+(  89/1552) Upgrading libxrandr (1.5.4-r1 -> 1.5.5-r0)
+(  90/1552) Upgrading libatk-1.0 (2.54.0-r0 -> 2.60.6-r0)
+(  91/1552) Upgrading dbus-libs (1.16.0-r0 -> 1.16.2-r3)
+(  92/1552) Installing at-spi2-core-libs (2.60.6-r0)
+(  93/1552) Upgrading at-spi2-core (2.54.0-r0 -> 2.60.6-r0)
+(  94/1552) Upgrading libatk-bridge-2.0 (2.54.0-r0 -> 2.60.6-r0)
+(  95/1552) Upgrading cairo-gobject (1.18.2-r1 -> 1.18.4-r1)
+(  96/1552) Upgrading avahi-libs (0.8-r19 -> 0.9_rc5-r0)
+(  97/1552) Upgrading nettle (3.10-r1 -> 3.10.2-r0)
+(  98/1552) Upgrading libtasn1 (4.19.0-r2 -> 4.21.0-r0)
+(  99/1552) Upgrading p11-kit (0.25.5-r2 -> 0.26.2-r1)
+( 100/1552) Upgrading gnutls (3.8.8-r0 -> 3.8.13-r0)
+( 101/1552) Upgrading cups-libs (2.4.11-r0 -> 2.4.19-r0)
+( 102/1552) Upgrading fribidi (1.0.16-r0 -> 1.0.16-r3)
+( 103/1552) Installing bubblewrap (0.12.0-r1)
+( 104/1552) Upgrading lcms2 (2.16-r0 -> 2.19.1-r0)
+( 105/1552) Upgrading libseccomp (2.5.5-r2 -> 2.6.0-r2)
+( 106/1552) Installing libglycin (2.1.5-r0)
+  Executing libglycin-2.1.5-r0.post-install
+  * glycin loaders got split into their individual subpackages.
+  * By default, only glycin-image-rs & glycin-svg are installed.
+  * Additional loader subpackages are glycin-heif, glycin-jxl & glycin-raw.
+  * 
+  * To install all available loaders, install glycin-loaders-all.
+  * 
+  * Also the glycin-thumbnailer got subpackaged and isn't installed by default.
+( 107/1552) Installing glycin-image-rs (2.1.5-r0)
+( 108/1552) Upgrading libdav1d (1.5.0-r0 -> 1.5.4-r0)
+( 109/1552) Upgrading graphite2 (1.3.14-r6 -> 1.3.15-r0)
+( 110/1552) Upgrading harfbuzz (9.0.0-r1 -> 14.2.1-r0)
+( 111/1552) Upgrading pango (1.54.0-r1 -> 1.57.1-r0)
+( 112/1552) Upgrading librsvg (2.59.2-r0 -> 2.62.3-r0)
+  Executing librsvg-2.62.3-r0.post-upgrade
+( 113/1552) Installing glycin-svg (2.1.5-r0)
+( 114/1552) Upgrading gdk-pixbuf (2.42.12-r1 -> 2.44.7-r1)
+( 115/1552) Upgrading wayland-libs-client (1.23.1-r0 -> 1.26.0-r0)
+( 116/1552) Upgrading wayland-libs-cursor (1.23.1-r0 -> 1.26.0-r0)
+( 117/1552) Upgrading wayland-libs-egl (1.23.1-r0 -> 1.26.0-r0)
+( 118/1552) Upgrading xkeyboard-config (2.43-r0 -> 2.48-r0)
+( 119/1552) Upgrading libxkbcommon (1.7.0-r1 -> 1.13.2-r0)
+( 120/1552) Upgrading gtk+3.0 (3.24.43-r2 -> 3.24.52-r0)
+( 121/1552) Upgrading gtk-update-icon-cache (3.24.43-r2 -> 3.24.52-r0)
+( 122/1552) Upgrading iso-codes (4.17.0-r0 -> 4.20.1-r0)
+( 123/1552) Upgrading tzdata (2024b-r1 -> 2026c-r0)
+( 124/1552) Installing llvm23-libs (23.1.1-r0)
+( 125/1552) Upgrading spirv-tools (1.3.290.0-r0 -> 1.4.357.0-r0)
+( 126/1552) Upgrading hwdata-pci (0.390-r0 -> 0.411-r0)
+( 127/1552) Upgrading libpciaccess (0.18.1-r0 -> 0.19-r0)
+( 128/1552) Upgrading libdrm (2.4.124-r0 -> 2.4.134-r0)
+( 129/1552) Upgrading libelf (0.191-r0 -> 0.195-r0)
+( 130/1552) Upgrading mesa (24.3.2-r1 -> 26.2.2-r1)
+( 131/1552) Upgrading mesa-gles (24.3.2-r1 -> 26.2.2-r1)
+( 132/1552) Upgrading mesa-gbm (24.3.2-r1 -> 26.2.2-r1)
+( 133/1552) Upgrading mesa-egl (24.3.2-r1 -> 26.2.2-r1)
+( 134/1552) Upgrading libxxf86vm (1.1.6-r0 -> 1.1.7-r0)
+( 135/1552) Upgrading mesa-gl (24.3.2-r1 -> 26.2.2-r1)
+( 136/1552) Upgrading gstreamer (1.24.10-r0 -> 1.28.5-r1)
+( 137/1552) Upgrading gstreamer-ptp-helper (1.24.10-r0 -> 1.28.5-r1)
+( 138/1552) Upgrading libogg (1.3.5-r5 -> 1.3.6-r0)
+( 139/1552) Upgrading opus (1.5.2-r1 -> 1.6.1-r0)
+( 140/1552) Upgrading orc (0.4.40-r1 -> 0.4.42-r1)
+( 141/1552) Upgrading libtheora (1.1.1-r18 -> 1.2.0-r1)
+( 142/1552) Upgrading gst-plugins-base (1.24.10-r0 -> 1.28.3-r0)
+( 143/1552) Upgrading openexr-libiex (3.3.2-r0 -> 3.4.15-r0)
+( 144/1552) Upgrading imath (3.1.12-r0 -> 3.2.2-r1)
+( 145/1552) Upgrading openexr-libilmthread (3.3.2-r0 -> 3.4.15-r0)
+( 146/1552) Upgrading libdeflate (1.23-r0 -> 1.26-r0)
+( 147/1552) Upgrading openexr-libopenexrcore (3.3.2-r0 -> 3.4.15-r0)
+( 148/1552) Upgrading openexr-libopenexr (3.3.2-r0 -> 3.4.15-r0)
+( 149/1552) Upgrading soundtouch (2.3.3-r0 -> 2.4.1-r0)
+( 150/1552) Upgrading libSvtAv1Enc (2.2.1-r0 -> 4.2.0-r0)
+( 151/1552) Upgrading aom-libs (3.11.0-r0 -> 3.15.0-r0)
+( 152/1552) Upgrading libass (0.17.3-r0 -> 0.17.5-r0)
+( 153/1552) Upgrading libusb (1.0.27-r0 -> 1.0.30-r0)
+( 154/1552) Upgrading libde265 (1.0.15-r0 -> 1.1.2-r0)
+( 155/1552) Upgrading tslib (1.23-r0 -> 1.24-r0)
+( 156/1552) Upgrading faac (1.30-r5 -> 1.31.1-r0)
+( 157/1552) Installing faad2-libs (2.11.2-r0)
+( 158/1552) Upgrading flite (2.2-r3 -> 2.2-r7)
+( 159/1552) Upgrading libfreeaptx (0.1.1-r1 -> 0.2.2-r0)
+( 160/1552) Upgrading gsm (1.0.22-r3 -> 1.0.24-r0)
+( 161/1552) Upgrading eudev-libs (3.2.14-r5 -> 3.2.14-r8)
+( 162/1552) Upgrading libgudev (238-r0 -> 238-r1)
+( 163/1552) Upgrading ca-certificates (20241010-r0 -> 20260611-r0)
+( 164/1552) Upgrading neon (0.33.0-r0 -> 0.36.0-r0)
+( 165/1552) Upgrading openal-soft-libs (1.24.1-r0 -> 1.25.2-r0)
+( 166/1552) Upgrading openh264 (2.5.0-r0 -> 2.6.0-r0)
+( 167/1552) Upgrading openjpeg (2.5.3-r0 -> 2.5.4-r1)
+( 168/1552) Upgrading sbc (2.0-r2 -> 2.1-r0)
+( 169/1552) Upgrading libflac (1.4.3-r1 -> 1.5.0-r0)
+( 170/1552) Upgrading mpg123-libs (1.32.10-r0 -> 1.33.7-r0)
+( 171/1552) Upgrading libsndfile (1.2.2-r2 -> 1.2.2-r3)
+( 172/1552) Upgrading libjpeg-turbo (3.0.4-r0 -> 3.1.3-r0)
+( 173/1552) Upgrading libsharpyuv (1.5.0-r0 -> 1.6.0-r0)
+( 174/1552) Upgrading libwebp (1.5.0-r0 -> 1.6.0-r0)
+( 175/1552) Upgrading tiff (4.7.0-r0 -> 4.7.2-r0)
+( 176/1552) Upgrading libsrt (1.5.3-r0 -> 1.5.5-r0)
+( 177/1552) Upgrading libsrtp (2.6.0-r0 -> 2.8.0-r0)
+( 178/1552) Upgrading libva (2.22.0-r1 -> 2.23.0-r0)
+( 179/1552) Upgrading vulkan-loader (1.3.296.0-r0 -> 1.4.360-r0)
+( 180/1552) Upgrading libwebpmux (1.5.0-r0 -> 1.6.0-r0)
+( 181/1552) Upgrading numactl (2.0.18-r0 -> 2.0.19-r0)
+( 182/1552) Upgrading x265-libs (3.6-r0 -> 4.1-r0)
+( 183/1552) Upgrading libxkbcommon-x11 (1.7.0-r1 -> 1.13.2-r0)
+( 184/1552) Upgrading libzbar (0.23.93-r1 -> 0.23.93-r2)
+( 185/1552) Upgrading gst-plugins-bad (1.24.10-r0 -> 1.28.5-r0)
+( 186/1552) Upgrading harfbuzz-subset (9.0.0-r1 -> 14.2.1-r0)
+( 187/1552) Upgrading gtk4.0 (4.16.7-r0 -> 4.22.4-r0)
+( 188/1552) Upgrading alsa-tools (1.2.11-r0 -> 1.2.15-r1)
+( 189/1552) Upgrading ncurses-terminfo-base (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+( 190/1552) Upgrading libncursesw (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+( 191/1552) Upgrading dialog (1.3.20240619-r0 -> 1.3.20260107-r1)
+( 192/1552) Upgrading alsa-ucm-conf (1.2.13-r0 -> 1.2.16.1-r0)
+( 193/1552) Upgrading fftw-single-libs (3.3.10-r6 -> 3.3.11-r0)
+( 194/1552) Upgrading libformw (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+( 195/1552) Upgrading libmenuw (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+( 196/1552) Upgrading libpanelw (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+( 197/1552) Upgrading alsa-utils (1.2.13-r1 -> 1.2.16-r0)
+( 198/1552) Upgrading aom (3.11.0-r0 -> 3.15.0-r0)
+( 199/1552) Upgrading aom-dev (3.11.0-r0 -> 3.15.0-r0)
+( 200/1552) Upgrading sqlite-libs (3.47.2-r0 -> 3.53.4-r0)
+( 201/1552) Upgrading aria2 (1.37.0-r0 -> 1.37.0-r2)
+( 202/1552) Upgrading mpdecimal (4.0.0-r0 -> 4.0.1-r0)
+( 203/1552) Upgrading readline (8.2.13-r0 -> 8.3.3-r1)
+( 204/1552) Upgrading python3 (3.12.8-r1 -> 3.14.7-r0)
+( 205/1552) Upgrading python3-pycache-pyc0 (3.12.8-r1 -> 3.14.7-r0)
+( 206/1552) Upgrading pyc (3.12.8-r1 -> 3.14.7-r0)
+( 207/1552) Upgrading asciidoc-pyc (10.2.1-r0 -> 10.2.1-r1)
+( 208/1552) Upgrading python3-pyc (3.12.8-r1 -> 3.14.7-r0)
+( 209/1552) Upgrading libxml2-utils (2.13.4-r3 -> 2.13.9-r2)
+( 210/1552) Upgrading docbook-xml (4.5-r9 -> 4.5-r10)
+  Executing docbook-xml-4.5-r10.post-upgrade
+( 211/1552) Upgrading libxslt (1.1.42-r1 -> 1.1.43-r3)
+( 212/1552) Upgrading docbook-xsl-ns (1.79.2-r11 -> 1.79.2-r13)
+  Executing docbook-xsl-ns-1.79.2-r13.post-upgrade
+( 213/1552) Upgrading docbook-xsl-nons (1.79.2-r11 -> 1.79.2-r13)
+  Executing docbook-xsl-nons-1.79.2-r13.post-upgrade
+( 214/1552) Upgrading docbook-xsl (1.79.2-r11 -> 1.79.2-r13)
+( 215/1552) Upgrading asciidoc (10.2.1-r0 -> 10.2.1-r1)
+( 216/1552) Upgrading ruby-libs (3.3.6-r0 -> 3.4.10-r0)
+( 217/1552) Upgrading libucontext (1.3.2-r0 -> 1.5.2-r0)
+( 218/1552) Upgrading ruby (3.3.6-r0 -> 3.4.10-r0)
+  Executing ruby-3.4.10-r0.post-upgrade
+( 219/1552) Upgrading asciidoctor (2.0.23-r0 -> 2.0.26-r0)
+( 220/1552) Upgrading m4 (1.4.19-r3 -> 1.4.21-r0)
+( 221/1552) Upgrading perl (5.40.0-r3 -> 5.44.0-r0)
+( 222/1552) Upgrading perl-error (0.17029-r2 -> 0.17030-r0)
+( 223/1552) Upgrading perl-git (2.47.1-r0 -> 2.55.0-r1)
+( 224/1552) Upgrading git-perl (2.47.1-r0 -> 2.55.0-r1)
+( 225/1552) Upgrading autoconf (2.72-r0 -> 2.73-r0)
+( 226/1552) Upgrading autoconf-archive (2024.10.16-r0 -> 2024.10.16-r1)
+( 227/1552) Upgrading automake (1.17-r0 -> 1.18.1-r1)
+( 228/1552) Upgrading b3sum (1.5.5-r0 -> 1.8.7-r0)
+( 229/1552) Upgrading bash (5.2.37-r0 -> 5.3.9-r1)
+  Installing file to etc/bash/bashrc.apk-new
+  Executing bash-5.3.9-r1.post-upgrade
+( 230/1552) Upgrading bc (1.08.0-r0 -> 1.08.2-r1)
+( 231/1552) Installing llvm20-libs (20.1.8-r1)
+( 232/1552) Upgrading libbpf (1.5.0-r0 -> 1.7.0-r1)
+( 233/1552) Installing clang20-libs (20.1.8-r3)
+( 234/1552) Upgrading musl-fts (1.2.7-r6 -> 1.2.7-r7)
+( 235/1552) Upgrading libdw (0.191-r0 -> 0.195-r0)
+( 236/1552) Upgrading json-c (0.18-r0 -> 0.19-r1)
+( 237/1552) Installing libdebuginfod (0.195-r0)
+( 238/1552) Upgrading bcc (0.32.0-r0 -> 0.37.0-r0)
+( 239/1552) Upgrading bcc-dev (0.32.0-r0 -> 0.37.0-r0)
+( 240/1552) Upgrading bcc-static (0.32.0-r0 -> 0.37.0-r0)
+( 241/1552) Upgrading bearssl-libs (0.6_git20241009-r0 -> 0.6_git20260508-r0)
+( 242/1552) Upgrading bearssl (0.6_git20241009-r0 -> 0.6_git20260508-r0)
+( 243/1552) Upgrading bearssl-dev (0.6_git20241009-r0 -> 0.6_git20260508-r0)
+( 244/1552) Upgrading bearssl-static (0.6_git20241009-r0 -> 0.6_git20260508-r0)
+( 245/1552) Upgrading libcom_err (1.47.1-r1 -> 1.47.4-r0)
+( 246/1552) Upgrading krb5-libs (1.21.3-r0 -> 1.22.2-r1)
+( 247/1552) Upgrading protobuf-c (1.5.0-r2 -> 1.5.2-r4)
+( 248/1552) Upgrading userspace-rcu (0.15.0-r0 -> 0.15.3-r0)
+( 249/1552) Upgrading libuv (1.49.2-r0 -> 1.52.1-r0)
+( 250/1552) Upgrading bind-libs (9.18.32-r0 -> 9.20.27-r0)
+( 251/1552) Upgrading bind-tools (9.18.32-r0 -> 9.20.27-r0)
+( 252/1552) Upgrading binutils-aarch64 (2.42-r0 -> 2.45.1-r1)
+( 253/1552) Upgrading bison (3.8.2-r1 -> 3.8.2-r3)
+( 254/1552) Upgrading blkid (2.40.2-r4 -> 2.42.3-r1)
+( 255/1552) Upgrading boost1.84-atomic (1.84.0-r2 -> 1.84.0-r6)
+( 256/1552) Upgrading boost1.84-chrono (1.84.0-r2 -> 1.84.0-r6)
+( 257/1552) Upgrading boost1.84-container (1.84.0-r2 -> 1.84.0-r6)
+( 258/1552) Upgrading boost1.84-context (1.84.0-r2 -> 1.84.0-r6)
+( 259/1552) Upgrading boost1.84-contract (1.84.0-r2 -> 1.84.0-r6)
+( 260/1552) Upgrading boost1.84-coroutine (1.84.0-r2 -> 1.84.0-r6)
+( 261/1552) Upgrading boost1.84-date_time (1.84.0-r2 -> 1.84.0-r6)
+( 262/1552) Upgrading boost1.84-fiber (1.84.0-r2 -> 1.84.0-r6)
+( 263/1552) Upgrading boost1.84-filesystem (1.84.0-r2 -> 1.84.0-r6)
+( 264/1552) Upgrading boost1.84-graph (1.84.0-r2 -> 1.84.0-r6)
+( 265/1552) Upgrading boost1.84-iostreams (1.84.0-r2 -> 1.84.0-r6)
+( 266/1552) Upgrading boost1.84-thread (1.84.0-r2 -> 1.84.0-r6)
+( 267/1552) Upgrading icu-data-en (74.2-r0 -> 78.1-r0)
+( 268/1552) Upgrading icu-libs (74.2-r0 -> 78.1-r0)
+( 269/1552) Upgrading boost1.84-locale (1.84.0-r2 -> 1.84.0-r6)
+( 270/1552) Upgrading boost1.84-log (1.84.0-r2 -> 1.84.0-r6)
+( 271/1552) Upgrading boost1.84-log_setup (1.84.0-r2 -> 1.84.0-r6)
+( 272/1552) Upgrading boost1.84-math (1.84.0-r2 -> 1.84.0-r6)
+( 273/1552) Upgrading boost1.84-prg_exec_monitor (1.84.0-r2 -> 1.84.0-r6)
+( 274/1552) Upgrading boost1.84-program_options (1.84.0-r2 -> 1.84.0-r6)
+( 275/1552) Upgrading boost1.84-python3 (1.84.0-r2 -> 1.84.0-r6)
+( 276/1552) Upgrading boost1.84-random (1.84.0-r2 -> 1.84.0-r6)
+( 277/1552) Upgrading boost1.84-regex (1.84.0-r2 -> 1.84.0-r6)
+( 278/1552) Upgrading boost1.84-serialization (1.84.0-r2 -> 1.84.0-r6)
+( 279/1552) Upgrading boost1.84-stacktrace_basic (1.84.0-r2 -> 1.84.0-r6)
+( 280/1552) Upgrading boost1.84-stacktrace_noop (1.84.0-r2 -> 1.84.0-r6)
+( 281/1552) Upgrading boost1.84-system (1.84.0-r2 -> 1.84.0-r6)
+( 282/1552) Upgrading boost1.84-timer (1.84.0-r2 -> 1.84.0-r6)
+( 283/1552) Upgrading boost1.84-type_erasure (1.84.0-r2 -> 1.84.0-r6)
+( 284/1552) Upgrading boost1.84-unit_test_framework (1.84.0-r2 -> 1.84.0-r6)
+( 285/1552) Upgrading boost1.84-url (1.84.0-r2 -> 1.84.0-r6)
+( 286/1552) Upgrading boost1.84-wave (1.84.0-r2 -> 1.84.0-r6)
+( 287/1552) Upgrading boost1.84-wserialization (1.84.0-r2 -> 1.84.0-r6)
+( 288/1552) Upgrading boost1.84-json (1.84.0-r2 -> 1.84.0-r6)
+( 289/1552) Upgrading boost1.84-nowide (1.84.0-r2 -> 1.84.0-r6)
+( 290/1552) Upgrading boost1.84-libs (1.84.0-r2 -> 1.84.0-r6)
+( 291/1552) Upgrading boost1.84 (1.84.0-r2 -> 1.84.0-r6)
+( 292/1552) Upgrading linux-headers (6.12.6-r0 -> 7.2.1-r0)
+( 293/1552) Upgrading icu (74.2-r0 -> 78.1-r0)
+( 294/1552) Upgrading icu-dev (74.2-r0 -> 78.1-r0)
+( 295/1552) Upgrading xz (5.6.3-r0 -> 5.8.4-r0)
+( 296/1552) Upgrading xz-dev (5.6.3-r0 -> 5.8.4-r0)
+( 297/1552) Upgrading zlib-dev (1.3.1-r2 -> 1.3.2-r0)
+( 298/1552) Upgrading zstd (1.5.6-r2 -> 1.5.7-r2)
+( 299/1552) Upgrading zstd-dev (1.5.6-r2 -> 1.5.7-r2)
+( 300/1552) Upgrading boost1.84-dev (1.84.0-r2 -> 1.84.0-r6)
+( 301/1552) Upgrading boost-dev (1.84.0-r2 -> 1.84.0-r6)
+( 302/1552) Upgrading brotli (1.1.0-r2 -> 1.2.0-r1)
+( 303/1552) Upgrading brotli-dev (1.1.0-r2 -> 1.2.0-r1)
+( 304/1552) Upgrading brotli-static (1.1.0-r2 -> 1.2.0-r1)
+( 305/1552) Upgrading bzip3-libs (1.5.1-r0 -> 1.5.4-r0)
+( 306/1552) Upgrading bzip3 (1.5.1-r0 -> 1.5.4-r0)
+( 307/1552) Upgrading bzip3-dev (1.5.1-r0 -> 1.5.4-r0)
+( 308/1552) Upgrading bzip3-static (1.5.1-r0 -> 1.5.4-r0)
+( 309/1552) Upgrading c-ares-dev (1.34.4-r0 -> 1.34.8-r0)
+( 310/1552) Upgrading cairo-tools (1.18.2-r1 -> 1.18.4-r1)
+( 311/1552) Upgrading expat (2.6.4-r0 -> 2.8.4-r0)
+( 312/1552) Upgrading expat-dev (2.6.4-r0 -> 2.8.4-r0)
+( 313/1552) Upgrading libpng-dev (1.6.44-r0 -> 1.6.58-r1)
+( 314/1552) Upgrading freetype-dev (2.13.3-r0 -> 2.14.3-r0)
+( 315/1552) Upgrading fontconfig-dev (2.15.0-r1 -> 2.18.1-r0)
+( 316/1552) Upgrading gettext-asprintf (0.22.5-r0 -> 1.0-r0)
+( 317/1552) Upgrading gettext-libs (0.22.5-r0 -> 1.0-r0)
+( 318/1552) Upgrading gettext-envsubst (0.22.5-r0 -> 1.0-r0)
+( 319/1552) Upgrading gettext (0.22.5-r0 -> 1.0-r0)
+( 320/1552) Upgrading gettext-dev (0.22.5-r0 -> 1.0-r0)
+( 321/1552) Upgrading py3-parsing (3.2.0-r0 -> 3.3.2-r1)
+( 322/1552) Upgrading py3-parsing-pyc (3.2.0-r0 -> 3.3.2-r1)
+( 323/1552) Upgrading py3-packaging (24.2-r0 -> 26.2-r0)
+( 324/1552) Upgrading py3-packaging-pyc (24.2-r0 -> 26.2-r0)
+( 325/1552) Upgrading libffi-dev (3.4.6-r0 -> 3.8.0-r0)
+( 326/1552) Upgrading libncurses++ (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+( 327/1552) Upgrading ncurses-dev (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+( 328/1552) Upgrading libedit (20240808.3.1-r0 -> 20260508.3.1-r1)
+( 329/1552) Upgrading libedit-dev (20240808.3.1-r0 -> 20260508.3.1-r1)
+( 330/1552) Upgrading libpcre2-16 (10.43-r0 -> 10.48-r0)
+( 331/1552) Upgrading libpcre2-32 (10.43-r0 -> 10.48-r0)
+( 332/1552) Upgrading pcre2-dev (10.43-r0 -> 10.48-r0)
+( 333/1552) Upgrading libuuid (2.40.2-r4 -> 2.42.3-r1)
+( 334/1552) Upgrading libfdisk (2.40.2-r4 -> 2.42.3-r1)
+( 335/1552) Upgrading libselinux (3.6-r1 -> 3.11-r2)
+( 336/1552) Upgrading skalibs-libs (2.14.3.0-r0 -> 2.15.1.0-r0)
+( 337/1552) Upgrading utmps-libs (0.1.2.3-r2 -> 0.1.3.4-r0)
+( 338/1552) Upgrading linux-pam (1.6.1-r1 -> 1.7.1-r3)
+( 339/1552) Installing liblastlog2 (2.42.3-r1)
+( 340/1552) Upgrading libsmartcols (2.40.2-r4 -> 2.42.3-r1)
+( 341/1552) Upgrading sqlite (3.47.2-r0 -> 3.53.4-r0)
+( 342/1552) Upgrading sqlite-dev (3.47.2-r0 -> 3.53.4-r0)
+( 343/1552) Upgrading util-linux-dev (2.40.2-r4 -> 2.42.3-r1)
+( 344/1552) Upgrading glib-dev (2.82.4-r0 -> 2.88.3-r0)
+( 345/1552) Upgrading pixman-dev (0.43.4-r1 -> 0.46.4-r0)
+( 346/1552) Upgrading xorgproto (2024.1-r0 -> 2025.1-r0)
+( 347/1552) Upgrading xcb-proto (1.17.0-r0 -> 1.17.0-r1)
+( 348/1552) Upgrading xcb-proto-pyc (1.17.0-r0 -> 1.17.0-r1)
+( 349/1552) Upgrading libxcb-dev (1.17.0-r0 -> 1.17.0-r2)
+( 350/1552) Upgrading xtrans (1.5.2-r0 -> 1.6.0-r0)
+( 351/1552) Upgrading libx11-dev (1.8.10-r0 -> 1.8.13-r0)
+( 352/1552) Upgrading libxext-dev (1.3.6-r2 -> 1.3.7-r0)
+( 353/1552) Upgrading cairo-dev (1.18.2-r1 -> 1.18.4-r1)
+( 354/1552) Upgrading cairo-static (1.18.2-r1 -> 1.18.4-r1)
+( 355/1552) Upgrading capstone (5.0.3-r0 -> 5.0.9-r0)
+( 356/1552) Upgrading capstone-dev (5.0.3-r0 -> 5.0.9-r0)
+( 357/1552) Upgrading capstone-static (5.0.3-r0 -> 5.0.9-r0)
+( 358/1552) Upgrading hiredis (1.2.0-r0 -> 1.3.0-r0)
+( 359/1552) Upgrading libxxhash (0.8.2-r2 -> 0.8.3-r1)
+( 360/1552) Upgrading ccache (4.10.2-r0 -> 4.13.6-r0)
+( 361/1552) Upgrading ck (0.7.2-r0 -> 0.7.2-r1)
+( 362/1552) Upgrading ck-static (0.7.2-r0 -> 0.7.2-r1)
+( 363/1552) Purging clang19-headers (19.1.6-r0)
+( 364/1552) Installing clang23-headers (23.1.1-r0)
+( 365/1552) Purging clang19-libs (19.1.6-r0)
+( 366/1552) Installing clang23-libs (23.1.1-r0)
+( 367/1552) Installing llvm23-linker-tools (23.1.1-r0)
+( 368/1552) Installing clang23 (23.1.1-r0)
+( 369/1552) Installing clang23-ccache (23.1.1-r0)
+( 370/1552) Installing clang23-extra-tools (23.1.1-r0)
+( 371/1552) Installing clang23-libclang (23.1.1-r0)
+( 372/1552) Installing clang23-dev (23.1.1-r0)
+( 373/1552) Installing clang23-static (23.1.1-r0)
+( 374/1552) Upgrading lz4-libs (1.10.0-r0 -> 1.10.0-r1)
+( 375/1552) Upgrading libarchive (3.7.7-r0 -> 3.8.9-r0)
+( 376/1552) Upgrading rhash-libs (1.4.5-r0 -> 1.4.6-r1)
+( 377/1552) Upgrading cmake (3.31.3-r0 -> 4.3.4-r0)
+( 378/1552) Upgrading cmocka (1.1.7-r2 -> 2.0.1-r0)
+( 379/1552) Upgrading cmocka-dev (1.1.7-r2 -> 2.0.1-r0)
+( 380/1552) Upgrading coreutils-env (9.5-r1 -> 9.11-r1)
+( 381/1552) Upgrading coreutils-fmt (9.5-r1 -> 9.11-r1)
+( 382/1552) Upgrading coreutils-sha512sum (9.5-r1 -> 9.11-r1)
+( 383/1552) Upgrading coreutils (9.5-r1 -> 9.11-r1)
+( 384/1552) Upgrading croc (10.1.1-r0 -> 11.3.6-r0)
+( 385/1552) Upgrading curl (8.11.1-r0 -> 8.22.0-r0)
+( 386/1552) Upgrading libidn2-dev (2.3.7-r0 -> 2.3.8-r0)
+( 387/1552) Upgrading nghttp2-dev (1.64.0-r0 -> 1.70.0-r0)
+( 388/1552) Upgrading curl-dev (8.11.1-r0 -> 8.22.0-r0)
+( 389/1552) Upgrading curl-static (8.11.1-r0 -> 8.22.0-r0)
+( 390/1552) Upgrading cython (3.0.11-r0 -> 3.2.9-r0)
+( 391/1552) Upgrading cython-pyc (3.0.11-r0 -> 3.2.9-r0)
+( 392/1552) Upgrading dav1d (1.5.0-r0 -> 1.5.4-r0)
+( 393/1552) Upgrading dav1d-dev (1.5.0-r0 -> 1.5.4-r0)
+( 394/1552) Upgrading dbus (1.16.0-r0 -> 1.16.2-r3)
+( 395/1552) Upgrading dbus-daemon-launch-helper (1.16.0-r0 -> 1.16.2-r3)
+( 396/1552) Upgrading process-cpp (3.0.2-r0 -> 3.1.0-r1)
+( 397/1552) Upgrading dbus-cpp (5.0.3-r15 -> 5.0.6-r1)
+( 398/1552) Upgrading dbus-glib (0.112-r6 -> 0.114-r0)
+( 399/1552) Upgrading diffutils (3.10-r0 -> 3.12-r0)
+( 400/1552) Upgrading dos2unix (7.5.2-r0 -> 7.5.7-r0)
+( 401/1552) Upgrading libfdt (1.7.0-r2 -> 1.7.2-r1)
+( 402/1552) Upgrading dpdk-kvargs (24.11.1-r0 -> 24.11.6-r0)
+( 403/1552) Upgrading dpdk-log (24.11.1-r0 -> 24.11.6-r0)
+( 404/1552) Upgrading dpdk-telemetry (24.11.1-r0 -> 24.11.6-r0)
+( 405/1552) Upgrading dpdk-eal (24.11.1-r0 -> 24.11.6-r0)
+( 406/1552) Upgrading dpdk-pci (24.11.1-r0 -> 24.11.6-r0)
+( 407/1552) Upgrading dpdk-bus-pci (24.11.1-r0 -> 24.11.6-r0)
+( 408/1552) Upgrading dpdk-bus-vdev (24.11.1-r0 -> 24.11.6-r0)
+( 409/1552) Upgrading dpdk-common-cnxk (24.11.1-r0 -> 24.11.6-r0)
+( 410/1552) Upgrading dpdk-common-ionic (24.11.1-r0 -> 24.11.6-r0)
+( 411/1552) Upgrading dpdk-mempool (24.11.1-r0 -> 24.11.6-r0)
+( 412/1552) Upgrading dpdk-ring (24.11.1-r0 -> 24.11.6-r0)
+( 413/1552) Upgrading dpdk-rcu (24.11.1-r0 -> 24.11.6-r0)
+( 414/1552) Upgrading dpdk-cryptodev (24.11.1-r0 -> 24.11.6-r0)
+( 415/1552) Upgrading dpdk-dmadev (24.11.1-r0 -> 24.11.6-r0)
+( 416/1552) Upgrading dpdk-mbuf (24.11.1-r0 -> 24.11.6-r0)
+( 417/1552) Upgrading dpdk-net (24.11.1-r0 -> 24.11.6-r0)
+( 418/1552) Upgrading dpdk-ethdev (24.11.1-r0 -> 24.11.6-r0)
+( 419/1552) Upgrading dpdk-power (24.11.1-r0 -> 24.11.6-r0)
+( 420/1552) Upgrading dpdk-rawdev (24.11.1-r0 -> 24.11.6-r0)
+( 421/1552) Upgrading dpdk (24.11.1-r0 -> 24.11.6-r0)
+( 422/1552) Upgrading dpdk-acl (24.11.1-r0 -> 24.11.6-r0)
+( 423/1552) Upgrading dpdk-argparse (24.11.1-r0 -> 24.11.6-r0)
+( 424/1552) Upgrading dpdk-bbdev (24.11.1-r0 -> 24.11.6-r0)
+( 425/1552) Upgrading dpdk-baseband-acc (24.11.1-r0 -> 24.11.6-r0)
+( 426/1552) Upgrading dpdk-baseband-fpga-5gnr-fec (24.11.1-r0 -> 24.11.6-r0)
+( 427/1552) Upgrading dpdk-baseband-fpga-lte-fec (24.11.1-r0 -> 24.11.6-r0)
+( 428/1552) Upgrading dpdk-baseband-la12xx (24.11.1-r0 -> 24.11.6-r0)
+( 429/1552) Upgrading dpdk-baseband-null (24.11.1-r0 -> 24.11.6-r0)
+( 430/1552) Upgrading dpdk-baseband-turbo-sw (24.11.1-r0 -> 24.11.6-r0)
+( 431/1552) Upgrading dpdk-metrics (24.11.1-r0 -> 24.11.6-r0)
+( 432/1552) Upgrading dpdk-bitratestats (24.11.1-r0 -> 24.11.6-r0)
+( 433/1552) Upgrading dpdk-bpf (24.11.1-r0 -> 24.11.6-r0)
+( 434/1552) Upgrading dpdk-bus-auxiliary (24.11.1-r0 -> 24.11.6-r0)
+( 435/1552) Upgrading dpdk-bus-cdx (24.11.1-r0 -> 24.11.6-r0)
+( 436/1552) Upgrading dpdk-common-dpaax (24.11.1-r0 -> 24.11.6-r0)
+( 437/1552) Upgrading dpdk-bus-dpaa (24.11.1-r0 -> 24.11.6-r0)
+( 438/1552) Upgrading dpdk-bus-fslmc (24.11.1-r0 -> 24.11.6-r0)
+( 439/1552) Upgrading dpdk-bus-ifpga (24.11.1-r0 -> 24.11.6-r0)
+( 440/1552) Upgrading dpdk-bus-platform (24.11.1-r0 -> 24.11.6-r0)
+( 441/1552) Upgrading dpdk-bus-uacce (24.11.1-r0 -> 24.11.6-r0)
+( 442/1552) Upgrading dpdk-bus-vmbus (24.11.1-r0 -> 24.11.6-r0)
+( 443/1552) Upgrading dpdk-cfgfile (24.11.1-r0 -> 24.11.6-r0)
+( 444/1552) Upgrading dpdk-cmdline (24.11.1-r0 -> 24.11.6-r0)
+( 445/1552) Upgrading dpdk-common-cpt (24.11.1-r0 -> 24.11.6-r0)
+( 446/1552) Upgrading dpdk-common-iavf (24.11.1-r0 -> 24.11.6-r0)
+( 447/1552) Upgrading dpdk-common-idpf (24.11.1-r0 -> 24.11.6-r0)
+( 448/1552) Upgrading rdma-core-libs (55.0-r0 -> 64.0-r0)
+( 449/1552) Upgrading dpdk-hash (24.11.1-r0 -> 24.11.6-r0)
+( 450/1552) Upgrading dpdk-common-mlx5 (24.11.1-r0 -> 24.11.6-r0)
+( 451/1552) Upgrading dpdk-common-nfp (24.11.1-r0 -> 24.11.6-r0)
+( 452/1552) Upgrading dpdk-common-nitrox (24.11.1-r0 -> 24.11.6-r0)
+( 453/1552) Upgrading dpdk-common-octeontx (24.11.1-r0 -> 24.11.6-r0)
+( 454/1552) Upgrading dpdk-compressdev (24.11.1-r0 -> 24.11.6-r0)
+( 455/1552) Upgrading dpdk-common-qat (24.11.1-r0 -> 24.11.6-r0)
+( 456/1552) Upgrading dpdk-common-sfc-efx (24.11.1-r0 -> 24.11.6-r0)
+( 457/1552) Upgrading dpdk-compress-isal (24.11.1-r0 -> 24.11.6-r0)
+( 458/1552) Upgrading dpdk-compress-mlx5 (24.11.1-r0 -> 24.11.6-r0)
+( 459/1552) Upgrading dpdk-compress-nitrox (24.11.1-r0 -> 24.11.6-r0)
+( 460/1552) Upgrading dpdk-compress-octeontx (24.11.1-r0 -> 24.11.6-r0)
+( 461/1552) Upgrading dpdk-compress-zlib (24.11.1-r0 -> 24.11.6-r0)
+( 462/1552) Upgrading dpdk-crypto-bcmfs (24.11.1-r0 -> 24.11.6-r0)
+( 463/1552) Upgrading dpdk-crypto-caam-jr (24.11.1-r0 -> 24.11.6-r0)
+( 464/1552) Upgrading dpdk-crypto-ccp (24.11.1-r0 -> 24.11.6-r0)
+( 465/1552) Upgrading dpdk-security (24.11.1-r0 -> 24.11.6-r0)
+( 466/1552) Upgrading dpdk-crypto-cnxk (24.11.1-r0 -> 24.11.6-r0)
+( 467/1552) Upgrading dpdk-mempool-dpaa (24.11.1-r0 -> 24.11.6-r0)
+( 468/1552) Upgrading dpdk-crypto-dpaa-sec (24.11.1-r0 -> 24.11.6-r0)
+( 469/1552) Upgrading dpdk-mempool-dpaa2 (24.11.1-r0 -> 24.11.6-r0)
+( 470/1552) Upgrading dpdk-crypto-dpaa2-sec (24.11.1-r0 -> 24.11.6-r0)
+( 471/1552) Upgrading dpdk-crypto-mlx5 (24.11.1-r0 -> 24.11.6-r0)
+( 472/1552) Upgrading dpdk-crypto-nitrox (24.11.1-r0 -> 24.11.6-r0)
+( 473/1552) Upgrading dpdk-crypto-null (24.11.1-r0 -> 24.11.6-r0)
+( 474/1552) Upgrading dpdk-crypto-octeontx (24.11.1-r0 -> 24.11.6-r0)
+( 475/1552) Upgrading dpdk-crypto-openssl (24.11.1-r0 -> 24.11.6-r0)
+( 476/1552) Upgrading dpdk-crypto-scheduler (24.11.1-r0 -> 24.11.6-r0)
+( 477/1552) Upgrading dpdk-crypto-virtio (24.11.1-r0 -> 24.11.6-r0)
+( 478/1552) Upgrading dpdk-timer (24.11.1-r0 -> 24.11.6-r0)
+( 479/1552) Upgrading dpdk-eventdev (24.11.1-r0 -> 24.11.6-r0)
+( 480/1552) Upgrading dpdk-dispatcher (24.11.1-r0 -> 24.11.6-r0)
+( 481/1552) Upgrading dpdk-distributor (24.11.1-r0 -> 24.11.6-r0)
+( 482/1552) Upgrading dpdk-dma-cnxk (24.11.1-r0 -> 24.11.6-r0)
+( 483/1552) Upgrading dpdk-dma-dpaa2 (24.11.1-r0 -> 24.11.6-r0)
+( 484/1552) Upgrading dpdk-dma-dpaa (24.11.1-r0 -> 24.11.6-r0)
+( 485/1552) Upgrading dpdk-dma-hisilicon (24.11.1-r0 -> 24.11.6-r0)
+( 486/1552) Upgrading dpdk-dma-idxd (24.11.1-r0 -> 24.11.6-r0)
+( 487/1552) Upgrading dpdk-dma-ioat (24.11.1-r0 -> 24.11.6-r0)
+( 488/1552) Upgrading dpdk-dma-skeleton (24.11.1-r0 -> 24.11.6-r0)
+( 489/1552) Upgrading dpdk-efd (24.11.1-r0 -> 24.11.6-r0)
+( 490/1552) Upgrading dpdk-net-cnxk (24.11.1-r0 -> 24.11.6-r0)
+( 491/1552) Upgrading dpdk-event-cnxk (24.11.1-r0 -> 24.11.6-r0)
+( 492/1552) Upgrading dpdk-event-dlb2 (24.11.1-r0 -> 24.11.6-r0)
+( 493/1552) Upgrading dpdk-net-dpaa2 (24.11.1-r0 -> 24.11.6-r0)
+( 494/1552) Upgrading dpdk-event-dpaa2 (24.11.1-r0 -> 24.11.6-r0)
+( 495/1552) Upgrading dpdk-net-dpaa (24.11.1-r0 -> 24.11.6-r0)
+( 496/1552) Upgrading dpdk-event-dpaa (24.11.1-r0 -> 24.11.6-r0)
+( 497/1552) Upgrading dpdk-event-dsw (24.11.1-r0 -> 24.11.6-r0)
+( 498/1552) Upgrading dpdk-net-octeontx (24.11.1-r0 -> 24.11.6-r0)
+( 499/1552) Upgrading dpdk-event-octeontx (24.11.1-r0 -> 24.11.6-r0)
+( 500/1552) Upgrading dpdk-event-opdl (24.11.1-r0 -> 24.11.6-r0)
+( 501/1552) Upgrading dpdk-event-skeleton (24.11.1-r0 -> 24.11.6-r0)
+( 502/1552) Upgrading dpdk-event-sw (24.11.1-r0 -> 24.11.6-r0)
+( 503/1552) Upgrading dpdk-rib (24.11.1-r0 -> 24.11.6-r0)
+( 504/1552) Upgrading dpdk-fib (24.11.1-r0 -> 24.11.6-r0)
+( 505/1552) Upgrading dpdk-gpudev (24.11.1-r0 -> 24.11.6-r0)
+( 506/1552) Upgrading dpdk-pcapng (24.11.1-r0 -> 24.11.6-r0)
+( 507/1552) Upgrading dpdk-graph (24.11.1-r0 -> 24.11.6-r0)
+( 508/1552) Upgrading dpdk-gro (24.11.1-r0 -> 24.11.6-r0)
+( 509/1552) Upgrading dpdk-gso (24.11.1-r0 -> 24.11.6-r0)
+( 510/1552) Upgrading dpdk-ip-frag (24.11.1-r0 -> 24.11.6-r0)
+( 511/1552) Upgrading dpdk-ipsec (24.11.1-r0 -> 24.11.6-r0)
+( 512/1552) Upgrading dpdk-jobstats (24.11.1-r0 -> 24.11.6-r0)
+( 513/1552) Upgrading dpdk-latencystats (24.11.1-r0 -> 24.11.6-r0)
+( 514/1552) Upgrading dpdk-lpm (24.11.1-r0 -> 24.11.6-r0)
+( 515/1552) Upgrading dpdk-member (24.11.1-r0 -> 24.11.6-r0)
+( 516/1552) Upgrading dpdk-mempool-bucket (24.11.1-r0 -> 24.11.6-r0)
+( 517/1552) Upgrading dpdk-mempool-cnxk (24.11.1-r0 -> 24.11.6-r0)
+( 518/1552) Upgrading dpdk-mempool-octeontx (24.11.1-r0 -> 24.11.6-r0)
+( 519/1552) Upgrading dpdk-mempool-ring (24.11.1-r0 -> 24.11.6-r0)
+( 520/1552) Upgrading dpdk-stack (24.11.1-r0 -> 24.11.6-r0)
+( 521/1552) Upgrading dpdk-mempool-stack (24.11.1-r0 -> 24.11.6-r0)
+( 522/1552) Upgrading dpdk-meter (24.11.1-r0 -> 24.11.6-r0)
+( 523/1552) Upgrading dpdk-mldev (24.11.1-r0 -> 24.11.6-r0)
+( 524/1552) Upgrading dpdk-ml-cnxk (24.11.1-r0 -> 24.11.6-r0)
+( 525/1552) Upgrading dpdk-net-af-packet (24.11.1-r0 -> 24.11.6-r0)
+( 526/1552) Upgrading dpdk-net-ark (24.11.1-r0 -> 24.11.6-r0)
+( 527/1552) Upgrading dpdk-net-atlantic (24.11.1-r0 -> 24.11.6-r0)
+( 528/1552) Upgrading dpdk-net-avp (24.11.1-r0 -> 24.11.6-r0)
+( 529/1552) Upgrading dpdk-net-axgbe (24.11.1-r0 -> 24.11.6-r0)
+( 530/1552) Upgrading dpdk-net-bnx2x (24.11.1-r0 -> 24.11.6-r0)
+( 531/1552) Upgrading dpdk-net-bnxt (24.11.1-r0 -> 24.11.6-r0)
+( 532/1552) Upgrading dpdk-net-bond (24.11.1-r0 -> 24.11.6-r0)
+( 533/1552) Upgrading dpdk-net-cpfl (24.11.1-r0 -> 24.11.6-r0)
+( 534/1552) Upgrading dpdk-net-cxgbe (24.11.1-r0 -> 24.11.6-r0)
+( 535/1552) Upgrading dpdk-net-e1000 (24.11.1-r0 -> 24.11.6-r0)
+( 536/1552) Upgrading dpdk-net-ena (24.11.1-r0 -> 24.11.6-r0)
+( 537/1552) Upgrading dpdk-net-enetc (24.11.1-r0 -> 24.11.6-r0)
+( 538/1552) Upgrading dpdk-net-enetfec (24.11.1-r0 -> 24.11.6-r0)
+( 539/1552) Upgrading dpdk-net-enic (24.11.1-r0 -> 24.11.6-r0)
+( 540/1552) Upgrading dpdk-net-failsafe (24.11.1-r0 -> 24.11.6-r0)
+( 541/1552) Upgrading dpdk-net-fm10k (24.11.1-r0 -> 24.11.6-r0)
+( 542/1552) Upgrading dpdk-net-gve (24.11.1-r0 -> 24.11.6-r0)
+( 543/1552) Upgrading dpdk-net-hinic (24.11.1-r0 -> 24.11.6-r0)
+( 544/1552) Upgrading dpdk-net-hns3 (24.11.1-r0 -> 24.11.6-r0)
+( 545/1552) Upgrading dpdk-net-i40e (24.11.1-r0 -> 24.11.6-r0)
+( 546/1552) Upgrading dpdk-net-iavf (24.11.1-r0 -> 24.11.6-r0)
+( 547/1552) Upgrading dpdk-net-ice (24.11.1-r0 -> 24.11.6-r0)
+( 548/1552) Upgrading dpdk-net-idpf (24.11.1-r0 -> 24.11.6-r0)
+( 549/1552) Upgrading dpdk-net-igc (24.11.1-r0 -> 24.11.6-r0)
+( 550/1552) Upgrading dpdk-net-ionic (24.11.1-r0 -> 24.11.6-r0)
+( 551/1552) Upgrading dpdk-net-ipn3ke (24.11.1-r0 -> 24.11.6-r0)
+( 552/1552) Upgrading dpdk-net-ixgbe (24.11.1-r0 -> 24.11.6-r0)
+( 553/1552) Upgrading dpdk-net-mana (24.11.1-r0 -> 24.11.6-r0)
+( 554/1552) Upgrading dpdk-net-memif (24.11.1-r0 -> 24.11.6-r0)
+( 555/1552) Upgrading dpdk-net-mlx4 (24.11.1-r0 -> 24.11.6-r0)
+( 556/1552) Upgrading dpdk-net-mlx5 (24.11.1-r0 -> 24.11.6-r0)
+( 557/1552) Upgrading dpdk-net-netvsc (24.11.1-r0 -> 24.11.6-r0)
+( 558/1552) Upgrading dpdk-net-nfp (24.11.1-r0 -> 24.11.6-r0)
+( 559/1552) Upgrading dpdk-net-ngbe (24.11.1-r0 -> 24.11.6-r0)
+( 560/1552) Upgrading dpdk-net-null (24.11.1-r0 -> 24.11.6-r0)
+( 561/1552) Upgrading dpdk-net-octeon-ep (24.11.1-r0 -> 24.11.6-r0)
+( 562/1552) Upgrading libpcap (1.10.5-r0 -> 1.10.7-r0)
+( 563/1552) Upgrading dpdk-net-pcap (24.11.1-r0 -> 24.11.6-r0)
+( 564/1552) Upgrading dpdk-net-pfe (24.11.1-r0 -> 24.11.6-r0)
+( 565/1552) Upgrading dpdk-net-qede (24.11.1-r0 -> 24.11.6-r0)
+( 566/1552) Upgrading dpdk-net-ring (24.11.1-r0 -> 24.11.6-r0)
+( 567/1552) Upgrading dpdk-net-sfc (24.11.1-r0 -> 24.11.6-r0)
+( 568/1552) Upgrading dpdk-sched (24.11.1-r0 -> 24.11.6-r0)
+( 569/1552) Upgrading dpdk-port (24.11.1-r0 -> 24.11.6-r0)
+( 570/1552) Upgrading dpdk-table (24.11.1-r0 -> 24.11.6-r0)
+( 571/1552) Upgrading dpdk-pipeline (24.11.1-r0 -> 24.11.6-r0)
+( 572/1552) Upgrading dpdk-net-softnic (24.11.1-r0 -> 24.11.6-r0)
+( 573/1552) Upgrading dpdk-net-tap (24.11.1-r0 -> 24.11.6-r0)
+( 574/1552) Upgrading dpdk-net-thunderx (24.11.1-r0 -> 24.11.6-r0)
+( 575/1552) Upgrading dpdk-net-txgbe (24.11.1-r0 -> 24.11.6-r0)
+( 576/1552) Upgrading dpdk-net-vdev-netvsc (24.11.1-r0 -> 24.11.6-r0)
+( 577/1552) Upgrading dpdk-vhost (24.11.1-r0 -> 24.11.6-r0)
+( 578/1552) Upgrading dpdk-net-vhost (24.11.1-r0 -> 24.11.6-r0)
+( 579/1552) Upgrading dpdk-net-virtio (24.11.1-r0 -> 24.11.6-r0)
+( 580/1552) Upgrading dpdk-net-vmxnet3 (24.11.1-r0 -> 24.11.6-r0)
+( 581/1552) Upgrading dpdk-node (24.11.1-r0 -> 24.11.6-r0)
+( 582/1552) Upgrading dpdk-reorder (24.11.1-r0 -> 24.11.6-r0)
+( 583/1552) Upgrading dpdk-pdcp (24.11.1-r0 -> 24.11.6-r0)
+( 584/1552) Upgrading dpdk-pdump (24.11.1-r0 -> 24.11.6-r0)
+( 585/1552) Upgrading dpdk-raw-cnxk-bphy (24.11.1-r0 -> 24.11.6-r0)
+( 586/1552) Upgrading dpdk-raw-cnxk-gpio (24.11.1-r0 -> 24.11.6-r0)
+( 587/1552) Upgrading dpdk-raw-dpaa2-cmdif (24.11.1-r0 -> 24.11.6-r0)
+( 588/1552) Upgrading dpdk-raw-ifpga (24.11.1-r0 -> 24.11.6-r0)
+( 589/1552) Upgrading dpdk-raw-ntb (24.11.1-r0 -> 24.11.6-r0)
+( 590/1552) Upgrading dpdk-raw-skeleton (24.11.1-r0 -> 24.11.6-r0)
+( 591/1552) Upgrading dpdk-regexdev (24.11.1-r0 -> 24.11.6-r0)
+( 592/1552) Upgrading dpdk-regex-cn9k (24.11.1-r0 -> 24.11.6-r0)
+( 593/1552) Upgrading dpdk-regex-mlx5 (24.11.1-r0 -> 24.11.6-r0)
+( 594/1552) Upgrading dpdk-vdpa-ifc (24.11.1-r0 -> 24.11.6-r0)
+( 595/1552) Upgrading dpdk-vdpa-mlx5 (24.11.1-r0 -> 24.11.6-r0)
+( 596/1552) Upgrading dpdk-vdpa-nfp (24.11.1-r0 -> 24.11.6-r0)
+( 597/1552) Upgrading dpdk-vdpa-sfc (24.11.1-r0 -> 24.11.6-r0)
+( 598/1552) Upgrading jansson-dev (2.14-r4 -> 2.15.0-r0)
+( 599/1552) Upgrading libarchive-dev (3.7.7-r0 -> 3.8.9-r0)
+( 600/1552) Upgrading rdma-core (55.0-r0 -> 64.0-r0)
+( 601/1552) Upgrading rdma-core-dev (55.0-r0 -> 64.0-r0)
+( 602/1552) Upgrading libpcap-dev (1.10.5-r0 -> 1.10.7-r0)
+( 603/1552) Upgrading dpdk-dev (24.11.1-r0 -> 24.11.6-r0)
+( 604/1552) Upgrading dpdk-static (24.11.1-r0 -> 24.11.6-r0)
+( 605/1552) Upgrading dtc (1.7.0-r2 -> 1.7.2-r1)
+( 606/1552) Upgrading dtc-dev (1.7.0-r2 -> 1.7.2-r1)
+( 607/1552) Upgrading libasm (0.191-r0 -> 0.195-r0)
+( 608/1552) Upgrading elfutils (0.191-r0 -> 0.195-r0)
+( 609/1552) Upgrading elfutils-dev (0.191-r0 -> 0.195-r0)
+( 610/1552) Upgrading ethtool (6.11-r0 -> 7.1-r0)
+( 611/1552) Upgrading execline-libs (2.9.6.1-r0 -> 2.9.9.2-r0)
+( 612/1552) Upgrading execline (2.9.6.1-r0 -> 2.9.9.2-r0)
+  Executing execline-2.9.9.2-r0.post-upgrade
+( 613/1552) Upgrading skalibs-dev (2.14.3.0-r0 -> 2.15.1.0-r0)
+( 614/1552) Upgrading execline-dev (2.9.6.1-r0 -> 2.9.9.2-r0)
+( 615/1552) Upgrading execline-static (2.9.6.1-r0 -> 2.9.9.2-r0)
+( 616/1552) Upgrading expat-static (2.6.4-r0 -> 2.8.4-r0)
+( 617/1552) Upgrading tcl (8.6.16-r0 -> 8.6.17-r1)
+( 618/1552) Purging onevpl-libs (2023.3.1-r2)
+( 619/1552) Installing libvpl (2.15.0-r1)
+( 620/1552) Upgrading ffmpeg-libavutil (6.1.2-r1 -> 8.1.2-r1)
+( 621/1552) Upgrading libhwy (1.0.7-r0 -> 1.3.0-r2)
+( 622/1552) Upgrading libjxl (0.10.3-r0 -> 0.11.2-r2)
+( 623/1552) Upgrading rav1e-libs (0.7.1-r0 -> 0.8.1-r0)
+( 624/1552) Upgrading ffmpeg-libswresample (6.1.2-r1 -> 8.1.2-r1)
+( 625/1552) Upgrading libvpx (1.15.0-r0 -> 1.17.0-r0)
+( 626/1552) Upgrading x264-libs (0.164.3108-r0 -> 0.164.3108-r1)
+( 627/1552) Upgrading ffmpeg-libavcodec (6.1.2-r1 -> 8.1.2-r1)
+( 628/1552) Installing libudfread (1.2.0-r1)
+( 629/1552) Upgrading libbluray (1.3.4-r1 -> 1.5.0-r0)
+( 630/1552) Upgrading libopenmpt (0.7.12-r0 -> 0.8.9-r0)
+( 631/1552) Upgrading cjson (1.7.18-r0 -> 1.7.19-r1)
+( 632/1552) Purging mbedtls-dev (3.6.2-r0)
+( 633/1552) Purging mbedtls (3.6.2-r0)
+( 634/1552) Installing mbedtls3 (3.6.7-r0)
+( 635/1552) Upgrading librist (0.2.10-r1 -> 0.2.15-r0)
+( 636/1552) Upgrading libssh (0.11.1-r0 -> 0.12.2-r0)
+( 637/1552) Upgrading libsodium (1.0.20-r0 -> 1.0.22-r0)
+( 638/1552) Upgrading ffmpeg-libavformat (6.1.2-r1 -> 8.1.2-r1)
+( 639/1552) Upgrading serd-libs (0.32.2-r0 -> 0.32.10-r0)
+( 640/1552) Upgrading zix-libs (0.4.2-r0 -> 0.8.2-r0)
+( 641/1552) Upgrading sord-libs (0.16.16-r0 -> 0.16.22-r0)
+( 642/1552) Upgrading sratom (0.6.16-r0 -> 0.6.22-r0)
+( 643/1552) Upgrading lilv-libs (0.24.24-r1 -> 0.28.0-r0)
+( 644/1552) Upgrading libdovi (3.3.1-r0 -> 3.3.2-r0)
+( 645/1552) Upgrading glslang-libs (1.3.296.0-r0 -> 1.4.341.0-r0)
+( 646/1552) Upgrading shaderc (2024.0-r2 -> 2026.1-r0)
+( 647/1552) Upgrading libplacebo (6.338.2-r3 -> 7.360.1-r0)
+( 648/1552) Upgrading ffmpeg-libswscale (6.1.2-r1 -> 8.1.2-r1)
+( 649/1552) Upgrading vidstab (1.1.1-r0 -> 1.1.2-r0)
+( 650/1552) Upgrading zimg (3.0.5-r2 -> 3.0.6-r0)
+( 651/1552) Upgrading ffmpeg-libavfilter (6.1.2-r1 -> 8.1.2-r1)
+( 652/1552) Upgrading libasyncns (0.8-r4 -> 0.8-r5)
+( 653/1552) Upgrading libltdl (2.4.7-r3 -> 2.6.2-r1)
+( 654/1552) Upgrading tdb-libs (1.4.12-r0 -> 1.4.15-r1)
+( 655/1552) Upgrading libpulse (17.0-r4 -> 17.0-r7)
+( 656/1552) Upgrading v4l-utils-libs (1.28.1-r1 -> 1.32.0-r1)
+( 657/1552) Upgrading ffmpeg-libavdevice (6.1.2-r1 -> 8.1.2-r1)
+( 658/1552) Upgrading ffmpeg (6.1.2-r1 -> 8.1.2-r1)
+( 659/1552) Upgrading ffnvcodec-headers (12.0.16.0-r1 -> 13.1.15.0-r0)
+( 660/1552) Upgrading file-dev (5.46-r1 -> 5.47-r2)
+( 661/1552) Upgrading findutils (4.10.0-r0 -> 4.10.0-r1)
+( 662/1552) Upgrading libflac++ (1.4.3-r1 -> 1.5.0-r0)
+( 663/1552) Upgrading flac-libs (1.4.3-r1 -> 1.5.0-r0)
+( 664/1552) Upgrading flex (2.6.4-r6 -> 2.6.4-r8)
+( 665/1552) Upgrading flex-libs (2.6.4-r6 -> 2.6.4-r8)
+( 666/1552) Upgrading flex-dev (2.6.4-r6 -> 2.6.4-r8)
+( 667/1552) Upgrading fontconfig-static (2.15.0-r1 -> 2.18.1-r0)
+( 668/1552) Installing sdl3 (3.4.16-r0)
+( 669/1552) Installing sdl3_ttf (3.2.2-r1)
+( 670/1552) Upgrading fuse3-libs (3.16.2-r1 -> 3.18.3-r0)
+( 671/1552) Upgrading libxkbfile (1.1.3-r0 -> 1.2.0-r0)
+( 672/1552) Upgrading freerdp-libs (3.10.3-r0 -> 3.31.0-r0)
+( 673/1552) Upgrading freerdp (3.10.3-r0 -> 3.31.0-r0)
+( 674/1552) Upgrading freerdp-dev (3.10.3-r0 -> 3.31.0-r0)
+( 675/1552) Upgrading freetype-static (2.13.3-r0 -> 2.14.3-r0)
+( 676/1552) Installing libquadmath (15.2.0-r9)
+( 677/1552) Installing libgfortran (15.2.0-r9)
+( 678/1552) Installing openblas (0.3.30-r2)
+( 679/1552) Upgrading hwloc (2.11.2-r1 -> 2.12.2-r0)
+( 680/1552) Upgrading onetbb (2022.0.0-r0 -> 2022.3.0-r1)
+( 681/1552) Installing libopencv_core (4.13.0-r0)
+( 682/1552) Installing libopencv_imgproc (4.13.0-r0)
+( 683/1552) Installing libopencv_flann (4.13.0-r0)
+( 684/1552) Installing libopencv_features2d (4.13.0-r0)
+( 685/1552) Installing libopencv_calib3d (4.13.0-r0)
+( 686/1552) Installing libopencv_dnn (4.13.0-r0)
+( 687/1552) Installing libopencv_objdetect (4.13.0-r0)
+( 688/1552) Installing libopencv_video (4.13.0-r0)
+( 689/1552) Upgrading frei0r-plugins (2.3.3-r0 -> 3.4.0-r0)
+( 690/1552) Upgrading frei0r-plugins-dev (2.3.3-r0 -> 3.4.0-r0)
+( 691/1552) Upgrading fribidi-dev (1.0.16-r0 -> 1.0.16-r3)
+( 692/1552) Upgrading fribidi-static (1.0.16-r0 -> 1.0.16-r3)
+( 693/1552) Upgrading fuse-common (3.16.2-r1 -> 3.18.3-r0)
+( 694/1552) Upgrading fuse (2.9.9-r6 -> 2.9.9-r7)
+( 695/1552) Upgrading fuse-dev (2.9.9-r6 -> 2.9.9-r7)
+( 696/1552) Upgrading fuse-static (2.9.9-r6 -> 2.9.9-r7)
+( 697/1552) Upgrading fuse3 (3.16.2-r1 -> 3.18.3-r0)
+( 698/1552) Upgrading fuse3-dev (3.16.2-r1 -> 3.18.3-r0)
+( 699/1552) Upgrading fuse3-static (3.16.2-r1 -> 3.18.3-r0)
+( 700/1552) Upgrading gawk (5.3.1-r0 -> 5.3.2-r2)
+( 701/1552) Upgrading lcms2-plugins (2.16-r0 -> 2.19.1-r0)
+( 702/1552) Upgrading libturbojpeg (3.0.4-r0 -> 3.1.3-r0)
+( 703/1552) Upgrading libjpeg-turbo-dev (3.0.4-r0 -> 3.1.3-r0)
+( 704/1552) Upgrading libtiffxx (4.7.0-r0 -> 4.7.2-r0)
+( 705/1552) Upgrading libwebpdecoder (1.5.0-r0 -> 1.6.0-r0)
+( 706/1552) Upgrading libwebpdemux (1.5.0-r0 -> 1.6.0-r0)
+( 707/1552) Upgrading libwebp-dev (1.5.0-r0 -> 1.6.0-r0)
+( 708/1552) Upgrading tiff-dev (4.7.0-r0 -> 4.7.2-r0)
+( 709/1552) Upgrading lcms2-dev (2.16-r0 -> 2.19.1-r0)
+( 710/1552) Upgrading libseccomp-dev (2.5.5-r2 -> 2.6.0-r2)
+( 711/1552) Installing libglycin-dev (2.1.5-r0)
+( 712/1552) Upgrading gdk-pixbuf-dev (2.42.12-r1 -> 2.44.7-r1)
+( 713/1552) Upgrading gdk-pixbuf-loaders (2.42.12-r1 -> 2.44.7-r1)
+( 714/1552) Upgrading geoip (1.6.12-r5 -> 1.6.12-r6)
+( 715/1552) Upgrading geoip-dev (1.6.12-r5 -> 1.6.12-r6)
+( 716/1552) Upgrading gettext-static (0.22.5-r0 -> 1.0-r0)
+( 717/1552) Upgrading libgmpxx (6.3.0-r2 -> 6.3.0-r4)
+( 718/1552) Upgrading gmp-dev (6.3.0-r2 -> 6.3.0-r4)
+( 719/1552) Upgrading llvm15-libs (15.0.7-r14 -> 15.0.7-r20)
+( 720/1552) Upgrading llvm15 (15.0.7-r14 -> 15.0.7-r20)
+  Executing llvm15-15.0.7-r20.pre-upgrade
+( 721/1552) Upgrading clang16-headers (16.0.6-r6 -> 16.0.6-r11)
+( 722/1552) Upgrading llvm16-libs (16.0.6-r8 -> 16.0.6-r14)
+( 723/1552) Upgrading clang16-libs (16.0.6-r6 -> 16.0.6-r11)
+( 724/1552) Upgrading llvm16-linker-tools (16.0.6-r8 -> 16.0.6-r14)
+( 725/1552) Upgrading clang16 (16.0.6-r6 -> 16.0.6-r11)
+  Executing clang16-16.0.6-r11.pre-upgrade
+( 726/1552) Upgrading clang16-ccache (16.0.6-r6 -> 16.0.6-r11)
+( 727/1552) Upgrading ghc (9.8.2-r2 -> 9.14.1-r2)
+( 728/1552) Upgrading ghc-dev (9.8.2-r2 -> 9.14.1-r2)
+( 729/1552) Upgrading libsm (1.2.5-r0 -> 1.2.6-r0)
+( 730/1552) Installing libxt (1.3.1-r0)
+( 731/1552) Upgrading ghostscript (10.04.0-r0 -> 10.07.1-r0)
+( 732/1552) Upgrading ghostscript-dev (10.04.0-r0 -> 10.07.1-r0)
+( 733/1552) Upgrading glib-static (2.82.4-r0 -> 2.88.3-r0)
+( 734/1552) Upgrading glslang-static (1.3.296.0-r0 -> 1.4.341.0-r0)
+( 735/1552) Upgrading libgpg-error (1.51-r0 -> 1.61-r0)
+( 736/1552) Upgrading libassuan (2.5.7-r0 -> 3.0.2-r0)
+( 737/1552) Upgrading pinentry (1.3.1-r0 -> 1.3.2-r0)
+  Executing pinentry-1.3.2-r0.post-upgrade
+( 738/1552) Upgrading libgcrypt (1.10.3-r1 -> 1.12.3-r0)
+( 739/1552) Upgrading gnupg-gpgconf (2.4.7-r0 -> 2.4.9-r1)
+( 740/1552) Upgrading libksba (1.6.7-r0 -> 1.7.0-r0)
+( 741/1552) Upgrading gdbm (1.24-r0 -> 1.26-r0)
+( 742/1552) Upgrading libsasl (2.1.28-r8 -> 2.1.28-r9)
+( 743/1552) Upgrading libldap (2.6.8-r0 -> 2.6.14-r0)
+( 744/1552) Upgrading npth (1.6-r4 -> 1.8-r0)
+( 745/1552) Upgrading gnupg-dirmngr (2.4.7-r0 -> 2.4.9-r1)
+( 746/1552) Upgrading gnupg-keyboxd (2.4.7-r0 -> 2.4.9-r1)
+( 747/1552) Upgrading gpg (2.4.7-r0 -> 2.4.9-r1)
+( 748/1552) Upgrading gpg-agent (2.4.7-r0 -> 2.4.9-r1)
+( 749/1552) Upgrading gpg-wks-server (2.4.7-r0 -> 2.4.9-r1)
+( 750/1552) Upgrading gpgsm (2.4.7-r0 -> 2.4.9-r1)
+( 751/1552) Upgrading gpgv (2.4.7-r0 -> 2.4.9-r1)
+( 752/1552) Upgrading gnupg-utils (2.4.7-r0 -> 2.4.9-r1)
+( 753/1552) Upgrading gnupg-wks-client (2.4.7-r0 -> 2.4.9-r1)
+( 754/1552) Upgrading gnupg (2.4.7-r0 -> 2.4.9-r1)
+( 755/1552) Upgrading gnutls-c++ (3.8.8-r0 -> 3.8.13-r0)
+( 756/1552) Upgrading nettle-dev (3.10-r1 -> 3.10.2-r0)
+( 757/1552) Upgrading libtasn1-progs (4.19.0-r2 -> 4.21.0-r0)
+( 758/1552) Upgrading libtasn1-dev (4.19.0-r2 -> 4.21.0-r0)
+( 759/1552) Upgrading p11-kit-dev (0.25.5-r2 -> 0.26.2-r1)
+( 760/1552) Upgrading gnutls-dev (3.8.8-r0 -> 3.8.13-r0)
+( 761/1552) Upgrading gnutls-utils (3.8.8-r0 -> 3.8.13-r0)
+( 762/1552) Upgrading gperf (3.1-r4 -> 3.3-r0)
+( 763/1552) Upgrading gpsd (3.25-r2 -> 3.27.3-r1)
+( 764/1552) Upgrading gpsd-dev (3.25-r2 -> 3.27.3-r1)
+( 765/1552) Upgrading grep (3.11-r0 -> 3.12-r0)
+( 766/1552) Upgrading libxml2-dev (2.13.4-r3 -> 2.13.9-r2)
+( 767/1552) Upgrading gstreamer-dev (1.24.10-r0 -> 1.28.5-r1)
+( 768/1552) Upgrading gstreamer-tools (1.24.10-r0 -> 1.28.5-r1)
+( 769/1552) Upgrading gtest (1.15.2-r0 -> 1.18.0-r0)
+( 770/1552) Upgrading gmock (1.15.2-r0 -> 1.18.0-r0)
+( 771/1552) Upgrading gtest-dev (1.15.2-r0 -> 1.18.0-r0)
+( 772/1552) Upgrading harfbuzz-cairo (9.0.0-r1 -> 14.2.1-r0)
+( 773/1552) Upgrading harfbuzz-gobject (9.0.0-r1 -> 14.2.1-r0)
+( 774/1552) Upgrading harfbuzz-icu (9.0.0-r1 -> 14.2.1-r0)
+( 775/1552) Upgrading graphite2-dev (1.3.14-r6 -> 1.3.15-r0)
+( 776/1552) Upgrading harfbuzz-dev (9.0.0-r1 -> 14.2.1-r0)
+( 777/1552) Upgrading harfbuzz-static (9.0.0-r1 -> 14.2.1-r0)
+( 778/1552) Upgrading help2man (1.49.3-r0 -> 1.49.3-r2)
+( 779/1552) Upgrading hostapd (2.11-r1 -> 2.12-r0)
+( 780/1552) Upgrading hwloc-dev (2.11.2-r1 -> 2.12.2-r0)
+( 781/1552) Upgrading idn2-utils (2.3.7-r0 -> 2.3.8-r0)
+( 782/1552) Upgrading fftw-double-libs (3.3.10-r6 -> 3.3.11-r0)
+( 783/1552) Installing libraqm (0.10.2-r0)
+( 784/1552) Upgrading imagemagick-libs (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 785/1552) Upgrading imagemagick (7.1.1.41-r0 -> 7.1.2.30-r0)
+  Executing imagemagick-7.1.2.30-r0.post-upgrade
+( 786/1552) Upgrading imagemagick-jpeg (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 787/1552) Installing imagemagick-openexr (7.1.2.30-r0)
+( 788/1552) Upgrading imagemagick-pdf (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 789/1552) Installing imagemagick-jp2 (7.1.2.30-r0)
+( 790/1552) Upgrading imagemagick-svg (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 791/1552) Upgrading imagemagick-jxl (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 792/1552) Upgrading imagemagick-tiff (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 793/1552) Upgrading imagemagick-webp (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 794/1552) Upgrading imagemagick-pango (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 795/1552) Upgrading imagemagick-c++ (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 796/1552) Upgrading imagemagick-dev (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 797/1552) Upgrading imagemagick-static (7.1.1.41-r0 -> 7.1.2.30-r0)
+( 798/1552) Upgrading iperf (2.2.0-r0 -> 2.2.1-r0)
+( 799/1552) Upgrading iputils-arping (20240905-r0 -> 20250605-r2)
+( 800/1552) Upgrading iputils-clockdiff (20240905-r0 -> 20250605-r2)
+( 801/1552) Upgrading iputils-ping (20240905-r0 -> 20250605-r2)
+( 802/1552) Upgrading iputils-tracepath (20240905-r0 -> 20250605-r2)
+( 803/1552) Upgrading iputils (20240905-r0 -> 20250605-r2)
+( 804/1552) Upgrading py3-libxml2 (2.13.4-r3 -> 2.13.9-r2)
+( 805/1552) Upgrading py3-libxml2-pyc (2.13.4-r3 -> 2.13.9-r2)
+( 806/1552) Upgrading itstool (2.0.7-r2 -> 2.0.7-r3)
+( 807/1552) Upgrading iw (6.9-r0 -> 6.17-r0)
+( 808/1552) Upgrading lua5.4-libs (5.4.7-r0 -> 5.4.9-r0)
+( 809/1552) Upgrading libunwind (1.8.1-r0 -> 1.8.3-r0)
+( 810/1552) Upgrading pipewire-libs (1.2.7-r0 -> 1.6.8-r5)
+( 811/1552) Upgrading wireplumber-libs (0.5.7-r0 -> 0.5.17-r0)
+( 812/1552) Upgrading wireplumber (0.5.7-r0 -> 0.5.17-r0)
+( 813/1552) Upgrading pipewire-jack (1.2.7-r0 -> 1.6.8-r5)
+( 814/1552) Upgrading pipewire-jack-dev (1.2.7-r0 -> 1.6.8-r5)
+( 815/1552) Upgrading jansson-static (2.14-r4 -> 2.15.0-r0)
+( 816/1552) Upgrading libjpeg-turbo-utils (3.0.4-r0 -> 3.1.3-r0)
+( 817/1552) Upgrading oniguruma (6.9.9-r0 -> 6.9.10-r0)
+( 818/1552) Upgrading jq (1.7.1-r0 -> 1.8.2-r0)
+( 819/1552) Upgrading json-glib (1.10.6-r0 -> 1.10.8-r0)
+( 820/1552) Upgrading lcms2-static (2.16-r0 -> 2.19.1-r0)
+( 821/1552) Upgrading ldns (1.8.4-r0 -> 1.9.2-r0)
+( 822/1552) Upgrading ldns-dev (1.8.4-r0 -> 1.9.2-r0)
+( 823/1552) Upgrading libaio (0.3.113-r2 -> 0.3.113-r3)
+( 824/1552) Upgrading libaio-dev (0.3.113-r2 -> 0.3.113-r3)
+( 825/1552) Upgrading libarchive-static (3.7.7-r0 -> 3.8.9-r0)
+( 826/1552) Upgrading libass-dev (0.17.3-r0 -> 0.17.5-r0)
+( 827/1552) Purging enca-dev (1.19-r4)
+( 828/1552) Purging enca (1.19-r4)
+( 829/1552) Upgrading libgpg-error-dev (1.51-r0 -> 1.61-r0)
+( 830/1552) Upgrading libassuan-dev (2.5.7-r0 -> 3.0.2-r0)
+( 831/1552) Upgrading libassuan-static (2.5.7-r0 -> 3.0.2-r0)
+( 832/1552) Installing libudfread-dev (1.2.0-r1)
+( 833/1552) Upgrading libbluray-dev (1.3.4-r1 -> 1.5.0-r0)
+( 834/1552) Upgrading libbpf-dev (1.5.0-r0 -> 1.7.0-r1)
+( 835/1552) Upgrading libcaca (0.99_beta20-r4 -> 0.99_beta20-r5)
+( 836/1552) Upgrading libcaca-dev (0.99_beta20-r4 -> 0.99_beta20-r5)
+( 837/1552) Upgrading libcaca-static (0.99_beta20-r4 -> 0.99_beta20-r5)
+( 838/1552) Upgrading libcap-setcap (2.73-r0 -> 2.78-r0)
+( 839/1552) Upgrading libcap-utils (2.73-r0 -> 2.78-r0)
+( 840/1552) Upgrading libcap (2.73-r0 -> 2.78-r0)
+( 841/1552) Upgrading libcap-dev (2.73-r0 -> 2.78-r0)
+( 842/1552) Upgrading libcap-ng (0.8.5-r0 -> 0.8.5-r2)
+( 843/1552) Upgrading libcap-ng-dev (0.8.5-r0 -> 0.8.5-r2)
+( 844/1552) Upgrading libcap-ng-static (0.8.5-r0 -> 0.8.5-r2)
+( 845/1552) Upgrading libcap-static (2.73-r0 -> 2.78-r0)
+( 846/1552) Upgrading libcdio (2.1.0-r3 -> 2.3.0-r0)
+( 847/1552) Upgrading libcdio++ (2.1.0-r3 -> 2.3.0-r0)
+( 848/1552) Upgrading libcdio-dev (2.1.0-r3 -> 2.3.0-r0)
+( 849/1552) Upgrading json-glib-dev (1.10.6-r0 -> 1.10.8-r0)
+( 850/1552) Upgrading libpciaccess-dev (0.18.1-r0 -> 0.19-r0)
+( 851/1552) Upgrading libdrm-dev (2.4.124-r0 -> 2.4.134-r0)
+( 852/1552) Upgrading libedit-static (20240808.3.1-r0 -> 20260508.3.1-r1)
+( 853/1552) Upgrading libxfixes-dev (6.0.1-r4 -> 6.0.2-r0)
+( 854/1552) Upgrading libxdamage-dev (1.1.6-r5 -> 1.1.7-r0)
+( 855/1552) Upgrading libclc (19.1.6-r0 -> 23.1.1-r0)
+( 856/1552) Upgrading spirv-llvm-translator-libs (19.1.2-r0 -> 23.1.1-r0)
+( 857/1552) Upgrading mesa-rusticl (24.3.2-r1 -> 26.2.2-r1)
+( 858/1552) Upgrading libxxf86vm-dev (1.1.6-r0 -> 1.1.7-r0)
+( 859/1552) Upgrading mesa-dev (24.3.2-r1 -> 26.2.2-r1)
+( 860/1552) Purging mesa-osmesa (24.3.2-r1)
+( 861/1552) Purging mesa-xatracker (24.3.2-r1)
+( 862/1552) Upgrading libevent (2.1.12-r7 -> 2.1.13-r0)
+( 863/1552) Upgrading libevent-dev (2.1.12-r7 -> 2.1.13-r0)
+( 864/1552) Upgrading libevent-static (2.1.12-r7 -> 2.1.13-r0)
+( 865/1552) Upgrading libgcrypt-dev (1.10.3-r1 -> 1.12.3-r0)
+( 866/1552) Upgrading libgcrypt-static (1.10.3-r1 -> 1.12.3-r0)
+( 867/1552) Upgrading libidn2-static (2.3.7-r0 -> 2.3.8-r0)
+( 868/1552) Upgrading libjpeg-turbo-static (3.0.4-r0 -> 3.1.3-r0)
+( 869/1552) Upgrading libhwy_contrib (1.0.7-r0 -> 1.3.0-r2)
+( 870/1552) Upgrading libhwy_test (1.0.7-r0 -> 1.3.0-r2)
+( 871/1552) Upgrading highway-dev (1.0.7-r0 -> 1.3.0-r2)
+( 872/1552) Upgrading libjxl-dev (0.10.3-r0 -> 0.11.2-r2)
+( 873/1552) Upgrading libmaxminddb-libs (1.9.1-r0 -> 1.13.3-r0)
+( 874/1552) Upgrading libmaxminddb-dev (1.9.1-r0 -> 1.13.3-r0)
+( 875/1552) Upgrading libmaxminddb-static (1.9.1-r0 -> 1.13.3-r0)
+( 876/1552) Upgrading libnfs (5.0.3-r0 -> 7.0.0-r0)
+( 877/1552) Upgrading libnfs-dev (5.0.3-r0 -> 7.0.0-r0)
+( 878/1552) Upgrading libnfs-tools (5.0.3-r0 -> 7.0.0-r0)
+( 879/1552) Upgrading libnvme (1.11.1-r0 -> 1.16.2-r0)
+( 880/1552) Upgrading json-c-dev (0.18-r0 -> 0.19-r1)
+( 881/1552) Upgrading libnvmemi (1.11.1-r0 -> 1.16.2-r0)
+( 882/1552) Upgrading libnvme-dev (1.11.1-r0 -> 1.16.2-r0)
+( 883/1552) Upgrading mpg123-dev (1.32.10-r0 -> 1.33.7-r0)
+( 884/1552) Upgrading libogg-dev (1.3.5-r5 -> 1.3.6-r0)
+( 885/1552) Upgrading libopenmpt-dev (0.7.12-r0 -> 0.8.9-r0)
+( 886/1552) Upgrading libdovi-dev (3.3.1-r0 -> 3.3.2-r0)
+( 887/1552) Upgrading shaderc-dev (2024.0-r2 -> 2026.1-r0)
+( 888/1552) Upgrading vulkan-headers (1.3.296.0-r0 -> 1.4.360-r0)
+( 889/1552) Upgrading vulkan-loader-dev (1.3.296.0-r0 -> 1.4.360-r0)
+( 890/1552) Upgrading libplacebo-dev (6.338.2-r3 -> 7.360.1-r0)
+( 891/1552) Upgrading libpng-static (1.6.44-r0 -> 1.6.58-r1)
+( 892/1552) Upgrading libpq (17.2-r0 -> 18.6-r0)
+( 893/1552) Upgrading libpq-dev (17.2-r0 -> 18.6-r0)
+( 894/1552) Upgrading abseil-cpp-raw-logging-internal (20240722.0-r0 -> 20260817.0-r0)
+( 895/1552) Upgrading abseil-cpp-spinlock-wait (20240722.0-r0 -> 20260817.0-r0)
+( 896/1552) Upgrading abseil-cpp-base (20240722.0-r0 -> 20260817.0-r0)
+( 897/1552) Upgrading abseil-cpp-crc-internal (20240722.0-r0 -> 20260817.0-r0)
+( 898/1552) Upgrading abseil-cpp-crc32c (20240722.0-r0 -> 20260817.0-r0)
+( 899/1552) Upgrading abseil-cpp-crc-cord-state (20240722.0-r0 -> 20260817.0-r0)
+( 900/1552) Upgrading abseil-cpp-strings-internal (20240722.0-r0 -> 20260817.0-r0)
+( 901/1552) Upgrading abseil-cpp-throw-delegate (20240722.0-r0 -> 20260817.0-r0)
+( 902/1552) Upgrading abseil-cpp-strings (20240722.0-r0 -> 20260817.0-r0)
+( 903/1552) Upgrading abseil-cpp-cord-internal (20240722.0-r0 -> 20260817.0-r0)
+( 904/1552) Upgrading abseil-cpp-exponential-biased (20240722.0-r0 -> 20260817.0-r0)
+( 905/1552) Upgrading abseil-cpp-cordz-functions (20240722.0-r0 -> 20260817.0-r0)
+( 906/1552) Upgrading abseil-cpp-time-zone (20240722.0-r0 -> 20260817.0-r0)
+( 907/1552) Upgrading abseil-cpp-time (20240722.0-r0 -> 20260817.0-r0)
+( 908/1552) Upgrading abseil-cpp-kernel-timeout-internal (20240722.0-r0 -> 20260817.0-r0)
+( 909/1552) Upgrading abseil-cpp-malloc-internal (20240722.0-r0 -> 20260817.0-r0)
+( 910/1552) Upgrading abseil-cpp-debugging-internal (20240722.0-r0 -> 20260817.0-r0)
+( 911/1552) Upgrading abseil-cpp-stacktrace (20240722.0-r0 -> 20260817.0-r0)
+( 912/1552) Installing abseil-cpp-tracing-internal (20260817.0-r0)
+( 913/1552) Upgrading abseil-cpp-synchronization (20240722.0-r0 -> 20260817.0-r0)
+( 914/1552) Upgrading abseil-cpp-cordz-handle (20240722.0-r0 -> 20260817.0-r0)
+( 915/1552) Upgrading abseil-cpp-cordz-info (20240722.0-r0 -> 20260817.0-r0)
+( 916/1552) Upgrading abseil-cpp-cord (20240722.0-r0 -> 20260817.0-r0)
+( 917/1552) Upgrading abseil-cpp-symbolize (20240722.0-r0 -> 20260817.0-r0)
+( 918/1552) Upgrading abseil-cpp-examine-stack (20240722.0-r0 -> 20260817.0-r0)
+( 919/1552) Upgrading abseil-cpp-city (20240722.0-r0 -> 20260817.0-r0)
+( 920/1552) Upgrading abseil-cpp-hash (20240722.0-r0 -> 20260817.0-r0)
+( 921/1552) Upgrading abseil-cpp-log-globals (20240722.0-r0 -> 20260817.0-r0)
+( 922/1552) Upgrading abseil-cpp-log-internal-globals (20240722.0-r0 -> 20260817.0-r0)
+( 923/1552) Upgrading abseil-cpp-int128 (20240722.0-r0 -> 20260817.0-r0)
+( 924/1552) Upgrading abseil-cpp-str-format-internal (20240722.0-r0 -> 20260817.0-r0)
+( 925/1552) Upgrading abseil-cpp-log-internal-format (20240722.0-r0 -> 20260817.0-r0)
+( 926/1552) Upgrading abseil-cpp-log-sink (20240722.0-r0 -> 20260817.0-r0)
+( 927/1552) Upgrading abseil-cpp-log-internal-log-sink-set (20240722.0-r0 -> 20260817.0-r0)
+( 928/1552) Upgrading abseil-cpp-log-internal-nullguard (20240722.0-r0 -> 20260817.0-r0)
+( 929/1552) Upgrading abseil-cpp-log-internal-proto (20240722.0-r0 -> 20260817.0-r0)
+( 930/1552) Installing abseil-cpp-log-internal-structured-proto (20260817.0-r0)
+( 931/1552) Upgrading abseil-cpp-strerror (20240722.0-r0 -> 20260817.0-r0)
+( 932/1552) Upgrading abseil-cpp-log-internal-message (20240722.0-r0 -> 20260817.0-r0)
+( 933/1552) Upgrading abseil-cpp-die-if-null (20240722.0-r0 -> 20260817.0-r0)
+( 934/1552) Upgrading abseil-cpp-leak-check (20240722.0-r0 -> 20260817.0-r0)
+( 935/1552) Upgrading abseil-cpp-log-internal-check-op (20240722.0-r0 -> 20260817.0-r0)
+( 936/1552) Upgrading abseil-cpp-log-internal-conditions (20240722.0-r0 -> 20260817.0-r0)
+( 937/1552) Upgrading abseil-cpp-hashtablez-sampler (20240722.0-r0 -> 20260817.0-r0)
+( 938/1552) Upgrading abseil-cpp-raw-hash-set (20240722.0-r0 -> 20260817.0-r0)
+( 939/1552) Upgrading abseil-cpp-status (20240722.0-r0 -> 20260817.0-r0)
+( 940/1552) Upgrading abseil-cpp-statusor (20240722.0-r0 -> 20260817.0-r0)
+( 941/1552) Upgrading abseil-cpp-log-initialize (20240722.0-r0 -> 20260817.0-r0)
+( 942/1552) Upgrading libprotoc (24.4-r4 -> 31.1-r4)
+( 943/1552) Upgrading protoc (24.4-r4 -> 31.1-r4)
+( 944/1552) Upgrading libprotobuf-lite (24.4-r4 -> 31.1-r4)
+( 945/1552) Upgrading protobuf (24.4-r4 -> 31.1-r4)
+( 946/1552) Upgrading libprotobuf (24.4-r4 -> 31.1-r4)
+( 947/1552) Upgrading duktape-libs (2.7.0-r2 -> 2.7.0-r3)
+( 948/1552) Upgrading libproxy (0.5.9-r0 -> 0.5.12-r0)
+( 949/1552) Upgrading libproxy-dev (0.5.9-r0 -> 0.5.12-r0)
+( 950/1552) Upgrading libpsl-native (7.4.0-r0 -> 700.0.0-r0)
+( 951/1552) Upgrading cjson-dev (1.7.18-r0 -> 1.7.19-r1)
+( 952/1552) Upgrading librist-dev (0.2.10-r1 -> 0.2.15-r0)
+( 953/1552) Upgrading rsvg-convert (2.59.2-r0 -> 2.62.3-r0)
+( 954/1552) Upgrading pango-tools (1.54.0-r1 -> 1.57.1-r0)
+( 955/1552) Upgrading libxft-dev (2.3.8-r3 -> 2.3.9-r0)
+( 956/1552) Upgrading pango-dev (1.54.0-r1 -> 1.57.1-r0)
+( 957/1552) Upgrading librsvg-dev (2.59.2-r0 -> 2.62.3-r0)
+( 958/1552) Upgrading librtlsdr (2.0.2-r0 -> 2.0.3-r0)
+( 959/1552) Upgrading libusb-dev (1.0.27-r0 -> 1.0.30-r0)
+( 960/1552) Upgrading librtlsdr-dev (2.0.2-r0 -> 2.0.3-r0)
+( 961/1552) Upgrading libseccomp-static (2.5.5-r2 -> 2.6.0-r2)
+( 962/1552) Upgrading libsepol (3.6-r1 -> 3.11-r1)
+( 963/1552) Upgrading libsepol-dev (3.6-r1 -> 3.11-r1)
+( 964/1552) Upgrading libselinux-dev (3.6-r1 -> 3.11-r2)
+( 965/1552) Upgrading libselinux-utils (3.6-r1 -> 3.11-r2)
+( 966/1552) Upgrading libsixel (1.10.3_git20221121-r2 -> 1.10.5-r0)
+( 967/1552) Upgrading libsixel-dev (1.10.3_git20221121-r2 -> 1.10.5-r0)
+( 968/1552) Upgrading libslirp (4.8.0-r0 -> 4.9.1-r0)
+( 969/1552) Upgrading libslirp-dev (4.8.0-r0 -> 4.9.1-r0)
+( 970/1552) Upgrading opus-dev (1.5.2-r1 -> 1.6.1-r0)
+( 971/1552) Upgrading flac-dev (1.4.3-r1 -> 1.5.0-r0)
+( 972/1552) Upgrading libsndfile-dev (1.2.2-r2 -> 1.2.2-r3)
+( 973/1552) Upgrading libsndfile-static (1.2.2-r2 -> 1.2.2-r3)
+( 974/1552) Upgrading libsodium-dev (1.0.20-r0 -> 1.0.22-r0)
+( 975/1552) Upgrading libsodium-static (1.0.20-r0 -> 1.0.22-r0)
+( 976/1552) Upgrading gsettings-desktop-schemas (47.1-r0 -> 50.1-r0)
+( 977/1552) Upgrading glib-networking (2.80.0-r0 -> 2.80.1-r2)
+( 978/1552) Upgrading libsoup3 (3.6.1-r0 -> 3.6.6-r0)
+( 979/1552) Upgrading libsoup3-dev (3.6.1-r0 -> 3.6.6-r0)
+( 980/1552) Upgrading libsrt-dev (1.5.3-r0 -> 1.5.5-r0)
+( 981/1552) Upgrading libssh-dev (0.11.1-r0 -> 0.12.2-r0)
+( 982/1552) Upgrading libssh2 (1.11.1-r0 -> 1.11.1-r3)
+( 983/1552) Upgrading libssh2-dev (1.11.1-r0 -> 1.11.1-r3)
+( 984/1552) Upgrading libssh2-static (1.11.1-r0 -> 1.11.1-r3)
+( 985/1552) Upgrading libstemmer (2.2.0-r0 -> 3.1.1-r0)
+( 986/1552) Upgrading libstemmer-dev (2.2.0-r0 -> 3.1.1-r0)
+( 987/1552) Upgrading libtheora-dev (1.1.1-r18 -> 1.2.0-r1)
+( 988/1552) Upgrading libtheora-static (1.1.1-r18 -> 1.2.0-r1)
+( 989/1552) Upgrading libtool (2.4.7-r3 -> 2.6.2-r1)
+( 990/1552) Upgrading libtorrent (0.14.0-r0 -> 0.16.12-r0)
+( 991/1552) Upgrading libtorrent-dev (0.14.0-r0 -> 0.16.12-r0)
+( 992/1552) Upgrading libtorrent-rasterbar (2.0.10-r3 -> 2.1.0-r0)
+( 993/1552) Upgrading libtorrent-rasterbar-dev (2.0.10-r3 -> 2.1.0-r0)
+( 994/1552) Upgrading libunistring-dev (1.3-r0 -> 1.4.2-r0)
+( 995/1552) Upgrading libunistring-static (1.3-r0 -> 1.4.2-r0)
+( 996/1552) Upgrading liburing (2.8-r0 -> 2.15-r0)
+( 997/1552) Upgrading liburing-ffi (2.8-r0 -> 2.15-r0)
+( 998/1552) Upgrading liburing-dev (2.8-r0 -> 2.15-r0)
+( 999/1552) Upgrading libconfig (1.7.3-r3 -> 1.8.2-r0)
+(1000/1552) Upgrading libusbgx (0.3.0-r0 -> 0.3.0-r1)
+(1001/1552) Upgrading libconfig++ (1.7.3-r3 -> 1.8.2-r0)
+(1002/1552) Upgrading libconfig-dev (1.7.3-r3 -> 1.8.2-r0)
+(1003/1552) Upgrading libusbgx-dev (0.3.0-r0 -> 0.3.0-r1)
+(1004/1552) Upgrading libusbgx-static (0.3.0-r0 -> 0.3.0-r1)
+(1005/1552) Upgrading libuv-dev (1.49.2-r0 -> 1.52.1-r0)
+(1006/1552) Upgrading libuv-static (1.49.2-r0 -> 1.52.1-r0)
+(1007/1552) Upgrading wayland-libs-server (1.23.1-r0 -> 1.26.0-r0)
+(1008/1552) Upgrading wayland-dev (1.23.1-r0 -> 1.26.0-r0)
+(1009/1552) Upgrading libva-dev (2.22.0-r1 -> 2.23.0-r0)
+(1010/1552) Upgrading libva-glx (2.20.0-r0 -> 2.23.0-r0)
+(1011/1552) Upgrading libva-glx-dev (2.20.0-r0 -> 2.23.0-r0)
+(1012/1552) Upgrading device-mapper-libs (2.03.29-r0 -> 2.03.35-r6)
+(1013/1552) Upgrading device-mapper-event-libs (2.03.29-r0 -> 2.03.35-r6)
+(1014/1552) Upgrading lvm2-libs (2.03.29-r0 -> 2.03.35-r2)
+(1015/1552) Upgrading lvm2 (2.03.29-r0 -> 2.03.35-r2)
+(1016/1552) Upgrading librados19 (19.2.0-r3 -> 19.2.5-r0)
+(1017/1552) Upgrading cryptsetup-libs (2.7.5-r1 -> 2.8.7-r0)
+(1018/1552) Installing libnbd (1.24.3-r0)
+(1019/1552) Upgrading librbd19 (19.2.0-r3 -> 19.2.5-r0)
+(1020/1552) Upgrading parted (3.6-r2 -> 3.7-r0)
+(1021/1552) Upgrading libtirpc-conf (1.3.5-r0 -> 1.3.5-r1)
+(1022/1552) Upgrading libtirpc (1.3.5-r0 -> 1.3.5-r1)
+(1023/1552) Upgrading libvirt-libs (10.10.0-r0 -> 12.7.0-r0)
+(1024/1552) Upgrading libvirt (10.10.0-r0 -> 12.7.0-r0)
+(1025/1552) Upgrading netcat-openbsd (1.226.1.1-r0 -> 1.234.1-r0)
+(1026/1552) Upgrading kbd-misc (2.7.1-r0 -> 2.8.0-r0)
+(1027/1552) Upgrading kbd (2.7.1-r0 -> 2.8.0-r0)
+(1028/1552) Upgrading libvirt-client (10.10.0-r0 -> 12.7.0-r0)
+(1029/1552) Upgrading dmidecode (3.6-r0 -> 3.7-r0)
+(1030/1552) Upgrading dnsmasq-common (2.90-r3 -> 2.93-r0)
+(1031/1552) Upgrading dnsmasq (2.90-r3 -> 2.93-r0)
+  Executing dnsmasq-2.93-r0.pre-upgrade
+(1032/1552) Upgrading libxtables (1.8.10-r5 -> 1.8.13-r0)
+(1033/1552) Upgrading iproute2-tc (6.12.0-r1 -> 7.2.0-r0)
+(1034/1552) Upgrading libnftnl (1.2.8-r0 -> 1.3.2-r0)
+(1035/1552) Upgrading iptables (1.8.10-r5 -> 1.8.13-r0)
+  Executing iptables-1.8.13-r0.post-upgrade
+(1036/1552) Upgrading setarch (2.40.2-r4 -> 2.42.3-r1)
+(1037/1552) Upgrading util-linux-misc (2.40.2-r4 -> 2.42.3-r1)
+  Executing util-linux-misc-2.42.3-r1.post-upgrade
+(1038/1552) Upgrading libvirt-daemon (10.10.0-r0 -> 12.7.0-r0)
+(1039/1552) Upgrading augeas-libs (1.12.0-r6 -> 1.14.1-r0)
+(1040/1552) Upgrading netcf-libs (0.2.8-r10 -> 0.2.8-r14)
+(1041/1552) Upgrading libvirt-common-drivers (10.10.0-r0 -> 12.7.0-r0)
+(1042/1552) Upgrading e2fsprogs-libs (1.47.1-r1 -> 1.47.4-r0)
+(1043/1552) Upgrading xen-libs (4.19.1-r0 -> 4.22.0-r0)
+(1044/1552) Upgrading libvirt-xen (10.10.0-r0 -> 12.7.0-r0)
+(1045/1552) Upgrading libxi-dev (1.8.2-r0 -> 1.8.3-r0)
+(1046/1552) Upgrading libxinerama-dev (1.1.5-r4 -> 1.1.6-r0)
+(1047/1552) Upgrading libxrandr-dev (1.5.4-r1 -> 1.5.5-r0)
+(1048/1552) Upgrading libvpx-dev (1.15.0-r0 -> 1.17.0-r0)
+(1049/1552) Upgrading libwebp-static (1.5.0-r0 -> 1.6.0-r0)
+(1050/1552) Upgrading libwebsockets (4.3.3-r0 -> 4.3.5-r2)
+(1051/1552) Installing libwebsockets-evlib_ev (4.3.5-r2)
+(1052/1552) Installing libwebsockets-evlib_event (4.3.5-r2)
+(1053/1552) Installing libwebsockets-evlib_glib (4.3.5-r2)
+(1054/1552) Installing libwebsockets-evlib_uv (4.3.5-r2)
+(1055/1552) Upgrading libwebsockets-dev (4.3.3-r0 -> 4.3.5-r2)
+(1056/1552) Upgrading libx11-static (1.8.10-r0 -> 1.8.13-r0)
+(1057/1552) Upgrading libxcb-static (1.17.0-r0 -> 1.17.0-r2)
+(1058/1552) Upgrading libxdp (1.4.3-r0 -> 1.6.3-r1)
+(1059/1552) Upgrading libxdp-dev (1.4.3-r0 -> 1.6.3-r1)
+(1060/1552) Upgrading libxdp-static (1.4.3-r0 -> 1.6.3-r1)
+(1061/1552) Upgrading libxi-static (1.8.2-r0 -> 1.8.3-r0)
+(1062/1552) Upgrading libxkbcommon-dev (1.7.0-r1 -> 1.13.2-r0)
+(1063/1552) Upgrading libxkbcommon-static (1.7.0-r1 -> 1.13.2-r0)
+(1064/1552) Upgrading libxml2-static (2.13.4-r3 -> 2.13.9-r2)
+(1065/1552) Upgrading libxmlb (0.3.21-r0 -> 0.3.29-r0)
+(1066/1552) Upgrading libxmlb-dev (0.3.21-r0 -> 0.3.29-r0)
+(1067/1552) Upgrading libxpresent (1.0.1-r3 -> 1.0.2-r0)
+(1068/1552) Upgrading libxpresent-dev (1.0.1-r3 -> 1.0.2-r0)
+(1069/1552) Upgrading libxscrnsaver (1.2.4-r3 -> 1.2.5-r0)
+(1070/1552) Upgrading libxscrnsaver-dev (1.2.4-r3 -> 1.2.5-r0)
+(1071/1552) Upgrading libzip (1.11.2-r0 -> 1.11.4-r2)
+(1072/1552) Upgrading libzip-tools (1.11.2-r0 -> 1.11.4-r2)
+(1073/1552) Upgrading libzip-dev (1.11.2-r0 -> 1.11.4-r2)
+(1074/1552) Upgrading linux-pam-dev (1.6.1-r1 -> 1.7.1-r3)
+(1075/1552) Upgrading libtraceevent (1.8.4-r0 -> 1.9.0-r0)
+(1076/1552) Upgrading libtraceevent-plugins (1.8.4-r0 -> 1.9.0-r0)
+(1077/1552) Installing llvm22-libs (22.1.8-r1)
+(1078/1552) Upgrading perf (6.11.3-r0 -> 7.1.5-r0)
+(1079/1552) Upgrading pciutils-libs (3.13.0-r1 -> 3.15.0-r0)
+(1080/1552) Upgrading cpupower (6.11.3-r0 -> 7.1.5-r0)
+(1081/1552) Upgrading linux-tools-gpio (6.11.3-r0 -> 7.1.5-r0)
+(1082/1552) Upgrading linux-tools-iio (6.11.3-r0 -> 7.1.5-r0)
+(1083/1552) Upgrading linux-tools (6.11.3-r0 -> 7.1.5-r0)
+(1084/1552) Upgrading pciutils-dev (3.13.0-r1 -> 3.15.0-r0)
+(1085/1552) Upgrading libhistory (8.2.13-r0 -> 8.3.3-r1)
+(1086/1552) Upgrading readline-dev (8.2.13-r0 -> 8.3.3-r1)
+(1087/1552) Upgrading linux-tools-usbip (6.11.3-r0 -> 7.1.5-r0)
+(1088/1552) Upgrading linux-tools-dev (6.11.3-r0 -> 7.1.5-r0)
+(1089/1552) Upgrading llvm16 (16.0.6-r8 -> 16.0.6-r14)
+(1090/1552) Upgrading llvm16-test-utils (16.0.6-r8 -> 16.0.6-r14)
+(1091/1552) Upgrading llvm16-test-utils-pyc (16.0.6-r8 -> 16.0.6-r14)
+(1092/1552) Upgrading llvm16-dev (16.0.6-r8 -> 16.0.6-r14)
+(1093/1552) Upgrading llvm16-static (16.0.6-r8 -> 16.0.6-r14)
+(1094/1552) Upgrading lm-sensors-libs (3.6.0-r5 -> 3.6.2-r0)
+(1095/1552) Upgrading lm-sensors (3.6.0-r5 -> 3.6.2-r0)
+  Executing lm-sensors-3.6.2-r0.post-upgrade
+(1096/1552) Upgrading lm-sensors-dev (3.6.0-r5 -> 3.6.2-r0)
+(1097/1552) Installing libluv (1.52.1.0-r0)
+(1098/1552) Installing lua-luv-dev (1.52.1.0-r0)
+(1099/1552) Upgrading lua-luv-static (1.45.0.0-r0 -> 1.52.1.0-r0)
+(1100/1552) Upgrading lua-system (0.4.4-r3 -> 0.7.0-r0)
+(1101/1552) Upgrading luajit (2.1_p20240815-r0 -> 2.1_p20251030-r0)
+(1102/1552) Upgrading luajit-dev (2.1_p20240815-r0 -> 2.1_p20251030-r0)
+(1103/1552) Upgrading lynx (2.9.2-r0 -> 2.9.3-r0)
+(1104/1552) Purging gzip (1.13-r0)
+(1105/1552) Purging less (668-r0)
+(1106/1552) Upgrading lz4 (1.10.0-r0 -> 1.10.0-r1)
+(1107/1552) Upgrading lz4-dev (1.10.0-r0 -> 1.10.0-r1)
+(1108/1552) Upgrading lz4-static (1.10.0-r0 -> 1.10.0-r1)
+(1109/1552) Upgrading mariadb-common (11.4.4-r2 -> 11.8.8-r0)
+  Executing mariadb-common-11.8.8-r0.post-upgrade
+(1110/1552) Upgrading mariadb (11.4.4-r2 -> 11.8.8-r0)
+(1111/1552) Upgrading fmt (11.0.2-r0 -> 11.2.0-r1)
+(1112/1552) Upgrading fmt-dev (11.0.2-r0 -> 11.2.0-r1)
+(1113/1552) Upgrading mariadb-connector-c (3.3.10-r0 -> 3.4.9-r0)
+(1114/1552) Upgrading mariadb-connector-c-dev (3.3.10-r0 -> 3.4.9-r0)
+(1115/1552) Upgrading mariadb-embedded (11.4.4-r2 -> 11.8.8-r0)
+(1116/1552) Upgrading mariadb-dev (11.4.4-r2 -> 11.8.8-r0)
+(1117/1552) Upgrading mariadb-static (11.4.4-r2 -> 11.8.8-r0)
+(1118/1552) Upgrading mcookie (2.40.2-r4 -> 2.42.3-r1)
+(1119/1552) Upgrading samurai (1.2-r6 -> 1.3-r0)
+(1120/1552) Upgrading meson (1.6.1-r1 -> 1.12.0-r0)
+(1121/1552) Upgrading meson-pyc (1.6.1-r1 -> 1.12.0-r0)
+(1122/1552) Upgrading abuild-meson (1.6.1-r1 -> 1.12.0-r0)
+(1123/1552) Upgrading mimalloc2 (2.1.7-r0 -> 2.2.7-r0)
+(1124/1552) Upgrading mold (2.35.1-r0 -> 2.39.1-r0)
+(1125/1552) Upgrading perl-timedate (2.33-r4 -> 2.35-r0)
+(1126/1552) Upgrading perl-io-tty (1.20-r1 -> 1.31-r1)
+(1127/1552) Upgrading perl-ipc-run (20231003.0-r0 -> 20260402.0-r0)
+(1128/1552) Upgrading moreutils (0.70-r0 -> 0.70-r2)
+(1129/1552) Upgrading mount (2.40.2-r4 -> 2.42.3-r1)
+(1130/1552) Upgrading libcdio-paranoia (10.2.2.0.2-r2 -> 10.2.2.0.2_git20260227-r0)
+(1131/1552) Installing libdisplay-info (0.3.0-r1)
+(1132/1552) Upgrading rubberband-libs (3.3.0-r1 -> 4.0.0-r0)
+(1133/1552) Upgrading sndio-libs (1.10.0-r0 -> 1.10.0-r4)
+(1134/1552) Upgrading mpv (0.39.0-r0 -> 0.41.0-r5)
+(1135/1552) Installing mpv-lua-scripts (0.41.0-r5)
+(1136/1552) Installing umpv (0.41.0-r5)
+(1137/1552) Upgrading mpv-libs (0.39.0-r0 -> 0.41.0-r5)
+(1138/1552) Upgrading ffmpeg-dev (6.1.2-r1 -> 8.1.2-r1)
+(1139/1552) Purging ffmpeg-libpostproc (6.1.2-r1)
+(1140/1552) Upgrading libcdio-paranoia-dev (10.2.2.0.2-r2 -> 10.2.2.0.2_git20260227-r0)
+(1141/1552) Installing libdisplay-info-dev (0.3.0-r1)
+(1142/1552) Upgrading pipewire-dev (1.2.7-r0 -> 1.6.8-r5)
+(1143/1552) Upgrading libpulse-mainloop-glib (17.0-r4 -> 17.0-r7)
+(1144/1552) Upgrading pulseaudio-dev (17.0-r4 -> 17.0-r7)
+(1145/1552) Upgrading fftw-long-double-libs (3.3.10-r6 -> 3.3.11-r0)
+(1146/1552) Upgrading fftw-dev (3.3.10-r6 -> 3.3.11-r0)
+(1147/1552) Upgrading rubberband-dev (3.3.0-r1 -> 4.0.0-r0)
+(1148/1552) Upgrading sndio-dev (1.10.0-r0 -> 1.10.0-r4)
+(1149/1552) Upgrading wayland-protocols (1.39-r0 -> 1.49-r0)
+(1150/1552) Upgrading zimg-dev (3.0.5-r2 -> 3.0.6-r0)
+(1151/1552) Upgrading mpv-dev (0.39.0-r0 -> 0.41.0-r5)
+(1152/1552) Upgrading mujs (1.3.2-r0 -> 1.3.9-r0)
+(1153/1552) Upgrading mujs-libs (1.3.2-r0 -> 1.3.9-r0)
+(1154/1552) Upgrading mujs-dev (1.3.2-r0 -> 1.3.9-r0)
+(1155/1552) Upgrading kmod-libs (33-r2 -> 34.2-r1)
+(1156/1552) Upgrading eudev (3.2.14-r5 -> 3.2.14-r8)
+(1157/1552) Upgrading device-mapper (2.03.29-r0 -> 2.03.35-r6)
+(1158/1552) Upgrading device-mapper-udev (2.03.29-r0 -> 2.03.35-r6)
+  Executing device-mapper-udev-2.03.35-r6.post-upgrade
+(1159/1552) Installing lvm2-udev (2.03.35-r2)
+(1160/1552) Installing librtlsdr-udev (2.0.3-r0)
+(1161/1552) Installing multipath-tools-udev (0.14.3-r0)
+(1162/1552) Installing fuse-udev (2.9.9-r7)
+(1163/1552) Installing alsa-utils-udev (1.2.16-r0)
+(1164/1552) Installing rdma-core-udev (64.0-r0)
+(1165/1552) Installing fuse3-udev (3.18.3-r0)
+(1166/1552) Upgrading multipath-tools (0.10.0-r1 -> 0.14.3-r0)
+(1167/1552) Installing kpartx (0.14.3-r0)
+(1168/1552) Upgrading musl-fts-dev (1.2.7-r6 -> 1.2.7-r7)
+(1169/1552) Upgrading nano (8.3-r0 -> 9.2-r0)
+(1170/1552) Upgrading nasm (2.16.03-r0 -> 3.01-r0)
+(1171/1552) Upgrading ncdu (1.21-r0 -> 1.22-r2)
+(1172/1552) Upgrading ncurses (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+(1173/1552) Upgrading ncurses-libs (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+(1174/1552) Upgrading ncurses-static (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+(1175/1552) Upgrading ncurses-terminfo (6.5_p20241006-r3 -> 6.6_p20260822-r0)
+(1176/1552) Upgrading kmod (33-r2 -> 34.2-r1)
+(1177/1552) Upgrading ndctl-libs (80-r0 -> 80-r1)
+(1178/1552) Upgrading iniparser (4.2.1-r0 -> 4.2.6-r0)
+(1179/1552) Upgrading libtracefs (1.8.1-r1 -> 1.8.3-r0)
+(1180/1552) Upgrading ndctl (80-r0 -> 80-r1)
+(1181/1552) Upgrading ndctl-dev (80-r0 -> 80-r1)
+(1182/1552) Upgrading nettle-static (3.10-r1 -> 3.10.2-r0)
+(1183/1552) Upgrading nettle-utils (3.10-r1 -> 3.10.2-r0)
+(1184/1552) Upgrading nspr (4.36-r0 -> 4.38.2-r0)
+(1185/1552) Upgrading nss (3.107-r0 -> 3.128-r0)
+(1186/1552) Upgrading libnm (1.50.1-r0 -> 1.58.0-r0)
+(1187/1552) Upgrading libelogind (252.24-r1 -> 255.24-r0)
+(1188/1552) Upgrading networkmanager (1.50.1-r0 -> 1.58.0-r0)
+  Executing networkmanager-1.58.0-r0.pre-upgrade
+  Executing networkmanager-1.58.0-r0.post-upgrade
+(1189/1552) Upgrading networkmanager-dev (1.50.1-r0 -> 1.58.0-r0)
+(1190/1552) Upgrading nghttp2 (1.64.0-r0 -> 1.70.0-r0)
+(1191/1552) Upgrading nghttp2-static (1.64.0-r0 -> 1.70.0-r0)
+(1192/1552) Upgrading nghttp3 (1.7.0-r0 -> 1.18.0-r0)
+(1193/1552) Upgrading nghttp3-dev (1.7.0-r0 -> 1.18.0-r0)
+(1194/1552) Upgrading ngtcp2 (1.10.0-r0 -> 1.25.0-r0)
+(1195/1552) Upgrading ngtcp2-gnutls (1.10.0-r0 -> 1.25.0-r0)
+(1196/1552) Upgrading ngtcp2-dev (1.10.0-r0 -> 1.25.0-r0)
+(1197/1552) Upgrading ninja-build (1.12.1-r0 -> 1.13.2-r1)
+(1198/1552) Installing ada-libs (3.3.0-r1)
+(1199/1552) Installing hdrhistogram-c (0.11.10-r0)
+(1200/1552) Installing llhttp (9.4.1-r0)
+(1201/1552) Installing simdjson (4.6.11-r0)
+(1202/1552) Upgrading nodejs-current (23.2.0-r2 -> 26.8.2-r0)
+(1203/1552) Upgrading npm (10.9.1-r0 -> 12.0.2-r0)
+(1204/1552) Upgrading numactl-dev (2.0.18-r0 -> 2.0.19-r0)
+(1205/1552) Upgrading open-iscsi-libs (2.1.10-r3 -> 2.1.12-r0)
+(1206/1552) Upgrading open-iscsi (2.1.10-r3 -> 2.1.12-r0)
+(1207/1552) Installing open-iscsi-udev (2.1.12-r0)
+(1208/1552) Upgrading open-iscsi-dev (2.1.10-r3 -> 2.1.12-r0)
+(1209/1552) Upgrading open-plc-utils (0_git20201007-r1 -> 0_git20250712-r1)
+(1210/1552) Upgrading opencl (2024.05.08-r0 -> 2026.05.29-r0)
+(1211/1552) Upgrading opencl-headers (2024.05.08-r0 -> 2026.05.29-r0)
+(1212/1552) Upgrading opencl-dev (2024.05.08-r0 -> 2026.05.29-r0)
+(1213/1552) Upgrading openjpeg-tools (2.5.3-r0 -> 2.5.4-r1)
+(1214/1552) Upgrading openjpeg-dev (2.5.3-r0 -> 2.5.4-r1)
+(1215/1552) Upgrading openssh-keygen (9.9_p1-r2 -> 10.5_p1-r1)
+(1216/1552) Upgrading openssh-client-common (9.9_p1-r2 -> 10.5_p1-r1)
+(1217/1552) Upgrading openssh-client-default (9.9_p1-r2 -> 10.5_p1-r1)
+(1218/1552) Upgrading openssh-sftp-server (9.9_p1-r2 -> 10.5_p1-r1)
+(1219/1552) Upgrading openssh-server-common (9.9_p1-r2 -> 10.5_p1-r1)
+(1220/1552) Upgrading openssh-server (9.9_p1-r2 -> 10.5_p1-r1)
+  Executing openssh-server-10.5_p1-r1.post-upgrade
+(1221/1552) Upgrading openssh (9.9_p1-r2 -> 10.5_p1-r1)
+(1222/1552) Upgrading openssl-libs-static (3.3.2-r4 -> 3.5.8-r0)
+(1223/1552) Upgrading pahole (1.28-r0 -> 1.31-r1)
+(1224/1552) Upgrading libcbor (0.11.0-r1 -> 0.14.0-r0)
+(1225/1552) Upgrading libfido2 (1.15.0-r1 -> 1.17.0-r1)
+(1226/1552) Installing libfido2-udev (1.17.0-r1)
+  Executing libfido2-udev-1.17.0-r1.pre-install
+  * 
+  * To use U2F USB tokens (such as YubiKey), regular users must be members of
+  * 'plugdev' group.
+  * 
+(1227/1552) Upgrading pam-u2f (1.3.0-r3 -> 1.4.0-r0)
+(1228/1552) Upgrading pciutils (3.13.0-r1 -> 3.15.0-r0)
+(1229/1552) Upgrading libpcre16 (8.45-r3 -> 8.45-r4)
+(1230/1552) Upgrading libpcre32 (8.45-r3 -> 8.45-r4)
+(1231/1552) Upgrading pcre (8.45-r3 -> 8.45-r4)
+(1232/1552) Upgrading libpcrecpp (8.45-r3 -> 8.45-r4)
+(1233/1552) Upgrading pcre-dev (8.45-r3 -> 8.45-r4)
+(1234/1552) Installing perl-class-inspector (1.36-r3)
+(1235/1552) Installing perl-file-sharedir (1.118-r1)
+(1236/1552) Upgrading perl-http-date (6.06-r0 -> 6.08-r0)
+(1237/1552) Upgrading perl-clone (0.47-r0 -> 0.50-r1)
+(1238/1552) Installing perl-mime-base32 (1.303-r3)
+(1239/1552) Installing perl-mime-base64 (3.16-r8)
+(1240/1552) Upgrading perl-uri (5.28-r0 -> 5.37-r0)
+(1241/1552) Upgrading perl-http-message (7.00-r0 -> 7.04-r0)
+(1242/1552) Upgrading perl-http-cookies (6.11-r0 -> 6.12-r0)
+(1243/1552) Upgrading perl-net-http (6.23-r1 -> 6.24-r0)
+(1244/1552) Upgrading perl-html-parser (3.83-r0 -> 3.85-r1)
+(1245/1552) Upgrading perl-libwww (6.77-r0 -> 6.83-r0)
+(1246/1552) Upgrading perl-xml-parser (2.47-r1 -> 2.59-r1)
+(1247/1552) Upgrading pipewire (1.2.7-r0 -> 1.6.8-r5)
+  Executing pipewire-1.6.8-r5.post-upgrade
+  * 
+  * Pipewire Snapcast, WebRTC and RTP support have been moved to subpackages.
+  * If you use them, install pipewire-snapcast, pipewire-webrtc and/or pipewire-rtp
+  * respectively.
+  * 
+  * 
+  * The /usr/libexec/pipewire-launcher script will be removed in the future to replace it with OpenRC user-services.
+  * 
+(1248/1552) Installing pipewire-udev (1.6.8-r5)
+(1249/1552) Upgrading gst-plugin-pipewire (1.2.7-r0 -> 1.6.8-r5)
+(1250/1552) Upgrading pipewire-alsa (1.2.7-r0 -> 1.6.8-r5)
+(1251/1552) Upgrading pipewire-tools (1.2.7-r0 -> 1.6.8-r5)
+(1252/1552) Upgrading py3-argcomplete (3.5.2-r0 -> 3.6.3-r1)
+(1253/1552) Upgrading py3-argcomplete-pyc (3.5.2-r0 -> 3.6.3-r1)
+(1254/1552) Upgrading py3-colorama (0.4.6-r5 -> 0.4.6-r7)
+(1255/1552) Upgrading py3-colorama-pyc (0.4.6-r5 -> 0.4.6-r7)
+(1256/1552) Upgrading py3-platformdirs (4.3.6-r0 -> 4.11.5-r0)
+(1257/1552) Upgrading py3-platformdirs-pyc (4.3.6-r0 -> 4.11.5-r0)
+(1258/1552) Upgrading py3-click (8.1.8-r0 -> 8.4.2-r0)
+(1259/1552) Upgrading py3-click-pyc (8.1.8-r0 -> 8.4.2-r0)
+(1260/1552) Upgrading py3-userpath (1.9.2-r1 -> 1.9.2-r2)
+(1261/1552) Upgrading py3-userpath-pyc (1.9.2-r1 -> 1.9.2-r2)
+(1262/1552) Upgrading pipx (1.7.1-r0 -> 1.15.0-r0)
+(1263/1552) Upgrading pipx-pyc (1.7.1-r0 -> 1.15.0-r0)
+(1264/1552) Upgrading pkgconf-dev (2.3.0-r0 -> 3.0.7-r0)
+(1265/1552) Upgrading postgresql-common (1.2-r1 -> 1.3-r1)
+(1266/1552) Upgrading postgresql16-client (16.6-r0 -> 16.15-r0)
+(1267/1552) Upgrading postgresql16 (16.6-r0 -> 16.15-r0)
+(1268/1552) Upgrading libecpg (17.2-r0 -> 18.6-r0)
+(1269/1552) Upgrading libecpg-dev (17.2-r0 -> 18.6-r0)
+(1270/1552) Upgrading postgresql16-dev (16.6-r0 -> 16.15-r0)
+(1271/1552) Upgrading libproc2 (4.0.4-r2 -> 4.0.7-r0)
+(1272/1552) Upgrading procps-ng (4.0.4-r2 -> 4.0.7-r0)
+(1273/1552) Upgrading protobuf-c-compiler (1.5.0-r2 -> 1.5.2-r4)
+(1274/1552) Installing abseil-cpp-base-cpu-detect (20260817.0-r0)
+(1275/1552) Upgrading abseil-cpp-civil-time (20240722.0-r0 -> 20260817.0-r0)
+(1276/1552) Installing abseil-cpp-clock-interface (20260817.0-r0)
+(1277/1552) Upgrading abseil-cpp-cordz-sample-token (20240722.0-r0 -> 20260817.0-r0)
+(1278/1552) Installing abseil-cpp-utf8-for-code-point (20260817.0-r0)
+(1279/1552) Installing abseil-cpp-decode-rust-punycode (20260817.0-r0)
+(1280/1552) Installing abseil-cpp-demangle-rust (20260817.0-r0)
+(1281/1552) Upgrading abseil-cpp-demangle-internal (20240722.0-r0 -> 20260817.0-r0)
+(1282/1552) Upgrading abseil-cpp-exception-safety-testing (20240722.0-r0 -> 20260817.0-r0)
+(1283/1552) Upgrading abseil-cpp-failure-signal-handler (20240722.0-r0 -> 20260817.0-r0)
+(1284/1552) Upgrading abseil-cpp-flags-commandlineflag-internal (20240722.0-r0 -> 20260817.0-r0)
+(1285/1552) Upgrading abseil-cpp-flags-commandlineflag (20240722.0-r0 -> 20260817.0-r0)
+(1286/1552) Upgrading abseil-cpp-flags-program-name (20240722.0-r0 -> 20260817.0-r0)
+(1287/1552) Upgrading abseil-cpp-flags-config (20240722.0-r0 -> 20260817.0-r0)
+(1288/1552) Upgrading abseil-cpp-flags-internal (20240722.0-r0 -> 20260817.0-r0)
+(1289/1552) Upgrading abseil-cpp-flags-marshalling (20240722.0-r0 -> 20260817.0-r0)
+(1290/1552) Upgrading abseil-cpp-flags-private-handle-accessor (20240722.0-r0 -> 20260817.0-r0)
+(1291/1552) Upgrading abseil-cpp-flags-reflection (20240722.0-r0 -> 20260817.0-r0)
+(1292/1552) Upgrading abseil-cpp-flags-usage (20240722.0-r0 -> 20260817.0-r0)
+(1293/1552) Upgrading abseil-cpp-flags-usage-internal (20240722.0-r0 -> 20260817.0-r0)
+(1294/1552) Upgrading abseil-cpp-flags-parse (20240722.0-r0 -> 20260817.0-r0)
+(1295/1552) Installing abseil-cpp-generic-printer-internal (20260817.0-r0)
+(1296/1552) Upgrading abseil-cpp-graphcycles-internal (20240722.0-r0 -> 20260817.0-r0)
+(1297/1552) Installing abseil-cpp-hardening (20260817.0-r0)
+(1298/1552) Upgrading abseil-cpp-random-internal-randen-hwaes (20240722.0-r0 -> 20260817.0-r0)
+(1299/1552) Upgrading abseil-cpp-random-internal-randen-hwaes-impl (20240722.0-r0 -> 20260817.0-r0)
+(1300/1552) Upgrading abseil-cpp-random-internal-platform (20240722.0-r0 -> 20260817.0-r0)
+(1301/1552) Upgrading abseil-cpp-random-internal-randen-slow (20240722.0-r0 -> 20260817.0-r0)
+(1302/1552) Upgrading abseil-cpp-random-internal-randen (20240722.0-r0 -> 20260817.0-r0)
+(1303/1552) Upgrading abseil-cpp-random-internal-seed-material (20240722.0-r0 -> 20260817.0-r0)
+(1304/1552) Upgrading abseil-cpp-random-seed-gen-exception (20240722.0-r0 -> 20260817.0-r0)
+(1305/1552) Installing abseil-cpp-random-internal-entropy-pool (20260817.0-r0)
+(1306/1552) Upgrading abseil-cpp-hash-generator-testing (20240722.0-r0 -> 20260817.0-r0)
+(1307/1552) Installing abseil-cpp-profile-builder (20260817.0-r0)
+(1308/1552) Installing abseil-cpp-hashtable-profiler (20260817.0-r0)
+(1309/1552) Upgrading abseil-cpp-log-severity (20240722.0-r0 -> 20260817.0-r0)
+(1310/1552) Upgrading abseil-cpp-log-entry (20240722.0-r0 -> 20260817.0-r0)
+(1311/1552) Upgrading abseil-cpp-log-internal-fnmatch (20240722.0-r0 -> 20260817.0-r0)
+(1312/1552) Upgrading abseil-cpp-vlog-config-internal (20240722.0-r0 -> 20260817.0-r0)
+(1313/1552) Upgrading abseil-cpp-log-flags (20240722.0-r0 -> 20260817.0-r0)
+(1314/1552) Upgrading abseil-cpp-log-internal-test-actions (20240722.0-r0 -> 20260817.0-r0)
+(1315/1552) Upgrading abseil-cpp-log-internal-test-helpers (20240722.0-r0 -> 20260817.0-r0)
+(1316/1552) Upgrading abseil-cpp-log-internal-test-matchers (20240722.0-r0 -> 20260817.0-r0)
+(1317/1552) Upgrading abseil-cpp-per-thread-sem-test-common (20240722.0-r0 -> 20260817.0-r0)
+(1318/1552) Upgrading abseil-cpp-periodic-sampler (20240722.0-r0 -> 20260817.0-r0)
+(1319/1552) Installing abseil-cpp-poison (20260817.0-r0)
+(1320/1552) Upgrading abseil-cpp-pow10-helper (20240722.0-r0 -> 20260817.0-r0)
+(1321/1552) Upgrading abseil-cpp-random-distributions (20240722.0-r0 -> 20260817.0-r0)
+(1322/1552) Upgrading abseil-cpp-random-internal-distribution-test-util (20240722.0-r0 -> 20260817.0-r0)
+(1323/1552) Upgrading abseil-cpp-random-seed-sequences (20240722.0-r0 -> 20260817.0-r0)
+(1324/1552) Upgrading abseil-cpp-scoped-mock-log (20240722.0-r0 -> 20260817.0-r0)
+(1325/1552) Upgrading abseil-cpp-scoped-set-env (20240722.0-r0 -> 20260817.0-r0)
+(1326/1552) Installing abseil-cpp-simulated-clock (20260817.0-r0)
+(1327/1552) Installing abseil-cpp-source-location (20260817.0-r0)
+(1328/1552) Upgrading abseil-cpp-spinlock-test-common (20240722.0-r0 -> 20260817.0-r0)
+(1329/1552) Upgrading abseil-cpp-stack-consumption (20240722.0-r0 -> 20260817.0-r0)
+(1330/1552) Installing abseil-cpp-status-builder (20260817.0-r0)
+(1331/1552) Installing abseil-cpp-status-matchers (20260817.0-r0)
+(1332/1552) Upgrading abseil-cpp-test-instance-tracker (20240722.0-r0 -> 20260817.0-r0)
+(1333/1552) Upgrading abseil-cpp-time-internal-test-util (20240722.0-r0 -> 20260817.0-r0)
+(1334/1552) Upgrading abseil-cpp-dev (20240722.0-r0 -> 20260817.0-r0)
+(1335/1552) Purging abseil-cpp-atomic-hook-test-helper (20240722.0-r0)
+(1336/1552) Purging abseil-cpp-bad-any-cast-impl (20240722.0-r0)
+(1337/1552) Purging abseil-cpp-bad-optional-access (20240722.0-r0)
+(1338/1552) Purging abseil-cpp-bad-variant-access (20240722.0-r0)
+(1339/1552) Purging abseil-cpp-crc-cpu-detect (20240722.0-r0)
+(1340/1552) Purging abseil-cpp-low-level-hash (20240722.0-r0)
+(1341/1552) Purging abseil-cpp-random-internal-pool-urbg (20240722.0-r0)
+(1342/1552) Purging abseil-cpp-string-view (20240722.0-r0)
+(1343/1552) Purging abseil-cpp (20240722.0-r0)
+(1344/1552) Upgrading protobuf-dev (24.4-r4 -> 31.1-r4)
+(1345/1552) Upgrading webrtc-audio-processing-1 (1.3-r1 -> 1.3-r5)
+(1346/1552) Upgrading pulseaudio (17.0-r4 -> 17.0-r7)
+(1347/1552) Upgrading pulseaudio-alsa (17.0-r4 -> 17.0-r7)
+(1348/1552) Upgrading pulseaudio-wireplumber (17.0-r4 -> 17.0-r7)
+(1349/1552) Upgrading pulseaudio-utils (17.0-r4 -> 17.0-r7)
+(1350/1552) Upgrading py3-distro (1.9.0-r2 -> 1.9.0-r4)
+(1351/1552) Upgrading py3-distro-pyc (1.9.0-r2 -> 1.9.0-r4)
+(1352/1552) Upgrading py3-docutils (0.21.2-r0 -> 0.21.2-r2)
+(1353/1552) Upgrading py3-docutils-pyc (0.21.2-r0 -> 0.21.2-r2)
+(1354/1552) Upgrading py3-elftools (0.30-r1 -> 0.32-r1)
+(1355/1552) Upgrading py3-elftools-pyc (0.30-r1 -> 0.32-r1)
+(1356/1552) Upgrading py3-netifaces (0.11.0-r3 -> 0.11.0-r4)
+(1357/1552) Upgrading py3-pip (24.3.1-r0 -> 26.1.2-r0)
+(1358/1552) Upgrading py3-pip-pyc (24.3.1-r0 -> 26.1.2-r0)
+(1359/1552) Upgrading python3-dev (3.12.8-r1 -> 3.14.7-r0)
+(1360/1552) Upgrading qemu (9.2.0-r0 -> 11.1.1-r0)
+  Executing qemu-11.1.1-r0.pre-upgrade
+(1361/1552) Upgrading qemu-bridge-helper (9.2.0-r0 -> 11.1.1-r0)
+(1362/1552) Upgrading libvirt-qemu (10.10.0-r0 -> 12.7.0-r0)
+(1363/1552) Upgrading qemu-aarch64 (9.2.0-r0 -> 11.1.1-r0)
+(1364/1552) Upgrading qemu-dev (9.2.0-r0 -> 11.1.1-r0)
+(1365/1552) Installing qemu-edk2-arm-vars (11.1.1-r0)
+(1366/1552) Upgrading snappy (1.2.1-r0 -> 1.2.2-r0)
+(1367/1552) Upgrading vde2-libs (2.3.3-r3 -> 2.3.3-r6)
+(1368/1552) Upgrading qemu-system-aarch64 (9.2.0-r0 -> 11.1.1-r0)
+(1369/1552) Installing qemu-edk2-i386-vars (11.1.1-r0)
+(1370/1552) Upgrading qemu-system-x86_64 (9.2.0-r0 -> 11.1.1-r0)
+(1371/1552) Upgrading qemu-tools (9.2.0-r0 -> 11.1.1-r0)
+(1372/1552) Upgrading qemu-x86_64 (9.2.0-r0 -> 11.1.1-r0)
+(1373/1552) Upgrading rav1e-dev (0.7.1-r0 -> 0.8.1-r0)
+(1374/1552) Upgrading rav1e-static (0.7.1-r0 -> 0.8.1-r0)
+(1375/1552) Upgrading librados18 (18.2.4-r3 -> 18.2.8-r0)
+(1376/1552) Upgrading librbd18 (18.2.4-r3 -> 18.2.8-r0)
+(1377/1552) Upgrading rbd-fuse18 (18.2.4-r3 -> 18.2.8-r0)
+(1378/1552) Upgrading readline-static (8.2.13-r0 -> 8.3.3-r1)
+(1379/1552) Upgrading jitterentropy-library (3.4.1-r2 -> 3.6.3-r1)
+(1380/1552) Upgrading rng-tools-extra (6.17-r0 -> 6.17-r2)
+  Executing rng-tools-extra-6.17-r2.pre-upgrade
+(1381/1552) Upgrading rsync (3.3.0-r0 -> 3.5.0-r0)
+(1382/1552) Upgrading vamp-sdk-libs (2.10.0-r2 -> 2.10.0-r3)
+(1383/1552) Upgrading rubberband (3.3.0-r1 -> 4.0.0-r0)
+(1384/1552) Upgrading rubberband-static (3.3.0-r1 -> 4.0.0-r0)
+(1385/1552) Upgrading rustup (1.25.2-r5 -> 1.29.0-r0)
+(1386/1552) Upgrading scons (4.8.1-r0 -> 4.10.1-r1)
+(1387/1552) Upgrading scons-pyc (4.8.1-r0 -> 4.10.1-r1)
+(1388/1552) Upgrading screen (5.0.0-r0 -> 5.0.2-r0)
+(1389/1552) Upgrading sdl2 (2.30.10-r0 -> 2.32.10-r0)
+(1390/1552) Upgrading sdl2-dev (2.30.10-r0 -> 2.32.10-r0)
+(1391/1552) Upgrading sed (4.9-r2 -> 4.10-r0)
+(1392/1552) Upgrading shaderc-static (2024.0-r2 -> 2026.1-r0)
+(1393/1552) Upgrading shadow (4.16.0-r1 -> 4.18.0-r1)
+  Executing shadow-4.18.0-r1.post-upgrade
+(1394/1552) Upgrading shadow-libs (4.16.0-r1 -> 4.18.0-r1)
+(1395/1552) Upgrading shadow-dev (4.16.0-r1 -> 4.18.0-r1)
+(1396/1552) Upgrading slirp4netns (1.3.1-r0 -> 1.3.3-r0)
+(1397/1552) Upgrading snappy-dev (1.2.1-r0 -> 1.2.2-r0)
+(1398/1552) Upgrading snappy-static (1.2.1-r0 -> 1.2.2-r0)
+(1399/1552) Upgrading sndio (1.10.0-r0 -> 1.10.0-r4)
+(1400/1552) Upgrading spice (0.15.2-r1 -> 0.16.0-r0)
+(1401/1552) Upgrading orc-compiler (0.4.40-r1 -> 0.4.42-r1)
+(1402/1552) Upgrading orc-dev (0.4.40-r1 -> 0.4.42-r1)
+(1403/1552) Upgrading gst-plugins-base-dev (1.24.10-r0 -> 1.28.3-r0)
+(1404/1552) Upgrading cyrus-sasl-dev (2.1.28-r8 -> 2.1.28-r9)
+(1405/1552) Upgrading spice-protocol (0.14.4-r1 -> 0.14.5-r0)
+(1406/1552) Upgrading spice-dev (0.15.2-r1 -> 0.16.0-r0)
+(1407/1552) Upgrading spirv-headers (1.3.290.0-r0 -> 1.4.357.0-r0)
+(1408/1552) Upgrading spirv-tools-dev (1.3.290.0-r0 -> 1.4.357.0-r0)
+(1409/1552) Upgrading sqlite-static (3.47.2-r0 -> 3.53.4-r0)
+(1410/1552) Upgrading sudo (1.9.16_p2-r0 -> 1.9.17_p2-r1)
+(1411/1552) Upgrading svt-av1 (2.2.1-r0 -> 4.2.0-r0)
+(1412/1552) Upgrading svt-av1-dev (2.2.1-r0 -> 4.2.0-r0)
+(1413/1552) Upgrading swig (4.3.0-r0 -> 4.5.0-r0)
+(1414/1552) Purging guile (3.0.9-r1)
+(1415/1552) Installing adwaita-fonts-sans (51.0-r0)
+(1416/1552) Installing adwaita-fonts-mono (51.0-r0)
+(1417/1552) Installing adwaita-fonts (51.0-r0)
+(1418/1552) Installing blake3-libs (1.8.7-r0)
+(1419/1552) Installing libfyaml (0.9.6-r1)
+(1420/1552) Installing appstream-compose (1.2.0-r0)
+(1421/1552) Installing cfitsio (4.7.0-r0)
+(1422/1552) Installing cgif (0.5.4-r0)
+(1423/1552) Installing libexif (0.6.26-r0)
+(1424/1552) Installing libimagequant (4.4.1-r0)
+(1425/1552) Installing vips (8.18.6-r0)
+(1426/1552) Installing vips-jxl (8.18.6-r0)
+(1427/1552) Installing vips-magick (8.18.6-r0)
+(1428/1552) Upgrading appstream (1.0.4-r0 -> 1.2.0-r0)
+  Executing appstream-1.2.0-r0.post-upgrade
+  * ✔ Metadata cache was updated successfully.
+(1429/1552) Upgrading libadwaita (1.6.2-r0 -> 1.9.3-r0)
+(1430/1552) Upgrading libdex (0.8.1-r0 -> 1.1.0-r4)
+(1431/1552) Installing libdex-pyc (1.1.0-r4)
+(1432/1552) Upgrading libpanel (1.8.1-r0 -> 1.10.4-r0)
+(1433/1552) Upgrading polkit-noelogind-libs (125-r0 -> 127-r2)
+(1434/1552) Upgrading sysprof (47.2-r0 -> 50.0-r0)
+(1435/1552) Upgrading sysprof-static (47.2-r0 -> 50.0-r0)
+(1436/1552) Installing libucontext-dev (1.5.2-r0)
+(1437/1552) Upgrading libdex-dev (0.8.1-r0 -> 1.1.0-r4)
+(1438/1552) Upgrading elogind-dev (252.24-r1 -> 255.24-r0)
+(1439/1552) Upgrading polkit-common (125-r0 -> 127-r2)
+  Executing polkit-common-127-r2.pre-upgrade
+(1440/1552) Upgrading polkit-dev (125-r0 -> 127-r2)
+(1441/1552) Purging dbus-glib-dev (0.112-r6)
+(1442/1552) Upgrading sysprof-dev (47.2-r0 -> 50.0-r0)
+(1443/1552) Upgrading talloc (2.4.2-r1 -> 2.4.4-r1)
+(1444/1552) Upgrading py3-talloc (2.4.2-r1 -> 2.4.4-r1)
+(1445/1552) Upgrading talloc-dev (2.4.2-r1 -> 2.4.4-r1)
+(1446/1552) Upgrading talloc-static (2.4.2-r1 -> 2.4.4-r1)
+(1447/1552) Upgrading tcpdump (4.99.5-r0 -> 4.99.6-r1)
+(1448/1552) Upgrading texinfo (7.2-r0 -> 7.3-r1)
+(1449/1552) Upgrading tinyalsa (2.0.0-r2 -> 2.0.0-r4)
+(1450/1552) Upgrading tinyalsa-libs (2.0.0-r2 -> 2.0.0-r4)
+(1451/1552) Upgrading tinyalsa-dev (2.0.0-r2 -> 2.0.0-r4)
+(1452/1552) Upgrading tinyalsa-static (2.0.0-r2 -> 2.0.0-r4)
+(1453/1552) Upgrading ufw (0.36.2-r3 -> 0.36.2-r4)
+(1454/1552) Upgrading ufw-pyc (0.36.2-r3 -> 0.36.2-r4)
+(1455/1552) Upgrading upx (4.2.4-r0 -> 5.2.1-r0)
+(1456/1552) Upgrading hwdata-usb (0.390-r0 -> 0.411-r0)
+(1457/1552) Upgrading usbutils (018-r0 -> 019-r0)
+(1458/1552) Upgrading util-linux (2.40.2-r4 -> 2.42.3-r1)
+(1459/1552) Upgrading dmesg (2.40.2-r4 -> 2.42.3-r1)
+(1460/1552) Upgrading runuser (2.40.2-r4 -> 2.42.3-r1)
+(1461/1552) Upgrading losetup (2.40.2-r4 -> 2.42.3-r1)
+(1462/1552) Upgrading hexdump (2.40.2-r4 -> 2.42.3-r1)
+(1463/1552) Upgrading uuidgen (2.40.2-r4 -> 2.42.3-r1)
+(1464/1552) Upgrading sfdisk (2.40.2-r4 -> 2.42.3-r1)
+(1465/1552) Upgrading agetty (2.40.2-r4 -> 2.42.3-r1)
+(1466/1552) Upgrading wipefs (2.40.2-r4 -> 2.42.3-r1)
+(1467/1552) Upgrading cfdisk (2.40.2-r4 -> 2.42.3-r1)
+(1468/1552) Upgrading umount (2.40.2-r4 -> 2.42.3-r1)
+(1469/1552) Upgrading flock (2.40.2-r4 -> 2.42.3-r1)
+(1470/1552) Upgrading lsblk (2.40.2-r4 -> 2.42.3-r1)
+(1471/1552) Upgrading setpriv (2.40.2-r4 -> 2.42.3-r1)
+(1472/1552) Upgrading lscpu (2.40.2-r4 -> 2.42.3-r1)
+(1473/1552) Upgrading logger (2.40.2-r4 -> 2.42.3-r1)
+(1474/1552) Upgrading partx (2.40.2-r4 -> 2.42.3-r1)
+(1475/1552) Upgrading fstrim (2.40.2-r4 -> 2.42.3-r1)
+(1476/1552) Upgrading findmnt (2.40.2-r4 -> 2.42.3-r1)
+(1477/1552) Upgrading util-linux-static (2.40.2-r4 -> 2.42.3-r1)
+(1478/1552) Upgrading valgrind (3.24.0-r0 -> 3.25.1-r2)
+(1479/1552) Upgrading valgrind-dev (3.24.0-r0 -> 3.25.1-r2)
+(1480/1552) Upgrading vde2-dev (2.3.3-r3 -> 2.3.3-r6)
+(1481/1552) Upgrading vidstab-dev (1.1.1-r0 -> 1.1.2-r0)
+(1482/1552) Upgrading virglrenderer (1.1.0-r0 -> 1.3.0-r0)
+(1483/1552) Upgrading virglrenderer-dev (1.1.0-r0 -> 1.3.0-r0)
+(1484/1552) Upgrading virt-what (1.27-r0 -> 1.27-r2)
+(1485/1552) Installing vte3-profile (0.84.1-r1)
+(1486/1552) Installing simdutf (9.1.0-r0)
+(1487/1552) Upgrading vte3 (0.78.2-r0 -> 0.84.1-r1)
+(1488/1552) Upgrading vte3-gtk4 (0.78.2-r0 -> 0.84.1-r1)
+(1489/1552) Upgrading dbus-dev (1.16.0-r0 -> 1.16.2-r3)
+(1490/1552) Upgrading at-spi2-core-dev (2.54.0-r0 -> 2.60.6-r0)
+(1491/1552) Upgrading libxcomposite-dev (0.4.6-r5 -> 0.4.7-r0)
+(1492/1552) Upgrading gtk+3.0-dev (3.24.43-r2 -> 3.24.52-r0)
+(1493/1552) Upgrading gtk4.0-dev (4.16.7-r0 -> 4.22.4-r0)
+(1494/1552) Upgrading vte3-dev (0.78.2-r0 -> 0.84.1-r1)
+(1495/1552) Upgrading vulkan-tools (1.3.296.0-r0 -> 1.4.360-r0)
+(1496/1552) Upgrading wavpack-libs (5.7.0-r0 -> 5.9.0-r0)
+(1497/1552) Upgrading wavpack (5.7.0-r0 -> 5.9.0-r0)
+(1498/1552) Upgrading wavpack-dev (5.7.0-r0 -> 5.9.0-r0)
+(1499/1552) Upgrading wayland-static (1.23.1-r0 -> 1.26.0-r0)
+(1500/1552) Upgrading wget (1.25.0-r0 -> 1.25.0-r3)
+(1501/1552) Upgrading wolfssl (5.7.4-r0 -> 5.9.2-r0)
+(1502/1552) Upgrading wolfssl-dev (5.7.4-r0 -> 5.9.2-r0)
+(1503/1552) Upgrading pcsc-lite-libs (2.3.1-r0 -> 2.5.1-r0)
+(1504/1552) Upgrading wpa_supplicant (2.10-r11 -> 2.11-r4)
+(1505/1552) Upgrading x264 (0.164.3108-r0 -> 0.164.3108-r1)
+(1506/1552) Upgrading x264-dev (0.164.3108-r0 -> 0.164.3108-r1)
+(1507/1552) Upgrading x265 (3.6-r0 -> 4.1-r0)
+(1508/1552) Upgrading x265-dev (3.6-r0 -> 4.1-r0)
+(1509/1552) Upgrading util-macros (1.20.1-r0 -> 1.20.2-r0)
+(1510/1552) Upgrading iproute2-minimal (6.12.0-r1 -> 7.2.0-r0)
+(1511/1552) Upgrading iproute2-ss (6.12.0-r1 -> 7.2.0-r0)
+(1512/1552) Upgrading iproute2 (6.12.0-r1 -> 7.2.0-r0)
+(1513/1552) Upgrading logrotate (3.21.0-r1 -> 3.22.0-r0)
+  Executing logrotate-3.22.0-r0.post-upgrade
+(1514/1552) Upgrading xen (4.19.1-r0 -> 4.22.0-r0)
+(1515/1552) Upgrading xen-pyc (4.19.1-r0 -> 4.22.0-r0)
+(1516/1552) Upgrading dev86 (0.16.21-r3 -> 0.16.21-r4)
+(1517/1552) Upgrading e2fsprogs-dev (1.47.1-r1 -> 1.47.4-r0)
+(1518/1552) Upgrading perl-utils (5.40.0-r3 -> 5.44.0-r0)
+(1519/1552) Upgrading perl-dev (5.40.0-r3 -> 5.44.0-r0)
+(1520/1552) Installing py3-distlib (0.4.3-r0)
+(1521/1552) Installing py3-distlib-pyc (0.4.3-r0)
+(1522/1552) Upgrading py3-setuptools (70.3.0-r0 -> 84.0.0-r0)
+(1523/1552) Upgrading py3-setuptools-pyc (70.3.0-r0 -> 84.0.0-r0)
+(1524/1552) Upgrading xen-dev (4.19.1-r0 -> 4.22.0-r0)
+(1525/1552) Upgrading seabios-bin (1.16.3-r0 -> 1.17.0-r0)
+(1526/1552) Upgrading xen-qemu (4.19.1-r0 -> 4.22.0-r0)
+(1527/1552) Upgrading inih (58-r0 -> 62-r0)
+(1528/1552) Upgrading xfsprogs (6.10.1-r0 -> 7.1.1-r1)
+(1529/1552) Upgrading xfsprogs-libs (6.10.1-r0 -> 7.1.1-r1)
+(1530/1552) Upgrading xfsprogs-dev (6.10.1-r0 -> 7.1.1-r1)
+(1531/1552) Upgrading xxd (9.1.0936-r0 -> 9.2.1091-r0)
+(1532/1552) Upgrading xxhash (0.8.2-r2 -> 0.8.3-r1)
+(1533/1552) Upgrading xxhash-dev (0.8.2-r2 -> 0.8.3-r1)
+(1534/1552) Upgrading xz-static (5.6.3-r0 -> 5.8.4-r0)
+(1535/1552) Installing llvm21-libs (21.1.8-r1)
+(1536/1552) Installing clang21-libs (21.1.8-r3)
+(1537/1552) Installing lld21-libs (21.1.8-r1)
+(1538/1552) Upgrading zig (0.13.0-r1 -> 0.16.0-r1)
+  Executing zig-0.16.0-r1.pre-upgrade
+(1539/1552) Upgrading zlib-static (1.3.1-r2 -> 1.3.2-r0)
+(1540/1552) Upgrading zstd-static (1.5.6-r2 -> 1.5.7-r2)
+(1541/1552) Purging clang18-libs (18.1.8-r2)
+(1542/1552) Purging guile-libs (3.0.9-r1)
+(1543/1552) Purging gc (8.2.8-r0)
+(1544/1552) Purging giflib (5.2.2-r0)
+(1545/1552) Purging libcamera-ipa (0.3.2-r0)
+(1546/1552) Purging libcamera (0.3.2-r0)
+(1547/1552) Purging libnice (0.1.22-r0)
+(1548/1552) Purging lld18-libs (18.1.8-r0)
+(1549/1552) Purging llvm18-libs (18.1.8-r1)
+(1550/1552) Purging llvm19-libs (19.1.6-r0)
+(1551/1552) Purging mesa-glapi (24.3.2-r1)
+(1552/1552) Purging sdl2_ttf (2.22.0-r0)
+Executing busybox-1.38.0-r6.trigger
+Executing fontconfig-2.18.1-r0.trigger
+Executing glib-2.88.3-r0.trigger
+Executing shared-mime-info-2.4-r7.trigger
+Executing gdk-pixbuf-2.44.7-r1.trigger
+Executing gtk+3.0-3.24.52-r0.trigger
+Executing gtk-update-icon-cache-3.24.52-r0.trigger
+Executing ca-certificates-20260611-r0.trigger
+Executing dbus-1.16.2-r3.trigger
+Executing desktop-file-utils-0.28-r0.trigger
+Executing eudev-3.2.14-r8.trigger
+Executing postgresql-common-1.3-r1.trigger
+* pg_versions: WARN: /usr/bin/pg_config exists and it's not a symlink!
+* pg_versions: WARN: /usr/bin/pg_config exists and it's not a symlink!
+* 
+* You are using 'postgresql16'. It's recommended to upgrade to the latest
+* major version provided by package 'postgresql18'.
+* Use command 'pg_versions' to switch between versions.
+* 
+OK: 9.9 GiB in 1691 packages
+(1/2) Installing chafa-libs (1.18.2-r1)
+(2/2) Installing chafa-dev (1.18.2-r1)
+OK: 9.9 GiB in 1693 packages
+(1/2) Installing dconf (0.49.0-r1)
+(2/2) Installing dconf-dev (0.49.0-r1)
+Executing busybox-1.38.0-r6.trigger
+Executing glib-2.88.3-r0.trigger
+OK: 9.9 GiB in 1695 packages
+OK: 9.9 GiB in 1695 packages
+(1/3) Installing ddcutil (2.2.7-r1)
+(2/3) Installing ddcutil-dev (2.2.7-r1)
+(3/3) Installing ddcutil-udev (2.2.7-r1)
+Executing busybox-1.38.0-r6.trigger
+Executing eudev-3.2.14-r8.trigger
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+OK: 9.9 GiB in 1698 packages
+(1/3) Installing libxfce4util (4.20.1-r0)
+(2/3) Installing xfconf (4.20.0-r2)
+(3/3) Installing xfconf-dev (4.20.0-r2)
+Executing busybox-1.38.0-r6.trigger
+Executing glib-2.88.3-r0.trigger
+OK: 9.9 GiB in 1701 packages
+OK: 9.9 GiB in 1701 packages
+-- The C compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Build for system processor: amd64
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found PkgConfig: /usr/bin/pkg-config (found version "3.0.7")
+-- Looking for linux/version.h
+-- Looking for linux/version.h - found
+-- Build type: Release
+-- Threads type: pthread
+-- MUSL libc detected
+-- Enabling LTO
+-- Target dirs: ROOT="" USR="/usr" HOME="/home" ETC="/etc"
+-- Found Python: /usr/bin/python3.14 (found version "3.14.7") found components: Interpreter
+-- Minifying 'help.json'
+-- Generating 'fastfetch.1'
+-- Looking for pipe2
+-- Looking for pipe2 - found
+-- Looking for memrchr
+-- Looking for memrchr - found
+-- Performing Test COMPILER_SUPPORTS_COUNT_OF
+-- Performing Test COMPILER_SUPPORTS_COUNT_OF - Failed
+-- C2Y _Countof is NOT supported by the compiler
+-- Performing Test COMPILER_SUPPORTS_C23
+-- Performing Test COMPILER_SUPPORTS_C23 - Success
+-- Performing Test COMPILER_SUPPORTS_AUTO
+-- Performing Test COMPILER_SUPPORTS_AUTO - Success
+-- Looking for malloc_usable_size
+-- Looking for malloc_usable_size - found
+-- Library: found VULKAN by pkg-config
+-- Library: found WAYLAND by pkg-config
+-- Library: found XCB_RANDR by pkg-config
+-- Library: found XRANDR by pkg-config
+-- Library: found DRM by pkg-config
+-- Library: found VADRM by pkg-config
+-- Library: found VAX11 by pkg-config
+-- Library: found VDPAU by pkg-config
+-- Library: found GIO by pkg-config
+-- Library: found DCONF by pkg-config
+-- Library: missing: EET
+-- Library: found DBUS by pkg-config
+-- Library: found SQLITE3 by pkg-config
+-- Library: missing: RPM
+-- Library: found IMAGEMAGICK7 by pkg-config
+-- Library: missing: IMAGEMAGICK6
+-- Library: found ZLIB by pkg-config
+-- Library: found CHAFA by pkg-config
+-- Library: found EGL by pkg-config
+-- Library: found GLX by pkg-config
+-- Library: found OPENCL by pkg-config
+-- Library: found PULSE by pkg-config
+-- Library: found DDCUTIL by pkg-config
+-- Library: found ELF by pkg-config
+-- Library: missing: QUICKJS
+-- Library: missing: LUA
+-- Looking for linux/videodev2.h
+-- Looking for linux/videodev2.h - found
+-- Looking for utmpx.h
+-- Looking for utmpx.h - found
+-- Looking for wordexp.h
+-- Looking for wordexp.h - found
+-- wordexp.h found, wordexp support enabled
+-- Looking for pthread_np.h
+-- Looking for pthread_np.h - not found
+-- Looking for pthread_timedjoin_np
+-- Looking for pthread_timedjoin_np - found
+-- Disabled package managers: WINGET
+-- Configuring done (3.4s)
+-- Generating done (0.1s)
+-- Build files have been written to: /tmp/tmp.iMyzvRFOMH/fastfetch/STATIC_BUILD
+[1/2] Re-checking globbed directories...
+[1/239] Building C object CMakeFiles/flashfetch.dir/src/flashfetch.c.o
+[2/239] Building C object CMakeFiles/fastfetch.dir/src/fastfetch.c.o
+[3/239] Building C object CMakeFiles/libfastfetch.dir/src/3rdparty/yyjson/yyjson.c.o
+[4/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/wcwidth.c.o
+[5/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/gpu/gpu_mthreads.c.o
+[6/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/gpu/gpu_nvidia.c.o
+[7/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/camera/camera_linux.c.o
+[8/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/wmtheme/wmtheme_linux.c.o
+[9/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/de/de_linux.c.o
+[10/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/wm/wm_linux.c.o
+[11/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/wifi/wifi_linux.c.o
+[12/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/wallpaper/wallpaper_linux.c.o
+[13/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/users/users_linux.c.o
+[14/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/uptime/uptime_linux.c.o
+[15/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/tpm/tpm_linux.c.o
+[16/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/top/top_linux.c.o
+[17/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/theme/theme_linux.c.o
+[18/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/terminalsize/terminalsize_linux.c.o
+[19/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/terminalshell/terminalshell_linux.c.o
+[20/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/terminalfont/terminalfont_linux.c.o
+[21/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/swap/swap_linux.c.o
+[22/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/sound/sound_linux.c.o
+[23/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/gtk_qt/qt.c.o
+[24/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/processes/processes_linux.c.o
+[25/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/poweradapter/poweradapter_linux.c.o
+[26/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/packages/packages_nix.c.o
+[27/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/packages/packages_linux.c.o
+[28/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/os/os_linux.c.o
+[29/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/opengl/opengl_linux.c.o
+[30/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/netio/netio_linux.c.o
+[31/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/mouse/mouse_linux.c.o
+[32/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/memory/memory_linux.c.o
+[33/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/media/media_linux.c.o
+[34/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/gamepad/gamepad_linux.c.o
+[35/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/localip/localip_linux.c.o
+[36/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/locale/locale_linux.c.o
+[37/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/loadavg/loadavg_linux.c.o
+[38/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/lm/lm_linux.c.o
+[39/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/libc/libc_linux.c.o
+[40/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/keyboard/keyboard_linux.c.o
+[41/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/initsystem/initsystem_linux.c.o
+[42/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/icons/icons_linux.c.o
+[43/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/host/host_linux.c.o
+[44/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/gtk_qt/gtk.c.o
+[45/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/gpu/gpu_windows.c.o
+[46/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/gpu/gpu_pci.c.o
+[47/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/gpu/gpu_drm.c.o
+[48/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/gpu/gpu_linux.c.o
+[49/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/font/font_linux.c.o
+[50/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/xlib.c.o
+[51/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/xcb.c.o
+[52/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/wmde.c.o
+[53/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/wayland/xdg-output-unstable-v1-protocol.c.o
+[54/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/wayland/kde-output-device-v2-protocol.c.o
+[55/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/wayland/kde-output.c.o
+[56/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/wayland/wp-color-management-v1-protocol.c.o
+[57/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/wayland/wl-output-protocol.c.o
+[58/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/wayland/global-output.c.o
+[59/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/wayland/wayland.c.o
+[60/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/drm.c.o
+[61/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/common.c.o
+[62/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/linux/displayserver_linux.c.o
+[63/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/diskio/diskio_linux.c.o
+[64/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/physicalmemory/physicalmemory_linux.c.o
+[65/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/physicaldisk/physicaldisk_linux.c.o
+[66/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/dns/dns_linux.c.o
+[67/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/disk/disk_linux.c.o
+[68/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/bluetoothradio/bluetoothradio_linux.c.o
+[69/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/bluetooth/bluetooth_linux.c.o
+[70/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/cursor/cursor_linux.c.o
+[71/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/cpuusage/cpuusage_linux.c.o
+[72/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/cpucache/cpucache_linux.c.o
+[73/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/cpu/cpu_linux.c.o
+[74/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/codec/codec_linux.c.o
+[75/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/chassis/chassis_linux.c.o
+[76/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/btrfs/btrfs_linux.c.o
+[77/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/brightness/brightness_linux.c.o
+[78/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/bootmgr/bootmgr_linux.c.o
+[79/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/board/board_linux.c.o
+[80/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/bios/bios_linux.c.o
+[81/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/battery/battery_linux.c.o
+[82/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/kmod_linux.c.o
+[83/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/binary_linux.c.o
+[84/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/FFPlatform_unix.c.o
+[85/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/processing_linux.c.o
+[86/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/networking_linux.c.o
+[87/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/netif_linux.c.o
+[88/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/io_unix.c.o
+[89/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/dbus.c.o
+[90/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/zpool/zpool.c.o
+[91/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/wmtheme/wmtheme.c.o
+[92/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/wm/wm.c.o
+[93/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/wifi/wifi.c.o
+[94/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/weather/weather.c.o
+[95/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/wallpaper/wallpaper.c.o
+[96/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/vulkan/vulkan.c.o
+[97/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/version/version.c.o
+[98/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/users/users.c.o
+[99/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/uptime/uptime.c.o
+[100/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/tpm/tpm.c.o
+[101/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/top/top.c.o
+[102/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/title/title.c.o
+[103/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/theme/theme.c.o
+[104/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/terminaltheme/terminaltheme.c.o
+[105/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/terminalsize/terminalsize.c.o
+[106/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/terminalfont/terminalfont.c.o
+[107/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/terminal/terminal.c.o
+[108/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/swap/swap.c.o
+[109/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/sound/sound.c.o
+[110/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/shell/shell.c.o
+[111/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/separator/separator.c.o
+[112/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/publicip/publicip.c.o
+[113/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/processes/processes.c.o
+[114/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/poweradapter/poweradapter.c.o
+[115/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/player/player.c.o
+[116/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/physicalmemory/physicalmemory.c.o
+[117/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/physicaldisk/physicaldisk.c.o
+[118/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/packages/packages.c.o
+[119/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/os/os.c.o
+[120/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/opengl/opengl.c.o
+[121/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/opencl/opencl.c.o
+[122/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/netio/netio.c.o
+[123/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/mouse/mouse.c.o
+[124/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/monitor/monitor.c.o
+[125/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/memory/memory.c.o
+[126/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/media/media.c.o
+[127/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/logo/logo.c.o
+[128/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/localip/localip.c.o
+[129/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/locale/locale.c.o
+[130/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/loadavg/loadavg.c.o
+[131/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/lm/lm.c.o
+[132/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/keyboard/keyboard.c.o
+[133/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/kernel/kernel.c.o
+[134/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/initsystem/initsystem.c.o
+[135/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/icons/icons.c.o
+[136/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/host/host.c.o
+[137/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/gpu/gpu.c.o
+[138/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/gamepad/gamepad.c.o
+[139/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/font/font.c.o
+[140/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/editor/editor.c.o
+[141/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/dns/dns.c.o
+[142/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/display/display.c.o
+[143/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/diskio/diskio.c.o
+[144/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/disk/disk.c.o
+[145/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/de/de.c.o
+[146/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/datetime/datetime.c.o
+[147/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/custom/custom.c.o
+[148/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/cursor/cursor.c.o
+[149/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/cpuusage/cpuusage.c.o
+[150/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/cpucache/cpucache.c.o
+[151/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/cpu/cpu.c.o
+[152/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/command/command.c.o
+[153/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/colors/colors.c.o
+[154/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/codec/codec.c.o
+[155/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/chassis/chassis.c.o
+[156/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/camera/camera.c.o
+[157/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/btrfs/btrfs.c.o
+[158/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/brightness/brightness.c.o
+[159/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/break/break.c.o
+[160/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/bootmgr/bootmgr.c.o
+[161/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/board/board.c.o
+[162/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/bluetoothradio/bluetoothradio.c.o
+[163/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/bluetooth/bluetooth.c.o
+[164/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/bios/bios.c.o
+[165/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/battery/battery.c.o
+[166/239] Building C object CMakeFiles/libfastfetch.dir/src/options/general.c.o
+[167/239] Building C object CMakeFiles/libfastfetch.dir/src/options/logo.c.o
+[168/239] Building C object CMakeFiles/libfastfetch.dir/src/options/display.c.o
+[169/239] Building C object CMakeFiles/libfastfetch.dir/src/modules/modules.c.o
+[170/239] Building C object CMakeFiles/libfastfetch.dir/src/logo/logo.c.o
+[171/239] Building C object CMakeFiles/libfastfetch.dir/src/logo/image/sixel.c.o
+[172/239] Building C object CMakeFiles/libfastfetch.dir/src/logo/image/image.c.o
+[173/239] Building C object CMakeFiles/libfastfetch.dir/src/logo/image/im7.c.o
+[174/239] Building C object CMakeFiles/libfastfetch.dir/src/logo/image/im6.c.o
+[175/239] Building C object CMakeFiles/libfastfetch.dir/src/logo/builtin.c.o
+[176/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/zpool/zpool.c.o
+[177/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/weather/weather.c.o
+[178/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/vulkan/vulkan.c.o
+[179/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/version/version.c.o
+[180/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/terminalshell/terminalshell.c.o
+[181/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/terminalfont/terminalfont.c.o
+[182/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/top/top.c.o
+[183/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/terminaltheme/terminaltheme.c.o
+[184/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/publicip/publicip.c.o
+[185/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/physicalmemory/physicalmemory.c.o
+[186/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/packages/packages.c.o
+[187/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/os/os.c.o
+[188/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/opengl/opengl_shared.c.o
+[189/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/opencl/opencl.c.o
+[190/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/netio/netio.c.o
+[191/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/media/media.c.o
+[192/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/host/host_mac.c.o
+[193/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/gpu/gpu.c.o
+[194/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/font/font.c.o
+[195/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/editor/editor.c.o
+[196/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/displayserver/displayserver.c.o
+[197/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/diskio/diskio.c.o
+[198/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/disk/disk.c.o
+[199/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/command/command.c.o
+[200/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/cpuusage/cpuusage.c.o
+[201/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/cpu/cpu_x86.c.o
+[202/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/cpu/cpu.c.o
+[203/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/codec/codec_vulkan.c.o
+[204/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/codec/codec.c.o
+[205/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/chassis/chassis.c.o
+[206/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/bootmgr/bootmgr.c.o
+[207/239] Building C object CMakeFiles/libfastfetch.dir/src/detection/bluetoothradio/bluetoothradio.c.o
+[208/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/strutil.c.o
+[209/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/smbios.c.o
+[210/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/FFPlatform.c.o
+[211/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/path.c.o
+[212/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/FFstrbuf.c.o
+[213/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/FFlist.c.o
+[214/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/base64.c.o
+[215/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/edidHelper.c.o
+[216/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/time.c.o
+[217/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/temps.c.o
+[218/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/size.c.o
+[219/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/settings.c.o
+[220/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/properties.c.o
+[221/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/printing.c.o
+[222/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/percent.c.o
+[223/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/parsing.c.o
+[224/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/option.c.o
+[225/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/networking_common.c.o
+[226/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/netif.c.o
+[227/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/lua.c.o
+[228/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/library.c.o
+[229/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/jsonconfig.c.o
+[230/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/init.c.o
+[231/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/genconfig.c.o
+[232/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/frequency.c.o
+[233/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/format.c.o
+[234/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/font.c.o
+[235/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/duration.c.o
+[236/239] Building C object CMakeFiles/libfastfetch.dir/src/common/impl/commandoption.c.o
+[237/239] Linking C executable flashfetch
+[238/239] Linking C executable fastfetch
+[239/239] Run CPack packaging tool...
+CPack: Create package using TGZ
+CPack: Install projects
+CPack: - Install project: fastfetch []
+CPack: Create package
+CPack: - package: /tmp/tmp.iMyzvRFOMH/fastfetch/STATIC_BUILD/fastfetch-musl-amd64.tar.gz generated.
+CPack: Create package using ZIP
+CPack: Install projects
+CPack: - Install project: fastfetch []
+CPack: Create package
+CPack: - package: /tmp/tmp.iMyzvRFOMH/fastfetch/STATIC_BUILD/fastfetch-musl-amd64.zip generated.
+/home/runner/work/_temp/toolpacks/00JZbUL_linux_x86_64/fastfetch
+/home/runner/work/_temp/toolpacks/00JZbUL_linux_x86_64/flashfetch
+./fastfetch: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, not stripped
+d353155811c405fdd9e86236a40fe3e134aac64d28bf017225b0197ed7d349a9  ./fastfetch
+ca95a34ab698d47f0e09ff639a59d60d78962785e49bce46c64aa58dc16663d2  ./fastfetch
+2.8M	./fastfetch
+./flashfetch: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, not stripped
+df74780cd31b53c32a9e334c1ad2e2bd3e1b24361a6482b266a6c4fac30432e9  ./flashfetch
+0d6d44b386d1bfe78366d8fb7b210f40f2f5232110492734a1062e1e60e2fd44  ./flashfetch
+1.7M	./flashfetch
+sending incremental file list
+./
+fastfetch
+flashfetch
+
+sent 4,654,309 bytes  received 57 bytes  9,308,732.00 bytes/sec
+total size is 4,653,000  speedup is 1.00
+cannot attach stdin to a TTY-enabled container because stdin is not a terminal
+cannot attach stdin to a TTY-enabled container because stdin is not a terminal
+alpine-builder
+alpine-builder

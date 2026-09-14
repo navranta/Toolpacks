@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) jq :: https://github.com/jqlang/jq [Monday, 2026-09-14 (06:49:19 PM) UTC]
+
+https://github.com/jqlang/jq/releases/download/jq-1.8.2/jq-linux-amd64
+Downloading 100% [==========================] (2.2/2.2 MB, 45.237 MB/s)
+Extracted `jq-linux-amd64` to `/home/runner/work/_temp/toolpack_x86_64/jq`

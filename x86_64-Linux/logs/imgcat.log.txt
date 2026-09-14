@@ -1,0 +1,149 @@
+
+
+ [+] (Building | Fetching) imgcat :: https://github.com/danielgatis/imgcat [Monday, 2026-09-14 (06:48:23 PM) UTC]
+
+go: downloading go1.25.0 (linux/amd64)
+go: downloading github.com/creack/pty v1.1.24
+go: downloading github.com/disintegration/imaging v1.6.2
+go: downloading github.com/gabriel-vasile/mimetype v1.4.8
+go: downloading github.com/mat/besticon v3.12.0+incompatible
+go: downloading github.com/mattn/go-isatty v0.0.20
+go: downloading golang.org/x/image v0.42.0
+go: downloading golang.org/x/sys v0.46.0
+go: downloading golang.org/x/net v0.48.0
+internal/goarch
+internal/unsafeheader
+internal/byteorder
+internal/coverage/rtcov
+internal/cpu
+internal/abi
+internal/godebugs
+internal/goexperiment
+internal/goos
+internal/profilerecord
+internal/runtime/atomic
+internal/runtime/math
+internal/runtime/strconv
+internal/bytealg
+internal/chacha8rand
+internal/runtime/syscall
+internal/runtime/exithook
+internal/runtime/gc
+internal/runtime/cgroup
+internal/asan
+internal/msan
+internal/runtime/sys
+internal/stringslite
+internal/trace/tracev2
+sync/atomic
+math/bits
+unicode
+unicode/utf8
+encoding
+internal/race
+internal/synctest
+cmp
+internal/runtime/maps
+internal/sync
+internal/itoa
+math
+image/color
+image/color/palette
+golang.org/x/net/html/atom
+log/internal
+runtime
+iter
+internal/reflectlite
+sync
+maps
+slices
+errors
+sort
+internal/bisect
+internal/testlog
+io
+strconv
+internal/oserror
+path
+internal/godebug
+syscall
+bytes
+strings
+hash
+reflect
+hash/adler32
+hash/crc32
+internal/saferio
+encoding/base64
+bufio
+runtime/cgo
+image
+time
+internal/syscall/unix
+internal/syscall/execenv
+image/internal/imageutil
+image/draw
+io/fs
+internal/poll
+internal/filepathlite
+context
+internal/fmtsort
+os
+encoding/binary
+image/jpeg
+golang.org/x/image/vp8
+golang.org/x/image/bmp
+golang.org/x/image/ccitt
+golang.org/x/sys/unix
+golang.org/x/image/vp8l
+fmt
+path/filepath
+io/ioutil
+golang.org/x/image/riff
+golang.org/x/image/webp
+os/exec
+os/signal
+github.com/creack/pty
+golang.org/x/image/tiff/lzw
+compress/flate
+flag
+compress/lzw
+image/gif
+encoding/xml
+compress/zlib
+golang.org/x/image/tiff
+image/png
+golang.org/x/net/html
+github.com/disintegration/imaging
+debug/dwarf
+encoding/csv
+github.com/gabriel-vasile/mimetype/internal/json
+mime
+github.com/gabriel-vasile/mimetype/internal/charset
+github.com/mat/besticon/ico
+github.com/mattn/go-isatty
+log
+debug/macho
+github.com/gabriel-vasile/mimetype/internal/magic
+github.com/gabriel-vasile/mimetype
+github.com/danielgatis/imgcat
+sending incremental file list
+imgcat
+
+sent 3,356,627 bytes  received 35 bytes  6,713,324.00 bytes/sec
+total size is 3,355,712  speedup is 1.00
+/build-bins/imgcat: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
+3.3M	/build-bins/imgcat
+/home/runner/work/_temp/toolpacks/FdXnhH6_linux_x86_64/imgcat
+./imgcat: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
+c1f46ec87751ae6332d8440bdc44b961b7f4ef8b98f3c84b16e10f57d2f30b9f  ./imgcat
+cae633ca8a004436654449d6273c91e0dcdc97ece53e48f942d9ffe1ac0b43d6  ./imgcat
+3.3M	./imgcat
+sending incremental file list
+./
+imgcat
+
+sent 3,356,543 bytes  received 38 bytes  6,713,162.00 bytes/sec
+total size is 3,355,608  speedup is 1.00
+alpine-builder
+alpine-builder

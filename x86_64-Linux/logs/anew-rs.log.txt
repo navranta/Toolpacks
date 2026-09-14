@@ -1,0 +1,50 @@
+
+
+ [+] (Building | Fetching) anew-rs :: https://github.com/zer0yu/anew [Monday, 2026-09-14 (06:21:21 PM) UTC]
+
+info: downloading component rust-std
+    Updating crates.io index
+     Locking 24 packages to latest compatible versions
+ Downloading crates ...
+  Downloaded anstyle-parse v1.0.0
+  Downloaded colorchoice v1.0.5
+  Downloaded clap_lex v1.1.0
+  Downloaded equivalent v1.0.2
+  Downloaded anstream v1.0.0
+  Downloaded anstyle-query v1.1.5
+  Downloaded heck v0.5.0
+  Downloaded is_terminal_polyfill v1.70.2
+  Downloaded anstyle v1.0.14
+  Downloaded strsim v0.11.1
+  Downloaded utf8parse v0.2.2
+  Downloaded quote v1.0.47
+  Downloaded clap_derive v4.6.4
+  Downloaded unicode-ident v1.0.24
+  Downloaded proc-macro2 v1.0.107
+  Downloaded clap v4.6.6
+  Downloaded indexmap v2.14.2
+  Downloaded hashbrown v0.17.1
+  Downloaded clap_builder v4.6.6
+  Downloaded syn v3.0.5
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.47
+   Compiling utf8parse v0.2.2
+   Compiling anstyle-query v1.1.5
+   Compiling anstyle-parse v1.0.0
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling anstyle v1.0.14
+   Compiling colorchoice v1.0.5
+   Compiling clap_lex v1.1.0
+   Compiling anstream v1.0.0
+   Compiling strsim v0.11.1
+   Compiling heck v0.5.0
+   Compiling clap_builder v4.6.6
+   Compiling hashbrown v0.17.1
+   Compiling equivalent v1.0.2
+   Compiling indexmap v2.14.2
+   Compiling syn v3.0.5
+   Compiling clap_derive v4.6.4
+   Compiling clap v4.6.6
+   Compiling anew v0.1.4 (/home/runner/work/_temp/toolpacks/xljv97O_linux_x86_64/anew)
+    Finished `release` profile [optimized] target(s) in 17.38s

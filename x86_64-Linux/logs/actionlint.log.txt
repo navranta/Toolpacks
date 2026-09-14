@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) actionlint :: https://github.com/rhysd/actionlint [Monday, 2026-09-14 (06:18:53 PM) UTC]
+
+https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz
+Downloading 100% [==========================] (2.2/2.2 MB, 42.723 MB/s)
+Extracted `actionlint` to `/home/runner/work/_temp/toolpack_x86_64/actionlint`

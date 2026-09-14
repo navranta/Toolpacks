@@ -1,0 +1,22 @@
+
+
+ [+] (Building | Fetching) zstd :: https://github.com/facebook/zstd [Monday, 2026-09-14 (07:52:01 PM) UTC]
+
+unpacking 'https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/%2A.tar.gz' into the Git cache...
+these 2 paths will be fetched (919.0 KiB download, 2.0 MiB unpacked):
+  /nix/store/2kdbrjq9x57fqwvs1zy0ljj1pajbsklc-gnugrep-static-x86_64-unknown-linux-musl-3.12
+  /nix/store/9qq843h2hf9qmax9j7bkc1qnflpfwmlf-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin
+copying path '/nix/store/2kdbrjq9x57fqwvs1zy0ljj1pajbsklc-gnugrep-static-x86_64-unknown-linux-musl-3.12' from 'https://cache.nixos.org'...
+copying path '/nix/store/9qq843h2hf9qmax9j7bkc1qnflpfwmlf-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin' from 'https://cache.nixos.org'...
+/nix/store/9qq843h2hf9qmax9j7bkc1qnflpfwmlf-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin
+sending incremental file list
+./
+unzstd
+zstd
+zstdcat
+zstdgrep
+zstdless
+zstdmt
+
+sent 4,452,236 bytes  received 133 bytes  8,904,738.00 bytes/sec
+total size is 4,450,800  speedup is 1.00

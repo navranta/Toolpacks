@@ -1,0 +1,101 @@
+
+
+ [+] (Building | Fetching) ripgen :: https://github.com/resyncgg/ripgen [Monday, 2026-09-14 (07:13:19 PM) UTC]
+
+info: syncing channel updates for 1.81.0-x86_64-unknown-linux-gnu
+info: latest update on 2024-09-05 for version 1.81.0 (eeb90cda1 2024-09-04)
+info: downloading 3 components
+
+  1.81.0-x86_64-unknown-linux-gnu installed - rustc 1.81.0 (eeb90cda1 2024-09-04)
+
+info: component rust-std is up to date
+warning: virtual workspace defaulting to `resolver = "1"` despite one or more workspace members being on edition 2021 which implies `resolver = "2"`
+note: to keep the current resolver, specify `workspace.resolver = "1"` in the workspace root's manifest
+note: to use the edition 2021 resolver, specify `workspace.resolver = "2"` in the workspace root's manifest
+note: for more details see https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions
+    Updating crates.io index
+    Updating crates.io index
+ Downgrading textwrap v0.16.4 -> v0.16.2
+note: pass `--verbose` to see 15 unchanged dependencies behind latest
+warning: virtual workspace defaulting to `resolver = "1"` despite one or more workspace members being on edition 2021 which implies `resolver = "2"`
+note: to keep the current resolver, specify `workspace.resolver = "1"` in the workspace root's manifest
+note: to use the edition 2021 resolver, specify `workspace.resolver = "2"` in the workspace root's manifest
+note: for more details see https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions
+ Downloading crates ...
+  Downloaded atty v0.2.14
+  Downloaded bitflags v1.3.2
+  Downloaded byteorder v1.5.0
+  Downloaded psl-types v2.0.11
+  Downloaded proc-macro-error-attr v1.0.4
+  Downloaded autocfg v1.5.1
+  Downloaded clap_derive v3.2.25
+  Downloaded proc-macro-error v1.0.4
+  Downloaded strsim v0.10.0
+  Downloaded thiserror-impl v1.0.69
+  Downloaded lazy_static v1.5.0
+  Downloaded version_check v0.9.5
+  Downloaded quote v1.0.47
+  Downloaded thiserror v1.0.69
+  Downloaded unicode-ident v1.0.24
+  Downloaded proc-macro2 v1.0.107
+  Downloaded indexmap v1.9.3
+  Downloaded memchr v2.8.3
+  Downloaded hashbrown v0.12.3
+  Downloaded aho-corasick v1.1.5
+  Downloaded os_str_bytes v6.6.1
+  Downloaded clap v3.2.25
+  Downloaded regex v1.13.1
+  Downloaded once_cell v1.21.4
+  Downloaded psl v2.1.232
+  Downloaded syn v1.0.109
+  Downloaded textwrap v0.16.2
+  Downloaded syn v2.0.119
+  Downloaded regex-syntax v0.8.11
+  Downloaded termcolor v1.4.1
+  Downloaded heck v0.4.1
+  Downloaded fxhash v0.2.1
+  Downloaded clap_lex v0.2.4
+  Downloaded anyhow v1.0.104
+  Downloaded addr v0.15.6
+  Downloaded regex-automata v0.4.18
+  Downloaded libc v0.2.189
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.24
+   Compiling version_check v0.9.5
+   Compiling syn v1.0.109
+   Compiling autocfg v1.5.1
+   Compiling memchr v2.8.3
+   Compiling proc-macro-error-attr v1.0.4
+   Compiling proc-macro-error v1.0.4
+   Compiling libc v0.2.189
+   Compiling indexmap v1.9.3
+   Compiling psl-types v2.0.11
+   Compiling regex-syntax v0.8.11
+   Compiling thiserror v1.0.69
+   Compiling syn v2.0.119
+   Compiling aho-corasick v1.1.5
+   Compiling psl v2.1.232
+   Compiling thiserror-impl v1.0.69
+   Compiling regex-automata v0.4.18
+   Compiling heck v0.4.1
+   Compiling os_str_bytes v6.6.1
+   Compiling hashbrown v0.12.3
+   Compiling byteorder v1.5.0
+   Compiling anyhow v1.0.104
+   Compiling fxhash v0.2.1
+   Compiling clap_derive v3.2.25
+   Compiling clap_lex v0.2.4
+   Compiling atty v0.2.14
+   Compiling termcolor v1.4.1
+   Compiling bitflags v1.3.2
+   Compiling textwrap v0.16.2
+   Compiling lazy_static v1.5.0
+   Compiling once_cell v1.21.4
+   Compiling regex v1.13.1
+   Compiling addr v0.15.6
+   Compiling strsim v0.10.0
+   Compiling ripgen_lib v0.1.4 (/home/runner/work/_temp/toolpacks/RdZBcH1_linux_x86_64/ripgen/ripgen_lib)
+   Compiling clap v3.2.25
+   Compiling ripgen v0.1.5 (/home/runner/work/_temp/toolpacks/RdZBcH1_linux_x86_64/ripgen/ripgen)
+    Finished `release` profile [optimized] target(s) in 46.87s

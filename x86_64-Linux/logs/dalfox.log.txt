@@ -1,0 +1,8 @@
+
+
+ [+] (Building | Fetching) dalfox :: https://github.com/hahwul/dalfox [Monday, 2026-09-14 (06:32:10 PM) UTC]
+
+https://github.com/hahwul/dalfox/releases/download/v3.2.2/dalfox-v3.2.2-linux-x86_64.tar.gz
+Downloading 100% [==========================] (5.8/5.8 MB, 92.962 MB/s)
+Checksum verified with dalfox-v3.2.2-linux-x86_64.tar.gz.sha256
+Extracted `dalfox-v3.2.2-linux-x86_64/dalfox` to `/home/runner/work/_temp/toolpack_x86_64/dalfox`

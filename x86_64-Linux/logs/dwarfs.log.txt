@@ -1,0 +1,9 @@
+
+
+ [+] (Building | Fetching) dwarfs :: https://github.com/mhx/dwarfs [Monday, 2026-09-14 (06:34:31 PM) UTC]
+
+https://github.com/mhx/dwarfs/releases/download/v0.15.7/dwarfs-universal-0.15.7-Linux-x86_64
+Downloading 100% [==========================] (2.5/2.5 MB, 53.006 MB/s)
+Extracted `dwarfs-universal-0.15.7-Linux-x86_64` to `/home/runner/work/_temp/toolpack_x86_64/dwarfs-tools`
+/home/runner/work/_temp/toolpack_x86_64/dwarfs-tools: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, stripped
+80K	/home/runner/work/_temp/toolpack_x86_64/dwarfs-tools

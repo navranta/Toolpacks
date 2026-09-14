@@ -1,0 +1,37 @@
+
+
+ [+] (Building | Fetching) husarnet :: https://github.com/husarnet/husarnet [Monday, 2026-09-14 (06:48:17 PM) UTC]
+
+https://github.com/ouch-org/ouch/releases/download/0.8.3/ouch-x86_64-unknown-linux-musl.tar.gz
+Downloading 100% [==========================] (2.7/2.7 MB, 44.044 MB/s)
+Extracted `ouch-x86_64-unknown-linux-musl/ouch` to `./ouch`
+https://install.husarnet.com/tar/husarnet-latest-amd64.tar
+Downloading   0% [                      ] (14 kB/13 MB, 91.471 kB/s) [0s:2m26s]                                                                               Downloading   0% [                     ] (42 kB/13 MB, 135.864 kB/s) [0s:1m38s]                                                                               Downloading   0% [                      ] (110 kB/13 MB, 237.908 kB/s) [0s:55s]                                                                               Downloading   1% [                      ] (190 kB/13 MB, 308.023 kB/s) [0s:42s]                                                                               Downloading   2% [                      ] (302 kB/13 MB, 308.023 kB/s) [0s:42s]                                                                               Downloading   3% [                      ] (462 kB/13 MB, 308.023 kB/s) [0s:42s]                                                                               Downloading   5% [>                     ] (686 kB/13 MB, 308.023 kB/s) [1s:41s]                                                                               Downloading   7% [>                     ] (990 kB/13 MB, 801.975 kB/s) [1s:15s]                                                                               Downloading  10% [=>                       ] (1.4/13 MB, 801.975 kB/s) [1s:14s]                                                                               Downloading  15% [==>                      ] (2.0/13 MB, 801.975 kB/s) [1s:14s]                                                                               Downloading  21% [====>                    ] (2.8/13 MB, 801.975 kB/s) [1s:13s]                                                                               Downloading  29% [=======>                    ] (3.9/13 MB, 2.117 MB/s) [1s:4s]                                                                               Downloading  42% [==========>                 ] (5.6/13 MB, 2.117 MB/s) [2s:3s]                                                                               Downloading  59% [===============>            ] (7.8/13 MB, 2.117 MB/s) [2s:2s]                                                                               Downloading  84% [=======================>     ] (11/13 MB, 2.117 MB/s) [2s:0s]                                                                               Downloading 100% [=============================] (13/13 MB, 5.597 MB/s)
+Extracted `husarnet-latest-amd64.tar` to `husarnet-latest-amd64.tar`
+[INFO] Directory "husarnet-latest-amd64" created
+[INFO] Directory "husarnet-latest-amd64/./usr" created
+[INFO] Directory "husarnet-latest-amd64/./usr/share" created
+[INFO] Directory "husarnet-latest-amd64/./usr/share/bash-completion" created
+[INFO] Directory "husarnet-latest-amd64/./usr/share/bash-completion/completions" created
+[INFO] extracted (572.00   B) "husarnet-latest-amd64/./usr/share/bash-completion/completions/husarnet"
+[INFO] Directory "husarnet-latest-amd64/./usr/bin" created
+[INFO] extracted (  2.48 MiB) "husarnet-latest-amd64/./usr/bin/husarnet-daemon"
+[INFO] extracted ( 11.24 MiB) "husarnet-latest-amd64/./usr/bin/husarnet"
+[INFO] Directory "husarnet-latest-amd64/./.scripts" created
+[INFO] extracted (237.00   B) "husarnet-latest-amd64/./.scripts/after_install"
+[INFO] extracted (389.00   B) "husarnet-latest-amd64/./.scripts/before_remove"
+[INFO] Successfully decompressed archive to "husarnet-latest-amd64"
+[INFO] Files unpacked: 12
+./build-bins/husarnet:        ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, Go BuildID=W_YgQqK5q4AgSDq_Tt-C/419v6o8zmscpfPqbng-z/4ihbQGEtmUVBCGsU17lw/4ZIY1kHrHXKvkAfSkwVx, stripped
+./build-bins/husarnet-daemon: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+7.6M	./build-bins/husarnet
+2.4M	./build-bins/husarnet-daemon
+sending incremental file list
+./
+husarnet
+         32,768   0%    0.00kB/s    0:00:00        7,945,832 100%    1.05GB/s    0:00:00 (xfr#1, to-chk=1/3)
+husarnet-daemon
+         32,768   1%    4.46MB/s    0:00:00        2,475,224 100%  236.06MB/s    0:00:00 (xfr#2, to-chk=0/3)
+
+sent 10,423,812 bytes  received 57 bytes  20,847,738.00 bytes/sec
+total size is 10,421,056  speedup is 1.00

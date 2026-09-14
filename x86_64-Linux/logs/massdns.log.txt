@@ -1,0 +1,6 @@
+
+
+ [+] (Building | Fetching) massdns :: https://github.com/blechschmidt/massdns [Monday, 2026-09-14 (06:52:15 PM) UTC]
+
+./bin/massdns: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+104K	./bin/massdns

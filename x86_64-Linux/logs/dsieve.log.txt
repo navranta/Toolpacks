@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) dsieve :: https://github.com/trickest/dsieve [Monday, 2026-09-14 (06:34:24 PM) UTC]
+
+https://github.com/trickest/dsieve/releases/download/v1.2.0/dsieve-1.2-linux-amd64.zip
+Downloading 100% [==========================] (2.1/2.1 MB, 43.460 MB/s)
+Extracted `dsieve-1.2-linux-amd64` to `/home/runner/work/_temp/toolpack_x86_64/dsieve`

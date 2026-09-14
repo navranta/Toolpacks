@@ -1,0 +1,21 @@
+
+
+ [+] (Building | Fetching) libarchive :: https://github.com/libarchive/libarchive [Monday, 2026-09-14 (06:50:27 PM) UTC]
+
+these 3 paths will be fetched (11.1 MiB download, 27.4 MiB unpacked):
+  /nix/store/i0gdagxbk8xfbdg7g3kadz3ixqj0171j-libarchive-static-x86_64-unknown-linux-musl-3.8.9
+  /nix/store/v1kdmwss580mgznjc6dsf8fh6yfh9zm7-libxml2-static-x86_64-unknown-linux-musl-2.15.3
+  /nix/store/9a8s5crx8vbw34kqk8ajljzqvrmv9fwz-openssl-static-x86_64-unknown-linux-musl-3.6.3-etc
+copying path '/nix/store/v1kdmwss580mgznjc6dsf8fh6yfh9zm7-libxml2-static-x86_64-unknown-linux-musl-2.15.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/9a8s5crx8vbw34kqk8ajljzqvrmv9fwz-openssl-static-x86_64-unknown-linux-musl-3.6.3-etc' from 'https://cache.nixos.org'...
+copying path '/nix/store/i0gdagxbk8xfbdg7g3kadz3ixqj0171j-libarchive-static-x86_64-unknown-linux-musl-3.8.9' from 'https://cache.nixos.org'...
+/nix/store/i0gdagxbk8xfbdg7g3kadz3ixqj0171j-libarchive-static-x86_64-unknown-linux-musl-3.8.9
+sending incremental file list
+./
+bsdcat
+bsdcpio
+bsdtar
+bsdunzip
+
+sent 26,539,222 bytes  received 95 bytes  53,078,634.00 bytes/sec
+total size is 26,532,488  speedup is 1.00

@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) cent :: https://github.com/xm1k3/cent [Monday, 2026-09-14 (06:24:17 PM) UTC]
+
+https://github.com/xm1k3/cent/releases/download/v2.2.0/cent_2.2.0_linux_amd64.zip
+Downloading 100% [==========================] (3.4/3.4 MB, 59.971 MB/s)
+Extracted `cent` to `/home/runner/work/_temp/toolpack_x86_64/cent`

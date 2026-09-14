@@ -1,0 +1,82 @@
+
+
+ [+] (Building | Fetching) cutlines :: https://github.com/pkgforge-security/cutlines [Monday, 2026-09-14 (06:31:58 PM) UTC]
+
+go: creating new go.mod: module github.com/pkgforge-security/cutlines
+go: to add module requirements and sums:
+	go mod tidy
+go: finding module for package github.com/dustin/go-humanize
+go: downloading github.com/dustin/go-humanize v1.0.1
+go: found github.com/dustin/go-humanize in github.com/dustin/go-humanize v1.0.1
+internal/goarch
+internal/unsafeheader
+internal/byteorder
+internal/cpu
+internal/coverage/rtcov
+internal/abi
+internal/godebugs
+internal/goexperiment
+internal/goos
+internal/profilerecord
+internal/runtime/atomic
+internal/runtime/syscall/linux
+internal/bytealg
+internal/chacha8rand
+math/bits
+internal/runtime/exithook
+internal/runtime/gc
+internal/runtime/sys
+internal/asan
+internal/strconv
+internal/msan
+internal/runtime/gc/scan
+internal/runtime/math
+internal/runtime/pprof/label
+internal/stringslite
+internal/race
+internal/trace/tracev2
+sync/atomic
+internal/runtime/maps
+internal/synctest
+unicode
+internal/sync
+internal/runtime/cgroup
+unicode/utf8
+encoding
+cmp
+math
+runtime
+iter
+internal/reflectlite
+sync
+slices
+internal/testlog
+internal/bisect
+errors
+sort
+io
+strconv
+internal/oserror
+path
+syscall
+reflect
+bytes
+strings
+internal/godebug
+regexp/syntax
+math/rand
+time
+internal/syscall/unix
+internal/syscall/execenv
+regexp
+io/fs
+internal/poll
+internal/fmtsort
+internal/filepathlite
+os
+io/ioutil
+fmt
+flag
+math/big
+github.com/dustin/go-humanize
+github.com/pkgforge-security/cutlines

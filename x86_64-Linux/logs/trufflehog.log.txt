@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) trufflehog :: https://github.com/trufflesecurity/trufflehog [Monday, 2026-09-14 (07:34:31 PM) UTC]
+
+https://github.com/trufflesecurity/trufflehog/releases/download/v3.97.4/trufflehog_3.97.4_linux_amd64.tar.gz
+Downloading  25% [=====>                    ] (8.6/33 MB, 132.091 MB/s) [0s:0s]                                                                               Downloading  72% [==================>        ] (24/33 MB, 185.584 MB/s) [0s:0s]                                                                               Downloading 100% [===========================] (33/33 MB, 239.025 MB/s)
+Extracted `trufflehog` to `/home/runner/work/_temp/toolpack_x86_64/trufflehog`

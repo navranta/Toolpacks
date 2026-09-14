@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) glow :: https://github.com/charmbracelet/glow [Monday, 2026-09-14 (06:45:19 PM) UTC]
+
+https://github.com/charmbracelet/glow/releases/download/v3.0.0/glow_3.0.0_Linux_x86_64.tar.gz
+Downloading  88% [=====================>    ] (5.7/6.5 MB, 87.737 MB/s) [0s:0s]                                                                               Downloading 100% [==========================] (6.5/6.5 MB, 94.856 MB/s)
+Extracted `glow_3.0.0_Linux_x86_64/glow` to `/home/runner/work/_temp/toolpack_x86_64/glow`

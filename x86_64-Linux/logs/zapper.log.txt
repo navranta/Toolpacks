@@ -1,0 +1,8 @@
+
+
+ [+] (Building | Fetching) zapper :: https://github.com/hackerschoice/zapper [Monday, 2026-09-14 (07:50:07 PM) UTC]
+
+./zapper: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+776K	./zapper
+./zapper-stealth: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+772K	./zapper-stealth

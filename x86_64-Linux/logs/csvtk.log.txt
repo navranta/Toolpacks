@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) csvtk :: https://github.com/shenwei356/csvtk [Monday, 2026-09-14 (06:31:16 PM) UTC]
+
+https://github.com/shenwei356/csvtk/releases/download/v0.37.0/csvtk_linux_amd64.tar.gz
+Downloading  54% [=============>            ] (5.3/9.6 MB, 81.018 MB/s) [0s:0s]                                                                               Downloading 100% [=========================] (9.6/9.6 MB, 111.804 MB/s)
+Extracted `csvtk` to `/home/runner/work/_temp/toolpack_x86_64/csvtk`

@@ -1,0 +1,94 @@
+
+
+ [+] (Building | Fetching) jc :: https://github.com/kellyjonbrazil/jc [Monday, 2026-09-14 (06:48:54 PM) UTC]
+
+https://github.com/kellyjonbrazil/jc/releases/download/v1.25.7/jc-1.25.7-linux-x86_64.tar.gz
+Downloading  20% [====>                      ] (5.3/26 MB, 81.157 MB/s) [0s:0s]                                                                               Downloading  38% [=========>                  ] (10/26 MB, 64.797 MB/s) [0s:0s]                                                                               Downloading  59% [===============>            ] (15/26 MB, 67.274 MB/s) [0s:0s]                                                                               Downloading  77% [====================>       ] (20/26 MB, 62.844 MB/s) [0s:0s]                                                                               Downloading  93% [=========================>  ] (24/26 MB, 61.877 MB/s) [0s:0s]                                                                               Downloading 100% [============================] (26/26 MB, 63.037 MB/s)
+Extracted `jc` to `./jc`
+INFO:root:Running StaticX version 0.14.2
+INFO:root:Libraries:
+INFO:root:  elftools: 0.33
+DEBUG:root:External tools:
+INFO:root:  ldd: /usr/bin/ldd: ldd (Ubuntu GLIBC 2.39-0ubuntu8.8) 2.39
+INFO:root:  objcopy: /usr/bin/objcopy: GNU objcopy (GNU Binutils for Ubuntu) 2.42
+INFO:root:  strip: /usr/bin/strip: GNU strip (GNU Binutils for Ubuntu) 2.42
+INFO:root:  patchelf: /home/runner/.local/bin/patchelf: patchelf 0.15.0
+DEBUG:root:Arguments:
+DEBUG:root:  prog:      './jc'
+DEBUG:root:  output:    '/home/runner/work/_temp/toolpack_x86_64/jc'
+DEBUG:root:  libs:      None
+DEBUG:root:  strip:     True
+DEBUG:root:  compress:  True
+DEBUG:root:  debug:     False
+INFO:root:Using XZ BCJ filter FILTER_X86
+DEBUG:root:Bootloader: 
+INFO:root:Program interpreter: /lib64/ld-linux-x86-64.so.2
+INFO:root:Stripping prog /tmp/staticx-prog-75vzyow8
+DEBUG:root:Running ['strip', '/tmp/staticx-prog-75vzyow8']
+DEBUG:root:Running ['patchelf', '--remove-rpath', '/tmp/staticx-prog-75vzyow8']
+DEBUG:root:Running ['patchelf', '--set-interpreter', 'iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', '--set-rpath', 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr', '--force-rpath', '/tmp/staticx-prog-75vzyow8']
+DEBUG:root:Running ['patchelf', '--no-default-lib', '/tmp/staticx-prog-75vzyow8']
+INFO:root:Stripping bootloader /tmp/staticx-output-64q781xr
+DEBUG:root:Running ['strip', '/tmp/staticx-output-64q781xr']
+INFO:root:Using PyInstaller version 6.22.3
+DEBUG:root:Program linked with GLIBC: Found libc.so.6 GLIBC_2.17
+DEBUG:root:Running ['patchelf', '--add-needed', 'libnssfix.so', '/tmp/staticx-prog-75vzyow8']
+INFO:root:Adding libnssfix.so
+DEBUG:root:Running ['ldd', '/tmp/libnssfix-za7vuut0.so']
+DEBUG:root:Ignoring synthetic library: linux-vdso.so.1
+INFO:root:Processing library libc.so.6 (/lib/x86_64-linux-gnu/libc.so.6)
+INFO:root:Copying /lib/x86_64-linux-gnu/libc.so.6 to /tmp/staticx-archive-0s4s49oo/libc.so.6
+INFO:root:Stripping library /tmp/staticx-archive-0s4s49oo/libc.so.6
+DEBUG:root:Running ['strip', '/tmp/staticx-archive-0s4s49oo/libc.so.6']
+INFO:root:Adding /tmp/staticx-archive-0s4s49oo/libc.so.6 as libc.so.6
+INFO:root:Processing library libnss_files.so.2 (/lib/x86_64-linux-gnu/libnss_files.so.2)
+INFO:root:Copying /lib/x86_64-linux-gnu/libnss_files.so.2 to /tmp/staticx-archive-0s4s49oo/libnss_files.so.2
+INFO:root:Stripping library /tmp/staticx-archive-0s4s49oo/libnss_files.so.2
+DEBUG:root:Running ['strip', '/tmp/staticx-archive-0s4s49oo/libnss_files.so.2']
+INFO:root:Adding /tmp/staticx-archive-0s4s49oo/libnss_files.so.2 as libnss_files.so.2
+INFO:root:Processing library libnss_dns.so.2 (/lib/x86_64-linux-gnu/libnss_dns.so.2)
+INFO:root:Copying /lib/x86_64-linux-gnu/libnss_dns.so.2 to /tmp/staticx-archive-0s4s49oo/libnss_dns.so.2
+INFO:root:Stripping library /tmp/staticx-archive-0s4s49oo/libnss_dns.so.2
+DEBUG:root:Running ['strip', '/tmp/staticx-archive-0s4s49oo/libnss_dns.so.2']
+INFO:root:Adding /tmp/staticx-archive-0s4s49oo/libnss_dns.so.2 as libnss_dns.so.2
+INFO:root:Processing library ld-linux-x86-64.so.2 (/lib64/ld-linux-x86-64.so.2)
+INFO:root:Copying /lib64/../lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 to /tmp/staticx-archive-0s4s49oo/ld-linux-x86-64.so.2
+INFO:root:Stripping library /tmp/staticx-archive-0s4s49oo/ld-linux-x86-64.so.2
+DEBUG:root:Running ['strip', '/tmp/staticx-archive-0s4s49oo/ld-linux-x86-64.so.2']
+INFO:root:Adding /tmp/staticx-archive-0s4s49oo/ld-linux-x86-64.so.2 as ld-linux-x86-64.so.2
+INFO:root:Adding /tmp/staticx-prog-75vzyow8 as jc
+DEBUG:root:Running ['ldd', './jc']
+DEBUG:root:Ignoring synthetic library: linux-vdso.so.1
+INFO:root:Processing library libdl.so.2 (/lib/x86_64-linux-gnu/libdl.so.2)
+INFO:root:Copying /lib/x86_64-linux-gnu/libdl.so.2 to /tmp/staticx-archive-0s4s49oo/libdl.so.2
+INFO:root:Stripping library /tmp/staticx-archive-0s4s49oo/libdl.so.2
+DEBUG:root:Running ['strip', '/tmp/staticx-archive-0s4s49oo/libdl.so.2']
+INFO:root:Adding /tmp/staticx-archive-0s4s49oo/libdl.so.2 as libdl.so.2
+INFO:root:Processing library libm.so.6 (/lib/x86_64-linux-gnu/libm.so.6)
+INFO:root:Copying /lib/x86_64-linux-gnu/libm.so.6 to /tmp/staticx-archive-0s4s49oo/libm.so.6
+INFO:root:Stripping library /tmp/staticx-archive-0s4s49oo/libm.so.6
+DEBUG:root:Running ['strip', '/tmp/staticx-archive-0s4s49oo/libm.so.6']
+INFO:root:Adding /tmp/staticx-archive-0s4s49oo/libm.so.6 as libm.so.6
+INFO:root:Processing library libpthread.so.0 (/lib/x86_64-linux-gnu/libpthread.so.0)
+INFO:root:Copying /lib/x86_64-linux-gnu/libpthread.so.0 to /tmp/staticx-archive-0s4s49oo/libpthread.so.0
+INFO:root:Stripping library /tmp/staticx-archive-0s4s49oo/libpthread.so.0
+DEBUG:root:Running ['strip', '/tmp/staticx-archive-0s4s49oo/libpthread.so.0']
+INFO:root:Adding /tmp/staticx-archive-0s4s49oo/libpthread.so.0 as libpthread.so.0
+INFO:root:Processing library libutil.so.1 (/lib/x86_64-linux-gnu/libutil.so.1)
+INFO:root:Copying /lib/x86_64-linux-gnu/libutil.so.1 to /tmp/staticx-archive-0s4s49oo/libutil.so.1
+INFO:root:Stripping library /tmp/staticx-archive-0s4s49oo/libutil.so.1
+DEBUG:root:Running ['strip', '/tmp/staticx-archive-0s4s49oo/libutil.so.1']
+INFO:root:Adding /tmp/staticx-archive-0s4s49oo/libutil.so.1 as libutil.so.1
+INFO:root:Processing library libgcc_s.so.1 (/lib/x86_64-linux-gnu/libgcc_s.so.1)
+INFO:root:Copying /lib/x86_64-linux-gnu/libgcc_s.so.1 to /tmp/staticx-archive-0s4s49oo/libgcc_s.so.1
+INFO:root:Stripping library /tmp/staticx-archive-0s4s49oo/libgcc_s.so.1
+DEBUG:root:Running ['strip', '/tmp/staticx-archive-0s4s49oo/libgcc_s.so.1']
+INFO:root:Adding /tmp/staticx-archive-0s4s49oo/libgcc_s.so.1 as libgcc_s.so.1
+INFO:root:Processing library librt.so.1 (/lib/x86_64-linux-gnu/librt.so.1)
+INFO:root:Copying /lib/x86_64-linux-gnu/librt.so.1 to /tmp/staticx-archive-0s4s49oo/librt.so.1
+INFO:root:Stripping library /tmp/staticx-archive-0s4s49oo/librt.so.1
+DEBUG:root:Running ['strip', '/tmp/staticx-archive-0s4s49oo/librt.so.1']
+INFO:root:Adding /tmp/staticx-archive-0s4s49oo/librt.so.1 as librt.so.1
+DEBUG:root:Running ['objcopy', '--add-section', '.staticx.archive=/tmp/staticx-archive-pnn9mink.tar', '/tmp/staticx-output-64q781xr']
+/home/runner/work/_temp/toolpack_x86_64/jc: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+14M	/home/runner/work/_temp/toolpack_x86_64/jc

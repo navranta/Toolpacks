@@ -1,0 +1,45 @@
+++ '[' YES '!=' YES ']'
+++ '[' -z /home/runner/work/_temp/toolpack_x86_64 ']'
+++ '[' -z '--asset "^386" --asset "^aarch64" --asset "^apple" --asset "^arm" --asset "^AppImage" --asset "^asc" --asset "^crt" --asset "^darwin" --asset "^deb" --asset "^exe" --asset "^freebsd" --asset "^i686" --asset "^mac" --asset "^mips" --asset "^rpm" --asset "^pem" --asset "^sbom" --asset "^sha" --asset "^solaris" --asset "^sig" --asset "^symbol" --asset "^windows"' ']'
+++ '[' -z 'timeout -k 1m 2m' ']'
+++ '[' -z 0 ']'
+++ '[' -z /bin/echo ']'
+++ '[' -z ghs_15368_eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhdXRobmQiLCJjdHgiOiJySXBXUkU0Zk9ZbnM0ekU0YldFenBJbmdETTBYZ1JXc0VfOF9sX2xxZk8wMGdnNURERnlmbTJJIiwiZXhwIjoxNzg5NDEzMjc1LCJpYXQiOjE3ODk0MDk2NzUsImlzcyI6ImdpdGh1YiIsImp0aSI6IjI4OWViMDMxLTBkYWEtNDE0OC1hNjhiLTI2OTA4NjViZTEyZSIsInZlciI6M30.Z7rEnzFjxGP5sJZ9ihTW_28YdnuHgg5F3ZvZ_4iUVdTvhtdlIcJzkoui04IETzJWUdKKYjlbaV6NtzGWfg8fkQ ']'
+++ '[' -z /home/runner/work/_temp ']'
+++ '[' -z 'mktemp -d --tmpdir=/home/runner/work/_temp/toolpacks XXXXXXX_linux_x86_64' ']'
+++ export SKIP_BUILD=NO
+++ SKIP_BUILD=NO
+++ '[' NO == NO ']'
+++ export BIN=7z
+++ BIN=7z
+++ export SOURCE_URL=https://www.7-zip.org
+++ SOURCE_URL=https://www.7-zip.org
++++ TZ=UTC
++++ date '+%A, %Y-%m-%d (%I:%M:%S %p)'
+++ echo -e '\n\n [+] (Building | Fetching) 7z :: https://www.7-zip.org [Monday, 2026-09-14 (06:18:50 PM) UTC]\n'
+
+
+ [+] (Building | Fetching) 7z :: https://www.7-zip.org [Monday, 2026-09-14 (06:18:50 PM) UTC]
+
++++ curl -qfsSL https://www.7-zip.org/download.html
++++ grep -o 'href="[^"]*"'
++++ sed 's/^href="//;s/"$//'
++++ tail -n 1
++++ grep linux-x64.tar.xz
++++ sort
+++ REL_URL=https://github.com/ip7z/7zip/releases/download/26.03/7z2603-linux-x64.tar.xz
+++ case "$REL_URL" in
+++ DL_URL=https://github.com/ip7z/7zip/releases/download/26.03/7z2603-linux-x64.tar.xz
++++ mktemp -d --tmpdir=/home/runner/work/_temp/toolpacks XXXXXXX_linux_x86_64
+++ pushd /home/runner/work/_temp/toolpacks/GiLoSni_linux_x86_64
+++ curl -qfsSLJO https://github.com/ip7z/7zip/releases/download/26.03/7z2603-linux-x64.tar.xz
+++ find . -type f -name '*.xz' -exec tar -xf '{}' ';'
+++ find . -type f -name 7zzs '!' -name '*.xz' -exec cp '{}' /home/runner/work/_temp/toolpack_x86_64/7z ';'
+++ popd
+++ unset SKIP_BUILD
+++ export BUILT=YES
+++ BUILT=YES
+++ unset AR CC CFLAGS CXX CPPFLAGS CXXFLAGS DLLTOOL HOST_CC HOST_CXX LDFLAGS LIBS OBJCOPY RANLIB
+++ unset GOARCH GOOS CGO_ENABLED CGO_CFLAGS
+++ unset PKG_CONFIG_PATH PKG_CONFIG_LIBDIR PKG_CONFIG_SYSROOT_DIR PKG_CONFIG_SYSTEM_INCLUDE_PATH PKG_CONFIG_SYSTEM_LIBRARY_PATH
+++ set +x

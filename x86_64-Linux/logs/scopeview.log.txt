@@ -1,0 +1,6 @@
+
+
+ [+] (Building | Fetching) scopeview :: https://github.com/pkgforge-security/scopeview [Monday, 2026-09-14 (07:22:11 PM) UTC]
+
+https://raw.githubusercontent.com/pkgforge-security/scopeview/main/scopeview.sh
+Extracted `scopeview.sh` to `/home/runner/work/_temp/toolpack_x86_64/scopeview`

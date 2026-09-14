@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) freeze :: https://github.com/charmbracelet/freeze [Monday, 2026-09-14 (06:40:07 PM) UTC]
+
+https://github.com/charmbracelet/freeze/releases/download/v0.2.2/freeze_0.2.2_Linux_x86_64.tar.gz
+Downloading 100% [==========================] (5.2/5.2 MB, 94.449 MB/s)
+Extracted `freeze_0.2.2_Linux_x86_64/freeze` to `/home/runner/work/_temp/toolpack_x86_64/freeze`

@@ -1,0 +1,956 @@
+
+
+ [+] (Building | Fetching) tailscale :: https://github.com/tailscale/tailscale [Monday, 2026-09-14 (07:25:17 PM) UTC]
+
+go: downloading github.com/bradfitz/monogok v0.0.0-20260630033929-b1eef977b41f
+go: downloading github.com/go-json-experiment/json v0.0.0-20260623181947-01eb4420fa68
+go: downloading github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
+go: downloading github.com/mattn/go-colorable v0.1.15
+go: downloading github.com/mattn/go-isatty v0.0.23
+go: downloading github.com/mitchellh/go-ps v1.0.0
+go: downloading github.com/peterbourgon/ff/v3 v3.4.0
+go: downloading github.com/toqueteos/webbrowser v1.2.0
+go: downloading golang.org/x/net v0.59.0
+go: downloading golang.org/x/sys v0.48.0
+go: downloading golang.org/x/time v0.15.0
+go: downloading k8s.io/client-go v0.35.3
+go: downloading sigs.k8s.io/yaml v1.6.0
+go: downloading software.sslmate.com/src/go-pkcs12 v0.4.0
+go: downloading golang.org/x/text v0.42.0
+go: downloading go4.org/mem v0.0.0-20240501181205-ae6ca9944745
+go: downloading fyne.io/systray v1.11.1-0.20250812065214-4856ac3adc3c
+go: downloading github.com/Kodeworks/golang-image-ico v0.0.0-20141118225523-73f0f4cfade9
+go: downloading github.com/atotto/clipboard v0.1.4
+go: downloading github.com/fogleman/gg v1.3.0
+go: downloading github.com/godbus/dbus/v5 v5.2.2
+go: downloading github.com/tailscale/web-client-prebuilt v0.0.0-20250124233751-d4cd19a26976
+go: downloading github.com/hdevalence/ed25519consensus v0.2.0
+go: downloading golang.org/x/crypto v0.57.0
+go: downloading github.com/diskfs/go-diskfs v1.9.3
+go: downloading github.com/tailscale/hujson v0.0.0-20260302212456-ecc657c15afd
+go: downloading github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8
+go: downloading github.com/jsimonetti/rtnetlink v1.4.1
+go: downloading github.com/mdlayher/netlink v1.7.3-0.20250113171957-fbb4dce95f42
+go: downloading golang.org/x/sync v0.23.0
+go: downloading go4.org/netipx v0.0.0-20260823151212-3075585bcbeb
+go: downloading github.com/gaissmai/bart v0.26.1
+go: downloading go.yaml.in/yaml/v2 v2.4.4
+go: downloading github.com/fxamacker/cbor/v2 v2.9.0
+go: downloading github.com/coder/websocket v1.8.14
+go: downloading github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
+go: downloading golang.org/x/exp v0.0.0-20260410095643-746e56fc9e2f
+go: downloading github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
+go: downloading golang.org/x/image v0.41.0
+go: downloading github.com/aws/aws-sdk-go-v2 v1.42.1
+go: downloading github.com/aws/aws-sdk-go-v2/config v1.32.17
+go: downloading github.com/aws/aws-sdk-go-v2/service/ssm v1.45.0
+go: downloading golang.org/x/oauth2 v0.36.0
+go: downloading filippo.io/edwards25519 v1.2.0
+go: downloading github.com/mdlayher/socket v0.5.1
+go: downloading github.com/x448/float16 v0.8.4
+go: downloading github.com/google/uuid v1.6.0
+go: downloading github.com/aws/smithy-go v1.27.3
+go: downloading github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.18.23
+go: downloading github.com/aws/aws-sdk-go-v2/service/sts v1.42.1
+go: downloading github.com/aws/aws-sdk-go-v2/internal/configsources v1.4.30
+go: downloading github.com/jmespath/go-jmespath v0.4.0
+go: downloading github.com/aws/aws-sdk-go-v2/credentials v1.19.16
+go: downloading github.com/aws/aws-sdk-go-v2/service/signin v1.0.11
+go: downloading github.com/aws/aws-sdk-go-v2/service/sso v1.30.17
+go: downloading github.com/aws/aws-sdk-go-v2/service/ssooidc v1.35.21
+go: downloading github.com/huin/goupnp v1.3.0
+go: downloading github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.30
+go: downloading github.com/aws/aws-sdk-go-v2/internal/v4a v1.4.24
+go: downloading github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.13.13
+go: downloading github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.13.30
+internal/goarch
+internal/unsafeheader
+internal/byteorder
+internal/cpu
+internal/coverage/rtcov
+internal/abi
+internal/godebugs
+internal/goexperiment
+internal/goos
+internal/profilerecord
+internal/runtime/atomic
+internal/runtime/syscall/linux
+internal/bytealg
+internal/chacha8rand
+math/bits
+internal/strconv
+internal/runtime/exithook
+internal/runtime/gc
+internal/runtime/sys
+internal/asan
+internal/msan
+internal/runtime/math
+internal/runtime/gc/scan
+internal/runtime/pprof/label
+internal/stringslite
+internal/trace/tracev2
+cmp
+math
+unicode/utf8
+internal/race
+internal/runtime/cgroup
+internal/runtime/maps
+sync/atomic
+internal/synctest
+unicode
+internal/sync
+crypto/internal/fips140/alias
+crypto/internal/fips140deps/byteorder
+crypto/internal/fips140deps/cpu
+crypto/internal/constanttime
+crypto/internal/fips140/subtle
+crypto/internal/fips140deps/time
+crypto/subtle
+crypto/internal/boring/sig
+container/list
+unicode/utf16
+vendor/golang.org/x/crypto/cryptobyte/asn1
+vendor/golang.org/x/crypto/internal/alias
+internal/nettrace
+encoding
+runtime
+log/internal
+tailscale.com/tailcfg/nodecap
+tailscale.com/feature/buildfeatures
+tailscale.com/tailcfg/peercap
+tailscale.com/util/nocasemaps
+golang.org/x/crypto/internal/alias
+golang.org/x/crypto/salsa20/salsa
+tailscale.com/types/structs
+tailscale.com/types/tkatype
+golang.org/x/exp/constraints
+tailscale.com/util/mak
+tailscale.com/types/result
+github.com/coder/websocket/internal/util
+tailscale.com/types/empty
+tailscale.com/util/syspolicy/pkey
+tailscale.com/util/syspolicy/ptype
+image/color
+golang.org/x/image/math/f64
+tailscale.com/util/stringsx
+tailscale.com/util/httpm
+tailscale.com/util/must
+tailscale.com/cmd/tailscale/tsdnsjsonv0
+tailscale.com/control/controlhttp/controlhttpcommon
+github.com/golang/groupcache/lru
+tailscale.com/derp/derpconst
+github.com/gaissmai/bart/internal/art
+github.com/gaissmai/bart/internal/bitset
+golang.org/x/net/internal/iana
+tailscale.com/types/bools
+github.com/aws/aws-sdk-go-v2/internal/sdkio
+github.com/diskfs/go-diskfs/filesystem/ext4/md4
+github.com/gaissmai/bart/internal/lpm
+github.com/gaissmai/bart/internal/allot
+github.com/gaissmai/bart/internal/sparse
+github.com/diskfs/go-diskfs/util/slices
+database/sql/internal
+tailscale.com/health/healthmsg
+tailscale.com/util/truncate
+iter
+internal/reflectlite
+weak
+sync
+tailscale.com/licenses
+slices
+maps
+golang.org/x/exp/maps
+errors
+sort
+internal/testlog
+internal/bisect
+crypto/internal/fips140cache
+strconv
+io
+internal/oserror
+path
+reflect
+syscall
+strings
+bytes
+hash
+bufio
+hash/crc32
+internal/godebug
+crypto
+crypto/internal/impl
+crypto/internal/entropy/v1.0.0
+crypto/internal/fips140deps/godebug
+math/rand/v2
+crypto/internal/fips140
+crypto/internal/fips140/sha256
+crypto/internal/fips140/sha3
+crypto/internal/fips140/sha512
+time
+internal/syscall/unix
+internal/syscall/execenv
+crypto/internal/fips140/hmac
+crypto/internal/randutil
+math/rand
+crypto/internal/fips140/check
+crypto/internal/fips140/aes
+crypto/fips140
+crypto/internal/fips140/nistec/fiat
+crypto/internal/fips140/edwards25519/field
+internal/fmtsort
+encoding/binary
+io/fs
+internal/poll
+internal/filepathlite
+context
+crypto/internal/fips140/bigmod
+crypto/sha3
+crypto/internal/fips140/nistec
+crypto/internal/fips140hash
+internal/saferio
+crypto/internal/fips140/edwards25519
+crypto/internal/fips140/hkdf
+os
+vendor/golang.org/x/crypto/internal/poly1305
+crypto/internal/fips140/tls12
+crypto/internal/fips140/tls13
+crypto/tls/internal/fips140tls
+encoding/base64
+vendor/golang.org/x/net/dns/dnsmessage
+encoding/pem
+internal/singleflight
+unique
+net/netip
+embed
+fmt
+path/filepath
+crypto/internal/sysrand
+crypto/internal/fips140/drbg
+crypto/internal/fips140/aes/gcm
+crypto/internal/fips140only
+crypto/internal/fips140/ecdh
+crypto/internal/fips140/ecdsa
+crypto/cipher
+crypto/internal/fips140/ed25519
+crypto/hkdf
+crypto/internal/fips140/mlkem
+compress/flate
+crypto/internal/boring
+math/big
+crypto/internal/rand
+crypto/aes
+crypto/des
+crypto/ecdh
+crypto/sha512
+crypto/hmac
+crypto/mlkem
+crypto/sha256
+vendor/golang.org/x/crypto/chacha20
+vendor/golang.org/x/sys/cpu
+crypto/md5
+vendor/golang.org/x/crypto/chacha20poly1305
+archive/zip
+crypto/internal/fips140/mldsa
+crypto/hpke
+crypto/mldsa
+crypto/rc4
+crypto/internal/fips140/rsa
+crypto/rand
+crypto/elliptic
+crypto/internal/boring/bbig
+encoding/asn1
+crypto/ed25519
+crypto/sha1
+crypto/dsa
+encoding/hex
+crypto/rsa
+vendor/golang.org/x/crypto/cryptobyte
+crypto/x509/pkix
+crypto/ecdsa
+net/url
+encoding/json/internal
+encoding/json/internal/jsonflags
+runtime/cgo
+encoding/json/internal/jsonopts
+encoding/json/internal/jsonwire
+encoding/base32
+flag
+encoding/json/jsontext
+hash/fnv
+github.com/kballard/go-shellquote
+golang.org/x/sys/unix
+github.com/bradfitz/monogok/disklayout
+io/ioutil
+github.com/mitchellh/go-ps
+text/tabwriter
+os/exec
+encoding/json/v2
+github.com/go-json-experiment/json/jsontext
+github.com/toqueteos/webbrowser
+golang.org/x/net/dns/dnsmessage
+net
+golang.org/x/text/transform
+golang.org/x/text/unicode/bidi
+github.com/mattn/go-isatty
+github.com/mattn/go-colorable
+golang.org/x/text/unicode/norm
+golang.org/x/text/secure/bidirule
+golang.org/x/time/rate
+k8s.io/client-go/util/homedir
+log
+mime
+golang.org/x/net/idna
+encoding/json
+github.com/go-json-experiment/json
+github.com/peterbourgon/ff/v3/internal
+github.com/peterbourgon/ff/v3
+github.com/peterbourgon/ff/v3/ffcli
+compress/gzip
+vendor/golang.org/x/text/transform
+vendor/golang.org/x/text/unicode/bidi
+mime/quotedprintable
+vendor/golang.org/x/text/unicode/norm
+net/http/internal
+crypto/x509
+net/textproto
+vendor/golang.org/x/text/secure/bidirule
+net/http/internal/ascii
+vendor/golang.org/x/net/http2/hpack
+mime/multipart
+net/http/internal/httpsfv
+regexp/syntax
+vendor/golang.org/x/net/idna
+os/signal
+runtime/debug
+crypto/internal/fips140/pbkdf2
+crypto/pbkdf2
+golang.org/x/crypto/pbkdf2
+vendor/golang.org/x/net/http/httpguts
+vendor/golang.org/x/net/http/httpproxy
+software.sslmate.com/src/go-pkcs12/internal/rc2
+tailscale.com/atomicfile
+hash/maphash
+tailscale.com/util/vizerror
+regexp
+tailscale.com/types/ipproto
+go4.org/mem
+golang.org/x/crypto/curve25519
+golang.org/x/sys/cpu
+tailscale.com/types/views
+golang.org/x/crypto/blake2b
+tailscale.com/types/dnstype
+crypto/tls
+software.sslmate.com/src/go-pkcs12
+golang.org/x/crypto/internal/poly1305
+golang.org/x/crypto/nacl/secretbox
+go.yaml.in/yaml/v2
+golang.org/x/crypto/nacl/box
+tailscale.com/util/bufiox
+tailscale.com/util/set
+tailscale.com/types/lazy
+tailscale.com/util/testenv
+tailscale.com/types/opt
+tailscale.com/types/key
+tailscale.com/util/dnsname
+tailscale.com/util/slicesx
+tailscale.com/util/ctxkey
+tailscale.com
+tailscale.com/kube/kubetypes
+tailscale.com/syncs
+tailscale.com/util/lineiter
+tailscale.com/version/distro
+github.com/go-json-experiment/json/v1
+tailscale.com/feature/serviceclientprefs/serviceclient
+tailscale.com/tailcfg
+tailscale.com/tsconst
+tailscale.com/tstime
+tailscale.com/util/cibuild
+github.com/coder/websocket/internal/errd
+html
+text/template/parse
+sigs.k8s.io/yaml
+internal/profile
+text/template
+runtime/pprof
+html/template
+net/http/httptrace
+net/http/internal/httpcommon
+runtime/trace
+net/http/internal/http2
+tailscale.com/util/dirwalk
+go4.org/netipx
+tailscale.com/net/netaddr
+tailscale.com/util/rands
+github.com/x448/float16
+tailscale.com/net/tsaddr
+github.com/fxamacker/cbor/v2
+filippo.io/edwards25519/field
+filippo.io/edwards25519
+tailscale.com/client/tailscale/apitype
+tailscale.com/version
+tailscale.com/envknob
+net/http
+tailscale.com/types/logger
+tailscale.com/types/persist
+tailscale.com/feature/favorites/pintype
+github.com/hdevalence/ed25519consensus
+golang.org/x/crypto/argon2
+golang.org/x/crypto/blake2s
+tailscale.com/types/preftype
+tailscale.com/util/hashx
+tailscale.com/util/deephash
+tailscale.com/util/syspolicy/internal
+tailscale.com/tka
+github.com/jsimonetti/rtnetlink/internal/unix
+github.com/mdlayher/netlink/nlenc
+golang.org/x/net/bpf
+golang.org/x/sync/errgroup
+github.com/mdlayher/socket
+tailscale.com/util/syspolicy/setting
+github.com/mdlayher/netlink
+tailscale.com/ipn/ipnstate
+github.com/jsimonetti/rtnetlink
+tailscale.com/net/routecheck/peernode
+tailscale.com/util/syspolicy/policyclient
+tailscale.com/net/traffic
+tailscale.com/wgengine/filter/filtertype
+tailscale.com/net/udprelay/status
+tailscale.com/paths
+tailscale.com/types/netmap
+tailscale.com/types/appctype
+encoding/xml
+net/http/cgi
+net/http/httputil
+tailscale.com/drive
+tailscale.com/feature
+expvar
+github.com/coder/websocket
+net/http/pprof
+tailscale.com/metrics
+tailscale.com/util/cloudenv
+tailscale.com/util/clientmetric
+tailscale.com/hostinfo
+tailscale.com/tsweb/varz
+tailscale.com/safesocket
+image
+os/user
+hash/adler32
+image/internal/imageutil
+compress/zlib
+image/draw
+github.com/godbus/dbus/v5
+tailscale.com/tsweb
+tailscale.com/util/usermetric
+image/png
+github.com/Kodeworks/golang-image-ico
+github.com/atotto/clipboard
+golang.org/x/image/math/fixed
+golang.org/x/image/draw
+github.com/golang/freetype/raster
+tailscale.com/util/eventbus
+golang.org/x/image/font
+github.com/golang/freetype/truetype
+golang.org/x/image/font/basicfont
+image/jpeg
+tailscale.com/client/freedesktop
+github.com/tailscale/web-client-prebuilt
+tailscale.com/envknob/featureknob
+github.com/godbus/dbus/v5/introspect
+tailscale.com/util/groupmember
+archive/tar
+fyne.io/systray/internal/generated/menu
+fyne.io/systray/internal/generated/notifier
+tailscale.com/health
+tailscale.com/net/netmon
+github.com/godbus/dbus/v5/prop
+fyne.io/systray
+github.com/fogleman/gg
+tailscale.com/util/progresstracking
+tailscale.com/util/cmpver
+tailscale.com/tempfork/spf13/cobra
+tailscale.com/cmd/tailscale/cli/ffcomplete/internal
+tailscale.com/cmd/tailscale/jsonoutput
+golang.org/x/crypto/chacha20
+tailscale.com/cmd/tailscale/cli/ffcomplete
+golang.org/x/crypto/chacha20poly1305
+golang.org/x/crypto/hkdf
+tailscale.com/net/bakedroots
+tailscale.com/net/netx
+tailscale.com/control/controlbase
+tailscale.com/util/singleflight
+tailscale.com/net/dnscache
+tailscale.com/net/netutil
+tailscale.com/ipn
+tailscale.com/net/routecheck
+tailscale.com/clientupdate/distsign
+golang.org/x/net/internal/socks
+golang.org/x/net/proxy
+tailscale.com/clientupdate
+tailscale.com/net/netknob
+tailscale.com/net/netns
+tailscale.com/net/tlsdial/blockblame
+tailscale.com/net/sockstats
+tailscale.com/net/tlsdial
+tailscale.com/cmd/tailscale/tsroutecheckjsonv0
+github.com/gaissmai/bart/internal/value
+github.com/gaissmai/bart/internal/nodes
+tailscale.com/derp
+github.com/gaissmai/bart
+tailscale.com/net/neterror
+golang.org/x/net/internal/socket
+tailscale.com/client/local
+tailscale.com/net/dnsfallback
+tailscale.com/derp/derphttp
+tailscale.com/net/tsdial
+tailscale.com/control/controlhttp
+tailscale.com/net/captivedetection
+tailscale.com/client/systray
+tailscale.com/client/web
+golang.org/x/net/ipv4
+golang.org/x/net/ipv6
+tailscale.com/control/ts2021
+golang.org/x/net/icmp
+tailscale.com/net/ping
+tailscale.com/net/portmapper/portmappertype
+tailscale.com/net/stun
+tailscale.com/types/nettype
+tailscale.com/feature/capture/dissector
+github.com/aws/aws-sdk-go-v2/internal/rand
+github.com/aws/aws-sdk-go-v2/internal/sdk
+github.com/aws/aws-sdk-go-v2/internal/sync/singleflight
+tailscale.com/net/netcheck
+github.com/aws/smithy-go/context
+github.com/aws/smithy-go/internal/sync/singleflight
+github.com/aws/smithy-go/logging
+github.com/aws/smithy-go/middleware
+github.com/aws/smithy-go/document
+github.com/aws/smithy-go/sync
+github.com/aws/smithy-go/time
+github.com/aws/smithy-go
+github.com/aws/smithy-go/transport/http/internal/io
+github.com/aws/smithy-go/ptr
+github.com/aws/smithy-go/auth
+github.com/aws/smithy-go/traits
+github.com/aws/smithy-go/metrics
+github.com/aws/smithy-go/eventstream
+github.com/aws/smithy-go/tracing
+github.com/aws/aws-sdk-go-v2/aws/arn
+github.com/aws/smithy-go/rand
+github.com/aws/aws-sdk-go-v2/config/internal/ini
+github.com/aws/aws-sdk-go-v2/aws/ratelimit
+github.com/aws/aws-sdk-go-v2/internal/context
+github.com/aws/aws-sdk-go-v2/internal/timeconv
+github.com/aws/aws-sdk-go-v2/feature/ec2/imds/internal/config
+github.com/aws/smithy-go/io
+github.com/aws/aws-sdk-go-v2/internal/shareddefaults
+github.com/aws/aws-sdk-go-v2/aws/protocol/restjson
+github.com/aws/aws-sdk-go-v2/internal/strings
+github.com/aws/smithy-go/transport/http
+github.com/aws/smithy-go/encoding/httpbinding
+github.com/aws/aws-sdk-go-v2/service/signin/types
+github.com/aws/smithy-go/encoding
+tailscale.com/feature/captiveportal/netcheckhook
+github.com/aws/smithy-go/encoding/json
+github.com/aws/smithy-go/endpoints
+github.com/aws/aws-sdk-go-v2/service/sso/types
+github.com/aws/aws-sdk-go-v2/service/ssooidc/types
+github.com/aws/aws-sdk-go-v2/aws/protocol/xml
+github.com/aws/aws-sdk-go-v2/internal/v4a/internal/crypto
+github.com/aws/aws-sdk-go-v2/internal/v4a/internal/v4
+github.com/aws/aws-sdk-go-v2/service/sts/types
+github.com/aws/smithy-go/encoding/xml
+github.com/aws/smithy-go/auth/bearer
+github.com/aws/aws-sdk-go-v2/aws
+github.com/aws/aws-sdk-go-v2/internal/auth
+github.com/aws/aws-sdk-go-v2/internal/endpoints/awsrulesfn
+github.com/aws/smithy-go/endpoints/private/rulesfn
+github.com/aws/aws-sdk-go-v2/aws/protocol/query
+github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding
+github.com/aws/smithy-go/private/requestcompression
+github.com/aws/aws-sdk-go-v2/aws/middleware
+github.com/aws/aws-sdk-go-v2/credentials
+github.com/aws/aws-sdk-go-v2/aws/defaults
+github.com/aws/aws-sdk-go-v2/aws/signer/internal/v4
+github.com/aws/aws-sdk-go-v2/internal/configsources
+github.com/aws/aws-sdk-go-v2/internal/endpoints
+github.com/aws/aws-sdk-go-v2/internal/endpoints/v2
+github.com/aws/aws-sdk-go-v2/credentials/processcreds
+github.com/aws/aws-sdk-go-v2/service/signin/internal/endpoints
+github.com/aws/aws-sdk-go-v2/service/sso/internal/endpoints
+github.com/aws/aws-sdk-go-v2/aws/transport/http
+github.com/aws/aws-sdk-go-v2/aws/retry
+github.com/aws/aws-sdk-go-v2/aws/signer/v4
+github.com/aws/aws-sdk-go-v2/service/ssooidc/internal/endpoints
+github.com/aws/aws-sdk-go-v2/service/sts/internal/endpoints
+github.com/aws/aws-sdk-go-v2/service/ssm/internal/endpoints
+github.com/aws/aws-sdk-go-v2/service/ssm/types
+github.com/aws/aws-sdk-go-v2/internal/auth/smithy
+github.com/aws/aws-sdk-go-v2/internal/v4a
+github.com/aws/aws-sdk-go-v2/feature/ec2/imds
+github.com/aws/aws-sdk-go-v2/credentials/endpointcreds/internal/client
+github.com/aws/aws-sdk-go-v2/credentials/endpointcreds
+github.com/aws/aws-sdk-go-v2/service/signin
+github.com/aws/aws-sdk-go-v2/service/sso
+github.com/aws/aws-sdk-go-v2/credentials/ec2rolecreds
+github.com/aws/aws-sdk-go-v2/service/ssooidc
+github.com/aws/aws-sdk-go-v2/service/internal/presigned-url
+github.com/aws/aws-sdk-go-v2/credentials/logincreds
+github.com/aws/aws-sdk-go-v2/service/sts
+github.com/aws/smithy-go/waiter
+github.com/jmespath/go-jmespath
+tailscale.com/client/tailscale
+github.com/aws/aws-sdk-go-v2/service/ssm
+github.com/aws/aws-sdk-go-v2/credentials/ssocreds
+golang.org/x/oauth2/internal
+golang.org/x/oauth2
+golang.org/x/oauth2/clientcredentials
+github.com/huin/goupnp/httpu
+github.com/huin/goupnp/scpd
+github.com/huin/goupnp/soap
+github.com/huin/goupnp/ssdp
+github.com/huin/goupnp
+github.com/huin/goupnp/dcps/internetgateway2
+tailscale.com/internal/client/tailscale
+tailscale.com/feature/oauthkey
+github.com/aws/aws-sdk-go-v2/credentials/stscreds
+tailscale.com/feature/condregister/oauthkey
+tailscale.com/net/portmapper
+golang.org/x/net/http/httpproxy
+github.com/aws/aws-sdk-go-v2/config
+tailscale.com/net/tshttpproxy
+tailscale.com/feature/useproxy
+tailscale.com/feature/condregister/useproxy
+tailscale.com/util/syspolicy/internal/loggerx
+github.com/tailscale/hujson
+tailscale.com/wif
+tailscale.com/util/syspolicy/internal/metrics
+tailscale.com/feature/identityfederation
+tailscale.com/feature/portmapper
+tailscale.com/feature/condregister/identityfederation
+tailscale.com/cmd/tailscale/tslockjsonv1
+tailscale.com/feature/tailnetlock/tslockjsonv1
+github.com/diskfs/go-diskfs/backend
+tailscale.com/util/syspolicy/source
+github.com/diskfs/go-diskfs/filesystem
+github.com/diskfs/go-diskfs/filesystem/ext4/crc
+github.com/diskfs/go-diskfs/util/bitmap
+uuid
+tailscale.com/feature/condregister/portmapper
+tailscale.com/omit
+database/sql/driver
+tailscale.com/ipn/conffile
+github.com/google/uuid
+github.com/diskfs/go-diskfs/filesystem/ext4
+tailscale.com/util/syspolicy/rsop
+tailscale.com/net/ace
+tailscale.com/util/syspolicy
+tailscale.com/tstime/mono
+tailscale.com/tstime/rate
+tailscale.com/util/backoff
+tailscale.com/feature/syspolicy
+tailscale.com/util/prompt
+github.com/skip2/go-qrcode/bitset
+github.com/skip2/go-qrcode/reedsolomon
+tailscale.com/util/quarantine
+github.com/skip2/go-qrcode
+tailscale.com/util/qrcodes
+tailscale.com/gokrazy/mkfs
+tailscale.com/feature/awsparamstore
+tailscale.com/feature/condregister/awsparamstore
+tailscale.com/cmd/tailscale/cli
+tailscale.com/cmd/tailscale
+go: downloading github.com/djherbis/times v1.6.0
+go: downloading github.com/tailscale/xnet v0.0.0-20240729143630-8497ac4dab2e
+go: downloading github.com/creachadair/msync v0.8.1
+go: downloading golang.org/x/term v0.46.0
+go: downloading github.com/pires/go-proxyproto v0.8.1
+go: downloading gvisor.dev/gvisor v0.0.0-20260224225140-573d5e7127a8
+go: downloading github.com/tailscale/wireguard-go v0.0.0-20260911194433-e3222a3340cd
+go: downloading github.com/klauspost/compress v1.19.1
+go: downloading github.com/jellydator/ttlcache/v3 v3.1.0
+go: downloading github.com/creack/pty v1.1.24
+go: downloading github.com/pkg/sftp v1.13.6
+go: downloading github.com/tailscale/gliderssh v0.3.4-0.20260716005906-1a0f895faf28
+go: downloading github.com/u-root/u-root v0.14.0
+go: downloading github.com/mdlayher/genetlink v1.3.2
+go: downloading github.com/illarion/gonotify/v3 v3.0.2
+go: downloading github.com/mdlayher/sdnotify v1.0.0
+go: downloading github.com/insomniacslk/dhcp v0.0.0-20240129002554-15c9b8791914
+go: downloading github.com/google/go-tpm v0.9.4
+go: downloading github.com/kortschak/wol v0.0.0-20200729010619-da482cc4850a
+go: downloading github.com/tailscale/peercred v0.0.0-20250107143737-35a0c7bd7edc
+go: downloading github.com/tailscale/netlink v1.1.1-0.20240822203006-4d49adab4de7
+go: downloading github.com/safchain/ethtool v0.3.0
+go: downloading github.com/google/btree v1.1.3
+go: downloading github.com/kr/fs v0.1.0
+go: downloading github.com/anmitsu/go-shlex v0.0.0-20200514113438-38f4b401e2be
+go: downloading github.com/digitalocean/go-smbios v0.0.0-20180907143718-390a4f403a8e
+go: downloading github.com/u-root/uio v0.0.0-20240224005618-d2acac8f3701
+go: downloading github.com/coreos/go-iptables v0.7.1-0.20240112124308-65c67c9f46e6
+go: downloading github.com/google/nftables v0.2.1-0.20240414091927-5e242ec57806
+go: downloading github.com/vishvananda/netns v0.0.5
+go: downloading github.com/pierrec/lz4/v4 v4.1.26
+tailscale.com/cmd/tailscaled/childproc
+github.com/klauspost/compress
+github.com/klauspost/compress/internal/cpuinfo
+tailscale.com/control/controlknobs
+github.com/creachadair/msync/trigger
+tailscale.com/types/logid
+github.com/klauspost/compress/fse
+github.com/klauspost/compress/internal/le
+github.com/klauspost/compress/internal/snapref
+github.com/klauspost/compress/zstd/internal/xxhash
+tailscale.com/util/execqueue
+tailscale.com/net/flowtrack
+tailscale.com/net/ipset
+github.com/klauspost/compress/huff0
+tailscale.com/net/packet
+github.com/djherbis/times
+container/heap
+github.com/tailscale/xnet/webdav/internal/xml
+golang.org/x/sync/singleflight
+github.com/jellydator/ttlcache/v3
+github.com/klauspost/compress/zstd
+tailscale.com/feature/ace
+github.com/tailscale/peercred
+tailscale.com/util/winutil
+tailscale.com/ipn/ipnauth
+tailscale.com/wgengine/filter
+github.com/tailscale/xnet/webdav
+tailscale.com/net/dns/publicdns
+tailscale.com/net/dns/resolvconffile
+tailscale.com/util/race
+tailscale.com/drive/driveimpl/shared
+tailscale.com/net/dns/resolver
+github.com/tailscale/wireguard-go/conn
+tailscale.com/drive/driveimpl/dirfs
+tailscale.com/drive/driveimpl/compositedav
+github.com/tailscale/wireguard-go/rwcancel
+github.com/tailscale/wireguard-go/ipc
+tailscale.com/drive/driveimpl
+github.com/tailscale/wireguard-go/ratelimiter
+github.com/tailscale/wireguard-go/replay
+github.com/tailscale/wireguard-go/tai64n
+tailscale.com/util/zstdframe
+github.com/tailscale/wireguard-go/tsasm/amd64/chacha20poly1305
+github.com/tailscale/wireguard-go/tun
+tailscale.com/logtail
+golang.org/x/crypto/poly1305
+gvisor.dev/gvisor/pkg/gohacks
+gvisor.dev/gvisor/pkg/state/wire
+github.com/tailscale/wireguard-go/device
+gvisor.dev/gvisor/pkg/state
+tailscale.com/control/controlclient
+gvisor.dev/gvisor/pkg/sync
+gvisor.dev/gvisor/pkg/bits
+gvisor.dev/gvisor/pkg/tcpip/checksum
+gvisor.dev/gvisor/pkg/atomicbitops
+gvisor.dev/gvisor/pkg/linewriter
+gvisor.dev/gvisor/pkg/log
+gvisor.dev/gvisor/pkg/waiter
+gvisor.dev/gvisor/pkg/rand
+tailscale.com/net/dns
+gvisor.dev/gvisor/pkg/context
+gvisor.dev/gvisor/pkg/tcpip/seqnum
+gvisor.dev/gvisor/pkg/sync/locking
+gvisor.dev/gvisor/pkg/refs
+gvisor.dev/gvisor/pkg/tcpip/hash/jenkins
+tailscale.com/disco
+gvisor.dev/gvisor/pkg/buffer
+tailscale.com/net/connreject
+tailscale.com/net/packet/checksum
+gvisor.dev/gvisor/pkg/tcpip
+tailscale.com/net/routemanager
+gvisor.dev/gvisor/pkg/tcpip/header
+gvisor.dev/gvisor/pkg/tcpip/ports
+gvisor.dev/gvisor/pkg/tcpip/transport/tcpconntrack
+tailscale.com/types/events
+tailscale.com/types/netlogfunc
+tailscale.com/wgengine/wgcfg
+tailscale.com/proxymap
+gvisor.dev/gvisor/pkg/tcpip/stack
+tailscale.com/util/checkchange
+tailscale.com/feature/condlite/expvar
+tailscale.com/net/batching
+tailscale.com/net/sockopts
+tailscale.com/net/udprelay/endpoint
+tailscale.com/tempfork/heap
+tailscale.com/util/cloudinfo
+tailscale.com/util/ringlog
+tailscale.com/wgengine/router
+tailscale.com/wgengine/wgint
+tailscale.com/wgengine/wglog
+tailscale.com/types/mapx
+github.com/pires/go-proxyproto
+golang.org/x/net/http/httpguts
+tailscale.com/appc
+tailscale.com/ipn/ipnlocal/netmapcache
+tailscale.com/ipn/store/mem
+golang.org/x/term
+tailscale.com/log/filelogger
+tailscale.com/logtail/filch
+tailscale.com/util/racebuild
+tailscale.com/logpolicy
+github.com/safchain/ethtool
+tailscale.com/net/netkernelconf
+tailscale.com/util/goroutines
+tailscale.com/util/osuser
+tailscale.com/ipn/store
+tailscale.com/tempfork/acme
+tailscale.com/feature/androiddns
+gvisor.dev/gvisor/pkg/tcpip/header/parse
+gvisor.dev/gvisor/pkg/tcpip/stack/gro
+tailscale.com/feature/androidbin
+tailscale.com/wgengine/netstack/gro
+tailscale.com/chirp
+tailscale.com/tempfork/httprec
+tailscale.com/feature/c2n
+tailscale.com/net/tstun
+tailscale.com/util/def
+tailscale.com/util/osdiag
+tailscale.com/types/netlogtype
+tailscale.com/feature/dnsresolvecache
+tailscale.com/doctor
+tailscale.com/doctor/ethtool
+tailscale.com/log/sockstatlog
+tailscale.com/wgengine/netlog
+tailscale.com/doctor/permissions
+github.com/vishvananda/netns
+github.com/tailscale/netlink/nl
+github.com/tailscale/netlink
+tailscale.com/feature/drive
+github.com/mdlayher/genetlink
+github.com/illarion/gonotify/v3/syscallf
+github.com/illarion/gonotify/v3
+tailscale.com/feature/linuxdnsfight
+tailscale.com/ipn/policy
+tailscale.com/portlist
+tailscale.com/wgengine/magicsock
+tailscale.com/feature/linkspeed
+github.com/digitalocean/go-smbios/smbios
+tailscale.com/posture
+tailscale.com/net/udprelay
+runtime/metrics
+github.com/mdlayher/sdnotify
+tailscale.com/feature/sdnotify
+log/syslog
+tailscale.com/feature/syslog
+tailscale.com/cmd/tailscaled/tailscaledhooks
+tailscale.com/util/httphdr
+tailscale.com/util/multierr
+tailscale.com/util/osshare
+github.com/pierrec/lz4/v4/internal/lz4errors
+github.com/pierrec/lz4/v4/internal/lz4block
+github.com/pierrec/lz4/v4/internal/xxh32
+github.com/pierrec/lz4/v4/internal/lz4stream
+github.com/pierrec/lz4/v4
+github.com/u-root/uio/uio
+github.com/insomniacslk/dhcp/iana
+tailscale.com/net/routetable
+github.com/insomniacslk/dhcp/interfaces
+github.com/insomniacslk/dhcp/rfc1035label
+tailscale.com/doctor/routetable
+github.com/u-root/uio/rand
+gvisor.dev/gvisor/pkg/tcpip/network/hash
+gvisor.dev/gvisor/pkg/tcpip/network/internal/fragmentation
+gvisor.dev/gvisor/pkg/tcpip/network/internal/ip
+github.com/insomniacslk/dhcp/dhcpv4
+gvisor.dev/gvisor/pkg/tcpip/network/internal/multicast
+gvisor.dev/gvisor/pkg/tcpip/transport
+gvisor.dev/gvisor/pkg/tcpip/transport/internal/network
+gvisor.dev/gvisor/pkg/tcpip/network/ipv4
+gvisor.dev/gvisor/pkg/tcpip/network/ipv6
+gvisor.dev/gvisor/pkg/tcpip/transport/internal/noop
+gvisor.dev/gvisor/pkg/tcpip/transport/packet
+github.com/google/go-tpm/tpmutil
+gvisor.dev/gvisor/pkg/tcpip/transport/raw
+github.com/google/go-tpm/legacy/tpm2
+gvisor.dev/gvisor/pkg/tcpip/transport/udp
+golang.org/x/crypto/cryptobyte/asn1
+golang.org/x/crypto/cryptobyte
+tailscale.com/feature/tap
+github.com/google/go-tpm/tpm2/transport
+tailscale.com/feature/tundevstats
+github.com/google/go-tpm/tpm2
+github.com/google/go-tpm/tpm2/transport/linuxtpm
+github.com/kortschak/wol
+tailscale.com/kube/kubeapi
+tailscale.com/ipn/store/awsstore
+tailscale.com/kube/kubeclient
+tailscale.com/wgengine
+github.com/coreos/go-iptables/iptables
+tailscale.com/ipn/store/kubestore
+github.com/google/nftables/binaryutil
+github.com/google/nftables/internal/parseexprfunc
+github.com/mdlayher/netlink/nltest
+github.com/google/nftables/alignedbuff
+github.com/creack/pty
+github.com/google/nftables/xt
+github.com/kr/fs
+github.com/pkg/sftp/internal/encoding/ssh/filexfer
+github.com/google/nftables/expr
+github.com/google/nftables
+golang.org/x/crypto/blowfish
+golang.org/x/crypto/ssh/internal/bcrypt_pbkdf
+golang.org/x/crypto/ssh
+tailscale.com/util/linuxfw
+tailscale.com/wgengine/router/osrouter
+github.com/pkg/sftp
+tailscale.com/feature/tpm
+github.com/anmitsu/go-shlex
+github.com/u-root/u-root/pkg/termios
+github.com/tailscale/gliderssh
+tailscale.com/sessionrecording
+tailscale.com/net/proxymux
+tailscale.com/net/socks5
+tailscale.com/types/flagtype
+github.com/google/btree
+gvisor.dev/gvisor/pkg/sleep
+gvisor.dev/gvisor/pkg/tcpip/internal/tcp
+gvisor.dev/gvisor/pkg/tcpip/transport/icmp
+gvisor.dev/gvisor/pkg/tcpip/transport/tcp
+tailscale.com/feature/bird
+tailscale.com/feature/netlog
+tailscale.com/tsd
+gvisor.dev/gvisor/pkg/tcpip/adapters/gonet
+tailscale.com/feature/condregister/netlog
+tailscale.com/ipn/ipnext
+tailscale.com/feature/captiveportal
+tailscale.com/ipn/ipnlocal
+tailscale.com/feature/doctor
+tailscale.com/feature/appconnectors
+tailscale.com/feature/acme
+tailscale.com/ipn/localapi
+tailscale.com/feature/portlist
+tailscale.com/feature/posture
+tailscale.com/feature/runtimemetrics
+tailscale.com/feature/tailnetlock
+tailscale.com/feature/capture
+tailscale.com/feature/clientupdate
+tailscale.com/feature/conn25
+tailscale.com/feature/connreject
+tailscale.com/feature/debugportmapper
+tailscale.com/feature/favorites
+tailscale.com/feature/relayserver
+tailscale.com/feature/remoteconfig
+tailscale.com/feature/routecheck
+tailscale.com/feature/serviceclientprefs
+tailscale.com/feature/taildrop
+tailscale.com/feature/wakeonlan
+tailscale.com/ssh/tailssh
+tailscale.com/ipn/ipnserver
+tailscale.com/wgengine/netstack
+tailscale.com/feature/condregister
+tailscale.com/feature/ssh
+tailscale.com/cmd/tailscaled
+tailscale.com/cmd/tailscaled
+./tailscale: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
+25M	./tailscale
+./tailscaled: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
+32M	./tailscaled
+./tailscale_bb: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
+47M	./tailscale_bb
+./tailscale_bb: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
+47M	./tailscale_bb
+alpine-builder
+alpine-builder

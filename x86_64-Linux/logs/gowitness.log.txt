@@ -1,0 +1,630 @@
+
+
+ [+] (Building | Fetching) gowitness :: https://github.com/sensepost/gowitness [Monday, 2026-09-14 (06:45:34 PM) UTC]
+
+go: downloading github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834
+go: downloading github.com/charmbracelet/x/term v0.2.2
+go: downloading github.com/glebarez/sqlite v1.11.0
+go: downloading github.com/spf13/cobra v1.10.2
+go: downloading gorm.io/gorm v1.31.2
+go: downloading golang.org/x/sys v0.48.0
+go: downloading github.com/charmbracelet/glamour v1.0.0
+go: downloading gorm.io/driver/mysql v1.6.0
+go: downloading gorm.io/driver/postgres v1.6.2
+go: downloading github.com/charmbracelet/log v1.0.0
+go: downloading github.com/muesli/termenv v0.16.0
+go: downloading github.com/lair-framework/go-nmap v0.0.0-20191202052157-3507e0b03523
+go: downloading github.com/projectdiscovery/wappalyzergo v0.3.1
+go: downloading github.com/chromedp/cdproto v0.0.0-20260912003405-686a5c723acc
+go: downloading github.com/chromedp/chromedp v0.16.0
+go: downloading github.com/go-rod/rod v0.116.2
+go: downloading github.com/ysmood/gson v0.7.3
+go: downloading github.com/go-chi/chi/v5 v5.3.2
+go: downloading github.com/go-chi/cors v1.2.2
+go: downloading github.com/swaggo/http-swagger v1.3.4
+go: downloading github.com/glebarez/go-sqlite v1.23.0
+go: downloading modernc.org/sqlite v1.58.0
+go: downloading github.com/charmbracelet/x/ansi v0.11.8
+go: downloading github.com/charmbracelet/x/cellbuf v0.0.15
+go: downloading github.com/rivo/uniseg v0.4.7
+go: downloading github.com/spf13/pflag v1.0.10
+go: downloading github.com/jinzhu/now v1.1.5
+go: downloading github.com/go-sql-driver/mysql v1.10.1
+go: downloading github.com/jackc/pgx/v5 v5.11.0
+go: downloading github.com/yuin/goldmark v1.8.6
+go: downloading github.com/yuin/goldmark-emoji v1.0.6
+go: downloading golang.org/x/term v0.46.0
+go: downloading github.com/go-logfmt/logfmt v0.6.1
+go: downloading github.com/aymanbagabas/go-osc52/v2 v2.0.1
+go: downloading github.com/lucasb-eyer/go-colorful v1.4.1
+go: downloading github.com/mattn/go-isatty v0.0.24
+go: downloading github.com/chromedp/sysutil v1.1.0
+go: downloading github.com/go-json-experiment/json v0.0.0-20260820222146-c27c302e5fc3
+go: downloading github.com/gobwas/ws v1.4.0
+go: downloading github.com/ysmood/goob v0.4.0
+go: downloading github.com/ysmood/got v0.42.4
+go: downloading github.com/corona10/goimagehash v1.1.0
+go: downloading github.com/ysmood/fetchup v0.3.0
+go: downloading github.com/ysmood/leakless v0.9.0
+go: downloading github.com/swaggo/swag v1.16.6
+go: downloading github.com/jinzhu/inflection v1.0.0
+go: downloading golang.org/x/text v0.42.0
+go: downloading github.com/swaggo/files v1.0.1
+go: downloading modernc.org/libc v1.75.7
+go: downloading github.com/charmbracelet/colorprofile v0.4.3
+go: downloading github.com/mattn/go-runewidth v0.0.30
+go: downloading github.com/clipperhouse/displaywidth v0.11.0
+go: downloading github.com/clipperhouse/uax29/v2 v2.7.0
+go: downloading golang.org/x/net v0.59.0
+go: downloading filippo.io/edwards25519 v1.2.0
+go: downloading github.com/alecthomas/chroma/v2 v2.27.0
+go: downloading github.com/charmbracelet/x/exp/slice v0.0.0-20260913004009-c615ff2f7805
+go: downloading github.com/microcosm-cc/bluemonday v1.0.27
+go: downloading github.com/muesli/reflow v0.3.0
+go: downloading github.com/jackc/pgpassfile v1.0.0
+go: downloading github.com/jackc/pgservicefile v0.0.0-20240606120523-5a60cdf6a761
+go: downloading github.com/gobwas/httphead v0.1.0
+go: downloading github.com/gobwas/pool v0.2.1
+go: downloading github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
+go: downloading github.com/KyleBanks/depth v1.2.1
+go: downloading github.com/go-openapi/spec v1.0.1
+go: downloading golang.org/x/tools v0.50.0
+go: downloading github.com/xo/terminfo v1.2.0
+go: downloading github.com/jackc/puddle/v2 v2.2.2
+go: downloading github.com/dlclark/regexp2/v2 v2.8.0
+go: downloading github.com/aymerick/douceur v0.2.0
+go: downloading github.com/go-openapi/jsonpointer v1.0.1
+go: downloading github.com/go-openapi/jsonreference v1.0.2
+go: downloading github.com/go-openapi/swag/jsonutils v0.29.2
+go: downloading github.com/go-openapi/swag/loading v0.29.2
+go: downloading github.com/go-openapi/swag/stringutils v0.29.2
+go: downloading golang.org/x/sync v0.23.0
+go: downloading github.com/gorilla/css v1.0.1
+go: downloading github.com/go-openapi/swag/typeutils v0.29.2
+go: downloading github.com/go-openapi/swag/yamlutils v0.29.2
+go: downloading golang.org/x/mod v0.41.0
+go: downloading github.com/go-openapi/swag/conv v0.29.2
+go: downloading go.yaml.in/yaml/v3 v3.0.5
+go: downloading github.com/go-openapi/swag/pools v0.29.2
+go: downloading modernc.org/mathutil v1.7.1
+go: downloading github.com/dustin/go-humanize v1.0.1
+go: downloading github.com/google/uuid v1.6.0
+go: downloading modernc.org/memory v1.12.1
+go: downloading github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec
+internal/goarch
+internal/unsafeheader
+internal/byteorder
+internal/cpu
+internal/coverage/rtcov
+internal/abi
+internal/godebugs
+internal/goexperiment
+internal/goos
+internal/profilerecord
+internal/runtime/atomic
+internal/chacha8rand
+internal/bytealg
+internal/runtime/syscall/linux
+math/bits
+internal/runtime/exithook
+internal/runtime/gc
+internal/strconv
+internal/runtime/sys
+internal/asan
+internal/msan
+internal/runtime/math
+internal/runtime/gc/scan
+internal/runtime/pprof/label
+internal/stringslite
+internal/race
+internal/trace/tracev2
+internal/runtime/maps
+sync/atomic
+internal/synctest
+unicode
+internal/sync
+internal/runtime/cgroup
+unicode/utf8
+cmp
+encoding
+math
+unicode/utf16
+database/sql/internal
+crypto/internal/fips140/alias
+crypto/internal/fips140deps/byteorder
+crypto/internal/fips140deps/cpu
+crypto/internal/constanttime
+crypto/internal/fips140deps/time
+crypto/internal/fips140/subtle
+crypto/internal/boring/sig
+runtime
+crypto/subtle
+image/color
+github.com/rivo/uniseg
+log/internal
+internal/nettrace
+log/slog/internal
+container/list
+github.com/charmbracelet/x/ansi/parser
+golang.org/x/net/html/atom
+github.com/sensepost/gowitness/internal/version
+vendor/golang.org/x/crypto/cryptobyte/asn1
+vendor/golang.org/x/crypto/internal/alias
+github.com/jackc/puddle/v2/internal/genstack
+github.com/chromedp/chromedp/device
+github.com/gobwas/pool/internal/pmath
+github.com/go-rod/rod/lib/assets
+github.com/go-rod/rod/lib/js
+github.com/ysmood/leakless/pkg/shared
+github.com/corona10/goimagehash/etcs
+internal/goversion
+internal/platform
+internal/syslist
+internal/gover
+iter
+internal/reflectlite
+weak
+sync
+slices
+maps
+github.com/charmbracelet/x/exp/slice
+errors
+sort
+internal/bisect
+internal/testlog
+io
+strconv
+internal/oserror
+path
+bytes
+strings
+reflect
+syscall
+hash
+hash/crc32
+bufio
+internal/godebug
+encoding/json/internal
+encoding/json/internal/jsonflags
+encoding/json/internal/jsonopts
+encoding/json/internal/jsonwire
+time
+internal/syscall/unix
+internal/syscall/execenv
+encoding/base32
+encoding/json/jsontext
+encoding/base64
+github.com/clipperhouse/uax29/v2/graphemes
+github.com/clipperhouse/displaywidth
+io/fs
+internal/poll
+internal/fmtsort
+internal/filepathlite
+encoding/binary
+context
+crypto
+crypto/internal/fips140deps/godebug
+crypto/internal/fips140
+crypto/internal/impl
+crypto/internal/fips140/sha3
+crypto/internal/fips140/sha256
+os
+crypto/internal/fips140/sha512
+crypto/internal/entropy/v1.0.0
+math/rand/v2
+math/rand
+crypto/internal/fips140/hmac
+crypto/internal/fips140/check
+crypto/internal/randutil
+crypto/internal/fips140/aes
+crypto/fips140
+unique
+golang.org/x/sys/unix
+net/netip
+fmt
+path/filepath
+crypto/internal/sysrand
+github.com/mattn/go-runewidth
+crypto/internal/fips140/drbg
+crypto/internal/fips140/aes/gcm
+crypto/internal/fips140only
+io/ioutil
+compress/flate
+encoding/hex
+crypto/cipher
+encoding/json/v2
+math/big
+crypto/internal/boring
+crypto/internal/rand
+net/url
+archive/zip
+github.com/charmbracelet/x/term
+crypto/rand
+uuid
+database/sql/driver
+os/exec
+encoding/json
+image
+runtime/cgo
+github.com/aymanbagabas/go-osc52/v2
+github.com/lucasb-eyer/go-colorful
+github.com/mattn/go-isatty
+text/template/parse
+database/sql
+github.com/charmbracelet/x/ansi
+text/template
+os/user
+github.com/xo/terminfo
+log
+regexp/syntax
+crypto/md5
+github.com/charmbracelet/colorprofile
+github.com/muesli/termenv
+crypto/sha1
+vendor/golang.org/x/net/dns/dnsmessage
+github.com/charmbracelet/x/cellbuf
+regexp
+internal/singleflight
+modernc.org/libc/uuid/uuid
+github.com/remyoudompheng/bigfft
+modernc.org/mathutil
+github.com/dustin/go-humanize
+github.com/charmbracelet/lipgloss
+modernc.org/memory
+os/signal
+net
+runtime/debug
+modernc.org/libc/sys/types
+github.com/jinzhu/now
+go/token
+gorm.io/gorm/utils
+github.com/charmbracelet/lipgloss/table
+gorm.io/gorm/internal/lru
+gorm.io/gorm/internal/stmt_store
+go/scanner
+log/slog/internal/buffer
+log/slog
+go/ast
+internal/saferio
+encoding/gob
+gorm.io/gorm/logger
+gorm.io/gorm/clause
+github.com/jinzhu/inflection
+golang.org/x/text/internal/tag
+golang.org/x/text/internal/language
+golang.org/x/text/transform
+github.com/google/uuid
+hash/maphash
+golang.org/x/text/unicode/norm
+compress/gzip
+modernc.org/libc
+encoding/xml
+golang.org/x/text/internal/language/compact
+golang.org/x/text/language
+github.com/dlclark/regexp2/v2/syntax
+golang.org/x/text/internal
+golang.org/x/text/cases
+html
+embed
+gorm.io/gorm/schema
+github.com/charmbracelet/glamour/internal/autolink
+github.com/aymerick/douceur/css
+github.com/gorilla/css/scanner
+github.com/aymerick/douceur/parser
+github.com/microcosm-cc/bluemonday/css
+golang.org/x/net/html
+gorm.io/gorm
+github.com/dlclark/regexp2/v2/helpers
+github.com/dlclark/regexp2/v2
+github.com/microcosm-cc/bluemonday
+gorm.io/gorm/callbacks
+gorm.io/gorm/migrator
+github.com/alecthomas/chroma/v2
+github.com/muesli/reflow/ansi
+github.com/muesli/reflow/indent
+github.com/muesli/reflow/padding
+github.com/muesli/reflow/wordwrap
+github.com/alecthomas/chroma/v2/formatters/html
+github.com/alecthomas/chroma/v2/formatters/svg
+github.com/alecthomas/chroma/v2/lexers
+github.com/alecthomas/chroma/v2/styles
+github.com/alecthomas/chroma/v2/formatters
+github.com/yuin/goldmark-emoji/definition
+github.com/yuin/goldmark/util
+golang.org/x/term
+github.com/yuin/goldmark/text
+crypto/sha256
+github.com/sensepost/gowitness/internal/islazy
+github.com/yuin/goldmark/ast
+github.com/sensepost/gowitness/pkg/models
+hash/adler32
+compress/zlib
+crypto/internal/boring/bbig
+crypto/internal/fips140/bigmod
+github.com/alecthomas/chroma/v2/quick
+crypto/sha3
+crypto/internal/fips140/rsa
+crypto/internal/fips140hash
+crypto/sha512
+crypto/aes
+crypto/des
+github.com/yuin/goldmark-emoji/ast
+github.com/yuin/goldmark/extension/ast
+github.com/yuin/goldmark/renderer
+github.com/yuin/goldmark/parser
+github.com/yuin/goldmark/renderer/html
+crypto/rsa
+github.com/charmbracelet/glamour/ansi
+crypto/internal/fips140/nistec/fiat
+github.com/yuin/goldmark
+github.com/yuin/goldmark-emoji
+github.com/yuin/goldmark/extension
+github.com/charmbracelet/glamour/styles
+crypto/internal/fips140/edwards25519/field
+crypto/internal/fips140cache
+crypto/internal/fips140/nistec
+encoding/asn1
+github.com/charmbracelet/glamour
+github.com/sensepost/gowitness/internal/ascii
+crypto/internal/fips140/edwards25519
+vendor/golang.org/x/crypto/cryptobyte
+crypto/internal/fips140/ed25519
+crypto/ed25519
+crypto/internal/fips140/hkdf
+crypto/hkdf
+crypto/hmac
+crypto/internal/fips140/ecdh
+crypto/elliptic
+crypto/ecdh
+crypto/internal/fips140/ecdsa
+crypto/internal/fips140/mlkem
+vendor/golang.org/x/crypto/chacha20
+crypto/ecdsa
+vendor/golang.org/x/crypto/internal/poly1305
+modernc.org/sqlite/lib
+crypto/mlkem
+vendor/golang.org/x/sys/cpu
+crypto/internal/fips140/tls12
+crypto/internal/fips140/tls13
+vendor/golang.org/x/crypto/chacha20poly1305
+crypto/internal/fips140/mldsa
+crypto/hpke
+crypto/mldsa
+crypto/rc4
+crypto/tls/internal/fips140tls
+crypto/dsa
+crypto/x509/pkix
+encoding/pem
+filippo.io/edwards25519/field
+github.com/jackc/pgx/v5/internal/pgio
+github.com/jackc/pgx/v5/internal/pgdatetime
+crypto/x509
+github.com/jackc/pgx/v5/internal/sanitize
+filippo.io/edwards25519
+crypto/internal/fips140/pbkdf2
+crypto/pbkdf2
+github.com/jackc/pgpassfile
+github.com/jackc/pgservicefile
+github.com/jackc/pgx/v5/internal/iobufpool
+github.com/jackc/pgx/v5/pgconn/ctxwatch
+github.com/jackc/pgx/v5/pgconn/internal/bgreader
+github.com/jackc/pgx/v5/pgproto3
+github.com/jackc/pgx/v5/pgtype
+crypto/tls
+golang.org/x/text/runes
+golang.org/x/text/unicode/bidi
+golang.org/x/text/secure/bidirule
+golang.org/x/text/width
+golang.org/x/text/secure/precis
+golang.org/x/sync/semaphore
+github.com/jackc/puddle/v2
+github.com/go-logfmt/logfmt
+github.com/charmbracelet/log
+github.com/go-sql-driver/mysql
+github.com/sensepost/gowitness/pkg/log
+github.com/sensepost/gowitness/pkg/models/oldv2
+github.com/lair-framework/go-nmap
+github.com/sensepost/gowitness/pkg/readers
+github.com/projectdiscovery/wappalyzergo
+gorm.io/driver/mysql
+encoding/csv
+github.com/chromedp/sysutil
+github.com/chromedp/cdproto/cdp
+github.com/go-json-experiment/json/jsontext
+github.com/chromedp/cdproto/security
+github.com/chromedp/cdproto/runtime
+github.com/chromedp/cdproto/ads
+github.com/chromedp/cdproto/autofill
+github.com/chromedp/cdproto/target
+github.com/chromedp/cdproto/debugger
+github.com/chromedp/cdproto/io
+github.com/chromedp/cdproto/dom
+github.com/chromedp/cdproto/network
+github.com/chromedp/cdproto/accessibility
+github.com/chromedp/cdproto/animation
+github.com/chromedp/cdproto/serviceworker
+github.com/chromedp/cdproto/backgroundservice
+github.com/chromedp/cdproto/page
+github.com/chromedp/cdproto/storage
+github.com/chromedp/cdproto/audits
+github.com/jackc/pgx/v5/pgconn
+github.com/chromedp/cdproto/bluetoothemulation
+github.com/chromedp/cdproto/browser
+github.com/chromedp/cdproto/cachestorage
+github.com/chromedp/cdproto/cast
+github.com/chromedp/cdproto/crashreportcontext
+github.com/chromedp/cdproto/css
+github.com/chromedp/cdproto/deviceaccess
+github.com/chromedp/cdproto/deviceorientation
+github.com/chromedp/cdproto/digitalcredentials
+github.com/chromedp/cdproto/domdebugger
+github.com/chromedp/cdproto/domstorage
+github.com/chromedp/cdproto/domsnapshot
+github.com/chromedp/cdproto/emulation
+github.com/chromedp/cdproto/eventbreakpoints
+github.com/chromedp/cdproto/extensions
+github.com/chromedp/cdproto/fedcm
+github.com/jackc/pgx/v5/internal/stmtcache
+github.com/chromedp/cdproto/fetch
+github.com/jackc/pgx/v5
+github.com/chromedp/cdproto/filesystem
+github.com/chromedp/cdproto/headlessexperimental
+github.com/chromedp/cdproto/heapprofiler
+github.com/chromedp/cdproto/indexeddb
+github.com/chromedp/cdproto/input
+github.com/chromedp/cdproto/inspector
+github.com/chromedp/cdproto/layertree
+github.com/chromedp/cdproto/log
+github.com/chromedp/cdproto/media
+github.com/chromedp/cdproto/memory
+github.com/chromedp/cdproto/overlay
+github.com/chromedp/cdproto/performance
+github.com/chromedp/cdproto/performancetimeline
+github.com/chromedp/cdproto/preload
+github.com/chromedp/cdproto/profiler
+github.com/chromedp/cdproto/pwa
+github.com/chromedp/cdproto/smartcardemulation
+github.com/jackc/pgx/v5/pgxpool
+github.com/chromedp/cdproto/systeminfo
+github.com/chromedp/cdproto/tethering
+github.com/chromedp/cdproto/tracing
+github.com/chromedp/cdproto/webaudio
+github.com/chromedp/cdproto/webauthn
+github.com/chromedp/cdproto/webmcp
+github.com/go-json-experiment/json
+github.com/chromedp/chromedp/kb
+github.com/jackc/pgx/v5/stdlib
+github.com/gobwas/httphead
+github.com/chromedp/cdproto
+github.com/gobwas/pool
+github.com/gobwas/pool/pbufio
+vendor/golang.org/x/text/transform
+gorm.io/driver/postgres
+vendor/golang.org/x/text/unicode/bidi
+vendor/golang.org/x/text/secure/bidirule
+vendor/golang.org/x/text/unicode/norm
+net/textproto
+mime
+mime/quotedprintable
+net/http/httptrace
+vendor/golang.org/x/net/idna
+net/http/internal
+net/http/internal/ascii
+vendor/golang.org/x/net/http2/hpack
+mime/multipart
+vendor/golang.org/x/net/http/httpguts
+vendor/golang.org/x/net/http/httpproxy
+net/http/internal/httpcommon
+net/http/internal/httpsfv
+github.com/gobwas/pool/pbytes
+flag
+github.com/ysmood/gson
+net/http/internal/http2
+github.com/go-rod/rod/lib/proto
+image/internal/imageutil
+image/jpeg
+image/png
+github.com/go-rod/rod/lib/launcher/flags
+archive/tar
+github.com/ysmood/leakless/pkg/utils
+github.com/ysmood/leakless
+net/http
+github.com/ysmood/goob
+github.com/ysmood/got/lib/lcs
+github.com/corona10/goimagehash/transforms
+github.com/nfnt/resize
+github.com/corona10/goimagehash
+github.com/sensepost/gowitness/pkg/imagehash
+internal/profile
+github.com/go-rod/rod/lib/utils
+github.com/glebarez/go-sqlite
+github.com/go-rod/rod/lib/defaults
+github.com/go-rod/rod/lib/devices
+github.com/go-rod/rod/lib/input
+text/tabwriter
+runtime/pprof
+runtime/trace
+github.com/glebarez/sqlite
+go/build/constraint
+go/doc/comment
+github.com/sensepost/gowitness/pkg/database
+github.com/gobwas/ws
+github.com/go-rod/rod/lib/cdp
+github.com/ysmood/fetchup
+github.com/sensepost/gowitness/pkg/writers
+net/http/httputil
+github.com/gobwas/ws/wsutil
+github.com/go-chi/chi/v5
+github.com/sensepost/gowitness/pkg/runner
+expvar
+github.com/go-rod/rod/lib/launcher
+github.com/chromedp/chromedp
+net/http/pprof
+github.com/go-chi/cors
+github.com/go-chi/chi/v5/middleware
+github.com/go-rod/rod
+internal/lazyregexp
+go/doc
+go/parser
+internal/buildcfg
+internal/goroot
+github.com/go-openapi/jsonpointer/jsonname
+github.com/go-openapi/jsonreference/internal
+github.com/go-openapi/swag/jsonutils/adapters/ifaces
+github.com/go-openapi/swag/conv
+github.com/go-openapi/jsonpointer
+github.com/go-openapi/swag/pools
+github.com/go-openapi/swag/typeutils
+go/build
+github.com/go-openapi/swag/jsonutils/adapters/stdlib/json
+github.com/go-openapi/jsonreference
+go.yaml.in/yaml/v3
+github.com/go-openapi/swag/jsonutils/adapters
+github.com/go-openapi/swag/jsonutils
+github.com/KyleBanks/depth
+github.com/sensepost/gowitness/pkg/runner/drivers
+github.com/go-openapi/swag/stringutils
+container/heap
+go/constant
+go/version
+internal/types/errors
+golang.org/x/tools/go/ast/astutil
+go/types
+golang.org/x/tools/go/buildutil
+github.com/sensepost/gowitness/web/api
+golang.org/x/tools/go/internal/cgo
+github.com/go-openapi/swag/yamlutils
+golang.org/x/mod/semver
+github.com/go-openapi/swag/loading
+golang.org/x/tools/internal/event/label
+go/printer
+golang.org/x/tools/internal/event/keys
+github.com/go-openapi/spec
+golang.org/x/tools/internal/event/core
+golang.org/x/tools/internal/event
+golang.org/x/tools/internal/gocommand
+golang.org/x/mod/internal/lazyregexp
+go/format
+golang.org/x/mod/module
+golang.org/x/sync/errgroup
+golang.org/x/tools/internal/gopathwalk
+internal/sysinfo
+testing
+golang.org/x/tools/internal/stdlib
+golang.org/x/net/webdav/internal/xml
+golang.org/x/net/webdav
+html/template
+github.com/sensepost/gowitness/web/templates
+github.com/spf13/pflag
+golang.org/x/tools/go/loader
+golang.org/x/tools/internal/modindex
+github.com/swaggo/files
+golang.org/x/tools/internal/imports
+github.com/spf13/cobra
+golang.org/x/tools/imports
+github.com/swaggo/swag
+github.com/sensepost/gowitness/web/docs
+github.com/swaggo/http-swagger
+github.com/sensepost/gowitness/web
+github.com/sensepost/gowitness/cmd
+github.com/sensepost/gowitness

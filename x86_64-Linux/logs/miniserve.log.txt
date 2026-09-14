@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) miniserve :: https://github.com/svenstaro/miniserve [Monday, 2026-09-14 (06:52:25 PM) UTC]
+
+https://github.com/svenstaro/miniserve/releases/download/v0.35.0/miniserve-0.35.0-x86_64-unknown-linux-musl
+Downloading 100% [==========================] (2.3/2.3 MB, 49.004 MB/s)
+Extracted `miniserve-0.35.0-x86_64-unknown-linux-musl` to `/home/runner/work/_temp/toolpack_x86_64/miniserve`

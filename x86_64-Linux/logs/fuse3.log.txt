@@ -1,0 +1,351 @@
+
+
+ [+] (Building | Fetching) fuse3 :: https://github.com/libfuse/libfuse [Monday, 2026-09-14 (06:40:09 PM) UTC]
+
+this derivation will be built:
+  /nix/store/xvnng02ki2v3h817x10pggqkvw16ampq-fuse-static-x86_64-unknown-linux-musl-3.18.2.drv
+these 72 paths will be fetched (197.9 MiB download, 600.0 MiB unpacked):
+  /nix/store/8jnb0l7s676sp8p1mh8n2188gk6vjgwp-acl-2.4.0
+  /nix/store/bb2jb295969rw2xmijf6s578yb0pxypr-attr-2.6.0
+  /nix/store/9ipfvwnqp1q8ijnmi5sxvlx9r8w34lw3-bash-5.3p15
+  /nix/store/skbyfimmzvy4qx2aa5n702gnr5fkw1cr-bash-static-x86_64-unknown-linux-musl-5.3p15
+  /nix/store/xz5xsq0nihfs15fbknz5w0yblg04760q-bzip2-1.0.8
+  /nix/store/622jkvg8hgffly7dca6iif9drvimingx-bzip2-1.0.8-bin
+  /nix/store/3qgy8q2j64v2m9jy3a5jmssacbblhd4r-coreutils-9.11
+  /nix/store/xw09m9cnc9ayb2j53y2rj8jhm1h7kkxa-diffutils-3.12
+  /nix/store/52jf1mwz8si4za1dv3cv6hijsh8y035j-ed-1.22.5
+  /nix/store/qr1vy6jpp19gzak69851yrpcchnp94i8-expand-response-params
+  /nix/store/2gkqj0v0msfcagwf5ix199rf1lnwf2a1-expat-2.8.3
+  /nix/store/xcab8m6wdrd30l10bw3hkz32yiibynzv-file-5.48
+  /nix/store/i4kjidyvl8ciwbcwm75g75sriq3knav0-findutils-4.11.0
+  /nix/store/9s67j8nx9gycffj9hcqyd2zcyqgd9n29-fortify-headers-3.0.1
+  /nix/store/bpy2ps3f0f3gvgvqjwgqriw1j1n840wd-gawk-5.4.1
+  /nix/store/0vqb1mcas5j8dv6bhbrshinlgsg6bvgi-gcc-15.3.0-lib
+  /nix/store/wi6kaycsa2479qrxv9xy6yg3q5ggfs6j-gcc-15.3.0-libgcc
+  /nix/store/js998ih76w3n2cqnysa7g27608djj5yn-gdbm-1.26-lib
+  /nix/store/n51dhmdbik1kfrsm62j5knavmigwrl1a-glibc-2.42-84
+  /nix/store/bmyw1idq6xyp1h4ksmb14s4imwnf8vwa-gmp-with-cxx-6.3.0
+  /nix/store/jwyskbj2mc7izs67ib2msydsh0vbnwl9-gmp-with-cxx-6.3.0
+  /nix/store/dxagrpxl8wg2z16al3ls3zaci6dvhnnn-gnu-config-2024-01-01
+  /nix/store/yz5vmd4835gljyzk7nrcsc7qahbbdqai-gnu-config-2024-01-01
+  /nix/store/yhr4ps9rdmb55pgqaq246vlh7xfac1dx-gnugrep-3.12
+  /nix/store/hd36xbvbc0vrn9f9idrfwxznri0ax427-gnumake-4.4.1
+  /nix/store/4nylac9gazdpsid79qyk0jpqm312b2jx-gnused-4.10
+  /nix/store/w2mbg6mcq7k3j088sbwfziy8vsdhyk7v-gnutar-1.35
+  /nix/store/sd9qcv5s2gxvd6hpp5hk5cixq2bd4jd1-gzip-1.14
+  /nix/store/mmf0yfjd49vyiscryi3lyi2xq6avkbsy-isl-0.20
+  /nix/store/wb232z007b8qynidq89lli8lb2c4q0r4-libffi-3.8.0
+  /nix/store/nga9d6m9iplygw3iqghk2g840nz7b0gy-libidn2-2.3.8
+  /nix/store/nfmlcwrvmql5amfn72agbcd1xc9a5hwl-libmpc-1.4.1
+  /nix/store/yh8rykx8wakl1ccn8rc351f6r2wbg4cn-libunistring-1.4.2
+  /nix/store/dm8zcid3nc725nwwqsxalnbi0ix5llal-linux-headers-static-7.1
+  /nix/store/h6q94p1jw42irzqybm1049fmxakh8701-mailcap-2.1.54
+  /nix/store/azf6s3lpx8f53si93y8135mpyykjj72b-meson-1.10.2
+  /nix/store/217wr6zsyp3hkrvsrl5h4d7yphdm4wir-mpdecimal-4.0.1
+  /nix/store/rflci23bs1jf1jgrbhrlivcwiff72qsg-mpfr-4.2.2
+  /nix/store/84hjvlawb77gmww63dx9d1njfia52gk1-musl-static-x86_64-unknown-linux-musl-1.2.6
+  /nix/store/9l7h3mziafckk98fhdz84z3pv7sz8szk-musl-static-x86_64-unknown-linux-musl-1.2.6-bin
+  /nix/store/rz18a4sl6ibxilx7da88hh27rvz7g668-musl-static-x86_64-unknown-linux-musl-1.2.6-dev
+  /nix/store/zz125vwahb637g5ckl046ll8fcqmc8pk-ncurses-6.6
+  /nix/store/6ji6bq0si2j8ibdrxqgcmh1cw0wmdiyk-ninja-1.13.2
+  /nix/store/hg41dqig0qxm7shyi0a0xkw29a14i3js-openssl-3.6.3
+  /nix/store/1rcr9yyj9qlgm3dyin1j37xl7q84h15i-patch-2.8
+  /nix/store/fpig164lz7fcipbndn61sfd2y2yq363n-patchelf-0.15.2
+  /nix/store/cj9443b6ljpw3pzxa3x3ck7vrig9kkc0-pcre2-10.47
+  /nix/store/4nq83n0fhihwmz04wip502j8f5jdi9cg-pkg-config-0.29.2
+  /nix/store/b5bpi6zfajzzrwwpgba2q6li3nnya4bs-python3-3.14.7
+  /nix/store/c6mgy63s5y1353152dp2s2jaig026j3h-readline-8.3p3
+  /nix/store/pa29282brkq0r61lchcffh34hpk0yfvb-source
+  /nix/store/xcv2rrfly0za0kdhzvmc0j2a6074zkib-sqlite-3.53.3
+  /nix/store/1lx24asdfzmm3mw8842fd07ipl24cpkz-stdenv-linux
+  /nix/store/p0ff33dca0fbkskqwrl3spvxcn5974h0-tzdata-2026c
+  /nix/store/7n9ldpw06qbqlnf0iaig26agpn2aazfl-update-autotools-gnu-config-scripts-hook
+  /nix/store/8dj0z811igxg8253f01smmljv79h9y40-update-autotools-gnu-config-scripts-hook
+  /nix/store/17xmg38m60inc59az3frp540ccrwn2r8-util-linux-minimal-2.42.2-lib
+  /nix/store/6cx0x7iqwvx8akmd6zhcf07gsgmlmz5c-util-linux-minimal-static-x86_64-unknown-linux-musl-2.42.2-bin
+  /nix/store/ympi74ajfjsm6akwa1wmclh53vcab14c-util-linux-minimal-static-x86_64-unknown-linux-musl-2.42.2-login
+  /nix/store/wyd1f2dpmcmb9k8inlx8ryck57sq3zi4-util-linux-minimal-static-x86_64-unknown-linux-musl-2.42.2-mount
+  /nix/store/hf33s1rj8kvp5wiilzcvgnj30j3al7q8-util-linux-minimal-static-x86_64-unknown-linux-musl-2.42.2-swap
+  /nix/store/sizcjfzal7p4qah8w30k403rnckvjyfd-x86_64-unknown-linux-musl-binutils-2.46
+  /nix/store/mrdd7m2vbllhmpbx7g2bjwfm2lh26fwl-x86_64-unknown-linux-musl-binutils-wrapper-2.46
+  /nix/store/fa091ir3g423w083am75s0xc5vk3mkxm-x86_64-unknown-linux-musl-gcc-15.3.0
+  /nix/store/kkd998rair4hp5y8fn3xi71chrdv6ika-x86_64-unknown-linux-musl-gcc-15.3.0-lib
+  /nix/store/cn1drziywixrw4x47hv3wxrz0pgjyrmb-x86_64-unknown-linux-musl-gcc-wrapper-15.3.0
+  /nix/store/hrf1925690zg2gf1m0j6gmm94d5d0sv5-x86_64-unknown-linux-musl-pkg-config-wrapper-0.29.2
+  /nix/store/ssvq1r0xd8f7paf6zqgpfql1a4drwhy2-xgcc-15.3.0-libgcc
+  /nix/store/bdwsskqikgdlq94xqh5dvyd8263w995g-xz-5.8.3
+  /nix/store/0fb3jrf20z28598alm6g7rrsw6dz2cqj-xz-5.8.3-bin
+  /nix/store/l3p6y554mkxi4vipnnp8809kxj0g1lyv-zlib-1.3.2
+  /nix/store/xcwclh5qgw2x6qc39x6ixara06xczzlw-zstd-1.5.7
+copying path '/nix/store/skbyfimmzvy4qx2aa5n702gnr5fkw1cr-bash-static-x86_64-unknown-linux-musl-5.3p15' from 'https://cache.nixos.org'...
+copying path '/nix/store/pa29282brkq0r61lchcffh34hpk0yfvb-source' from 'https://cache.nixos.org'...
+copying path '/nix/store/ympi74ajfjsm6akwa1wmclh53vcab14c-util-linux-minimal-static-x86_64-unknown-linux-musl-2.42.2-login' from 'https://cache.nixos.org'...
+copying path '/nix/store/wyd1f2dpmcmb9k8inlx8ryck57sq3zi4-util-linux-minimal-static-x86_64-unknown-linux-musl-2.42.2-mount' from 'https://cache.nixos.org'...
+copying path '/nix/store/hf33s1rj8kvp5wiilzcvgnj30j3al7q8-util-linux-minimal-static-x86_64-unknown-linux-musl-2.42.2-swap' from 'https://cache.nixos.org'...
+copying path '/nix/store/9s67j8nx9gycffj9hcqyd2zcyqgd9n29-fortify-headers-3.0.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/wi6kaycsa2479qrxv9xy6yg3q5ggfs6j-gcc-15.3.0-libgcc' from 'https://cache.nixos.org'...
+copying path '/nix/store/dxagrpxl8wg2z16al3ls3zaci6dvhnnn-gnu-config-2024-01-01' from 'https://cache.nixos.org'...
+copying path '/nix/store/kkd998rair4hp5y8fn3xi71chrdv6ika-x86_64-unknown-linux-musl-gcc-15.3.0-lib' from 'https://cache.nixos.org'...
+copying path '/nix/store/ssvq1r0xd8f7paf6zqgpfql1a4drwhy2-xgcc-15.3.0-libgcc' from 'https://cache.nixos.org'...
+copying path '/nix/store/yh8rykx8wakl1ccn8rc351f6r2wbg4cn-libunistring-1.4.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/dm8zcid3nc725nwwqsxalnbi0ix5llal-linux-headers-static-7.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/p0ff33dca0fbkskqwrl3spvxcn5974h0-tzdata-2026c' from 'https://cache.nixos.org'...
+copying path '/nix/store/h6q94p1jw42irzqybm1049fmxakh8701-mailcap-2.1.54' from 'https://cache.nixos.org'...
+copying path '/nix/store/84hjvlawb77gmww63dx9d1njfia52gk1-musl-static-x86_64-unknown-linux-musl-1.2.6' from 'https://cache.nixos.org'...
+copying path '/nix/store/7n9ldpw06qbqlnf0iaig26agpn2aazfl-update-autotools-gnu-config-scripts-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/nga9d6m9iplygw3iqghk2g840nz7b0gy-libidn2-2.3.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/9l7h3mziafckk98fhdz84z3pv7sz8szk-musl-static-x86_64-unknown-linux-musl-1.2.6-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/6cx0x7iqwvx8akmd6zhcf07gsgmlmz5c-util-linux-minimal-static-x86_64-unknown-linux-musl-2.42.2-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/n51dhmdbik1kfrsm62j5knavmigwrl1a-glibc-2.42-84' from 'https://cache.nixos.org'...
+copying path '/nix/store/8jnb0l7s676sp8p1mh8n2188gk6vjgwp-acl-2.4.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/bb2jb295969rw2xmijf6s578yb0pxypr-attr-2.6.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/xz5xsq0nihfs15fbknz5w0yblg04760q-bzip2-1.0.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/9ipfvwnqp1q8ijnmi5sxvlx9r8w34lw3-bash-5.3p15' from 'https://cache.nixos.org'...
+copying path '/nix/store/bpy2ps3f0f3gvgvqjwgqriw1j1n840wd-gawk-5.4.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/4nylac9gazdpsid79qyk0jpqm312b2jx-gnused-4.10' from 'https://cache.nixos.org'...
+copying path '/nix/store/52jf1mwz8si4za1dv3cv6hijsh8y035j-ed-1.22.5' from 'https://cache.nixos.org'...
+copying path '/nix/store/qr1vy6jpp19gzak69851yrpcchnp94i8-expand-response-params' from 'https://cache.nixos.org'...
+copying path '/nix/store/js998ih76w3n2cqnysa7g27608djj5yn-gdbm-1.26-lib' from 'https://cache.nixos.org'...
+copying path '/nix/store/hd36xbvbc0vrn9f9idrfwxznri0ax427-gnumake-4.4.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/0vqb1mcas5j8dv6bhbrshinlgsg6bvgi-gcc-15.3.0-lib' from 'https://cache.nixos.org'...
+copying path '/nix/store/2gkqj0v0msfcagwf5ix199rf1lnwf2a1-expat-2.8.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/wb232z007b8qynidq89lli8lb2c4q0r4-libffi-3.8.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/217wr6zsyp3hkrvsrl5h4d7yphdm4wir-mpdecimal-4.0.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/zz125vwahb637g5ckl046ll8fcqmc8pk-ncurses-6.6' from 'https://cache.nixos.org'...
+copying path '/nix/store/l3p6y554mkxi4vipnnp8809kxj0g1lyv-zlib-1.3.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/622jkvg8hgffly7dca6iif9drvimingx-bzip2-1.0.8-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/w2mbg6mcq7k3j088sbwfziy8vsdhyk7v-gnutar-1.35' from 'https://cache.nixos.org'...
+copying path '/nix/store/bdwsskqikgdlq94xqh5dvyd8263w995g-xz-5.8.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/cj9443b6ljpw3pzxa3x3ck7vrig9kkc0-pcre2-10.47' from 'https://cache.nixos.org'...
+copying path '/nix/store/17xmg38m60inc59az3frp540ccrwn2r8-util-linux-minimal-2.42.2-lib' from 'https://cache.nixos.org'...
+copying path '/nix/store/4nq83n0fhihwmz04wip502j8f5jdi9cg-pkg-config-0.29.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/1rcr9yyj9qlgm3dyin1j37xl7q84h15i-patch-2.8' from 'https://cache.nixos.org'...
+copying path '/nix/store/hg41dqig0qxm7shyi0a0xkw29a14i3js-openssl-3.6.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/sd9qcv5s2gxvd6hpp5hk5cixq2bd4jd1-gzip-1.14' from 'https://cache.nixos.org'...
+copying path '/nix/store/yz5vmd4835gljyzk7nrcsc7qahbbdqai-gnu-config-2024-01-01' from 'https://cache.nixos.org'...
+copying path '/nix/store/rz18a4sl6ibxilx7da88hh27rvz7g668-musl-static-x86_64-unknown-linux-musl-1.2.6-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/xcab8m6wdrd30l10bw3hkz32yiibynzv-file-5.48' from 'https://cache.nixos.org'...
+copying path '/nix/store/xcv2rrfly0za0kdhzvmc0j2a6074zkib-sqlite-3.53.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/0fb3jrf20z28598alm6g7rrsw6dz2cqj-xz-5.8.3-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/hrf1925690zg2gf1m0j6gmm94d5d0sv5-x86_64-unknown-linux-musl-pkg-config-wrapper-0.29.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/yhr4ps9rdmb55pgqaq246vlh7xfac1dx-gnugrep-3.12' from 'https://cache.nixos.org'...
+copying path '/nix/store/8dj0z811igxg8253f01smmljv79h9y40-update-autotools-gnu-config-scripts-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/fpig164lz7fcipbndn61sfd2y2yq363n-patchelf-0.15.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/sizcjfzal7p4qah8w30k403rnckvjyfd-x86_64-unknown-linux-musl-binutils-2.46' from 'https://cache.nixos.org'...
+copying path '/nix/store/xcwclh5qgw2x6qc39x6ixara06xczzlw-zstd-1.5.7' from 'https://cache.nixos.org'...
+copying path '/nix/store/bmyw1idq6xyp1h4ksmb14s4imwnf8vwa-gmp-with-cxx-6.3.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/jwyskbj2mc7izs67ib2msydsh0vbnwl9-gmp-with-cxx-6.3.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/6ji6bq0si2j8ibdrxqgcmh1cw0wmdiyk-ninja-1.13.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/mmf0yfjd49vyiscryi3lyi2xq6avkbsy-isl-0.20' from 'https://cache.nixos.org'...
+copying path '/nix/store/rflci23bs1jf1jgrbhrlivcwiff72qsg-mpfr-4.2.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/3qgy8q2j64v2m9jy3a5jmssacbblhd4r-coreutils-9.11' from 'https://cache.nixos.org'...
+copying path '/nix/store/nfmlcwrvmql5amfn72agbcd1xc9a5hwl-libmpc-1.4.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/i4kjidyvl8ciwbcwm75g75sriq3knav0-findutils-4.11.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/xw09m9cnc9ayb2j53y2rj8jhm1h7kkxa-diffutils-3.12' from 'https://cache.nixos.org'...
+copying path '/nix/store/mrdd7m2vbllhmpbx7g2bjwfm2lh26fwl-x86_64-unknown-linux-musl-binutils-wrapper-2.46' from 'https://cache.nixos.org'...
+copying path '/nix/store/c6mgy63s5y1353152dp2s2jaig026j3h-readline-8.3p3' from 'https://cache.nixos.org'...
+copying path '/nix/store/fa091ir3g423w083am75s0xc5vk3mkxm-x86_64-unknown-linux-musl-gcc-15.3.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/b5bpi6zfajzzrwwpgba2q6li3nnya4bs-python3-3.14.7' from 'https://cache.nixos.org'...
+copying path '/nix/store/azf6s3lpx8f53si93y8135mpyykjj72b-meson-1.10.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/cn1drziywixrw4x47hv3wxrz0pgjyrmb-x86_64-unknown-linux-musl-gcc-wrapper-15.3.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/1lx24asdfzmm3mw8842fd07ipl24cpkz-stdenv-linux' from 'https://cache.nixos.org'...
+building '/nix/store/xvnng02ki2v3h817x10pggqkvw16ampq-fuse-static-x86_64-unknown-linux-musl-3.18.2.drv'...
+fuse-static-x86_64-unknown-linux-musl> structuredAttrs is enabled
+fuse-static-x86_64-unknown-linux-musl> Running phase: unpackPhase
+fuse-static-x86_64-unknown-linux-musl> unpacking source archive /nix/store/pa29282brkq0r61lchcffh34hpk0yfvb-source
+fuse-static-x86_64-unknown-linux-musl> source root is source
+fuse-static-x86_64-unknown-linux-musl> Running phase: patchPhase
+fuse-static-x86_64-unknown-linux-musl> applying patch /nix/store/arhwafyygxcl2jc2xc6n6ws34rs67v5p-fuse3-install.patch
+fuse-static-x86_64-unknown-linux-musl> patching file util/install_helper.sh
+fuse-static-x86_64-unknown-linux-musl> patching file util/meson.build
+fuse-static-x86_64-unknown-linux-musl> Hunk #1 succeeded at 1 with fuzz 2.
+fuse-static-x86_64-unknown-linux-musl> applying patch /nix/store/qhq3yqyw4nr9bxdrg9ilax7dk9329p2j-fuse3-Do-not-set-FUSERMOUNT_DIR.patch
+fuse-static-x86_64-unknown-linux-musl> patching file lib/meson.build
+fuse-static-x86_64-unknown-linux-musl> Hunk #1 succeeded at 48 with fuzz 2 (offset 11 lines).
+fuse-static-x86_64-unknown-linux-musl> Running phase: updateAutotoolsGnuConfigScriptsPhase
+fuse-static-x86_64-unknown-linux-musl> Running phase: updateAutotoolsGnuConfigScriptsPhase
+fuse-static-x86_64-unknown-linux-musl> Running phase: configurePhase
+fuse-static-x86_64-unknown-linux-musl> mesonConfigurePhase flags: --prefix=/nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2 --libdir=/nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/lib --libexecdir=/nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/libexec --bindir=/nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/bin --sbindir=/nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/sbin --includedir=/nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/include --mandir=/nix/store/s1axzb734a2gag6svbpp6pybgd3259hg-fuse-static-x86_64-unknown-linux-musl-3.18.2-man/share/man --infodir=/nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/share/info --localedir=/nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/share/locale -Dauto_features=enabled -Dwrap_mode=nodownload --buildtype=plain --cross-file=/nix/store/z5mm9bppvz0kmgygihk9wlpyvl57p6as-cross-file.conf -Dudevrulesdir=/udev/rules.d -Duseroot=false -Dinitscriptdir= -Dexamples=false -Ddefault_library=static -Ddefault_both_libraries=static
+fuse-static-x86_64-unknown-linux-musl> The Meson build system
+fuse-static-x86_64-unknown-linux-musl> Version: 1.10.2
+fuse-static-x86_64-unknown-linux-musl> Source dir: /nix/var/nix/builds/nix-75295-4280299166/source
+fuse-static-x86_64-unknown-linux-musl> Build dir: /nix/var/nix/builds/nix-75295-4280299166/source/build
+fuse-static-x86_64-unknown-linux-musl> Build type: cross build
+fuse-static-x86_64-unknown-linux-musl> Project name: libfuse3
+fuse-static-x86_64-unknown-linux-musl> Project version: 3.18.2
+fuse-static-x86_64-unknown-linux-musl> C compiler for the host machine: x86_64-unknown-linux-musl-gcc (gcc 15.3.0 "x86_64-unknown-linux-musl-gcc (GCC) 15.3.0")
+fuse-static-x86_64-unknown-linux-musl> C linker for the host machine: x86_64-unknown-linux-musl-gcc ld.bfd 2.46
+fuse-static-x86_64-unknown-linux-musl> Compiler for language c for the build machine not found.
+fuse-static-x86_64-unknown-linux-musl> Build machine cpu family: x86_64
+fuse-static-x86_64-unknown-linux-musl> Build machine cpu: x86_64
+fuse-static-x86_64-unknown-linux-musl> Host machine cpu family: x86_64
+fuse-static-x86_64-unknown-linux-musl> Host machine cpu: x86_64
+fuse-static-x86_64-unknown-linux-musl> Target machine cpu family: x86_64
+fuse-static-x86_64-unknown-linux-musl> Target machine cpu: x86_64
+fuse-static-x86_64-unknown-linux-musl> Checking for function "fork" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "fstatat" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "openat" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "readlinkat" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "pipe2" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "splice" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "vmsplice" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "posix_fallocate" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "fdatasync" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "utimensat" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "copy_file_range" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "fallocate" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "fspacectl" : NO
+fuse-static-x86_64-unknown-linux-musl> Checking if "pthread_setname_np check" links: YES
+fuse-static-x86_64-unknown-linux-musl> Checking if "close_range check" links: NO
+fuse-static-x86_64-unknown-linux-musl> Checking if "listmount check" links: YES
+fuse-static-x86_64-unknown-linux-musl> Has header "sys/xattr.h" : YES
+fuse-static-x86_64-unknown-linux-musl> Has header "linux/limits.h" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "setxattr" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "iconv" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking for function "backtrace" : NO
+fuse-static-x86_64-unknown-linux-musl> Checking for function "statx" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking whether type "struct stat" has member "st_atim" : YES
+fuse-static-x86_64-unknown-linux-musl> Checking whether type "struct stat" has member "st_atimespec" : NO
+fuse-static-x86_64-unknown-linux-musl> Found pkg-config: YES (/nix/store/hrf1925690zg2gf1m0j6gmm94d5d0sv5-x86_64-unknown-linux-musl-pkg-config-wrapper-0.29.2/bin/x86_64-unknown-linux-musl-pkg-config) 0.29.2
+fuse-static-x86_64-unknown-linux-musl> Did not find CMake 'cmake'
+fuse-static-x86_64-unknown-linux-musl> Found CMake: NO
+fuse-static-x86_64-unknown-linux-musl> Run-time dependency liburing found: NO (tried pkgconfig and cmake)
+fuse-static-x86_64-unknown-linux-musl> Run-time dependency numa found: NO (tried pkgconfig and cmake)
+fuse-static-x86_64-unknown-linux-musl> Message: Compiler warns about unused result even when casting to void
+fuse-static-x86_64-unknown-linux-musl> Message: Enabling versioned libc symbols
+fuse-static-x86_64-unknown-linux-musl> Message: Compiler supports symver attribute
+fuse-static-x86_64-unknown-linux-musl> Configuring fuse_config.h using configuration
+fuse-static-x86_64-unknown-linux-musl> Configuring libfuse_config.h using configuration
+fuse-static-x86_64-unknown-linux-musl> Run-time dependency threads found: YES
+fuse-static-x86_64-unknown-linux-musl> Library iconv found: NO
+fuse-static-x86_64-unknown-linux-musl> Library dl found: YES
+fuse-static-x86_64-unknown-linux-musl> Library rt found: YES
+fuse-static-x86_64-unknown-linux-musl> Found pkg-config: YES (/nix/store/hrf1925690zg2gf1m0j6gmm94d5d0sv5-x86_64-unknown-linux-musl-pkg-config-wrapper-0.29.2/bin/x86_64-unknown-linux-musl-pkg-config) 0.29.2
+fuse-static-x86_64-unknown-linux-musl> Build targets in project: 14
+fuse-static-x86_64-unknown-linux-musl> 
+fuse-static-x86_64-unknown-linux-musl> libfuse3 3.18.2
+fuse-static-x86_64-unknown-linux-musl> 
+fuse-static-x86_64-unknown-linux-musl>   User defined options
+fuse-static-x86_64-unknown-linux-musl>     Cross files           : /nix/store/z5mm9bppvz0kmgygihk9wlpyvl57p6as-cross-file.conf
+fuse-static-x86_64-unknown-linux-musl>     auto_features         : enabled
+fuse-static-x86_64-unknown-linux-musl>     bindir                : /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/bin
+fuse-static-x86_64-unknown-linux-musl>     buildtype             : plain
+fuse-static-x86_64-unknown-linux-musl>     default_both_libraries: static
+fuse-static-x86_64-unknown-linux-musl>     default_library       : static
+fuse-static-x86_64-unknown-linux-musl>     examples              : false
+fuse-static-x86_64-unknown-linux-musl>     includedir            : /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/include
+fuse-static-x86_64-unknown-linux-musl>     infodir               : /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/share/info
+fuse-static-x86_64-unknown-linux-musl>     initscriptdir         :
+fuse-static-x86_64-unknown-linux-musl>     libdir                : /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/lib
+fuse-static-x86_64-unknown-linux-musl>     libexecdir            : /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/libexec
+fuse-static-x86_64-unknown-linux-musl>     localedir             : /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/share/locale
+fuse-static-x86_64-unknown-linux-musl>     mandir                : /nix/store/s1axzb734a2gag6svbpp6pybgd3259hg-fuse-static-x86_64-unknown-linux-musl-3.18.2-man/share/man
+fuse-static-x86_64-unknown-linux-musl>     prefix                : /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2
+fuse-static-x86_64-unknown-linux-musl>     sbindir               : /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/sbin
+fuse-static-x86_64-unknown-linux-musl>     udevrulesdir          : /udev/rules.d
+fuse-static-x86_64-unknown-linux-musl>     useroot               : false
+fuse-static-x86_64-unknown-linux-musl>     wrap_mode             : nodownload
+fuse-static-x86_64-unknown-linux-musl> 
+fuse-static-x86_64-unknown-linux-musl> Found ninja-1.13.2 at /nix/store/6ji6bq0si2j8ibdrxqgcmh1cw0wmdiyk-ninja-1.13.2/bin/ninja
+fuse-static-x86_64-unknown-linux-musl> mesonConfigurePhase: enabled\ parallel\ building
+fuse-static-x86_64-unknown-linux-musl> Running phase: buildPhase
+fuse-static-x86_64-unknown-linux-musl> build flags: -j5
+fuse-static-x86_64-unknown-linux-musl> [1/44] Compiling C object lib/libfuse3.a.p/fuse_loop.c.o
+fuse-static-x86_64-unknown-linux-musl> [2/44] Compiling C object lib/libfuse3.a.p/fuse_signals.c.o
+fuse-static-x86_64-unknown-linux-musl> [3/44] Compiling C object lib/libfuse3.a.p/fuse_loop_mt.c.o
+fuse-static-x86_64-unknown-linux-musl> [4/44] Compiling C object lib/libfuse3.a.p/fuse_opt.c.o
+fuse-static-x86_64-unknown-linux-musl> [5/44] Compiling C object lib/libfuse3.a.p/buffer.c.o
+fuse-static-x86_64-unknown-linux-musl> [6/44] Compiling C object lib/libfuse3.a.p/helper.c.o
+fuse-static-x86_64-unknown-linux-musl> [7/44] Compiling C object lib/libfuse3.a.p/cuse_lowlevel.c.o
+fuse-static-x86_64-unknown-linux-musl> [8/44] Compiling C object lib/libfuse3.a.p/fuse_log.c.o
+fuse-static-x86_64-unknown-linux-musl> [9/44] Compiling C object lib/libfuse3.a.p/mount_util.c.o
+fuse-static-x86_64-unknown-linux-musl> [10/44] Compiling C object lib/libfuse3.a.p/modules_subdir.c.o
+fuse-static-x86_64-unknown-linux-musl> [11/44] Compiling C object lib/libfuse3.a.p/compat.c.o
+fuse-static-x86_64-unknown-linux-musl> [12/44] Compiling C object lib/libfuse3.a.p/util.c.o
+fuse-static-x86_64-unknown-linux-musl> [13/44] Compiling C object lib/libfuse3.a.p/modules_iconv.c.o
+fuse-static-x86_64-unknown-linux-musl> [14/44] Compiling C object lib/libfuse3.a.p/mount.c.o
+fuse-static-x86_64-unknown-linux-musl> [15/44] Compiling C object util/fusermount3.p/.._lib_util.c.o
+fuse-static-x86_64-unknown-linux-musl> [16/44] Compiling C object util/mount.fuse3.p/mount.fuse.c.o
+fuse-static-x86_64-unknown-linux-musl> [17/44] Compiling C object util/fusermount3.p/.._lib_mount_util.c.o
+fuse-static-x86_64-unknown-linux-musl> [18/44] Compiling C object util/fusermount3.p/fusermount.c.o
+fuse-static-x86_64-unknown-linux-musl> [19/44] Compiling C object test/test_setattr.p/test_setattr.c.o
+fuse-static-x86_64-unknown-linux-musl> [20/44] Compiling C object test/test_write_cache.p/test_write_cache.c.o
+fuse-static-x86_64-unknown-linux-musl> [21/44] Compiling C object test/hello.p/hello.c.o
+fuse-static-x86_64-unknown-linux-musl> [22/44] Compiling C object test/readdir_inode.p/readdir_inode.c.o
+fuse-static-x86_64-unknown-linux-musl> [23/44] Compiling C object test/test_want_conversion.p/test_want_conversion.c.o
+fuse-static-x86_64-unknown-linux-musl> [24/44] Compiling C object test/release_unlink_race.p/release_unlink_race.c.o
+fuse-static-x86_64-unknown-linux-musl> [25/44] Compiling C object test/test_abi.p/test_abi.c.o
+fuse-static-x86_64-unknown-linux-musl> [26/44] Compiling C object test/test_signals.p/test_signals.c.o
+fuse-static-x86_64-unknown-linux-musl> [27/44] Compiling C object test/wrong_command.p/wrong_command.c.o
+fuse-static-x86_64-unknown-linux-musl> [28/44] Linking target util/fusermount3
+fuse-static-x86_64-unknown-linux-musl> [29/44] Generating test/test_scripts with a custom command
+fuse-static-x86_64-unknown-linux-musl> [30/44] Linking target test/readdir_inode
+fuse-static-x86_64-unknown-linux-musl> [31/44] Linking target test/wrong_command
+fuse-static-x86_64-unknown-linux-musl> [32/44] Compiling C object lib/libfuse3.a.p/fuse.c.o
+fuse-static-x86_64-unknown-linux-musl> [33/44] Compiling C object lib/libfuse3.a.p/fuse_lowlevel.c.o
+fuse-static-x86_64-unknown-linux-musl> [34/44] Linking static target lib/libfuse3.a
+fuse-static-x86_64-unknown-linux-musl> [35/44] Linking target test/test_write_cache
+fuse-static-x86_64-unknown-linux-musl> [36/44] Linking target util/mount.fuse3
+fuse-static-x86_64-unknown-linux-musl> [37/44] Linking target test/hello
+fuse-static-x86_64-unknown-linux-musl> [38/44] Linking target test/test_setattr
+fuse-static-x86_64-unknown-linux-musl> [39/44] Linking target test/test_abi
+fuse-static-x86_64-unknown-linux-musl> [40/44] Linking target test/test_want_conversion
+fuse-static-x86_64-unknown-linux-musl> [41/44] Linking target test/release_unlink_race
+fuse-static-x86_64-unknown-linux-musl> [42/44] Linking target test/test_signals
+fuse-static-x86_64-unknown-linux-musl> [43/44] Compiling C object test/test_syscalls.p/test_syscalls.c.o
+fuse-static-x86_64-unknown-linux-musl> [44/44] Linking target test/test_syscalls
+fuse-static-x86_64-unknown-linux-musl> Running phase: installPhase
+fuse-static-x86_64-unknown-linux-musl> mesonInstallPhase flags: ''
+fuse-static-x86_64-unknown-linux-musl> Installing lib/libfuse3.a to /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/lib
+fuse-static-x86_64-unknown-linux-musl> Installing util/fusermount3 to /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/bin
+fuse-static-x86_64-unknown-linux-musl> Installing util/mount.fuse3 to /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/sbin
+fuse-static-x86_64-unknown-linux-musl> Installing /nix/var/nix/builds/nix-75295-4280299166/source/include/fuse.h to /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/include/fuse3
+fuse-static-x86_64-unknown-linux-musl> Installing /nix/var/nix/builds/nix-75295-4280299166/source/include/fuse_common.h to /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/include/fuse3
+fuse-static-x86_64-unknown-linux-musl> Installing /nix/var/nix/builds/nix-75295-4280299166/source/include/fuse_lowlevel.h to /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/include/fuse3
+fuse-static-x86_64-unknown-linux-musl> Installing /nix/var/nix/builds/nix-75295-4280299166/source/include/fuse_opt.h to /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/include/fuse3
+fuse-static-x86_64-unknown-linux-musl> Installing /nix/var/nix/builds/nix-75295-4280299166/source/include/cuse_lowlevel.h to /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/include/fuse3
+fuse-static-x86_64-unknown-linux-musl> Installing /nix/var/nix/builds/nix-75295-4280299166/source/include/fuse_log.h to /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/include/fuse3
+fuse-static-x86_64-unknown-linux-musl> Installing /nix/var/nix/builds/nix-75295-4280299166/source/doc/fusermount3.1 to /nix/store/s1axzb734a2gag6svbpp6pybgd3259hg-fuse-static-x86_64-unknown-linux-musl-3.18.2-man/share/man/man1
+fuse-static-x86_64-unknown-linux-musl> Installing /nix/var/nix/builds/nix-75295-4280299166/source/doc/mount.fuse3.8 to /nix/store/s1axzb734a2gag6svbpp6pybgd3259hg-fuse-static-x86_64-unknown-linux-musl-3.18.2-man/share/man/man8
+fuse-static-x86_64-unknown-linux-musl> Installing /nix/var/nix/builds/nix-75295-4280299166/source/build/libfuse_config.h to /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/include/fuse3
+fuse-static-x86_64-unknown-linux-musl> Installing /nix/var/nix/builds/nix-75295-4280299166/source/build/meson-private/fuse3.pc to /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/lib/pkgconfig
+fuse-static-x86_64-unknown-linux-musl> Running custom install script '/nix/var/nix/builds/nix-75295-4280299166/source/util/install_helper.sh /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/etc /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/bin /udev/rules.d false '
+fuse-static-x86_64-unknown-linux-musl> Running phase: fixupPhase
+fuse-static-x86_64-unknown-linux-musl> Moving /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/lib/pkgconfig to /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/lib/pkgconfig
+fuse-static-x86_64-unknown-linux-musl> Patching '/nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/lib/pkgconfig/fuse3.pc' includedir to output /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev
+fuse-static-x86_64-unknown-linux-musl> shrinking RPATHs of ELF executables and libraries in /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev
+fuse-static-x86_64-unknown-linux-musl> checking for references to /nix/var/nix/builds/nix-75295-4280299166/ in /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev...
+fuse-static-x86_64-unknown-linux-musl> patching script interpreter paths in /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev
+fuse-static-x86_64-unknown-linux-musl> stripping (with command x86_64-unknown-linux-musl-strip and flags -S -p) in /nix/store/v1bivf5blsf1l4a1pmi9ji69p6q6g5x5-fuse-static-x86_64-unknown-linux-musl-3.18.2-dev/lib
+fuse-static-x86_64-unknown-linux-musl> shrinking RPATHs of ELF executables and libraries in /nix/store/wik4chsv4mr08d9k3mw266n6xqhrmxj1-fuse-static-x86_64-unknown-linux-musl-3.18.2-udev
+fuse-static-x86_64-unknown-linux-musl> checking for references to /nix/var/nix/builds/nix-75295-4280299166/ in /nix/store/wik4chsv4mr08d9k3mw266n6xqhrmxj1-fuse-static-x86_64-unknown-linux-musl-3.18.2-udev...
+fuse-static-x86_64-unknown-linux-musl> patching script interpreter paths in /nix/store/wik4chsv4mr08d9k3mw266n6xqhrmxj1-fuse-static-x86_64-unknown-linux-musl-3.18.2-udev
+fuse-static-x86_64-unknown-linux-musl> shrinking RPATHs of ELF executables and libraries in /nix/store/s1axzb734a2gag6svbpp6pybgd3259hg-fuse-static-x86_64-unknown-linux-musl-3.18.2-man
+fuse-static-x86_64-unknown-linux-musl> checking for references to /nix/var/nix/builds/nix-75295-4280299166/ in /nix/store/s1axzb734a2gag6svbpp6pybgd3259hg-fuse-static-x86_64-unknown-linux-musl-3.18.2-man...
+fuse-static-x86_64-unknown-linux-musl> gzipping man pages under /nix/store/s1axzb734a2gag6svbpp6pybgd3259hg-fuse-static-x86_64-unknown-linux-musl-3.18.2-man/share/man/
+fuse-static-x86_64-unknown-linux-musl> patching script interpreter paths in /nix/store/s1axzb734a2gag6svbpp6pybgd3259hg-fuse-static-x86_64-unknown-linux-musl-3.18.2-man
+fuse-static-x86_64-unknown-linux-musl> shrinking RPATHs of ELF executables and libraries in /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin
+fuse-static-x86_64-unknown-linux-musl> shrinking /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/sbin/mount.fuse3
+fuse-static-x86_64-unknown-linux-musl> patchelf: cannot find section '.dynamic'. The input file is most likely statically linked
+fuse-static-x86_64-unknown-linux-musl> shrinking /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/bin/fusermount3
+fuse-static-x86_64-unknown-linux-musl> patchelf: cannot find section '.dynamic'. The input file is most likely statically linked
+fuse-static-x86_64-unknown-linux-musl> checking for references to /nix/var/nix/builds/nix-75295-4280299166/ in /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin...
+fuse-static-x86_64-unknown-linux-musl> patchelf: cannot find section '.dynamic'. The input file is most likely statically linked
+fuse-static-x86_64-unknown-linux-musl> patchelf: cannot find section '.dynamic'. The input file is most likely statically linked
+fuse-static-x86_64-unknown-linux-musl> moving /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/sbin/* to /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/bin
+fuse-static-x86_64-unknown-linux-musl> patching script interpreter paths in /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin
+fuse-static-x86_64-unknown-linux-musl> stripping (with command x86_64-unknown-linux-musl-strip and flags -S -p) in /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/bin /nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin/sbin
+fuse-static-x86_64-unknown-linux-musl> shrinking RPATHs of ELF executables and libraries in /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2
+fuse-static-x86_64-unknown-linux-musl> checking for references to /nix/var/nix/builds/nix-75295-4280299166/ in /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2...
+fuse-static-x86_64-unknown-linux-musl> patching script interpreter paths in /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2
+fuse-static-x86_64-unknown-linux-musl> stripping (with command x86_64-unknown-linux-musl-strip and flags -S -p) in /nix/store/lq3ynmdx2b3hzvh1vl53m9yx02gazs2h-fuse-static-x86_64-unknown-linux-musl-3.18.2/lib
+fuse-static-x86_64-unknown-linux-musl> Running phase: installCheckPhase
+fuse-static-x86_64-unknown-linux-musl> no Makefile or custom installCheckPhase, doing nothing
+/nix/store/b055vvimnl6c0zgi1dxmy3pmvqqc961b-fuse-static-x86_64-unknown-linux-musl-3.18.2-bin
+sending incremental file list
+./
+fusermount3
+mount.fuse3
+
+sent 764,555 bytes  received 57 bytes  1,529,224.00 bytes/sec
+total size is 764,192  speedup is 1.00

@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) sttr :: https://github.com/abhimanyu003/sttr [Monday, 2026-09-14 (07:24:17 PM) UTC]
+
+https://github.com/abhimanyu003/sttr/releases/download/v0.2.30/sttr_Linux_x86_64.tar.gz
+Downloading 100% [==========================] (3.0/3.0 MB, 60.853 MB/s)
+Extracted `sttr` to `/home/runner/work/_temp/toolpack_x86_64/sttr`

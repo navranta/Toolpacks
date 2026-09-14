@@ -1,0 +1,7 @@
+
+
+ [+] (Building | Fetching) s3scanner :: https://github.com/sa7mon/S3Scanner [Monday, 2026-09-14 (07:21:58 PM) UTC]
+
+https://github.com/sa7mon/S3Scanner/releases/download/v3.1.1/S3Scanner_Linux_x86_64.tar.gz
+Downloading  55% [=============>            ] (2.9/5.2 MB, 44.270 MB/s) [0s:0s]                                                                               Downloading  84% [====================>     ] (4.4/5.2 MB, 27.533 MB/s) [0s:0s]                                                                               Downloading 100% [==========================] (5.2/5.2 MB, 29.132 MB/s)
+Extracted `S3Scanner` to `/home/runner/work/_temp/toolpack_x86_64/s3scanner`

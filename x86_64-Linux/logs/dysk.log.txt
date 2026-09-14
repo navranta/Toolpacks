@@ -1,0 +1,40 @@
+
+
+ [+] (Building | Fetching) dysk :: https://github.com/Canop/dysk [Monday, 2026-09-14 (06:34:33 PM) UTC]
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 11.7M  100 11.7M    0     0  25.2M      0 --:--:-- --:--:-- --:--:-- 25.2M
+Archive:  ./dysk_3.7.0.zip
+   creating: aarch64-apple-darwin/
+  inflating: aarch64-apple-darwin/dysk  
+   creating: aarch64-unknown-linux-gnu/
+  inflating: aarch64-unknown-linux-gnu/dysk  
+   creating: aarch64-unknown-linux-musl/
+  inflating: aarch64-unknown-linux-musl/dysk  
+   creating: armv7-unknown-linux-gnueabihf/
+  inflating: armv7-unknown-linux-gnueabihf/dysk  
+   creating: armv7-unknown-linux-musleabi/
+  inflating: armv7-unknown-linux-musleabi/dysk  
+  inflating: CHANGELOG.md            
+   creating: completion/
+  inflating: completion/_dysk        
+  inflating: completion/dysk.elv     
+  inflating: completion/dysk.bash    
+  inflating: completion/dysk.fish    
+  inflating: install.md              
+   creating: man/
+  inflating: man/dysk.1              
+  inflating: README.md               
+   creating: riscv64gc-unknown-linux-gnu/
+  inflating: riscv64gc-unknown-linux-gnu/dysk  
+ extracting: version                 
+   creating: x86_64-apple-darwin/
+  inflating: x86_64-apple-darwin/dysk  
+   creating: x86_64-pc-windows-gnu/
+  inflating: x86_64-pc-windows-gnu/dysk.exe  
+   creating: x86_64-unknown-linux-gnu/
+  inflating: x86_64-unknown-linux-gnu/dysk  
+   creating: x86_64-unknown-linux-musl/
+  inflating: x86_64-unknown-linux-musl/dysk  

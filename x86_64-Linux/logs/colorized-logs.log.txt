@@ -1,0 +1,48 @@
+
+
+ [+] (Building | Fetching) colorized-logs :: https://github.com/kilobyte/colorized-logs [Monday, 2026-09-14 (06:29:38 PM) UTC]
+
+-- The C compiler identification is Clang 21.1.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/local/bin/zig - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Looking for include file pty.h
+-- Looking for include file pty.h - found
+-- Looking for include file libutil.h
+-- Looking for include file libutil.h - not found
+-- Looking for include file util.h
+-- Looking for include file util.h - not found
+-- Looking for openpty in util
+-- Looking for openpty in util - found
+-- Looking for openpty
+-- Looking for openpty - found
+-- Configuring done (39.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/runner/work/_temp/toolpacks/BTE3C8M_linux_x86_64/colorized-logs/build
+[ 20%] Building C object CMakeFiles/ansi2txt.dir/ansi2txt.c.o
+[ 20%] Building C object CMakeFiles/ansi2html.dir/ansi2html.c.o
+[ 30%] Building C object CMakeFiles/ttyrec2ansi.dir/ttyrec2ansi.c.o
+[ 40%] Building C object CMakeFiles/pipetty.dir/pipetty.c.o
+[ 50%] Building C object CMakeFiles/pipetty.dir/signals.c.o
+[ 60%] Linking C executable ansi2txt
+[ 70%] Linking C executable ttyrec2ansi
+[ 80%] Linking C executable pipetty
+[ 90%] Linking C executable ansi2html
+[ 90%] Built target ansi2txt
+[ 90%] Built target ttyrec2ansi
+[ 90%] Built target pipetty
+[100%] LINK lesstty -> pipetty
+[100%] Built target lesstty
+[100%] Built target ansi2html
+ansi2html not yet built in /home/runner/work/_temp/toolpack_x86_64/..?
+Running tests...
+./ansi2html: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+40K	./ansi2html
+./ansi2txt: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+8.0K	./ansi2txt
+./pipetty: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+32K	./pipetty
+./ttyrec2ansi: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+20K	./ttyrec2ansi
