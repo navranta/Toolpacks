@@ -39,10 +39,16 @@ Notes:
 - To verify published metadata without a build, fetch the manifest over plain HTTPS and run the
   real `gen_meta.sh` gate against it — no local build required.
 
-## 3. Poll with a backgrounded `until` loop, and keep going until it's green
+## 3. Run unattended — never hand the turn back to a human to wait
 
-Never block the session on a run, and never poll by chaining `sleep`s in the foreground.
-Dispatch, then background this:
+Assume whoever started you is AFK and expects to come back to finished work.
+
+**Never end a turn waiting on CI.** Do not close with "I've dispatched the run, ping me when
+it finishes", "let me know how it goes", or "tell me when you want me to continue". A run
+takes 10 minutes to 2 hours; parking the work on a human for that window is the whole failure
+this file exists to prevent.
+
+Wait for the run *yourself*, then carry on. Use an `until` loop:
 
 ```bash
 until s=$(gh run view <RUN_ID> --json status,conclusion \
@@ -52,18 +58,34 @@ done
 echo "FINAL: $s"
 ```
 
-Run it with `run_in_background: true` so the notification comes back on its own.
+Foreground or background does not matter — pick whatever keeps *you* running in your harness
+(in Claude Code, `run_in_background: true` returns a notification that wakes you; elsewhere a
+blocking loop that holds the turn open is equally correct). The only hard requirement is that
+**you** are what resumes when the run finishes, not the user.
 
-**The working mode is a loop, not a single shot.** Keep iterating until CI is actually green:
+### The loop
 
 1. Dispatch the cheapest workflow that can show the bug.
-2. Background the `until` poll.
-3. On failure: `gh run view <ID> --log-failed` → find the *root cause*, not the symptom.
-4. Fix, commit, push, dispatch again.
-5. Repeat from 2 until `conclusion == success`.
+2. Wait for it with the `until` loop above.
+3. Green → step 6. Red → `gh run view <ID> --log-failed`, find the **root cause**, not the symptom.
+4. Fix, commit, push.
+5. Re-dispatch; go to 2.
+6. Done — now report.
 
-Do not stop while a known failure is outstanding, and do not report success off a partial
-signal (a green `build` job says nothing about `finalize`).
+Do not ask permission to continue mid-loop. Re-dispatching after a fix is the obvious next
+step, not a decision needing sign-off. Do not stop while a known failure is outstanding, and
+do not report success off a partial signal (a green `build` job says nothing about `finalize`).
+
+### When you may stop and come back to the human
+
+- CI is genuinely green.
+- You are blocked on something only they can do: a secret or credential, an account permission,
+  an irreversible or outward-facing action, or a product decision with no defensible default.
+- The same failure has survived roughly three distinct, well-reasoned fix attempts and further
+  attempts would be guessing.
+
+In every case, say what you tried, what the evidence was, and what you need. "Still waiting on
+CI" is never a reason to stop.
 
 ### Reading a run
 
