@@ -148,17 +148,30 @@ set +x
              "$RECIPE" >> "$RESULT_FILE"
            continue
         fi
-      #Some recipes rsync a Nix result*/ dir straight into $BINDIR with -a
-      #(implies -p): rsync then stamps the SOURCE dir's own permission bits
-      #onto $BINDIR itself too, and Nix store outputs are read-only
-      #(typically 555). That silently locks every recipe run afterward out
-      #of writing its own binary ("Permission denied", status still "ok"/
-      #"partial" since the recipe's own exit code is 0) until something
-      #else happens to chmod it back. Reassert write access every iteration
-      #so one recipe's rsync can never lock out the rest of the run.
-       chmod u+rwx "$BINDIR" 2>/dev/null || true
-      #Snapshot $BINDIR so we can tell what this recipe actually produced
+      #Snapshot $BINDIR so we can tell what this recipe actually produced.
+      #This line reports the mode BEFORE the healing below, deliberately: if
+      #it only ever showed the healed value, a recurrence would be
+      #undiagnosable -- the log would read a healthy 755 directly next to
+      #the "Permission denied" that mode caused.
        echo "[i] ${RECIPE}: BINDIR pre $(stat -c '%U:%G %a' "$BINDIR" 2>/dev/null || echo MISSING) avail $(df -h "$BINDIR" 2>/dev/null | tail -1 | awk '{print $4}')"
+      #Some recipes rsync a Nix result*/ dir straight into $BINDIR with -a
+      #(implies -p, plus -o/-g when the rsync runs under sudo): rsync then
+      #stamps the SOURCE dir's own permission bits -- and, as root, its
+      #ownership -- onto $BINDIR itself. Nix store outputs are read-only
+      #(typically 555), so this silently locks every later recipe out of
+      #writing its own binary: "Permission denied" while rc stays 0, landing
+      #as "ok"/"partial" with nothing produced and therefore nothing pushed.
+      #Reassert write access every iteration. A sudo rsync can also leave
+      #$BINDIR root-owned, which an unprivileged chmod cannot repair -- say
+      #so loudly rather than let the rest of the run fail quietly.
+       if [ ! -w "$BINDIR" ]; then
+          chmod u+rwx "$BINDIR" 2>/dev/null
+          if [ -w "$BINDIR" ]; then
+             echo "[!] ${RECIPE}: BINDIR was not writable; healed to $(stat -c '%U:%G %a' "$BINDIR" 2>/dev/null)"
+          else
+             echo "[-] ${RECIPE}: BINDIR NOT writable and chmod failed (now $(stat -c '%U:%G %a' "$BINDIR" 2>/dev/null), running as $(id -un)); recipes will keep failing until this is repaired"
+          fi
+       fi
        BEFORE="$(find "$BINDIR" -maxdepth 1 -type f -printf '%f\n' 2>/dev/null | sort)"
       #Run in a SUBSHELL.
       # A recipe's sanity block ends in `exit 1`, and `exit` inside a sourced
