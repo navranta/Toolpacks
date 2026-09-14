@@ -148,6 +148,15 @@ set +x
              "$RECIPE" >> "$RESULT_FILE"
            continue
         fi
+      #Some recipes rsync a Nix result*/ dir straight into $BINDIR with -a
+      #(implies -p): rsync then stamps the SOURCE dir's own permission bits
+      #onto $BINDIR itself too, and Nix store outputs are read-only
+      #(typically 555). That silently locks every recipe run afterward out
+      #of writing its own binary ("Permission denied", status still "ok"/
+      #"partial" since the recipe's own exit code is 0) until something
+      #else happens to chmod it back. Reassert write access every iteration
+      #so one recipe's rsync can never lock out the rest of the run.
+       chmod u+rwx "$BINDIR" 2>/dev/null || true
       #Snapshot $BINDIR so we can tell what this recipe actually produced
        echo "[i] ${RECIPE}: BINDIR pre $(stat -c '%U:%G %a' "$BINDIR" 2>/dev/null || echo MISSING) avail $(df -h "$BINDIR" 2>/dev/null | tail -1 | awk '{print $4}')"
        BEFORE="$(find "$BINDIR" -maxdepth 1 -type f -printf '%f\n' 2>/dev/null | sort)"
