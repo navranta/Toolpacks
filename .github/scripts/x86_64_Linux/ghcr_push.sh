@@ -90,6 +90,10 @@ ghcr_push_recipe() {
     # target a specific layer is --annotation-file with a JSON map keyed by
     # filename (and "$manifest" for the manifest-level keys).
     local annf; annf="$(mktemp)"
+    # Like b3sum below, a missing jq must refuse to push, not push with
+    # empty annotations: `jq -n` with jq absent writes an empty file and
+    # `oras push` fails, leaving the stale manifest in place silently.
+    command -v jq >/dev/null 2>&1 || { echo "[-] ${family}: jq not found; refusing to push without annotations"; rm -f "$annf"; return 1; }
     jq -n \
       --arg created "$created" \
       --arg source "https://github.com/${GITHUB_REPOSITORY:-unknown}" \
