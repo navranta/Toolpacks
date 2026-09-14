@@ -299,6 +299,14 @@ jobs:
             echo "::notice::no metadata changes"
           else
             git commit -m "chore: refresh x86_64-Linux metadata ($(date -u +%Y-%m-%d))"
+            # Another run (or a human) may have pushed since this job checked
+            # out; rebase so the push does not fail spuriously. Run 34869139381
+            # proved the failure mode: commit created, push rejected
+            # ("fetch first") by a docs commit that landed mid-run. A real
+            # content conflict still fails loud below instead of pushing a
+            # silently merged result.
+            git pull --rebase origin main \
+              || { echo "::error::rebase onto latest main failed; refusing to push"; exit 1; }
             git push
           fi
 
