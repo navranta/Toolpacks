@@ -2,6 +2,39 @@
 
 Kept byte-identical with `AGENTS.md`. Change one, change the other.
 
+## 0. What this project is
+
+This is an independent **revival of an archived project**. Upstream
+[`Azathothas/Toolpacks`](https://github.com/Azathothas/Toolpacks) was archived on 2025-06-03
+with the description "Moved to:: pkgforge/soarpkgs". `main` here begins at commit `3288819`,
+"Baseline: upstream Toolpacks snapshot before revival work".
+
+The practical consequence: **there is no upstream to escalate to.** Nobody is going to fix a
+broken recipe, accept a patch, or answer a question. Every bug in here is ours, and "this is
+how upstream did it" is an explanation, never a justification. Much of the revival work has
+been undoing upstream decisions outright — the external binary caches (`pub.ajam.dev`,
+`bin.ajam.dev`, `pkg.ajam.dev`, `bin.pkgforge.dev`) are gone and the `smoke` job blackholes
+them in `/etc/hosts` permanently so they cannot creep back.
+
+### The author's successor project: `pkgforge/soarpkgs`
+
+The original author's sequel is [`pkgforge/soarpkgs`](https://github.com/pkgforge/soarpkgs)
+("Official Soar Packages Repository"), and it is actively maintained. **Use it as a reference**
+when a recipe breaks on source drift — it is the best available answer to "where does this tool
+actually live now, and how is it currently built": current upstream URLs, asset patterns,
+version pins, and build methods for many of the same tools.
+
+Caveats, so it is not mistaken for a drop-in:
+
+- **Different format.** soarpkgs uses TOML — `packages/<name>/pkg.toml` plus a versioned
+  `<name>-<version>.toml`. This repo uses bash recipes in
+  `.github/scripts/x86_64_Linux/bins/<name>.sh`. Ideas port; files do not.
+- **Names do not map 1:1.** Our `7z` is their `7zip`, and plenty of ours (`gau`, `husarnet`,
+  `getJS` among them) are not carried there at all.
+- **Reference only — never a dependency.** Do not make the build fetch anything from soarpkgs
+  or from pkgforge infrastructure at build time. Removing exactly that class of external
+  dependency is the point of the revival, and the `smoke` job exists to enforce it.
+
 ## 1. Never build, compile, or test on this machine
 
 This repo builds 133 statically linked binaries. **None of that runs locally — ever.**
