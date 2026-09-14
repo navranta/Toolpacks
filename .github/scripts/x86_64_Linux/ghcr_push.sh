@@ -142,8 +142,31 @@ ghcr_make_public() {
     local family="$1"
     [ -n "${GITHUB_TOKEN:-}" ] || return 0
     local encoded="${GHCR_NAMESPACE}%2F${family}"
+    # Publicity normally comes from repo inheritance (public repo -> public
+    # package), so check first via the read-only GET and only attempt a
+    # PATCH when the package is actually private. Reasons: GitHub exposes
+    # no PATCH for user-scoped container packages (PATCH on /users/<name>/
+    # ... is GET-only and 404s; /user/... has no PATCH route either --
+    # verified live, both 404), so an unconditional PATCH cries wolf on
+    # every push while a real private package would slip by unnoticed.
+    local vis=""
+    if command -v jq >/dev/null 2>&1; then
+        vis="$(curl -s -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+          -H "Accept: application/vnd.github+json" \
+          "https://api.github.com/users/${GHCR_OWNER}/packages/container/${encoded}" \
+          2>/dev/null | jq -r '.visibility // empty' 2>/dev/null)"
+    fi
+
+    case "$vis" in
+        public) echo "    [+] ${family}: already public"; return 0 ;;
+        private) ;;
+        *) echo "    [i] ${family}: visibility unknown (not yet indexed?); attempting PATCH best-effort" ;;
+    esac
+
+    # Best-effort: orgs use their scoped route, user namespaces use the
+    # authenticated-user route. Either may 404; that is reported below.
     local scope="orgs/${GHCR_OWNER}"
-    [ "${GHCR_OWNER_TYPE:-org}" = "user" ] && scope="users/${GHCR_OWNER}"
+    [ "${GHCR_OWNER_TYPE:-org}" = "user" ] && scope="user"
 
     local code
     code="$(curl -s -o /dev/null -w '%{http_code}' -X PATCH \
@@ -154,8 +177,7 @@ ghcr_make_public() {
 
     case "$code" in
         200|204) echo "    [+] ${family}: visibility public" ;;
-        404)     echo "    [!] ${family}: visibility PATCH 404 (wrong owner type or not yet indexed)" ;;
-        *)       echo "    [!] ${family}: visibility PATCH returned ${code}" ;;
+        *)       echo "    [!] ${family}: STILL ${vis:-unknown} visibility (PATCH returned ${code}); make it public in the web UI or the anonymous-pull gate will fail" ;;
     esac
 }
 export -f ghcr_make_public
