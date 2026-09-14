@@ -33,7 +33,7 @@ if [ "${SKIP_BUILD}" == "NO" ]; then
        #curl -qfsSL $(curl -qfsSL "https://api.github.com/repos/husarnet/husarnet/actions/artifacts?per_page=100" -H "Authorization: Bearer $GITHUB_TOKEN" | jq -r '[.artifacts[] | select(.name == "release-linux-amd64")] | sort_by(.created_at) | .[].archive_download_url' | sort -V | tail -n 1 ) -H "Authorization: Bearer $GITHUB_TOKEN" -o "husarnet.zip" 
        #unzip "./husarnet.zip" && find . -type f -name '*husarnet*' ! -name '*.zip*' -exec cp {} "$BINDIR/husarnet" \;
         #eval "$EGET_TIMEOUT" eget "$SOURCE_URL" --asset "linux" --asset "amd64" --asset "tar" --download-only
-        eval "$EGET_TIMEOUT" eget "https://github.com/ouch-org/ouch" --asset "x86_64" --asset "linux" --asset "musl" --to "./ouch"
+         eval "$EGET_TIMEOUT" eget "https://github.com/ouch-org/ouch" --asset "linux" --asset "musl" --asset "x86" --asset "64" --asset "tar.gz" "$EGET_EXCLUDE" --to "./ouch"
         chmod +x "./ouch"
         eval "$EGET_TIMEOUT" eget "https://install.husarnet.com/tar/husarnet-latest-amd64.tar" --download-only
         "./ouch" decompress "./husarnet-"* --yes
