@@ -158,7 +158,7 @@
  fetch_tool "freeze" "freeze" "freeze"
  fetch_tool "gau" "gau" "gau"
  fetch_tool "gdu" "gdu" "gdu"
- fetch_tool "getJS" "getJS" "getJS"
+ fetch_tool "getJS" "getjs" "getJS"
  fetch_tool "gf" "gf" "gf"
  fetch_tool "gh" "gh" "gh"
  fetch_tool "git-sizer" "git-sizer" "git-sizer"

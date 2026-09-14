@@ -66,8 +66,11 @@ echo "    ${N_PKG} families expected"
 echo "[*] fetching manifests"
 mkdir -p "${TMP}/manifests"
 fetch_one() {
-    local fam="$1"
-    oras manifest fetch "ghcr.io/${GHCR_OWNER}/${GHCR_NAMESPACE}/${fam}:latest" \
+    local fam="$1" repo
+    # OCI repository paths must be lowercase; family names are not (getJS).
+    # The manifest is cached under the verbatim family name.
+    repo="$(echo "$fam" | tr '[:upper:]' '[:lower:]')"
+    oras manifest fetch "ghcr.io/${GHCR_OWNER}/${GHCR_NAMESPACE}/${repo}:latest" \
       > "${TMP}/manifests/${fam}.json" 2>/dev/null || rm -f "${TMP}/manifests/${fam}.json"
 }
 export -f fetch_one; export TMP GHCR_OWNER GHCR_NAMESPACE
@@ -139,12 +142,16 @@ while IFS= read -r fam; do
     rj="$(repo_meta "$repo_url")"
     rel="$(echo "$rj" | jq -r '.pushed_at // ""')"
 
+    # Registry paths must be lowercase (getJS); display fields keep $fam.
+    rfam="$(echo "$fam" | tr '[:upper:]' '[:lower:]')"
+
     jq -c \
       --arg fam "$fam" --arg created "$created" \
       --arg description "$description" --arg note "$note" \
       --arg repo_url "$repo_url" --arg web_url "$web_url" \
       --arg all_bins "$all_bins" \
       --arg owner "$GHCR_OWNER" --arg ns "$GHCR_NAMESPACE" \
+      --arg rfam "$rfam" \
       --arg repo "${GITHUB_REPOSITORY:-}" \
       --argjson rj "${rj:-{\}}" \
       '
@@ -154,8 +161,8 @@ while IFS= read -r fam; do
         pkg_family:    $fam,
         description:   $description,
         note:          $note,
-        download_url:  ("https://ghcr.io/v2/" + $owner + "/" + $ns + "/" + $fam + "/blobs/" + .digest),
-        ghcr_pkg:      ("ghcr.io/" + $owner + "/" + $ns + "/" + $fam + ":latest"),
+        download_url:  ("https://ghcr.io/v2/" + $owner + "/" + $ns + "/" + $rfam + "/blobs/" + .digest),
+        ghcr_pkg:      ("ghcr.io/" + $owner + "/" + $ns + "/" + $rfam + ":latest"),
         ghcr_digest:   .digest,
         size_bytes:    .size,
         size:          (if .size >= 1073741824 then ((.size/1073741824*100|floor)/100|tostring) + " GB"
