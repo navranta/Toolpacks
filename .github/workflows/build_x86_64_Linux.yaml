@@ -270,12 +270,14 @@ jobs:
           SAMPLE="$(shuf -n 3 "${GITHUB_WORKSPACE}/.github/scripts/x86_64_Linux/RECIPES.txt")"
           rc=0
           for fam in $SAMPLE; do
-            T="$(curl -qfsSL "https://ghcr.io/token?scope=repository:${OWNER}/${GHCR_NAMESPACE}/${fam}:pull&service=ghcr.io" \
+            # OCI repository paths must be lowercase (getJS).
+            rfam="$(echo "$fam" | tr '[:upper:]' '[:lower:]')"
+            T="$(curl -qfsSL "https://ghcr.io/token?scope=repository:${OWNER}/${GHCR_NAMESPACE}/${rfam}:pull&service=ghcr.io" \
                  | sed -n 's/.*"token":"\([^"]*\)".*/\1/p')"
             if [ -z "$T" ]; then echo "::error::${fam}: no anonymous token"; rc=1; continue; fi
             if curl -qfsSL -o /dev/null -H "Authorization: Bearer ${T}" \
                  -H "Accept: application/vnd.oci.image.manifest.v1+json" \
-                 "https://ghcr.io/v2/${OWNER}/${GHCR_NAMESPACE}/${fam}/manifests/latest"; then
+                 "https://ghcr.io/v2/${OWNER}/${GHCR_NAMESPACE}/${rfam}/manifests/latest"; then
               echo "::notice::${fam}: anonymous pull OK"
             else
               echo "::error::${fam}: NOT publicly pullable"; rc=1

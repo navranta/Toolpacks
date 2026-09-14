@@ -76,7 +76,11 @@ ghcr_push_recipe() {
     [ "${#files[@]}" -gt 0 ] || { echo "[i] ${family}: nothing produced, not pushing"; return 0; }
     ghcr_available || return 0
 
-    local pkg="ghcr.io/${GHCR_OWNER}/${GHCR_NAMESPACE}/${family}"
+    # OCI repository paths must be lowercase; family names are not (getJS).
+    # Only the registry path is normalized -- annotations, layer titles and
+    # the on-disk binary keep their verbatim case.
+    local repo; repo="$(echo "$family" | tr '[:upper:]' '[:lower:]')"
+    local pkg="ghcr.io/${GHCR_OWNER}/${GHCR_NAMESPACE}/${repo}"
     local created; created="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
     # Per-file annotations (b3sum, file) MUST land on the layer, not the
@@ -145,7 +149,8 @@ export -f ghcr_push_recipe
 ghcr_make_public() {
     local family="$1"
     [ -n "${GITHUB_TOKEN:-}" ] || return 0
-    local encoded="${GHCR_NAMESPACE}%2F${family}"
+    local repo; repo="$(echo "$family" | tr '[:upper:]' '[:lower:]')"
+    local encoded="${GHCR_NAMESPACE}%2F${repo}"
     # Publicity normally comes from repo inheritance (public repo -> public
     # package), so check first via the read-only GET and only attempt a
     # PATCH when the package is actually private. Reasons: GitHub exposes

@@ -205,6 +205,9 @@ generate() {
             skipped=$((skipped+1)); continue
         fi
         grep -qxF "$fam" "$RECIPES_FILE" || { skipped=$((skipped+1)); continue; }
+        # OCI repository paths must be lowercase; tool/layer titles keep
+        # their verbatim case (the manifest lookup matches on those).
+        fam="$(echo "$fam" | tr '[:upper:]' '[:lower:]')"
         printf ' fetch_tool "%s" "%s" "%s"\n' "$tool" "$fam" "$tool" >> "$out"
         n=$((n+1))
     done < <(sort -u "${TMP}/tools.raw")
