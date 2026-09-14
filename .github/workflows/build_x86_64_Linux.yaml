@@ -240,6 +240,9 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           if [ "$TOTAL" -gt 0 ]; then
             echo ""; echo "#### Not ok" >> "$GITHUB_STEP_SUMMARY"
+            # The backticks below are markdown for the step summary and the
+            # \1 \2 are sed backrefs, so single quotes are exactly right here.
+            # shellcheck disable=SC2016
             grep -v '"status":"ok"' "$R" \
               | sed -E 's/.*"recipe":"([^"]*)".*"status":"([^"]*)".*/- `\1` -> \2/' \
               | head -50 >> "$GITHUB_STEP_SUMMARY" || true
