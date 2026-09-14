@@ -48,32 +48,17 @@ GH_API="https://api.github.com"
 AUTH=(); [ -n "${GITHUB_TOKEN:-}" ] && AUTH=(-H "Authorization: Bearer ${GITHUB_TOKEN}")
 
 #-----------------------------------------------------------------------------#
-# 1. List every published package, following Link: rel="next" to exhaustion.
-#    Truncating at page 1 would silently drop most of the catalogue.
+# 1. Families come from RECIPES.txt, not the packages API. The
+#    GITHUB_TOKEN cannot reliably list user/org-level packages
+#    (403/empty on GET /users|orgs/.../packages), and we already know
+#    exactly which families should exist. Unpublished families simply
+#    yield no manifest and are reported below.
 #-----------------------------------------------------------------------------#
-echo "[*] listing packages for ${OWNER_TYPE}/${GHCR_OWNER}"
-scope="orgs/${GHCR_OWNER}"; [ "$OWNER_TYPE" = "user" ] && scope="users/${GHCR_OWNER}"
-url="${GH_API}/${scope}/packages?package_type=container&per_page=100"
-: > "${TMP}/packages.txt"
-pages=0
-while [ -n "$url" ]; do
-    pages=$((pages+1))
-    curl -fsSL -D "${TMP}/h" "${AUTH[@]}" "$url" -o "${TMP}/p.json" 2>/dev/null || break
-    jq -r '.[].name' "${TMP}/p.json" 2>/dev/null >> "${TMP}/packages.txt"
-    url="$(grep -i '^link:' "${TMP}/h" | tr ',' '\n' | grep 'rel="next"' \
-           | sed -E 's/.*<([^>]+)>.*/\1/' | head -1)"
-done
-# Only our namespace, and strip the namespace prefix to get the family name.
-grep "^${GHCR_NAMESPACE}/" "${TMP}/packages.txt" 2>/dev/null \
-  | sed "s|^${GHCR_NAMESPACE}/||" | sort -u > "${TMP}/families.txt" || true
+echo "[*] families from ${RECIPES_FILE}"
+[ -s "$RECIPES_FILE" ] || { echo "[-] FATAL: missing $RECIPES_FILE" >&2; exit 1; }
+sort -u "$RECIPES_FILE" > "${TMP}/families.txt"
 N_PKG=$(wc -l < "${TMP}/families.txt")
-echo "    ${N_PKG} package(s) across ${pages} page(s)"
-
-if [ "$N_PKG" -eq 0 ]; then
-    echo "[-] FATAL: no packages found. Either nothing has been published, or"
-    echo "           the packages are private and this token cannot see them." >&2
-    exit 1
-fi
+echo "    ${N_PKG} families expected"
 
 #-----------------------------------------------------------------------------#
 # 2. Fetch each manifest (parallel) and flatten layers -> one row per binary.
@@ -91,14 +76,13 @@ xargs -a "${TMP}/families.txt" -P 16 -I{} bash -c 'fetch_one "$@"' _ {} 2>/dev/n
 N_MAN=$(find "${TMP}/manifests" -name '*.json' | wc -l)
 echo "    ${N_MAN} manifest(s) fetched"
 
-# Assert every listed package produced a manifest. A gap here usually means
-# the package name was not URL-encoded somewhere, or it went private.
+# A missing manifest means that family has never published successfully
+# (or its package went private). Tolerated down to the count gate below.
 if [ "$N_MAN" -ne "$N_PKG" ]; then
-    echo "[-] FATAL: listed ${N_PKG} packages but fetched ${N_MAN} manifests" >&2
+    echo "    [!] ${N_PKG} families expected but ${N_MAN} manifests fetched"
     comm -23 "${TMP}/families.txt" \
       <(find "${TMP}/manifests" -name '*.json' -printf '%f\n' | sed 's/\.json$//' | sort) \
-      | sed 's/^/      missing: /' >&2
-    exit 1
+      | sed 's/^/      unpublished: /'
 fi
 
 #-----------------------------------------------------------------------------#
@@ -220,11 +204,11 @@ fi
 if [ -s "$RECIPES_FILE" ]; then
     EXPECTED=$(wc -l < "$RECIPES_FILE")
     LOW=$(( EXPECTED * 80 / 100 ))
-    if [ "$N_PKG" -lt "$LOW" ]; then
-        echo "[-] GATE FAILED: only ${N_PKG} packages for ${EXPECTED} recipes (<80%)" >&2
+    if [ "$N_MAN" -lt "$LOW" ]; then
+        echo "[-] GATE FAILED: only ${N_MAN} manifests for ${EXPECTED} recipes (<80%)" >&2
         rc=1
     else
-        echo "    [+] package count ${N_PKG} vs ${EXPECTED} recipes"
+        echo "    [+] manifest count ${N_MAN} vs ${EXPECTED} recipes"
     fi
 fi
 
