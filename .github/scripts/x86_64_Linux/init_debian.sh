@@ -338,24 +338,12 @@
           find "dist/" -name "*.whl" | xargs pip install --break-system-packages --upgrade --force
           staticx --version || pip install staticx --break-system-packages --force-reinstall --upgrade ; unset BOOTLOADER_CC
           popd >/dev/null 2>&1
-         #----------------------# 
-         #v-lang: https://github.com/vlang/v/blob/master/README.md#installing-v-from-source
-          sudo rm -rf "/opt/vlang" ; sudo mkdir -p "/opt/vlang"
-          sudo chown -R "$(whoami):$(whoami)" "/opt/vlang" && chmod -R 755 "/opt/vlang"
-          pushd "/opt/vlang" >/dev/null 2>&1
-          git clone --filter="blob:none" --quiet "https://github.com/vlang/v" && cd "./v"
-          make --jobs="$(($(nproc)+1))"
-          file "./v" && du -sh "./v"
-          sudo "./v" symlink
-          docker build -t "vlang_alpine" --no-cache - < "./Dockerfile.alpine"
-          popd >/dev/null 2>&1
-          #Test: PATH="$HOME/.cargo/bin:$HOME/.cargo/env:$PATH" 
-          if ! command -v v &> /dev/null; then
-             echo -e "\n[-] v (v-lang) NOT Found\n"
-             export CONTINUE="NO" && exit 1
-          else
-             v version
-          fi
+         #----------------------#
+         # v-lang REMOVED (2026-09): zero of the allowlisted recipes use it,
+         # and its upstream master no longer bootstraps itself
+         # (V panic: EmbedFileData ... manual_stdlib_c_headers.h missing),
+         # which hard-failed the whole init. Re-add only with a pinned
+         # working commit if a recipe ever needs it.
          #----------------------#
     fi
    #-------------------------------------------------------#
