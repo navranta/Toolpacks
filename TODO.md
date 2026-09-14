@@ -1,12 +1,13 @@
 # TODO — handoff for the next agent
 
-Updated 2026-09-14 ~16:35Z. **Read `AGENTS.md` first** — hard rules (nothing
+Updated 2026-09-14 ~20:00Z. **Read `AGENTS.md` first** — hard rules (nothing
 builds locally; test in CI; wait for runs yourself, never hand the turn back
 to a human to wait).
 
-State: `main` carries fixes #12–#16 below. Full build `34869139381` (started
-16:3xZ on current `main`) is in flight — nobody has yet seen this pipeline go
-green end to end, this run is the first that can.
+State: `main` is green end to end. Full build `34879570292` (on `main` +
+#17) completed `success` in all four jobs — the first green pipeline anyone
+has seen here. Metadata commit `5f7e56a` is on `main` (METADATA.json,
+BUILD_DATES.txt, per-recipe logs, RESULT.jsonl).
 
 ---
 
@@ -60,29 +61,29 @@ Resolved concerns, recorded so nobody re-litigates them:
 
 ## Open items, highest value first
 
-### 1. Confirm the full build goes green — run `34869139381` is the candidate
+### 1. Full pipeline is green — run `34879570292` proved it
+
+`prepare` ✓ `build` ✓ `smoke` ✓ `finalize` ✓. Finalize showed:
+`[+] no empty required fields`, `manifest count 133 vs 133`, anon-pull OK
+(`analyticsrelationships`, `getJS`, `git-sizer` — the random sample hit getJS,
+proving the lowercase path in the gate itself), metadata committed and pushed
+(`5f7e56a`), staleness gate passed on fresh BUILD_DATES.txt.
+
+The run before it (`34869139381`) proved everything except the push: gate at
+0 and anon-pull OK, but the metadata commit could not push — a docs commit
+that landed mid-run won the race (`[rejected] fetch first`). Fixed by #17
+(rebase before push); the green run's push went through as
+`36a6263..5f7e56a main -> main`.
 
 ```bash
-gh run view 34869139381 --json jobs -q '.jobs[]|{name,conclusion}'
-gh run view 34869139381 --log-failed
+gh run view 34879570292 --json jobs -q '.jobs[]|{name,conclusion}'
 ```
 
 Prior run `34856163414` (fixes 1+2 only): `build` green, finalize gate at
-**2 empties** (`husarnet` x2, old code) + `unpublished: getJS`. Since then both
-families re-pushed for real (run `34868524516`). A curl+jq replication of the
-empty-field gate against production **now shows 162 entries, 0 empty** — so
-the gate should pass on this run. If it does not, the remaining entries are
-families that did not re-push in *this* run (check `PRODUCED` + `build_run`).
-
-When the gate passes, three `finalize` steps run for the first time:
-
-- **"Verify packages are pullable ANONYMOUSLY"** — samples 3 families. Should
-  pass (spot-checked: real + test namespaces publicly pullable).
-- **"Commit metadata and logs"** — `git push` to `main` from CI. Never
-  exercised; could conflict with concurrent merges (merge #12–#16 first —
-  done — and avoid pushing while it runs).
-- **Staleness gate** — fails if >15 tools in `BUILD_DATES.txt` older than 45
-  days. Fresh metadata ⇒ ~0 stale ⇒ should pass.
+**2 empties** (`husarnet` x2, old code) + `unpublished: getJS`. Both families
+then re-pushed for real (run `34868524516`); a curl+jq replication of the
+empty-field gate against production showed 162 entries, 0 empty — and the
+green run confirmed it in CI.
 
 ### 2. Transient 504s still stale whole families with rc=0
 
