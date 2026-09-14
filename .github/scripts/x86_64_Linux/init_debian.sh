@@ -354,8 +354,24 @@
    #-------------------------------------------------------#
     ##Mold for linking
     if [ "$CONTINUE" == "YES" ]; then
-          #Get Source
-          pushd "$($TMPDIRS)" >/dev/null 2>&1 && eget "rui314/mold" --asset "x86_64-linux.tar.gz" --download-only --to "./mold.tar.gz"
+          #Get Source (retried: one transient CDN 504 here used to fail
+          #the whole job even though everything else was healthy)
+          pushd "$($TMPDIRS)" >/dev/null 2>&1
+          _MOLD_OK="NO"
+          for _try in 1 2 3; do
+             if eget "rui314/mold" --asset "x86_64-linux.tar.gz" --download-only --to "./mold.tar.gz"; then
+                _MOLD_OK="YES"
+                break
+             fi
+             echo -e "\n[!] mold fetch attempt ${_try}/3 failed; retrying in 15s\n"
+             sleep 15
+          done
+          unset _try
+          if [ "${_MOLD_OK}" != "YES" ]; then
+             echo -e "\n[-] mold fetch failed after 3 attempts\n"
+             export CONTINUE="NO" && exit 1
+          fi
+          unset _MOLD_OK
           #Extract Archive
           find . -type f -name "*.tar.gz*" -exec tar -xf {} --strip-components=1 \;
           #Main Binary
