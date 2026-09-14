@@ -79,34 +79,54 @@ ghcr_push_recipe() {
     local pkg="ghcr.io/${GHCR_OWNER}/${GHCR_NAMESPACE}/${family}"
     local created; created="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-    local args=()
-    args+=(--annotation "org.opencontainers.image.created=${created}")
-    args+=(--annotation "org.opencontainers.image.source=https://github.com/${GITHUB_REPOSITORY:-unknown}")
-    args+=(--annotation "dev.toolpacks.pkg_family=${family}")
-    args+=(--annotation "dev.toolpacks.build_run=${GITHUB_RUN_ID:-local}")
+    # Per-file annotations (b3sum, file) MUST land on the layer, not the
+    # manifest: gen_meta.sh reads them off layers[].annotations. oras'
+    # --annotation flag only ever takes "key=value" for the MANIFEST --
+    # "file:key=value" is not a recognized scoping form, it silently becomes
+    # a literal manifest annotation key containing a colon (verified against
+    # oras 1.3.4). That reproduced the exact original bug: every b3sum/file
+    # annotation ends up empty from gen_meta.sh's point of view and the
+    # "empty required field" gate fails for 100% of entries. The only way to
+    # target a specific layer is --annotation-file with a JSON map keyed by
+    # filename (and "$manifest" for the manifest-level keys).
+    local annf; annf="$(mktemp)"
+    jq -n \
+      --arg created "$created" \
+      --arg source "https://github.com/${GITHUB_REPOSITORY:-unknown}" \
+      --arg family "$family" \
+      --arg run "${GITHUB_RUN_ID:-local}" \
+      '{"$manifest": {
+          "org.opencontainers.image.created": $created,
+          "org.opencontainers.image.source": $source,
+          "dev.toolpacks.pkg_family": $family,
+          "dev.toolpacks.build_run": $run
+        }}' > "$annf"
 
     local f b3 ftype refs=()
     for f in "${files[@]}"; do
         [ -f "${BINDIR}/${f}" ] || continue
         b3="$(cd "$BINDIR" && b3sum "$f" 2>/dev/null | awk '{print $1}')"
-        ftype="$(cd "$BINDIR" && file -b "$f" 2>/dev/null | tr -d '\n' | sed 's/"/'"'"'/g')"
+        ftype="$(cd "$BINDIR" && file -b "$f" 2>/dev/null | tr -d '\n')"
         # A missing b3sum annotation reproduces the original metadata
         # corruption exactly: gen_meta.sh's `// ""` turns it into an empty
         # string and the build still goes green. Refuse to push instead.
         if [ -z "$b3" ]; then
             echo "[-] ${family}: could not compute b3sum for ${f}; refusing to push"
+            rm -f "$annf"
             return 1
         fi
-        args+=(--annotation "${f}:dev.toolpacks.b3sum=${b3}")
-        args+=(--annotation "${f}:dev.toolpacks.file=${ftype}")
+        jq --arg f "$f" --arg b3 "$b3" --arg ftype "$ftype" \
+          '.[$f] = {"dev.toolpacks.b3sum": $b3, "dev.toolpacks.file": $ftype}' \
+          "$annf" > "${annf}.tmp" && mv "${annf}.tmp" "$annf"
         refs+=("${f}:application/octet-stream")
     done
 
-    [ "${#refs[@]}" -gt 0 ] || { echo "[i] ${family}: no files on disk, not pushing"; return 0; }
+    [ "${#refs[@]}" -gt 0 ] || { rm -f "$annf"; echo "[i] ${family}: no files on disk, not pushing"; return 0; }
 
     echo "[+] pushing ${pkg}:latest,${GHCR_DATE_TAG} (${#refs[@]} file(s))"
-    ( cd "$BINDIR" && oras push "${pkg}:latest,${GHCR_DATE_TAG}" "${args[@]}" "${refs[@]}" ) \
-      || { echo "[-] ${family}: oras push FAILED"; return 1; }
+    ( cd "$BINDIR" && oras push "${pkg}:latest,${GHCR_DATE_TAG}" --annotation-file "$annf" "${refs[@]}" ) \
+      || { echo "[-] ${family}: oras push FAILED"; rm -f "$annf"; return 1; }
+    rm -f "$annf"
 
     # A workflow-token push creates the package PRIVATE, regardless of repo
     # visibility. That yields a green build and a cache anonymous users 404
