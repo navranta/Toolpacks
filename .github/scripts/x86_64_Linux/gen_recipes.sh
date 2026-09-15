@@ -47,7 +47,7 @@ grep -ohE '\$\{INSTALL_SRC\}/[A-Za-z0-9._/+-]+' "$INSTALLERS_DIR"/install_*.sh \
 #-----------------------------------------------------------------------------#
 # 2. Build a binary -> recipe index from every recipe's declared bins: list.
 #    A recipe named X frequently produces binaries named something else
-#    (colorized-logs -> ansi2txt, gitlab-cli -> glab, zerotier -> zerotier-cli).
+#    (colorized-logs -> ansi2txt, gitlab-cli -> glab).
 #    The yaml is the only authoritative mapping.
 #-----------------------------------------------------------------------------#
 awk '

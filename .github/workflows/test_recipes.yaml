@@ -2,7 +2,7 @@ name: "🧪 Test recipes (fast loop)"
 
 # Fast validation for recipe fixes: runs ONLY_RECIPES through the real
 # build_debian.sh (same accounting, same per-recipe timeouts) without
-# waiting for a full 133-recipe run. Init (~7.5 min) is the floor.
+# waiting for a full 132-recipe run. Init (~7.5 min) is the floor.
 #
 # push_test=false (default): GHCR_PUSH=NO, pure build validation.
 # push_test=true: publishes to the `toolpacks-test` namespace so the ORAS
