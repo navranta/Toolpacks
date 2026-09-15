@@ -79,6 +79,13 @@ that landed mid-run won the race (`[rejected] fetch first`). Fixed by #17
 gh run view 34879570292 --json jobs -q '.jobs[]|{name,conclusion}'
 ```
 
+Installer CI (`navranta/toolpacks-install-test`, run `34914405076`) is green
+too: 137 PASS / 0 FAIL / 0 HANG / 0 MISSING. That required two removals:
+#18 dropped `zerotier` (recipe built nothing installable; was MISSING x3),
+and a one-line harness fix in the test repo itself (`grep -v "|PASS|"`
+exited 1 under pipefail+errexit on full success, killing the smoke step
+after results were written — it failed precisely because all 137 passed).
+
 Prior run `34856163414` (fixes 1+2 only): `build` green, finalize gate at
 **2 empties** (`husarnet` x2, old code) + `unpublished: getJS`. Both families
 then re-pushed for real (run `34868524516`); a curl+jq replication of the
