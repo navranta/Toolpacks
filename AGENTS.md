@@ -37,7 +37,7 @@ Caveats, so it is not mistaken for a drop-in:
 
 ## 1. Never build, compile, or test on this machine
 
-This repo builds 133 statically linked binaries. **None of that runs locally — ever.**
+This repo builds 132 statically linked binaries. **None of that runs locally — ever.**
 Not "just this once to check", not a throwaway container, not a two-file repro.
 
 Forbidden on the local machine:

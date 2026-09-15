@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   schedule:
     # Monthly. The old weekly cadence existed because R2 was cheap to
-    # overwrite; at ~1.2h of build for 133 recipes, monthly is plenty.
+    # overwrite; at ~1.2h of build for 132 recipes, monthly is plenty.
     - cron: "30 18 1 * *"
 
 #MARK: ENV
@@ -109,7 +109,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: [prepare]
-    # ~1.2h serial for 133 recipes; 300 keeps margin under the 360 cap.
+    # ~1.2h serial for 132 recipes; 300 keeps margin under the 360 cap.
     timeout-minutes: 300
     permissions:
       contents: read

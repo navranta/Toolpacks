@@ -22,3 +22,11 @@ huggingface-cli
 # Not needed. Was the sole host-side user of PyInstaller; dropping it removes
 # PyInstaller, Nuitka and Pex from the toolchain entirely.
 archey
+
+# Broken upstream drift. The recipe builds ZeroTierOne from source but the
+# expected binaries (zerotier-one, zerotier-cli, zerotier-idtool) never
+# materialize at the paths the recipe copies from (`cp: cannot stat
+# './zerotier-one'`), so the published package held only a systemd service
+# file. Nobody needs it; drop until someone ports a working build.
+# Removing it also drops: zerotier-cli, zerotier-idtool, zerotier-one
+zerotier

@@ -233,9 +233,6 @@
  fetch_tool "yq" "yq" "yq"
  fetch_tool "zapper" "zapper" "zapper"
  fetch_tool "zapper-stealth" "zapper" "zapper-stealth"
- fetch_tool "zerotier-cli" "zerotier" "zerotier-cli"
- fetch_tool "zerotier-idtool" "zerotier" "zerotier-idtool"
- fetch_tool "zerotier-one" "zerotier" "zerotier-one"
 #-------------------------------------------------------------------------------#
 
 #-------------------------------------------------------------------------------#

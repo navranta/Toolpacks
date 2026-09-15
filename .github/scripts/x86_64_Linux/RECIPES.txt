@@ -129,5 +129,4 @@ yataf
 yj
 yq
 zapper
-zerotier
 zstd

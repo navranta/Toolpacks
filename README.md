@@ -10,7 +10,7 @@
 
 ## What this is
 
-A build pipeline that fetches or compiles **133 tools** as static x86_64 Linux
+A build pipeline that fetches or compiles **132 tools** as static x86_64 Linux
 binaries and publishes each one to the GitHub Container Registry, one package
 per tool family.
 
