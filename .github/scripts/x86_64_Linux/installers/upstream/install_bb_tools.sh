@@ -267,6 +267,8 @@ INSTALL_DIR_SIZE_PRE="$(du -sh ${INSTALL_DIR} | cut -f1)" && export INSTALL_DIR_
  eval "${INSTALL_PRE}" "${INSTALL_SRC}/rclone" -o "${INSTALL_DIR}/rclone" && eval "${INSTALL_POST}" "${INSTALL_DIR}/rclone" "${INSTALL_STRATEGY}"
 #resdns
  eval "${INSTALL_PRE}" "https://raw.githubusercontent.com/Azathothas/Arsenal/main/resdns/resdns.sh" -o "${INSTALL_DIR}/resdns" && eval "${INSTALL_POST}" "${INSTALL_DIR}/resdns" "${INSTALL_STRATEGY}"
+#revit : https://github.com/devanshbatham/revit
+ eval "${INSTALL_PRE}" "${INSTALL_SRC}/revit" -o "${INSTALL_DIR}/revit" && eval "${INSTALL_POST}" "${INSTALL_DIR}/revit" "${INSTALL_STRATEGY}"
 #ripgen : https://github.com/resyncgg/ripgen
  eval "${INSTALL_PRE}" "${INSTALL_SRC}/ripgen" -o "${INSTALL_DIR}/ripgen" && eval "${INSTALL_POST}" "${INSTALL_DIR}/ripgen" "${INSTALL_STRATEGY}"
 #ripgrep : 
