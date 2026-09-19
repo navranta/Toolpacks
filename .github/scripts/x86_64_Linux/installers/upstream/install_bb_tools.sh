@@ -212,6 +212,8 @@ INSTALL_DIR_SIZE_PRE="$(du -sh ${INSTALL_DIR} | cut -f1)" && export INSTALL_DIR_
  eval "${INSTALL_PRE}" "${INSTALL_SRC}/hakip2host" -o "${INSTALL_DIR}/hakip2host" && eval "${INSTALL_POST}" "${INSTALL_DIR}/hakip2host" "${INSTALL_STRATEGY}"
 #hakrawler
  eval "${INSTALL_PRE}" "${INSTALL_SRC}/hakrawler" -o "${INSTALL_DIR}/hakrawler" && eval "${INSTALL_POST}" "${INSTALL_DIR}/hakrawler" "${INSTALL_STRATEGY}"
+#hakrevdns : https://github.com/hakluke/hakrevdns
+ eval "${INSTALL_PRE}" "${INSTALL_SRC}/hakrevdns" -o "${INSTALL_DIR}/hakrevdns" && eval "${INSTALL_POST}" "${INSTALL_DIR}/hakrevdns" "${INSTALL_STRATEGY}"
 #httpx : https://github.com/projectdiscovery/httpx
  eval "${INSTALL_PRE}" "${INSTALL_SRC}/httpx" -o "${INSTALL_DIR}/httpx" && eval "${INSTALL_POST}" "${INSTALL_DIR}/httpx" "${INSTALL_STRATEGY}"
  eval "${INSTALL_PRE}" "${INSTALL_SRC}/httpx" -o "${INSTALL_DIR_ROOT}/httpx" && eval "${INSTALL_POST}" "${INSTALL_DIR_ROOT}/httpx" "${INSTALL_STRATEGY}"

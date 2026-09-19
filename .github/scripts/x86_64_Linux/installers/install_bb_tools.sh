@@ -173,6 +173,7 @@
  fetch_tool "gowitness" "gowitness" "gowitness"
  fetch_tool "hakip2host" "hakip2host" "hakip2host"
  fetch_tool "hakrawler" "hakrawler" "hakrawler"
+ fetch_tool "hakrevdns" "hakrevdns" "hakrevdns"
  fetch_tool "httpx" "httpx" "httpx"
  fetch_tool "husarnet" "husarnet" "husarnet"
  fetch_tool "husarnet-daemon" "husarnet" "husarnet-daemon"
