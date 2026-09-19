@@ -23,6 +23,7 @@ LAYOUT
   upstream/ -> RECIPES.txt (gen_recipes.sh) -> install_*.sh (gen_installers.sh)
 
 FORK ADDITIONS (not in archived upstream; owned by this repo):
-  install_bb_tools.sh: revit (https://github.com/devanshbatham/revit)
+  install_bb_tools.sh: revit (https://github.com/devanshbatham/revit),
+    hakrevdns (https://github.com/hakluke/hakrevdns)
   install_dev_tools.sh: gotty (https://github.com/sorenisanerd/gotty,
     maintained fork of https://github.com/yudai/gotty)
