@@ -60,6 +60,7 @@ gitlab-subdomains
 gitleaks
 glow
 gotator
+gotty
 gowitness
 hakip2host
 hakrawler
@@ -93,6 +94,7 @@ puredns
 qsreplace
 qsv
 rclone
+revit
 rga
 ripgen
 ripgrep

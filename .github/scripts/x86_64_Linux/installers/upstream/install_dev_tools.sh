@@ -155,6 +155,8 @@ INSTALL_DIR_SIZE_PRE="$(du -sh ${INSTALL_DIR} | cut -f1)" && export INSTALL_DIR_
  eval "${INSTALL_PRE}" "${INSTALL_SRC}/glab" -o "${INSTALL_DIR}/glab" && eval "${INSTALL_POST}" "${INSTALL_DIR}/glab" "${INSTALL_STRATEGY}"
 #glow
  eval "${INSTALL_PRE}" "${INSTALL_SRC}/glow" -o "${INSTALL_DIR}/glow" && eval "${INSTALL_POST}" "${INSTALL_DIR}/glow" "${INSTALL_STRATEGY}"
+#gotty : https://github.com/sorenisanerd/gotty (maintained fork of https://github.com/yudai/gotty)
+ eval "${INSTALL_PRE}" "${INSTALL_SRC}/gotty" -o "${INSTALL_DIR}/gotty" && eval "${INSTALL_POST}" "${INSTALL_DIR}/gotty" "${INSTALL_STRATEGY}"
 #httpx : https://github.com/projectdiscovery/httpx
  eval "${INSTALL_PRE}" "${INSTALL_SRC}/httpx" -o "${INSTALL_DIR}/httpx" && eval "${INSTALL_POST}" "${INSTALL_DIR}/httpx" "${INSTALL_STRATEGY}"
  eval "${INSTALL_PRE}" "${INSTALL_SRC}/httpx" -o "${INSTALL_DIR_ROOT}/httpx" && eval "${INSTALL_POST}" "${INSTALL_DIR_ROOT}/httpx" "${INSTALL_STRATEGY}"

@@ -145,6 +145,7 @@
  fetch_tool "gitleaks" "gitleaks" "gitleaks"
  fetch_tool "glab" "gitlab-cli" "glab"
  fetch_tool "glow" "glow" "glow"
+ fetch_tool "gotty" "gotty" "gotty"
  fetch_tool "httpx" "httpx" "httpx"
  fetch_tool "husarnet" "husarnet" "husarnet"
  fetch_tool "husarnet-daemon" "husarnet" "husarnet-daemon"

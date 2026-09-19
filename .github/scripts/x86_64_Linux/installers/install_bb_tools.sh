@@ -197,6 +197,7 @@
  fetch_tool "puredns" "puredns" "puredns"
  fetch_tool "qsreplace" "qsreplace" "qsreplace"
  fetch_tool "rclone" "rclone" "rclone"
+ fetch_tool "revit" "revit" "revit"
  fetch_tool "rga" "rga" "rga"
  fetch_tool "ripgen" "ripgen" "ripgen"
  fetch_tool "ripgrep" "ripgrep" "ripgrep"
