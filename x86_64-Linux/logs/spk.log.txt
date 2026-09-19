@@ -1,23 +1,23 @@
 
 
- [+] (Building | Fetching) spk :: https://github.com/dhn/spk [Monday, 2026-09-14 (07:23:45 PM) UTC]
+ [+] (Building | Fetching) spk :: https://github.com/dhn/spk [Saturday, 2026-09-19 (05:02:19 AM) UTC]
 
 go: downloading github.com/corpix/uarand v0.1.1
-go: downloading github.com/json-iterator/go v1.1.12
 go: downloading github.com/projectdiscovery/gologger v1.1.4
+go: downloading github.com/json-iterator/go v1.1.12
 go: downloading github.com/valyala/fasthttp v1.34.0
 go: downloading github.com/PuerkitoBio/goquery v1.8.0
 go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
 go: downloading github.com/modern-go/reflect2 v1.0.2
-go: downloading github.com/logrusorgru/aurora v2.0.3+incompatible
 go: downloading github.com/andybalholm/brotli v1.0.4
 go: downloading github.com/klauspost/compress v1.15.0
 go: downloading github.com/valyala/bytebufferpool v1.0.0
 go: downloading github.com/andybalholm/cascadia v1.3.1
 go: downloading golang.org/x/net v0.38.0
-internal/goarch
+go: downloading github.com/logrusorgru/aurora v2.0.3+incompatible
 internal/unsafeheader
 internal/byteorder
+internal/goarch
 internal/cpu
 internal/coverage/rtcov
 internal/abi
@@ -26,28 +26,28 @@ internal/goexperiment
 internal/goos
 internal/profilerecord
 internal/runtime/atomic
-internal/chacha8rand
-internal/bytealg
 internal/runtime/syscall/linux
+internal/bytealg
+internal/chacha8rand
 math/bits
 internal/runtime/exithook
 internal/runtime/gc
-internal/strconv
 internal/runtime/sys
 internal/asan
+internal/strconv
 internal/msan
+internal/runtime/gc/scan
 internal/runtime/math
 internal/runtime/pprof/label
-internal/runtime/gc/scan
-internal/race
 internal/stringslite
-internal/runtime/maps
+internal/race
 internal/trace/tracev2
+internal/runtime/maps
 sync/atomic
 internal/synctest
 unicode
-internal/runtime/cgroup
 internal/sync
+internal/runtime/cgroup
 unicode/utf8
 cmp
 math
@@ -56,13 +56,13 @@ container/list
 crypto/internal/fips140/alias
 crypto/internal/fips140deps/byteorder
 crypto/internal/fips140deps/cpu
-runtime
 crypto/internal/constanttime
+runtime
 crypto/internal/fips140deps/time
-crypto/internal/boring/sig
 crypto/internal/fips140/subtle
-unicode/utf16
+crypto/internal/boring/sig
 crypto/subtle
+unicode/utf16
 vendor/golang.org/x/crypto/cryptobyte/asn1
 vendor/golang.org/x/crypto/internal/alias
 internal/nettrace
@@ -71,22 +71,24 @@ encoding
 github.com/projectdiscovery/gologger/levels
 internal/reflectlite
 iter
-sync
 weak
+sync
 slices
 maps
-sort
-errors
 internal/testlog
-internal/bisect
 crypto/internal/fips140cache
+internal/bisect
+errors
+sort
+internal/singleflight
+unique
 io
 strconv
+bytes
 internal/oserror
 path
-reflect
-bytes
 syscall
+reflect
 strings
 hash
 hash/crc32
@@ -97,30 +99,30 @@ internal/godebug
 time
 internal/syscall/unix
 internal/syscall/execenv
-crypto/internal/fips140deps/godebug
 regexp
+crypto/internal/fips140deps/godebug
 crypto/internal/fips140
 crypto/internal/impl
 crypto/internal/fips140/sha256
 crypto/internal/fips140/sha3
-internal/fmtsort
-encoding/binary
 io/fs
+internal/fmtsort
 internal/poll
 internal/filepathlite
+encoding/binary
 context
 crypto/internal/fips140/sha512
-crypto/internal/entropy/v1.0.0
 crypto/internal/fips140/hmac
+crypto/internal/entropy/v1.0.0
 math/rand/v2
 crypto/internal/fips140/check
-math/rand
 crypto/internal/fips140/aes
 crypto/fips140
 os
 crypto/internal/fips140/nistec/fiat
 crypto/internal/fips140/edwards25519/field
 crypto/internal/randutil
+math/rand
 crypto/internal/fips140/bigmod
 crypto/sha3
 crypto/internal/fips140hash
@@ -134,7 +136,6 @@ crypto/internal/fips140/nistec
 crypto/tls/internal/fips140tls
 encoding/base64
 vendor/golang.org/x/net/dns/dnsmessage
-encoding/pem
 fmt
 crypto/internal/sysrand
 crypto/internal/fips140/drbg
@@ -142,30 +143,29 @@ crypto/internal/fips140/aes/gcm
 crypto/internal/fips140only
 crypto/cipher
 crypto/internal/fips140/ed25519
-golang.org/x/net/html
-compress/flate
 crypto/internal/boring
 crypto/des
+golang.org/x/net/html
+compress/flate
 crypto/aes
-crypto/internal/fips140/ecdh
 crypto/internal/rand
-crypto/ecdh
+crypto/internal/fips140/ecdh
 math/big
+crypto/ecdh
 crypto/internal/fips140/ecdsa
 crypto/sha512
 crypto/hkdf
-compress/gzip
 crypto/hmac
-github.com/andybalholm/cascadia
 crypto/internal/fips140/mlkem
+compress/gzip
+github.com/andybalholm/cascadia
 crypto/sha256
 vendor/golang.org/x/crypto/chacha20
 crypto/mlkem
 vendor/golang.org/x/sys/cpu
 crypto/md5
-crypto/internal/fips140/mldsa
 vendor/golang.org/x/crypto/chacha20poly1305
-crypto/rc4
+crypto/internal/fips140/mldsa
 crypto/elliptic
 crypto/internal/boring/bbig
 encoding/asn1
@@ -173,25 +173,25 @@ crypto/rand
 crypto/ed25519
 crypto/hpke
 crypto/mldsa
+crypto/rc4
 crypto/internal/fips140/rsa
-vendor/golang.org/x/crypto/cryptobyte
 crypto/sha1
+vendor/golang.org/x/crypto/cryptobyte
 crypto/dsa
 encoding/hex
-internal/singleflight
-unique
+encoding/pem
 crypto/x509/pkix
-crypto/rsa
+net/netip
 path/filepath
 crypto/ecdsa
-net/netip
+crypto/rsa
 vendor/golang.org/x/text/transform
 log
 vendor/golang.org/x/text/unicode/norm
 vendor/golang.org/x/text/unicode/bidi
-vendor/golang.org/x/text/secure/bidirule
 net
 net/url
+vendor/golang.org/x/text/secure/bidirule
 mime
 vendor/golang.org/x/net/idna
 mime/quotedprintable
@@ -209,22 +209,22 @@ encoding/json/internal/jsonwire
 io/ioutil
 runtime/debug
 github.com/modern-go/reflect2
-github.com/modern-go/concurrent
 encoding/json/jsontext
-github.com/logrusorgru/aurora
+github.com/modern-go/concurrent
 crypto/x509
 net/textproto
+vendor/golang.org/x/net/http/httpguts
 vendor/golang.org/x/net/http/httpproxy
+mime/multipart
 encoding/json/v2
+github.com/logrusorgru/aurora
 github.com/projectdiscovery/gologger/writer
 github.com/klauspost/compress/flate
-vendor/golang.org/x/net/http/httpguts
-mime/multipart
 hash/adler32
 compress/zlib
+crypto/tls
 github.com/valyala/bytebufferpool
 github.com/valyala/fasthttp/fasthttputil
-crypto/tls
 github.com/valyala/fasthttp/stackless
 github.com/klauspost/compress/gzip
 github.com/klauspost/compress/zlib

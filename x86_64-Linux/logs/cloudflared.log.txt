@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) cloudflared :: https://github.com/cloudflare/cloudflared [Monday, 2026-09-14 (06:29:36 PM) UTC]
+ [+] (Building | Fetching) cloudflared :: https://github.com/cloudflare/cloudflared [Saturday, 2026-09-19 (04:10:59 AM) UTC]
 
 https://github.com/cloudflare/cloudflared/releases/download/2026.9.1/cloudflared-linux-amd64
-Downloading  21% [====>                     ] (8.3/38 MB, 122.882 MB/s) [0s:0s]                                                                               Downloading  69% [=================>         ] (26/38 MB, 198.334 MB/s) [0s:0s]                                                                               Downloading 100% [===========================] (38/38 MB, 229.389 MB/s)
+Downloading  59% [==============>            ] (22/38 MB, 336.741 MB/s) [0s:0s]                                                                               Downloading 100% [===========================] (38/38 MB, 297.503 MB/s)
 Extracted `cloudflared-linux-amd64` to `/home/runner/work/_temp/toolpack_x86_64/cloudflared`

@@ -1,0 +1,97 @@
+
+
+ [+] (Building | Fetching) revit :: https://github.com/devanshbatham/revit [Saturday, 2026-09-19 (04:51:53 AM) UTC]
+
+go: creating new go.mod: module github.com/devanshbatham/revit
+go: to add module requirements and sums:
+	go mod tidy
+go: finding module for package github.com/fatih/color
+go: downloading github.com/fatih/color v1.19.0
+go: found github.com/fatih/color in github.com/fatih/color v1.19.0
+go: downloading github.com/mattn/go-colorable v0.1.14
+go: downloading github.com/mattn/go-isatty v0.0.20
+go: downloading golang.org/x/sys v0.42.0
+internal/goarch
+internal/unsafeheader
+internal/byteorder
+internal/cpu
+internal/coverage/rtcov
+internal/abi
+internal/godebugs
+internal/goexperiment
+internal/goos
+internal/profilerecord
+internal/runtime/atomic
+internal/runtime/syscall/linux
+internal/bytealg
+internal/chacha8rand
+math/bits
+internal/runtime/exithook
+internal/runtime/gc
+internal/runtime/sys
+internal/asan
+internal/strconv
+internal/msan
+internal/runtime/gc/scan
+internal/runtime/math
+internal/runtime/pprof/label
+internal/stringslite
+internal/race
+internal/trace/tracev2
+sync/atomic
+internal/runtime/maps
+internal/synctest
+unicode
+internal/sync
+internal/runtime/cgroup
+unicode/utf8
+encoding
+cmp
+internal/nettrace
+math
+log/internal
+runtime
+iter
+weak
+internal/reflectlite
+sync
+slices
+sort
+errors
+internal/bisect
+internal/testlog
+internal/singleflight
+io
+strconv
+internal/oserror
+path
+bytes
+strings
+syscall
+reflect
+internal/godebug
+bufio
+math/rand
+vendor/golang.org/x/net/dns/dnsmessage
+unique
+time
+internal/syscall/unix
+internal/syscall/execenv
+net/netip
+internal/poll
+io/fs
+context
+internal/fmtsort
+internal/filepathlite
+encoding/binary
+os
+golang.org/x/sys/unix
+fmt
+net
+flag
+log
+github.com/mattn/go-isatty
+github.com/mattn/go-colorable
+github.com/fatih/color
+github.com/devanshbatham/revit/internal/revit
+github.com/devanshbatham/revit/cmd/revit

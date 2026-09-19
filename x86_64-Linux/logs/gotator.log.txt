@@ -1,13 +1,13 @@
 
 
- [+] (Building | Fetching) gotator :: https://github.com/Josue87/gotator [Monday, 2026-09-14 (06:45:21 PM) UTC]
+ [+] (Building | Fetching) gotator :: https://github.com/Josue87/gotator [Saturday, 2026-09-19 (04:24:31 AM) UTC]
 
 internal/goarch
 internal/unsafeheader
 internal/byteorder
 internal/cpu
-internal/coverage/rtcov
 internal/abi
+internal/coverage/rtcov
 internal/godebugs
 internal/goexperiment
 internal/goos
@@ -27,14 +27,14 @@ internal/runtime/gc/scan
 internal/runtime/math
 internal/runtime/pprof/label
 internal/stringslite
-internal/race
 internal/trace/tracev2
-internal/runtime/maps
+internal/race
 sync/atomic
+internal/runtime/maps
 internal/synctest
 unicode
-internal/runtime/cgroup
 internal/sync
+internal/runtime/cgroup
 unicode/utf8
 encoding
 cmp
@@ -47,24 +47,24 @@ slices
 errors
 sort
 internal/testlog
+strconv
 io
 internal/oserror
-strconv
 path
 syscall
+reflect
 bytes
 strings
-reflect
-bufio
 regexp/syntax
+bufio
 time
 internal/syscall/unix
 internal/syscall/execenv
 regexp
-io/fs
 internal/poll
-internal/filepathlite
+io/fs
 internal/fmtsort
+internal/filepathlite
 os
 fmt
 flag

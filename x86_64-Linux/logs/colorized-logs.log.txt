@@ -1,6 +1,6 @@
 
 
- [+] (Building | Fetching) colorized-logs :: https://github.com/kilobyte/colorized-logs [Monday, 2026-09-14 (06:29:38 PM) UTC]
+ [+] (Building | Fetching) colorized-logs :: https://github.com/kilobyte/colorized-logs [Saturday, 2026-09-19 (04:11:01 AM) UTC]
 
 -- The C compiler identification is Clang 21.1.0
 -- Detecting C compiler ABI info
@@ -18,13 +18,13 @@
 -- Looking for openpty in util - found
 -- Looking for openpty
 -- Looking for openpty - found
--- Configuring done (39.9s)
+-- Configuring done (39.3s)
 -- Generating done (0.0s)
--- Build files have been written to: /home/runner/work/_temp/toolpacks/BTE3C8M_linux_x86_64/colorized-logs/build
-[ 20%] Building C object CMakeFiles/ansi2txt.dir/ansi2txt.c.o
+-- Build files have been written to: /home/runner/work/_temp/toolpacks/BvQvd3U_linux_x86_64/colorized-logs/build
+[ 10%] Building C object CMakeFiles/ansi2txt.dir/ansi2txt.c.o
 [ 20%] Building C object CMakeFiles/ansi2html.dir/ansi2html.c.o
-[ 30%] Building C object CMakeFiles/ttyrec2ansi.dir/ttyrec2ansi.c.o
 [ 40%] Building C object CMakeFiles/pipetty.dir/pipetty.c.o
+[ 40%] Building C object CMakeFiles/ttyrec2ansi.dir/ttyrec2ansi.c.o
 [ 50%] Building C object CMakeFiles/pipetty.dir/signals.c.o
 [ 60%] Linking C executable ansi2txt
 [ 70%] Linking C executable ttyrec2ansi

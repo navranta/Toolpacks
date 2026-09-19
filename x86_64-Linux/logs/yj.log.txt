@@ -1,13 +1,13 @@
 
 
- [+] (Building | Fetching) yj :: https://github.com/sclevine/yj [Monday, 2026-09-14 (07:49:18 PM) UTC]
+ [+] (Building | Fetching) yj :: https://github.com/sclevine/yj [Saturday, 2026-09-19 (05:27:35 AM) UTC]
 
-go: downloading github.com/hashicorp/hcl v1.0.0
 go: downloading github.com/BurntSushi/toml v1.6.0
+go: downloading github.com/hashicorp/hcl v1.0.0
 go: downloading go.yaml.in/yaml/v3 v3.0.4
-internal/byteorder
 internal/goarch
 internal/unsafeheader
+internal/byteorder
 internal/cpu
 internal/coverage/rtcov
 internal/abi
@@ -30,14 +30,14 @@ internal/runtime/gc/scan
 internal/runtime/math
 internal/runtime/pprof/label
 internal/stringslite
-internal/race
 internal/trace/tracev2
 cmp
-internal/runtime/maps
-math
 unicode/utf8
-internal/runtime/cgroup
+internal/race
+math
+internal/runtime/maps
 sync/atomic
+internal/runtime/cgroup
 internal/sync
 internal/synctest
 unicode
@@ -52,8 +52,8 @@ errors
 sort
 internal/testlog
 internal/oserror
-io
 strconv
+io
 path
 syscall
 reflect
@@ -64,34 +64,34 @@ encoding/json/internal/jsonopts
 strings
 encoding/base32
 encoding/base64
-github.com/hashicorp/hcl/hcl/strconv
 encoding/json/internal/jsonwire
 bufio
 time
 internal/syscall/unix
 internal/syscall/execenv
 encoding/json/jsontext
+github.com/hashicorp/hcl/hcl/strconv
 regexp/syntax
 io/fs
 internal/poll
-internal/filepathlite
-internal/fmtsort
-encoding/binary
 github.com/BurntSushi/toml/internal
 regexp
+internal/fmtsort
+internal/filepathlite
+encoding/binary
 os
 io/ioutil
 fmt
 encoding/hex
-text/tabwriter
 github.com/hashicorp/hcl/hcl/token
+text/tabwriter
 go.yaml.in/yaml/v3
 github.com/hashicorp/hcl/hcl/ast
-encoding/json/v2
 github.com/hashicorp/hcl/hcl/scanner
+encoding/json/v2
 github.com/hashicorp/hcl/json/token
-github.com/hashicorp/hcl/hcl/parser
 github.com/hashicorp/hcl/json/scanner
+github.com/hashicorp/hcl/hcl/parser
 github.com/hashicorp/hcl/json/parser
 github.com/hashicorp/hcl/hcl/printer
 github.com/hashicorp/hcl
