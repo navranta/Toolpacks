@@ -1,0 +1,88 @@
+
+
+ [+] (Building | Fetching) hakrevdns :: https://github.com/hakluke/hakrevdns [Thursday, 2026-10-01 (07:31:42 PM) UTC]
+
+go: creating new go.mod: module github.com/hakluke/hakrevdns
+go: to add module requirements and sums:
+	go mod tidy
+go: finding module for package github.com/jessevdk/go-flags
+go: downloading github.com/jessevdk/go-flags v1.6.1
+go: found github.com/jessevdk/go-flags in github.com/jessevdk/go-flags v1.6.1
+go: downloading golang.org/x/sys v0.21.0
+internal/goarch
+internal/unsafeheader
+internal/byteorder
+internal/cpu
+internal/coverage/rtcov
+internal/abi
+internal/godebugs
+internal/goexperiment
+internal/goos
+internal/profilerecord
+internal/runtime/atomic
+internal/runtime/syscall/linux
+internal/bytealg
+internal/chacha8rand
+math/bits
+internal/runtime/exithook
+internal/strconv
+internal/runtime/gc
+internal/runtime/sys
+internal/asan
+internal/runtime/gc/scan
+internal/msan
+internal/runtime/math
+internal/runtime/pprof/label
+internal/stringslite
+internal/race
+internal/trace/tracev2
+sync/atomic
+internal/runtime/maps
+internal/synctest
+unicode
+internal/runtime/cgroup
+internal/sync
+unicode/utf8
+cmp
+math
+internal/nettrace
+runtime
+internal/reflectlite
+iter
+sync
+weak
+slices
+internal/testlog
+internal/singleflight
+internal/bisect
+errors
+sort
+unique
+io
+internal/oserror
+syscall
+bytes
+strings
+strconv
+reflect
+path
+vendor/golang.org/x/net/dns/dnsmessage
+bufio
+internal/godebug
+time
+internal/syscall/unix
+internal/syscall/execenv
+net/netip
+context
+io/fs
+internal/poll
+internal/filepathlite
+internal/fmtsort
+encoding/binary
+os
+golang.org/x/sys/unix
+path/filepath
+fmt
+net
+github.com/jessevdk/go-flags
+github.com/hakluke/hakrevdns

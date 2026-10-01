@@ -1,6 +1,6 @@
 
 
- [+] (Building | Fetching) yj :: https://github.com/sclevine/yj [Saturday, 2026-09-19 (05:27:35 AM) UTC]
+ [+] (Building | Fetching) yj :: https://github.com/sclevine/yj [Thursday, 2026-10-01 (08:36:27 PM) UTC]
 
 go: downloading github.com/BurntSushi/toml v1.6.0
 go: downloading github.com/hashicorp/hcl v1.0.0
@@ -23,23 +23,23 @@ math/bits
 internal/runtime/exithook
 internal/runtime/gc
 internal/runtime/sys
-internal/asan
 internal/strconv
+internal/asan
 internal/msan
-internal/runtime/gc/scan
 internal/runtime/math
+internal/runtime/gc/scan
 internal/runtime/pprof/label
 internal/stringslite
 internal/trace/tracev2
-cmp
-unicode/utf8
 internal/race
-math
+cmp
 internal/runtime/maps
+unicode/utf8
+math
 sync/atomic
 internal/runtime/cgroup
-internal/sync
 internal/synctest
+internal/sync
 unicode
 encoding
 unicode/utf16
@@ -48,12 +48,12 @@ iter
 internal/reflectlite
 sync
 slices
+internal/testlog
 errors
 sort
-internal/testlog
-internal/oserror
 strconv
 io
+internal/oserror
 path
 syscall
 reflect
@@ -64,42 +64,42 @@ encoding/json/internal/jsonopts
 strings
 encoding/base32
 encoding/base64
+github.com/hashicorp/hcl/hcl/strconv
 encoding/json/internal/jsonwire
 bufio
 time
 internal/syscall/unix
 internal/syscall/execenv
 encoding/json/jsontext
-github.com/hashicorp/hcl/hcl/strconv
 regexp/syntax
-io/fs
-internal/poll
-github.com/BurntSushi/toml/internal
 regexp
 internal/fmtsort
-internal/filepathlite
+io/fs
+internal/poll
 encoding/binary
+internal/filepathlite
+github.com/BurntSushi/toml/internal
 os
 io/ioutil
 fmt
 encoding/hex
-github.com/hashicorp/hcl/hcl/token
 text/tabwriter
+github.com/hashicorp/hcl/hcl/token
 go.yaml.in/yaml/v3
+encoding/json/v2
 github.com/hashicorp/hcl/hcl/ast
 github.com/hashicorp/hcl/hcl/scanner
-encoding/json/v2
 github.com/hashicorp/hcl/json/token
-github.com/hashicorp/hcl/json/scanner
 github.com/hashicorp/hcl/hcl/parser
+github.com/hashicorp/hcl/json/scanner
 github.com/hashicorp/hcl/json/parser
 github.com/hashicorp/hcl/hcl/printer
 github.com/hashicorp/hcl
 encoding/json
 github.com/sclevine/yj/v5/order
 github.com/BurntSushi/toml
-github.com/sclevine/yj/v5/hcl
 github.com/sclevine/yj/v5/yaml
+github.com/sclevine/yj/v5/hcl
 github.com/sclevine/yj/v5/toml
 github.com/sclevine/yj/v5/convert
 github.com/sclevine/yj/v5

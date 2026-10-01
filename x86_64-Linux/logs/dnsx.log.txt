@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) dnsx :: https://github.com/projectdiscovery/dnsx [Saturday, 2026-09-19 (04:14:53 AM) UTC]
+ [+] (Building | Fetching) dnsx :: https://github.com/projectdiscovery/dnsx [Thursday, 2026-10-01 (07:14:23 PM) UTC]
 
 https://github.com/projectdiscovery/dnsx/releases/download/v1.3.1/dnsx_1.3.1_linux_amd64.zip
-Downloading 100% [=========================] (9.4/9.4 MB, 211.228 MB/s)
+Downloading  28% [======>                   ] (2.7/9.4 MB, 41.013 MB/s) [0s:0s]                                                                               Downloading 100% [==========================] (9.4/9.4 MB, 77.618 MB/s)
 Extracted `dnsx` to `/home/runner/work/_temp/toolpack_x86_64/dnsx`

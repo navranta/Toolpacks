@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) shuffledns :: https://github.com/projectdiscovery/shuffledns [Saturday, 2026-09-19 (05:01:18 AM) UTC]
+ [+] (Building | Fetching) shuffledns :: https://github.com/projectdiscovery/shuffledns [Thursday, 2026-10-01 (08:09:06 PM) UTC]
 
 https://github.com/projectdiscovery/shuffledns/releases/download/v1.2.1/shuffledns_1.2.1_linux_amd64.zip
-Downloading 100% [=========================] (8.7/8.7 MB, 326.139 MB/s)
+Downloading 100% [=========================] (8.7/8.7 MB, 278.473 MB/s)
 Extracted `shuffledns` to `/home/runner/work/_temp/toolpack_x86_64/shuffledns`

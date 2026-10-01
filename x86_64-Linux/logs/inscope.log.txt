@@ -1,6 +1,6 @@
 
 
- [+] (Building | Fetching) inscope :: https://github.com/pkgforge-security/inscope [Saturday, 2026-09-19 (04:27:43 AM) UTC]
+ [+] (Building | Fetching) inscope :: https://github.com/pkgforge-security/inscope [Thursday, 2026-10-01 (07:32:22 PM) UTC]
 
 go: creating new go.mod: module github.com/pkgforge-security/inscope
 go: to add module requirements and sums:
@@ -9,8 +9,8 @@ internal/goarch
 internal/unsafeheader
 internal/byteorder
 internal/cpu
-internal/abi
 internal/coverage/rtcov
+internal/abi
 internal/godebugs
 internal/goexperiment
 internal/goos
@@ -22,55 +22,55 @@ internal/chacha8rand
 math/bits
 internal/runtime/exithook
 internal/runtime/gc
-internal/strconv
 internal/runtime/sys
 internal/asan
+internal/strconv
 internal/msan
 internal/runtime/math
 internal/runtime/gc/scan
 internal/runtime/pprof/label
 internal/stringslite
-internal/race
 internal/trace/tracev2
-internal/runtime/maps
+internal/race
 sync/atomic
 internal/synctest
-internal/runtime/cgroup
+internal/runtime/maps
 unicode
+internal/runtime/cgroup
 internal/sync
 unicode/utf8
 encoding
 cmp
 math
 runtime
-iter
-weak
 internal/reflectlite
+iter
 sync
+weak
 slices
-internal/testlog
-internal/bisect
-unique
 errors
 sort
+internal/testlog
 io
 strconv
 internal/oserror
 path
-bytes
-strings
 reflect
 syscall
-internal/godebug
+bytes
+strings
+internal/bisect
 bufio
-net/netip
-regexp/syntax
+internal/godebug
+unique
 time
 internal/syscall/unix
 internal/syscall/execenv
-regexp
+net/netip
+regexp/syntax
 io/fs
 internal/poll
+regexp
 internal/fmtsort
 internal/filepathlite
 os

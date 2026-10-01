@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) duf :: https://github.com/muesli/duf [Saturday, 2026-09-19 (04:15:17 AM) UTC]
+ [+] (Building | Fetching) duf :: https://github.com/muesli/duf [Thursday, 2026-10-01 (07:14:53 PM) UTC]
 
 https://github.com/muesli/duf/releases/download/v0.9.1/duf_0.9.1_linux_x86_64.tar.gz
-Downloading 100% [==========================] (1.2/1.2 MB, 78.962 MB/s)
+Downloading 100% [==========================] (1.2/1.2 MB, 71.865 MB/s)
 Extracted `duf` to `/home/runner/work/_temp/toolpack_x86_64/duf`

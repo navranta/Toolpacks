@@ -1,14 +1,13 @@
 
 
- [+] (Building | Fetching) zstd :: https://github.com/facebook/zstd [Saturday, 2026-09-19 (05:29:03 AM) UTC]
+ [+] (Building | Fetching) zstd :: https://github.com/facebook/zstd [Thursday, 2026-10-01 (08:38:00 PM) UTC]
 
-unpacking 'https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/%2A.tar.gz' into the Git cache...
-these 2 paths will be fetched (919.0 KiB download, 2.0 MiB unpacked):
-  /nix/store/2kdbrjq9x57fqwvs1zy0ljj1pajbsklc-gnugrep-static-x86_64-unknown-linux-musl-3.12
-  /nix/store/9qq843h2hf9qmax9j7bkc1qnflpfwmlf-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin
-copying path '/nix/store/2kdbrjq9x57fqwvs1zy0ljj1pajbsklc-gnugrep-static-x86_64-unknown-linux-musl-3.12' from 'https://cache.nixos.org'...
-copying path '/nix/store/9qq843h2hf9qmax9j7bkc1qnflpfwmlf-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin' from 'https://cache.nixos.org'...
-/nix/store/9qq843h2hf9qmax9j7bkc1qnflpfwmlf-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin
+these 2 paths will be fetched (920.0 KiB download, 2.0 MiB unpacked):
+  /nix/store/7ijcjm4x8lzvq7i0vvixicf1s6v2w71x-gnugrep-static-x86_64-unknown-linux-musl-3.12
+  /nix/store/2w2n2q70p0s2r29ksfhyrhnx5bxywfx8-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin
+copying path '/nix/store/7ijcjm4x8lzvq7i0vvixicf1s6v2w71x-gnugrep-static-x86_64-unknown-linux-musl-3.12' from 'https://cache.nixos.org'...
+copying path '/nix/store/2w2n2q70p0s2r29ksfhyrhnx5bxywfx8-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin' from 'https://cache.nixos.org'...
+/nix/store/2w2n2q70p0s2r29ksfhyrhnx5bxywfx8-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin
 sending incremental file list
 ./
 unzstd
@@ -18,5 +17,5 @@ zstdgrep
 zstdless
 zstdmt
 
-sent 4,452,236 bytes  received 133 bytes  8,904,738.00 bytes/sec
+sent 4,452,239 bytes  received 133 bytes  8,904,744.00 bytes/sec
 total size is 4,450,800  speedup is 1.00

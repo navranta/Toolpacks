@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) notify :: https://github.com/projectdiscovery/notify [Saturday, 2026-09-19 (04:32:04 AM) UTC]
+ [+] (Building | Fetching) notify :: https://github.com/projectdiscovery/notify [Thursday, 2026-10-01 (07:37:26 PM) UTC]
 
 https://github.com/projectdiscovery/notify/releases/download/v1.0.7/notify_1.0.7_linux_amd64.zip
-Downloading 100% [=========================] (6.1/6.1 MB, 245.379 MB/s)
+Downloading 100% [=========================] (6.1/6.1 MB, 232.409 MB/s)
 Extracted `notify` to `/home/runner/work/_temp/toolpack_x86_64/notify`

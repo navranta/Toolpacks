@@ -1,6 +1,6 @@
 
 
- [+] (Building | Fetching) brutespray :: https://github.com/x90skysn3k/brutespray [Saturday, 2026-09-19 (04:05:25 AM) UTC]
+ [+] (Building | Fetching) brutespray :: https://github.com/x90skysn3k/brutespray [Thursday, 2026-10-01 (07:04:41 PM) UTC]
 
 go: downloading github.com/pterm/pterm v0.12.83
 go: downloading golang.org/x/term v0.45.0
@@ -25,16 +25,19 @@ go: downloading github.com/x90skysn3k/grdp v1.0.4
 go: downloading go.mongodb.org/mongo-driver v1.17.9
 go: downloading golang.org/x/crypto v0.55.0
 go: downloading gosrc.io/xmpp v0.5.1
-go: downloading golang.org/x/net v0.58.0
 go: downloading github.com/charmbracelet/bubbles v1.0.0
 go: downloading github.com/charmbracelet/bubbletea v1.3.10
 go: downloading github.com/charmbracelet/lipgloss v1.1.0
 go: downloading github.com/charmbracelet/x/ansi v0.11.8
+go: downloading golang.org/x/net v0.58.0
 go: downloading golang.org/x/sys v0.47.0
 go: downloading github.com/golang-sql/civil v0.0.0-20220223132316-b832511892a9
 go: downloading github.com/golang-sql/sqlexp v0.1.0
 go: downloading github.com/go-asn1-ber/asn1-ber v1.5.8
 go: downloading github.com/google/uuid v1.6.0
+go: downloading github.com/cespare/xxhash/v2 v2.3.0
+go: downloading github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f
+go: downloading filippo.io/edwards25519 v1.2.0
 go: downloading atomicgo.dev/cursor v0.2.0
 go: downloading atomicgo.dev/keyboard v0.2.9
 go: downloading atomicgo.dev/schedule v0.1.0
@@ -42,9 +45,6 @@ go: downloading github.com/gookit/color v1.6.0
 go: downloading github.com/lithammer/fuzzysearch v1.1.8
 go: downloading github.com/mattn/go-runewidth v0.0.24
 go: downloading golang.org/x/text v0.41.0
-go: downloading github.com/cespare/xxhash/v2 v2.3.0
-go: downloading github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f
-go: downloading filippo.io/edwards25519 v1.2.0
 go: downloading github.com/golang/snappy v1.0.0
 go: downloading github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed
 go: downloading gopkg.in/inf.v0 v0.9.1
@@ -70,13 +70,13 @@ go: downloading github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e
 go: downloading github.com/geoffgarside/ber v1.2.0
 go: downloading github.com/bodgit/windows v1.0.1
 go: downloading github.com/go-logr/logr v1.4.1
-go: downloading github.com/hashicorp/go-cleanhttp v0.5.2
 go: downloading github.com/tidwall/transform v0.0.0-20201103190739-32f242e2dbde
+go: downloading github.com/hashicorp/go-cleanhttp v0.5.2
 go: downloading github.com/hashicorp/go-uuid v1.0.3
 go: downloading github.com/jcmturner/gofork v1.7.6
-go: downloading github.com/jcmturner/dnsutils/v2 v2.0.0
-go: downloading github.com/masterzen/simplexml v0.0.0-20190410153822-31eea3082786
 go: downloading github.com/jcmturner/goidentity/v6 v6.0.1
+go: downloading github.com/masterzen/simplexml v0.0.0-20190410153822-31eea3082786
+go: downloading github.com/jcmturner/dnsutils/v2 v2.0.0
 go: downloading github.com/charmbracelet/colorprofile v0.4.1
 go: downloading github.com/aymanbagabas/go-osc52/v2 v2.0.1
 go: downloading github.com/mattn/go-isatty v0.0.20
@@ -104,9 +104,9 @@ internal/chacha8rand
 math/bits
 internal/runtime/exithook
 internal/runtime/gc
+internal/strconv
 internal/runtime/sys
 internal/asan
-internal/strconv
 internal/msan
 internal/runtime/math
 internal/runtime/gc/scan
@@ -115,36 +115,36 @@ internal/stringslite
 internal/trace/tracev2
 internal/race
 cmp
+math
 unicode/utf8
 internal/runtime/maps
-math
 internal/runtime/cgroup
 sync/atomic
-internal/sync
 internal/synctest
 unicode
+internal/sync
 crypto/internal/fips140/alias
 crypto/internal/fips140deps/byteorder
 crypto/internal/fips140deps/cpu
 crypto/internal/constanttime
 crypto/internal/fips140/subtle
 crypto/internal/fips140deps/time
-crypto/internal/boring/sig
 crypto/subtle
+crypto/internal/boring/sig
 encoding
 unicode/utf16
-runtime
 log/internal
 atomicgo.dev/keyboard/internal
 log/slog/internal
-atomicgo.dev/keyboard/keys
 container/list
+atomicgo.dev/keyboard/keys
 vendor/golang.org/x/crypto/cryptobyte/asn1
+runtime
 vendor/golang.org/x/crypto/internal/alias
 internal/nettrace
 database/sql/internal
-github.com/denisenkom/go-mssqldb/internal/cp
 golang.org/x/text/encoding/internal/identifier
+github.com/denisenkom/go-mssqldb/internal/cp
 github.com/dgryski/go-rendezvous
 github.com/gocql/gocql/internal/lru
 github.com/gocql/gocql/internal/murmur
@@ -190,54 +190,55 @@ golang.org/x/xerrors/internal
 nhooyr.io/websocket/internal/util
 github.com/charmbracelet/x/ansi/parser
 github.com/rivo/uniseg
-internal/reflectlite
 iter
-weak
+internal/reflectlite
 sync
+weak
 slices
 maps
-sort
 errors
+sort
 internal/testlog
 internal/bisect
+log/slog/internal/buffer
 strconv
 io
 internal/oserror
 path
 reflect
-syscall
 bytes
+syscall
 strings
 hash
 crypto
-bufio
 internal/godebug
+bufio
 crypto/internal/impl
-crypto/internal/entropy/v1.0.0
 crypto/internal/fips140deps/godebug
+crypto/internal/entropy/v1.0.0
 crypto/internal/fips140
-encoding/json/internal
+crypto/internal/fips140/sha256
+crypto/internal/fips140/sha3
 time
 internal/syscall/unix
 internal/syscall/execenv
-crypto/internal/fips140/sha256
-crypto/internal/fips140/sha3
 crypto/internal/fips140/sha512
+crypto/sha3
+crypto/internal/fips140hash
+encoding/json/internal
 encoding/json/internal/jsonflags
 crypto/internal/fips140/hmac
-crypto/sha3
-crypto/internal/fips140/check
-crypto/internal/fips140hash
-crypto/internal/fips140/aes
-crypto/fips140
 encoding/json/internal/jsonopts
+crypto/internal/fips140/check
 encoding/json/internal/jsonwire
+crypto/internal/fips140/aes
 io/fs
-internal/poll
 internal/fmtsort
-internal/filepathlite
+internal/poll
 context
+crypto/fips140
 encoding/binary
+internal/filepathlite
 encoding/json/jsontext
 encoding/base32
 encoding/base64
@@ -249,105 +250,104 @@ regexp/syntax
 golang.org/x/text/transform
 golang.org/x/text/runes
 github.com/clipperhouse/uax29/v2/graphemes
+regexp
 fmt
 crypto/internal/sysrand
 crypto/internal/fips140/drbg
-internal/sysinfo
-path/filepath
 crypto/internal/fips140/aes/gcm
 crypto/internal/fips140only
-io/ioutil
 crypto/cipher
 encoding/hex
 flag
 encoding/json/v2
+log
 crypto/internal/boring
 crypto/hmac
 crypto/sha256
-log
+internal/sysinfo
+path/filepath
 runtime/debug
 runtime/trace
 github.com/containerd/console
 encoding/csv
 testing
+io/ioutil
 atomicgo.dev/keyboard
 os/user
-regexp
-github.com/xo/terminfo
 golang.org/x/text/unicode/norm
+github.com/xo/terminfo
 github.com/gookit/color
-atomicgo.dev/cursor
 github.com/lithammer/fuzzysearch/fuzzy
 github.com/mattn/go-runewidth
+atomicgo.dev/cursor
 golang.org/x/term
+encoding/json
 golang.org/x/text/internal/tag
 golang.org/x/text/internal/language
 github.com/pterm/pterm/internal
-log/slog/internal/buffer
-encoding/json
 crypto/md5
 crypto/aes
-crypto/des
-crypto/internal/fips140/edwards25519/field
-crypto/internal/fips140/nistec/fiat
-math/rand/v2
 log/slog
-crypto/internal/randutil
+crypto/des
+crypto/internal/fips140/nistec/fiat
+crypto/internal/fips140/edwards25519/field
+math/rand/v2
 golang.org/x/text/internal/language/compact
+crypto/internal/randutil
 crypto/internal/rand
-math/big
 golang.org/x/text/language
+math/big
 crypto/internal/fips140/bigmod
-crypto/internal/fips140/nistec
 golang.org/x/text/internal
 golang.org/x/text/cases
 crypto/internal/fips140cache
 crypto/sha512
+crypto/internal/fips140/nistec
 internal/saferio
 crypto/internal/fips140/edwards25519
-github.com/pterm/pterm
-crypto/internal/boring/bbig
-encoding/asn1
 crypto/internal/fips140/ed25519
-crypto/rand
-crypto/ed25519
-crypto/internal/fips140/ecdh
-crypto/elliptic
-crypto/ecdh
-crypto/internal/fips140/ecdsa
-vendor/golang.org/x/crypto/cryptobyte
+github.com/pterm/pterm
 crypto/internal/fips140/hkdf
 crypto/hkdf
 crypto/internal/fips140/mlkem
+crypto/internal/boring/bbig
+encoding/asn1
+crypto/rand
+crypto/ed25519
+crypto/internal/fips140/ecdh
+crypto/ecdh
+crypto/elliptic
+crypto/internal/fips140/ecdsa
+vendor/golang.org/x/crypto/cryptobyte
+crypto/mlkem
 vendor/golang.org/x/crypto/chacha20
 vendor/golang.org/x/crypto/internal/poly1305
-crypto/ecdsa
 vendor/golang.org/x/sys/cpu
-crypto/mlkem
 crypto/internal/fips140/tls12
-vendor/golang.org/x/crypto/chacha20poly1305
+crypto/ecdsa
 crypto/internal/fips140/tls13
-github.com/x90skysn3k/brutespray/v2/banner
+vendor/golang.org/x/crypto/chacha20poly1305
 crypto/internal/fips140/mldsa
-crypto/rc4
+github.com/x90skysn3k/brutespray/v2/banner
 crypto/hpke
+crypto/rc4
 crypto/internal/fips140/rsa
-crypto/sha1
 crypto/mldsa
+crypto/sha1
 crypto/tls/internal/fips140tls
 crypto/dsa
 crypto/x509/pkix
 encoding/pem
 vendor/golang.org/x/net/dns/dnsmessage
-crypto/rsa
 internal/singleflight
+crypto/rsa
 unique
 uuid
 database/sql/driver
-github.com/Azure/go-ntlmssp/internal/md4
-compress/flate
 net/netip
+github.com/Azure/go-ntlmssp/internal/md4
 database/sql
+compress/flate
 hash/crc32
 vendor/golang.org/x/text/transform
 vendor/golang.org/x/text/unicode/bidi
@@ -363,8 +363,8 @@ net/http/internal/ascii
 vendor/golang.org/x/net/http2/hpack
 net/http/internal/httpsfv
 github.com/denisenkom/go-mssqldb/internal/decimal
-github.com/denisenkom/go-mssqldb/internal/querytext
 vendor/golang.org/x/net/idna
+github.com/denisenkom/go-mssqldb/internal/querytext
 github.com/golang-sql/civil
 github.com/golang-sql/sqlexp
 golang.org/x/crypto/md4
@@ -381,6 +381,7 @@ github.com/go-redis/redis/v8/internal/hscan
 github.com/go-redis/redis/v8/internal/proto
 hash/adler32
 compress/zlib
+filippo.io/edwards25519/field
 crypto/x509
 net/textproto
 vendor/golang.org/x/net/http/httpproxy
@@ -388,9 +389,8 @@ github.com/google/uuid
 github.com/go-redis/redis/v8/internal/pool
 vendor/golang.org/x/net/http/httpguts
 mime/multipart
-filippo.io/edwards25519/field
-github.com/gocql/gocql/internal/streams
 filippo.io/edwards25519
+github.com/gocql/gocql/internal/streams
 github.com/golang/snappy
 github.com/hailocab/go-hostpool
 gopkg.in/inf.v0
@@ -420,22 +420,22 @@ github.com/ChrisTrenkamp/goxpath/tree
 github.com/ChrisTrenkamp/goxpath/internal/execxp/findutil
 github.com/ChrisTrenkamp/goxpath/internal/execxp/intfns
 github.com/ChrisTrenkamp/goxpath/internal/xsort
-github.com/ChrisTrenkamp/goxpath/tree/xmltree/xmlbuilder
 github.com/ChrisTrenkamp/goxpath/internal/execxp
+github.com/ChrisTrenkamp/goxpath/tree/xmltree/xmlbuilder
 github.com/ChrisTrenkamp/goxpath/tree/xmltree/xmlnode
-golang.org/x/text/encoding/internal
-github.com/ChrisTrenkamp/goxpath/tree/xmltree/xmlele
-golang.org/x/text/encoding/charmap
 github.com/ChrisTrenkamp/goxpath
+github.com/ChrisTrenkamp/goxpath/tree/xmltree/xmlele
+golang.org/x/text/encoding/internal
+encoding/gob
+golang.org/x/text/encoding/charmap
 golang.org/x/text/encoding/japanese
-golang.org/x/text/encoding/korean
 net/http/httptrace
-github.com/denisenkom/go-mssqldb/msdsn
-github.com/emersion/go-imap
 net/http/internal/httpcommon
-github.com/go-redis/redis/v8
-github.com/denisenkom/go-mssqldb
+github.com/denisenkom/go-mssqldb/msdsn
 net/http/internal/http2
+github.com/emersion/go-imap
+github.com/denisenkom/go-mssqldb
+github.com/go-redis/redis/v8
 github.com/emersion/go-imap/commands
 github.com/emersion/go-imap/responses
 github.com/emersion/go-imap/client
@@ -444,73 +444,73 @@ github.com/gocql/gocql
 net/http
 github.com/jlaffaye/ftp
 github.com/lib/pq
-golang.org/x/text/encoding/simplifiedchinese
+golang.org/x/text/encoding/korean
 github.com/Azure/go-ntlmssp
-golang.org/x/text/encoding/traditionalchinese
+golang.org/x/text/encoding/simplifiedchinese
 github.com/go-ldap/ldap/v3
+golang.org/x/text/encoding/traditionalchinese
 golang.org/x/text/encoding/unicode
-encoding/gob
+github.com/bodgit/ntlmssp
 golang.org/x/text/encoding/htmlindex
 golang.org/x/net/html/charset
-github.com/ChrisTrenkamp/goxpath/tree/xmltree
 github.com/go-logr/logr
+github.com/ChrisTrenkamp/goxpath/tree/xmltree
 github.com/hashicorp/go-cleanhttp
 net/http/cookiejar
 github.com/gofrs/uuid
 github.com/jcmturner/dnsutils/v2
 github.com/jcmturner/gofork/encoding/asn1
+github.com/bodgit/ntlmssp/http
 github.com/hashicorp/go-uuid
 github.com/jcmturner/gokrb5/v8/crypto/etype
 github.com/jcmturner/gokrb5/v8/crypto/common
-github.com/bodgit/ntlmssp
-github.com/jcmturner/gokrb5/v8/crypto/rfc3961
 github.com/jcmturner/aescts/v2
+github.com/jcmturner/gokrb5/v8/crypto/rfc3961
 github.com/jcmturner/gofork/x/crypto/pbkdf2
-github.com/jcmturner/gokrb5/v8/crypto/rfc3962
 github.com/jcmturner/gokrb5/v8/config
+github.com/jcmturner/gokrb5/v8/crypto/rfc3962
 github.com/jcmturner/gokrb5/v8/crypto/rfc4757
 crypto/internal/fips140/pbkdf2
-github.com/bodgit/ntlmssp/http
 crypto/pbkdf2
-golang.org/x/crypto/pbkdf2
 github.com/jcmturner/gokrb5/v8/asn1tools
-github.com/jcmturner/gokrb5/v8/crypto/rfc8009
+golang.org/x/crypto/pbkdf2
 github.com/jcmturner/gokrb5/v8/types
+github.com/jcmturner/gokrb5/v8/crypto/rfc8009
 github.com/jcmturner/gokrb5/v8/iana/errorcode
 github.com/jcmturner/gokrb5/v8/krberror
 github.com/jcmturner/rpc/v2/ndr
-golang.org/x/net/http2/hpack
 github.com/jcmturner/gokrb5/v8/crypto
+golang.org/x/net/http2/hpack
 github.com/jcmturner/goidentity/v6
 github.com/jcmturner/gokrb5/v8/keytab
 github.com/jcmturner/gokrb5/v8/gssapi
 github.com/jcmturner/rpc/v2/mstypes
 github.com/jcmturner/gokrb5/v8/credentials
-github.com/masterzen/simplexml/dom
 github.com/jcmturner/gokrb5/v8/pac
+github.com/masterzen/simplexml/dom
 github.com/masterzen/winrm/soap
 github.com/mitchellh/go-vnc
 github.com/neo4j/neo4j-go-driver/v5/neo4j/db
 github.com/jcmturner/gokrb5/v8/messages
-github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/auth
 github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/racing
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/auth
 github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/time
 github.com/neo4j/neo4j-go-driver/v5/neo4j/log
 github.com/neo4j/neo4j-go-driver/v5/neo4j/auth
 github.com/neo4j/neo4j-go-driver/v5/neo4j/dbtype
 github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/boltagent
 github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/errorutil
-github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/packstream
-github.com/neo4j/neo4j-go-driver/v5/neo4j/config
 github.com/jcmturner/gokrb5/v8/kadmin
+github.com/neo4j/neo4j-go-driver/v5/neo4j/config
 github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/db
-github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/notifications
-github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/homedb
-github.com/sijms/go-ora/v2/network/security/md4
-github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/bolt
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/packstream
 github.com/jcmturner/gokrb5/v8/client
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/homedb
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/notifications
 github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/retry
 github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/router
+github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/bolt
+github.com/sijms/go-ora/v2/network/security/md4
 github.com/sijms/go-ora/v2/advanced_nego/ntlmssp
 github.com/sijms/go-ora/v2/configurations
 github.com/sijms/go-ora/v2/converters
@@ -523,126 +523,126 @@ container/heap
 go/token
 github.com/masterzen/winrm
 go/scanner
-go/ast
 github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/connector
 github.com/neo4j/neo4j-go-driver/v5/neo4j/internal/pool
+go/ast
 go/constant
 github.com/neo4j/neo4j-go-driver/v5/neo4j
 go/build/constraint
 go/version
 hash/maphash
-go/parser
 internal/types/errors
 embed
 gopkg.in/yaml.v3
 github.com/x90skysn3k/brutespray/v2/wordlist
 golang.org/x/net/internal/socks
+go/parser
 golang.org/x/net/proxy
-go/types
 github.com/x90skysn3k/grdp/emission
 github.com/x90skysn3k/grdp/core
+go/types
 github.com/x90skysn3k/grdp/glog
+github.com/lunixbochs/struc
 github.com/x90skysn3k/brutespray/v2/brute/badkeys
 github.com/x90skysn3k/brutespray/v2/modules
-github.com/lunixbochs/struc
 github.com/x90skysn3k/grdp/protocol/nla
 github.com/x90skysn3k/grdp/protocol/t125/per
 github.com/x90skysn3k/grdp/protocol/t125/gcc
 github.com/x90skysn3k/grdp/protocol/pdu
 github.com/x90skysn3k/grdp/protocol/lic
 github.com/x90skysn3k/grdp/protocol/t125/ber
-github.com/x90skysn3k/grdp/protocol/t125
 github.com/x90skysn3k/grdp/protocol/tpkt
-github.com/x90skysn3k/grdp/protocol/sec
+github.com/x90skysn3k/grdp/protocol/t125
 github.com/x90skysn3k/grdp/protocol/x224
+github.com/x90skysn3k/grdp/protocol/sec
 image
 go.mongodb.org/mongo-driver/bson/primitive
-go.mongodb.org/mongo-driver/x/bsonx/bsoncore
 image/png
+go.mongodb.org/mongo-driver/x/bsonx/bsoncore
 github.com/x90skysn3k/grdp/client
-go.mongodb.org/mongo-driver/bson/bsonrw
 go.mongodb.org/mongo-driver/mongo/address
 go.mongodb.org/mongo-driver/tag
-go.mongodb.org/mongo-driver/internal/csfle
 go.mongodb.org/mongo-driver/mongo/readpref
+go.mongodb.org/mongo-driver/bson/bsonrw
+go.mongodb.org/mongo-driver/internal/csfle
 go.mongodb.org/mongo-driver/internal/csot
 go.mongodb.org/mongo-driver/internal/httputil
 go.mongodb.org/mongo-driver/internal/logger
 go.mongodb.org/mongo-driver/internal/rand
-golang.org/x/crypto/scrypt
-github.com/youmark/pkcs8
 go.mongodb.org/mongo-driver/internal/randutil
+golang.org/x/crypto/scrypt
 go.mongodb.org/mongo-driver/internal/uuid
 go.mongodb.org/mongo-driver/mongo/readconcern
+github.com/youmark/pkcs8
 github.com/klauspost/compress/fse
 github.com/klauspost/compress/internal/snapref
 github.com/klauspost/compress/zstd/internal/xxhash
 github.com/klauspost/compress/huff0
-go.mongodb.org/mongo-driver/bson/bsoncodec
 go.mongodb.org/mongo-driver/internal/driverutil
+go.mongodb.org/mongo-driver/bson/bsoncodec
 go.mongodb.org/mongo-driver/x/mongo/driver/mongocrypt/options
 go.mongodb.org/mongo-driver/x/mongo/driver/mongocrypt
 go.mongodb.org/mongo-driver/x/mongo/driver/wiremessage
 github.com/klauspost/compress/zstd
 github.com/xdg-go/stringprep
-github.com/xdg-go/scram
 go.mongodb.org/mongo-driver/bson
+github.com/xdg-go/scram
 go.mongodb.org/mongo-driver/internal/aws/awserr
 golang.org/x/sync/singleflight
 go.mongodb.org/mongo-driver/internal/aws/credentials
 go.mongodb.org/mongo-driver/internal/aws
-go.mongodb.org/mongo-driver/internal/credproviders
+go.mongodb.org/mongo-driver/x/mongo/driver/dns
 go.mongodb.org/mongo-driver/internal/aws/signer/v4
 go.mongodb.org/mongo-driver/internal/bsonutil
 go.mongodb.org/mongo-driver/internal/codecutil
 go.mongodb.org/mongo-driver/mongo/writeconcern
 go.mongodb.org/mongo-driver/mongo/description
-go.mongodb.org/mongo-driver/x/mongo/driver/auth/creds
-go.mongodb.org/mongo-driver/x/mongo/driver/dns
+go.mongodb.org/mongo-driver/internal/credproviders
 github.com/montanaflynn/stats
+go.mongodb.org/mongo-driver/x/mongo/driver/auth/creds
 golang.org/x/crypto/ocsp
 golang.org/x/sync/errgroup
-go.mongodb.org/mongo-driver/x/mongo/driver/ocsp
 os/exec
-golang.org/x/crypto/chacha20
+go.mongodb.org/mongo-driver/x/mongo/driver/ocsp
 go.mongodb.org/mongo-driver/event
 go.mongodb.org/mongo-driver/x/mongo/driver/session
+golang.org/x/crypto/chacha20
 golang.org/x/crypto/cryptobyte
 golang.org/x/crypto/curve25519
 golang.org/x/crypto/internal/poly1305
-golang.org/x/crypto/blowfish
 go.mongodb.org/mongo-driver/x/mongo/driver
+golang.org/x/crypto/blowfish
 golang.org/x/crypto/ssh/internal/bcrypt_pbkdf
 golang.org/x/xerrors
 golang.org/x/crypto/ssh
 gosrc.io/xmpp/stanza
-nhooyr.io/websocket/internal/errd
 github.com/sijms/go-ora/v2/network
+nhooyr.io/websocket/internal/errd
 nhooyr.io/websocket/internal/xsync
 nhooyr.io/websocket
 go.mongodb.org/mongo-driver/x/mongo/driver/operation
 github.com/sijms/go-ora/v2/advanced_nego
 gosrc.io/xmpp
 github.com/sijms/go-ora/v2
-net/smtp
 go.mongodb.org/mongo-driver/x/mongo/driver/auth
+net/smtp
 github.com/charmbracelet/bubbles/key
 github.com/clipperhouse/displaywidth
 github.com/lucasb-eyer/go-colorful
 github.com/charmbracelet/x/term
 github.com/aymanbagabas/go-osc52/v2
-github.com/mattn/go-isatty
 go.mongodb.org/mongo-driver/x/mongo/driver/connstring
 github.com/charmbracelet/x/ansi
+github.com/mattn/go-isatty
 text/template/parse
 go.mongodb.org/mongo-driver/mongo/options
 text/template
 github.com/muesli/ansi
+github.com/charmbracelet/colorprofile
 github.com/muesli/ansi/compressor
 github.com/muesli/cancelreader
-github.com/charmbracelet/colorprofile
-os/signal
 go.mongodb.org/mongo-driver/x/mongo/driver/topology
+os/signal
 github.com/charmbracelet/x/cellbuf
 github.com/muesli/termenv
 github.com/charmbracelet/lipgloss

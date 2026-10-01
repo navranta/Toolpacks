@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) gh :: https://github.com/cli/cli [Saturday, 2026-09-19 (04:21:04 AM) UTC]
+ [+] (Building | Fetching) gh :: https://github.com/cli/cli [Thursday, 2026-10-01 (07:24:48 PM) UTC]
 
-https://github.com/cli/cli/releases/download/v2.101.0/gh_2.101.0_linux_amd64.tar.gz
-Downloading 100% [===========================] (15/15 MB, 397.449 MB/s)
-Extracted `gh_2.101.0_linux_amd64/bin/gh` to `/home/runner/work/_temp/toolpack_x86_64/gh`
+https://github.com/cli/cli/releases/download/v2.102.0/gh_2.102.0_linux_amd64.tar.gz
+Downloading 100% [===========================] (15/15 MB, 295.521 MB/s)
+Extracted `gh_2.102.0_linux_amd64/bin/gh` to `/home/runner/work/_temp/toolpack_x86_64/gh`

@@ -1,9 +1,9 @@
 
 
- [+] (Building | Fetching) oras :: https://github.com/oras-project/oras [Saturday, 2026-09-19 (04:32:07 AM) UTC]
+ [+] (Building | Fetching) oras :: https://github.com/oras-project/oras [Thursday, 2026-10-01 (07:37:31 PM) UTC]
 
 https://github.com/oras-project/oras/releases/download/v1.3.4/oras_1.3.4_linux_amd64.tar.gz
-Downloading 100% [=========================] (4.5/4.5 MB, 162.138 MB/s)
+Downloading 100% [=========================] (4.5/4.5 MB, 203.677 MB/s)
 Extracted `oras` to `/home/runner/work/_temp/toolpack_x86_64/oras`
 /home/runner/work/_temp/toolpack_x86_64/oras: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
 12M	/home/runner/work/_temp/toolpack_x86_64/oras

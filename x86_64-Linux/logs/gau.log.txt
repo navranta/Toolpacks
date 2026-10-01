@@ -1,16 +1,18 @@
 
 
- [+] (Building | Fetching) gau :: https://github.com/lc/gau [Saturday, 2026-09-19 (04:19:52 AM) UTC]
+ [+] (Building | Fetching) gau :: https://github.com/lc/gau [Thursday, 2026-10-01 (07:23:33 PM) UTC]
 
 go: downloading github.com/sirupsen/logrus v1.8.1
 go: downloading github.com/deckarep/golang-set/v2 v2.3.0
+go: downloading github.com/json-iterator/go v1.1.12
+go: downloading github.com/valyala/bytebufferpool v1.0.0
 go: downloading github.com/lynxsecurity/pflag v1.1.3
 go: downloading github.com/lynxsecurity/viper v1.10.0
 go: downloading github.com/valyala/fasthttp v1.31.0
-go: downloading github.com/json-iterator/go v1.1.12
-go: downloading github.com/valyala/bytebufferpool v1.0.0
 go: downloading github.com/bobesa/go-domain-util v0.0.0-20190911083921-4033b5f7dd89
 go: downloading golang.org/x/sys v0.13.0
+go: downloading github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421
+go: downloading github.com/modern-go/reflect2 v1.0.2
 go: downloading github.com/fsnotify/fsnotify v1.5.1
 go: downloading github.com/magiconair/properties v1.8.5
 go: downloading github.com/mitchellh/mapstructure v1.4.2
@@ -19,11 +21,9 @@ go: downloading github.com/spf13/cast v1.4.1
 go: downloading github.com/spf13/jwalterweatherman v1.1.0
 go: downloading github.com/subosito/gotenv v1.2.0
 go: downloading gopkg.in/ini.v1 v1.64.0
-go: downloading github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421
-go: downloading github.com/modern-go/reflect2 v1.0.2
+go: downloading golang.org/x/net v0.17.0
 go: downloading github.com/andybalholm/brotli v1.0.2
 go: downloading github.com/klauspost/compress v1.13.4
-go: downloading golang.org/x/net v0.17.0
 go: downloading github.com/hashicorp/hcl v1.0.0
 go: downloading github.com/pelletier/go-toml v1.9.4
 go: downloading gopkg.in/yaml.v2 v2.4.0
@@ -33,23 +33,23 @@ internal/unsafeheader
 internal/byteorder
 internal/cpu
 internal/coverage/rtcov
-internal/abi
 internal/godebugs
+internal/abi
 internal/goexperiment
 internal/goos
 internal/profilerecord
 internal/runtime/atomic
+internal/runtime/syscall/linux
 internal/bytealg
 internal/chacha8rand
-internal/runtime/syscall/linux
 math/bits
 internal/runtime/exithook
 internal/runtime/gc
-internal/strconv
 internal/runtime/sys
+internal/strconv
 internal/asan
-internal/msan
 internal/runtime/gc/scan
+internal/msan
 internal/runtime/math
 internal/runtime/pprof/label
 internal/stringslite
@@ -75,29 +75,29 @@ crypto/internal/fips140/subtle
 crypto/internal/boring/sig
 container/list
 crypto/subtle
+runtime
 vendor/golang.org/x/crypto/cryptobyte/asn1
 vendor/golang.org/x/crypto/internal/alias
 internal/nettrace
 log/internal
-runtime
-internal/reflectlite
-weak
 iter
+weak
+internal/reflectlite
 sync
 slices
 maps
-internal/bisect
-unique
-internal/testlog
 errors
 sort
+internal/bisect
+internal/testlog
+unique
 io
 internal/oserror
 syscall
-encoding/json/internal
-encoding/json/internal/jsonflags
 bytes
 strings
+encoding/json/internal
+encoding/json/internal/jsonflags
 encoding/json/internal/jsonopts
 strconv
 path
@@ -123,27 +123,27 @@ crypto/internal/fips140deps/godebug
 hash/crc32
 crypto
 crypto/internal/fips140
+crypto/internal/impl
+os
+crypto/internal/fips140/sha3
 encoding/binary
 internal/fmtsort
 github.com/modern-go/reflect2
-os
-crypto/internal/impl
 crypto/internal/fips140/sha256
-crypto/internal/fips140/sha3
 crypto/internal/fips140/sha512
 crypto/internal/entropy/v1.0.0
-math/rand/v2
 crypto/internal/fips140/hmac
+math/rand/v2
 crypto/internal/fips140/check
-crypto/internal/randutil
 crypto/internal/fips140/aes
 crypto/fips140
+crypto/internal/randutil
 crypto/internal/fips140/bigmod
+crypto/sha3
 fmt
 crypto/internal/sysrand
-crypto/sha3
-crypto/internal/fips140hash
 crypto/internal/fips140/drbg
+crypto/internal/fips140hash
 crypto/internal/fips140/nistec/fiat
 crypto/internal/fips140/edwards25519/field
 crypto/internal/fips140/aes/gcm
@@ -151,11 +151,11 @@ crypto/internal/fips140only
 crypto/internal/fips140/rsa
 crypto/cipher
 encoding/hex
-encoding/json/v2
 runtime/debug
+encoding/json/v2
+github.com/modern-go/concurrent
 math/big
 net/url
-github.com/modern-go/concurrent
 compress/flate
 crypto/internal/boring
 crypto/internal/rand
@@ -163,63 +163,63 @@ crypto/aes
 crypto/des
 crypto/internal/fips140/nistec
 compress/gzip
-crypto/internal/fips140cache
 crypto/rand
 crypto/internal/boring/bbig
-crypto/sha512
 crypto/rsa
+crypto/internal/fips140cache
+crypto/sha512
 internal/saferio
 encoding/asn1
 crypto/internal/fips140/edwards25519
-crypto/internal/fips140/ecdh
+vendor/golang.org/x/crypto/cryptobyte
+crypto/internal/fips140/ed25519
 encoding/json
+crypto/internal/fips140/ecdh
 crypto/ecdh
 crypto/elliptic
 crypto/internal/fips140/ecdsa
-vendor/golang.org/x/crypto/cryptobyte
+crypto/ed25519
 github.com/deckarep/golang-set/v2
 github.com/json-iterator/go
-crypto/internal/fips140/ed25519
-crypto/ed25519
-crypto/ecdsa
 crypto/internal/fips140/hkdf
+crypto/ecdsa
 crypto/hkdf
 crypto/hmac
 crypto/internal/fips140/mlkem
 crypto/sha256
 vendor/golang.org/x/crypto/chacha20
 vendor/golang.org/x/crypto/internal/poly1305
-crypto/mlkem
 vendor/golang.org/x/sys/cpu
+crypto/mlkem
 crypto/internal/fips140/tls12
-crypto/internal/fips140/tls13
 vendor/golang.org/x/crypto/chacha20poly1305
+crypto/internal/fips140/tls13
 crypto/md5
+crypto/hpke
 crypto/internal/fips140/mldsa
 crypto/rc4
-crypto/hpke
 crypto/sha1
 crypto/tls/internal/fips140tls
 crypto/dsa
 crypto/x509/pkix
 encoding/pem
-crypto/mldsa
-github.com/lc/gau/v2/pkg/output
 vendor/golang.org/x/net/dns/dnsmessage
+crypto/mldsa
 internal/singleflight
 path/filepath
 vendor/golang.org/x/text/transform
 log
+github.com/lc/gau/v2/pkg/output
 vendor/golang.org/x/text/unicode/norm
 vendor/golang.org/x/text/unicode/bidi
-mime
 net
+mime
 vendor/golang.org/x/text/secure/bidirule
 mime/quotedprintable
 net/http/internal
 net/http/internal/ascii
-vendor/golang.org/x/net/http2/hpack
 vendor/golang.org/x/net/idna
+vendor/golang.org/x/net/http2/hpack
 net/http/internal/httpsfv
 github.com/klauspost/compress/flate
 hash/adler32
@@ -229,57 +229,57 @@ io/ioutil
 golang.org/x/sys/unix
 golang.org/x/text/transform
 golang.org/x/text/unicode/bidi
+crypto/x509
+net/textproto
+vendor/golang.org/x/net/http/httpproxy
+vendor/golang.org/x/net/http/httpguts
+mime/multipart
 github.com/klauspost/compress/gzip
 github.com/klauspost/compress/zlib
+github.com/valyala/fasthttp/fasthttputil
 golang.org/x/text/secure/bidirule
 golang.org/x/text/unicode/norm
 flag
-crypto/x509
-net/textproto
-vendor/golang.org/x/net/http/httpguts
-vendor/golang.org/x/net/http/httpproxy
-mime/multipart
-github.com/valyala/fasthttp/fasthttputil
 github.com/sirupsen/logrus
-golang.org/x/net/idna
 encoding/csv
 github.com/lynxsecurity/pflag
-github.com/bobesa/go-domain-util/domainutil
+crypto/tls
+golang.org/x/net/idna
 github.com/fsnotify/fsnotify
 github.com/lynxsecurity/viper/internal/encoding
 github.com/hashicorp/hcl/hcl/strconv
 github.com/hashicorp/hcl/hcl/token
-crypto/tls
+github.com/bobesa/go-domain-util/domainutil
 github.com/hashicorp/hcl/hcl/ast
 regexp/syntax
 regexp
 github.com/hashicorp/hcl/json/token
-text/tabwriter
 github.com/hashicorp/hcl/json/scanner
+github.com/hashicorp/hcl/json/parser
+text/tabwriter
 github.com/lynxsecurity/viper/internal/encoding/json
 github.com/pelletier/go-toml
-github.com/hashicorp/hcl/json/parser
 github.com/mitchellh/mapstructure
 github.com/hashicorp/hcl/hcl/scanner
 github.com/hashicorp/hcl/hcl/parser
-gopkg.in/yaml.v2
 github.com/hashicorp/hcl
 github.com/hashicorp/hcl/hcl/printer
-github.com/lynxsecurity/viper/internal/encoding/toml
-github.com/spf13/afero/mem
-github.com/lynxsecurity/viper/internal/encoding/hcl
-text/template/parse
-github.com/spf13/jwalterweatherman
 net/http/httptrace
-github.com/subosito/gotenv
+gopkg.in/yaml.v2
+github.com/lynxsecurity/viper/internal/encoding/hcl
 net/http/internal/httpcommon
-gopkg.in/ini.v1
-github.com/lynxsecurity/viper/internal/encoding/yaml
+github.com/spf13/afero/mem
 net/http/internal/http2
+text/template/parse
+github.com/lynxsecurity/viper/internal/encoding/toml
+github.com/spf13/jwalterweatherman
+github.com/subosito/gotenv
+gopkg.in/ini.v1
+text/template
+github.com/lynxsecurity/viper/internal/encoding/yaml
 golang.org/x/net/http/httpproxy
 golang.org/x/net/internal/socks
 golang.org/x/net/proxy
-text/template
 html/template
 net/http
 github.com/spf13/cast
@@ -289,12 +289,12 @@ github.com/andybalholm/brotli
 github.com/lynxsecurity/viper
 github.com/valyala/fasthttp
 github.com/lc/gau/v2/pkg/providers
-github.com/valyala/fasthttp/fasthttpproxy
 github.com/lc/gau/v2/pkg/httpclient
-github.com/lc/gau/v2/pkg/providers/wayback
+github.com/valyala/fasthttp/fasthttpproxy
 github.com/lc/gau/v2/pkg/providers/otx
 github.com/lc/gau/v2/pkg/providers/urlscan
 github.com/lc/gau/v2/pkg/providers/commoncrawl
+github.com/lc/gau/v2/pkg/providers/wayback
 github.com/lc/gau/v2/runner/flags
 github.com/lc/gau/v2/runner
 github.com/lc/gau/v2/cmd/gau

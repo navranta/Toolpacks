@@ -4,7 +4,7 @@
 ++ '[' -z 'timeout -k 1m 2m' ']'
 ++ '[' -z 0 ']'
 ++ '[' -z /bin/echo ']'
-++ '[' -z ghs_15368_eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhdXRobmQiLCJjdHgiOiJvY3NraHRzZUlMM0E0TTFOdklKdnhqVVdRVHN1SGhBUWItdjlCODU3NmlTTVB0WGJuUlJJV0tNIiwiZXhwIjoxNzg5NzkzODAyLCJpYXQiOjE3ODk3OTAyMDIsImlzcyI6ImdpdGh1YiIsImp0aSI6ImRjNGJjOGFhLWJjMjctNDFmNy1iODA5LWRmMmRiNzA4NzdhZCIsInZlciI6M30.7sliGMeyMGz6CZPsMOznZLw902bZE8smCGCRzbT_e1buTWTGoEXtxyj1SHYIeP-ckmY6DfaulFrFB0LoyLNRkw ']'
+++ '[' -z ghs_15368_eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhdXRobmQiLCJjdHgiOiJBdTR4WFlSdTdzQm5jNVFwWkpqU1hNdkhUVkdiWHE5MDFkLWVpM3M3X1BIR1AxQ1NTVDNvMkRnIiwiZXhwIjoxNzkwODgzOTMyLCJpYXQiOjE3OTA4ODAzMzIsImlzcyI6ImdpdGh1YiIsImp0aSI6IjYzYWFmMTkyLTlmOWQtNDg0NS1iOTFjLTUzYjY2MjQ0YWNmOCIsInZlciI6M30.ot2wQGEAXjiOHoPVazYm4pa0WhWdNOwmR-7n4Vte10JTieA67R2DyuLgdfDB2Kc6k_hotBDIEVzxjMH5Rx-Faw ']'
 ++ '[' -z /home/runner/work/_temp ']'
 ++ '[' -z 'mktemp -d --tmpdir=/home/runner/work/_temp/toolpacks XXXXXXX_linux_x86_64' ']'
 ++ export SKIP_BUILD=NO
@@ -16,10 +16,10 @@
 ++ SOURCE_URL=https://www.7-zip.org
 +++ TZ=UTC
 +++ date '+%A, %Y-%m-%d (%I:%M:%S %p)'
-++ echo -e '\n\n [+] (Building | Fetching) 7z :: https://www.7-zip.org [Saturday, 2026-09-19 (04:01:22 AM) UTC]\n'
+++ echo -e '\n\n [+] (Building | Fetching) 7z :: https://www.7-zip.org [Thursday, 2026-10-01 (07:00:22 PM) UTC]\n'
 
 
- [+] (Building | Fetching) 7z :: https://www.7-zip.org [Saturday, 2026-09-19 (04:01:22 AM) UTC]
+ [+] (Building | Fetching) 7z :: https://www.7-zip.org [Thursday, 2026-10-01 (07:00:22 PM) UTC]
 
 +++ curl -qfsSL https://www.7-zip.org/download.html
 +++ grep -o 'href="[^"]*"'
@@ -31,7 +31,7 @@
 ++ case "$REL_URL" in
 ++ DL_URL=https://github.com/ip7z/7zip/releases/download/26.03/7z2603-linux-x64.tar.xz
 +++ mktemp -d --tmpdir=/home/runner/work/_temp/toolpacks XXXXXXX_linux_x86_64
-++ pushd /home/runner/work/_temp/toolpacks/hey1C44_linux_x86_64
+++ pushd /home/runner/work/_temp/toolpacks/G93sGib_linux_x86_64
 ++ curl -qfsSLJO https://github.com/ip7z/7zip/releases/download/26.03/7z2603-linux-x64.tar.xz
 ++ find . -type f -name '*.xz' -exec tar -xf '{}' ';'
 ++ find . -type f -name 7zzs '!' -name '*.xz' -exec cp '{}' /home/runner/work/_temp/toolpack_x86_64/7z ';'

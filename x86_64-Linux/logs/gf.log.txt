@@ -1,12 +1,12 @@
 
 
- [+] (Building | Fetching) gf :: https://github.com/tomnomnom/gf [Saturday, 2026-09-19 (04:20:52 AM) UTC]
+ [+] (Building | Fetching) gf :: https://github.com/tomnomnom/gf [Thursday, 2026-10-01 (07:24:35 PM) UTC]
 
 go: creating new go.mod: module github.com/tomnomnom/gf
 go: to add module requirements and sums:
 	go mod tidy
-internal/unsafeheader
 internal/goarch
+internal/unsafeheader
 internal/byteorder
 internal/cpu
 internal/coverage/rtcov
@@ -22,30 +22,30 @@ internal/chacha8rand
 math/bits
 internal/runtime/exithook
 internal/runtime/gc
-internal/runtime/sys
 internal/strconv
+internal/runtime/sys
 internal/asan
-internal/runtime/gc/scan
 internal/msan
 internal/runtime/math
+internal/runtime/gc/scan
 internal/runtime/pprof/label
 internal/stringslite
 internal/race
+internal/runtime/maps
 internal/trace/tracev2
 sync/atomic
-internal/runtime/maps
 internal/synctest
 unicode
-internal/runtime/cgroup
 internal/sync
+internal/runtime/cgroup
 unicode/utf8
 cmp
 encoding
 math
 unicode/utf16
 runtime
-internal/reflectlite
 iter
+internal/reflectlite
 sync
 slices
 errors
@@ -55,16 +55,16 @@ io
 encoding/json/internal
 strconv
 encoding/json/internal/jsonflags
-internal/oserror
 encoding/json/internal/jsonopts
+internal/oserror
 path
 syscall
+internal/godebug
 bytes
 strings
 encoding/base32
 encoding/base64
 reflect
-internal/godebug
 encoding/json/internal/jsonwire
 bufio
 encoding/json/jsontext
@@ -72,8 +72,8 @@ time
 internal/syscall/unix
 internal/syscall/execenv
 io/fs
-internal/poll
 context
+internal/poll
 internal/filepathlite
 internal/fmtsort
 encoding/binary

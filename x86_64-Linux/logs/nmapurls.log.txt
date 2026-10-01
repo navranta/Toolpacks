@@ -1,6 +1,6 @@
 
 
- [+] (Building | Fetching) nmapurls :: https://github.com/sdcampbell/nmapurls [Saturday, 2026-09-19 (04:31:22 AM) UTC]
+ [+] (Building | Fetching) nmapurls :: https://github.com/sdcampbell/nmapurls [Thursday, 2026-10-01 (07:36:44 PM) UTC]
 
 internal/goarch
 internal/unsafeheader
@@ -13,41 +13,41 @@ internal/goexperiment
 internal/goos
 internal/profilerecord
 internal/runtime/atomic
+internal/runtime/syscall/linux
 internal/bytealg
 internal/chacha8rand
-internal/runtime/syscall/linux
 math/bits
 internal/runtime/exithook
 internal/runtime/gc
+internal/strconv
 internal/runtime/sys
 internal/asan
-internal/strconv
-internal/runtime/gc/scan
 internal/msan
+internal/runtime/gc/scan
 internal/runtime/math
 internal/runtime/pprof/label
 internal/stringslite
 internal/trace/tracev2
-sync/atomic
 internal/race
+sync/atomic
 internal/runtime/maps
 internal/synctest
 unicode
-internal/sync
 internal/runtime/cgroup
+internal/sync
 unicode/utf8
 encoding
 cmp
 math
 runtime
-internal/reflectlite
 iter
+internal/reflectlite
 sync
 slices
 errors
 internal/testlog
-strconv
 io
+strconv
 internal/oserror
 path
 syscall
@@ -56,11 +56,11 @@ bytes
 strings
 bufio
 time
-internal/syscall/execenv
 internal/syscall/unix
+internal/syscall/execenv
+internal/fmtsort
 io/fs
 internal/poll
-internal/fmtsort
 internal/filepathlite
 os
 io/ioutil

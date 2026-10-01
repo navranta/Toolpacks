@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) nuclei :: https://github.com/projectdiscovery/nuclei [Saturday, 2026-09-19 (04:32:05 AM) UTC]
+ [+] (Building | Fetching) nuclei :: https://github.com/projectdiscovery/nuclei [Thursday, 2026-10-01 (07:37:28 PM) UTC]
 
 https://github.com/projectdiscovery/nuclei/releases/download/v3.11.1/nuclei_3.11.1_linux_amd64.zip
-Downloading  53% [=============>             ] (24/44 MB, 363.703 MB/s) [0s:0s]                                                                               Downloading  93% [========================>  ] (41/44 MB, 316.710 MB/s) [0s:0s]                                                                               Downloading 100% [===========================] (44/44 MB, 295.129 MB/s)
+Downloading  30% [=======>                   ] (13/44 MB, 206.031 MB/s) [0s:0s]                                                                               Downloading  50% [============>              ] (22/44 MB, 170.615 MB/s) [0s:0s]                                                                               Downloading  82% [=====================>     ] (36/44 MB, 186.149 MB/s) [0s:0s]                                                                               Downloading 100% [===========================] (44/44 MB, 207.801 MB/s)
 Extracted `nuclei` to `/home/runner/work/_temp/toolpack_x86_64/nuclei`

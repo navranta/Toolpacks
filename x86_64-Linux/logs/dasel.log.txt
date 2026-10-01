@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) dasel :: https://github.com/TomWright/dasel [Saturday, 2026-09-19 (04:13:20 AM) UTC]
+ [+] (Building | Fetching) dasel :: https://github.com/TomWright/dasel [Thursday, 2026-10-01 (07:12:44 PM) UTC]
 
 https://github.com/TomWright/dasel/releases/download/v3.11.2/dasel_linux_amd64.gz
-Downloading 100% [=========================] (3.8/3.8 MB, 155.802 MB/s)
+Downloading 100% [=========================] (3.8/3.8 MB, 231.202 MB/s)
 Extracted `dasel_linux_amd64.gz` to `/home/runner/work/_temp/toolpack_x86_64/dasel`

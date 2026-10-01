@@ -1,12 +1,12 @@
 
 
- [+] (Building | Fetching) ripgrep :: https://github.com/BurntSushi/ripgrep [Saturday, 2026-09-19 (04:53:04 AM) UTC]
+ [+] (Building | Fetching) ripgrep :: https://github.com/BurntSushi/ripgrep [Thursday, 2026-10-01 (08:00:27 PM) UTC]
 
 https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz
-Downloading 100% [=========================] (2.2/2.2 MB, 156.204 MB/s)
+Downloading 100% [=========================] (2.2/2.2 MB, 133.523 MB/s)
 Checksum verified with ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz.sha256
 Extracted `ripgrep-15.2.0-x86_64-unknown-linux-musl/rg` to `/home/runner/work/_temp/toolpack_x86_64/rg`
 https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz
-Downloading 100% [=========================] (2.2/2.2 MB, 179.656 MB/s)
+Downloading 100% [=========================] (2.2/2.2 MB, 155.527 MB/s)
 Checksum verified with ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz.sha256
 Extracted `ripgrep-15.2.0-x86_64-unknown-linux-musl/rg` to `/home/runner/work/_temp/toolpack_x86_64/ripgrep`

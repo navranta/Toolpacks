@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) aria2 :: https://github.com/aria2/aria2 [Saturday, 2026-09-19 (04:04:10 AM) UTC]
+ [+] (Building | Fetching) aria2 :: https://github.com/aria2/aria2 [Thursday, 2026-10-01 (07:03:23 PM) UTC]
 
 https://github.com/abcfy2/aria2-static-build/releases/download/continuous/aria2-x86_64-linux-musl_static.zip
-Downloading 100% [=========================] (5.2/5.2 MB, 302.098 MB/s)
+Downloading 100% [=========================] (5.2/5.2 MB, 112.136 MB/s)
 Extracted `aria2c` to `/home/runner/work/_temp/toolpack_x86_64/aria2`

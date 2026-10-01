@@ -1,6 +1,6 @@
 
 
- [+] (Building | Fetching) pixterm :: https://github.com/eliukblau/pixterm [Saturday, 2026-09-19 (04:32:12 AM) UTC]
+ [+] (Building | Fetching) pixterm :: https://github.com/eliukblau/pixterm [Thursday, 2026-10-01 (07:37:37 PM) UTC]
 
 go: downloading go1.25.0 (linux/amd64)
 go: downloading github.com/lucasb-eyer/go-colorful v1.4.0
@@ -8,9 +8,9 @@ go: downloading golang.org/x/term v0.42.0
 go: downloading github.com/disintegration/imaging v1.6.2
 go: downloading golang.org/x/image v0.38.0
 go: downloading golang.org/x/sys v0.43.0
+internal/goarch
 internal/unsafeheader
 internal/byteorder
-internal/goarch
 internal/cpu
 internal/coverage/rtcov
 internal/abi
@@ -20,9 +20,9 @@ internal/goos
 internal/profilerecord
 internal/runtime/atomic
 internal/runtime/math
-internal/chacha8rand
-internal/bytealg
 internal/runtime/strconv
+internal/bytealg
+internal/chacha8rand
 internal/runtime/syscall
 internal/runtime/exithook
 internal/runtime/gc
@@ -35,9 +35,9 @@ internal/trace/tracev2
 sync/atomic
 unicode/utf8
 cmp
-math/bits
-internal/synctest
 internal/race
+internal/synctest
+math/bits
 internal/itoa
 internal/runtime/maps
 encoding
@@ -48,9 +48,9 @@ image/color
 image/color/palette
 unicode/utf16
 container/list
+runtime
 crypto/internal/fips140/alias
 crypto/internal/fips140deps/byteorder
-runtime
 crypto/internal/fips140deps/cpu
 crypto/internal/fips140/subtle
 crypto/internal/boring/sig
@@ -59,9 +59,9 @@ vendor/golang.org/x/crypto/internal/alias
 internal/nettrace
 log/internal
 iter
+internal/reflectlite
 crypto/subtle
 sync
-internal/reflectlite
 slices
 weak
 maps
@@ -109,19 +109,19 @@ crypto/internal/fips140/sha512
 os
 crypto/internal/randutil
 crypto/internal/fips140cache
-encoding/pem
 crypto/internal/fips140/hmac
-crypto/internal/fips140/check
 crypto/sha3
-internal/fmtsort
-encoding/binary
+crypto/internal/fips140/check
+crypto/internal/fips140hash
+encoding/pem
 crypto/internal/fips140/aes
 crypto/internal/fips140/nistec/fiat
+internal/fmtsort
+encoding/binary
 crypto/internal/fips140/edwards25519/field
 crypto/internal/fips140/bigmod
 golang.org/x/image/bmp
 golang.org/x/image/ccitt
-crypto/internal/fips140hash
 crypto/internal/fips140/edwards25519
 crypto/internal/fips140/hkdf
 crypto/internal/fips140/tls12
@@ -129,14 +129,14 @@ crypto/internal/fips140/tls13
 fmt
 io/ioutil
 path/filepath
-crypto/internal/sysrand
 golang.org/x/image/riff
+crypto/internal/sysrand
+golang.org/x/image/webp
 crypto/internal/entropy
 crypto/internal/fips140/drbg
-golang.org/x/image/webp
+crypto/internal/fips140/nistec
 crypto/internal/fips140/aes/gcm
 crypto/internal/fips140only
-crypto/internal/fips140/nistec
 crypto/internal/fips140/ed25519
 crypto/cipher
 crypto/hkdf
@@ -165,11 +165,13 @@ crypto/hmac
 vendor/golang.org/x/crypto/chacha20
 vendor/golang.org/x/crypto/internal/poly1305
 vendor/golang.org/x/sys/cpu
-crypto/md5
 github.com/lucasb-eyer/go-colorful
+crypto/md5
 vendor/golang.org/x/crypto/chacha20poly1305
 crypto/rc4
 crypto/internal/fips140/rsa
+crypto/sha1
+crypto/sha256
 crypto/rand
 crypto/elliptic
 crypto/internal/boring/bbig
@@ -177,21 +179,19 @@ encoding/asn1
 crypto/ed25519
 crypto/internal/hpke
 crypto/rsa
-crypto/sha1
-crypto/sha256
 crypto/fips140
-crypto/dsa
 crypto/tls/internal/fips140tls
+crypto/dsa
 encoding/hex
 vendor/golang.org/x/net/dns/dnsmessage
 internal/singleflight
-vendor/golang.org/x/crypto/cryptobyte
 unique
-crypto/x509/pkix
 runtime/cgo
+vendor/golang.org/x/crypto/cryptobyte
 crypto/ecdsa
-net/url
+crypto/x509/pkix
 net/netip
+net/url
 vendor/golang.org/x/text/transform
 log
 vendor/golang.org/x/text/unicode/bidi
@@ -201,10 +201,10 @@ mime
 vendor/golang.org/x/text/secure/bidirule
 mime/quotedprintable
 net/http/internal
+vendor/golang.org/x/net/idna
 net/http/internal/ascii
 golang.org/x/sys/unix
 regexp/syntax
-vendor/golang.org/x/net/idna
 net
 regexp
 golang.org/x/term
@@ -222,11 +222,11 @@ github.com/eliukblau/pixterm/cmd/pixterm
 sending incremental file list
 pixterm
 
-sent 7,246,444 bytes  received 35 bytes  14,492,958.00 bytes/sec
+sent 7,246,443 bytes  received 35 bytes  14,492,956.00 bytes/sec
 total size is 7,244,576  speedup is 1.00
 /build-bins/pixterm: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
 7.0M	/build-bins/pixterm
-/home/runner/work/_temp/toolpacks/lPC1NFI_linux_x86_64/pixterm
+/home/runner/work/_temp/toolpacks/p9gVwdC_linux_x86_64/pixterm
 ./pixterm: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
 fad618b3a83cb9257fd0f1c859887115b47a962333ee438bc34613b2c6198f4d  ./pixterm
 b9d69f1e0b5b36cd22dd455880a80e289bcb0e92c77e42afa475b60ec53d8f8b  ./pixterm
@@ -235,7 +235,7 @@ sending incremental file list
 ./
 pixterm
 
-sent 7,246,362 bytes  received 38 bytes  14,492,800.00 bytes/sec
+sent 7,246,360 bytes  received 38 bytes  14,492,796.00 bytes/sec
 total size is 7,244,472  speedup is 1.00
 alpine-builder
 alpine-builder

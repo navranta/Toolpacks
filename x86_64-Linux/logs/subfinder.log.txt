@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) subfinder :: https://github.com/projectdiscovery/subfinder [Saturday, 2026-09-19 (05:02:50 AM) UTC]
+ [+] (Building | Fetching) subfinder :: https://github.com/projectdiscovery/subfinder [Thursday, 2026-10-01 (08:10:45 PM) UTC]
 
 https://github.com/projectdiscovery/subfinder/releases/download/v2.16.0/subfinder_2.16.0_linux_amd64.zip
-Downloading 100% [=========================] (9.5/9.5 MB, 342.291 MB/s)
+Downloading 100% [=========================] (9.5/9.5 MB, 239.825 MB/s)
 Extracted `subfinder` to `/home/runner/work/_temp/toolpack_x86_64/subfinder`

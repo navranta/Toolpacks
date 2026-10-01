@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) gdu :: https://github.com/dundee/gdu [Saturday, 2026-09-19 (04:20:28 AM) UTC]
+ [+] (Building | Fetching) gdu :: https://github.com/dundee/gdu [Thursday, 2026-10-01 (07:24:09 PM) UTC]
 
 https://github.com/dundee/gdu/releases/download/v5.37.0/gdu_linux_amd64_static.tgz
-Downloading 100% [=========================] (8.1/8.1 MB, 234.976 MB/s)
+Downloading 100% [=========================] (8.1/8.1 MB, 292.848 MB/s)
 Extracted `gdu_linux_amd64_static` to `/home/runner/work/_temp/toolpack_x86_64/gdu`

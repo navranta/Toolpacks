@@ -1,6 +1,6 @@
 
 
- [+] (Building | Fetching) colorized-logs :: https://github.com/kilobyte/colorized-logs [Saturday, 2026-09-19 (04:11:01 AM) UTC]
+ [+] (Building | Fetching) colorized-logs :: https://github.com/kilobyte/colorized-logs [Thursday, 2026-10-01 (07:10:08 PM) UTC]
 
 -- The C compiler identification is Clang 21.1.0
 -- Detecting C compiler ABI info
@@ -18,24 +18,24 @@
 -- Looking for openpty in util - found
 -- Looking for openpty
 -- Looking for openpty - found
--- Configuring done (39.3s)
+-- Configuring done (43.6s)
 -- Generating done (0.0s)
--- Build files have been written to: /home/runner/work/_temp/toolpacks/BvQvd3U_linux_x86_64/colorized-logs/build
+-- Build files have been written to: /home/runner/work/_temp/toolpacks/sBl8wSe_linux_x86_64/colorized-logs/build
 [ 10%] Building C object CMakeFiles/ansi2txt.dir/ansi2txt.c.o
 [ 20%] Building C object CMakeFiles/ansi2html.dir/ansi2html.c.o
+[ 30%] Building C object CMakeFiles/ttyrec2ansi.dir/ttyrec2ansi.c.o
 [ 40%] Building C object CMakeFiles/pipetty.dir/pipetty.c.o
-[ 40%] Building C object CMakeFiles/ttyrec2ansi.dir/ttyrec2ansi.c.o
 [ 50%] Building C object CMakeFiles/pipetty.dir/signals.c.o
 [ 60%] Linking C executable ansi2txt
-[ 70%] Linking C executable ttyrec2ansi
-[ 80%] Linking C executable pipetty
+[ 70%] Linking C executable pipetty
+[ 80%] Linking C executable ttyrec2ansi
 [ 90%] Linking C executable ansi2html
 [ 90%] Built target ansi2txt
 [ 90%] Built target ttyrec2ansi
 [ 90%] Built target pipetty
+[ 90%] Built target ansi2html
 [100%] LINK lesstty -> pipetty
 [100%] Built target lesstty
-[100%] Built target ansi2html
 ansi2html not yet built in /home/runner/work/_temp/toolpack_x86_64/..?
 Running tests...
 ./ansi2html: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped

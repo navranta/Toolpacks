@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) pencode :: https://github.com/ffuf/pencode [Saturday, 2026-09-19 (04:32:10 AM) UTC]
+ [+] (Building | Fetching) pencode :: https://github.com/ffuf/pencode [Thursday, 2026-10-01 (07:37:35 PM) UTC]
 
 https://github.com/ffuf/pencode/releases/download/v0.4/pencode_0.4_linux_amd64.tar.gz
-Downloading 100% [=========================] (896/896 kB, 115.899 MB/s)
+Downloading 100% [==========================] (896/896 kB, 87.763 MB/s)
 Extracted `pencode` to `/home/runner/work/_temp/toolpack_x86_64/pencode`
