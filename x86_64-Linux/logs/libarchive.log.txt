@@ -1,15 +1,15 @@
 
 
- [+] (Building | Fetching) libarchive :: https://github.com/libarchive/libarchive [Thursday, 2026-10-01 (07:34:38 PM) UTC]
+ [+] (Building | Fetching) libarchive :: https://github.com/libarchive/libarchive [Sunday, 2026-11-01 (07:51:26 PM) UTC]
 
-these 3 paths will be fetched (11.1 MiB download, 27.4 MiB unpacked):
-  /nix/store/2gp4nghdac9p5fwvnqlzx0xyyxcwlbhy-libarchive-static-x86_64-unknown-linux-musl-3.8.9
-  /nix/store/0s8z07l0ygckc7482d4qazmb3ld7acsh-libxml2-static-x86_64-unknown-linux-musl-2.15.4
-  /nix/store/h0r450wlqp2ndnlc6l4nznxpb0b41km7-openssl-static-x86_64-unknown-linux-musl-3.6.4-etc
-copying path '/nix/store/0s8z07l0ygckc7482d4qazmb3ld7acsh-libxml2-static-x86_64-unknown-linux-musl-2.15.4' from 'https://cache.nixos.org'...
-copying path '/nix/store/h0r450wlqp2ndnlc6l4nznxpb0b41km7-openssl-static-x86_64-unknown-linux-musl-3.6.4-etc' from 'https://cache.nixos.org'...
-copying path '/nix/store/2gp4nghdac9p5fwvnqlzx0xyyxcwlbhy-libarchive-static-x86_64-unknown-linux-musl-3.8.9' from 'https://cache.nixos.org'...
-/nix/store/2gp4nghdac9p5fwvnqlzx0xyyxcwlbhy-libarchive-static-x86_64-unknown-linux-musl-3.8.9
+these 3 paths will be fetched (11.4 MiB download, 27.9 MiB unpacked):
+  /nix/store/xvln2pb16l67w6scxv0vprzl1ayh92hn-libarchive-static-x86_64-unknown-linux-musl-3.8.9
+  /nix/store/j4krdikg34kig8fbbzym5gaf5x15xmsn-libxml2-static-x86_64-unknown-linux-musl-2.15.4
+  /nix/store/7zdbsqd8sypswcnp6dcp9vxkxx7rb8hj-openssl-static-x86_64-unknown-linux-musl-3.5.8-etc
+copying path '/nix/store/j4krdikg34kig8fbbzym5gaf5x15xmsn-libxml2-static-x86_64-unknown-linux-musl-2.15.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/7zdbsqd8sypswcnp6dcp9vxkxx7rb8hj-openssl-static-x86_64-unknown-linux-musl-3.5.8-etc' from 'https://cache.nixos.org'...
+copying path '/nix/store/xvln2pb16l67w6scxv0vprzl1ayh92hn-libarchive-static-x86_64-unknown-linux-musl-3.8.9' from 'https://cache.nixos.org'...
+/nix/store/xvln2pb16l67w6scxv0vprzl1ayh92hn-libarchive-static-x86_64-unknown-linux-musl-3.8.9
 sending incremental file list
 ./
 bsdcat
@@ -17,5 +17,5 @@ bsdcpio
 bsdtar
 bsdunzip
 
-sent 26,552,237 bytes  received 95 bytes  53,104,664.00 bytes/sec
-total size is 26,545,496  speedup is 1.00
+sent 26,960,605 bytes  received 95 bytes  53,921,400.00 bytes/sec
+total size is 26,953,760  speedup is 1.00

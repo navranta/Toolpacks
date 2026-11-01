@@ -1,6 +1,6 @@
 
 
- [+] (Building | Fetching) cutlines :: https://github.com/pkgforge-security/cutlines [Thursday, 2026-10-01 (07:12:31 PM) UTC]
+ [+] (Building | Fetching) cutlines :: https://github.com/pkgforge-security/cutlines [Sunday, 2026-11-01 (07:31:10 PM) UTC]
 
 go: creating new go.mod: module github.com/pkgforge-security/cutlines
 go: to add module requirements and sums:
@@ -29,13 +29,13 @@ internal/strconv
 internal/runtime/sys
 internal/asan
 internal/msan
-internal/runtime/math
 internal/runtime/gc/scan
+internal/runtime/math
 internal/runtime/pprof/label
-internal/stringslite
 internal/race
-internal/trace/tracev2
+internal/stringslite
 internal/runtime/maps
+internal/trace/tracev2
 sync/atomic
 internal/synctest
 unicode
@@ -46,21 +46,21 @@ encoding
 cmp
 math
 runtime
-internal/reflectlite
 iter
+internal/reflectlite
 sync
 slices
-errors
-sort
 internal/bisect
 internal/testlog
-io
+errors
+sort
 strconv
+io
 internal/oserror
 path
+reflect
 bytes
 syscall
-reflect
 strings
 internal/godebug
 regexp/syntax

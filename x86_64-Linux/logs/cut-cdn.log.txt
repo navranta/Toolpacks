@@ -1,24 +1,24 @@
 
 
- [+] (Building | Fetching) cut-cdn :: https://github.com/ImAyrix/cut-cdn [Thursday, 2026-10-01 (07:11:59 PM) UTC]
+ [+] (Building | Fetching) cut-cdn :: https://github.com/ImAyrix/cut-cdn [Sunday, 2026-11-01 (07:30:36 PM) UTC]
 
 go: downloading github.com/ilyakaznacheev/cleanenv v1.4.2
 go: downloading github.com/projectdiscovery/goflags v0.1.8
 go: downloading github.com/projectdiscovery/gologger v1.1.4
 go: downloading github.com/json-iterator/go v1.1.10
 go: downloading github.com/logrusorgru/aurora v2.0.3+incompatible
+go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+go: downloading github.com/modern-go/reflect2 v1.0.1
 go: downloading github.com/BurntSushi/toml v1.1.0
 go: downloading github.com/joho/godotenv v1.4.0
 go: downloading gopkg.in/yaml.v3 v3.0.1
 go: downloading olympos.io/encoding/edn v0.0.0-20201019073823-d3554ca0b0a3
-go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
-go: downloading github.com/modern-go/reflect2 v1.0.1
-go: downloading github.com/projectdiscovery/utils v0.0.4-0.20221214110533-9f95ee986a54
-go: downloading github.com/pkg/errors v0.9.1
 go: downloading github.com/cnf/structhash v0.0.0-20201127153200-e1b16c1ebc08
+go: downloading github.com/pkg/errors v0.9.1
+go: downloading github.com/projectdiscovery/utils v0.0.4-0.20221214110533-9f95ee986a54
 go: downloading golang.org/x/exp v0.0.0-20221019170559-20944726eadf
-go: downloading github.com/miekg/dns v1.1.50
 go: downloading github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d
+go: downloading github.com/miekg/dns v1.1.50
 go: downloading github.com/microcosm-cc/bluemonday v1.0.21
 go: downloading github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca
 go: downloading github.com/aymerick/douceur v0.2.0
@@ -29,35 +29,35 @@ internal/goarch
 internal/unsafeheader
 internal/byteorder
 internal/cpu
-internal/coverage/rtcov
 internal/abi
+internal/coverage/rtcov
 internal/godebugs
 internal/goexperiment
 internal/goos
 internal/profilerecord
 internal/runtime/atomic
-internal/runtime/syscall/linux
 internal/bytealg
 internal/chacha8rand
+internal/runtime/syscall/linux
 math/bits
 internal/runtime/exithook
 internal/runtime/gc
 internal/runtime/sys
-internal/asan
 internal/strconv
+internal/asan
 internal/msan
 internal/runtime/math
 internal/runtime/gc/scan
 internal/runtime/pprof/label
-internal/stringslite
 internal/race
-internal/trace/tracev2
+internal/stringslite
 internal/runtime/maps
+internal/trace/tracev2
 sync/atomic
 internal/synctest
+internal/runtime/cgroup
 unicode
 internal/sync
-internal/runtime/cgroup
 unicode/utf8
 container/list
 cmp
@@ -70,10 +70,10 @@ crypto/internal/fips140/subtle
 math
 crypto/internal/boring/sig
 crypto/subtle
+runtime
 unicode/utf16
 vendor/golang.org/x/crypto/cryptobyte/asn1
 vendor/golang.org/x/crypto/internal/alias
-runtime
 internal/nettrace
 encoding
 golang.org/x/net/html/atom
@@ -82,33 +82,32 @@ golang.org/x/net/internal/iana
 golang.org/x/exp/maps
 github.com/projectdiscovery/gologger/levels
 internal/reflectlite
-weak
 iter
+weak
 sync
-slices
 maps
+slices
 errors
 sort
-internal/testlog
 internal/bisect
-crypto/internal/fips140cache
+internal/testlog
 io
 internal/oserror
-strconv
 syscall
-internal/godebug
-crypto/internal/entropy/v1.0.0
+strconv
 bytes
 strings
 hash
 crypto
-crypto/internal/fips140deps/godebug
+internal/godebug
+crypto/internal/entropy/v1.0.0
 path
-math/rand/v2
-reflect
 bufio
-crypto/internal/fips140
 crypto/internal/impl
+math/rand/v2
+crypto/internal/fips140deps/godebug
+crypto/internal/fips140
+reflect
 crypto/internal/fips140/sha256
 crypto/internal/fips140/sha3
 time
@@ -116,19 +115,21 @@ crypto/internal/fips140/sha512
 internal/syscall/unix
 crypto/internal/fips140/hmac
 internal/syscall/execenv
-crypto/internal/randutil
 crypto/internal/fips140/check
+crypto/internal/randutil
 math/rand
 crypto/internal/fips140/aes
 crypto/fips140
 crypto/internal/fips140/nistec/fiat
 crypto/internal/fips140/edwards25519/field
-crypto/internal/fips140/bigmod
 context
 io/fs
 internal/poll
 internal/filepathlite
+crypto/internal/fips140/bigmod
+os
 crypto/internal/fips140/nistec
+crypto/internal/fips140cache
 crypto/sha3
 internal/fmtsort
 crypto/internal/fips140hash
@@ -136,55 +137,47 @@ internal/saferio
 crypto/internal/fips140/edwards25519
 crypto/internal/fips140/hkdf
 encoding/binary
-os
 crypto/internal/fips140/tls12
 crypto/internal/fips140/tls13
 crypto/tls/internal/fips140tls
 encoding/base64
-vendor/golang.org/x/crypto/internal/poly1305
-encoding/pem
-vendor/golang.org/x/net/dns/dnsmessage
-internal/singleflight
-unique
-encoding/json/internal
-encoding/json/internal/jsonflags
-encoding/json/internal/jsonopts
-encoding/json/internal/jsonwire
-net/netip
 crypto/internal/sysrand
-crypto/internal/fips140/drbg
 fmt
+crypto/internal/fips140/drbg
+vendor/golang.org/x/crypto/internal/poly1305
 crypto/internal/fips140/aes/gcm
 crypto/internal/fips140only
 crypto/internal/fips140/ecdh
 crypto/internal/fips140/ecdsa
-crypto/cipher
 crypto/internal/fips140/ed25519
-crypto/internal/boring
-crypto/des
+crypto/cipher
 crypto/hkdf
-crypto/aes
-crypto/internal/rand
-crypto/sha512
-crypto/hmac
 crypto/internal/fips140/mlkem
-crypto/ecdh
-math/big
-crypto/sha256
-vendor/golang.org/x/crypto/chacha20
 vendor/golang.org/x/sys/cpu
 crypto/md5
+crypto/internal/boring
+crypto/des
+crypto/aes
+crypto/internal/rand
+math/big
+crypto/sha512
+crypto/ecdh
+crypto/hmac
 crypto/mlkem
-vendor/golang.org/x/crypto/chacha20poly1305
+crypto/sha256
+vendor/golang.org/x/crypto/chacha20
 crypto/internal/fips140/mldsa
 crypto/rc4
 crypto/internal/fips140/rsa
+vendor/golang.org/x/crypto/chacha20poly1305
 crypto/hpke
 crypto/mldsa
 crypto/sha1
 encoding/hex
-net
-net/url
+encoding/pem
+vendor/golang.org/x/net/dns/dnsmessage
+internal/singleflight
+unique
 path/filepath
 crypto/elliptic
 crypto/internal/boring/bbig
@@ -193,37 +186,44 @@ crypto/rand
 crypto/ed25519
 crypto/rsa
 crypto/dsa
+net/netip
 flag
 vendor/golang.org/x/crypto/cryptobyte
 crypto/x509/pkix
-encoding/json/jsontext
+encoding/json/internal
+encoding/json/internal/jsonflags
+encoding/json/internal/jsonopts
+encoding/json/internal/jsonwire
 encoding/base32
 crypto/ecdsa
 github.com/BurntSushi/toml/internal
 io/ioutil
+encoding/json/jsontext
+net
+net/url
 github.com/BurntSushi/toml
 os/exec
 encoding/json/v2
-crypto/x509
 regexp/syntax
 olympos.io/encoding/edn
 regexp
+crypto/x509
 embed
 github.com/cnf/structhash
-crypto/tls
-github.com/pkg/errors
-compress/flate
 github.com/joho/godotenv
 gopkg.in/yaml.v3
+github.com/pkg/errors
+compress/flate
 encoding/json
 hash/adler32
 debug/dwarf
+crypto/tls
 compress/zlib
 internal/zstd
+github.com/ilyakaznacheev/cleanenv
 html
 debug/elf
 github.com/asaskevich/govalidator
-github.com/ilyakaznacheev/cleanenv
 github.com/aymerick/douceur/css
 github.com/gorilla/css/scanner
 github.com/aymerick/douceur/parser
@@ -232,46 +232,46 @@ golang.org/x/net/html
 github.com/saintfish/chardet
 hash/crc32
 vendor/golang.org/x/text/transform
-log
 compress/gzip
+log
 vendor/golang.org/x/text/unicode/norm
 vendor/golang.org/x/text/unicode/bidi
-net/textproto
-mime
 github.com/microcosm-cc/bluemonday
 vendor/golang.org/x/text/secure/bidirule
+net/textproto
+mime
+github.com/projectdiscovery/utils/strings
 mime/quotedprintable
+vendor/golang.org/x/net/idna
 net/http/httptrace
 net/http/internal
-vendor/golang.org/x/net/idna
-github.com/projectdiscovery/utils/strings
 net/http/internal/ascii
-mime/multipart
 vendor/golang.org/x/net/http2/hpack
 net/http/internal/httpsfv
 golang.org/x/net/bpf
-golang.org/x/sys/unix
+mime/multipart
 vendor/golang.org/x/net/http/httpguts
 vendor/golang.org/x/net/http/httpproxy
 net/http/internal/httpcommon
+golang.org/x/sys/unix
 github.com/projectdiscovery/utils/slice
 text/tabwriter
 runtime/debug
-github.com/logrusorgru/aurora
 net/http/internal/http2
+github.com/logrusorgru/aurora
 github.com/modern-go/concurrent
 github.com/modern-go/reflect2
 github.com/projectdiscovery/gologger/writer
 golang.org/x/net/internal/socket
+github.com/json-iterator/go
 golang.org/x/net/ipv4
 golang.org/x/net/ipv6
-github.com/json-iterator/go
 net/http
 github.com/miekg/dns
 github.com/projectdiscovery/gologger/formatter
 github.com/projectdiscovery/gologger
-github.com/projectdiscovery/utils/file
 net/http/httputil
+github.com/projectdiscovery/utils/file
 github.com/projectdiscovery/utils/maps
 github.com/projectdiscovery/goflags
 github.com/ImAyrix/cut-cdn

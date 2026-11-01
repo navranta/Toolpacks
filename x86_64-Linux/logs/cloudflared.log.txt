@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) cloudflared :: https://github.com/cloudflare/cloudflared [Thursday, 2026-10-01 (07:10:04 PM) UTC]
+ [+] (Building | Fetching) cloudflared :: https://github.com/cloudflare/cloudflared [Sunday, 2026-11-01 (07:28:52 PM) UTC]
 
-https://github.com/cloudflare/cloudflared/releases/download/2026.9.3/cloudflared-linux-amd64
-Downloading  26% [======>                    ] (10/38 MB, 147.715 MB/s) [0s:0s]                                                                               Downloading  53% [=============>             ] (20/38 MB, 154.113 MB/s) [0s:0s]                                                                               Downloading  68% [=================>         ] (26/38 MB, 132.510 MB/s) [0s:0s]                                                                               Downloading  85% [=====================>     ] (33/38 MB, 124.313 MB/s) [0s:0s]                                                                               Downloading 100% [===========================] (38/38 MB, 138.172 MB/s)
+https://github.com/cloudflare/cloudflared/releases/download/2026.10.7/cloudflared-linux-amd64
+Downloading  20% [====>                     ] (8.0/38 MB, 108.755 MB/s) [0s:0s]                                                                               Downloading  41% [==========>                ] (16/38 MB, 113.892 MB/s) [0s:0s]                                                                               Downloading  52% [=============>              ] (20/38 MB, 87.927 MB/s) [0s:0s]                                                                               Downloading  78% [====================>       ] (30/38 MB, 96.026 MB/s) [0s:0s]                                                                               Downloading  83% [======================>     ] (32/38 MB, 84.135 MB/s) [0s:0s]                                                                               Downloading 100% [============================] (38/38 MB, 93.153 MB/s)
 Extracted `cloudflared-linux-amd64` to `/home/runner/work/_temp/toolpack_x86_64/cloudflared`

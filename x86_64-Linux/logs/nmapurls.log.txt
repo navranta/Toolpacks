@@ -1,13 +1,13 @@
 
 
- [+] (Building | Fetching) nmapurls :: https://github.com/sdcampbell/nmapurls [Thursday, 2026-10-01 (07:36:44 PM) UTC]
+ [+] (Building | Fetching) nmapurls :: https://github.com/sdcampbell/nmapurls [Sunday, 2026-11-01 (07:53:35 PM) UTC]
 
+internal/byteorder
 internal/goarch
 internal/unsafeheader
-internal/byteorder
 internal/cpu
-internal/coverage/rtcov
 internal/abi
+internal/coverage/rtcov
 internal/godebugs
 internal/goexperiment
 internal/goos
@@ -27,14 +27,14 @@ internal/runtime/gc/scan
 internal/runtime/math
 internal/runtime/pprof/label
 internal/stringslite
-internal/trace/tracev2
 internal/race
-sync/atomic
 internal/runtime/maps
+internal/trace/tracev2
+sync/atomic
 internal/synctest
 unicode
-internal/runtime/cgroup
 internal/sync
+internal/runtime/cgroup
 unicode/utf8
 encoding
 cmp
@@ -55,12 +55,12 @@ reflect
 bytes
 strings
 bufio
+internal/syscall/execenv
 time
 internal/syscall/unix
-internal/syscall/execenv
-internal/fmtsort
 io/fs
 internal/poll
+internal/fmtsort
 internal/filepathlite
 os
 io/ioutil

@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) b3sum :: https://github.com/BLAKE3-team/BLAKE3 [Thursday, 2026-10-01 (07:04:39 PM) UTC]
+ [+] (Building | Fetching) b3sum :: https://github.com/BLAKE3-team/BLAKE3 [Sunday, 2026-11-01 (07:22:53 PM) UTC]
 
 https://github.com/BLAKE3-team/BLAKE3/releases/download/1.8.7/b3sum_linux_x64_bin
-Downloading 100% [=========================] (1.5/1.5 MB, 144.658 MB/s)
+Downloading 100% [==========================] (1.5/1.5 MB, 52.620 MB/s)
 Extracted `b3sum_linux_x64_bin` to `/home/runner/work/_temp/toolpack_x86_64/b3sum`

@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) httpx :: https://github.com/projectdiscovery/httpx [Thursday, 2026-10-01 (07:31:58 PM) UTC]
+ [+] (Building | Fetching) httpx :: https://github.com/projectdiscovery/httpx [Sunday, 2026-11-01 (07:49:03 PM) UTC]
 
 https://github.com/projectdiscovery/httpx/releases/download/v1.12.0/httpx_1.12.0_linux_amd64.zip
-Downloading  71% [==================>        ] (13/18 MB, 200.260 MB/s) [0s:0s]                                                                               Downloading 100% [===========================] (18/18 MB, 186.348 MB/s)
+Downloading  52% [============>             ] (9.6/18 MB, 147.685 MB/s) [0s:0s]                                                                               Downloading 100% [===========================] (18/18 MB, 185.496 MB/s)
 Extracted `httpx` to `/home/runner/work/_temp/toolpack_x86_64/httpx`

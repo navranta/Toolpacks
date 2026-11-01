@@ -1,10 +1,10 @@
 
 
- [+] (Building | Fetching) interactsh :: https://github.com/projectdiscovery/interactsh [Thursday, 2026-10-01 (07:32:33 PM) UTC]
+ [+] (Building | Fetching) interactsh :: https://github.com/projectdiscovery/interactsh [Sunday, 2026-11-01 (07:49:37 PM) UTC]
 
 https://github.com/projectdiscovery/interactsh/releases/download/v1.4.1/interactsh-client_1.4.1_linux_amd64.zip
-Downloading 100% [=========================] (9.1/9.1 MB, 291.563 MB/s)
+Downloading 100% [=========================] (9.1/9.1 MB, 153.128 MB/s)
 Extracted `interactsh-client` to `/home/runner/work/_temp/toolpack_x86_64/interactsh-client`
 https://github.com/projectdiscovery/interactsh/releases/download/v1.4.1/interactsh-server_1.4.1_linux_amd64.zip
-Downloading 100% [===========================] (12/12 MB, 203.392 MB/s)
+Downloading  26% [======>                    ] (3.0/12 MB, 39.507 MB/s) [0s:0s]                                                                               Downloading 100% [===========================] (12/12 MB, 122.232 MB/s)
 Extracted `interactsh-server` to `/home/runner/work/_temp/toolpack_x86_64/interactsh-server`

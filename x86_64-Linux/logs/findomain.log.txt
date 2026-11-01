@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) findomain :: https://github.com/Findomain/Findomain [Thursday, 2026-10-01 (07:23:03 PM) UTC]
+ [+] (Building | Fetching) findomain :: https://github.com/Findomain/Findomain [Sunday, 2026-11-01 (07:40:00 PM) UTC]
 
 https://github.com/Findomain/Findomain/releases/download/10.0.1/findomain-linux.zip
-Downloading 100% [=========================] (7.7/7.7 MB, 261.010 MB/s)
+Downloading 100% [=========================] (7.7/7.7 MB, 172.011 MB/s)
 Extracted `findomain` to `/home/runner/work/_temp/toolpack_x86_64/findomain`

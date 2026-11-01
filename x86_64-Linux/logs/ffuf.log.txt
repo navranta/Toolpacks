@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) ffuf :: https://github.com/ffuf/ffuf [Thursday, 2026-10-01 (07:22:38 PM) UTC]
+ [+] (Building | Fetching) ffuf :: https://github.com/ffuf/ffuf [Sunday, 2026-11-01 (07:39:35 PM) UTC]
 
 https://github.com/ffuf/ffuf/releases/download/v2.3.0/ffuf_2.3.0_linux_amd64.tar.gz
-Downloading 100% [=========================] (4.2/4.2 MB, 174.867 MB/s)
+Downloading 100% [==========================] (4.2/4.2 MB, 99.388 MB/s)
 Extracted `ffuf` to `/home/runner/work/_temp/toolpack_x86_64/ffuf`

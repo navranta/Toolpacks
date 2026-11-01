@@ -1,8 +1,8 @@
 
 
- [+] (Building | Fetching) tealdeer :: https://github.com/tealdeer-rs/tealdeer [Thursday, 2026-10-01 (08:20:42 PM) UTC]
+ [+] (Building | Fetching) tealdeer :: https://github.com/tealdeer-rs/tealdeer [Sunday, 2026-11-01 (08:36:35 PM) UTC]
 
-https://github.com/tealdeer-rs/tealdeer/releases/download/v1.9.0/tealdeer-linux-x86_64-musl
-Downloading 100% [=========================] (3.4/3.4 MB, 210.158 MB/s)
+https://github.com/tealdeer-rs/tealdeer/releases/download/v1.9.1/tealdeer-linux-x86_64-musl
+Downloading 100% [==========================] (3.5/3.5 MB, 90.677 MB/s)
 Checksum verified with tealdeer-linux-x86_64-musl.sha256
 Extracted `tealdeer-linux-x86_64-musl` to `/home/runner/work/_temp/toolpack_x86_64/tealdeer`

@@ -1,6 +1,6 @@
 
 
- [+] (Building | Fetching) hakrevdns :: https://github.com/hakluke/hakrevdns [Thursday, 2026-10-01 (07:31:42 PM) UTC]
+ [+] (Building | Fetching) hakrevdns :: https://github.com/hakluke/hakrevdns [Sunday, 2026-11-01 (07:48:49 PM) UTC]
 
 go: creating new go.mod: module github.com/hakluke/hakrevdns
 go: to add module requirements and sums:
@@ -25,19 +25,19 @@ internal/bytealg
 internal/chacha8rand
 math/bits
 internal/runtime/exithook
-internal/strconv
 internal/runtime/gc
+internal/strconv
 internal/runtime/sys
 internal/asan
-internal/runtime/gc/scan
 internal/msan
+internal/runtime/gc/scan
 internal/runtime/math
 internal/runtime/pprof/label
 internal/stringslite
 internal/race
 internal/trace/tracev2
-sync/atomic
 internal/runtime/maps
+sync/atomic
 internal/synctest
 unicode
 internal/runtime/cgroup
@@ -47,42 +47,42 @@ cmp
 math
 internal/nettrace
 runtime
-internal/reflectlite
 iter
+internal/reflectlite
 sync
 weak
 slices
-internal/testlog
-internal/singleflight
-internal/bisect
 errors
 sort
-unique
+internal/testlog
+internal/bisect
 io
 internal/oserror
 syscall
+strconv
 bytes
 strings
-strconv
 reflect
 path
-vendor/golang.org/x/net/dns/dnsmessage
 bufio
+vendor/golang.org/x/net/dns/dnsmessage
 internal/godebug
 time
 internal/syscall/unix
 internal/syscall/execenv
+internal/singleflight
+unique
 net/netip
-context
 io/fs
+context
 internal/poll
-internal/filepathlite
 internal/fmtsort
+internal/filepathlite
 encoding/binary
 os
 golang.org/x/sys/unix
-path/filepath
 fmt
+path/filepath
 net
 github.com/jessevdk/go-flags
 github.com/hakluke/hakrevdns

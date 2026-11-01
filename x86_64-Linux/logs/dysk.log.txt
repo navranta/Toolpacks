@@ -1,12 +1,12 @@
 
 
- [+] (Building | Fetching) dysk :: https://github.com/Canop/dysk [Thursday, 2026-10-01 (07:14:58 PM) UTC]
+ [+] (Building | Fetching) dysk :: https://github.com/Canop/dysk [Sunday, 2026-11-01 (07:33:44 PM) UTC]
 
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
- 15 11.7M   15 1855k    0     0  8951k      0  0:00:01 --:--:--  0:00:01 8951k100 11.7M  100 11.7M    0     0  45.9M      0 --:--:-- --:--:-- --:--:--  203M
-Archive:  ./dysk_3.7.1.zip
+100 11.8M  100 11.8M    0     0  34.2M      0 --:--:-- --:--:-- --:--:-- 34.2M
+Archive:  ./dysk_3.8.1.zip
    creating: aarch64-apple-darwin/
   inflating: aarch64-apple-darwin/dysk  
    creating: aarch64-unknown-linux-gnu/

@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) tlsx :: https://github.com/projectdiscovery/tlsx [Thursday, 2026-10-01 (08:20:44 PM) UTC]
+ [+] (Building | Fetching) tlsx :: https://github.com/projectdiscovery/tlsx [Sunday, 2026-11-01 (08:36:38 PM) UTC]
 
 https://github.com/projectdiscovery/tlsx/releases/download/v1.4.0/tlsx_1.4.0_linux_amd64.zip
-Downloading 100% [===========================] (10/10 MB, 294.009 MB/s)
+Downloading  79% [===================>      ] (8.0/10 MB, 100.010 MB/s) [0s:0s]                                                                               Downloading 100% [===========================] (10/10 MB, 123.084 MB/s)
 Extracted `tlsx` to `/home/runner/work/_temp/toolpack_x86_64/tlsx`

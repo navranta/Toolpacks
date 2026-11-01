@@ -1,13 +1,13 @@
 
 
- [+] (Building | Fetching) zstd :: https://github.com/facebook/zstd [Thursday, 2026-10-01 (08:38:00 PM) UTC]
+ [+] (Building | Fetching) zstd :: https://github.com/facebook/zstd [Sunday, 2026-11-01 (08:53:54 PM) UTC]
 
-these 2 paths will be fetched (920.0 KiB download, 2.0 MiB unpacked):
-  /nix/store/7ijcjm4x8lzvq7i0vvixicf1s6v2w71x-gnugrep-static-x86_64-unknown-linux-musl-3.12
-  /nix/store/2w2n2q70p0s2r29ksfhyrhnx5bxywfx8-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin
-copying path '/nix/store/7ijcjm4x8lzvq7i0vvixicf1s6v2w71x-gnugrep-static-x86_64-unknown-linux-musl-3.12' from 'https://cache.nixos.org'...
-copying path '/nix/store/2w2n2q70p0s2r29ksfhyrhnx5bxywfx8-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin' from 'https://cache.nixos.org'...
-/nix/store/2w2n2q70p0s2r29ksfhyrhnx5bxywfx8-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin
+these 2 paths will be fetched (937.3 KiB download, 2.1 MiB unpacked):
+  /nix/store/7rdr3d3ycwmd0iwdkylby8d1x7iklzky-gnugrep-static-x86_64-unknown-linux-musl-3.12
+  /nix/store/fgkhf9qzvfqfz2cdlly18vjzxayg38dx-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin
+copying path '/nix/store/7rdr3d3ycwmd0iwdkylby8d1x7iklzky-gnugrep-static-x86_64-unknown-linux-musl-3.12' from 'https://cache.nixos.org'...
+copying path '/nix/store/fgkhf9qzvfqfz2cdlly18vjzxayg38dx-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin' from 'https://cache.nixos.org'...
+/nix/store/fgkhf9qzvfqfz2cdlly18vjzxayg38dx-zstd-static-x86_64-unknown-linux-musl-1.5.7-bin
 sending incremental file list
 ./
 unzstd
@@ -17,5 +17,5 @@ zstdgrep
 zstdless
 zstdmt
 
-sent 4,452,239 bytes  received 133 bytes  8,904,744.00 bytes/sec
-total size is 4,450,800  speedup is 1.00
+sent 4,484,271 bytes  received 133 bytes  8,968,808.00 bytes/sec
+total size is 4,482,800  speedup is 1.00

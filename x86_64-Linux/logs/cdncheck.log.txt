@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) cdncheck :: https://github.com/projectdiscovery/cdncheck [Thursday, 2026-10-01 (07:05:55 PM) UTC]
+ [+] (Building | Fetching) cdncheck :: https://github.com/projectdiscovery/cdncheck [Sunday, 2026-11-01 (07:24:12 PM) UTC]
 
-https://github.com/projectdiscovery/cdncheck/releases/download/v1.3.1/cdncheck_1.3.1_linux_amd64.zip
-Downloading 100% [=========================] (7.2/7.2 MB, 235.697 MB/s)
+https://github.com/projectdiscovery/cdncheck/releases/download/v1.4.0/cdncheck_1.4.0_linux_amd64.zip
+Downloading 100% [=========================] (7.4/7.4 MB, 141.845 MB/s)
 Extracted `cdncheck` to `/home/runner/work/_temp/toolpack_x86_64/cdncheck`

@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) gotty :: https://github.com/sorenisanerd/gotty [Thursday, 2026-10-01 (07:28:38 PM) UTC]
+ [+] (Building | Fetching) gotty :: https://github.com/sorenisanerd/gotty [Sunday, 2026-11-01 (07:45:57 PM) UTC]
 
-https://github.com/sorenisanerd/gotty/releases/download/v1.8.0/gotty_v1.8.0_linux_amd64.tar.gz
-Downloading 100% [=========================] (7.8/7.8 MB, 125.121 MB/s)
+https://github.com/sorenisanerd/gotty/releases/download/v1.10.0/gotty_v1.10.0_linux_amd64.tar.gz
+Downloading  76% [==================>       ] (6.0/7.8 MB, 90.965 MB/s) [0s:0s]                                                                               Downloading 100% [=========================] (7.8/7.8 MB, 116.222 MB/s)
 Extracted `./gotty` to `/home/runner/work/_temp/toolpack_x86_64/gotty`

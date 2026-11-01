@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) rga :: https://github.com/phiresky/ripgrep-all [Thursday, 2026-10-01 (07:59:25 PM) UTC]
+ [+] (Building | Fetching) rga :: https://github.com/phiresky/ripgrep-all [Sunday, 2026-11-01 (08:15:19 PM) UTC]
 
 https://github.com/phiresky/ripgrep-all/releases/download/v0.10.10/ripgrep_all-v0.10.10-x86_64-unknown-linux-musl.tar.gz
-Downloading 100% [=========================] (8.0/8.0 MB, 221.332 MB/s)
+Downloading 100% [=========================] (8.0/8.0 MB, 153.441 MB/s)
 Extracted `ripgrep_all-v0.10.10-x86_64-unknown-linux-musl/rga` to `/home/runner/work/_temp/toolpack_x86_64/rga`

@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) croc :: https://github.com/schollz/croc [Thursday, 2026-10-01 (07:11:26 PM) UTC]
+ [+] (Building | Fetching) croc :: https://github.com/schollz/croc [Sunday, 2026-11-01 (07:30:03 PM) UTC]
 
-https://github.com/schollz/croc/releases/download/v11.5.4/croc_v11.5.4_Linux-64bit.tar.gz
-Downloading 100% [=========================] (8.7/8.7 MB, 180.804 MB/s)
+https://github.com/schollz/croc/releases/download/v11.6.1/croc_v11.6.1_Linux-64bit.tar.gz
+Downloading  48% [===========>               ] (5.8/12 MB, 87.047 MB/s) [0s:0s]                                                                               Downloading  60% [===============>           ] (7.3/12 MB, 55.008 MB/s) [0s:0s]                                                                               Downloading  78% [====================>      ] (9.4/12 MB, 47.693 MB/s) [0s:0s]                                                                               Downloading  96% [=========================>  ] (12/12 MB, 43.826 MB/s) [0s:0s]                                                                               Downloading 100% [============================] (12/12 MB, 42.664 MB/s)
 Extracted `croc` to `/home/runner/work/_temp/toolpack_x86_64/croc`

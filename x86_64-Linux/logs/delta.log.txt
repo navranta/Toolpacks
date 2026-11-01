@@ -1,7 +1,7 @@
 
 
- [+] (Building | Fetching) delta :: https://github.com/dandavison/delta [Thursday, 2026-10-01 (07:13:34 PM) UTC]
+ [+] (Building | Fetching) delta :: https://github.com/dandavison/delta [Sunday, 2026-11-01 (07:32:16 PM) UTC]
 
-https://github.com/dandavison/delta/releases/download/0.19.2/delta-0.19.2-x86_64-unknown-linux-musl.tar.gz
-Downloading 100% [==========================] (3.2/3.2 MB, 58.814 MB/s)
-Extracted `delta-0.19.2-x86_64-unknown-linux-musl/delta` to `/home/runner/work/_temp/toolpack_x86_64/delta`
+https://github.com/dandavison/delta/releases/download/0.20.1/delta-0.20.1-x86_64-unknown-linux-musl.tar.gz
+Downloading 100% [==========================] (3.2/3.2 MB, 82.614 MB/s)
+Extracted `delta-0.20.1-x86_64-unknown-linux-musl/delta` to `/home/runner/work/_temp/toolpack_x86_64/delta`

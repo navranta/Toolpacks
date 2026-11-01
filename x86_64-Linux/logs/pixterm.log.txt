@@ -1,6 +1,6 @@
 
 
- [+] (Building | Fetching) pixterm :: https://github.com/eliukblau/pixterm [Thursday, 2026-10-01 (07:37:37 PM) UTC]
+ [+] (Building | Fetching) pixterm :: https://github.com/eliukblau/pixterm [Sunday, 2026-11-01 (07:54:29 PM) UTC]
 
 go: downloading go1.25.0 (linux/amd64)
 go: downloading github.com/lucasb-eyer/go-colorful v1.4.0
@@ -20,14 +20,14 @@ internal/goos
 internal/profilerecord
 internal/runtime/atomic
 internal/runtime/math
-internal/runtime/strconv
 internal/bytealg
 internal/chacha8rand
+internal/runtime/strconv
 internal/runtime/syscall
 internal/runtime/exithook
 internal/runtime/gc
-internal/asan
 internal/runtime/cgroup
+internal/asan
 internal/msan
 internal/runtime/sys
 internal/stringslite
@@ -35,24 +35,24 @@ internal/trace/tracev2
 sync/atomic
 unicode/utf8
 cmp
-internal/race
-internal/synctest
 math/bits
 internal/itoa
-internal/runtime/maps
 encoding
-internal/sync
-math
 unicode
+internal/race
+internal/synctest
+math
+internal/runtime/maps
+internal/sync
 image/color
 image/color/palette
 unicode/utf16
 container/list
-runtime
 crypto/internal/fips140/alias
 crypto/internal/fips140deps/byteorder
 crypto/internal/fips140deps/cpu
 crypto/internal/fips140/subtle
+runtime
 crypto/internal/boring/sig
 vendor/golang.org/x/crypto/cryptobyte/asn1
 vendor/golang.org/x/crypto/internal/alias
@@ -65,10 +65,10 @@ sync
 slices
 weak
 maps
-errors
 sort
-internal/bisect
+errors
 internal/testlog
+internal/bisect
 io
 internal/oserror
 path
@@ -77,101 +77,99 @@ syscall
 strconv
 strings
 bytes
+reflect
 hash
 hash/adler32
-reflect
 hash/crc32
 bufio
 encoding/base64
-image
 math/rand
+image
 time
 internal/syscall/unix
 internal/syscall/execenv
-image/internal/imageutil
-golang.org/x/image/vp8
-image/draw
-image/jpeg
-golang.org/x/image/vp8l
 crypto
 crypto/internal/fips140deps/godebug
-crypto/internal/impl
 crypto/internal/fips140
-math/rand/v2
-crypto/internal/fips140/sha256
+image/internal/imageutil
+image/draw
+golang.org/x/image/vp8
+image/jpeg
+golang.org/x/image/vp8l
 io/fs
 internal/poll
 context
 embed
 internal/filepathlite
+crypto/internal/impl
+crypto/internal/fips140/sha256
 crypto/internal/fips140/sha3
 crypto/internal/fips140/sha512
 os
-crypto/internal/randutil
-crypto/internal/fips140cache
+math/rand/v2
 crypto/internal/fips140/hmac
-crypto/sha3
 crypto/internal/fips140/check
-crypto/internal/fips140hash
-encoding/pem
-crypto/internal/fips140/aes
-crypto/internal/fips140/nistec/fiat
+crypto/internal/randutil
 internal/fmtsort
 encoding/binary
+crypto/internal/fips140/aes
+crypto/internal/fips140/nistec/fiat
 crypto/internal/fips140/edwards25519/field
 crypto/internal/fips140/bigmod
 golang.org/x/image/bmp
 golang.org/x/image/ccitt
+crypto/internal/fips140cache
+crypto/sha3
 crypto/internal/fips140/edwards25519
+crypto/internal/fips140hash
 crypto/internal/fips140/hkdf
-crypto/internal/fips140/tls12
-crypto/internal/fips140/tls13
 fmt
 io/ioutil
 path/filepath
 golang.org/x/image/riff
-crypto/internal/sysrand
 golang.org/x/image/webp
-crypto/internal/entropy
-crypto/internal/fips140/drbg
+crypto/internal/sysrand
 crypto/internal/fips140/nistec
+crypto/internal/entropy
+crypto/internal/fips140/tls12
+crypto/internal/fips140/drbg
+crypto/internal/fips140/tls13
 crypto/internal/fips140/aes/gcm
 crypto/internal/fips140only
 crypto/internal/fips140/ed25519
 crypto/cipher
-crypto/hkdf
-crypto/internal/fips140/mlkem
 flag
 compress/flate
 golang.org/x/image/tiff/lzw
 compress/lzw
 database/sql/driver
-compress/zlib
 image/gif
+compress/zlib
+encoding/json
 golang.org/x/image/tiff
 image/png
-encoding/json
 compress/gzip
-github.com/disintegration/imaging
 crypto/internal/boring
 math/big
 crypto/aes
 crypto/des
+github.com/disintegration/imaging
 crypto/internal/fips140/ecdh
 crypto/ecdh
 crypto/internal/fips140/ecdsa
 crypto/sha512
+crypto/hkdf
 crypto/hmac
+crypto/internal/fips140/mlkem
 vendor/golang.org/x/crypto/chacha20
+github.com/lucasb-eyer/go-colorful
 vendor/golang.org/x/crypto/internal/poly1305
 vendor/golang.org/x/sys/cpu
-github.com/lucasb-eyer/go-colorful
 crypto/md5
-vendor/golang.org/x/crypto/chacha20poly1305
 crypto/rc4
+vendor/golang.org/x/crypto/chacha20poly1305
 crypto/internal/fips140/rsa
 crypto/sha1
-crypto/sha256
 crypto/rand
 crypto/elliptic
 crypto/internal/boring/bbig
@@ -179,32 +177,34 @@ encoding/asn1
 crypto/ed25519
 crypto/internal/hpke
 crypto/rsa
+crypto/sha256
 crypto/fips140
 crypto/tls/internal/fips140tls
 crypto/dsa
 encoding/hex
+encoding/pem
+vendor/golang.org/x/crypto/cryptobyte
 vendor/golang.org/x/net/dns/dnsmessage
+crypto/x509/pkix
 internal/singleflight
 unique
 runtime/cgo
-vendor/golang.org/x/crypto/cryptobyte
 crypto/ecdsa
-crypto/x509/pkix
-net/netip
 net/url
+net/netip
 vendor/golang.org/x/text/transform
 log
 vendor/golang.org/x/text/unicode/bidi
 vendor/golang.org/x/text/unicode/norm
 vendor/golang.org/x/net/http2/hpack
-mime
 vendor/golang.org/x/text/secure/bidirule
+mime
 mime/quotedprintable
 net/http/internal
-vendor/golang.org/x/net/idna
 net/http/internal/ascii
 golang.org/x/sys/unix
 regexp/syntax
+vendor/golang.org/x/net/idna
 net
 regexp
 golang.org/x/term
@@ -222,11 +222,11 @@ github.com/eliukblau/pixterm/cmd/pixterm
 sending incremental file list
 pixterm
 
-sent 7,246,443 bytes  received 35 bytes  14,492,956.00 bytes/sec
+sent 7,246,444 bytes  received 35 bytes  14,492,958.00 bytes/sec
 total size is 7,244,576  speedup is 1.00
 /build-bins/pixterm: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
 7.0M	/build-bins/pixterm
-/home/runner/work/_temp/toolpacks/p9gVwdC_linux_x86_64/pixterm
+/home/runner/work/_temp/toolpacks/TEunzCV_linux_x86_64/pixterm
 ./pixterm: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
 fad618b3a83cb9257fd0f1c859887115b47a962333ee438bc34613b2c6198f4d  ./pixterm
 b9d69f1e0b5b36cd22dd455880a80e289bcb0e92c77e42afa475b60ec53d8f8b  ./pixterm
@@ -235,7 +235,7 @@ sending incremental file list
 ./
 pixterm
 
-sent 7,246,360 bytes  received 38 bytes  14,492,796.00 bytes/sec
+sent 7,246,362 bytes  received 38 bytes  14,492,800.00 bytes/sec
 total size is 7,244,472  speedup is 1.00
 alpine-builder
 alpine-builder

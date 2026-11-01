@@ -1,13 +1,13 @@
 
 
- [+] (Building | Fetching) scopegen :: https://github.com/pkgforge-security/scopegen [Thursday, 2026-10-01 (08:08:27 PM) UTC]
+ [+] (Building | Fetching) scopegen :: https://github.com/pkgforge-security/scopegen [Sunday, 2026-11-01 (08:24:35 PM) UTC]
 
 internal/goarch
 internal/unsafeheader
 internal/byteorder
 internal/cpu
-internal/coverage/rtcov
 internal/abi
+internal/coverage/rtcov
 internal/godebugs
 internal/goexperiment
 internal/goos
@@ -18,46 +18,46 @@ internal/bytealg
 internal/chacha8rand
 math/bits
 internal/runtime/exithook
-internal/runtime/gc
 internal/strconv
+internal/runtime/gc
 internal/runtime/sys
 internal/asan
+internal/runtime/gc/scan
 internal/msan
 internal/runtime/math
-internal/runtime/gc/scan
 internal/runtime/pprof/label
 internal/stringslite
-internal/race
 internal/trace/tracev2
-internal/runtime/maps
+internal/race
 sync/atomic
 internal/synctest
+internal/runtime/maps
 unicode
-internal/sync
 internal/runtime/cgroup
+internal/sync
 unicode/utf8
 encoding
 cmp
 math
 runtime
-iter
 internal/reflectlite
+iter
 sync
 slices
 errors
 internal/testlog
-internal/oserror
-path
-strconv
 io
+internal/oserror
+strconv
+path
 syscall
-reflect
-bytes
 strings
+bytes
+reflect
 bufio
-internal/syscall/execenv
-time
 internal/syscall/unix
+time
+internal/syscall/execenv
 io/fs
 internal/poll
 internal/fmtsort

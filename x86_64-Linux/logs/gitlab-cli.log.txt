@@ -1,122 +1,126 @@
 
 
- [+] (Building | Fetching) gitlab-cli :: https://gitlab.com/gitlab-org/cli [Thursday, 2026-10-01 (07:26:31 PM) UTC]
+ [+] (Building | Fetching) gitlab-cli :: https://gitlab.com/gitlab-org/cli [Sunday, 2026-11-01 (07:43:34 PM) UTC]
 
 warning: redirecting to https://gitlab.com/gitlab-org/cli.git/
 go: downloading go1.27.0 (linux/amd64)
 go: downloading charm.land/fang/v2 v2.0.1
-go: downloading charm.land/lipgloss/v2 v2.0.6
 go: downloading github.com/spf13/cobra v1.10.2
-go: downloading gitlab.com/gitlab-org/api/client-go/v3 v3.15.0
+go: downloading charm.land/lipgloss/v2 v2.0.6
+go: downloading gitlab.com/gitlab-org/api/client-go/v3 v3.40.0
 go: downloading github.com/charmbracelet/colorprofile v0.4.3
-go: downloading github.com/charmbracelet/x/ansi v0.11.8
+go: downloading github.com/charmbracelet/x/ansi v0.11.9
 go: downloading github.com/charmbracelet/x/exp/charmtone v0.0.0-20250603201427-c31516f43444
 go: downloading github.com/charmbracelet/x/term v0.2.2
 go: downloading github.com/muesli/mango-cobra v1.2.0
 go: downloading github.com/muesli/roff v0.1.0
 go: downloading github.com/spf13/pflag v1.0.10
-go: downloading golang.org/x/text v0.42.0
-go: downloading golang.org/x/sync v0.23.0
+go: downloading golang.org/x/text v0.43.0
+go: downloading github.com/hashicorp/go-retryablehttp v0.7.8
+go: downloading golang.org/x/sync v0.24.0
 go: downloading github.com/MakeNowJust/heredoc/v2 v2.0.1
 go: downloading github.com/spf13/viper v1.21.0
 go: downloading github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
-go: downloading github.com/tidwall/pretty v1.2.1
+go: downloading github.com/tidwall/pretty v1.2.2
 go: downloading charm.land/glamour/v2 v2.0.1
 go: downloading github.com/muesli/termenv v0.16.0
-go: downloading golang.org/x/term v0.46.0
+go: downloading golang.org/x/term v0.47.0
 go: downloading github.com/hashicorp/go-version v1.9.0
-go: downloading charm.land/bubbletea/v2 v2.0.9
-go: downloading charm.land/huh/v2 v2.0.3
-go: downloading github.com/briandowns/spinner v1.23.2
-go: downloading github.com/itchyny/gojq v0.12.19
-go: downloading github.com/mattn/go-colorable v0.1.15
-go: downloading github.com/mattn/go-isatty v0.0.24
-go: downloading github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
 go: downloading github.com/adrg/xdg v0.5.3
 go: downloading github.com/google/renameio/v2 v2.0.2
 go: downloading github.com/zalando/go-keyring v0.2.8
 go: downloading go.yaml.in/yaml/v3 v3.0.5
-go: downloading golang.org/x/sys v0.48.0
-go: downloading github.com/mattn/go-runewidth v0.0.30
-go: downloading github.com/charmbracelet/ultraviolet v0.0.0-20260811164956-006e29f97886
+go: downloading golang.org/x/sys v0.49.0
+go: downloading charm.land/bubbletea/v2 v2.1.0
+go: downloading charm.land/huh/v2 v2.0.3
+go: downloading github.com/briandowns/spinner v1.23.2
+go: downloading github.com/itchyny/gojq v0.12.19
+go: downloading github.com/mattn/go-colorable v0.1.16
+go: downloading github.com/mattn/go-isatty v0.0.24
+go: downloading github.com/mattn/go-runewidth v0.0.31
+go: downloading github.com/charmbracelet/ultraviolet v0.0.0-20261008173134-6b8d4baf91b4
 go: downloading github.com/clipperhouse/displaywidth v0.11.0
 go: downloading github.com/lucasb-eyer/go-colorful v1.4.1
 go: downloading github.com/rivo/uniseg v0.4.7
-go: downloading github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e
+go: downloading github.com/xo/terminfo v1.0.0
+go: downloading github.com/clipperhouse/uax29/v2 v2.7.0
 go: downloading github.com/muesli/mango v0.1.0
 go: downloading github.com/muesli/mango-pflag v0.1.0
-go: downloading github.com/clipperhouse/uax29/v2 v2.7.0
+go: downloading github.com/hashicorp/go-cleanhttp v0.5.2
 go: downloading golang.org/x/oauth2 v0.37.0
-go: downloading github.com/fsnotify/fsnotify v1.9.0
+go: downloading github.com/google/go-querystring v1.2.0
+go: downloading golang.org/x/time v0.16.0
+go: downloading github.com/stretchr/testify v1.12.1
+go: downloading github.com/hashicorp/go-multierror v1.1.1
+go: downloading github.com/fsnotify/fsnotify v1.10.1
 go: downloading github.com/go-viper/mapstructure/v2 v2.4.0
 go: downloading github.com/sagikazarmark/locafero v0.11.0
 go: downloading github.com/spf13/afero v1.15.0
 go: downloading github.com/spf13/cast v1.10.0
-go: downloading github.com/stretchr/testify v1.12.1
-go: downloading github.com/hashicorp/go-multierror v1.1.1
-go: downloading github.com/google/go-querystring v1.2.0
-go: downloading github.com/hashicorp/go-retryablehttp v0.7.8
-go: downloading github.com/hashicorp/go-cleanhttp v0.5.2
-go: downloading golang.org/x/time v0.15.0
-go: downloading github.com/yuin/goldmark v1.7.17
+go: downloading github.com/yuin/goldmark v1.8.5
 go: downloading github.com/yuin/goldmark-emoji v1.0.6
 go: downloading github.com/aymanbagabas/go-osc52/v2 v2.0.1
+go: downloading github.com/godbus/dbus/v5 v5.2.2
+go: downloading github.com/muesli/cancelreader v0.2.2
 go: downloading charm.land/bubbles/v2 v2.0.0
 go: downloading github.com/catppuccin/go v0.3.0
 go: downloading github.com/charmbracelet/x/exp/ordered v0.1.0
 go: downloading github.com/charmbracelet/x/exp/strings v0.0.0-20240722160745-212f7b056ed0
 go: downloading github.com/mitchellh/hashstructure/v2 v2.0.2
-go: downloading github.com/muesli/cancelreader v0.2.2
 go: downloading github.com/fatih/color v1.16.0
 go: downloading github.com/itchyny/timefmt-go v0.1.8
-go: downloading github.com/godbus/dbus/v5 v5.2.2
 go: downloading github.com/charmbracelet/x/termios v0.1.1
 go: downloading github.com/charmbracelet/x/windows v0.2.2
+go: downloading github.com/hashicorp/errwrap v1.1.0
 go: downloading github.com/sourcegraph/conc v0.3.1-0.20240121214520-5f936abd7ae8
 go: downloading github.com/subosito/gotenv v1.6.0
 go: downloading github.com/pelletier/go-toml/v2 v2.2.4
-go: downloading github.com/docker/docker-credential-helpers v0.9.9
+go: downloading github.com/docker/docker-credential-helpers v0.9.12
 go: downloading github.com/golang-jwt/jwt/v5 v5.3.1
 go: downloading github.com/google/uuid v1.6.0
-go: downloading golang.org/x/crypto v0.57.0
-go: downloading github.com/hashicorp/errwrap v1.1.0
+go: downloading golang.org/x/crypto v0.58.0
 go: downloading github.com/gosuri/uilive v0.0.4
 go: downloading github.com/gdamore/tcell/v2 v2.13.10
 go: downloading github.com/lunixbochs/vtclean v1.0.0
 go: downloading github.com/rivo/tview v0.0.0-20230621164836-6cc0565babaf
 go: downloading github.com/coder/websocket v1.8.15
+go: downloading github.com/d2lang/d2 v0.9.0
 go: downloading github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c
-go: downloading k8s.io/apimachinery v0.37.0
-go: downloading oss.terrastruct.com/d2 v0.7.2
+go: downloading k8s.io/apimachinery v0.37.1
 go: downloading github.com/modelcontextprotocol/go-sdk v1.8.0
 go: downloading github.com/avast/retry-go/v5 v5.0.0
 go: downloading github.com/dustin/go-humanize v1.1.0
-go: downloading github.com/alecthomas/chroma/v2 v2.20.0
+go: downloading github.com/alecthomas/chroma/v2 v2.27.0
 go: downloading github.com/charmbracelet/x/exp/slice v0.0.0-20250327172914-2fdc97757edf
 go: downloading github.com/microcosm-cc/bluemonday v1.0.27
 go: downloading github.com/atotto/clipboard v0.1.4
-go: downloading github.com/docker/cli v29.8.2+incompatible
+go: downloading github.com/docker/cli v29.9.2+incompatible
 go: downloading github.com/gdamore/encoding v1.0.1
-go: downloading k8s.io/client-go v0.37.0
-go: downloading oss.terrastruct.com/util-go v0.0.0-20250213174338-243d8661088a
-go: downloading github.com/PuerkitoBio/goquery v1.10.0
-go: downloading github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
+go: downloading k8s.io/client-go v0.37.1
+go: downloading github.com/d2lang/util-go v0.2.0
+go: downloading github.com/PuerkitoBio/goquery v1.12.0
 go: downloading golang.org/x/image v0.45.0
-go: downloading golang.org/x/net v0.58.0
+go: downloading golang.org/x/net v0.62.0
+go: downloading github.com/d2lang/dagro v0.2.1
+go: downloading software.sslmate.com/src/go-pkcs12 v0.7.4
 go: downloading github.com/package-url/packageurl-go v0.1.7
-go: downloading software.sslmate.com/src/go-pkcs12 v0.7.3
 go: downloading github.com/google/jsonschema-go v0.4.3
 go: downloading github.com/yosida95/uritemplate/v3 v3.0.2
 go: downloading github.com/aymerick/douceur v0.2.0
-go: downloading github.com/dlclark/regexp2 v1.11.5
+go: downloading github.com/dlclark/regexp2/v2 v2.6.0
 go: downloading k8s.io/utils v0.0.0-20260626114624-be93311217bd
 go: downloading sigs.k8s.io/randfill v1.0.0
-go: downloading golang.org/x/exp v0.0.0-20250813145105-42675adae3e6
+go: downloading golang.org/x/exp v0.0.0-20260727155853-b88d891fe743
 go: downloading golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da
-go: downloading github.com/mazznoer/csscolorparser v0.1.5
-go: downloading github.com/dop251/goja v0.0.0-20240927123429-241b342198c2
-go: downloading github.com/andybalholm/cascadia v1.3.2
+go: downloading github.com/andybalholm/brotli v1.2.7
+go: downloading github.com/go-text/typesetting v0.3.4
+go: downloading github.com/d2lang/mathjax-go v0.1.0
+go: downloading github.com/d2lang/rough-go v0.2.0
+go: downloading github.com/mazznoer/csscolorparser v0.1.8
+go: downloading github.com/andybalholm/cascadia v1.3.4
 go: downloading k8s.io/klog/v2 v2.140.0
+go: downloading github.com/goproxy/goproxy v0.27.0
+go: downloading golang.org/x/mod v0.42.0
 go: downloading github.com/denisbrodbeck/machineid v1.0.1
 go: downloading github.com/segmentio/encoding v0.5.4
 go: downloading github.com/gorilla/css v1.0.1
@@ -127,15 +131,14 @@ go: downloading sigs.k8s.io/json v0.0.0-20250730193827-2d320260d730
 go: downloading github.com/sirupsen/logrus v1.9.3
 go: downloading github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
 go: downloading github.com/go-logr/logr v1.4.3
+go: downloading github.com/aofei/backoff v1.2.0
 go: downloading github.com/fxamacker/cbor/v2 v2.9.1
-go: downloading github.com/google/pprof v0.0.0-20250403155104-27863c87afa6
 go: downloading github.com/json-iterator/go v1.1.12
 go: downloading go.yaml.in/yaml/v2 v2.4.4
 go: downloading github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
 go: downloading sigs.k8s.io/yaml v1.6.0
-go: downloading github.com/go-sourcemap/sourcemap v2.1.4+incompatible
-go: downloading github.com/x448/float16 v0.8.4
 go: downloading github.com/segmentio/asm v1.1.3
+go: downloading github.com/x448/float16 v0.8.4
 go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
 go: downloading github.com/modern-go/reflect2 v1.0.3-0.20250322232337-35a7c28c31ee
 internal/goarch
@@ -146,32 +149,32 @@ internal/coverage/rtcov
 internal/abi
 internal/godebugs
 internal/goexperiment
-internal/profilerecord
 internal/goos
+internal/profilerecord
 internal/runtime/atomic
 internal/runtime/syscall/linux
 internal/bytealg
 internal/chacha8rand
 math/bits
 internal/runtime/exithook
+internal/strconv
 internal/runtime/gc
 internal/runtime/sys
-internal/strconv
 internal/asan
 internal/msan
+internal/runtime/gc/scan
 internal/runtime/math
 internal/runtime/pprof/label
 internal/stringslite
-internal/runtime/gc/scan
 internal/trace/tracev2
-sync/atomic
 internal/race
-internal/runtime/maps
-internal/sync
+sync/atomic
 internal/synctest
-unicode
 internal/runtime/cgroup
+internal/runtime/maps
+unicode
 unicode/utf8
+internal/sync
 cmp
 math
 database/sql/internal
@@ -183,13 +186,13 @@ crypto/internal/fips140/subtle
 crypto/internal/fips140deps/time
 crypto/subtle
 crypto/internal/boring/sig
-runtime
 encoding
+runtime
 unicode/utf16
 image/color
 github.com/charmbracelet/x/windows
-github.com/rivo/uniseg
 github.com/charmbracelet/x/ansi/parser
+github.com/rivo/uniseg
 log/internal
 internal/nettrace
 container/list
@@ -215,6 +218,14 @@ k8s.io/apimachinery/pkg/types
 github.com/coder/websocket/internal/util
 golang.org/x/xerrors/internal
 golang.org/x/exp/constraints
+golang.org/x/image/internal/safemath
+github.com/d2lang/mathjax-go/internal/ordered
+github.com/d2lang/mathjax-go/internal/tex/extensions/spec
+github.com/d2lang/mathjax-go/internal/font
+github.com/d2lang/mathjax-go/internal/tex/extensions/enclose
+github.com/d2lang/mathjax-go/internal/tex/extensions/cancel
+github.com/d2lang/mathjax-go/internal/tex/extensions/gensymb
+internal/gover
 github.com/segmentio/asm/cpu/cpuid
 github.com/segmentio/asm/internal/unsafebytes
 gitlab.com/gitlab-org/cli/internal/commands/token/filter
@@ -226,58 +237,59 @@ k8s.io/klog/v2/internal/dbg
 slices
 maps
 k8s.io/apimachinery/pkg/util/sets
-internal/bisect
-internal/testlog
-errors
 sort
+errors
 io
 strconv
+reflect
 bytes
 internal/oserror
-reflect
 path
 syscall
+internal/testlog
 encoding/base64
 strings
 hash
 crypto
+internal/bisect
 internal/godebug
-crypto/internal/fips140deps/godebug
 bufio
-crypto/internal/fips140
-crypto/internal/impl
-crypto/internal/fips140/sha256
-github.com/clipperhouse/uax29/v2/graphemes
 time
 internal/syscall/unix
 internal/syscall/execenv
+github.com/clipperhouse/uax29/v2/graphemes
+crypto/internal/fips140deps/godebug
+crypto/internal/fips140
+crypto/internal/impl
+crypto/internal/fips140/sha256
 github.com/clipperhouse/displaywidth
 crypto/internal/fips140/sha3
 crypto/internal/fips140/sha512
 crypto/internal/entropy/v1.0.0
-crypto/internal/fips140/hmac
-crypto/internal/fips140/check
 math/rand/v2
+internal/fmtsort
+crypto/internal/fips140/hmac
+io/fs
+internal/poll
+context
+crypto/internal/fips140/check
 crypto/internal/fips140/aes
+internal/filepathlite
 crypto/fips140
 crypto/internal/randutil
 math/rand
-io/fs
-internal/poll
-internal/fmtsort
-context
-internal/filepathlite
 encoding/binary
 encoding/json/internal
-encoding/base32
 encoding/json/internal/jsonflags
 encoding/json/internal/jsonopts
-os
 encoding/json/internal/jsonwire
+encoding/base32
+os
 unique
 encoding/json/jsontext
-net/netip
 golang.org/x/sys/unix
+net/netip
+hash/adler32
 fmt
 crypto/internal/sysrand
 github.com/mattn/go-runewidth
@@ -286,130 +298,129 @@ crypto/internal/fips140/aes/gcm
 crypto/internal/fips140only
 io/ioutil
 encoding/hex
-math/big
 crypto/cipher
-encoding/json/v2
+math/big
 crypto/internal/boring
 crypto/internal/rand
+encoding/json/v2
 net/url
 github.com/charmbracelet/x/term
 path/filepath
 runtime/cgo
 os/exec
+compress/flate
 crypto/rand
 uuid
-compress/flate
 database/sql/driver
-hash/adler32
 image
-encoding/json
 compress/zlib
 hash/crc32
+os/user
 github.com/charmbracelet/x/termios
-github.com/lucasb-eyer/go-colorful
+encoding/json
 image/png
 github.com/muesli/cancelreader
-os/user
 golang.org/x/sync/errgroup
 hash/maphash
+github.com/lucasb-eyer/go-colorful
 log
 os/signal
-github.com/charmbracelet/x/ansi
-github.com/charmbracelet/x/exp/charmtone
-github.com/muesli/mango
 github.com/xo/terminfo
+github.com/muesli/mango
 encoding/csv
 flag
 vendor/golang.org/x/net/dns/dnsmessage
 internal/singleflight
+github.com/charmbracelet/x/exp/charmtone
+github.com/charmbracelet/x/ansi
 regexp/syntax
 text/template/parse
-github.com/charmbracelet/colorprofile
-github.com/charmbracelet/x/ansi/kitty
 regexp
 text/template
+github.com/charmbracelet/colorprofile
+github.com/charmbracelet/x/ansi/kitty
 github.com/charmbracelet/ultraviolet
 github.com/muesli/roff
-net
 golang.org/x/text/internal/tag
 golang.org/x/text/transform
+net
 golang.org/x/text/internal/language
 golang.org/x/text/unicode/norm
 golang.org/x/text/internal/language/compact
 golang.org/x/text/language
 runtime/debug
-github.com/google/go-querystring/query
 golang.org/x/text/internal
+github.com/google/go-querystring/query
 golang.org/x/text/cases
 compress/gzip
 crypto/aes
 crypto/des
 crypto/internal/fips140/nistec/fiat
 crypto/internal/fips140/edwards25519/field
-charm.land/lipgloss/v2
 crypto/internal/boring/bbig
 crypto/internal/fips140/bigmod
+charm.land/lipgloss/v2
 crypto/internal/fips140cache
 crypto/sha3
 crypto/internal/fips140hash
 crypto/sha512
 internal/saferio
-github.com/spf13/pflag
 encoding/asn1
 crypto/internal/fips140/nistec
-crypto/internal/fips140/edwards25519
+github.com/spf13/pflag
 vendor/golang.org/x/crypto/cryptobyte
+crypto/internal/fips140/edwards25519
 crypto/internal/fips140/ed25519
 crypto/internal/fips140/hkdf
-crypto/ed25519
 crypto/hkdf
+crypto/ed25519
 crypto/hmac
 crypto/internal/fips140/mlkem
-crypto/sha256
-vendor/golang.org/x/crypto/chacha20
-crypto/mlkem
-vendor/golang.org/x/crypto/internal/poly1305
-vendor/golang.org/x/sys/cpu
-crypto/internal/fips140/tls12
-github.com/muesli/mango-pflag
-github.com/spf13/cobra
-vendor/golang.org/x/crypto/chacha20poly1305
-crypto/internal/fips140/tls13
 crypto/internal/fips140/ecdh
 crypto/ecdh
+github.com/muesli/mango-pflag
+github.com/spf13/cobra
 crypto/elliptic
 crypto/internal/fips140/ecdsa
-crypto/hpke
-crypto/md5
+crypto/mlkem
+crypto/sha256
+vendor/golang.org/x/crypto/chacha20
+vendor/golang.org/x/crypto/internal/poly1305
+vendor/golang.org/x/sys/cpu
 crypto/ecdsa
+crypto/internal/fips140/tls12
+vendor/golang.org/x/crypto/chacha20poly1305
+crypto/internal/fips140/tls13
+crypto/md5
+crypto/hpke
 crypto/internal/fips140/mldsa
+github.com/muesli/mango-cobra
+charm.land/fang/v2
 crypto/rc4
 crypto/internal/fips140/rsa
-github.com/muesli/mango-cobra
 crypto/mldsa
-charm.land/fang/v2
 crypto/sha1
 crypto/tls/internal/fips140tls
 crypto/dsa
 crypto/x509/pkix
 encoding/pem
-crypto/rsa
 vendor/golang.org/x/text/transform
 vendor/golang.org/x/text/unicode/bidi
-vendor/golang.org/x/text/unicode/norm
 net/textproto
-crypto/x509
+crypto/rsa
+vendor/golang.org/x/text/unicode/norm
 mime
+crypto/x509
 vendor/golang.org/x/text/secure/bidirule
 mime/quotedprintable
 net/http/internal
+mime/multipart
 net/http/internal/ascii
 vendor/golang.org/x/net/http2/hpack
-mime/multipart
-net/http/internal/httpsfv
 vendor/golang.org/x/net/idna
-gitlab.com/gitlab-org/api/client-go/v3/internal/graphqlfields
+net/http/internal/httpsfv
 gitlab.com/gitlab-org/api/client-go/v3/internal/graphql
+gitlab.com/gitlab-org/api/client-go/v3/internal/graphqlfields
 golang.org/x/time/rate
 log/slog/internal/buffer
 log/slog
@@ -420,51 +431,49 @@ vendor/golang.org/x/net/http/httpguts
 vendor/golang.org/x/net/http/httpproxy
 github.com/google/renameio/v2
 github.com/google/shlex
-github.com/godbus/dbus/v5
 crypto/tls
+github.com/godbus/dbus/v5
 charm.land/glamour/v2/internal/autolink
 charm.land/lipgloss/v2/table
 encoding/xml
-github.com/dlclark/regexp2/syntax
+github.com/dlclark/regexp2/v2/syntax
 html
-github.com/dlclark/regexp2
 embed
 github.com/aymerick/douceur/css
 github.com/gorilla/css/scanner
 github.com/aymerick/douceur/parser
 github.com/microcosm-cc/bluemonday/css
 github.com/zalando/go-keyring/secret_service
-github.com/alecthomas/chroma/v2
 github.com/zalando/go-keyring
 golang.org/x/net/html
 github.com/yuin/goldmark-emoji/definition
 github.com/yuin/goldmark/util
+github.com/dlclark/regexp2/v2/helpers
+github.com/dlclark/regexp2/v2
 github.com/yuin/goldmark/text
-github.com/alecthomas/chroma/v2/formatters/html
-github.com/alecthomas/chroma/v2/formatters/svg
-github.com/alecthomas/chroma/v2/formatters
-github.com/alecthomas/chroma/v2/lexers
+github.com/yuin/goldmark/ast
+github.com/microcosm-cc/bluemonday
 net/http/httptrace
 net/http/internal/httpcommon
-github.com/alecthomas/chroma/v2/styles
-github.com/microcosm-cc/bluemonday
-github.com/yuin/goldmark/ast
-net/http/internal/http2
 hash/fnv
+net/http/internal/http2
 gitlab.com/gitlab-org/cli/internal/browser
 gitlab.com/gitlab-org/cli/internal/run
 gitlab.com/gitlab-org/cli/internal/glinstance
 go.yaml.in/yaml/v3
 github.com/yuin/goldmark-emoji/ast
+github.com/alecthomas/chroma/v2
 github.com/yuin/goldmark/extension/ast
-github.com/alecthomas/chroma/v2/quick
 github.com/yuin/goldmark/renderer
 github.com/yuin/goldmark/parser
-charm.land/glamour/v2/ansi
-github.com/yuin/goldmark/renderer/html
-charm.land/glamour/v2/styles
-internal/sysinfo
+github.com/alecthomas/chroma/v2/formatters/html
+github.com/alecthomas/chroma/v2/formatters/svg
+github.com/alecthomas/chroma/v2/formatters
+github.com/alecthomas/chroma/v2/lexers
+github.com/alecthomas/chroma/v2/styles
 net/http
+github.com/yuin/goldmark/renderer/html
+internal/sysinfo
 github.com/yuin/goldmark
 runtime/trace
 github.com/yuin/goldmark-emoji
@@ -472,37 +481,47 @@ github.com/yuin/goldmark/extension
 testing
 github.com/MakeNowJust/heredoc/v2
 charm.land/bubbletea/v2
-charm.land/glamour/v2
+github.com/alecthomas/chroma/v2/quick
+charm.land/glamour/v2/ansi
 charm.land/bubbles/v2/key
 github.com/dustin/go-humanize
-charm.land/bubbles/v2/internal/memoization
-charm.land/bubbles/v2/filepicker
 charm.land/bubbles/v2/help
 charm.land/bubbles/v2/spinner
 charm.land/bubbles/v2/cursor
+charm.land/bubbles/v2/filepicker
+charm.land/bubbles/v2/internal/memoization
 charm.land/bubbles/v2/viewport
 github.com/atotto/clipboard
 charm.land/bubbles/v2/textinput
-charm.land/huh/v2/internal/accessibility
+charm.land/glamour/v2/styles
 charm.land/bubbles/v2/textarea
+charm.land/huh/v2/internal/accessibility
+charm.land/glamour/v2
 charm.land/huh/v2/internal/compat
 github.com/catppuccin/go
 github.com/charmbracelet/x/exp/strings
 github.com/mitchellh/hashstructure/v2
 github.com/mattn/go-isatty
-github.com/mattn/go-colorable
-golang.org/x/term
-github.com/fatih/color
+github.com/hashicorp/go-cleanhttp
+golang.org/x/oauth2/internal
 charm.land/huh/v2
-github.com/itchyny/timefmt-go
+github.com/mattn/go-colorable
+github.com/fatih/color
+github.com/hashicorp/go-retryablehttp
+golang.org/x/oauth2
+golang.org/x/term
+golang.org/x/oauth2/endpoints
+gitlab.com/gitlab-org/api/client-go/v3/gitlaboauth2
+gitlab.com/gitlab-org/api/client-go/v3
 github.com/briandowns/spinner
-github.com/mgutz/ansi
-github.com/itchyny/gojq
+github.com/itchyny/timefmt-go
 github.com/aymanbagabas/go-osc52/v2
 github.com/muesli/termenv
+github.com/itchyny/gojq
+net/http/httputil
+gitlab.com/gitlab-org/cli/internal/theme
 github.com/fsnotify/fsnotify/internal
 github.com/fsnotify/fsnotify
-gitlab.com/gitlab-org/cli/internal/theme
 github.com/go-viper/mapstructure/v2/internal/errors
 github.com/go-viper/mapstructure/v2
 github.com/sourcegraph/conc/panics
@@ -510,39 +529,31 @@ github.com/sourcegraph/conc
 github.com/sourcegraph/conc/pool
 github.com/spf13/afero/internal/common
 github.com/spf13/afero/mem
-github.com/hashicorp/go-cleanhttp
-github.com/hashicorp/go-retryablehttp
-golang.org/x/oauth2/internal
-net/http/httputil
 golang.org/x/text/runes
-golang.org/x/oauth2
-github.com/spf13/afero
-gitlab.com/gitlab-org/api/client-go/v3
-golang.org/x/oauth2/endpoints
-gitlab.com/gitlab-org/api/client-go/v3/gitlaboauth2
 github.com/spf13/cast/internal
+github.com/spf13/afero
 html/template
 github.com/sagikazarmark/locafero
-golang.org/x/text/encoding
 github.com/spf13/cast
+golang.org/x/text/encoding
 golang.org/x/text/encoding/internal
 golang.org/x/text/encoding/unicode
 github.com/subosito/gotenv
 github.com/spf13/viper/internal/encoding/json
 github.com/pelletier/go-toml/v2/internal/danger
+github.com/spf13/viper/internal/encoding/dotenv
 github.com/pelletier/go-toml/v2/unstable
 github.com/spf13/viper/internal/encoding/yaml
 github.com/stretchr/testify/assert/yaml
 github.com/stretchr/testify/internal/difflib
-github.com/spf13/viper/internal/encoding/dotenv
-github.com/pelletier/go-toml/v2/internal/tracker
 github.com/stretchr/testify/internal/spew
 internal/gate
-github.com/pelletier/go-toml/v2
 internal/nettest
+github.com/pelletier/go-toml/v2/internal/tracker
+github.com/pelletier/go-toml/v2
 net/http/internal/testcert
-github.com/hashicorp/errwrap
 net/http/httptest
+github.com/hashicorp/errwrap
 github.com/hashicorp/go-multierror
 gitlab.com/gitlab-org/cli/internal/text
 gitlab.com/gitlab-org/cli/internal/tableprinter
@@ -554,25 +565,25 @@ github.com/spf13/viper
 github.com/docker/docker-credential-helpers/credentials
 github.com/docker/docker-credential-helpers/client
 github.com/docker/cli/cli/config/credentials
-github.com/docker/cli/cli/config/memorystore
+github.com/stretchr/testify/require
 github.com/sirupsen/logrus
+github.com/docker/cli/cli/config/memorystore
 gitlab.com/gitlab-org/cli/internal/fsx
 github.com/google/uuid
-github.com/stretchr/testify/require
+github.com/docker/cli/cli/config/configfile
 gitlab.com/gitlab-org/cli/internal/commands/auth/generate/dpop
 golang.org/x/crypto/ed25519
 golang.org/x/crypto/chacha20
+github.com/docker/cli/cli/config
 golang.org/x/crypto/cryptobyte
-github.com/docker/cli/cli/config/configfile
+gitlab.com/gitlab-org/cli/internal/dockercredhelper
 golang.org/x/crypto/curve25519
 golang.org/x/crypto/internal/poly1305
-github.com/docker/cli/cli/config
 golang.org/x/crypto/blowfish
 archive/zip
-gitlab.com/gitlab-org/cli/internal/dockercredhelper
 golang.org/x/crypto/ssh/internal/bcrypt_pbkdf
-golang.org/x/crypto/ssh
 github.com/gdamore/encoding
+golang.org/x/crypto/ssh
 github.com/gdamore/tcell/v2/terminfo
 github.com/gdamore/tcell/v2/terminfo/a/ansi
 github.com/gdamore/tcell/v2/terminfo/t/tmux
@@ -605,8 +616,8 @@ github.com/gdamore/tcell/v2/terminfo/x/xterm_ghostty
 github.com/gdamore/tcell/v2/terminfo/x/xterm_kitty
 github.com/lunixbochs/vtclean
 github.com/gdamore/tcell/v2/terminfo/extended
-gitlab.com/gitlab-org/cli/internal/diff
 github.com/gdamore/tcell/v2
+gitlab.com/gitlab-org/cli/internal/diff
 github.com/gosuri/uilive
 github.com/avast/retry-go/v5
 gopkg.in/inf.v0
@@ -634,106 +645,76 @@ k8s.io/utils/internal/third_party/forked/golang/net
 k8s.io/klog/v2
 k8s.io/utils/net
 go/token
-go/scanner
-go/ast
-k8s.io/apimachinery/pkg/util/validation
 go/doc/comment
+k8s.io/apimachinery/pkg/util/validation
+go/scanner
 k8s.io/apimachinery/pkg/labels
+go/ast
 internal/lazyregexp
 go/build/constraint
 k8s.io/apimachinery/pkg/api/operation
 k8s.io/apimachinery/pkg/conversion/queryparams
 k8s.io/apimachinery/pkg/runtime/schema
-go/doc
-go/parser
 k8s.io/apimachinery/pkg/util/json
 k8s.io/apimachinery/pkg/util/naming
 k8s.io/klog/v2/internal/verbosity
-k8s.io/klog/v2/textlogger
-k8s.io/apimachinery/pkg/util/runtime
 k8s.io/kube-openapi/pkg/util
+k8s.io/klog/v2/textlogger
 github.com/modern-go/concurrent
-go.yaml.in/yaml/v2
+k8s.io/apimachinery/pkg/util/runtime
 github.com/modern-go/reflect2
+go/doc
+go/parser
+go.yaml.in/yaml/v2
+github.com/json-iterator/go
 sigs.k8s.io/randfill/bytesource
 sigs.k8s.io/randfill
-k8s.io/apimachinery/pkg/util/intstr
-github.com/json-iterator/go
-golang.org/x/text/unicode/bidi
-golang.org/x/text/secure/bidirule
-golang.org/x/net/idna
-golang.org/x/net/http2/hpack
-golang.org/x/net/internal/httpsfv
-k8s.io/utils/ptr
-k8s.io/apimachinery/pkg/util/framer
-golang.org/x/net/http/httpguts
-sigs.k8s.io/yaml
-golang.org/x/net/internal/httpcommon
-k8s.io/apimachinery/pkg/util/yaml
-golang.org/x/net/http2
-k8s.io/client-go/tools/metrics
-k8s.io/utils/clock
-k8s.io/apimachinery/pkg/util/wait
-k8s.io/apimachinery/pkg/version
-k8s.io/apimachinery/pkg/util/version
-k8s.io/client-go/features
-k8s.io/client-go/util/connrotation
-sigs.k8s.io/structured-merge-diff/v6/value
-container/heap
-k8s.io/client-go/util/workqueue
-k8s.io/apimachinery/pkg/util/net
 gitlab.com/gitlab-org/cli/internal/utils
+k8s.io/apimachinery/pkg/util/intstr
 gitlab.com/gitlab-org/cli/internal/dbg
 gitlab.com/gitlab-org/cli/internal/config
 gitlab.com/gitlab-org/cli/internal/iostreams
-gitlab.com/gitlab-org/cli/internal/api/artifactregistry
-k8s.io/client-go/transport
-k8s.io/apimachinery/pkg/runtime
+golang.org/x/text/unicode/bidi
 gitlab.com/gitlab-org/cli/internal/git
+golang.org/x/text/secure/bidirule
+golang.org/x/net/idna
+sigs.k8s.io/structured-merge-diff/v6/value
 gitlab.com/gitlab-org/cli/internal/oauth2
-gitlab.com/gitlab-org/cli/internal/api
 gitlab.com/gitlab-org/cli/internal/upload
+gitlab.com/gitlab-org/cli/internal/api
 gitlab.com/gitlab-org/cli/internal/commands/auth/authutils
-github.com/davecgh/go-spew/spew
-github.com/munnerz/goautoneg
-k8s.io/client-go/pkg/version
-k8s.io/client-go/util/keyutil
-k8s.io/apimachinery/pkg/watch
+golang.org/x/net/http/httpguts
+golang.org/x/net/http2/hpack
+golang.org/x/net/internal/httpsfv
+k8s.io/utils/ptr
+golang.org/x/net/internal/httpcommon
+k8s.io/apimachinery/pkg/runtime
+k8s.io/apimachinery/pkg/util/framer
 gitlab.com/gitlab-org/cli/internal/glrepo
-k8s.io/apimachinery/pkg/runtime/serializer/recognizer
-k8s.io/client-go/tools/clientcmd/api
-k8s.io/utils/dump
-k8s.io/apimachinery/pkg/runtime/serializer/streaming
-k8s.io/apimachinery/pkg/apis/meta/v1
-k8s.io/client-go/util/cert
-k8s.io/client-go/util/flowcontrol
-k8s.io/client-go/tools/clientcmd/api/v1
-k8s.io/client-go/util/homedir
-github.com/coder/websocket/internal/bpool
-github.com/coder/websocket/internal/errd
-github.com/coder/websocket
+gitlab.com/gitlab-org/cli/internal/api/artifactregistry
+golang.org/x/net/http2
+sigs.k8s.io/yaml
 gitlab.com/gitlab-org/cli/internal/cmdutils
 gitlab.com/gitlab-org/cli/internal/commands/ci/ciutils
-github.com/pkg/browser
-oss.terrastruct.com/d2/lib/geo
-golang.org/x/xerrors
-oss.terrastruct.com/util-go/xdefer
-oss.terrastruct.com/d2/lib/label
-oss.terrastruct.com/util-go/go2
-oss.terrastruct.com/d2/lib/font
-oss.terrastruct.com/d2/d2ast
+k8s.io/apimachinery/pkg/util/net
+k8s.io/apimachinery/pkg/runtime/serializer/recognizer
+k8s.io/apimachinery/pkg/util/yaml
+k8s.io/client-go/tools/clientcmd/api
+k8s.io/client-go/tools/metrics
+k8s.io/utils/clock
+k8s.io/apimachinery/pkg/version
 gitlab.com/gitlab-org/cli/internal/commands/alias/delete
 gitlab.com/gitlab-org/cli/internal/commands/alias/list
 gitlab.com/gitlab-org/cli/internal/commands/alias/set
 gitlab.com/gitlab-org/cli/internal/commands/api
 gitlab.com/gitlab-org/cli/internal/commands/artifactregistry/gettoken
-gitlab.com/gitlab-org/cli/internal/commands/alias
 gitlab.com/gitlab-org/cli/internal/commands/artifactregistry/login
+gitlab.com/gitlab-org/cli/internal/commands/alias
 gitlab.com/gitlab-org/cli/internal/commands/artifactregistry/status
 gitlab.com/gitlab-org/cli/internal/commands/attestation/verify
 gitlab.com/gitlab-org/cli/internal/commands/auth/credentialhelper
-gitlab.com/gitlab-org/cli/internal/commands/artifactregistry
 gitlab.com/gitlab-org/cli/internal/commands/auth/docker
+gitlab.com/gitlab-org/cli/internal/commands/artifactregistry
 gitlab.com/gitlab-org/cli/internal/commands/attestation
 gitlab.com/gitlab-org/cli/internal/commands/auth/generate
 gitlab.com/gitlab-org/cli/internal/commands/auth/login
@@ -748,8 +729,8 @@ gitlab.com/gitlab-org/cli/internal/commands/ci/artifact
 gitlab.com/gitlab-org/cli/internal/commands/ci/cancel/pipeline
 gitlab.com/gitlab-org/cli/internal/commands/ci/config/compile
 gitlab.com/gitlab-org/cli/internal/commands/ci/delete
-gitlab.com/gitlab-org/cli/internal/commands/ci/cancel
 gitlab.com/gitlab-org/cli/internal/commands/ci/get
+gitlab.com/gitlab-org/cli/internal/commands/ci/cancel
 gitlab.com/gitlab-org/cli/internal/commands/ci/config
 gitlab.com/gitlab-org/cli/internal/commands/ci/lint
 gitlab.com/gitlab-org/cli/internal/commands/ci/trace
@@ -757,128 +738,226 @@ gitlab.com/gitlab-org/cli/internal/commands/ci/view
 gitlab.com/gitlab-org/cli/internal/commands/ci/list
 gitlab.com/gitlab-org/cli/internal/commands/ci/retry
 gitlab.com/gitlab-org/cli/internal/commands/mr/mrutils
-gitlab.com/gitlab-org/cli/internal/commands/ci/run_trig
 gitlab.com/gitlab-org/cli/internal/commands/ci/legacyci
+gitlab.com/gitlab-org/cli/internal/commands/ci/run_trig
 gitlab.com/gitlab-org/cli/internal/commands/ci/status
-gitlab.com/gitlab-org/cli/internal/commands/ci/trigger
 gitlab.com/gitlab-org/cli/internal/commands/ci/run
+gitlab.com/gitlab-org/cli/internal/commands/ci/trigger
 gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/bootstrap
 gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/check_manifest_usage
 gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/agentutils
 gitlab.com/gitlab-org/cli/internal/commands/ci
-k8s.io/client-go/pkg/apis/clientauthentication
-k8s.io/client-go/pkg/apis/clientauthentication/v1
+k8s.io/apimachinery/pkg/watch
 gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/list
 gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/token/list
-gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/get_token
 gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/token/revoke
+k8s.io/apimachinery/pkg/apis/meta/v1
 gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/token_cache/clear
 gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/token_cache/list
 gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/token
-k8s.io/apimachinery/pkg/api/meta
-k8s.io/apimachinery/pkg/apis/meta/v1/unstructured
+k8s.io/apimachinery/pkg/util/wait
 gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/token_cache
+k8s.io/apimachinery/pkg/util/version
+k8s.io/client-go/features
+k8s.io/client-go/util/connrotation
+container/heap
+github.com/davecgh/go-spew/spew
+k8s.io/client-go/util/workqueue
+github.com/munnerz/goautoneg
+k8s.io/apimachinery/pkg/runtime/serializer/streaming
+k8s.io/client-go/pkg/version
+k8s.io/utils/dump
+k8s.io/client-go/util/keyutil
+k8s.io/client-go/util/flowcontrol
+k8s.io/client-go/transport
+k8s.io/client-go/util/cert
+k8s.io/client-go/tools/clientcmd/api/v1
+k8s.io/client-go/util/homedir
+github.com/coder/websocket/internal/bpool
+github.com/coder/websocket/internal/errd
+github.com/coder/websocket
+github.com/d2lang/d2/lib/geo
+github.com/d2lang/d2/lib/label
+golang.org/x/xerrors
+github.com/d2lang/util-go/xdefer
+github.com/d2lang/util-go/go2
+github.com/andybalholm/brotli/matchfinder
+github.com/d2lang/d2/d2ast
+k8s.io/client-go/pkg/apis/clientauthentication
+k8s.io/apimachinery/pkg/api/meta
+k8s.io/client-go/pkg/apis/clientauthentication/v1
+gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/get_token
+k8s.io/apimachinery/pkg/apis/meta/v1/unstructured
 k8s.io/client-go/pkg/apis/clientauthentication/v1beta1
 k8s.io/client-go/pkg/apis/clientauthentication/install
 k8s.io/apimachinery/pkg/api/errors
-k8s.io/apimachinery/pkg/runtime/serializer/versioning
-k8s.io/apimachinery/pkg/runtime/serializer/cbor
-k8s.io/apimachinery/pkg/runtime/serializer/json
 k8s.io/apimachinery/pkg/runtime/serializer/protobuf
 k8s.io/client-go/rest/watch
-oss.terrastruct.com/d2/d2format
-oss.terrastruct.com/d2/d2parser
-oss.terrastruct.com/d2/lib/syncmap
+k8s.io/apimachinery/pkg/runtime/serializer/json
+k8s.io/apimachinery/pkg/runtime/serializer/versioning
+k8s.io/apimachinery/pkg/runtime/serializer/cbor
+github.com/d2lang/d2/d2format
+github.com/d2lang/d2/d2parser
 k8s.io/apimachinery/pkg/runtime/serializer
 k8s.io/client-go/tools/clientcmd/api/latest
-oss.terrastruct.com/d2/d2renderers/d2fonts
-github.com/go-sourcemap/sourcemap/internal/base64vlq
+github.com/andybalholm/brotli
+github.com/go-text/typesetting/font/opentype
+github.com/go-text/typesetting/language
 k8s.io/client-go/plugin/pkg/client/auth/exec
-github.com/go-sourcemap/sourcemap
-github.com/dop251/goja/file
-github.com/dop251/goja/token
-github.com/dop251/goja/unistring
-github.com/dop251/goja/ftoa/internal/fast
-github.com/dop251/goja/ast
-golang.org/x/text/unicode/rangetable
-github.com/dop251/goja/ftoa
-github.com/google/pprof/profile
+github.com/go-text/typesetting/font/cff/interpreter
+github.com/go-text/typesetting/font/opentype/tables
+golang.org/x/image/ccitt
+golang.org/x/image/tiff/lzw
+golang.org/x/image/tiff
 k8s.io/client-go/rest
-golang.org/x/text/internal/colltab
-github.com/dop251/goja/parser
-golang.org/x/text/collate
-github.com/mazznoer/csscolorparser
-oss.terrastruct.com/d2/lib/svg
+image/internal/imageutil
+image/jpeg
+github.com/go-text/typesetting/internal/unicodedata
 k8s.io/client-go/tools/auth
 k8s.io/client-go/tools/clientcmd
-oss.terrastruct.com/d2/lib/shape
-oss.terrastruct.com/d2/lib/color
-github.com/andybalholm/cascadia
-gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/update_kubeconfig
-github.com/PuerkitoBio/goquery
+github.com/go-text/typesetting/segmenter
 golang.org/x/image/math/fixed
-image/internal/imageutil
 image/draw
-github.com/golang/freetype/raster
-gitlab.com/gitlab-org/cli/internal/commands/cluster/agent
 golang.org/x/image/font
-github.com/golang/freetype/truetype
-oss.terrastruct.com/d2/lib/log
-oss.terrastruct.com/d2/lib/version
-oss.terrastruct.com/util-go/xrand
+gitlab.com/gitlab-org/cli/internal/commands/cluster/agent/update_kubeconfig
+golang.org/x/text/encoding/charmap
+gitlab.com/gitlab-org/cli/internal/commands/cluster/agent
+golang.org/x/image/font/sfnt
+github.com/go-text/typesetting/font/cff
+golang.org/x/sys/cpu
+github.com/go-text/typesetting/font
+golang.org/x/image/vector
+github.com/d2lang/d2/d2renderers/d2scene
+golang.org/x/image/font/opentype
+github.com/d2lang/d2/lib/font
+github.com/d2lang/d2/lib/syncmap
+github.com/d2lang/mathjax-go/internal/mml
+github.com/d2lang/mathjax-go/internal/jscompat
+github.com/d2lang/mathjax-go/internal/mhchem
+github.com/d2lang/mathjax-go/internal/pipeline
+github.com/d2lang/mathjax-go/internal/layout
+github.com/d2lang/mathjax-go/internal/tex/extensions/color
+github.com/d2lang/mathjax-go/internal/svg
+github.com/mazznoer/csscolorparser
+github.com/go-text/typesetting/harfbuzz
+github.com/d2lang/d2/lib/color
+github.com/d2lang/d2/lib/svg
+github.com/d2lang/mathjax-go/internal/tex
+github.com/d2lang/d2/lib/shape
+github.com/andybalholm/cascadia
+github.com/d2lang/dagro
+github.com/PuerkitoBio/goquery
+github.com/go-text/typesetting/di
+github.com/go-text/typesetting/shaping
+github.com/d2lang/d2/internal/testlog
+github.com/d2lang/d2/lib/log
+github.com/d2lang/d2/d2renderers/internal/fontface
+github.com/d2lang/d2/lib/compression
+github.com/d2lang/rough-go
+github.com/d2lang/d2/d2renderers/internal/patternassets
+github.com/d2lang/d2/lib/version
+github.com/d2lang/util-go/xrand
+github.com/pkg/browser
+github.com/d2lang/d2/d2renderers/internal/fontfallback
 gitlab.com/gitlab-org/cli/internal/commands/completion
+github.com/d2lang/d2/d2renderers/d2fonts
+github.com/d2lang/mathjax-go
 gitlab.com/gitlab-org/cli/internal/commands/config/edit
-gitlab.com/gitlab-org/cli/internal/commands/config/get
-gitlab.com/gitlab-org/cli/internal/commands/config/path
-oss.terrastruct.com/d2/lib/textmeasure
-gitlab.com/gitlab-org/cli/internal/commands/config/set
+github.com/d2lang/d2/d2renderers/d2latex
 gitlab.com/gitlab-org/cli/internal/config/confighelp
+gitlab.com/gitlab-org/cli/internal/commands/config/path
+gitlab.com/gitlab-org/cli/internal/commands/config/get
+gitlab.com/gitlab-org/cli/internal/commands/config/set
 gitlab.com/gitlab-org/cli/internal/commands/container_registry/registryutils
-gitlab.com/gitlab-org/cli/internal/commands/config
-oss.terrastruct.com/d2/d2target
-gitlab.com/gitlab-org/cli/internal/commands/container_registry/repository/delete
-oss.terrastruct.com/d2/d2themes
-gitlab.com/gitlab-org/cli/internal/commands/container_registry/repository/list
-oss.terrastruct.com/d2/d2themes/d2themescatalog
-gitlab.com/gitlab-org/cli/internal/commands/container_registry/repository/view
-oss.terrastruct.com/d2/d2ir
-github.com/dop251/goja
-gitlab.com/gitlab-org/cli/internal/commands/container_registry/tag/delete
-gitlab.com/gitlab-org/cli/internal/commands/container_registry/repository
-gitlab.com/gitlab-org/cli/internal/commands/container_registry/tag/list
-gitlab.com/gitlab-org/cli/internal/commands/container_registry/tag/view
+github.com/d2lang/d2/lib/textmeasure
 gitlab.com/gitlab-org/cli/internal/commands/deploy-key/add
-gitlab.com/gitlab-org/cli/internal/commands/deploy-key/delete
+gitlab.com/gitlab-org/cli/internal/commands/container_registry/repository/delete
+gitlab.com/gitlab-org/cli/internal/commands/config
+gitlab.com/gitlab-org/cli/internal/commands/container_registry/repository/list
+gitlab.com/gitlab-org/cli/internal/commands/container_registry/repository/view
+gitlab.com/gitlab-org/cli/internal/commands/container_registry/tag/delete
+github.com/d2lang/d2/d2target
+gitlab.com/gitlab-org/cli/internal/commands/container_registry/tag/list
+gitlab.com/gitlab-org/cli/internal/commands/container_registry/repository
+gitlab.com/gitlab-org/cli/internal/commands/container_registry/tag/view
+github.com/d2lang/d2/d2themes
+github.com/d2lang/d2/d2themes/d2themescatalog
+github.com/d2lang/d2/d2graph
+github.com/d2lang/d2/d2ir
+github.com/d2lang/d2/d2renderers/d2sketch
 gitlab.com/gitlab-org/cli/internal/commands/container_registry/tag
-gitlab.com/gitlab-org/cli/internal/commands/deploy-key/get
-gitlab.com/gitlab-org/cli/internal/commands/deploy-key/list
+gitlab.com/gitlab-org/cli/internal/commands/deploy-key/delete
 gitlab.com/gitlab-org/cli/internal/commands/container_registry
+github.com/d2lang/d2/d2layouts/d2dagrelayout
+github.com/d2lang/d2/d2exporter
+github.com/d2lang/d2/d2layouts/d2grid
+github.com/d2lang/d2/d2layouts/d2near
+github.com/d2lang/d2/d2layouts/d2sequence
+github.com/d2lang/d2/d2renderers/d2svg
+gitlab.com/gitlab-org/cli/internal/commands/deploy-key/get
+github.com/d2lang/d2/d2compiler
+github.com/d2lang/d2/d2layouts
+gitlab.com/gitlab-org/cli/internal/commands/deploy-key/list
+gitlab.com/gitlab-org/cli/internal/commands/deploy-token/display
+gitlab.com/gitlab-org/cli/internal/commands/deploy-token/create
+github.com/d2lang/d2/d2oracle
+gitlab.com/gitlab-org/cli/internal/commands/deploy-key
+gitlab.com/gitlab-org/cli/internal/commands/deploy-token/get
+github.com/d2lang/d2/d2lib
+gitlab.com/gitlab-org/cli/internal/commands/deploy-token/list
 gitlab.com/gitlab-org/cli/internal/dependencyfirewall/fsx
 gitlab.com/gitlab-org/cli/internal/dependencyfirewall/verdict
 gitlab.com/gitlab-org/cli/internal/dependencyfirewall/cilog
+github.com/aofei/backoff
+golang.org/x/mod/internal/lazyregexp
+golang.org/x/mod/semver
+golang.org/x/mod/sumdb/note
+golang.org/x/mod/module
+golang.org/x/mod/sumdb/tlog
+gitlab.com/gitlab-org/cli/internal/commands/deploy-token
+gitlab.com/gitlab-org/cli/internal/commands/cluster/graph
+golang.org/x/mod/modfile
+golang.org/x/mod/sumdb
+golang.org/x/mod/sumdb/dirhash
+go/version
 github.com/package-url/packageurl-go
-gitlab.com/gitlab-org/cli/internal/commands/deploy-key
 gitlab.com/gitlab-org/cli/internal/dependencyfirewall/summary
-gitlab.com/gitlab-org/cli/internal/dependencyfirewall/purl
-gitlab.com/gitlab-org/cli/internal/dependencyfirewall/policy
+golang.org/x/mod/zip
 crypto/internal/fips140/pbkdf2
+gitlab.com/gitlab-org/cli/internal/commands/cluster
+gitlab.com/gitlab-org/cli/internal/dependencyfirewall/purl
 crypto/pbkdf2
+gitlab.com/gitlab-org/cli/internal/dependencyfirewall/policy
 golang.org/x/crypto/pbkdf2
 software.sslmate.com/src/go-pkcs12/internal/rc2
-gitlab.com/gitlab-org/cli/internal/commands/df/cisummary
+github.com/goproxy/goproxy
 software.sslmate.com/src/go-pkcs12
 gitlab.com/gitlab-org/cli/internal/dependencyfirewall/proxy
+gitlab.com/gitlab-org/cli/internal/commands/df/cisummary
 gitlab.com/gitlab-org/cli/internal/commands/df/package
 gitlab.com/gitlab-org/cli/internal/commands/duo/ask
-gitlab.com/gitlab-org/cli/internal/dependencyfirewall/pm
 archive/tar
 github.com/hashicorp/go-version
-golang.org/x/sys/cpu
-gitlab.com/gitlab-org/cli/internal/commands/df/dfcmd
+gitlab.com/gitlab-org/cli/internal/dependencyfirewall/gomodproxy
+gitlab.com/gitlab-org/cli/internal/commands/govern/internal/claudehooks
+gitlab.com/gitlab-org/cli/internal/commands/govern/internal/opencodeplugin
+gitlab.com/gitlab-org/cli/internal/commands/version
 github.com/denisbrodbeck/machineid
 gitlab.com/gitlab-org/cli/internal/commands/govern/internal/gaig
+gitlab.com/gitlab-org/cli/internal/dependencyfirewall/pm
+gitlab.com/gitlab-org/cli/internal/binarymgr
+gitlab.com/gitlab-org/cli/internal/commands/gpg-key/add
+gitlab.com/gitlab-org/cli/internal/commands/govern/internal/fallbacksync
+gitlab.com/gitlab-org/cli/internal/commands/govern/audit/sync
+gitlab.com/gitlab-org/cli/internal/binarymgr/binaries
+gitlab.com/gitlab-org/cli/internal/commands/govern/doctor
+gitlab.com/gitlab-org/cli/internal/commands/df/dfcmd
+gitlab.com/gitlab-org/cli/internal/commands/duo/cli/update
+gitlab.com/gitlab-org/cli/internal/commands/govern/setup
 gitlab.com/gitlab-org/cli/internal/commands/df/bundle
+gitlab.com/gitlab-org/cli/internal/commands/df/cargo
 gitlab.com/gitlab-org/cli/internal/commands/df/gem
+gitlab.com/gitlab-org/cli/internal/commands/df/golang
 gitlab.com/gitlab-org/cli/internal/commands/df/gradle
 gitlab.com/gitlab-org/cli/internal/commands/df/maven
 gitlab.com/gitlab-org/cli/internal/commands/df/npm
@@ -889,46 +968,40 @@ gitlab.com/gitlab-org/cli/internal/commands/df/poetry
 gitlab.com/gitlab-org/cli/internal/commands/df/twine
 gitlab.com/gitlab-org/cli/internal/commands/df/uv
 gitlab.com/gitlab-org/cli/internal/commands/df/yarn
-gitlab.com/gitlab-org/cli/internal/binarymgr
-gitlab.com/gitlab-org/cli/internal/commands/govern/audit/sync
-gitlab.com/gitlab-org/cli/internal/commands/df
-gitlab.com/gitlab-org/cli/internal/commands/govern/internal/claudehooks
-gitlab.com/gitlab-org/cli/internal/commands/govern/audit
-gitlab.com/gitlab-org/cli/internal/commands/govern/doctor
 gitlab.com/gitlab-org/cli/internal/commands/duo/cli
-gitlab.com/gitlab-org/cli/internal/commands/govern/setup
-gitlab.com/gitlab-org/cli/internal/commands/duo
-gitlab.com/gitlab-org/cli/internal/commands/gpg-key/add
-gitlab.com/gitlab-org/cli/internal/commands/govern
+gitlab.com/gitlab-org/cli/internal/commands/govern/audit
 gitlab.com/gitlab-org/cli/internal/commands/gpg-key/delete
+gitlab.com/gitlab-org/cli/internal/commands/df
+gitlab.com/gitlab-org/cli/internal/commands/govern
 gitlab.com/gitlab-org/cli/internal/commands/gpg-key/get
+gitlab.com/gitlab-org/cli/internal/commands/duo
 gitlab.com/gitlab-org/cli/internal/commands/gpg-key/list
 gitlab.com/gitlab-org/cli/internal/commands/help
 gitlab.com/gitlab-org/cli/internal/commands/issuable
 gitlab.com/gitlab-org/cli/internal/commands/issue/issueutils
-gitlab.com/gitlab-org/cli/internal/commands/gpg-key
 gitlab.com/gitlab-org/cli/internal/commands/issue/board/create
+gitlab.com/gitlab-org/cli/internal/commands/issue/board/view
+gitlab.com/gitlab-org/cli/internal/commands/gpg-key
+gitlab.com/gitlab-org/cli/internal/recovery
 gitlab.com/gitlab-org/cli/internal/commands/issuable/close
 gitlab.com/gitlab-org/cli/internal/commands/issuable/list
 gitlab.com/gitlab-org/cli/internal/commands/issuable/note
 gitlab.com/gitlab-org/cli/internal/commands/incident/close
-gitlab.com/gitlab-org/cli/internal/commands/incident/note
 gitlab.com/gitlab-org/cli/internal/commands/issuable/reopen
 gitlab.com/gitlab-org/cli/internal/commands/incident/list
+gitlab.com/gitlab-org/cli/internal/commands/incident/note
 gitlab.com/gitlab-org/cli/internal/commands/issuable/subscribe
 gitlab.com/gitlab-org/cli/internal/commands/incident/reopen
 gitlab.com/gitlab-org/cli/internal/commands/issuable/unsubscribe
-gitlab.com/gitlab-org/cli/internal/commands/incident/subscribe
 gitlab.com/gitlab-org/cli/internal/commands/issuable/view
-gitlab.com/gitlab-org/cli/internal/commands/issue/board/view
+gitlab.com/gitlab-org/cli/internal/commands/issue/board
+gitlab.com/gitlab-org/cli/internal/commands/incident/subscribe
 gitlab.com/gitlab-org/cli/internal/commands/incident/unsubscribe
 gitlab.com/gitlab-org/cli/internal/commands/incident/view
 gitlab.com/gitlab-org/cli/internal/commands/issue/close
-gitlab.com/gitlab-org/cli/internal/commands/incident
-gitlab.com/gitlab-org/cli/internal/recovery
 gitlab.com/gitlab-org/cli/internal/commands/issue/create
-gitlab.com/gitlab-org/cli/internal/commands/issue/board
 gitlab.com/gitlab-org/cli/internal/commands/issue/delete
+gitlab.com/gitlab-org/cli/internal/commands/incident
 gitlab.com/gitlab-org/cli/internal/commands/issue/list
 gitlab.com/gitlab-org/cli/internal/commands/issue/note
 gitlab.com/gitlab-org/cli/internal/commands/issue/reopen
@@ -938,62 +1011,46 @@ gitlab.com/gitlab-org/cli/internal/commands/issue/update
 gitlab.com/gitlab-org/cli/internal/commands/issue/view
 gitlab.com/gitlab-org/cli/internal/commands/iteration/list
 gitlab.com/gitlab-org/cli/internal/commands/job
-gitlab.com/gitlab-org/cli/internal/commands/iteration
-gitlab.com/gitlab-org/cli/internal/commands/issue
 gitlab.com/gitlab-org/cli/internal/commands/label/create
+gitlab.com/gitlab-org/cli/internal/commands/issue
 gitlab.com/gitlab-org/cli/internal/commands/label/delete
+gitlab.com/gitlab-org/cli/internal/commands/iteration
 gitlab.com/gitlab-org/cli/internal/commands/label/edit
 gitlab.com/gitlab-org/cli/internal/commands/label/get
 gitlab.com/gitlab-org/cli/internal/commands/label/list
-oss.terrastruct.com/d2/lib/jsrunner
 encoding/gob
-oss.terrastruct.com/d2/d2renderers/d2latex
-oss.terrastruct.com/d2/d2renderers/d2sketch
-gitlab.com/gitlab-org/cli/internal/commands/label
-oss.terrastruct.com/d2/d2graph
 github.com/google/jsonschema-go/jsonschema
 github.com/modelcontextprotocol/go-sdk/internal/authutil
+gitlab.com/gitlab-org/cli/internal/commands/label
 github.com/modelcontextprotocol/go-sdk/internal/util
 github.com/segmentio/asm/cpu/arm
 github.com/segmentio/asm/cpu/arm64
 github.com/segmentio/asm/cpu/x86
 github.com/segmentio/asm/cpu
 github.com/segmentio/asm/base64
-oss.terrastruct.com/d2/d2layouts/d2dagrelayout
-oss.terrastruct.com/d2/d2compiler
-oss.terrastruct.com/d2/d2exporter
-oss.terrastruct.com/d2/d2layouts/d2grid
-oss.terrastruct.com/d2/d2layouts/d2near
-oss.terrastruct.com/d2/d2layouts/d2sequence
-oss.terrastruct.com/d2/d2renderers/d2svg
-oss.terrastruct.com/d2/d2oracle
 github.com/segmentio/asm/keyset
 github.com/segmentio/asm/ascii
-oss.terrastruct.com/d2/d2layouts
-github.com/segmentio/encoding/ascii
 github.com/segmentio/encoding/iso8601
-github.com/segmentio/encoding/json
+github.com/segmentio/encoding/ascii
 github.com/modelcontextprotocol/go-sdk/internal/mcpgodebug
+github.com/segmentio/encoding/json
 github.com/modelcontextprotocol/go-sdk/internal/xcontext
 github.com/yosida95/uritemplate/v3
 gitlab.com/gitlab-org/cli/internal/commands/milestone/create
-oss.terrastruct.com/d2/d2lib
 gitlab.com/gitlab-org/cli/internal/commands/milestone/delete
-gitlab.com/gitlab-org/cli/internal/commands/cluster/graph
 gitlab.com/gitlab-org/cli/internal/commands/milestone/edit
 gitlab.com/gitlab-org/cli/internal/commands/milestone/get
+gitlab.com/gitlab-org/cli/internal/commands/milestone/list
+gitlab.com/gitlab-org/cli/internal/commands/mr/approve
 github.com/modelcontextprotocol/go-sdk/internal/json
 github.com/modelcontextprotocol/go-sdk/oauthex
 github.com/modelcontextprotocol/go-sdk/internal/jsonrpc2
-github.com/modelcontextprotocol/go-sdk/auth
-gitlab.com/gitlab-org/cli/internal/commands/milestone/list
-gitlab.com/gitlab-org/cli/internal/commands/cluster
-github.com/modelcontextprotocol/go-sdk/jsonrpc
-gitlab.com/gitlab-org/cli/internal/commands/mr/approve
-github.com/modelcontextprotocol/go-sdk/mcp
 gitlab.com/gitlab-org/cli/internal/commands/milestone
+github.com/modelcontextprotocol/go-sdk/jsonrpc
 gitlab.com/gitlab-org/cli/internal/commands/mr/approvers
 gitlab.com/gitlab-org/cli/internal/commands/mr/checkout
+github.com/modelcontextprotocol/go-sdk/auth
+github.com/modelcontextprotocol/go-sdk/mcp
 gitlab.com/gitlab-org/cli/internal/commands/mr/close
 gitlab.com/gitlab-org/cli/internal/commands/mr/create
 gitlab.com/gitlab-org/cli/internal/commands/mr/delete
@@ -1002,31 +1059,39 @@ gitlab.com/gitlab-org/cli/internal/commands/mr/for
 gitlab.com/gitlab-org/cli/internal/commands/mr/issues
 gitlab.com/gitlab-org/cli/internal/commands/mr/list
 gitlab.com/gitlab-org/cli/internal/commands/mr/merge
-gitlab.com/gitlab-org/cli/internal/commands/mr/note
+gitlab.com/gitlab-org/cli/internal/commands/mr/note/draft/create
+gitlab.com/gitlab-org/cli/internal/commands/mr/note/draft/delete
+gitlab.com/gitlab-org/cli/internal/commands/mr/note/draft/list
+gitlab.com/gitlab-org/cli/internal/commands/mr/note/draft/publish
+gitlab.com/gitlab-org/cli/internal/commands/mr/note/draft/update
 gitlab.com/gitlab-org/cli/internal/commands/mr/rebase
 gitlab.com/gitlab-org/cli/internal/commands/mr/reopen
+gitlab.com/gitlab-org/cli/internal/commands/mr/note/draft
 gitlab.com/gitlab-org/cli/internal/commands/mr/revoke
+gitlab.com/gitlab-org/cli/internal/commands/mr/note
 gitlab.com/gitlab-org/cli/internal/commands/mr/subscribe
 gitlab.com/gitlab-org/cli/internal/commands/mr/todo
 gitlab.com/gitlab-org/cli/internal/commands/mr/unsubscribe
+gitlab.com/gitlab-org/cli/internal/commands/mcp/serve
 gitlab.com/gitlab-org/cli/internal/commands/mr/update
 gitlab.com/gitlab-org/cli/internal/commands/mr/view
 gitlab.com/gitlab-org/cli/internal/commands/opentofu/init
 gitlab.com/gitlab-org/cli/internal/commands/opentofu/state/delete
 gitlab.com/gitlab-org/cli/internal/commands/mr
 gitlab.com/gitlab-org/cli/internal/commands/opentofu/state/download
+gitlab.com/gitlab-org/cli/internal/commands/mcp
 gitlab.com/gitlab-org/cli/internal/commands/opentofu/state/list
-gitlab.com/gitlab-org/cli/internal/commands/mcp/serve
 gitlab.com/gitlab-org/cli/internal/commands/opentofu/state/lock
 gitlab.com/gitlab-org/cli/internal/commands/opentofu/state/unlock
-gitlab.com/gitlab-org/cli/internal/commands/orbit
-gitlab.com/gitlab-org/cli/internal/commands/packages/delete
-gitlab.com/gitlab-org/cli/internal/commands/opentofu/state
-gitlab.com/gitlab-org/cli/internal/commands/packages/download
-gitlab.com/gitlab-org/cli/internal/commands/mcp
-gitlab.com/gitlab-org/cli/internal/commands/packages/list
-gitlab.com/gitlab-org/cli/internal/commands/opentofu
+gitlab.com/gitlab-org/cli/internal/commands/orbit/update
+gitlab.com/gitlab-org/cli/internal/commands/packages/helpers
 gitlab.com/gitlab-org/cli/internal/commands/packages/upload
+gitlab.com/gitlab-org/cli/internal/commands/opentofu/state
+gitlab.com/gitlab-org/cli/internal/commands/packages/delete
+gitlab.com/gitlab-org/cli/internal/commands/orbit
+gitlab.com/gitlab-org/cli/internal/commands/packages/download
+gitlab.com/gitlab-org/cli/internal/commands/opentofu
+gitlab.com/gitlab-org/cli/internal/commands/packages/list
 gitlab.com/gitlab-org/cli/internal/commands/project/archive
 gitlab.com/gitlab-org/cli/internal/commands/project/clone
 gitlab.com/gitlab-org/cli/internal/commands/project/contributors
@@ -1043,27 +1108,27 @@ gitlab.com/gitlab-org/cli/internal/commands/project/publish/catalog
 gitlab.com/gitlab-org/cli/internal/commands/project/members
 gitlab.com/gitlab-org/cli/internal/commands/project/remote/add
 gitlab.com/gitlab-org/cli/internal/commands/project/search
-gitlab.com/gitlab-org/cli/internal/commands/project/publish
 gitlab.com/gitlab-org/cli/internal/commands/project/transfer
+gitlab.com/gitlab-org/cli/internal/commands/project/publish
 gitlab.com/gitlab-org/cli/internal/commands/project/remote
 gitlab.com/gitlab-org/cli/internal/commands/project/update
 gitlab.com/gitlab-org/cli/internal/commands/project/view
 gitlab.com/gitlab-org/cli/internal/commands/release/releaseutils/upload
 gitlab.com/gitlab-org/cli/internal/commands/release/delete
+gitlab.com/gitlab-org/cli/internal/commands/runner/assign
+gitlab.com/gitlab-org/cli/internal/commands/project
 gitlab.com/gitlab-org/cli/internal/commands/release/releaseutils
 gitlab.com/gitlab-org/cli/internal/commands/release/download
-gitlab.com/gitlab-org/cli/internal/commands/project
-gitlab.com/gitlab-org/cli/internal/commands/runner/assign
+gitlab.com/gitlab-org/cli/internal/commands/runner/delete
 gitlab.com/gitlab-org/cli/internal/commands/release/create
 gitlab.com/gitlab-org/cli/internal/commands/release/list
 gitlab.com/gitlab-org/cli/internal/commands/release/upload
 gitlab.com/gitlab-org/cli/internal/commands/release/view
-gitlab.com/gitlab-org/cli/internal/commands/runner/delete
 gitlab.com/gitlab-org/cli/internal/commands/runner/jobs
 gitlab.com/gitlab-org/cli/internal/commands/runner/list
-gitlab.com/gitlab-org/cli/internal/commands/release
 gitlab.com/gitlab-org/cli/internal/commands/runner/managers
 gitlab.com/gitlab-org/cli/internal/commands/runner/unassign
+gitlab.com/gitlab-org/cli/internal/commands/release
 gitlab.com/gitlab-org/cli/internal/commands/runner/update
 gitlab.com/gitlab-org/cli/internal/commands/runnercontroller/create
 gitlab.com/gitlab-org/cli/internal/commands/runnercontroller/delete
@@ -1076,8 +1141,8 @@ gitlab.com/gitlab-org/cli/internal/commands/runnercontroller/scope/list
 gitlab.com/gitlab-org/cli/internal/commands/runnercontroller/token/create
 gitlab.com/gitlab-org/cli/internal/commands/runnercontroller/token/list
 gitlab.com/gitlab-org/cli/internal/commands/runnercontroller/token/revoke
-gitlab.com/gitlab-org/cli/internal/commands/runnercontroller/scope
 gitlab.com/gitlab-org/cli/internal/commands/runnercontroller/token/rotate
+gitlab.com/gitlab-org/cli/internal/commands/runnercontroller/scope
 gitlab.com/gitlab-org/cli/internal/commands/runnercontroller/update
 gitlab.com/gitlab-org/cli/internal/commands/schedule/create
 gitlab.com/gitlab-org/cli/internal/commands/schedule/delete
@@ -1088,14 +1153,15 @@ gitlab.com/gitlab-org/cli/internal/commands/schedule/update
 gitlab.com/gitlab-org/cli/internal/commands/runnercontroller
 gitlab.com/gitlab-org/cli/internal/commands/search/semantic
 gitlab.com/gitlab-org/cli/internal/commands/securefile/helpers
-gitlab.com/gitlab-org/cli/internal/commands/schedule
 gitlab.com/gitlab-org/cli/internal/commands/securefile/create
+gitlab.com/gitlab-org/cli/internal/commands/schedule
 gitlab.com/gitlab-org/cli/internal/commands/securefile/download
 gitlab.com/gitlab-org/cli/internal/commands/search
 gitlab.com/gitlab-org/cli/internal/commands/securefile/get
 gitlab.com/gitlab-org/cli/internal/commands/securefile/list
 gitlab.com/gitlab-org/cli/internal/commands/securefile/remove
 gitlab.com/gitlab-org/cli/internal/commands/securefile/update
+gitlab.com/gitlab-org/cli/internal/commands/security/securityutils
 gitlab.com/gitlab-org/cli/internal/commands/security/config/disable
 gitlab.com/gitlab-org/cli/internal/commands/security/config/enable
 gitlab.com/gitlab-org/cli/internal/commands/security/config/status
@@ -1107,39 +1173,40 @@ gitlab.com/gitlab-org/cli/internal/commands/skills/get
 gitlab.com/gitlab-org/cli/internal/commands/security/config
 gitlab.com/gitlab-org/cli/internal/commands/skills/remote
 gitlab.com/gitlab-org/cli/internal/commands/skills/registry
-gitlab.com/gitlab-org/cli/internal/commands/skills/installed
 gitlab.com/gitlab-org/cli/internal/commands/skills/install
 gitlab.com/gitlab-org/cli/internal/commands/skills/list
+gitlab.com/gitlab-org/cli/internal/commands/skills/installed
 gitlab.com/gitlab-org/cli/internal/commands/skills/update
 gitlab.com/gitlab-org/cli/internal/commands/security
 gitlab.com/gitlab-org/cli/internal/commands/snippet
 gitlab.com/gitlab-org/cli/internal/commands/ssh-key/add
-gitlab.com/gitlab-org/cli/internal/commands/ssh-key/delete
 gitlab.com/gitlab-org/cli/internal/commands/skills
-gitlab.com/gitlab-org/cli/internal/commands/ssh-key/get
+gitlab.com/gitlab-org/cli/internal/commands/ssh-key/sshkeyutils
 gitlab.com/gitlab-org/cli/internal/commands/ssh-key/list
 golang.org/x/crypto/sha3
-gitlab.com/gitlab-org/cli/internal/commands/stack/stackutils
 gitlab.com/gitlab-org/cli/internal/commands/stack/delete
+gitlab.com/gitlab-org/cli/internal/commands/stack/stackutils
+gitlab.com/gitlab-org/cli/internal/commands/ssh-key/delete
+gitlab.com/gitlab-org/cli/internal/commands/ssh-key/get
 gitlab.com/gitlab-org/cli/internal/commands/stack/list
 gitlab.com/gitlab-org/cli/internal/commands/stack/create
-gitlab.com/gitlab-org/cli/internal/commands/ssh-key
 gitlab.com/gitlab-org/cli/internal/commands/stack/infer
+gitlab.com/gitlab-org/cli/internal/commands/ssh-key
 gitlab.com/gitlab-org/cli/internal/commands/stack/navigate
 gitlab.com/gitlab-org/cli/internal/auth
 gitlab.com/gitlab-org/cli/internal/commands/stack/save
-gitlab.com/gitlab-org/cli/internal/commands/stack/switch
 gitlab.com/gitlab-org/cli/internal/commands/stack/reorder
+gitlab.com/gitlab-org/cli/internal/commands/stack/switch
 gitlab.com/gitlab-org/cli/internal/commands/stack/sync
 gitlab.com/gitlab-org/cli/internal/commands/todo/done
 gitlab.com/gitlab-org/cli/internal/commands/todo/list
 gitlab.com/gitlab-org/cli/internal/commands/token/accesslevel
 gitlab.com/gitlab-org/cli/internal/commands/token/expirationdate
 gitlab.com/gitlab-org/cli/internal/commands/token/tokenduration
-gitlab.com/gitlab-org/cli/internal/commands/token/create
 gitlab.com/gitlab-org/cli/internal/commands/token/list
-gitlab.com/gitlab-org/cli/internal/commands/todo
 gitlab.com/gitlab-org/cli/internal/commands/stack
+gitlab.com/gitlab-org/cli/internal/commands/token/create
+gitlab.com/gitlab-org/cli/internal/commands/todo
 gitlab.com/gitlab-org/cli/internal/commands/token/revoke
 gitlab.com/gitlab-org/cli/internal/commands/token/rotate
 gitlab.com/gitlab-org/cli/internal/commands/update
@@ -1154,15 +1221,14 @@ gitlab.com/gitlab-org/cli/internal/commands/variable/import
 gitlab.com/gitlab-org/cli/internal/commands/variable/list
 gitlab.com/gitlab-org/cli/internal/commands/variable/set
 gitlab.com/gitlab-org/cli/internal/commands/variable/update
-gitlab.com/gitlab-org/cli/internal/commands/version
 gitlab.com/gitlab-org/cli/internal/commands/whatsnew
 gitlab.com/gitlab-org/cli/internal/commands/workitems/api
 gitlab.com/gitlab-org/cli/internal/commands/alias/expand
 gitlab.com/gitlab-org/cli/internal/commands/variable
 gitlab.com/gitlab-org/cli/internal/commands/workitems/utils
 gitlab.com/gitlab-org/cli/internal/commands/workitems/create
-gitlab.com/gitlab-org/cli/internal/commands/workitems/list
 gitlab.com/gitlab-org/cli/internal/commands/workitems/delete
+gitlab.com/gitlab-org/cli/internal/commands/workitems/list
 gitlab.com/gitlab-org/cli/internal/commands/workitems/update
 gitlab.com/gitlab-org/cli/internal/commands/workitems
 gitlab.com/gitlab-org/cli/internal/commands
@@ -1170,28 +1236,28 @@ gitlab.com/gitlab-org/cli/cmd/glab
 sending incremental file list
 glab
 
-sent 56,653,433 bytes  received 35 bytes  113,306,936.00 bytes/sec
-total size is 56,639,512  speedup is 1.00
+sent 55,322,130 bytes  received 35 bytes  36,881,443.33 bytes/sec
+total size is 55,308,536  speedup is 1.00
 /build-bins/gitlab-cli: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
 /build-bins/glab:       ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
-55M	/build-bins/gitlab-cli
-55M	/build-bins/glab
-/home/runner/work/_temp/toolpacks/JVW7dvd_linux_x86_64/glab
-/home/runner/work/_temp/toolpacks/JVW7dvd_linux_x86_64/gitlab-cli
-./glab: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
-0be7cda104e15e2825f08e1b6281f7a70c9b92d8e332ee426619bd46fcba218c  ./glab
-119316825cc99544febb89e4aabed5857d0f889d970635e297fbfc4cf870cf56  ./glab
-55M	./glab
+53M	/build-bins/gitlab-cli
+53M	/build-bins/glab
+/home/runner/work/_temp/toolpacks/3pu3gl0_linux_x86_64/gitlab-cli
+/home/runner/work/_temp/toolpacks/3pu3gl0_linux_x86_64/glab
 ./gitlab-cli: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
-0be7cda104e15e2825f08e1b6281f7a70c9b92d8e332ee426619bd46fcba218c  ./gitlab-cli
-119316825cc99544febb89e4aabed5857d0f889d970635e297fbfc4cf870cf56  ./gitlab-cli
-55M	./gitlab-cli
+28a497a4fc5d1e2390a2664e336ef8ddedc9d9a8625a04e0e4d81e8ea9a4d6e0  ./gitlab-cli
+3c17b349d54e54c84a9a05bd883b1df4080b472d13b4e76e4ae04408951973d6  ./gitlab-cli
+53M	./gitlab-cli
+./glab: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
+28a497a4fc5d1e2390a2664e336ef8ddedc9d9a8625a04e0e4d81e8ea9a4d6e0  ./glab
+3c17b349d54e54c84a9a05bd883b1df4080b472d13b4e76e4ae04408951973d6  ./glab
+53M	./glab
 sending incremental file list
 ./
 gitlab-cli
 glab
 
-sent 113,306,644 bytes  received 57 bytes  226,613,402.00 bytes/sec
-total size is 113,278,816  speedup is 1.00
+sent 110,644,037 bytes  received 57 bytes  221,288,188.00 bytes/sec
+total size is 110,616,864  speedup is 1.00
 alpine-builder
 alpine-builder
